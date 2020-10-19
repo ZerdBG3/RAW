@@ -22,5 +22,8 @@ DnD Rebalancing for Baldur's Gate 3
 * Download the `.pak` file from [Releases](https://github.com/ZerdBG3/DnD-Rebalancing/releases) and place it under `\Documents\Larian Studios\Baldur's Gate 3\Mods`
 * Copy the `modsettings.lsx` file on the root and place it under `Documents\Larian Studios\Baldur's Gate 3\PlayerProfiles\{YOUR_PROFILE}`, where `{YOUR_PROFILE}` is the profile you want the mod to be active on
 
+# Discord
+* Feel free to join my Discord server: https://discord.gg/jJUxKgw
+
 # Attribution
 - [Baldur's Gate 3](https://store.steampowered.com/app/1086940/Baldurs_Gate_3/), a game by [Larian Studios](http://larian.com/)
