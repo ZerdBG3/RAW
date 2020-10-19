@@ -9,13 +9,13 @@
                     <attribute id="Author" type="LSWString" value="Zerd"/>
                     <attribute id="CharacterCreationLevelName" type="FixedString" value=""/>
                     <attribute id="Description" type="LSWString" value="Changes some stuff to make BG3 look more like DnD 5e"/>
-                    <attribute id="Folder" type="LSWString" value="ZerdTweaks"/>
+                    <attribute id="Folder" type="LSWString" value="DnDRebalancing"/>
                     <attribute id="GMTemplate" type="FixedString" value=""/>
                     <attribute id="LobbyLevelName" type="FixedString" value=""/>
                     <attribute id="MD5" type="LSString" value=""/>
                     <attribute id="MainMenuBackgroundVideo" type="FixedString" value=""/>
                     <attribute id="MenuLevelName" type="FixedString" value=""/>
-                    <attribute id="Name" type="FixedString" value="ZerdTweaks"/>
+                    <attribute id="Name" type="FixedString" value="DnDRebalancing"/>
                     <attribute id="NumPlayers" type="uint8" value="4"/>
                     <attribute id="PhotoBooth" type="FixedString" value=""/>
                     <attribute id="StartupLevelName" type="FixedString" value=""/>
