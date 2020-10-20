@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<save>
+    <version major="4" minor="0" revision="0" build="48"/>
+    <region id="DefaultValues">
+        <node id="root">
+            <children>
+                <node id="DefaultValue">
+                    <attribute id="Add" type="LSString" value="FightingStyle_Defense"/>
+                    <attribute id="ClassUUID" type="guid" value="00000000-0000-0000-0000-000000000000"/>
+                    <attribute id="Level" type="int32" value="1"/>
+                    <attribute id="OriginUUID" type="guid" value="00000000-0000-0000-0000-000000000000"/>
+                    <attribute id="RaceUUID" type="guid" value="00000000-0000-0000-0000-000000000000"/>
+                    <attribute id="SelectorId" type="LSString" value=""/>
+                    <attribute id="SubclassUUID" type="guid" value="00000000-0000-0000-0000-000000000000"/>
+                    <attribute id="TableUUID" type="guid" value="ba4e707e-4bbd-4630-963b-ce2f2947f971"/>
+                    <attribute id="UUID" type="guid" value="5c753535-8d9c-4d72-b41a-216ca34231a1"/>
+                </node>
+            </children>
+        </node>
+    </region>
+</save>
