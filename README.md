@@ -22,7 +22,8 @@ DnD Rebalancing for Baldur's Gate 3
 # Installing
 * Download the `.pak` file from [Releases](https://github.com/ZerdBG3/DnD-Rebalancing/releases) and place it under `\Documents\Larian Studios\Baldur's Gate 3\Mods`
 * Copy the `modsettings.lsx` file on the root and place it under `Documents\Larian Studios\Baldur's Gate 3\PlayerProfiles\{YOUR_PROFILE}`, where `{YOUR_PROFILE}` is the profile you want the mod to be active on
-* **IMPORTANT:** When loading the game, you'll get a notification regarding an invalid story set-up. This is a known issue with an unknown solution. Since the mod doesn't have any story files, the fallback to the main story allows the game to load correctly. Tl;dr: ignore the error warning you'll get
+* **IMPORTANT:** When loading the game, you'll get a notification regarding an invalid story set-up. Since the mod doesn't have any story files, the fallback to the main story allows the game to load correctly. Tl;dr: ignore the error warning you'll get
+* If you're very annoyed by this warning message, you can also use [this mod](https://www.nexusmods.com/baldursgate3/mods/13) to suppress the warning message
 
 # Discord
 * Feel free to join my Discord server: https://discord.gg/jJUxKgw
