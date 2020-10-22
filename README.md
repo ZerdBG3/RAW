@@ -11,13 +11,8 @@ DnD Rebalancing for Baldur's Gate 3
 # Description
 * This mod's main objective is to rebalance BG3 removing some of Larian's takes on the ruleset and adapting it to more closely resemble the tabletop experience.
 
-# Features:
-* Fighting Style is available for Fighters at level 1 (from level 2)
-* Firebolt deals 1d10 (from 1d6) but does not create a fire surface (it still interacts with surfaces below the target)
-* Ray of Frost does not create an ice surface (it still interacts with surfaces below the target)
-* Jump, Hide and Shove are all actions (from bonus actions)
-* Introduced Disengage as an action to all characters (without Jump tied to it) - **TESTING**
-* Cunning Action (Rogue level 2) now gives Hide and Disengage (besides Dash) as bonus actions as well
+# Features
+* See all current features here: https://github.com/ZerdBG3/DnD-Rebalancing/blob/main/Features.md
 
 # Installing
 * Download the `.pak` file from [Releases](https://github.com/ZerdBG3/DnD-Rebalancing/releases) and place it under `\Documents\Larian Studios\Baldur's Gate 3\Mods`
