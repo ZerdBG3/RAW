@@ -12,11 +12,12 @@ DnD Rebalancing for Baldur's Gate 3
 * This mod's main objective is to rebalance BG3 removing some of Larian's takes on the ruleset and adapting it to more closely resemble the tabletop experience.
 
 # Features
-* See all current features here: https://github.com/ZerdBG3/DnD-Rebalancing/blob/main/Features.md
+* See all current features [here](https://github.com/ZerdBG3/DnD-Rebalancing/blob/main/Features.md)
 
 # Installing
-* Download the `.pak` file from [Releases](https://github.com/ZerdBG3/DnD-Rebalancing/releases) and place it under `\Documents\Larian Studios\Baldur's Gate 3\Mods`
-* Copy the `modsettings.lsx` file on the root of this project (or access it [here](https://github.com/ZerdBG3/DnD-Rebalancing/blob/main/modsettings.lsx)) and place it under `Documents\Larian Studios\Baldur's Gate 3\PlayerProfiles\{YOUR_PROFILE}`, where `{YOUR_PROFILE}` is the profile you want the mod to be active on
+* See a tutorial on installing this mod in [here](https://github.com/ZerdBG3/DnD-Rebalancing/blob/main/Installing.md)
+
+# Error
 * **IMPORTANT:** When loading the game, you'll get a notification regarding an invalid story set-up. Since the mod doesn't have any story files, the fallback to the main story allows the game to load correctly. Tl;dr: ignore the error warning you'll get
 * If you're very annoyed by this warning message, you can also use [this mod](https://www.nexusmods.com/baldursgate3/mods/13) to suppress the warning message
 
