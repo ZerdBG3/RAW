@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<save>
+    <version major="4" minor="0" revision="0" build="19"/>
+    <region id="Tags">
+        <node id="root">
+            <attribute id="Description" type="LSString" value="Type Tag for Offhand attacks"/>
+            <attribute id="DisplayDescription" type="TranslatedString" value="After attacking with the main hand, you can do an offhand attack" handle="h29b136eagaa17g4ce5g8ba6g4d0d5ee2c06a"/>
+            <attribute id="DisplayName" type="TranslatedString" value="Offhand Attack" handle="hc2e4d9a4g8b6cg4466g9ab2g30947e6ed0fd"/>
+            <attribute id="Icon" type="FixedString" value=""/>
+            <attribute id="Name" type="FixedString" value="ZERD_ALLOW_OFFHAND_ATTACK"/>
+            <attribute id="UUID" type="guid" value="cca1010c-e00e-4a17-95de-e8b49e7b1583"/>
+            <children>
+                <node id="Categories">
+                    <children>
+                        <node id="Category">
+                            <attribute id="Name" type="LSString" value="Code"/>
+                        </node>
+                    </children>
+                </node>
+            </children>
+        </node>
+    </region>
+</save>
