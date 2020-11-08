@@ -1,0 +1,5 @@
+# Zip file for Candor compatibility # 
+*.zip
+
+# Pak file with the latest release #
+*.pak

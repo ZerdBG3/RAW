@@ -15,7 +15,9 @@ DnD Rebalancing for Baldur's Gate 3
 * See all current features [here](https://github.com/ZerdBG3/DnD-Rebalancing/blob/main/Features.md)
 
 # Installing
-* See a tutorial on installing this mod in [here](https://github.com/ZerdBG3/DnD-Rebalancing/blob/main/Installing.md)
+* Download the latest `.pak` file from [Releases](https://github.com/ZerdBG3/DnD-Rebalancing/releases) and place it under `\Documents\Larian Studios\Baldur's Gate 3\Mods` (Create the `Mods` folder if it doesn't exist)
+* Use Laughing Leader's [Mod Manager](https://github.com/LaughingLeader/BG3ModManager) to set up your mod profile
+* If you want to set up your mods manually, here's an [Installation Guide](https://github.com/ZerdBG3/DnD-Rebalancing/blob/main/Installing.md)
 
 # Error
 * **IMPORTANT:** When loading the game, you'll get a notification regarding an invalid story set-up. Since the mod doesn't have any story files, the fallback to the main story allows the game to load correctly. Tl;dr: ignore the error warning you'll get
