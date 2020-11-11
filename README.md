@@ -5,8 +5,9 @@ DnD Rebalancing for Baldur's Gate 3
 * The main goal behind an Early Access is to provide meaningful feedback to the developers. To do so, Larian implemented an automatic telemetry that will provide data for them automatically as you play
 * Since modding BG3 is not yet officially supported by Larian Studios, you might encounter unexpected problems that it's not in their current scope to fix. **PLEASE DISABLE AUTOMATIC TELEMETRY** and don't post bug reports on their official platforms, as you're playing an unsuported mod
 * How to disable telemetry:
-![](https://i.imgur.com/8BSSPiW.png)
-![](https://i.imgur.com/huTu79h.png)
+
+| ![](https://i.imgur.com/8BSSPiW.png) | ![](https://i.imgur.com/huTu79h.png) |
+|:---:|:---:|
 
 # Description
 * This mod's main objective is to rebalance BG3 removing some of Larian's takes on the ruleset and adapting it to more closely resemble the tabletop experience.
