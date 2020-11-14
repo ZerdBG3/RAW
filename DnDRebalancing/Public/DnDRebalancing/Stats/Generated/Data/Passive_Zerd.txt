@@ -46,3 +46,9 @@ data "Conditions" "(IsWeaponAttack() or context.HitDescription.AttackType==Attac
 data "Properties" "IsToggled;ToggledDefaultOn;ToggledDefaultAddToHotbar"
 data "StatsFunctors" "UseActionResource(SELF,SneakAttack,1);IF(context.HitDescription.AttackType==AttackType.MeleeWeaponAttack):DealDamage(2d6, MainMeleeWeaponDamageType);IF(context.HitDescription.AttackType==AttackType.RangedWeaponAttack):DealDamage(2d6, MainRangedWeaponDamageType);IF(context.HitDescription.AttackType==AttackType.MeleeOffHandWeaponAttack):DealDamage(2d6, OffhandMeleeWeaponDamageType);IF(context.HitDescription.AttackType==AttackType.RangedOffHandWeaponAttack):DealDamage(2d6, OffhandRangedWeaponDamageType);"
 data "StatsFunctorContext" "OnAttack"
+
+new entry "DualWielder_BonusAC"
+type "PassiveData"
+data "DisplayName" "Passive_DualWielder_BonusAC_DisplayName"
+data "Description" "Passive_DualWielder_BonusAC_Description"
+data "Boosts" "IF(FightingStyle_TwoWeapons(context.Source)):AC(1)"
