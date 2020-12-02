@@ -1,7 +1,6 @@
 # Features
 
 ## Classes
-* Fighting Style is available for Fighters at level 1 (from level 2)
 * Sneak Attack (Rogue level 1) is now a toggable passive which works on any weapon attack you hit in the turn (including offhand attacks)
 * Cunning Action (Rogue level 2) gives Hide and Disengage (besides Dash) as bonus actions as well
 * Colossus Slayer (Ranger level 3) now correctly deals bonus damage on offhand attacks
@@ -15,10 +14,7 @@
 * Shove's push range is reduced to 1.5 m (from 4 m)
 
 ## Spells
-* Firebolt deals 1d10 (from 1d6) but does not create a fire surface (it still interacts with surfaces if you target the ground)
-* Ray of Frost does not create an ice surface (it still interacts with surfaces if you target the ground)
 * Hold Person now correctly allows a Saving Throw on Turn End instead of Turn Start
-* Guiding Bolt advantage no longer is removed by non-attack spells (it was previously removed by Hex, for example)
 * Hex and Hunter's Query now correctly deals bonus damage on offhand attacks
 
 ## Global changes
