@@ -10,7 +10,7 @@ DnD Rebalancing for Baldur's Gate 3
 |:---:|:---:|
 
 # Description
-* This mod's main objective is to modify vanilla content so that it respect D&D 5th edition ruleset. This means removing some of Larian's takes on the ruleset and adapting it to more closely resemble the tabletop experience. As of right now, we're mainly covering the Player's Handbook content.
+* This mod's main objective is to modify vanilla content so that it respect D&D 5th edition ruleset. This means removing some of Larian's takes on the ruleset and adapting it to more closely resemble the tabletop experience. As of right now, the guideline followed is the Player's Handbook and Dungeon's Master Guide contents.
 
 # Features
 * See all current features [here](https://github.com/ZerdBG3/DnD-Rebalancing/blob/main/Features.md)
