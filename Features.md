@@ -4,12 +4,12 @@
 * Sneak Attack (Rogue level 1) is now a toggable passive which works on any weapon attack you hit in the turn (including offhand attacks)
 * Cunning Action (Rogue level 2) gives Hide and Disengage (besides Dash) as bonus actions as well
 * Colossus Slayer (Ranger level 3) now correctly deals bonus damage on offhand attacks
-* Arcane Ward (Wizard level 2 - School of Abjuration) now gives `Int Mod + 2*Wizard Level` Temporary HP on first cast of the day and `2*Spell Level` on subsequent casts
+* Arcane Ward subsequent casts after the first of the day now provides the correct `2*Spell Level` Temporary HP
 
 ## Actions
 * Hide and Shove are actions (from bonus actions)
 * Introduced Disengage and Dodge as actions to player characters
-* Jump only costs Movement, but can't be used while Threatened, unless the character Disengages first
+* Jump only costs Movement, but can't be used while Threatened (Flanked), unless the character Disengages first
 * Diversify Shove with 2 options (Push and Prone)
 * Shove's push range is reduced to 1.5 m (from 4 m)
 
