@@ -22,7 +22,7 @@
                     <attribute id="Tags" type="LSWString" value=""/>
                     <attribute id="Type" type="FixedString" value="Add-on"/>
                     <attribute id="UUID" type="FixedString" value="f19c68ed-70be-4c3d-b610-e94afc5c5103"/>
-                    <attribute id="Version" type="int32" value="50331648"/>
+                    <attribute id="Version" type="int32" value="50331649"/>
                     <children>
                         <node id="PublishVersion">
                             <attribute id="Version" type="int32" value="268435456"/>
