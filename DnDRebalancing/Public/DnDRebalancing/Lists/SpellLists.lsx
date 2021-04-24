@@ -8,6 +8,10 @@
                     <attribute id="Spells" type="LSString" value="Shout_CunningAction"/>
                     <attribute id="UUID" type="guid" value="2dc120ff-903b-494b-8dc8-38721098ce38"/>
                 </node>
+                <node id="SpellList">
+                    <attribute id="Spells" type="LSString" value="Shout_WildShape_Combat_Bear_Brown"/>
+                    <attribute id="UUID" type="guid" value="db963d3f-e0ba-4aba-a8e2-cf404dc54429"/>
+                </node>
             </children>
         </node>
     </region>

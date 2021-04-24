@@ -8,3 +8,12 @@ data "Hearing" "1800"
 data "SpellCastingAbility" "Intelligence"
 data "ActionResources" "ActionPoint:1;BonusActionPoint:1;ReactionActionPoint:1;SpellSlot:0:0:1"
 data "Passives" "AttackOfOpportunity;DarknessRules;ShortResting"
+
+new entry "Badger_Giant_Wildshape"
+type "Character"
+using "Badger_Giant"
+
+new entry "Bear_Brown_Wildshape"
+type "Character"
+using "Bear_Brown"
+data "Vitality" "34"
