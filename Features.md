@@ -6,12 +6,13 @@
 * Colossus Slayer (Ranger level 3) correctly deals bonus damage on offhand attacks
 * Arcane Ward subsequent casts after the first of the day provides the correct `2*Spell Level` Temporary HP
 * Wild Shape dismissal costs a bonus action
+* Wild Shape Polar Bear is replaced with Brown Bear, visual and stat wise
+* Wild Shape Giant Badger changes to attacks and movements
 
 ## Actions
 * Hide and Shove are actions (from bonus actions)
-* Introduces Disengage and Dodge as actions to player characters
+* Introduces Disengage, Dodge and Shove (to Prone) as actions to player characters (single spell container)
 * Jump only costs Movement, but can't be used while Threatened (Flanked), unless the character Disengages first
-* Diversify Shove with 2 options (Push and Prone)
 * Shove's push range is reduced to 1.5 m (from 4 m)
 
 ## Spells
@@ -19,6 +20,12 @@
 * Hex and Hunter's Query correctly deals bonus damage on offhand attacks
 * Produce Flame scales with Wisdom for Druids
 * Goodberry provides 10 berries, each healing 1 HP (and full stomach, if using DnDon't Starve)
+
+## Hit Dice
+* Short resting puts the characters in a standby mode and provides them with 2 new spells
+  - Regain Hit Points: spend 1 Hit Die to recover its value plus the character's Constitution Modifier
+  - End Short Rest: Ends the short rest standby mode
+* Long resting recharges half the character's level worth of Hit Dice (rounded up)
 
 ## Global changes
 * Removes weapon abilities (like Cleave, Smash and Pin Down)
