@@ -1,3 +1,10 @@
+new entry "Backstab"
+type "PassiveData"
+data "DisplayName" "Passive_Backstab_DisplayName"
+data "Description" "Passive_Backstab_Description"
+data "Properties" "IsHidden"
+data "Boosts" ""
+
 new entry "ShortResting"
 type "PassiveData"
 data "Properties" "IsHidden"
