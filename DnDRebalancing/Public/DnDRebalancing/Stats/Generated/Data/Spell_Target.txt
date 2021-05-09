@@ -235,3 +235,12 @@ data "TargetEffect" "VFX_Enemies_Bite_Impact_BodyFX_01,FaceSource:Dummy_BodyFX:C
 data "UseCosts" ""
 data "SpellFlags" "IsMelee;IsHarmful"
 data "RequirementConditions" "HasStatus('ZERD_MULTIATTACK_HELPER')"
+
+new entry "Target_CreateWater_StaffOfRain"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_CreateWater"
+data "SpellContainerID" ""
+data "Cooldown" "OncePerShortRest"
+data "UseCosts" "ActionPoint:1"
+data "MemoryCost" ""
