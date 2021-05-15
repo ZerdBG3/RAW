@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<version major="4" minor="0" revision="0" build="48" />
+	<region id="TranslatedStringKeys">
+		<node id="root">
+			<children>
+                <node id="TranslatedStringKey">
+					<attribute id="UUID" type="FixedString" value="Passive_DnD_SneakAttack_Description" />
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="h01d9015egc084g4378g853agb9b3a787fa6d" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
+                <node id="TranslatedStringKey">
+					<attribute id="UUID" type="FixedString" value="Passive_FastHands_Description" />
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="hfc0ecb86gc504g44f1g9d88g957905740457" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
+                <node id="TranslatedStringKey">
+					<attribute id="UUID" type="FixedString" value="Passive_SecondStoryWork_Description" />
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="hd6a0c096gd133g4bc9ga518g80c70fd5d907" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

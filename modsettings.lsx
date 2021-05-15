@@ -25,7 +25,7 @@
                             <attribute id="UUID" type="FixedString" value="991c9c7a-fb80-40cb-8f0d-b92d4e80e9b1"/>
                             <attribute id="Version" type="int32" value="268435456"/>
                         </node>
-						<node id="ModuleShortDesc">
+                        <node id="ModuleShortDesc">
                             <attribute id="Folder" type="LSWString" value="DnDRebalancing"/>
                             <attribute id="MD5" type="LSString" value=""/>
                             <attribute id="Name" type="FixedString" value="DnDRebalancing"/>

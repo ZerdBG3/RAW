@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<version major="4" minor="0" revision="0" build="48" />
+	<region id="TranslatedStringKeys">
+		<node id="root">
+			<children>
+                <node id="TranslatedStringKey">
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="UUID" type="FixedString" value="Target_Shove_Prone_Description" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="h8cd12a69g8980g4a55g8737g3f6183de78c1" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="UUID" type="FixedString" value="Target_Goodberry_Description" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="h76afdb93gdd39g4cfdg9121g03081409865e" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="UUID" type="FixedString" value="Target_Burrow_GiantBadger_Description" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="h418e3086g1f94g47e5g9d8ag712fd92aa4c0" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
+			</children>
+		</node>
+	</region>
+</save>
+
