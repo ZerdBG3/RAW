@@ -156,3 +156,22 @@ ACTIONS
 	THEN
         CharacterApplyStatus(_Character, DND_HIT_DICE_MAX, -1)
     ENDIF
+
+
+EVENT CharacterSetDnDShortRest
+VARS
+	CHARACTER:_Character
+	LIST<STATUS>:_RemoveList
+	STATUS:_Result
+ON 
+	FetchCharacterApplyStatusData(_Character, DND_SHORT_REST)
+ACTIONS
+	Set(_Result,DND_SHORT_REST)
+	
+    ListClear(_RemoveList)
+    ListAdd(_RemoveList, FALSE_LIFE)
+    ListAdd(_RemoveList, FALSE_LIFE_2)
+    ListAdd(_RemoveList, HEX_REAPPLY)
+    ListAdd(_RemoveList, HUNTERS_MARK_REAPPLY)
+
+	RETURN(_RemoveList,_Result,null)
