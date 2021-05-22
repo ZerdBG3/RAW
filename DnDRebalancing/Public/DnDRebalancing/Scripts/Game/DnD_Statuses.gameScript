@@ -175,3 +175,32 @@ ACTIONS
     ListAdd(_RemoveList, HUNTERS_MARK_REAPPLY)
 
 	RETURN(_RemoveList,_Result,null)
+
+
+EVENT CharacterDownedStabilizedApplied
+VARS
+    CHARACTER:_Character
+ON
+    OnCharacterStatusApplied(_Character, DND_DOWNED_STABILIZED)
+ACTIONS
+    IF "!c1"
+        IsInCombat(_Character)
+    THEN
+        CharacterApplyStatus(_Character, DND_DOWNED_STABILIZED_HEAL, 0)
+        CharacterRemoveStatus(_Character, DND_DOWNED_STABILIZED)
+    ENDIF
+
+
+EVENT CharacterLeftCombatHealDowned
+VARS
+    CHARACTER:_Character
+ON
+    OnLeftCombat(_Character,_)
+ACTIONS
+    IF "c1"
+        CharacterHasStatus(_Character, DND_DOWNED_STABILIZED)
+    THEN
+        CharacterApplyStatus(_Character, DND_DOWNED_STABILIZED_HEAL, 0)
+        CharacterRemoveStatus(_Character, DND_DOWNED_STABILIZED)
+    ENDIF
+
