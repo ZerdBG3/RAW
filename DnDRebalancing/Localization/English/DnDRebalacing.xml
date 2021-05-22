@@ -5,7 +5,7 @@
 
     <comment commentid="Passive Description" />
     <content contentuid="h01d9015egc084g4378g853agb9b3a787fa6d" version="1">Once per turn, you deal extra [1] when you attack with advantage or target someone with one of your allies nearby.</content><comment commentid="Sneak Attack" />
-    <content contentuid="hfc0ecb86gc504g44f1g9d88g957905740457" version="1">Gain an additional bonus action.</content><comment commentid="Fast Hands" />
+    <content contentuid="hfc0ecb86gc504g44f1g9d88g957905740457" version="1">You can use the Bonus Action granted by your Cunning Action to use Help.</content><comment commentid="Fast Hands" />
     <content contentuid="hd6a0c096gd133g4bc9ga518g80c70fd5d907" version="1">You've mastered the art of falling and gain resistance to Falling damage. Also, you now use your Dexterity to increase your Jumping distance.</content><comment commentid="Second-Story Work" />
 
     <comment commentid="Projectile Display Name" />
@@ -62,9 +62,15 @@
 
     <comment commentid="Target Display Name" />
     <content contentuid="hb461d04cg1cfbg4ba1g83a2g5bd1421d1a20" version="1">Shove (Prone)</content><comment commentid="Shove Prone" />
+    <content contentuid="h9dae9cf6gd51dg4176g9654g137136bdc8c1" version="1">Help (Cunning Action)</content><comment commentid="Help Cunning Action" />
 
     <comment commentid="Target Description" />
     <content contentuid="h8cd12a69g8980g4a55g8737g3f6183de78c1" version="1">Shove a target to knock it prone. Shoving unsuspecting targets always succeeds.</content><comment commentid="Shove Prone" />
     <content contentuid="h76afdb93gdd39g4cfdg9121g03081409865e" version="1">Conjure ten magical berries for yourself or a companion. Creatures who eat a berry regain [1] and are provided with enough nourishment for the rest of the day.</content><comment commentid="Goodberry" />
     <content contentuid="h418e3086g1f94g47e5g9d8ag712fd92aa4c0" version="1">Burrow into the ground and emerge at the target position.</content><comment commentid="Giant Badger Burrow" />
+    <content contentuid="h32d73faeg184cg419bg8fb6gdd67958d7817" version="1">Stabilizes an ally if they're downed. Removes Prone, Sleep, Enwebbed, Entangled, and Ensnared.</content><comment commentid="Help" />
+
+    <comment commentid="Progression Description" />
+    <content contentuid="h2e3ab9b3g7c96g4274gbb27g66c15be10707" version="1">You can use the Bonus Action granted by your Cunning Action to use Help.</content><comment commentid="Fast Hands" />
+    <content contentuid="hc7499bffg5070g4107g9e4bg6a62a9d4fa8a" version="1">You've mastered the art of falling and gain resistance to Falling damage. Also, you now use your Dexterity to increase your Jumping distance.</content><comment commentid="Second-Story Work" />
 </contentList>

@@ -25,6 +25,13 @@
 					<attribute id="Content" type="TranslatedString" handle="h418e3086g1f94g47e5g9d8ag712fd92aa4c0" version="1" />
 					<attribute id="Stub" type="bool" value="True" />
 				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="UUID" type="FixedString" value="Target_Help_Description" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="h32d73faeg184cg419bg8fb6gdd67958d7817" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
 			</children>
 		</node>
 	</region>
