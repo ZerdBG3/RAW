@@ -10,6 +10,7 @@
 * Rogue:
   - Level 1: Sneak Attack is a toggable passive which works on any weapon attack you hit in the turn (including offhand attacks), still obeying to the Sneak Attack rules
   - Level 2: Cunning Action gives Hide and Disengage (besides Dash) as bonus actions as well
+  - Level 3 (Thief): Fast Hands no longer provides an extra Bonus Action - instead, receives Help as a Bonus Action
   - Level 3 (Thief): Second-Story Work now replaces Jump for a Dexterity-based version
 * Wizard:
   - Level 1 (Abjuration School): Arcane Ward subsequent abjuration casts after the first of the day provides the correct `2*Spell Level THP`
@@ -19,6 +20,7 @@
 * Introduces Disengage, Dodge and Shove (to Prone) as actions to player characters (single spell container)
 * Jump only costs Movement, but can't be used while Threatened (Flanked), unless the character Disengages first
 * Shove's push range is reduced to `1.5 m` (from `4 m`)
+* Help stabilizes the target (Medicine `DC 10`), and the stabilized character is healed once out of combat
 
 ## Spells
 * False Life provides `1d4+4 THP` instead of `7 THP` (plus `5` per spell slot above first) and ends with a Short Rest
@@ -39,6 +41,7 @@
 * Removes the auto-failing Strength and Dexterity Saving Throws when Prone
 * Nerfs Fire dipped and Poison coating damage to 1 static damage (from `1d4`)
 * Removes surface creation on most benefitial potions (like healing and resistance potions) - you can't heal people by throwing potions at their feet!
+* Adds Heavy Armor to various locations and traders
 
 ## Feats
 * Fixes the AC bonus from Dual Wielder
