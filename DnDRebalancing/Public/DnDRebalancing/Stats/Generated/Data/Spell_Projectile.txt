@@ -22,6 +22,7 @@ data "SpellFlags" "IsJump;AddFallDamageOnLand;CannotTargetItems;HasHighGroundRan
 data "SpellActionType" "Jump"
 data "SpellAnimationIntentType" "Peaceful"
 data "SpellJumpType" "Locomotion"
+data "Cooldown" "OncePerTurnNoRealtime"
 data "Requirements" "!Immobile"
 data "RequirementConditions" "not HasStatus('FLANKED') or HasStatus('DISENGAGE')"
 

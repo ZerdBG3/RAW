@@ -25,6 +25,13 @@
 					<attribute id="Content" type="TranslatedString" handle="hd6a0c096gd133g4bc9ga518g80c70fd5d907" version="1" />
 					<attribute id="Stub" type="bool" value="True" />
 				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="UUID" type="FixedString" value="Passive_SearingSmite_Description" />
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="h66b9bd72g4983g4373g95cbge989152c813b" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
 			</children>
 		</node>
 	</region>

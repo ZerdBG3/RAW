@@ -18,7 +18,7 @@
 ## Actions
 * Hide and Shove are actions (from bonus actions)
 * Introduces Disengage, Dodge and Shove (to Prone) as actions to player characters (single spell container)
-* Jump only costs Movement, but can't be used while Threatened (Flanked), unless the character Disengages first
+* Jump only costs Movement, but can't be used while Threatened (Flanked), unless the character Disengages first. Can only be used one per turn.
 * Shove's push range is reduced to `1.5 m` (from `4 m`)
 * Help stabilizes the target (Medicine `DC 10`), and the stabilized character is healed once out of combat
 
@@ -28,6 +28,7 @@
 * Hold Person correctly allows a Saving Throw on `Turn End` instead of `Turn Start`
 * Hex and Hunter's Mark correctly deals bonus damage on offhand attacks and end with a Short Rest
 * Produce Flame is a spell container, with instant attacking as an option (QoL and fixes for Wisdom scaling)
+* Searing Smite is a Shout/Concentration spell that requires concentration to both the initial hit application and the damage per turn effect
 
 ## Hit Dice
 * Short Rest puts the characters in a standby mode and provides them with 2 new spells
