@@ -67,6 +67,13 @@
 					<attribute id="Content" type="TranslatedString" handle="h599e295bg2b58g419fga2b7gba12247ecaeb" version="1" />
 					<attribute id="Stub" type="bool" value="True" />
 				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="UUID" type="FixedString" value="Status_BOOST_SEARING_SMITE_INITIAL_Description" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="h893dd1e5gd3e5g41dcg9940g36e09791d185" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
 			</children>
 		</node>
 	</region>

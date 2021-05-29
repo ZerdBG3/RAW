@@ -17,17 +17,17 @@ new subtable "1,1"
 object category "I_WPN_Maul_1",1,0,0,0,0,0,0,0
 new subtable "1,1"
 object category "I_ARM_Splint_Body",1,0,0,0,0,0,0,0
-new subtable "1,1"
+new subtable "-1"
 object category "I_ARM_Plate_Body",1,0,0,0,0,0,0,0
 
 new treasuretable "GOB_Quartermaster_Armor"
 CanMerge 1
 new subtable "1,1"
 object category "I_ARM_Splint_Body",1,0,0,0,0,0,0,0
-new subtable "1,1"
+new subtable "-1"
 object category "I_ARM_Plate_Body",1,0,0,0,0,0,0,0
 
-new treasuretable "UND_SeluneOutpost_Weapons"
+new treasuretable "UND_SeluneOutpost_Valuables"
 CanMerge 1
-new subtable "1,1"
+new subtable "-1"
 object category "I_ARM_Plate_Body",1,0,0,0,0,0,0,0

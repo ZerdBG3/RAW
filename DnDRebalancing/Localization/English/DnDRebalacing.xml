@@ -2,11 +2,13 @@
     <comment commentid="Passive Display Name" />
     <content contentuid="haf5c7044g93bcg4d69gbc0fgc1abc7d7b7ea" version="1">Sneak Attack</content><comment commentid="Sneak Attack" />
     <content contentuid="h61fa56b6g2b42g4d9cg965eg0654c2c6f233" version="1">Second-Story Work</content><comment commentid="Second-Story Work" />
+    <content contentuid="hf4143e78g3b92g433bgbef2g3bb6433a8f32" version="1">Searing Smite</content><comment commentid="Searing Smite" />
 
     <comment commentid="Passive Description" />
     <content contentuid="h01d9015egc084g4378g853agb9b3a787fa6d" version="1">Once per turn, you deal extra [1] when you attack with advantage or target someone with one of your allies nearby.</content><comment commentid="Sneak Attack" />
     <content contentuid="hfc0ecb86gc504g44f1g9d88g957905740457" version="1">You can use the Bonus Action granted by your Cunning Action to use Help.</content><comment commentid="Fast Hands" />
     <content contentuid="hd6a0c096gd133g4bc9ga518g80c70fd5d907" version="1">You've mastered the art of falling and gain resistance to Falling damage. Also, you now use your Dexterity to increase your Jumping distance.</content><comment commentid="Second-Story Work" />
+    <content contentuid="h66b9bd72g4983g4373g95cbge989152c813b" version="1">Your weapon flares with white-hot intensity. It deals an extra [1] and marks the target with Searing Smite.</content><comment commentid="Searing Smite" />
 
     <comment commentid="Projectile Display Name" />
     <content contentuid="h676b4edbgc925g4608gb58cge12813890fe4" version="1">Jump</content><comment commentid="Jump" />
@@ -45,6 +47,7 @@
     <content contentuid="hc3710865g4106g4f9fg93f0gc5e2c0f950d9" version="1">Hit Dice (All)</content><comment commentid="Hit Dice Max" />
     <content contentuid="hd7046718g6e1ag4867g9e30g6900297f0d58" version="1">Short Rest</content><comment commentid="Short Rest" />
     <content contentuid="hbd0dde92g9845g4382ga349g00b37c950f86" version="1">Dodge</content><comment commentid="Dodge" />
+    <content contentuid="h7dc1d907gd5e6g4947gb22cgbd53b0665475" version="1">Searing Smite</content><comment commentid="Searing Smite Initial" />
 
     <comment commentid="Status Boost Description" />
     <content contentuid="h3d6724a5gd115g401agb296ga7ed52f6120b" version="1">You haven't spent any Hit Dice. You can spend up to [1] Hit Dice</content><comment commentid="Hit Dice 0" />
@@ -56,6 +59,7 @@
     <content contentuid="h2f4288c1g1e4fg4852g80e1g09db0b94bb3d" version="1">During a Short Rest, a character can spend Hit Dice to regain HP</content><comment commentid="Short Rest" />
     <content contentuid="h910d365egd00ag49abg853agfeec0d6e5137" version="1">Attack rolls made against you has disadvantage, and you make Dexterity saving throws with advantage</content><comment commentid="Dodge" />
     <content contentuid="h599e295bg2b58g419fga2b7gba12247ecaeb" version="1">Gained temporary hit points. Lasts until Short Resting.</content><comment commentid="False Life" />
+    <content contentuid="h893dd1e5gd3e5g41dcg9940g36e09791d185" version="1">Your weapon flares with white-hot intensity. Your next attack deals an extra [1] and marks the target with Searing Smite.</content><comment commentid="Searing Smite Initial" />
 
     <comment commentid="Status Polymorphed Display Name" />
     <content contentuid="hd3eaf8fbg50f0g4076g8a63gaf6ab15e8dfc" version="1">Wild Shape: Brown Bear</content><comment commentid="Wild Shape Brown Bear" />
