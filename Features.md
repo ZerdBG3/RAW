@@ -18,7 +18,7 @@
 ## Actions
 * Hide and Shove are actions (from bonus actions)
 * Introduces Disengage, Dodge and Shove (to Prone) as actions to player characters (single spell container)
-* Jump only costs Movement, but can't be used while Threatened (Flanked), unless the character Disengages first. Can only be used one per turn.
+* Jump only costs Movement, but can't be used while Threatened (Flanked), unless the character Disengages first. Can only be used once per turn.
 * Shove's push range is reduced to `1.5 m` (from `4 m`)
 * Help stabilizes the target (Medicine `DC 10`), and the stabilized character is healed once out of combat
 
