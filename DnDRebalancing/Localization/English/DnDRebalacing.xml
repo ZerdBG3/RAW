@@ -5,38 +5,35 @@
     <content contentuid="hf4143e78g3b92g433bgbef2g3bb6433a8f32" version="1">Searing Smite</content><comment commentid="Searing Smite" />
 
     <comment commentid="Passive Description" />
-    <content contentuid="h01d9015egc084g4378g853agb9b3a787fa6d" version="1">Once per turn, you deal extra [1] when you attack with advantage or target someone with one of your allies nearby.</content><comment commentid="Sneak Attack" />
+    <content contentuid="h01d9015egc084g4378g853agb9b3a787fa6d" version="1">Once per turn, you deal extra [1] when you attack with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; or target someone with one of your allies nearby.</content><comment commentid="Sneak Attack" />
     <content contentuid="hfc0ecb86gc504g44f1g9d88g957905740457" version="1">You can use the Bonus Action granted by your Cunning Action to use Help.</content><comment commentid="Fast Hands" />
-    <content contentuid="hd6a0c096gd133g4bc9ga518g80c70fd5d907" version="1">You've mastered the art of falling and gain resistance to Falling damage. Also, you now use your Dexterity to increase your Jumping distance.</content><comment commentid="Second-Story Work" />
+    <content contentuid="hd6a0c096gd133g4bc9ga518g80c70fd5d907" version="1">You've mastered the art of falling and gain resistance to Falling damage. Also, you now use your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; to increase your Jumping distance.</content><comment commentid="Second-Story Work" />
     <content contentuid="h66b9bd72g4983g4373g95cbge989152c813b" version="1">Your weapon flares with white-hot intensity. It deals an extra [1] and marks the target with Searing Smite.</content><comment commentid="Searing Smite" />
 
     <comment commentid="Projectile Display Name" />
-    <content contentuid="h676b4edbgc925g4608gb58cge12813890fe4" version="1">Jump</content><comment commentid="Jump" />
     <content contentuid="h4c76db83gcc4eg438ag9d00ge9b156dd1bbe" version="1">Jump (Thief)</content><comment commentid="Jump Thief" />
     <content contentuid="he7373ea1ge596g4f74gbbd1g5763f2e77273" version="1">Produce Flame: Hurl (Free)</content><comment commentid="Produce Flame Hurl Free" />
 
     <comment commentid="Projectile Description" />
-    <content contentuid="hbfd4109eg7663g4815gb3c9g4a286074c997" version="1">Distance depends on your Strength modifier. You can't jump with enemies nearby.</content><comment commentid="Jump" />
-    <content contentuid="hc25fd2e1g6a3cg4c99g8690gcf48eabe53a1" version="1">Distance depends on your Dexterity modifier. You can't jump with enemies nearby.</content><comment commentid="Jump Thief" />
+    <content contentuid="hc25fd2e1g6a3cg4c99g8690gcf48eabe53a1" version="3">Jump to a destination.
+
+Your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; affects how far you can jump.</content><comment commentid="Jump Thief" />
 
     <comment commentid="Shout Display Name" />
     <content contentuid="haf813ecag5ad0g464cg8749g68d9ebd9b71d" version="1">End Short Rest</content><comment commentid="End Short Rest" />
     <content contentuid="h21c0e046g33a8g4af3gb59agfe09c2000b16" version="1">DnD Actions</content><comment commentid="DnD Actions" />
-    <content contentuid="h47e7aac6ge394g49fcgacc5g092449e58680" version="1">Disengage</content><comment commentid="Disengage" />
     <content contentuid="h6c541127gda12g4b7cgbfdbg37c49ac85aba" version="1">Dodge</content><comment commentid="Dodge" />
     <content contentuid="h5d311bfdg3b88g4a78gb8fcgbb8645c6a5f7" version="1">Cunning Action</content><comment commentid="Cunning Action" />
-    <content contentuid="ha0d96948g0a9bg4dfbg818agd0a4af17db3c" version="1">Cunning Action: Disengage</content><comment commentid="Disengage Cunning Action" />
     <content contentuid="h0611af1fg455ag4511ga7e5g9768ccd017d8" version="1">Cunning Action: Hide</content><comment commentid="Hide Cunning Action" />
 
     <comment commentid="Shout Description" />
     <content contentuid="h276bd4b5g1c97g4768ga645gf0d414ba9f06" version="1">Spend 1 Hit Dice to regain [1].</content><comment commentid="Regain HP" />
-    <content contentuid="h1aff6b78gc632g459cgbb15g9c17e56b611a" version="1">Ends the short rest for you and your party members around you.</content><comment commentid="Short Rest" />
+    <content contentuid="h1aff6b78gc632g459cgbb15g9c17e56b611a" version="1">Ends the &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt; for you and your party members around you.</content><comment commentid="Short Rest" />
     <content contentuid="hbfe16dc5gc532g4470gb744g4f16267776f0" version="1">A selection of common actions players can take.</content><comment commentid="DnD Actions" />
-    <content contentuid="haaef2a88g292fg4a43g865egab53d6031805" version="1">Your movement doesn't provoke opportunity attacks.</content><comment commentid="Disengage" />
-    <content contentuid="h43261ff4gfee1g42f4g9bb3gc6120976fe3d" version="1">Until the start of your next turn, any attack roll made against you has disadvantage, and you make Dexterity saving throws with advantage. You lose this benefit if you are incapacitated or if your speed drops to 0.</content><comment commentid="Dodge" />
+    <content contentuid="h43261ff4gfee1g42f4g9bb3gc6120976fe3d" version="1">Until the start of your next turn, any &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; made against you has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;, and you make Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;. You lose this benefit if you are incapacitated or if your speed drops to 0.</content><comment commentid="Dodge" />
     <content contentuid="he7d837b8g404fg4dbdg85c2g9d69c019d63d" version="1">You can use your Bonus Action to Dash, Disengage or Hide.</content><comment commentid="Cunning Action" />
     <content contentuid="h21e470adgd2e5g4641gbbd5g5cfd6f4c8685" version="1">Take the shape of a brown bear with high HP.</content><comment commentid="Bear Wild Shape" />
-    <content contentuid="hd15cadd1g5891g4287gbde0gf4c73445a69d" version="1">Bolster yourself with a necromantic facsimile of life to gain [1] temporary hit points until you take a Short Rest.</content><comment commentid="False Life" />
+    <content contentuid="hd15cadd1g5891g4287gbde0gf4c73445a69d" version="1">Bolster yourself with a necromantic facsimile of life to gain [1] temporary hit points until you take a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content><comment commentid="False Life" />
 
     <comment commentid="Status Boost Display Name" />
     <content contentuid="h50a9a6d6g789ag4718g8c65g4c0a3a077353" version="1">Hit Dice (0)</content><comment commentid="Hit Dice 0" />
@@ -52,14 +49,19 @@
     <comment commentid="Status Boost Description" />
     <content contentuid="h3d6724a5gd115g401agb296ga7ed52f6120b" version="1">You haven't spent any Hit Dice. You can spend up to [1] Hit Dice</content><comment commentid="Hit Dice 0" />
     <content contentuid="h98031fe4g347dg476cgb35eg175b31b18443" version="1">You have spent 1 Hit Die. You can spend up to [1] Hit Dice</content><comment commentid="Hit Dice 1" />
-    <content contentuid="h28ba6624g48d3g4b8ega5b0g757530ac6e8e" version="1">You have spent 2 Hit Die. You can spend up to [1] Hit Dice</content><comment commentid="Hit Dice 2" />
-    <content contentuid="hfdb7ec72g621dg4b92gbd34g51a37e5fd478" version="1">You have spent 3 Hit Die. You can spend up to [1] Hit Dice</content><comment commentid="Hit Dice 3" />
-    <content contentuid="h61b20598ge011g433ag9cc2gddadc3fe3bec" version="1">You have spent 4 Hit Die. You can spend up to [1] Hit Dice</content><comment commentid="Hit Dice 4" />
+    <content contentuid="h28ba6624g48d3g4b8ega5b0g757530ac6e8e" version="1">You have spent 2 Hit Dice. You can spend up to [1] Hit Dice</content><comment commentid="Hit Dice 2" />
+    <content contentuid="hfdb7ec72g621dg4b92gbd34g51a37e5fd478" version="1">You have spent 3 Hit Dice. You can spend up to [1] Hit Dice</content><comment commentid="Hit Dice 3" />
+    <content contentuid="h61b20598ge011g433ag9cc2gddadc3fe3bec" version="1">You have spent 4 Hit Dice. You can spend up to [1] Hit Dice</content><comment commentid="Hit Dice 4" />
     <content contentuid="h8d2d015eg2d7ag422cgb563gcc1c6486ade8" version="1">You have spent all of your Hit Dice ([1])</content><comment commentid="Hit Dice Max" />
-    <content contentuid="h2f4288c1g1e4fg4852g80e1g09db0b94bb3d" version="1">During a Short Rest, a character can spend Hit Dice to regain HP</content><comment commentid="Short Rest" />
-    <content contentuid="h910d365egd00ag49abg853agfeec0d6e5137" version="1">Attack rolls made against you has disadvantage, and you make Dexterity saving throws with advantage</content><comment commentid="Dodge" />
-    <content contentuid="h599e295bg2b58g419fga2b7gba12247ecaeb" version="1">Gained temporary hit points. Lasts until Short Resting.</content><comment commentid="False Life" />
+    <content contentuid="h2f4288c1g1e4fg4852g80e1g09db0b94bb3d" version="1">Taking a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content><comment commentid="Short Rest" />
+    <content contentuid="h910d365egd00ag49abg853agfeec0d6e5137" version="1">&lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; made against you has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;, and you make Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;</content><comment commentid="Dodge" />
+    <content contentuid="h599e295bg2b58g419fga2b7gba12247ecaeb" version="1">Gained &lt;LSTag Tooltip="TemporaryHitPoints"&gt;Temporary Hit Points&lt;/LSTag&gt;. Lasts until &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content><comment commentid="False Life" />
     <content contentuid="h893dd1e5gd3e5g41dcg9940g36e09791d185" version="1">Your weapon flares with white-hot intensity. Your next attack deals an extra [1] and marks the target with Searing Smite.</content><comment commentid="Searing Smite Initial" />
+
+    <comment commentid="Status Downed Description" />
+    <content contentuid="h82d41284g4437g4202g859cgb7470b39bc22" version="3">You are Unconscious and must make Death Saving Throws. On 3 successes, you recover. On 3 failures, you die.
+
+If you regain any Hit Points, lose Downed. If an ally Helps you and succeeds on their &lt;LSTag Tooltip="Medicine"&gt;Medicine&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt;, you become stabilised and regain 1 &lt;LSTag Tooltip="HitPoints"&gt;Hit Point&lt;/LSTag&gt; when Out of Combat.</content><comment commentid="Downed" />
 
     <comment commentid="Status Polymorphed Display Name" />
     <content contentuid="hd3eaf8fbg50f0g4076g8a63gaf6ab15e8dfc" version="1">Wild Shape: Brown Bear</content><comment commentid="Wild Shape Brown Bear" />
@@ -72,9 +74,11 @@
     <content contentuid="h8cd12a69g8980g4a55g8737g3f6183de78c1" version="1">Shove a target to knock it prone. Shoving unsuspecting targets always succeeds.</content><comment commentid="Shove Prone" />
     <content contentuid="h76afdb93gdd39g4cfdg9121g03081409865e" version="1">Conjure ten magical berries for yourself or a companion. Creatures who eat a berry regain [1] and are provided with enough nourishment for the rest of the day.</content><comment commentid="Goodberry" />
     <content contentuid="h418e3086g1f94g47e5g9d8ag712fd92aa4c0" version="1">Burrow into the ground and emerge at the target position.</content><comment commentid="Giant Badger Burrow" />
-    <content contentuid="h32d73faeg184cg419bg8fb6gdd67958d7817" version="1">Stabilizes an ally if they're downed. Removes Prone, Sleep, Enwebbed, Entangled, and Ensnared.</content><comment commentid="Help" />
+    <content contentuid="h32d73faeg184cg419bg8fb6gdd67958d7817" version="1">Help an incapacitated target.
+
+Makes a &lt;LSTag Tooltip="Medicine"&gt;Medicine&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; to stabilise a &lt;LSTag Tooltip="Downed"&gt;Downed&lt;/LSTag&gt; character. Removes Ensnared, Entangled, Enwebbed, Prone, and Sleeping.</content><comment commentid="Help" />
 
     <comment commentid="Progression Description" />
     <content contentuid="h2e3ab9b3g7c96g4274gbb27g66c15be10707" version="1">You can use the Bonus Action granted by your Cunning Action to use Help.</content><comment commentid="Fast Hands" />
-    <content contentuid="hc7499bffg5070g4107g9e4bg6a62a9d4fa8a" version="1">You've mastered the art of falling and gain resistance to Falling damage. Also, you now use your Dexterity to increase your Jumping distance.</content><comment commentid="Second-Story Work" />
+    <content contentuid="hc7499bffg5070g4107g9e4bg6a62a9d4fa8a" version="1">You've mastered the art of falling and gain resistance to Falling damage. Also, you now use your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; to increase your Jumping distance.</content><comment commentid="Second-Story Work" />
 </contentList>
