@@ -27,13 +27,6 @@
 				</node>
 				<node id="TranslatedStringKey">
 					<attribute id="Speaker" type="FixedString" value="" />
-					<attribute id="UUID" type="FixedString" value="Shout_Disengage_Description" />
-					<attribute id="ExtraData" type="LSString" value="" />
-					<attribute id="Content" type="TranslatedString" handle="haaef2a88g292fg4a43g865egab53d6031805" version="1" />
-					<attribute id="Stub" type="bool" value="True" />
-				</node>
-				<node id="TranslatedStringKey">
-					<attribute id="Speaker" type="FixedString" value="" />
 					<attribute id="UUID" type="FixedString" value="Shout_Dodge_Description" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Content" type="TranslatedString" handle="h43261ff4gfee1g42f4g9bb3gc6120976fe3d" version="1" />

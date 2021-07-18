@@ -20,13 +20,6 @@
 				</node>
 				<node id="TranslatedStringKey">
 					<attribute id="Speaker" type="FixedString" value="" />
-					<attribute id="UUID" type="FixedString" value="Shout_Disengage_DisplayName" />
-					<attribute id="ExtraData" type="LSString" value="" />
-					<attribute id="Content" type="TranslatedString" handle="h47e7aac6ge394g49fcgacc5g092449e58680" version="1" />
-					<attribute id="Stub" type="bool" value="True" />
-				</node>
-				<node id="TranslatedStringKey">
-					<attribute id="Speaker" type="FixedString" value="" />
 					<attribute id="UUID" type="FixedString" value="Shout_Dodge_DisplayName" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Content" type="TranslatedString" handle="h6c541127gda12g4b7cgbfdbg37c49ac85aba" version="1" />
@@ -37,13 +30,6 @@
 					<attribute id="UUID" type="FixedString" value="Shout_CunningAction_DisplayName" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Content" type="TranslatedString" handle="h5d311bfdg3b88g4a78gb8fcgbb8645c6a5f7" version="1" />
-					<attribute id="Stub" type="bool" value="True" />
-				</node>
-				<node id="TranslatedStringKey">
-					<attribute id="Speaker" type="FixedString" value="" />
-					<attribute id="UUID" type="FixedString" value="Shout_Disengage_CunningAction_DisplayName" />
-					<attribute id="ExtraData" type="LSString" value="" />
-					<attribute id="Content" type="TranslatedString" handle="ha0d96948g0a9bg4dfbg818agd0a4af17db3c" version="1" />
 					<attribute id="Stub" type="bool" value="True" />
 				</node>
 				<node id="TranslatedStringKey">
