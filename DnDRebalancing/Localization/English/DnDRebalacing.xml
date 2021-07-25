@@ -59,7 +59,7 @@ Your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; affects how far yo
     <content contentuid="h893dd1e5gd3e5g41dcg9940g36e09791d185" version="1">Your weapon flares with white-hot intensity. Your next attack deals an extra [1] and marks the target with Searing Smite.</content><comment commentid="Searing Smite Initial" />
 
     <comment commentid="Status Downed Description" />
-    <content contentuid="h82d41284g4437g4202g859cgb7470b39bc22" version="3">You are Unconscious and must make Death Saving Throws. On 3 successes, you recover. On 3 failures, you die.
+    <content contentuid="h788b3d9dgb19cg43adg8d49gdb0f922e7400" version="1">You are Unconscious and must make Death Saving Throws. On 3 successes, you recover. On 3 failures, you die.
 
 If you regain any Hit Points, lose Downed. If an ally Helps you and succeeds on their &lt;LSTag Tooltip="Medicine"&gt;Medicine&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt;, you become stabilised and regain 1 &lt;LSTag Tooltip="HitPoints"&gt;Hit Point&lt;/LSTag&gt; when Out of Combat.</content><comment commentid="Downed" />
 
