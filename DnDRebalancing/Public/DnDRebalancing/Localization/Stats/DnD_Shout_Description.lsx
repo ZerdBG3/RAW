@@ -51,7 +51,21 @@
 					<attribute id="Speaker" type="FixedString" value="" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Stub" type="bool" value="True" />
-					<attribute id="Content" type="TranslatedString" handle="hd15cadd1g5891g4287gbde0gf4c73445a69d" version="6" />
+					<attribute id="Content" type="TranslatedString" handle="hd15cadd1g5891g4287gbde0gf4c73445a69d" version="1" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="UUID" type="FixedString" value="Shout_WildShape_Wolf_Description" />
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Stub" type="bool" value="True" />
+					<attribute id="Content" type="TranslatedString" handle="h668116e4g5e9ag412fgbe5ag00b8762f202b" version="1" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="UUID" type="FixedString" value="Shout_WildShape_Wolf_Dire_Description" />
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Stub" type="bool" value="True" />
+					<attribute id="Content" type="TranslatedString" handle="h573ca0f0geb06g440cgb526gbcd88053850e" version="1" />
 				</node>
 			</children>
 		</node>

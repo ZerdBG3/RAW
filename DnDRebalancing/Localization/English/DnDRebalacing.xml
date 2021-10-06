@@ -25,6 +25,7 @@ Your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; affects how far yo
     <content contentuid="h6c541127gda12g4b7cgbfdbg37c49ac85aba" version="1">Dodge</content><comment commentid="Dodge" />
     <content contentuid="h5d311bfdg3b88g4a78gb8fcgbb8645c6a5f7" version="1">Cunning Action</content><comment commentid="Cunning Action" />
     <content contentuid="h0611af1fg455ag4511ga7e5g9768ccd017d8" version="1">Cunning Action: Hide</content><comment commentid="Hide Cunning Action" />
+    <content contentuid="h9bc99999g85cbg48e8ga3e8g8490a8f24483" version="1">Wild Shape: Dire Wolf</content><comment commentid="Wild Shape Dire Wolf" />
 
     <comment commentid="Shout Description" />
     <content contentuid="h276bd4b5g1c97g4768ga645gf0d414ba9f06" version="1">Spend 1 Hit Dice to regain [1].</content><comment commentid="Regain HP" />
@@ -34,6 +35,8 @@ Your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; affects how far yo
     <content contentuid="he7d837b8g404fg4dbdg85c2g9d69c019d63d" version="1">You can use your Bonus Action to Dash, Disengage or Hide.</content><comment commentid="Cunning Action" />
     <content contentuid="h21e470adgd2e5g4641gbbd5g5cfd6f4c8685" version="1">Take the shape of a brown bear with high HP.</content><comment commentid="Bear Wild Shape" />
     <content contentuid="hd15cadd1g5891g4287gbde0gf4c73445a69d" version="1">Bolster yourself with a necromantic facsimile of life to gain [1] temporary hit points until you take a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content><comment commentid="False Life" />
+    <content contentuid="h668116e4g5e9ag412fgbe5ag00b8762f202b" version="1">Take the shape of a wolf that can use its allies for advantageous attacks and leave its enemies vulnerable.</content><comment commentid="Wild Shape Wolf" />
+    <content contentuid="h573ca0f0geb06g440cgb526gbcd88053850e" version="1">Take the shape of a dire wolf that can use its allies for advantageous attacks and leave its enemies vulnerable.</content><comment commentid="Wild Shape Dire Wolf" />
 
     <comment commentid="Status Boost Display Name" />
     <content contentuid="h50a9a6d6g789ag4718g8c65g4c0a3a077353" version="1">Hit Dice (0)</content><comment commentid="Hit Dice 0" />
