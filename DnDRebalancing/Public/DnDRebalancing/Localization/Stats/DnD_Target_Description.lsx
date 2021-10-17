@@ -4,30 +4,30 @@
 	<region id="TranslatedStringKeys">
 		<node id="root">
 			<children>
-                <node id="TranslatedStringKey">
+				<node id="TranslatedStringKey">
 					<attribute id="Speaker" type="FixedString" value="" />
-					<attribute id="UUID" type="FixedString" value="Target_Shove_Prone_Description" />
+					<attribute id="UUID" type="FixedString" value="DnD_Target_Shove_Prone_Description" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Content" type="TranslatedString" handle="h8cd12a69g8980g4a55g8737g3f6183de78c1" version="1" />
 					<attribute id="Stub" type="bool" value="True" />
 				</node>
 				<node id="TranslatedStringKey">
 					<attribute id="Speaker" type="FixedString" value="" />
-					<attribute id="UUID" type="FixedString" value="Target_Goodberry_Description" />
+					<attribute id="UUID" type="FixedString" value="Shared_Target_Goodberry_Description" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Content" type="TranslatedString" handle="h76afdb93gdd39g4cfdg9121g03081409865e" version="1" />
 					<attribute id="Stub" type="bool" value="True" />
 				</node>
 				<node id="TranslatedStringKey">
 					<attribute id="Speaker" type="FixedString" value="" />
-					<attribute id="UUID" type="FixedString" value="Target_Burrow_GiantBadger_Description" />
+					<attribute id="UUID" type="FixedString" value="Shared_Target_Burrow_GiantBadger_Description" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Content" type="TranslatedString" handle="h418e3086g1f94g47e5g9d8ag712fd92aa4c0" version="1" />
 					<attribute id="Stub" type="bool" value="True" />
 				</node>
 				<node id="TranslatedStringKey">
 					<attribute id="Speaker" type="FixedString" value="" />
-					<attribute id="UUID" type="FixedString" value="Target_Help_Description" />
+					<attribute id="UUID" type="FixedString" value="Shared_Target_Help_Description" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Content" type="TranslatedString" handle="h32d73faeg184cg419bg8fb6gdd67958d7817" version="1" />
 					<attribute id="Stub" type="bool" value="True" />

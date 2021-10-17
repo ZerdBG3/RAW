@@ -25,6 +25,7 @@ Your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; affects how far yo
     <content contentuid="h6c541127gda12g4b7cgbfdbg37c49ac85aba" version="1">Dodge</content><comment commentid="Dodge" />
     <content contentuid="h5d311bfdg3b88g4a78gb8fcgbb8645c6a5f7" version="1">Cunning Action</content><comment commentid="Cunning Action" />
     <content contentuid="h0611af1fg455ag4511ga7e5g9768ccd017d8" version="1">Cunning Action: Hide</content><comment commentid="Hide Cunning Action" />
+    <content contentuid="h6b04ef7fg75dfg45b5g8a2ag2d1222e96a59" version="1">Wild Shape: Wolf</content><comment commentid="Wild Shape Wolf" />
     <content contentuid="h9bc99999g85cbg48e8ga3e8g8490a8f24483" version="1">Wild Shape: Dire Wolf</content><comment commentid="Wild Shape Dire Wolf" />
 
     <comment commentid="Shout Description" />
@@ -34,9 +35,9 @@ Your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; affects how far yo
     <content contentuid="h43261ff4gfee1g42f4g9bb3gc6120976fe3d" version="1">Until the start of your next turn, any &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; made against you has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;, and you make Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;. You lose this benefit if you are incapacitated or if your speed drops to 0.</content><comment commentid="Dodge" />
     <content contentuid="he7d837b8g404fg4dbdg85c2g9d69c019d63d" version="1">You can use your Bonus Action to Dash, Disengage or Hide.</content><comment commentid="Cunning Action" />
     <content contentuid="h21e470adgd2e5g4641gbbd5g5cfd6f4c8685" version="1">Take the shape of a brown bear with high HP.</content><comment commentid="Bear Wild Shape" />
-    <content contentuid="hd15cadd1g5891g4287gbde0gf4c73445a69d" version="1">Bolster yourself with a necromantic facsimile of life to gain [1] temporary hit points until you take a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content><comment commentid="False Life" />
     <content contentuid="h668116e4g5e9ag412fgbe5ag00b8762f202b" version="1">Take the shape of a wolf that can use its allies for advantageous attacks and leave its enemies vulnerable.</content><comment commentid="Wild Shape Wolf" />
     <content contentuid="h573ca0f0geb06g440cgb526gbcd88053850e" version="1">Take the shape of a dire wolf that can use its allies for advantageous attacks and leave its enemies vulnerable.</content><comment commentid="Wild Shape Dire Wolf" />
+    <content contentuid="hd15cadd1g5891g4287gbde0gf4c73445a69d" version="1">Bolster yourself with a necromantic facsimile of life to gain [1] temporary hit points until you take a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content><comment commentid="False Life" />
 
     <comment commentid="Status Boost Display Name" />
     <content contentuid="h50a9a6d6g789ag4718g8c65g4c0a3a077353" version="1">Hit Dice (0)</content><comment commentid="Hit Dice 0" />
@@ -62,12 +63,16 @@ Your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; affects how far yo
     <content contentuid="h893dd1e5gd3e5g41dcg9940g36e09791d185" version="1">Your weapon flares with white-hot intensity. Your next attack deals an extra [1] and marks the target with Searing Smite.</content><comment commentid="Searing Smite Initial" />
 
     <comment commentid="Status Downed Description" />
-    <content contentuid="h788b3d9dgb19cg43adg8d49gdb0f922e7400" version="1">You are Unconscious and must make Death Saving Throws. On 3 successes, you recover. On 3 failures, you die.
+    <content contentuid="h788b3d9dgb19cg43adg8d49gdb0f922e7400" version="1">You are Unconscious and must make Death Saving Throws. On 3 successes, you stop bleeding out and become Stable. On 3 failures, you die.
 
 If you regain any Hit Points, lose Downed. If an ally Helps you and succeeds on their &lt;LSTag Tooltip="Medicine"&gt;Medicine&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt;, you become stabilised and regain 1 &lt;LSTag Tooltip="HitPoints"&gt;Hit Point&lt;/LSTag&gt; when Out of Combat.</content><comment commentid="Downed" />
 
+    <comment commentid="Status Knocked Downed Description" />
+    <content contentuid="hf9fcc402g8592g454cga793g52f04804a411" version="1">Can't move or act. Attacks against a Prone creature have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; if they're made within [1] of the creature, otherwise they have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;A Prone creature must spend half its &lt;LSTag Tooltip="MovementSpeed"&gt;Movement Speed&lt;/LSTag&gt; to stand up.</content>
+
     <comment commentid="Status Polymorphed Display Name" />
     <content contentuid="hd3eaf8fbg50f0g4076g8a63gaf6ab15e8dfc" version="1">Wild Shape: Brown Bear</content><comment commentid="Wild Shape Brown Bear" />
+    <content contentuid="h8a5e4725g2a13g4ed9ga9e9gfe4e3531a61e" version="1">Wild Shape: Wolf</content><comment commentid="Wild Shape Wolf" />
 
     <comment commentid="Target Display Name" />
     <content contentuid="hb461d04cg1cfbg4ba1g83a2g5bd1421d1a20" version="1">Shove (Prone)</content><comment commentid="Shove Prone" />
@@ -75,11 +80,17 @@ If you regain any Hit Points, lose Downed. If an ally Helps you and succeeds on 
 
     <comment commentid="Target Description" />
     <content contentuid="h8cd12a69g8980g4a55g8737g3f6183de78c1" version="1">Shove a target to knock it prone. Shoving unsuspecting targets always succeeds.</content><comment commentid="Shove Prone" />
-    <content contentuid="h76afdb93gdd39g4cfdg9121g03081409865e" version="1">Conjure ten magical berries for yourself or a companion. Creatures who eat a berry regain [1] and are provided with enough nourishment for the rest of the day.</content><comment commentid="Goodberry" />
+    <content contentuid="h76afdb93gdd39g4cfdg9121g03081409865e" version="1">Conjure ten magical berries for yourself or a companion. Creatures who eat a berry regain [1].</content><comment commentid="Goodberry" />
     <content contentuid="h418e3086g1f94g47e5g9d8ag712fd92aa4c0" version="1">Burrow into the ground and emerge at the target position.</content><comment commentid="Giant Badger Burrow" />
-    <content contentuid="h32d73faeg184cg419bg8fb6gdd67958d7817" version="1">Help an incapacitated target.
+    <content contentuid="h32d73faeg184cg419bg8fb6gdd67958d7817" version="1">Help an ally in need.
 
-Makes a &lt;LSTag Tooltip="Medicine"&gt;Medicine&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; to stabilise a &lt;LSTag Tooltip="Downed"&gt;Downed&lt;/LSTag&gt; character. Removes Ensnared, Entangled, Enwebbed, Prone, and Sleeping.</content><comment commentid="Help" />
+Makes a &lt;LSTag Tooltip="Medicine"&gt;Medicine&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; to stabilise a &lt;LSTag Tooltip="Downed"&gt;Downed&lt;/LSTag&gt; character. Removes Burning, Ensnared, Entangled, Enwebbed, Prone, and Sleeping.</content><comment commentid="Help" />
+
+    <comment commentid="Action Resource Definitions Display Name" />
+    <content contentuid="h0006ac15g5189g4586gb0b0ge45030db2100" version="1">Sneak Attack</content><comment commentid="Sneak Attack" />
+
+    <comment commentid="Action Resource Definitions Description" />
+    <content contentuid="h3fbcf170g59d8g4b15ga88bgd5bd3461012d" version="1">Allows the usage of the Sneak Attack Passive</content><comment commentid="Sneak Attack" />
 
     <comment commentid="Progression Description" />
     <content contentuid="h2e3ab9b3g7c96g4274gbb27g66c15be10707" version="1">You can use the Bonus Action granted by your Cunning Action to use Help.</content><comment commentid="Fast Hands" />

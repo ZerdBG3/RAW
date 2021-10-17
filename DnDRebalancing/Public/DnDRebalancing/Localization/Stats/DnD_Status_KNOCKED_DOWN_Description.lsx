@@ -6,8 +6,8 @@
 			<children>
 				<node id="TranslatedStringKey">
 					<attribute id="Stub" type="bool" value="True" />
-					<attribute id="Content" type="TranslatedString" handle="h788b3d9dgb19cg43adg8d49gdb0f922e7400" version="1" />
-					<attribute id="UUID" type="FixedString" value="Shared_Status_DOWNED_DOWNED_Description" />
+					<attribute id="Content" type="TranslatedString" handle="hf9fcc402g8592g454cga793g52f04804a411" version="1" />
+					<attribute id="UUID" type="FixedString" value="Shared_Status_KNOCKED_DOWN_PRONE_Description" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Speaker" type="FixedString" value="" />
 				</node>

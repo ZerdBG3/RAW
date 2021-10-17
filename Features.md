@@ -4,7 +4,9 @@
 * Druid:
   - Level 2: Wild Shape dismissal costs a bonus action
   - Level 2: Wild Shape Giant Badger changes to attacks and movements
+  - Level 2 (Circle of the Land): Replaces Dire Wolf with Wolf for Circle of the Land Druids
   - Level 2 (Circle of the Moon): Polar Bear is replaced with Brown Bear, visual and stat wise
+  - Level 2 (Circle of the Moon): Changed stats of Dire Wolf to match Monster's Manual stats
 * Ranger:
   - Level 1: Hunter's Mark counts as a separate damage entry and can critically strike
   - Level 3 (Hunter): Colossus Slayer correctly deals bonus damage on offhand attacks
@@ -20,7 +22,6 @@
 * Hide and Shove are actions (from bonus actions)
 * Introduces Dodge and Shove (to Prone) as actions to player characters (single spell container)
 * Removes Bonus Action Cost from Jump, but can only be used once per turn
-* Shove's push range is reduced to `1.5 m` (from `4 m`)
 * Help stabilises the target (Medicine `DC 10`), and the stabilised character is healed once out of combat
 
 ## Spells
@@ -47,6 +48,3 @@
 ## Two-Weapon Fighting
 * Removes the automatic offhand bonus attack option when Dual Wielding (This removes Dual Wielding AoO as well)
 * The Offhand Attack is only available after attacking with the main hand weapon while Dual Wielding (or when outside of Combat)
-* Vanilla offhand attacks don't add your ability modifier to the attack roll, so I've implemented a partial fix:
-  - The attack roll uses the main hand weapon, assuming most of the times, both weapons will have similar properties (finesse being the most important)
-  - The downside is that if the main hand weapon is magic, the bonus on attack roll will pass to the offhand attack as well

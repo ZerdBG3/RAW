@@ -4,50 +4,50 @@
 	<region id="TranslatedStringKeys">
 		<node id="root">
 			<children>
-                <node id="TranslatedStringKey">
+				<node id="TranslatedStringKey">
 					<attribute id="Speaker" type="FixedString" value="" />
-					<attribute id="UUID" type="FixedString" value="Shout_EndShortRest_DisplayName" />
+					<attribute id="UUID" type="FixedString" value="DnD_Shout_EndShortRest_DisplayName" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Content" type="TranslatedString" handle="haf813ecag5ad0g464cg8749g68d9ebd9b71d" version="1" />
 					<attribute id="Stub" type="bool" value="True" />
 				</node>
 				<node id="TranslatedStringKey">
 					<attribute id="Speaker" type="FixedString" value="" />
-					<attribute id="UUID" type="FixedString" value="Shout_DnD_Actions_DisplayName" />
+					<attribute id="UUID" type="FixedString" value="DnD_Shout_DnD_Actions_DisplayName" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Content" type="TranslatedString" handle="h21c0e046g33a8g4af3gb59agfe09c2000b16" version="1" />
 					<attribute id="Stub" type="bool" value="True" />
 				</node>
 				<node id="TranslatedStringKey">
 					<attribute id="Speaker" type="FixedString" value="" />
-					<attribute id="UUID" type="FixedString" value="Shout_Dodge_DisplayName" />
+					<attribute id="UUID" type="FixedString" value="DnD_Shout_Dodge_DisplayName" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Content" type="TranslatedString" handle="h6c541127gda12g4b7cgbfdbg37c49ac85aba" version="1" />
 					<attribute id="Stub" type="bool" value="True" />
 				</node>
 				<node id="TranslatedStringKey">
 					<attribute id="Speaker" type="FixedString" value="" />
-					<attribute id="UUID" type="FixedString" value="Shout_CunningAction_DisplayName" />
+					<attribute id="UUID" type="FixedString" value="DnD_Shout_CunningAction_DisplayName" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Content" type="TranslatedString" handle="h5d311bfdg3b88g4a78gb8fcgbb8645c6a5f7" version="1" />
 					<attribute id="Stub" type="bool" value="True" />
 				</node>
 				<node id="TranslatedStringKey">
 					<attribute id="Speaker" type="FixedString" value="" />
-					<attribute id="UUID" type="FixedString" value="Shout_Hide_CunningAction_DisplayName" />
+					<attribute id="UUID" type="FixedString" value="DnD_Shout_Hide_CunningAction_DisplayName" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Content" type="TranslatedString" handle="h0611af1fg455ag4511ga7e5g9768ccd017d8" version="1" />
 					<attribute id="Stub" type="bool" value="True" />
 				</node>
 				<node id="TranslatedStringKey">
-					<attribute id="UUID" type="FixedString" value="Shout_WildShape_Wolf_DisplayName" />
+					<attribute id="UUID" type="FixedString" value="DnD_Shout_WildShape_Wolf_DisplayName" />
 					<attribute id="Speaker" type="FixedString" value="" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Stub" type="bool" value="True" />
-					<attribute id="Content" type="TranslatedString" handle="h90c01d74gf156g4626ga8cag30c6f8d775e3" version="1" />
+					<attribute id="Content" type="TranslatedString" handle="h6b04ef7fg75dfg45b5g8a2ag2d1222e96a59" version="1" />
 				</node>
 				<node id="TranslatedStringKey">
-					<attribute id="UUID" type="FixedString" value="Shout_WildShape_Wolf_Dire_DisplayName" />
+					<attribute id="UUID" type="FixedString" value="Shared_Shout_WildShape_Wolf_Dire_DisplayName" />
 					<attribute id="Speaker" type="FixedString" value="" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Stub" type="bool" value="True" />
