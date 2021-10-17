@@ -5,12 +5,13 @@
         <node id="root">
             <children>
                 <node id="ActionResourceDefinition">
-                    <attribute id="Description" type="FixedString" value=""/>
+                    <attribute id="Description" type="FixedString" value="DnD_ActionResourceDefinitions_SneakAttack_Description"/>
                     <attribute id="DiceType" type="uint32" value="6"/>
-                    <attribute id="DisplayName" type="FixedString" value="Sneak Attack"/>
+                    <attribute id="DisplayName" type="FixedString" value="DnD_ActionResourceDefinitions_SneakAttack_DisplayName"/>
                     <attribute id="Error" type="FixedString" value="Sneak Attack Error"/>
                     <attribute id="IsSpellResource" type="bool" value="false"/>
                     <attribute id="MaxLevel" type="uint32" value="0"/>
+                    <attribute id="MaxValue" type="uint32" value="0"/>
                     <attribute id="Name" type="FixedString" value="SneakAttack"/>
                     <attribute id="PartyActionResource" type="bool" value="false"/>
                     <attribute id="ReplenishType" type="FixedString" value="Turn"/>

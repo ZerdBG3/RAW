@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<version major="4" minor="0" revision="5" build="300" />
+	<region id="TranslatedStringKeys">
+		<node id="root">
+			<children>
+				<node id="TranslatedStringKey">
+					<attribute id="Stub" type="bool" value="True" />
+					<attribute id="UUID" type="FixedString" value="DnD_ActionResourceDefinitions_SneakAttack_DisplayName" />
+					<attribute id="Content" type="TranslatedString" handle="h0006ac15g5189g4586gb0b0ge45030db2100" version="1" />
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="ExtraData" type="LSString" value="" />
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

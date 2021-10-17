@@ -6,14 +6,14 @@
 			<children>
 				<node id="TranslatedStringKey">
 					<attribute id="Speaker" type="FixedString" value="" />
-					<attribute id="UUID" type="FixedString" value="Projectile_Jump_Thief_DisplayName" />
+					<attribute id="UUID" type="FixedString" value="DnD_Projectile_Jump_Thief_DisplayName" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Content" type="TranslatedString" handle="h4c76db83gcc4eg438ag9d00ge9b156dd1bbe" version="1" />
 					<attribute id="Stub" type="bool" value="True" />
 				</node>
 				<node id="TranslatedStringKey">
 					<attribute id="Speaker" type="FixedString" value="" />
-					<attribute id="UUID" type="FixedString" value="Projectile_ProduceFlame_Hurl_Free_DisplayName" />
+					<attribute id="UUID" type="FixedString" value="DnD_Projectile_ProduceFlame_Hurl_Free_DisplayName" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Content" type="TranslatedString" handle="he7373ea1ge596g4f74gbbd1g5763f2e77273" version="1" />
 					<attribute id="Stub" type="bool" value="True" />
