@@ -5,8 +5,8 @@
   - Level 2: Wild Shape dismissal costs a bonus action
   - Level 2: Wild Shape Giant Badger changes to attacks and movements
   - Level 2 (Circle of the Land): Replaces Dire Wolf with Wolf for Circle of the Land Druids
-  - Level 2 (Circle of the Moon): Polar Bear is replaced with Brown Bear, visual and stat wise
   - Level 2 (Circle of the Moon): Changed stats of Dire Wolf to match Monster's Manual stats
+  - Level 2 (Circle of the Moon): Polar Bear is replaced with Brown Bear, visual and stat wise
 * Ranger:
   - Level 1: Hunter's Mark counts as a separate damage entry and can critically strike
   - Level 3 (Hunter): Colossus Slayer correctly deals bonus damage on offhand attacks
@@ -25,6 +25,7 @@
 * Help stabilises the target (Medicine `DC 10`), and the stabilised character is healed once out of combat
 
 ## Spells
+* Chromatic Orb deals `3d8` for all damage types, without surface creation
 * False Life provides `1d4+4 THP` instead of `7 THP` (plus `5` per spell slot above first) and ends with a Short Rest
 * Goodberry provides 10 berries, each healing `1 HP`
 * Hex and Hunter's Mark reapplication period end with a Short Rest

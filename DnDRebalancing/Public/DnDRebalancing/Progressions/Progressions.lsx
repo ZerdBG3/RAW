@@ -40,6 +40,18 @@
                         </node>
                     </children>
                 </node>
+                <node id="Progression">
+                    <attribute id="AllowImprovement" type="bool" value="false"/>
+                    <attribute id="Boosts" type="LSString" value=""/>
+                    <attribute id="Level" type="uint8" value="3"/>
+                    <attribute id="Name" type="LSString" value="Thief"/>
+                    <attribute id="PassivesAdded" type="LSString" value="FastHands;SecondStoryWork"/>
+                    <attribute id="PassivesRemoved" type="LSString" value=""/>
+                    <attribute id="ProgressionType" type="uint8" value="1"/>
+                    <attribute id="Selectors" type="LSString" value=""/>
+                    <attribute id="TableUUID" type="guid" value="f6acc595-46b4-4d96-b7d5-6f33366fc2de"/>
+                    <attribute id="UUID" type="guid" value="3f95146b-90bc-4064-b3e0-4e1e751cd08d"/>
+                </node>
             </children>
         </node>
     </region>
