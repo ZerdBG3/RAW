@@ -67,6 +67,13 @@
 					<attribute id="Content" type="TranslatedString" handle="h7dc1d907gd5e6g4947gb22cgbd53b0665475" version="1" />
 					<attribute id="Stub" type="bool" value="True" />
 				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="UUID" type="FixedString" value="Shared_Status_BOOST_DISTRACTED_DisplayName" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="h096216f2ge492g4bb9g9a3cgc88694a8a96b" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
 			</children>
 		</node>
 	</region>
