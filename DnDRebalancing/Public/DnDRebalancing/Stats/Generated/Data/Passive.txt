@@ -57,7 +57,7 @@ new entry "FastHands"
 type "PassiveData"
 data "DisplayName" "Shared_Passive_FastHands_DisplayName"
 data "Description" "Shared_Passive_FastHands_Description"
-data "Boosts" "UnlockSpell(Target_Help_CunningAction)"
+data "Boosts" "UnlockSpell(Target_Help_CunningAction);UnlockSpell(Target_Distract_CunningAction)"
 
 new entry "SecondStoryWork"
 type "PassiveData"

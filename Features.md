@@ -13,14 +13,14 @@
 * Rogue:
   - Level 1: Sneak Attack is a toggable passive which works on any weapon attack you hit in the turn (including offhand attacks), still obeying to the Sneak Attack rules
   - Level 2: Cunning Action gives Hide as a bonus action (in addition to Dash and Disengage)
-  - Level 3 (Thief): Fast Hands no longer provides an extra Bonus Action - instead, it gives Help as a possible Cunning Action (bonus action)
+  - Level 3 (Thief): Fast Hands no longer provides an extra Bonus Action - instead, it gives Help and Distract as possible Cunning Actions (bonus action)
   - Level 3 (Thief): Second-Story Work now replaces Jump for a Dexterity-based version
 * Wizard:
   - Level 1 (Abjuration School): Arcane Ward subsequent abjuration casts after the first of the day provides the correct `2*Spell Level THP`
 
 ## Actions
 * Hide and Shove are actions (from bonus actions)
-* Introduces Dodge and Shove (to Prone) as actions to player characters (single spell container)
+* Introduces Distract, Dodge and Shove (to Prone) as actions to player characters (single spell container)
 * Removes Bonus Action Cost from Jump, but can only be used once per turn
 * Help stabilises the target (Medicine `DC 10`), and the stabilised character is healed once out of combat
 
