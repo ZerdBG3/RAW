@@ -1,81 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <save>
-	<version major="3" minor="0" revision="0" build="0" />
+	<version major="4" minor="0" revision="6" build="5" />
 	<region id="Templates">
 		<node id="Templates">
 			<children>
 				<node id="GameObjects">
-					<attribute id="Archetype" type="22" value="melee_large" />
-					<attribute id="LevelName" type="22" value="" />
-					<attribute id="MapKey" type="22" value="493c59e3-0764-4b93-bb3c-355489153266" />
-					<attribute id="Name" type="23" value="" />
-					<attribute id="ParentTemplateId" type="22" value="c0397a46-1a13-4672-950a-f41956866e27" />
-					<attribute id="SpellSet" type="22" value="" />
-					<attribute id="Stats" type="22" value="Wolf_Wildshape" />
-					<attribute id="Type" type="22" value="character" />
-					<attribute id="_OriginalFileVersion_" type="32" value="144115196665791066" />
+					<attribute id="Archetype" type="FixedString" value="melee_large" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="493c59e3-0764-4b93-bb3c-355489153266" />
+					<attribute id="Name" type="LSString" value="" />
+					<attribute id="ParentTemplateId" type="FixedString" value="c0397a46-1a13-4672-950a-f41956866e27" />
+					<attribute id="SpellSet" type="FixedString" value="CommonSummonActions" />
+					<attribute id="Stats" type="FixedString" value="Wolf_Wildshape" />
+					<attribute id="Type" type="FixedString" value="character" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115200960757765" />
 					<children>
 						<node id="Bounds">
 							<children>
 								<node id="Bound">
-									<attribute id="Height" type="6" value="1.6" />
-									<attribute id="IsIgnoringScale" type="19" value="False" />
-									<attribute id="Max" type="12" value="0.493393 1.63551 1.88476" />
-									<attribute id="Min" type="12" value="-0.49826 -0.00381052 -1.49049" />
-									<attribute id="Radius" type="6" value="0.226" />
-									<attribute id="Shape" type="1" value="2" />
-									<attribute id="Type" type="1" value="0" />
+									<attribute id="Height" type="float" value="1.6" />
+									<attribute id="Max" type="fvec3" value="0.493393 1.63551 1.88476" />
+									<attribute id="Min" type="fvec3" value="-0.49826 -0.00381052 -1.49049" />
+									<attribute id="Radius" type="float" value="0.226" />
+									<attribute id="Shape" type="uint8" value="2" />
+									<attribute id="Type" type="uint8" value="0" />
 								</node>
 								<node id="Bound">
-									<attribute id="Height" type="6" value="1.641011" />
-									<attribute id="IsIgnoringScale" type="19" value="False" />
-									<attribute id="Max" type="12" value="0.3906657 1.629684 1.25" />
-									<attribute id="Min" type="12" value="-0.3906657 -0.01132715 -1.25" />
-									<attribute id="Radius" type="6" value="1.704425" />
-									<attribute id="Shape" type="1" value="1" />
-									<attribute id="Type" type="1" value="1" />
+									<attribute id="Height" type="float" value="1.641011" />
+									<attribute id="Max" type="fvec3" value="0.3906657 1.629684 1.25" />
+									<attribute id="Min" type="fvec3" value="-0.3906657 -0.01132715 -1.25" />
+									<attribute id="Radius" type="float" value="1.704425" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="1" />
 								</node>
 								<node id="Bound">
-									<attribute id="Height" type="6" value="1.6" />
-									<attribute id="IsIgnoringScale" type="19" value="False" />
-									<attribute id="Max" type="12" value="0.493393 1.63551 1.88476" />
-									<attribute id="Min" type="12" value="-0.49826 -0.00381052 -1.49049" />
-									<attribute id="Radius" type="6" value="0.749" />
-									<attribute id="Shape" type="1" value="2" />
-									<attribute id="Type" type="1" value="2" />
+									<attribute id="Height" type="float" value="1.6" />
+									<attribute id="Max" type="fvec3" value="0.493393 1.63551 1.88476" />
+									<attribute id="Min" type="fvec3" value="-0.49826 -0.00381052 -1.49049" />
+									<attribute id="Radius" type="float" value="0.749" />
+									<attribute id="Shape" type="uint8" value="2" />
+									<attribute id="Type" type="uint8" value="2" />
 								</node>
 							</children>
 						</node>
 						<node id="LocomotionParams">
-							<attribute id="UseStandAtDestination" type="19" value="True" />
+							<attribute id="UseStandAtDestination" type="bool" value="True" />
 						</node>
 						<node id="SkillList">
 							<children>
 								<node id="Skill">
-									<attribute id="AIFlags" type="3" value="0" />
-									<attribute id="CasualExplorer" type="19" value="True" />
-									<attribute id="Classic" type="19" value="True" />
-									<attribute id="FallbackStartRound" type="4" value="-1" />
-									<attribute id="HonorHardcore" type="19" value="True" />
-									<attribute id="LearningStrategy" type="1" value="0" />
-									<attribute id="MinimumImpact" type="4" value="0" />
-									<attribute id="OnlyCastOnSelf" type="19" value="False" />
-									<attribute id="ScoreModifier" type="6" value="1" />
-									<attribute id="Skill" type="22" value="Target_Bite_Wolf" />
-									<attribute id="SpellCastingAbility" type="1" value="0" />
-									<attribute id="StartRound" type="4" value="0" />
-									<attribute id="TacticianHardcore" type="19" value="True" />
+									<attribute id="AIFlags" type="uint16" value="0" />
+									<attribute id="CasualExplorer" type="bool" value="True" />
+									<attribute id="Classic" type="bool" value="True" />
+									<attribute id="FallbackStartRound" type="int32" value="-1" />
+									<attribute id="HonorHardcore" type="bool" value="True" />
+									<attribute id="LearningStrategy" type="uint8" value="0" />
+									<attribute id="MinimumImpact" type="int32" value="0" />
+									<attribute id="OnlyCastOnSelf" type="bool" value="False" />
+									<attribute id="ScoreModifier" type="float" value="1" />
+									<attribute id="Skill" type="FixedString" value="Target_Bite_Wolf" />
+									<attribute id="SpellCastingAbility" type="uint8" value="0" />
+									<attribute id="StartRound" type="int32" value="0" />
+									<attribute id="TacticianHardcore" type="bool" value="True" />
 									<children>
 										<node id="SourceConditions">
-											<attribute id="MaximumHealthPercentage" type="4" value="100" />
-											<attribute id="MinimumHealthPercentage" type="4" value="0" />
+											<attribute id="MaximumHealthPercentage" type="int32" value="100" />
+											<attribute id="MinimumHealthPercentage" type="int32" value="0" />
 											<children>
 												<node id="Tags" />
 											</children>
 										</node>
 										<node id="TargetConditions">
-											<attribute id="MaximumHealthPercentage" type="4" value="100" />
-											<attribute id="MinimumHealthPercentage" type="4" value="0" />
+											<attribute id="MaximumHealthPercentage" type="int32" value="100" />
+											<attribute id="MinimumHealthPercentage" type="int32" value="0" />
 											<children>
 												<node id="Tags" />
 											</children>
@@ -84,13 +81,20 @@
 								</node>
 							</children>
 						</node>
+						<node id="SpeakerGroupList">
+							<children>
+								<node id="SpeakerGroup">
+									<attribute id="Object" type="guid" value="02cdc15e-1dc3-5eb4-3cf7-5894f9b49f0b" />
+								</node>
+							</children>
+						</node>
 						<node id="Tags">
 							<children>
 								<node id="Tag">
-									<attribute id="Object" type="31" value="dc860a81-f3c2-4c1a-90ab-58e724335c84" />
+									<attribute id="Object" type="guid" value="dc860a81-f3c2-4c1a-90ab-58e724335c84" />
 								</node>
 								<node id="Tag">
-									<attribute id="Object" type="31" value="04ae77c4-f708-4ffa-8c8b-3b762a066e2e" />
+									<attribute id="Object" type="guid" value="04ae77c4-f708-4ffa-8c8b-3b762a066e2e" />
 								</node>
 							</children>
 						</node>
