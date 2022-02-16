@@ -21,7 +21,6 @@ Your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; affects how far yo
 
     <comment commentid="Shout Display Name" />
     <content contentuid="haf813ecag5ad0g464cg8749g68d9ebd9b71d" version="1">End Short Rest</content><comment commentid="End Short Rest" />
-    <content contentuid="h21c0e046g33a8g4af3gb59agfe09c2000b16" version="1">DnD Actions</content><comment commentid="DnD Actions" />
     <content contentuid="h6c541127gda12g4b7cgbfdbg37c49ac85aba" version="1">Dodge</content><comment commentid="Dodge" />
     <content contentuid="h5d311bfdg3b88g4a78gb8fcgbb8645c6a5f7" version="1">Cunning Action</content><comment commentid="Cunning Action" />
     <content contentuid="h0611af1fg455ag4511ga7e5g9768ccd017d8" version="1">Cunning Action: Hide</content><comment commentid="Hide Cunning Action" />
@@ -31,7 +30,6 @@ Your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; affects how far yo
     <comment commentid="Shout Description" />
     <content contentuid="h276bd4b5g1c97g4768ga645gf0d414ba9f06" version="1">Spend 1 Hit Dice to regain [1].</content><comment commentid="Regain HP" />
     <content contentuid="h1aff6b78gc632g459cgbb15g9c17e56b611a" version="1">Ends the &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt; for you and your party members around you.</content><comment commentid="Short Rest" />
-    <content contentuid="hbfe16dc5gc532g4470gb744g4f16267776f0" version="1">A selection of common actions players can take.</content><comment commentid="DnD Actions" />
     <content contentuid="h43261ff4gfee1g42f4g9bb3gc6120976fe3d" version="1">Until the start of your next turn, any &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; made against you has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;, and you make Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;. You lose this benefit if you are incapacitated or if your speed drops to 0.</content><comment commentid="Dodge" />
     <content contentuid="he7d837b8g404fg4dbdg85c2g9d69c019d63d" version="1">You can use your Bonus Action to Dash, Disengage or Hide.</content><comment commentid="Cunning Action" />
     <content contentuid="h21e470adgd2e5g4641gbbd5g5cfd6f4c8685" version="1">Take the shape of a brown bear with high HP.</content><comment commentid="Bear Wild Shape" />
