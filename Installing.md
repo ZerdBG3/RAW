@@ -1,5 +1,5 @@
 # First installation
-* Download the latest `.pak` file from [Releases](https://github.com/ZerdBG3/DnD-Rebalancing/releases) and place it under `\Documents\Larian Studios\Baldur's Gate 3\Mods` (Create the `Mods` folder if it doesn't exist)
+* Download the latest `.pak` file from [Releases](https://github.com/ZerdBG3/DnD-Rebalancing/releases) and place it under `\Users\{USER_NAME}\AppData\Local\Larian Studios\Baldur's Gate 3\Mods`, where `{USER_NAME}` is the name of your user on the computer (Create the `Mods` folder if it doesn't exist)
 * Download the `modsettings.lsx` file on the root of this project (or access it [here](https://github.com/ZerdBG3/DnD-Rebalancing/blob/main/modsettings.lsx)) and place it under `Documents\Larian Studios\Baldur's Gate 3\PlayerProfiles\{YOUR_PROFILE}`, where `{YOUR_PROFILE}` is the profile you want the mod to be active on. You should replace the file that already exists there
 
 # Updating your version

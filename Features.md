@@ -19,8 +19,9 @@
   - Level 1 (Abjuration School): Arcane Ward subsequent abjuration casts after the first of the day provides the correct `2*Spell Level THP`
 
 ## Actions
-* Hide and Shove are actions (from bonus actions)
-* Introduces Distract, Dodge and Shove (to Prone) as actions to player characters (single spell container)
+* Hide is an action (from bonus action)
+* Shove is an action (from bonus action). It's a spell container with the option to push (fixed 1.5 m) or knock prone
+* Introduces Distract and Dodge as actions to player characters
 * Removes Bonus Action Cost from Jump, but can only be used once per turn
 * Help stabilises the target (Medicine `DC 10`), and the stabilised character is healed once out of combat
 
@@ -31,7 +32,6 @@
 * Hex and Hunter's Mark reapplication period end with a Short Rest
 * Produce Flame is a spell container, with instant attacking as an option (QoL and fixes for Wisdom scaling)
 * Searing Smite is a Shout/Concentration spell that requires concentration to both the initial hit application and the damage per turn effect
-* Fixes Spike Growth damage description
 
 ## Hit Dice
 * Short Rest puts the characters in a standby mode and provides them with 2 new spells

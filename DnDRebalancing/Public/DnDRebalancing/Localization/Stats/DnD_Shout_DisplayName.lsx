@@ -13,13 +13,6 @@
 				</node>
 				<node id="TranslatedStringKey">
 					<attribute id="Speaker" type="FixedString" value="" />
-					<attribute id="UUID" type="FixedString" value="DnD_Shout_DnD_Actions_DisplayName" />
-					<attribute id="ExtraData" type="LSString" value="" />
-					<attribute id="Content" type="TranslatedString" handle="h21c0e046g33a8g4af3gb59agfe09c2000b16" version="1" />
-					<attribute id="Stub" type="bool" value="True" />
-				</node>
-				<node id="TranslatedStringKey">
-					<attribute id="Speaker" type="FixedString" value="" />
 					<attribute id="UUID" type="FixedString" value="DnD_Shout_Dodge_DisplayName" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Content" type="TranslatedString" handle="h6c541127gda12g4b7cgbfdbg37c49ac85aba" version="1" />
