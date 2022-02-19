@@ -1,6 +1,11 @@
 # Features
 
 ## Classes
+* Barbarian:
+  - Level 1: Fixes Rage so it only deals damage on actual hits, from Strength-based melee weapons
+  - Level 2: Reckless Attack is a toggleable passive which provides advantage only on Strength-based melee weapons attacks (and if no other attack without the passive was made previously on the same turn). The advantage can be used on all attacks on the same turn, and it can't proc on AoO
+  - Level 3 (Path of the Berserker): Removed Throw as a bonus action
+  - Level 3 (Path of the Totem Warrior): Removed all custom spells added by each Spirit Animal
 * Druid:
   - Level 2: Wild Shape dismissal costs a bonus action
   - Level 2: Wild Shape Giant Badger changes to attacks and movements
@@ -11,7 +16,7 @@
   - Level 1: Hunter's Mark counts as a separate damage entry and can critically strike
   - Level 3 (Hunter): Colossus Slayer correctly deals bonus damage on offhand attacks
 * Rogue:
-  - Level 1: Sneak Attack is a toggable passive which works on any weapon attack you hit in the turn (including offhand attacks), still obeying to the Sneak Attack rules
+  - Level 1: Sneak Attack is a toggleable passive which works on any weapon attack you hit in the turn (including offhand attacks), still obeying to the Sneak Attack rules
   - Level 2: Cunning Action gives Hide as a bonus action (in addition to Dash and Disengage)
   - Level 3 (Thief): Fast Hands no longer provides an extra Bonus Action - instead, it gives Help and Distract as possible Cunning Actions (bonus action)
   - Level 3 (Thief): Second-Story Work now replaces Jump for a Dexterity-based version
@@ -24,6 +29,10 @@
 * Introduces Distract and Dodge as actions to player characters
 * Removes Bonus Action Cost from Jump, but can only be used once per turn
 * Help stabilises the target (Medicine `DC 10`), and the stabilised character is healed once out of combat
+* Throw and Improvised Weapon can no longer be used on enemies that are alive
+
+## Feats
+* Shield Master: Gives Shove (both options) as a bonus action after attacking on your turn
 
 ## Spells
 * Chromatic Orb deals `3d8` for all damage types, without surface creation
