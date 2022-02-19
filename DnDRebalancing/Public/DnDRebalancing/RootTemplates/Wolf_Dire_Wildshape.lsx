@@ -17,6 +17,7 @@
 					<attribute id="VocalAngryResourceID" type="FixedString" value="a0e8fc4f-485f-97bd-995a-bfbb0f4d9be4" />
 					<attribute id="VocalBoredResourceID" type="FixedString" value="8f998c06-a151-f582-4c81-917b76c2c444" />
 					<attribute id="VocalExhaustedResourceID" type="FixedString" value="d3986e17-a532-be86-0727-a95b1c76b1fa" />
+					<attribute id="VocalRecoverResourceID" type="FixedString" value="c6989041-d5fd-1a68-9a6d-a50cfd7068fb" />
 					<attribute id="VocalRelaxedResourceID" type="FixedString" value="2c8c68f9-346d-42de-fd77-1a7ac48575cf" />
 					<attribute id="_OriginalFileVersion_" type="int64" value="144115200960757765" />
 					<children>

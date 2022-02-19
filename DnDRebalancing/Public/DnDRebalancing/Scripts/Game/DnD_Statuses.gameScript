@@ -204,3 +204,21 @@ ACTIONS
         CharacterRemoveStatus(_Character, DND_DOWNED_STABILIZED)
     ENDIF
 
+
+EVENT CharacterTurnStarted
+VARS
+    CHARACTER:_Character
+ON
+    OnTurn(_Character, _)
+ACTIONS
+    CharacterApplyStatus(_Character, DND_CURRENT_TURN, 1)
+
+
+EVENT CharacterTurnEnded
+VARS
+    CHARACTER:_Character
+ON
+    OnTurnEnded(_Character, _)
+ACTIONS
+    CharacterRemoveStatus(_Character, DND_CURRENT_TURN)
+
