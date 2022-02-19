@@ -16,6 +16,10 @@
                     <attribute id="Spells" type="LSString" value="Shout_WildShape;Shout_WildShape_Badger;Shout_WildShape_Spider;Shout_WildShape_Wolf;Shout_WildShape_Cat"/>
                     <attribute id="UUID" type="guid" value="0f094e35-9675-464d-8cae-8e58c28de955"/>
                 </node>
+                <node id="SpellList">
+                    <attribute id="Spells" type="LSString" value="Target_FrenziedStrike"/>
+                    <attribute id="UUID" type="guid" value="17803035-4762-4143-8f2f-1143d47e4f40"/>
+                </node>
             </children>
         </node>
     </region>

@@ -3,12 +3,21 @@
     <content contentuid="haf5c7044g93bcg4d69gbc0fgc1abc7d7b7ea" version="1">Sneak Attack</content><comment commentid="Sneak Attack" />
     <content contentuid="h61fa56b6g2b42g4d9cg965eg0654c2c6f233" version="1">Second-Story Work</content><comment commentid="Second-Story Work" />
     <content contentuid="hf4143e78g3b92g433bgbef2g3bb6433a8f32" version="1">Searing Smite</content><comment commentid="Searing Smite" />
+    <content contentuid="h4af7068bg689dg4db5g87fdg614624fc8585" version="1">Shield Master (Shove)</content><comment commentid="Shield Master (Shove)" />
+    <content contentuid="h0159dcd5g7df6g42fag8c0eg6b714977e84a" version="1">Reckless Attack</content><comment commentid="Reckless Attack" />
 
     <comment commentid="Passive Description" />
     <content contentuid="h01d9015egc084g4378g853agb9b3a787fa6d" version="1">Once per turn, you deal extra [1] when you attack with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; or target someone with one of your allies nearby.</content><comment commentid="Sneak Attack" />
     <content contentuid="hfc0ecb86gc504g44f1g9d88g957905740457" version="1">You can use the Bonus Action granted by your Cunning Action to use Help.</content><comment commentid="Fast Hands" />
     <content contentuid="hd6a0c096gd133g4bc9ga518g80c70fd5d907" version="1">You've mastered the art of falling and gain resistance to Falling damage. Also, you now use your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; to increase your Jumping distance.</content><comment commentid="Second-Story Work" />
     <content contentuid="h66b9bd72g4983g4373g95cbge989152c813b" version="1">Your weapon flares with white-hot intensity. It deals an extra [1] and marks the target with Searing Smite.</content><comment commentid="Searing Smite" />
+    <content contentuid="h85d7c071gf5e1g454fg904eg4f6253bf83c0" version="1">If you take the Attack Action on your turn, you can attempt to Shove with your shield using your Bonus Action.</content><comment commentid="Shield Master (Shove)" />
+    <content contentuid="hd8db6255g9df7g4a83g9a83g7ed354602d82" version="1">Throw aside all concern for defense to attack with fierce desperation. Attacking recklessly on your first attack of your turn gives you &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on melee weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; using Strength during this turn, but Attack Rolls against you have Advantage until your next turn.</content><comment commentid="Reckless Attack" />
+    <content contentuid="hd1661bc6gc996g446eg86cfg4c0efb17bea6" version="1">While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, you have Resistance to all damage except psychic damage.</content><comment commentid="Totem Spirit Bear" />
+    <content contentuid="h6768309eg09abg482fg9564g5dccbc2743c2" version="1">While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, foes have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="OpportunityAttack"&gt;Opportunity Attacks&lt;/LSTag&gt; against you, and you can use &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt; as a bonus action.</content><comment commentid="Totem Spirit Eagle" />
+    <content contentuid="h9f9b2f2bga644g4c45ga2dfgf557e17f6a40" version="1">While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, your &lt;LSTag Tooltip="MovementSpeed"&gt;Movement Speed&lt;/LSTag&gt; increases by [1].</content><comment commentid="Totem Spirit Elk" />
+    <content contentuid="h0a2b0a4fg3ca7g4348gb791g5fa69f9e9579" version="1">While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, your jump distance increases by [1].</content><comment commentid="Totem Spirit Tiger" />
+    <content contentuid="h58f5376fg9f9fg4835g9352g0300c7373a64" version="1">While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, your allies have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against enemies within [1] of you.</content><comment commentid="Totem Spirit Wolf" />
 
     <comment commentid="Projectile Display Name" />
     <content contentuid="h4c76db83gcc4eg438ag9d00ge9b156dd1bbe" version="1">Jump (Thief)</content><comment commentid="Jump Thief" />
@@ -61,6 +70,7 @@ Your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; affects how far yo
     <content contentuid="h599e295bg2b58g419fga2b7gba12247ecaeb" version="1">Gained &lt;LSTag Tooltip="TemporaryHitPoints"&gt;Temporary Hit Points&lt;/LSTag&gt;. Lasts until &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content><comment commentid="False Life" />
     <content contentuid="h893dd1e5gd3e5g41dcg9940g36e09791d185" version="1">Your weapon flares with white-hot intensity. Your next attack deals an extra [1] and marks the target with Searing Smite.</content><comment commentid="Searing Smite Initial" />
     <content contentuid="h25d8863egdaf1g47e3gba46gb6bade9f3a93" version="1">The next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; not from the Distracted Source is made with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.</content><comment commentid="Distracted" />
+    <content contentuid="h0d5d7494ga6b3g4f9ag82d3g9cc482ead351" version="1">Has attacked recklessly. Enemies have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against them.</content><comment commentid="Reckless Attack" />
 
     <comment commentid="Status Downed Description" />
     <content contentuid="h788b3d9dgb19cg43adg8d49gdb0f922e7400" version="1">You are Unconscious and must make Death Saving Throws. On 3 successes, you stop bleeding out and become Stable. On 3 failures, you die.

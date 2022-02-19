@@ -32,6 +32,55 @@
 					<attribute id="Content" type="TranslatedString" handle="h66b9bd72g4983g4373g95cbge989152c813b" version="1" />
 					<attribute id="Stub" type="bool" value="True" />
 				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="UUID" type="FixedString" value="Shared_Passive_ShieldMaster_Shove_Description" />
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="h85d7c071gf5e1g454fg904eg4f6253bf83c0" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="UUID" type="FixedString" value="DnD_Passive_RecklessAttack_Description" />
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="hd8db6255g9df7g4a83g9a83g7ed354602d82" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="UUID" type="FixedString" value="Shared_Passive_TotemSpirit_Bear_Description" />
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="hd1661bc6gc996g446eg86cfg4c0efb17bea6" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="UUID" type="FixedString" value="Shared_Passive_TotemSpirit_Eagle_Description" />
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="h6768309eg09abg482fg9564g5dccbc2743c2" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="UUID" type="FixedString" value="Shared_Passive_TotemSpirit_Elk_Description" />
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="h9f9b2f2bga644g4c45ga2dfgf557e17f6a40" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="UUID" type="FixedString" value="Shared_Passive_TotemSpirit_Tiger_Description" />
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="h0a2b0a4fg3ca7g4348gb791g5fa69f9e9579" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="UUID" type="FixedString" value="Shared_Passive_TotemSpirit_Wolf_Description" />
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="h58f5376fg9f9fg4835g9352g0300c7373a64" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
 			</children>
 		</node>
 	</region>
