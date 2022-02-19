@@ -102,7 +102,7 @@ data "DisplayName" "Shared_Passive_ShieldMaster_Shove_DisplayName"
 data "Description" "Shared_Passive_ShieldMaster_Shove_Description"
 data "Icon" "PassiveFeature_ShieldMaster_Block"
 data "Properties" "Highlighted"
-data "Conditions" "(IsWeaponAttack() or IsUnarmedAttack()) and HasShieldEquipped(context.Source)"
+data "Conditions" "(IsWeaponAttack() or IsUnarmedAttack()) and HasShieldEquipped(context.Source) and HasStatus('DND_CURRENT_TURN', context.Source)"
 data "StatsFunctors" "ApplyStatus(SELF,DND_SHIELD_MASTER_SHOVE,100,1)"
 data "StatsFunctorContext" "OnAttack"
 
