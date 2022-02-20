@@ -18,7 +18,7 @@
 * Rogue:
   - Level 1: Sneak Attack is a toggleable passive which works on any weapon attack you hit in the turn (including offhand attacks), still obeying to the Sneak Attack rules
   - Level 2: Cunning Action gives Hide as a bonus action (in addition to Dash and Disengage)
-  - Level 3 (Thief): Fast Hands no longer provides an extra Bonus Action - instead, it gives Help and Distract as possible Cunning Actions (bonus action)
+  - Level 3 (Thief): Fast Hands no longer provides an extra Bonus Action - instead, it gives Help, Distract and Throw (no damage) as possible Cunning Actions (bonus action)
   - Level 3 (Thief): Second-Story Work now replaces Jump for a Dexterity-based version
 * Wizard:
   - Level 1 (Abjuration School): Arcane Ward subsequent abjuration casts after the first of the day provides the correct `2*Spell Level THP`
@@ -29,7 +29,8 @@
 * Introduces Distract and Dodge as actions to player characters
 * Removes Bonus Action Cost from Jump, but can only be used once per turn
 * Help stabilises the target (Medicine `DC 10`), and the stabilised character is healed once out of combat
-* Throw and Improvised Weapon can no longer be used on enemies that are alive
+* Throw and Improvised Weapon can no longer be used on enemies that are alive (and you can't throw your equipped boots either)
+* Thrown Weapons now provide specific spells that correctly calculate Range, Attack Roll, and Damage Roll, while also allowing for Two-Weapon Fighting and correctly applying Sneak Attack
 
 ## Feats
 * Shield Master: Gives Shove (both options) as a bonus action after attacking on your turn
@@ -51,7 +52,7 @@
 ## Global changes
 * Removes weapon abilities (like Cleave, Smash and Pin Down)
 * Removes the disadvantage on Strength and Dexterity Saving Throws when Prone, and adds the Disadvantage to Ranged Attack Rolls
-* Nerfs Fire dipped and Poison coating damage to 1 static damage (from `1d4`)
+* Nerfs Fire dipped (also Torch) and Poison coating damage to 1 static damage (from `1d4`)
 * Removes surface creation on most benefitial potions (like healing and resistance potions) - you can't heal people by throwing potions at their feet!
 * Adds Heavy Armor to various locations and traders
 
