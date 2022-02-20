@@ -8,7 +8,7 @@
 
     <comment commentid="Passive Description" />
     <content contentuid="h01d9015egc084g4378g853agb9b3a787fa6d" version="1">Once per turn, you deal extra [1] when you attack with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; or target someone with one of your allies nearby.</content><comment commentid="Sneak Attack" />
-    <content contentuid="hfc0ecb86gc504g44f1g9d88g957905740457" version="1">You can use the Bonus Action granted by your Cunning Action to use Help.</content><comment commentid="Fast Hands" />
+    <content contentuid="hfc0ecb86gc504g44f1g9d88g957905740457" version="1">You can use the Bonus Action granted by your Cunning Action to Help allies, Distract enemies or Throw an item.</content><comment commentid="Fast Hands" />
     <content contentuid="hd6a0c096gd133g4bc9ga518g80c70fd5d907" version="1">You've mastered the art of falling and gain resistance to Falling damage. Also, you now use your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; to increase your Jumping distance.</content><comment commentid="Second-Story Work" />
     <content contentuid="h66b9bd72g4983g4373g95cbge989152c813b" version="1">Your weapon flares with white-hot intensity. It deals an extra [1] and marks the target with Searing Smite.</content><comment commentid="Searing Smite" />
     <content contentuid="h85d7c071gf5e1g454fg904eg4f6253bf83c0" version="1">If you take the Attack Action on your turn, you can attempt to Shove with your shield using your Bonus Action.</content><comment commentid="Shield Master (Shove)" />
@@ -24,7 +24,7 @@
     <content contentuid="he7373ea1ge596g4f74gbbd1g5763f2e77273" version="1">Produce Flame: Hurl (Free)</content><comment commentid="Produce Flame Hurl Free" />
 
     <comment commentid="Projectile Description" />
-    <content contentuid="hc25fd2e1g6a3cg4c99g8690gcf48eabe53a1" version="3">Jump to a destination.
+    <content contentuid="hc25fd2e1g6a3cg4c99g8690gcf48eabe53a1" version="1">Jump to a destination.
 
 Your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; affects how far you can jump.</content><comment commentid="Jump Thief" />
 
@@ -99,6 +99,19 @@ If you regain any Hit Points, lose Downed. If an ally Helps you and succeeds on 
 
 Makes a &lt;LSTag Tooltip="Medicine"&gt;Medicine&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; to stabilise a &lt;LSTag Tooltip="Downed"&gt;Downed&lt;/LSTag&gt; character. Removes Burning, Ensnared, Entangled, Enwebbed, Prone, and Sleeping.</content><comment commentid="Help" />
 
+    <comment commentid="Throw Display Name" />
+    <content contentuid="h42ce0a1eg03e9g492dg9457g553a25b8a68c" version="1">Throw (Item)</content><comment commentid="Throw" />
+    <content contentuid="hb3284f80g9ea7g4eefg92bbg6c0d18aa322b" version="1">Throw (Cunning Action)</content><comment commentid="Throw Cunning Action" />
+    <content contentuid="h6ecf3783gaec3g4933g9d97ga93f5eb2ffd1" version="1">Throw (MainHand)</content><comment commentid="Throw Weapon" />
+    <content contentuid="hcb77aa27g6e23g401egb640g6251e9584b0c" version="1">Throw (OffHand)</content><comment commentid="Throw Weapon OffHand" />
+
+    <comment commentid="Throw Description" />
+    <content contentuid="h7c08af75gd6d2g4535g8e96g88ddffc3f0ce" version="1">Throw an item from the floor or your inventory.&lt;br&gt;&lt;br&gt;Your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; affects how much weight you can throw. Heavier items deal more damage.</content><comment commentid="Throw" />
+    <content contentuid="h49ed29fcg4ac2g459egbc2cg0c6264341656" version="1">Throw an item from the floor or your inventory, without dealing damage as an improvised weapon.&lt;br&gt;&lt;br&gt;Throwable items like grenades will still activate their effects.</content><comment commentid="Throw Cunning Action" />
+    <content contentuid="h73c67cf6g5850g4e17gbbc6gabb0186cfd4d" version="1">Pick up an item and use it to make a melee attack.&lt;br&gt;&lt;br&gt;Your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; affects how much weight you can lift. Heavier items deal more damage.</content><comment commentid="Improvised Weapon" />
+    <content contentuid="h8b86b170gd26eg460cg8562g2d4f2b911e88" version="1">&lt;LSTag Tooltip="Thrown"&gt;Throw&lt;/LSTag&gt; your main weapon.&lt;br&gt;&lt;br&gt;Attacking further than the normal range ([1]) impose &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on the &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt;.</content><comment commentid="Throw Weapon" />
+    <content contentuid="hecbf5369g4424g4914ga10bgd4b42b8cd386" version="1">&lt;LSTag Tooltip="Thrown"&gt;Throw&lt;/LSTag&gt; your offhand weapon.&lt;br&gt;&lt;br&gt;Attacking further than the normal range ([1]) impose &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on the &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt;.</content><comment commentid="Throw Weapon OffHand" />
+
     <comment commentid="Action Resource Definitions Display Name" />
     <content contentuid="h0006ac15g5189g4586gb0b0ge45030db2100" version="1">Sneak Attack</content><comment commentid="Sneak Attack" />
 
@@ -106,6 +119,6 @@ Makes a &lt;LSTag Tooltip="Medicine"&gt;Medicine&lt;/LSTag&gt; &lt;LSTag Tooltip
     <content contentuid="h3fbcf170g59d8g4b15ga88bgd5bd3461012d" version="1">Allows the usage of the Sneak Attack Passive</content><comment commentid="Sneak Attack" />
 
     <comment commentid="Progression Description" />
-    <content contentuid="h2e3ab9b3g7c96g4274gbb27g66c15be10707" version="1">You can use the Bonus Action granted by your Cunning Action to use Help.</content><comment commentid="Fast Hands" />
+    <content contentuid="h2e3ab9b3g7c96g4274gbb27g66c15be10707" version="1">You can use the Bonus Action granted by your Cunning Action to Help allies, Distract enemies or Throw an item.</content><comment commentid="Fast Hands" />
     <content contentuid="hc7499bffg5070g4107g9e4bg6a62a9d4fa8a" version="1">You've mastered the art of falling and gain resistance to Falling damage. Also, you now use your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; to increase your Jumping distance.</content><comment commentid="Second-Story Work" />
 </contentList>
