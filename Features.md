@@ -10,6 +10,7 @@
   - Level 2: Wild Shape dismissal costs a bonus action
   - Level 2: Wild Shape Giant Badger changes to attacks and movements
   - Level 2 (Circle of the Land): Replaces Dire Wolf with Wolf for Circle of the Land Druids
+  - Level 2 (Circle of the Land): Natural Recovery is only usable during a Short Rest
   - Level 2 (Circle of the Moon): Changed stats of Dire Wolf to match Monster's Manual stats
   - Level 2 (Circle of the Moon): Polar Bear is replaced with Brown Bear, visual and stat wise
 * Ranger:
@@ -22,6 +23,7 @@
   - Level 3 (Thief): Second-Story Work now replaces Jump for a Dexterity-based version
 * Wizard:
   - Level 1 (Abjuration School): Arcane Ward subsequent abjuration casts after the first of the day provides the correct `2*Spell Level THP`
+  - Level 1: Arcane Recovery is only usable during a Short Rest
 
 ## Actions
 * Hide is an action (from bonus action)
@@ -29,7 +31,7 @@
 * Introduces Distract and Dodge as actions to player characters
 * Removes Bonus Action Cost from Jump, but can only be used once per turn
 * Help stabilises the target (Medicine `DC 10`), and the stabilised character is healed once out of combat
-* Throw and Improvised Weapon can no longer be used on enemies that are alive (and you can't throw your equipped boots either)
+* Throw and Improvised Weapon can no longer be used on enemies that are alive, and can't throw equipped items either. Throwing a weapon from inventory counts as an improvised weapon (`1d4 bludgeoning` damage)
 * Thrown Weapons now provide specific spells that correctly calculate Range, Attack Roll, and Damage Roll, while also allowing for Two-Weapon Fighting and correctly applying Sneak Attack
 
 ## Feats
@@ -37,16 +39,52 @@
 
 ## Spells
 * Chromatic Orb deals `3d8` for all damage types, without surface creation
-* False Life provides `1d4+4 THP` instead of `7 THP` (plus `5` per spell slot above first) and ends with a Short Rest
+* Entangle applies the Restrained condition upon casting (and gives a temporary spell for removal attempts). The vine surfaces are only considered difficult terrain and no longer entangle characters walking on it
+* False Life provides `1d4+4 THP` instead of `7 THP` (plus `5` per spell slot above first)
 * Goodberry provides 10 berries, each healing `1 HP`
-* Hex and Hunter's Mark reapplication period end with a Short Rest
 * Produce Flame is a spell container, with instant attacking as an option (QoL and fixes for Wisdom scaling)
 * Searing Smite is a Shout/Concentration spell that requires concentration to both the initial hit application and the damage per turn effect
+* Spells and effects that should have a duration of 10 minutes or 1 hour but were lasting until a Long Rest had their durations adjusted and end with a Short Rest. Spells that last 8 hours or more still last until a Long Rest
 
-## Hit Dice
+<details>
+  <summary>List of Spells with durations changed</summary>
+  <p>
+
+    - 10 minutes (100 turns)
+      - Darkness
+      - Expeditious Retreat
+      - Flame Blade
+      - Protection from Evil and Good
+      - Shield of Faith
+      - Silence
+
+    - 1 Hour (600 turns)
+      - Armor of Agathys
+      - Barkskin
+      - Enhance Ability
+      - Fog Cloud
+      - False Life
+      - Invisibility
+      - Longstrider
+      - Pass without Trace
+      - Protection from Poison
+
+    - Infinite, but still ends with Short Rest
+      - Disguise Self
+      - Hex
+      - Hunter's Mark
+
+  </p>
+</details>
+
+## Short Rests & Hit Dice
 * Short Rest puts the characters in a standby mode and provides them with 2 new spells
   - Regain Hit Points: spend 1 Hit Die to recover its value plus the character's Constitution Modifier
   - End Short Rest: Ends the Short Rest standby mode
+* Some abilities are only available while short resting:
+  - Wizard's Arcane Recovery
+  - Druid's Natural Recovery (Circle of the Land)
+* Short Rest is considered an hour long downtime period, thus ending effects that last up to 1 hour
 * Long Rest recharges half the character's level worth of Hit Dice (rounded up)
 
 ## Global changes

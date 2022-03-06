@@ -6,7 +6,14 @@
 			<children>
 				<node id="TranslatedStringKey">
 					<attribute id="Speaker" type="FixedString" value="" />
-					<attribute id="UUID" type="FixedString" value="DnD_Target_Shove_Prone_DisplayName" />
+					<attribute id="UUID" type="FixedString" value="DnD_Target_Shove_Player_Push_DisplayName" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="h5877647dg40fbg4c09gb1c5g16af8009e38b" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="UUID" type="FixedString" value="DnD_Target_Shove_Player_Prone_DisplayName" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Content" type="TranslatedString" handle="hb461d04cg1cfbg4ba1g83a2g5bd1421d1a20" version="1" />
 					<attribute id="Stub" type="bool" value="True" />

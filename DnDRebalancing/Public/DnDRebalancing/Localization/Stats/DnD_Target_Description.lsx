@@ -6,7 +6,21 @@
 			<children>
 				<node id="TranslatedStringKey">
 					<attribute id="Speaker" type="FixedString" value="" />
-					<attribute id="UUID" type="FixedString" value="DnD_Target_Shove_Prone_Description" />
+					<attribute id="UUID" type="FixedString" value="Shared_Target_Shove_Description" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="h39b0e6f4g2f5cg4038g8944g625faa062c38" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="UUID" type="FixedString" value="DnD_Target_Shove_Player_Description" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="h29df2d23ga713g4cf9gaacdg7cf61bb3b2ee" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="UUID" type="FixedString" value="DnD_Target_Shove_Player_Prone_Description" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Content" type="TranslatedString" handle="h8cd12a69g8980g4a55g8737g3f6183de78c1" version="1" />
 					<attribute id="Stub" type="bool" value="True" />
