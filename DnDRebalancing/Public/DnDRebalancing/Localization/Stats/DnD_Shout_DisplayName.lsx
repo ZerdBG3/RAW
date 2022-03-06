@@ -46,6 +46,13 @@
 					<attribute id="Stub" type="bool" value="True" />
 					<attribute id="Content" type="TranslatedString" handle="h9bc99999g85cbg48e8ga3e8g8490a8f24483" version="1" />
 				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="UUID" type="FixedString" value="DnD_Shout_RemoveEnsnared_DisplayName" />
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Stub" type="bool" value="True" />
+					<attribute id="Content" type="TranslatedString" handle="hf254ddbbg4086g493fgb116g42f77769d238" version="1" />
+				</node>
 			</children>
 		</node>
 	</region>

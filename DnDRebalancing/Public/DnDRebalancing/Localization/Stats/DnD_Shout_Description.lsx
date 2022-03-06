@@ -60,6 +60,27 @@
 					<attribute id="Stub" type="bool" value="True" />
 					<attribute id="Content" type="TranslatedString" handle="hd15cadd1g5891g4287gbde0gf4c73445a69d" version="1" />
 				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="UUID" type="FixedString" value="Shared_Shout_ArcaneRecovery_Description" />
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Stub" type="bool" value="True" />
+					<attribute id="Content" type="TranslatedString" handle="hbeba3ad3g8801g4a4fg8d77g7507fa9bb7c6" version="1" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="UUID" type="FixedString" value="Shared_Shout_NaturalRecovery_Description" />
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Stub" type="bool" value="True" />
+					<attribute id="Content" type="TranslatedString" handle="h75e85388g3e7dg4e70g8101g612860c4a857" version="1" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="UUID" type="FixedString" value="DnD_Shout_RemoveEnsnared_Description" />
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Stub" type="bool" value="True" />
+					<attribute id="Content" type="TranslatedString" handle="hc6229ed7gbb1eg49edga9c7gddef6469b2e4" version="1" />
+				</node>
 			</children>
 		</node>
 	</region>

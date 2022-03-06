@@ -35,6 +35,7 @@ Your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; affects how far yo
     <content contentuid="h0611af1fg455ag4511ga7e5g9768ccd017d8" version="1">Cunning Action: Hide</content><comment commentid="Hide Cunning Action" />
     <content contentuid="h6b04ef7fg75dfg45b5g8a2ag2d1222e96a59" version="1">Wild Shape: Wolf</content><comment commentid="Wild Shape Wolf" />
     <content contentuid="h9bc99999g85cbg48e8ga3e8g8490a8f24483" version="1">Wild Shape: Dire Wolf</content><comment commentid="Wild Shape Dire Wolf" />
+    <content contentuid="hf254ddbbg4086g493fgb116g42f77769d238" version="1">Remove Ensnared</content><comment commentid="Remove Ensnared" />
 
     <comment commentid="Shout Description" />
     <content contentuid="h276bd4b5g1c97g4768ga645gf0d414ba9f06" version="1">Spend 1 Hit Dice to regain [1].</content><comment commentid="Regain HP" />
@@ -44,7 +45,10 @@ Your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; affects how far yo
     <content contentuid="h21e470adgd2e5g4641gbbd5g5cfd6f4c8685" version="1">Take the shape of a brown bear with high HP.</content><comment commentid="Bear Wild Shape" />
     <content contentuid="h668116e4g5e9ag412fgbe5ag00b8762f202b" version="1">Take the shape of a wolf that can use its allies for advantageous attacks and leave its enemies vulnerable.</content><comment commentid="Wild Shape Wolf" />
     <content contentuid="h573ca0f0geb06g440cgb526gbcd88053850e" version="1">Take the shape of a dire wolf that can use its allies for advantageous attacks and leave its enemies vulnerable.</content><comment commentid="Wild Shape Dire Wolf" />
-    <content contentuid="hd15cadd1g5891g4287gbde0gf4c73445a69d" version="1">Bolster yourself with a necromantic facsimile of life to gain [1] temporary hit points until you take a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content><comment commentid="False Life" />
+    <content contentuid="hd15cadd1g5891g4287gbde0gf4c73445a69d" version="1">Bolster yourself with a necromantic facsimile of life to gain [1] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;Temporary Hit Points&lt;/LSTag&gt;.</content><comment commentid="False Life" />
+    <content contentuid="hbeba3ad3g8801g4a4fg8d77g7507fa9bb7c6" version="1">Once per day, during a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;, you can replenish expended &lt;LSTag Tooltip="SpellSlot"&gt;Spell Slots&lt;/LSTag&gt;.</content><comment commentid="Arcane Recovery" />
+    <content contentuid="h75e85388g3e7dg4e70g8101g612860c4a857" version="1">Once per day, during a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;, you can replenish expended &lt;LSTag Tooltip="SpellSlot"&gt;Spell Slots&lt;/LSTag&gt;.</content><comment commentid="Natural Recovery" />
+    <content contentuid="hc6229ed7gbb1eg49edga9c7gddef6469b2e4" version="1">Make a Strength &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against the caster's spell save DC to free yourself from the vines.</content><comment commentid="Remove Ensnared" />
 
     <comment commentid="Status Boost Display Name" />
     <content contentuid="h50a9a6d6g789ag4718g8c65g4c0a3a077353" version="1">Hit Dice (0)</content><comment commentid="Hit Dice 0" />
@@ -67,7 +71,7 @@ Your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; affects how far yo
     <content contentuid="h8d2d015eg2d7ag422cgb563gcc1c6486ade8" version="1">You have spent all of your Hit Dice ([1])</content><comment commentid="Hit Dice Max" />
     <content contentuid="h2f4288c1g1e4fg4852g80e1g09db0b94bb3d" version="1">Taking a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content><comment commentid="Short Rest" />
     <content contentuid="h910d365egd00ag49abg853agfeec0d6e5137" version="1">&lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; made against you has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;, and you make Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;</content><comment commentid="Dodge" />
-    <content contentuid="h599e295bg2b58g419fga2b7gba12247ecaeb" version="1">Gained &lt;LSTag Tooltip="TemporaryHitPoints"&gt;Temporary Hit Points&lt;/LSTag&gt;. Lasts until &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content><comment commentid="False Life" />
+    <content contentuid="h599e295bg2b58g419fga2b7gba12247ecaeb" version="1">Gained &lt;LSTag Tooltip="TemporaryHitPoints"&gt;Temporary Hit Points&lt;/LSTag&gt;.</content><comment commentid="False Life" />
     <content contentuid="h893dd1e5gd3e5g41dcg9940g36e09791d185" version="1">Your weapon flares with white-hot intensity. Your next attack deals an extra [1] and marks the target with Searing Smite.</content><comment commentid="Searing Smite Initial" />
     <content contentuid="h25d8863egdaf1g47e3gba46gb6bade9f3a93" version="1">The next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; not from the Distracted Source is made with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.</content><comment commentid="Distracted" />
     <content contentuid="h0d5d7494ga6b3g4f9ag82d3g9cc482ead351" version="1">Has attacked recklessly. Enemies have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against them.</content><comment commentid="Reckless Attack" />
@@ -85,19 +89,26 @@ If you regain any Hit Points, lose Downed. If an ally Helps you and succeeds on 
     <content contentuid="h8a5e4725g2a13g4ed9ga9e9gfe4e3531a61e" version="1">Wild Shape: Wolf</content><comment commentid="Wild Shape Wolf" />
 
     <comment commentid="Target Display Name" />
+    <content contentuid="h5877647dg40fbg4c09gb1c5g16af8009e38b" version="1">Shove (Push)</content><comment commentid="Shove Push" />
     <content contentuid="hb461d04cg1cfbg4ba1g83a2g5bd1421d1a20" version="1">Shove (Prone)</content><comment commentid="Shove Prone" />
     <content contentuid="hacff287aga587g493bg8074ga79a9969f0c7" version="1">Distract</content><comment commentid="Distract" />
     <content contentuid="h868da50cg1553g4d69gb8d6g491c06156b08" version="1">Distract (Cunning Action)</content><comment commentid="Distract Cunning Action" />
     <content contentuid="h9dae9cf6gd51dg4176g9654g137136bdc8c1" version="1">Help (Cunning Action)</content><comment commentid="Help Cunning Action" />
 
     <comment commentid="Target Description" />
-    <content contentuid="h8cd12a69g8980g4a55g8737g3f6183de78c1" version="1">Shove a target to knock it prone. Shoving unsuspecting targets always succeeds.</content><comment commentid="Shove Prone" />
+    <content contentuid="h39b0e6f4g2f5cg4038g8944g625faa062c38" version="1">Shove a target to push it [1].</content><comment commentid="Shove" />
+    <content contentuid="h29df2d23ga713g4cf9gaacdg7cf61bb3b2ee" version="1">Shove a target. You can try to push it away or knock it prone.</content><comment commentid="Shove Player" />
+    <content contentuid="h8cd12a69g8980g4a55g8737g3f6183de78c1" version="1">Shove a target to knock it prone.</content><comment commentid="Shove Prone" />
     <content contentuid="h8a5eb4d5g32beg46b6g9c83g8b4832766545" version="1">Feint, distract the target, or in some other way team up to make your ally's next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; before your next turn have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.</content><comment commentid="Distract" />
     <content contentuid="h76afdb93gdd39g4cfdg9121g03081409865e" version="1">Conjure ten magical berries for yourself or a companion. Creatures who eat a berry regain [1].</content><comment commentid="Goodberry" />
     <content contentuid="h418e3086g1f94g47e5g9d8ag712fd92aa4c0" version="1">Burrow into the ground and emerge at the target position.</content><comment commentid="Giant Badger Burrow" />
     <content contentuid="h32d73faeg184cg419bg8fb6gdd67958d7817" version="1">Help an ally in need.
 
 Makes a &lt;LSTag Tooltip="Medicine"&gt;Medicine&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; to stabilise a &lt;LSTag Tooltip="Downed"&gt;Downed&lt;/LSTag&gt; character. Removes Burning, Ensnared, Entangled, Enwebbed, Prone, and Sleeping.</content><comment commentid="Help" />
+
+    <comment commentid="Target Extra Description" />
+    <content contentuid="hc68b30c2g7032g449cg8f2bga512ecc16839" version="1">Entangled creatures are Restrained and can use their action to try and tear away the vines, making a Strength &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against your spell save DC.</content><comment commentid="Entangle" />
+    <content contentuid="hed88db7bgfbe4g4ab0g9252g068a8bcc48c0" version="1">Shoving depends on your &lt;LSTag Tooltip="Athletics"&gt;Athletics&lt;/LSTag&gt;, and the higher of the target's Athletics or &lt;LSTag Tooltip="Acrobatics"&gt;Acrobatics&lt;/LSTag&gt;.</content><comment commentid="Shove" />
 
     <comment commentid="Throw Display Name" />
     <content contentuid="h42ce0a1eg03e9g492dg9457g553a25b8a68c" version="1">Throw (Item)</content><comment commentid="Throw" />
@@ -121,4 +132,7 @@ Makes a &lt;LSTag Tooltip="Medicine"&gt;Medicine&lt;/LSTag&gt; &lt;LSTag Tooltip
     <comment commentid="Progression Description" />
     <content contentuid="h2e3ab9b3g7c96g4274gbb27g66c15be10707" version="1">You can use the Bonus Action granted by your Cunning Action to Help allies, Distract enemies or Throw an item.</content><comment commentid="Fast Hands" />
     <content contentuid="hc7499bffg5070g4107g9e4bg6a62a9d4fa8a" version="1">You've mastered the art of falling and gain resistance to Falling damage. Also, you now use your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; to increase your Jumping distance.</content><comment commentid="Second-Story Work" />
+
+    <comment commentid="Surface Description" />
+    <content contentuid="h38d14185g6dc2g4cbcg8307gb3fd2f65572e" version="1">Difficult terrain - &lt;LSTag Tooltip="MovementSpeed"&gt;Movement Speed&lt;/LSTag&gt; is halved.</content><comment commentid="Twisting Vines" />
 </contentList>
