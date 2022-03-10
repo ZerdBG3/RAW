@@ -45,37 +45,50 @@
 * Produce Flame is a spell container, with instant attacking as an option (QoL and fixes for Wisdom scaling)
 * Searing Smite is a Shout/Concentration spell that requires concentration to both the initial hit application and the damage per turn effect
 * Spells and effects that should have a duration of 10 minutes or 1 hour but were lasting until a Long Rest had their durations adjusted and end with a Short Rest. Spells that last 8 hours or more still last until a Long Rest
+  <details>
+    <summary>List of Spells with durations changed</summary>
+    <p>
 
-<details>
-  <summary>List of Spells with durations changed</summary>
-  <p>
+      - 10 minutes (100 turns)
+        - Darkness
+        - Expeditious Retreat
+        - Flame Blade
+        - Protection from Evil and Good
+        - Shield of Faith
+        - Silence
 
-    - 10 minutes (100 turns)
-      - Darkness
-      - Expeditious Retreat
-      - Flame Blade
-      - Protection from Evil and Good
-      - Shield of Faith
-      - Silence
+      - 1 Hour (600 turns)
+        - Armor of Agathys
+        - Barkskin
+        - Enhance Ability
+        - Fog Cloud
+        - False Life
+        - Invisibility
+        - Longstrider
+        - Pass without Trace
+        - Protection from Poison
 
-    - 1 Hour (600 turns)
-      - Armor of Agathys
-      - Barkskin
-      - Enhance Ability
-      - Fog Cloud
-      - False Life
-      - Invisibility
-      - Longstrider
-      - Pass without Trace
-      - Protection from Poison
+      - Infinite, but still ends with Short Rest
+        - Disguise Self
+        - Hex
+        - Hunter's Mark
 
-    - Infinite, but still ends with Short Rest
-      - Disguise Self
-      - Hex
-      - Hunter's Mark
+    </p>
+  </details>
 
-  </p>
-</details>
+* Removes surface interaction for spells that are not AoE. They can still interact with surfaces, but must target the ground directly, instead of interacting when targeting a character on top of the surface
+  <details>
+    <summary>List of Spells with surface interaction changed</summary>
+    <p>
+
+      - Firebolt
+      - Produce Flame
+      - Ray of Frost
+      - Scorching Ray
+      - Shocking Grasp
+
+    </p>
+  </details>
 
 ## Short Rests & Hit Dice
 * Short Rest puts the characters in a standby mode and provides them with 2 new spells
