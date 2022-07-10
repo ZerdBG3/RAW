@@ -2,7 +2,7 @@
 <save>
 	<version major="4" minor="0" revision="5" build="300" />
 	<region id="TranslatedStringKeys">
-		<node id="root">
+		<node id="TranslatedStringKeys">
 			<children>
 				<node id="TranslatedStringKey">
 					<attribute id="Stub" type="bool" value="True" />

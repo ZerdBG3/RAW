@@ -7,13 +7,8 @@
                 <node id="ProgressionDescription">
                     <attribute id="Description" type="FixedString" value="Sneak Attack Progression Description"/>
                     <attribute id="DisplayName" type="FixedString" value="Sneak Attack Progression Display Name"/>
-                    <attribute id="ExactMatch" type="FixedString" value=""/>
                     <attribute id="Hidden" type="bool" value="true"/>
                     <attribute id="ParamMatch" type="FixedString" value="0:SneakAttack"/>
-                    <attribute id="PassivePrototype" type="FixedString" value=""/>
-                    <attribute id="ProgressionId" type="guid" value="00000000-0000-0000-0000-000000000000"/>
-                    <attribute id="ProgressionTableId" type="guid" value="00000000-0000-0000-0000-000000000000"/>
-                    <attribute id="SelectorId" type="FixedString" value=""/>
                     <attribute id="Type" type="FixedString" value="ActionResource"/>
                     <attribute id="UUID" type="guid" value="85f3de82-3207-4992-aee4-2f944ce41970"/>
                 </node>

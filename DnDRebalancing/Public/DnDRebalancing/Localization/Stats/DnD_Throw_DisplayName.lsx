@@ -2,7 +2,7 @@
 <save>
 	<version major="4" minor="0" revision="6" build="409" />
 	<region id="TranslatedStringKeys">
-		<node id="root">
+		<node id="TranslatedStringKeys">
 			<children>
 				<node id="TranslatedStringKey">
 					<attribute id="UUID" type="FixedString" value="Shared_Throw_Throw_DisplayName" />

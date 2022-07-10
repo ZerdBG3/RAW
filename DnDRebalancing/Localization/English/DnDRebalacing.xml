@@ -5,6 +5,8 @@
     <content contentuid="hf4143e78g3b92g433bgbef2g3bb6433a8f32" version="1">Searing Smite</content><comment commentid="Searing Smite" />
     <content contentuid="h4af7068bg689dg4db5g87fdg614624fc8585" version="1">Shield Master (Shove)</content><comment commentid="Shield Master (Shove)" />
     <content contentuid="h0159dcd5g7df6g42fag8c0eg6b714977e84a" version="1">Reckless Attack</content><comment commentid="Reckless Attack" />
+    <content contentuid="he756c6dcgf2d5g49d2g99ffg9ad47269f091" version="1">Multiattack</content><comment commentid="Multiattack (Giant Badger)" />
+    <content contentuid="h6116fc36ga798g4599g9dc1gd74b0408f1e1" version="1">Multiattack</content><comment commentid="Multiattack (Brown Bear)" />
 
     <comment commentid="Passive Description" />
     <content contentuid="h01d9015egc084g4378g853agb9b3a787fa6d" version="1">Once per turn, you deal extra [1] when you attack with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; or target someone with one of your allies nearby.</content><comment commentid="Sneak Attack" />
@@ -18,6 +20,8 @@
     <content contentuid="h9f9b2f2bga644g4c45ga2dfgf557e17f6a40" version="1">While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, your &lt;LSTag Tooltip="MovementSpeed"&gt;Movement Speed&lt;/LSTag&gt; increases by [1].</content><comment commentid="Totem Spirit Elk" />
     <content contentuid="h0a2b0a4fg3ca7g4348gb791g5fa69f9e9579" version="1">While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, your jump distance increases by [1].</content><comment commentid="Totem Spirit Tiger" />
     <content contentuid="h58f5376fg9f9fg4835g9352g0300c7373a64" version="1">While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, your allies have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against enemies within [1] of you.</content><comment commentid="Totem Spirit Wolf" />
+    <content contentuid="hf1dedfbbg9543g40c0g8b9ege0352fe6d738" version="1">The badger makes two attacks: one with its bite and one with its claws.</content><comment commentid="Multiattack (Giant Badger)" />
+    <content contentuid="h9b9799c5g384eg4ce7gbf74gffd49b18451a" version="1">The bear makes two attacks: one with its bite and one with its claws.</content><comment commentid="Multiattack (Brown Bear)" />
 
     <comment commentid="Projectile Display Name" />
     <content contentuid="h4c76db83gcc4eg438ag9d00ge9b156dd1bbe" version="1">Jump (Thief)</content><comment commentid="Jump Thief" />
@@ -61,6 +65,7 @@ Your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; affects how far yo
     <content contentuid="hbd0dde92g9845g4382ga349g00b37c950f86" version="1">Dodge</content><comment commentid="Dodge" />
     <content contentuid="h7dc1d907gd5e6g4947gb22cgbd53b0665475" version="1">Searing Smite</content><comment commentid="Searing Smite Initial" />
     <content contentuid="h096216f2ge492g4bb9g9a3cgc88694a8a96b" version="1">Distracted</content><comment commentid="Distracted" />
+    <content contentuid="hc3e6277egfaf8g4707gaf01g67daf469b21d" version="1">Multiattack</content><comment commentid="Multiattack Helper" />
 
     <comment commentid="Status Boost Description" />
     <content contentuid="h3d6724a5gd115g401agb296ga7ed52f6120b" version="1">You haven't spent any Hit Dice. You can spend up to [1] Hit Dice</content><comment commentid="Hit Dice 0" />
@@ -75,6 +80,7 @@ Your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; affects how far yo
     <content contentuid="h893dd1e5gd3e5g41dcg9940g36e09791d185" version="1">Your weapon flares with white-hot intensity. Your next attack deals an extra [1] and marks the target with Searing Smite.</content><comment commentid="Searing Smite Initial" />
     <content contentuid="h25d8863egdaf1g47e3gba46gb6bade9f3a93" version="1">The next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; not from the Distracted Source is made with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.</content><comment commentid="Distracted" />
     <content contentuid="h0d5d7494ga6b3g4f9ag82d3g9cc482ead351" version="1">Has attacked recklessly. Enemies have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against them.</content><comment commentid="Reckless Attack" />
+    <content contentuid="h1da4e14fg4ec9g4efcga8b3g1b177560c9bd" version="1">Free attack after using the first one.</content><comment commentid="Multiattack Helper" />
 
     <comment commentid="Status Downed Description" />
     <content contentuid="h788b3d9dgb19cg43adg8d49gdb0f922e7400" version="1">You are Unconscious and must make Death Saving Throws. On 3 successes, you stop bleeding out and become Stable. On 3 failures, you die.

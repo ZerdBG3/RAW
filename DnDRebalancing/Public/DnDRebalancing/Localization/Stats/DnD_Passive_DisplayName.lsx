@@ -2,7 +2,7 @@
 <save>
 	<version major="4" minor="0" revision="0" build="48" />
 	<region id="TranslatedStringKeys">
-		<node id="root">
+		<node id="TranslatedStringKeys">
 			<children>
 				<node id="TranslatedStringKey">
 					<attribute id="UUID" type="FixedString" value="DnD_Passive_SneakAttack_DisplayName" />
@@ -37,6 +37,20 @@
 					<attribute id="Speaker" type="FixedString" value="" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Content" type="TranslatedString" handle="h0159dcd5g7df6g42fag8c0eg6b714977e84a" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="UUID" type="FixedString" value="DnD_Passive_Multiattack_GiantBadger_DisplayName" />
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="he756c6dcgf2d5g49d2g99ffg9ad47269f091" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="UUID" type="FixedString" value="DnD_Passive_Multiattack_Bear_Brown_DisplayName" />
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="h6116fc36ga798g4599g9dc1gd74b0408f1e1" version="1" />
 					<attribute id="Stub" type="bool" value="True" />
 				</node>
 			</children>
