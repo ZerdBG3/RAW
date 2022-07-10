@@ -10,21 +10,18 @@
                     <attribute id="Level" type="uint8" value="1"/>
                     <attribute id="Name" type="LSString" value="Rogue"/>
                     <attribute id="PassivesAdded" type="LSString" value="SneakAttack"/>
-                    <attribute id="PassivesRemoved" type="LSString" value=""/>
                     <attribute id="ProgressionType" type="uint8" value="0"/>
-                    <attribute id="Selectors" type="LSString" value="SelectSkills(a1c2b712-2ed6-4e5b-820f-c5db654fe006,4)"/>
+                    <attribute id="Selectors" type="LSString" value="SelectSkills(a1c2b712-2ed6-4e5b-820f-c5db654fe006,4);SelectSkillsExpertise(f974ebd6-3725-4b90-bb5c-2b647d41615d,2)"/>
                     <attribute id="TableUUID" type="guid" value="9a44e828-92db-4d6c-acbc-a4f8ef340415"/>
                     <attribute id="UUID" type="guid" value="16f00e7f-12f6-4cff-b610-4ee738b02d62"/>
                 </node>
                 <node id="Progression">
                     <attribute id="AllowImprovement" type="bool" value="false"/>
-                    <attribute id="Boosts" type="LSString" value=""/>
                     <attribute id="Level" type="uint8" value="3"/>
                     <attribute id="Name" type="LSString" value="Rogue"/>
                     <attribute id="PassivesAdded" type="LSString" value="SneakAttack_2"/>
                     <attribute id="PassivesRemoved" type="LSString" value="SneakAttack"/>
                     <attribute id="ProgressionType" type="uint8" value="0"/>
-                    <attribute id="Selectors" type="LSString" value=""/>
                     <attribute id="TableUUID" type="guid" value="9a44e828-92db-4d6c-acbc-a4f8ef340415"/>
                     <attribute id="UUID" type="guid" value="6f8d3e70-9b20-4fe0-914f-0f8f19206329"/>
                     <children>
@@ -41,26 +38,10 @@
                     </children>
                 </node>
                 <node id="Progression">
-                    <attribute id="AllowImprovement" type="bool" value="false"/>
-                    <attribute id="Boosts" type="LSString" value=""/>
-                    <attribute id="Level" type="uint8" value="3"/>
-                    <attribute id="Name" type="LSString" value="Thief"/>
-                    <attribute id="PassivesAdded" type="LSString" value="FastHands;SecondStoryWork"/>
-                    <attribute id="PassivesRemoved" type="LSString" value=""/>
-                    <attribute id="ProgressionType" type="uint8" value="1"/>
-                    <attribute id="Selectors" type="LSString" value=""/>
-                    <attribute id="TableUUID" type="guid" value="f6acc595-46b4-4d96-b7d5-6f33366fc2de"/>
-                    <attribute id="UUID" type="guid" value="3f95146b-90bc-4064-b3e0-4e1e751cd08d"/>
-                </node>
-                <node id="Progression">
-                    <attribute id="AllowImprovement" type="bool" value="false"/>
-                    <attribute id="Boosts" type="LSString" value=""/>
                     <attribute id="Level" type="uint8" value="2"/>
                     <attribute id="Name" type="LSString" value="Barbarian"/>
                     <attribute id="PassivesAdded" type="LSString" value="DangerSence;RecklessAttack;RecklessAttackBlock"/>
-                    <attribute id="PassivesRemoved" type="LSString" value=""/>
                     <attribute id="ProgressionType" type="uint8" value="0"/>
-                    <attribute id="Selectors" type="LSString" value=""/>
                     <attribute id="TableUUID" type="guid" value="60bbcc97-5381-4898-bc15-908c072895de"/>
                     <attribute id="UUID" type="guid" value="89986e8a-09b1-4163-b1d0-ddb2332bf3c5"/>
                 </node>

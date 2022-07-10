@@ -2,7 +2,7 @@
 <save>
 	<version major="4" minor="0" revision="0" build="48" />
 	<region id="TranslatedStringKeys">
-		<node id="root">
+		<node id="TranslatedStringKeys">
 			<children>
 				<node id="TranslatedStringKey">
 					<attribute id="Speaker" type="FixedString" value="" />
@@ -72,6 +72,13 @@
 					<attribute id="UUID" type="FixedString" value="Shared_Status_BOOST_DISTRACTED_DisplayName" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Content" type="TranslatedString" handle="h096216f2ge492g4bb9g9a3cgc88694a8a96b" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="UUID" type="FixedString" value="DnD_Status_BOOST_MULTIATTACK_HELPER_DisplayName" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="hc3e6277egfaf8g4707gaf01g67daf469b21d" version="1" />
 					<attribute id="Stub" type="bool" value="True" />
 				</node>
 			</children>

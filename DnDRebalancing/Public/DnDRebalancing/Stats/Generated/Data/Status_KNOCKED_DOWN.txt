@@ -13,5 +13,5 @@ data "RemoveConditions" "(HasActionResource('Movement', 50, 0, true) and not Imm
 data "StatusPropertyFlags" "IgnoredByImmobilized;InitiateCombat;DisableOverhead;ForceSheathed"
 data "RemoveEvents" "OnTurn"
 data "OnApplyFunctors" "RemoveStatus(SNEAKING)"
-data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.Condition) and TurnBased() and not HasPassive('Athlete_StandUp')):UseActionResource(Movement, 50%, 0, true);IF(RemoveCause(StatusRemoveCause.Condition) and TurnBased() and HasPassive('Athlete_StandUp')):UseActionResource(Movement, 3, 1, true);AI_ONLY:ApplyStatus(AI_HELPER_PRONE,100,2);"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.Condition) and TurnBased() and not HasPassive('Athlete_StandUp')):UseActionResource(Movement, 50%, 0, true);IF(RemoveCause(StatusRemoveCause.Condition) and TurnBased() and HasPassive('Athlete_StandUp')):UseActionResource(Movement, 1.5, 0, true);AI_ONLY:ApplyStatus(AI_HELPER_PRONE,100,2);"
 data "StatusGroups" "SG_Prone;SG_Condition;SG_Unconscious"
