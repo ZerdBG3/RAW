@@ -55,7 +55,7 @@ data "DisplayName" "DnD_Shout_EndShortRest_DisplayName"
 data "Description" "DnD_Shout_EndShortRest_Description"
 data "CastTextEvent" "Cast"
 data "SpellAnimation" "dd86aa43-8189-4d9f-9a5c-454b5fe4a197,,;,,;bcc3b0d9-f04f-4448-aab0-e0ad641167cc,,;bf924cc6-8b39-4c3b-b1c0-eda264cf6150,,;cc5b0caf-3ed1-4711-a50d-11dc3f1fdc6a,,;,,;1715b877-4512-472e-9bd0-fd568a112e90,,;,,;,,"
-data "SpellFlags" "Temporary"
+data "SpellFlags" "Temporary;CantUseMusicalInstrumentForCasting"
 
 new entry "Shout_Hide"
 type "SpellData"
