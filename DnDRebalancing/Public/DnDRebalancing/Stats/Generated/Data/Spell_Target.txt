@@ -294,6 +294,7 @@ new entry "Target_Bite_Bear_Brown_Wildshape"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_Bite_Bear_Brown"
+data "SpellFlags" "IsMelee;IsHarmful"
 
 new entry "Target_Help"
 type "SpellData"
