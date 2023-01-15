@@ -41,6 +41,13 @@
 				</node>
 				<node id="TranslatedStringKey">
 					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="UUID" type="FixedString" value="DnD_Status_BOOST_DND_HIT_DICE_5_Description" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="hc0e68a3fg68eag4b3agaabegf010802d7d05" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Speaker" type="FixedString" value="" />
 					<attribute id="UUID" type="FixedString" value="DnD_Status_BOOST_DND_HIT_DICE_MAX_Description" />
 					<attribute id="ExtraData" type="LSString" value="" />
 					<attribute id="Content" type="TranslatedString" handle="h8d2d015eg2d7ag422cgb563gcc1c6486ade8" version="1" />

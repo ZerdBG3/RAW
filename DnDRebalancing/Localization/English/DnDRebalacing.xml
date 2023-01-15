@@ -60,6 +60,7 @@ Your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; affects how far yo
     <content contentuid="h1a3ba32cg1267g4727g901fg61d77b66af2f" version="1">Hit Dice (2)</content><comment commentid="Hit Dice 2" />
     <content contentuid="h38db25cbga3e7g4e8dgbb99g9a17bc427a44" version="1">Hit Dice (3)</content><comment commentid="Hit Dice 3" />
     <content contentuid="hd8b2e639ge54cg40f2g9d43g260563a14e01" version="1">Hit Dice (4)</content><comment commentid="Hit Dice 4" />
+    <content contentuid="hd4957bcag88b6g4e6eg895cg3169fec5a604" version="1">Hit Dice (5)</content><comment commentid="Hit Dice 5" />
     <content contentuid="hc3710865g4106g4f9fg93f0gc5e2c0f950d9" version="1">Hit Dice (All)</content><comment commentid="Hit Dice Max" />
     <content contentuid="hd7046718g6e1ag4867g9e30g6900297f0d58" version="1">Short Rest</content><comment commentid="Short Rest" />
     <content contentuid="hbd0dde92g9845g4382ga349g00b37c950f86" version="1">Dodge</content><comment commentid="Dodge" />
@@ -73,6 +74,7 @@ Your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; affects how far yo
     <content contentuid="h28ba6624g48d3g4b8ega5b0g757530ac6e8e" version="1">You have spent 2 Hit Dice. You can spend up to [1] Hit Dice</content><comment commentid="Hit Dice 2" />
     <content contentuid="hfdb7ec72g621dg4b92gbd34g51a37e5fd478" version="1">You have spent 3 Hit Dice. You can spend up to [1] Hit Dice</content><comment commentid="Hit Dice 3" />
     <content contentuid="h61b20598ge011g433ag9cc2gddadc3fe3bec" version="1">You have spent 4 Hit Dice. You can spend up to [1] Hit Dice</content><comment commentid="Hit Dice 4" />
+    <content contentuid="hc0e68a3fg68eag4b3agaabegf010802d7d05" version="1">You have spent 5 Hit Dice. You can spend up to [1] Hit Dice</content><comment commentid="Hit Dice 5" />
     <content contentuid="h8d2d015eg2d7ag422cgb563gcc1c6486ade8" version="1">You have spent all of your Hit Dice ([1])</content><comment commentid="Hit Dice Max" />
     <content contentuid="h2f4288c1g1e4fg4852g80e1g09db0b94bb3d" version="1">Taking a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content><comment commentid="Short Rest" />
     <content contentuid="h910d365egd00ag49abg853agfeec0d6e5137" version="1">&lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; made against you has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;, and you make Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;</content><comment commentid="Dodge" />
