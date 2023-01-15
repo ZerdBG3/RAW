@@ -3,33 +3,38 @@ EVENTS
 
 EVENT DND_CharacterSetHitDiceHelper
 VARS
-	CHARACTER:_Character
-	LIST<STATUS>:_RemoveList
-	STATUS:_Result
+    CHARACTER:_Character
+    LIST<STATUS>:_RemoveList
+    STATUS:_Result
 ON
     FetchCharacterApplyStatusData(_Character, DND_HIT_DICE_HELPER)
 ACTIONS
-	ListClear(_RemoveList)
+    ListClear(_RemoveList)
     Set(_Result, DND_HIT_DICE_1)
 
-	IF "c1"
-		CharacterHasStatus(_Character, DND_HIT_DICE_1)
-	THEN
+    IF "c1"
+        CharacterHasStatus(_Character, DND_HIT_DICE_1)
+    THEN
         ListAdd(_RemoveList, DND_HIT_DICE_1)
         Set(_Result, DND_HIT_DICE_2)
     ELIF "c1"
         CharacterHasStatus(_Character, DND_HIT_DICE_2)
     THEN
         ListAdd(_RemoveList, DND_HIT_DICE_2)
-		Set(_Result, DND_HIT_DICE_3)
+        Set(_Result, DND_HIT_DICE_3)
     ELIF "c1"
         CharacterHasStatus(_Character, DND_HIT_DICE_3)
     THEN
         ListAdd(_RemoveList, DND_HIT_DICE_3)
-		Set(_Result, DND_HIT_DICE_4)
+        Set(_Result, DND_HIT_DICE_4)
+    ELIF "c1"
+        CharacterHasStatus(_Character, DND_HIT_DICE_4)
+    THEN
+        ListAdd(_RemoveList, DND_HIT_DICE_4)
+        Set(_Result, DND_HIT_DICE_5)
     ENDIF
 
-	RETURN(_RemoveList,_Result,-1)
+    RETURN(_RemoveList,_Result,-1)
 
 
 EVENT DND_LongRestHitDiceHelper
@@ -43,14 +48,14 @@ ACTIONS
 
 EVENT DND_CharacterSetRegenHitDiceHelper
 VARS
-	CHARACTER:_Character
-	LIST<STATUS>:_RemoveList
-	STATUS:_Result
+    CHARACTER:_Character
+    LIST<STATUS>:_RemoveList
+    STATUS:_Result
     FLOAT:_Level
 ON
-	FetchCharacterApplyStatusData(_Character, DND_REGEN_HIT_DICE_HELPER)
+    FetchCharacterApplyStatusData(_Character, DND_REGEN_HIT_DICE_HELPER)
 ACTIONS
-	ListClear(_RemoveList)
+    ListClear(_RemoveList)
     Set(_Result, DND_HIT_DICE_0)
     ListAdd(_RemoveList, DND_HIT_DICE_MAX)
 
@@ -68,7 +73,7 @@ ACTIONS
             ListAdd(_RemoveList, DND_HIT_DICE_2)
             Set(_Result, DND_HIT_DICE_1)
             IF "c1"
-                IsGreaterThen(_Level, 2)
+                IsGreaterThen(_Level, 3)
             THEN
                 Set(_Result, DND_HIT_DICE_0)
             ENDIF
@@ -76,8 +81,12 @@ ACTIONS
             CharacterHasStatus(_Character, DND_HIT_DICE_3)
         THEN
             ListAdd(_RemoveList, DND_HIT_DICE_3)
-            Set(_Result, DND_HIT_DICE_1)
+            Set(_Result, DND_HIT_DICE_2)
             IF "c1"
+                IsGreaterThen(_Level, 3)
+            THEN
+                Set(_Result, DND_HIT_DICE_1)
+            ELIF "c1"
                 IsGreaterThen(_Level, 5)
             THEN
                 Set(_Result, DND_HIT_DICE_0)
@@ -91,83 +100,119 @@ ACTIONS
                 IsGreaterThen(_Level, 5)
             THEN
                 Set(_Result, DND_HIT_DICE_1)
+            ELIF "c1"
+                IsGreaterThen(_Level, 7)
+            THEN
+                Set(_Result, DND_HIT_DICE_0)
+            ENDIF
+        ELIF "c1"
+            CharacterHasStatus(_Character, DND_HIT_DICE_5)
+        THEN
+            ListAdd(_RemoveList, DND_HIT_DICE_5)
+            Set(_Result, DND_HIT_DICE_3)
+            IF "c1"
+                IsGreaterThen(_Level, 5)
+            THEN
+                Set(_Result, DND_HIT_DICE_2)
+            ELIF "c1"
+                IsGreaterThen(_Level, 7)
+            THEN
+                Set(_Result, DND_HIT_DICE_1)
+            ELIF "c1"
+                IsGreaterThen(_Level, 9)
+            THEN
+                Set(_Result, DND_HIT_DICE_0)
             ENDIF
         ENDIF
     ENDIF
 
-	RETURN(_RemoveList,_Result,-1)
+    RETURN(_RemoveList,_Result,-1)
 
 
 EVENT DND_CharacterSetHitDice_1
 VARS
-	CHARACTER:_Character
+    CHARACTER:_Character
     FLOAT:_Level
 ON
-	OnCharacterStatusApplied(_Character, DND_HIT_DICE_1)
+    OnCharacterStatusApplied(_Character, DND_HIT_DICE_1)
 ACTIONS
-	IF "c1&!c2"
-		CharacterGetStat(_Level,_Character, Level)
+    IF "c1&!c2"
+        CharacterGetStat(_Level,_Character, Level)
         IsGreaterThen(_Level, 1)
-	THEN
+    THEN
         CharacterApplyStatus(_Character, DND_HIT_DICE_MAX, -1)
     ENDIF
 
 
 EVENT DND_CharacterSetHitDice_2
 VARS
-	CHARACTER:_Character
+    CHARACTER:_Character
     FLOAT:_Level
 ON
-	OnCharacterStatusApplied(_Character, DND_HIT_DICE_2)
+    OnCharacterStatusApplied(_Character, DND_HIT_DICE_2)
 ACTIONS
-	IF "c1&!c2"
-		CharacterGetStat(_Level,_Character, Level)
+    IF "c1&!c2"
+        CharacterGetStat(_Level,_Character, Level)
         IsGreaterThen(_Level, 2)
-	THEN
+    THEN
         CharacterApplyStatus(_Character, DND_HIT_DICE_MAX, -1)
     ENDIF
 
 
 EVENT DND_CharacterSetHitDice_3
 VARS
-	CHARACTER:_Character
+    CHARACTER:_Character
     FLOAT:_Level
 ON
-	OnCharacterStatusApplied(_Character, DND_HIT_DICE_3)
+    OnCharacterStatusApplied(_Character, DND_HIT_DICE_3)
 ACTIONS
-	IF "c1&!c2"
-		CharacterGetStat(_Level,_Character, Level)
+    IF "c1&!c2"
+        CharacterGetStat(_Level,_Character, Level)
         IsGreaterThen(_Level, 3)
-	THEN
+    THEN
         CharacterApplyStatus(_Character, DND_HIT_DICE_MAX, -1)
     ENDIF
 
 
 EVENT DND_CharacterSetHitDice_4
 VARS
-	CHARACTER:_Character
+    CHARACTER:_Character
     FLOAT:_Level
 ON
-	OnCharacterStatusApplied(_Character, DND_HIT_DICE_4)
+    OnCharacterStatusApplied(_Character, DND_HIT_DICE_4)
 ACTIONS
-	IF "c1&!c2"
-		CharacterGetStat(_Level,_Character, Level)
+    IF "c1&!c2"
+        CharacterGetStat(_Level,_Character, Level)
         IsGreaterThen(_Level, 4)
-	THEN
+    THEN
+        CharacterApplyStatus(_Character, DND_HIT_DICE_MAX, -1)
+    ENDIF
+
+EVENT DND_CharacterSetHitDice_5
+VARS
+    CHARACTER:_Character
+    FLOAT:_Level
+ON
+    OnCharacterStatusApplied(_Character, DND_HIT_DICE_5)
+ACTIONS
+    IF "c1&!c2"
+        CharacterGetStat(_Level,_Character, Level)
+        IsGreaterThen(_Level, 5)
+    THEN
         CharacterApplyStatus(_Character, DND_HIT_DICE_MAX, -1)
     ENDIF
 
 
 EVENT CharacterSetDnDShortRest
 VARS
-	CHARACTER:_Character
-	LIST<STATUS>:_RemoveList
-	STATUS:_Result
+    CHARACTER:_Character
+    LIST<STATUS>:_RemoveList
+    STATUS:_Result
 ON 
-	FetchCharacterApplyStatusData(_Character, DND_SHORT_REST)
+    FetchCharacterApplyStatusData(_Character, DND_SHORT_REST)
 ACTIONS
-	Set(_Result,DND_SHORT_REST)
-	
+    Set(_Result,DND_SHORT_REST)
+    
     ListClear(_RemoveList)
     ListAdd(_RemoveList, FALSE_LIFE)
     ListAdd(_RemoveList, FALSE_LIFE_2)
@@ -191,7 +236,7 @@ ACTIONS
     ListAdd(_RemoveList, PROTECTION_FROM_POISON)
     ListAdd(_RemoveList, DND_CONCENTRATION_HELPER)
 
-	RETURN(_RemoveList,_Result,null)
+    RETURN(_RemoveList,_Result,null)
 
 
 EVENT CharacterDownedStabilizedApplied

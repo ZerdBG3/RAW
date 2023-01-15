@@ -9,15 +9,12 @@
                     <attribute id="DiceType" type="uint32" value="6"/>
                     <attribute id="DisplayName" type="FixedString" value="DnD_ActionResourceDefinitions_SneakAttack_DisplayName"/>
                     <attribute id="Error" type="FixedString" value="Sneak Attack Error"/>
-                    <attribute id="IsSpellResource" type="bool" value="false"/>
                     <attribute id="MaxLevel" type="uint32" value="0"/>
-                    <attribute id="MaxValue" type="uint32" value="0"/>
+                    <attribute id="MaxValue" type="uint32" value="1"/>
                     <attribute id="Name" type="FixedString" value="SneakAttack"/>
-                    <attribute id="PartyActionResource" type="bool" value="false"/>
                     <attribute id="ReplenishType" type="FixedString" value="Turn"/>
                     <attribute id="ShowOnActionResourcePanel" type="bool" value="true"/>
                     <attribute id="UUID" type="guid" value="b4a0480d-93de-4569-9417-d4c91ec9f8bc"/>
-                    <attribute id="UpdatesSpellPowerLevel" type="bool" value="false"/>
                 </node>
             </children>
         </node>

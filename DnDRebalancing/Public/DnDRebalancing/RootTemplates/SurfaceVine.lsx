@@ -17,6 +17,8 @@
 					<attribute id="MapKey" type="FixedString" value="b3aa15e7-876a-489d-8e95-db4f60532208" />
 					<attribute id="MaterialType" type="uint8" value="28" />
 					<attribute id="Name" type="LSString" value="SurfaceVines" />
+					<attribute id="OnEnterDistanceOverride" type="float" value="1" />
+					<attribute id="OnMoveDistanceOverride" type="float" value="4" />
 					<attribute id="ParentTemplateId" type="FixedString" value="" />
 					<attribute id="PhysicsOpenTemplate" type="FixedString" value="" />
 					<attribute id="PhysicsTemplate" type="FixedString" value="" />

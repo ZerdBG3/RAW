@@ -38,6 +38,15 @@
                     </children>
                 </node>
                 <node id="Progression">
+                    <attribute id="Level" type="uint8" value="5"/>
+                    <attribute id="Name" type="LSString" value="Rogue"/>
+                    <attribute id="PassivesAdded" type="LSString" value="UncannyDodge;SneakAttack_3"/>
+                    <attribute id="PassivesRemoved" type="LSString" value="SneakAttack_2"/>
+                    <attribute id="ProgressionType" type="uint8" value="0"/>
+                    <attribute id="TableUUID" type="guid" value="9a44e828-92db-4d6c-acbc-a4f8ef340415"/>
+                    <attribute id="UUID" type="guid" value="19857e46-f5dc-4a9f-847e-5f714ceef7b1"/>
+                </node>
+                <node id="Progression">
                     <attribute id="Level" type="uint8" value="2"/>
                     <attribute id="Name" type="LSString" value="Barbarian"/>
                     <attribute id="PassivesAdded" type="LSString" value="DangerSence;RecklessAttack;RecklessAttackBlock"/>
