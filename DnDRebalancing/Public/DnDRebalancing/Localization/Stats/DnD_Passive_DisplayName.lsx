@@ -5,6 +5,13 @@
 		<node id="TranslatedStringKeys">
 			<children>
 				<node id="TranslatedStringKey">
+					<attribute id="UUID" type="FixedString" value="DnD_Passive_Walk_DisplayName" />
+					<attribute id="Speaker" type="FixedString" value="" />
+					<attribute id="ExtraData" type="LSString" value="" />
+					<attribute id="Content" type="TranslatedString" handle="h15a2faa5gf385g456dg8aa8gbf5a1029919f" version="1" />
+					<attribute id="Stub" type="bool" value="True" />
+				</node>
+				<node id="TranslatedStringKey">
 					<attribute id="UUID" type="FixedString" value="DnD_Passive_SneakAttack_DisplayName" />
 					<attribute id="Speaker" type="FixedString" value="" />
 					<attribute id="ExtraData" type="LSString" value="" />
