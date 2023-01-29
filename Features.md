@@ -106,7 +106,7 @@
 * Nerfs Fire dipped (also Torch) and Poison coating damage to 1 static damage (from `1d4`)
 * Removes surface creation on most benefitial potions (like healing and resistance potions) - you can't heal people by throwing potions at their feet!
 * Adds Heavy Armor to various locations and traders
-* Gives a Walk passive to players that allows them to toggle between walking and running for cinematic and roleplay purposes (as request by fmarzullo)
+* Gives a Walk passive to players that allows them to toggle between walking and running for cinematic and roleplay purposes (as requested by fmarzullo)
 
 ## Two-Weapon Fighting
 * Removes the automatic offhand bonus attack option when Dual Wielding (This removes Dual Wielding AoO as well)
