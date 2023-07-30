@@ -1,0 +1,286 @@
+EVENTS
+
+
+EVENT RAW_CharacterSetHitDiceHelper
+VARS
+    CHARACTER:_Character
+    LIST<STATUS>:_RemoveList
+    STATUS:_Result
+ON
+    FetchCharacterApplyStatusData(_Character, RAW_HIT_DICE_HELPER)
+ACTIONS
+    ListClear(_RemoveList)
+    Set(_Result, RAW_HIT_DICE_1)
+
+    IF "c1"
+        CharacterHasStatus(_Character, RAW_HIT_DICE_1)
+    THEN
+        ListAdd(_RemoveList, RAW_HIT_DICE_1)
+        Set(_Result, RAW_HIT_DICE_2)
+    ELIF "c1"
+        CharacterHasStatus(_Character, RAW_HIT_DICE_2)
+    THEN
+        ListAdd(_RemoveList, RAW_HIT_DICE_2)
+        Set(_Result, RAW_HIT_DICE_3)
+    ELIF "c1"
+        CharacterHasStatus(_Character, RAW_HIT_DICE_3)
+    THEN
+        ListAdd(_RemoveList, RAW_HIT_DICE_3)
+        Set(_Result, RAW_HIT_DICE_4)
+    ELIF "c1"
+        CharacterHasStatus(_Character, RAW_HIT_DICE_4)
+    THEN
+        ListAdd(_RemoveList, RAW_HIT_DICE_4)
+        Set(_Result, RAW_HIT_DICE_5)
+    ENDIF
+
+    RETURN(_RemoveList,_Result,-1)
+
+
+EVENT RAW_LongRestHitDiceHelper
+VARS
+    CHARACTER:_Character
+ON
+    OnCharacterStatusApplied(_Character, LONG_REST)
+ACTIONS
+    CharacterApplyStatus(_Character, RAW_REGEN_HIT_DICE_HELPER, 0)
+
+
+EVENT RAW_CharacterSetRegenHitDiceHelper
+VARS
+    CHARACTER:_Character
+    LIST<STATUS>:_RemoveList
+    STATUS:_Result
+    FLOAT:_Level
+ON
+    FetchCharacterApplyStatusData(_Character, RAW_REGEN_HIT_DICE_HELPER)
+ACTIONS
+    ListClear(_RemoveList)
+    Set(_Result, RAW_HIT_DICE_0)
+    ListAdd(_RemoveList, RAW_HIT_DICE_MAX)
+
+    IF "c1"
+        CharacterGetStat(_Level,_Character, Level)
+    THEN
+        IF "c1"
+            CharacterHasStatus(_Character, RAW_HIT_DICE_1)
+        THEN
+            ListAdd(_RemoveList, RAW_HIT_DICE_1)
+            Set(_Result, RAW_HIT_DICE_0)
+        ELIF "c1"
+            CharacterHasStatus(_Character, RAW_HIT_DICE_2)
+        THEN
+            ListAdd(_RemoveList, RAW_HIT_DICE_2)
+            Set(_Result, RAW_HIT_DICE_1)
+            IF "c1"
+                IsGreaterThen(_Level, 3)
+            THEN
+                Set(_Result, RAW_HIT_DICE_0)
+            ENDIF
+        ELIF "c1"
+            CharacterHasStatus(_Character, RAW_HIT_DICE_3)
+        THEN
+            ListAdd(_RemoveList, RAW_HIT_DICE_3)
+            Set(_Result, RAW_HIT_DICE_2)
+            IF "c1"
+                IsGreaterThen(_Level, 3)
+            THEN
+                Set(_Result, RAW_HIT_DICE_1)
+            ELIF "c1"
+                IsGreaterThen(_Level, 5)
+            THEN
+                Set(_Result, RAW_HIT_DICE_0)
+            ENDIF
+        ELIF "c1"
+            CharacterHasStatus(_Character, RAW_HIT_DICE_4)
+        THEN
+            ListAdd(_RemoveList, RAW_HIT_DICE_4)
+            Set(_Result, RAW_HIT_DICE_2)
+            IF "c1"
+                IsGreaterThen(_Level, 5)
+            THEN
+                Set(_Result, RAW_HIT_DICE_1)
+            ELIF "c1"
+                IsGreaterThen(_Level, 7)
+            THEN
+                Set(_Result, RAW_HIT_DICE_0)
+            ENDIF
+        ELIF "c1"
+            CharacterHasStatus(_Character, RAW_HIT_DICE_5)
+        THEN
+            ListAdd(_RemoveList, RAW_HIT_DICE_5)
+            Set(_Result, RAW_HIT_DICE_3)
+            IF "c1"
+                IsGreaterThen(_Level, 5)
+            THEN
+                Set(_Result, RAW_HIT_DICE_2)
+            ELIF "c1"
+                IsGreaterThen(_Level, 7)
+            THEN
+                Set(_Result, RAW_HIT_DICE_1)
+            ELIF "c1"
+                IsGreaterThen(_Level, 9)
+            THEN
+                Set(_Result, RAW_HIT_DICE_0)
+            ENDIF
+        ENDIF
+    ENDIF
+
+    RETURN(_RemoveList,_Result,-1)
+
+
+EVENT RAW_CharacterSetHitDice_1
+VARS
+    CHARACTER:_Character
+    FLOAT:_Level
+ON
+    OnCharacterStatusApplied(_Character, RAW_HIT_DICE_1)
+ACTIONS
+    IF "c1&!c2"
+        CharacterGetStat(_Level,_Character, Level)
+        IsGreaterThen(_Level, 1)
+    THEN
+        CharacterApplyStatus(_Character, RAW_HIT_DICE_MAX, -1)
+    ENDIF
+
+
+EVENT RAW_CharacterSetHitDice_2
+VARS
+    CHARACTER:_Character
+    FLOAT:_Level
+ON
+    OnCharacterStatusApplied(_Character, RAW_HIT_DICE_2)
+ACTIONS
+    IF "c1&!c2"
+        CharacterGetStat(_Level,_Character, Level)
+        IsGreaterThen(_Level, 2)
+    THEN
+        CharacterApplyStatus(_Character, RAW_HIT_DICE_MAX, -1)
+    ENDIF
+
+
+EVENT RAW_CharacterSetHitDice_3
+VARS
+    CHARACTER:_Character
+    FLOAT:_Level
+ON
+    OnCharacterStatusApplied(_Character, RAW_HIT_DICE_3)
+ACTIONS
+    IF "c1&!c2"
+        CharacterGetStat(_Level,_Character, Level)
+        IsGreaterThen(_Level, 3)
+    THEN
+        CharacterApplyStatus(_Character, RAW_HIT_DICE_MAX, -1)
+    ENDIF
+
+
+EVENT RAW_CharacterSetHitDice_4
+VARS
+    CHARACTER:_Character
+    FLOAT:_Level
+ON
+    OnCharacterStatusApplied(_Character, RAW_HIT_DICE_4)
+ACTIONS
+    IF "c1&!c2"
+        CharacterGetStat(_Level,_Character, Level)
+        IsGreaterThen(_Level, 4)
+    THEN
+        CharacterApplyStatus(_Character, RAW_HIT_DICE_MAX, -1)
+    ENDIF
+
+EVENT RAW_CharacterSetHitDice_5
+VARS
+    CHARACTER:_Character
+    FLOAT:_Level
+ON
+    OnCharacterStatusApplied(_Character, RAW_HIT_DICE_5)
+ACTIONS
+    IF "c1&!c2"
+        CharacterGetStat(_Level,_Character, Level)
+        IsGreaterThen(_Level, 5)
+    THEN
+        CharacterApplyStatus(_Character, RAW_HIT_DICE_MAX, -1)
+    ENDIF
+
+
+EVENT CharacterSetRAWShortRest
+VARS
+    CHARACTER:_Character
+    LIST<STATUS>:_RemoveList
+    STATUS:_Result
+ON 
+    FetchCharacterApplyStatusData(_Character, RAW_SHORT_REST)
+ACTIONS
+    Set(_Result,RAW_SHORT_REST)
+    
+    ListClear(_RemoveList)
+    ListAdd(_RemoveList, FALSE_LIFE)
+    ListAdd(_RemoveList, FALSE_LIFE_2)
+    ListAdd(_RemoveList, HEX_REAPPLY)
+    ListAdd(_RemoveList, HUNTERS_MARK_REAPPLY)
+    ListAdd(_RemoveList, SHIELD_OF_FAITH)
+    ListAdd(_RemoveList, ARMOR_OF_AGATHYS)
+    ListAdd(_RemoveList, ARMOR_OF_AGATHYS_2)
+    ListAdd(_RemoveList, PROTECTION_FROM_EVIL_AND_GOOD)
+    ListAdd(_RemoveList, LONGSTRIDER)
+    ListAdd(_RemoveList, EXPEDITIOUS_RETREAT)
+    ListAdd(_RemoveList, INVISIBILITY)
+    ListAdd(_RemoveList, BARKSKIN)
+    ListAdd(_RemoveList, BEARS_ENDURANCE)
+    ListAdd(_RemoveList, BULLS_STRENGTH)
+    ListAdd(_RemoveList, CATS_GRACE)
+    ListAdd(_RemoveList, EAGLES_SPLENDOR)
+    ListAdd(_RemoveList, FOXS_CUNNING)
+    ListAdd(_RemoveList, OWLS_WISDOM)
+    ListAdd(_RemoveList, PASS_WITHOUT_TRACE_AURA)
+    ListAdd(_RemoveList, PROTECTION_FROM_POISON)
+    ListAdd(_RemoveList, RAW_CONCENTRATION_HELPER)
+
+    RETURN(_RemoveList,_Result,null)
+
+
+EVENT CharacterDownedStabilizedApplied
+VARS
+    CHARACTER:_Character
+ON
+    OnCharacterStatusApplied(_Character, RAW_DOWNED_STABILIZED)
+ACTIONS
+    IF "!c1"
+        IsInCombat(_Character)
+    THEN
+        CharacterApplyStatus(_Character, RAW_DOWNED_STABILIZED_HEAL, 0)
+        CharacterRemoveStatus(_Character, RAW_DOWNED_STABILIZED)
+    ENDIF
+
+
+EVENT CharacterLeftCombatHealDowned
+VARS
+    CHARACTER:_Character
+ON
+    OnLeftCombat(_Character, _)
+ACTIONS
+    IF "c1"
+        CharacterHasStatus(_Character, RAW_DOWNED_STABILIZED)
+    THEN
+        CharacterApplyStatus(_Character, RAW_DOWNED_STABILIZED_HEAL, 0)
+        CharacterRemoveStatus(_Character, RAW_DOWNED_STABILIZED)
+    ENDIF
+
+
+EVENT CharacterTurnStarted
+VARS
+    CHARACTER:_Character
+ON
+    OnTurn(_Character, _)
+ACTIONS
+    CharacterApplyStatus(_Character, RAW_CURRENT_TURN, 1)
+
+
+EVENT CharacterTurnEnded
+VARS
+    CHARACTER:_Character
+ON
+    OnTurnEnded(_Character, _)
+ACTIONS
+    CharacterRemoveStatus(_Character, RAW_CURRENT_TURN)
+

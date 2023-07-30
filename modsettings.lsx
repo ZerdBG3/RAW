@@ -1,49 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <save>
-    <version major="4" minor="0" revision="0" build="52"/>
-    <region id="ModuleSettings">
-        <node id="root">
-            <children>
-                <node id="ModOrder">
-                    <children>
-                        <node id="Module">
-                            <attribute id="UUID" type="FixedString" value="f19c68ed-70be-4c3d-b610-e94afc5c5103"/>
-                        </node>
-                        <!--
-                        <node id="Module">
-                            <attribute id="UUID" type="FixedString" value="d7e3b122-67ec-460b-b08a-89e5c79fb633"/>
-                        </node>
-                        -->
-                    </children>
-                </node>
-                <node id="Mods">
-                    <children>
-                        <node id="ModuleShortDesc">
-                            <attribute id="Folder" type="LSWString" value="Gustav"/>
-                            <attribute id="MD5" type="LSString" value=""/>
-                            <attribute id="Name" type="FixedString" value="Gustav"/>
-                            <attribute id="UUID" type="FixedString" value="991c9c7a-fb80-40cb-8f0d-b92d4e80e9b1"/>
-                            <attribute id="Version" type="int32" value="268435456"/>
-                        </node>
-                        <node id="ModuleShortDesc">
-                            <attribute id="Folder" type="LSWString" value="DnDRebalancing"/>
-                            <attribute id="MD5" type="LSString" value=""/>
-                            <attribute id="Name" type="FixedString" value="DnDRebalancing"/>
-                            <attribute id="UUID" type="FixedString" value="f19c68ed-70be-4c3d-b610-e94afc5c5103"/>
-                            <attribute id="Version" type="int32" value="268435456"/>
-                        </node>
-                        <!--
-                        <node id="ModuleShortDesc">
-                            <attribute id="Folder" type="LSWString" value="CustomCharacterEnhancer"/>
-                            <attribute id="MD5" type="LSString" value=""/>
-                            <attribute id="Name" type="FixedString" value="CustomCharacterEnhancer"/>
-                            <attribute id="UUID" type="FixedString" value="d7e3b122-67ec-460b-b08a-89e5c79fb633"/>
-                            <attribute id="Version" type="int32" value="268435456"/>
-                        </node>
-                        -->
-                    </children>
-                </node>
-            </children>
+  <version major="4" minor="0" revision="8" build="2" />
+  <region id="ModuleSettings">
+    <node id="root">
+      <children>
+        <node id="ModOrder">
+          <children>
+            <node id="Module">
+              <attribute id="UUID" value="991c9c7a-fb80-40cb-8f0d-b92d4e80e9b1" type="FixedString" />
+            </node>
+            <node id="Module">
+              <attribute id="UUID" value="f19c68ed-70be-4c3d-b610-e94afc5c5103" type="FixedString" />
+            </node>
+            <!--
+            <node id="Module">
+                <attribute id="UUID" type="FixedString" value="91a00a1f-ca34-4cda-99d5-d3c9d6f511bc"/>
+            </node>
+            -->
+          </children>
         </node>
-    </region>
+        <node id="Mods">
+          <children>
+            <node id="ModuleShortDesc">
+              <attribute id="Folder" value="Gustav" type="LSString" />
+              <attribute id="MD5" value="" type="LSString" />
+              <attribute id="Name" value="Story" type="LSString" />
+              <attribute id="UUID" value="991c9c7a-fb80-40cb-8f0d-b92d4e80e9b1" type="FixedString" />
+              <attribute id="Version64" value="36029157796225741" type="int64" />
+            </node>
+            <node id="ModuleShortDesc">
+              <attribute id="Folder" value="RAW" type="LSString" />
+              <attribute id="MD5" value="" type="LSString" />
+              <attribute id="Name" value="RAW" type="LSString" />
+              <attribute id="UUID" value="f19c68ed-70be-4c3d-b610-e94afc5c5103" type="FixedString" />
+              <attribute id="Version64" value="1266637395197952" type="int64" />
+            </node>
+            <!--
+            <node id="ModuleShortDesc">
+              <attribute id="Folder" value="OtherMod" type="LSString" />
+              <attribute id="MD5" value="" type="LSString" />
+              <attribute id="Name" value="Some Other Mod" type="LSString" />
+              <attribute id="UUID" value="91a00a1f-ca34-4cda-99d5-d3c9d6f511bc" type="FixedString" />
+              <attribute id="Version64" value="36029157796225741" type="int64" />
+            </node>
+            -->
+          </children>
+        </node>
+      </children>
+    </node>
+  </region>
 </save>
