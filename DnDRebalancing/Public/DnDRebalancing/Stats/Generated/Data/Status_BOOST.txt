@@ -90,7 +90,7 @@ data "StackId" "DND_SHORT_REST"
 data "StillAnimationType" "Sitting"
 data "StillAnimationPriority" "Sitting"
 data "Boosts" "ActionResourceBlock(Movement);ActionResourceBlock(ActionPoint);ActionResourceBlock(BonusActionPoint);UnlockSpell(Shout_EndShortRest);IF(Tagged('BARBARIAN', context.Source)):UnlockSpell(Shout_DND_RegainHP_12);IF(Tagged('FIGHTER', context.Source) or Tagged('PALADIN', context.Source) or Tagged('RANGER', context.Source)):UnlockSpell(Shout_DND_RegainHP_10);IF(Tagged('BARD', context.Source) or Tagged('CLERIC', context.Source) or Tagged('DRUID', context.Source) or Tagged('ROGUE', context.Source) or Tagged('WARLOCK', context.Source)):UnlockSpell(Shout_DND_RegainHP_8);IF(Tagged('SORCERER', context.Source) or Tagged('WIZARD', context.Source)):UnlockSpell(Shout_DND_RegainHP_6);"
-data "OnApplyFunctors" "RemoveStatus(SG_Disguise)"
+data "OnApplyFunctors" "RemoveStatus(SG_Disguise);RemoveStatus(SG_Polymorph_BeastShape)"
 
 new entry "DODGE"
 type "StatusData"

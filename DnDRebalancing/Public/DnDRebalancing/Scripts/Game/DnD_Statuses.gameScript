@@ -257,7 +257,7 @@ EVENT CharacterLeftCombatHealDowned
 VARS
     CHARACTER:_Character
 ON
-    OnLeftCombat(_Character,_)
+    OnLeftCombat(_Character, _)
 ACTIONS
     IF "c1"
         CharacterHasStatus(_Character, DND_DOWNED_STABILIZED)

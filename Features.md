@@ -9,6 +9,7 @@
 * Druid:
   - Level 2: Wild Shape dismissal costs a bonus action
   - Level 2: Wild Shape Giant Badger changes to attacks and movements
+  - Level 2: Wild Shape ends with a Short Rest
   - Level 2 (Circle of the Land): Replaces Dire Wolf with Wolf for Circle of the Land Druids
   - Level 2 (Circle of the Land): Natural Recovery is only usable during a Short Rest
   - Level 2 (Circle of the Moon): Changed stats of Dire Wolf to match Monster's Manual stats
