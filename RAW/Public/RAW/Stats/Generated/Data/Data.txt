@@ -1,3 +1,1 @@
-key "LowGroundAttackRollPenalty","-2"
-
 key "HighGroundAttackRollBonus","0"

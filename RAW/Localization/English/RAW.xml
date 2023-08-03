@@ -1,151 +1,148 @@
 <contentList date="13/05/2021 17:29">
-    <comment commentid="Passive Display Name" />
-    <content contentuid="h15a2faa5gf385g456dg8aa8gbf5a1029919f" version="1">Walk</content><comment commentid="Walk" />
-    <content contentuid="haf5c7044g93bcg4d69gbc0fgc1abc7d7b7ea" version="1">Sneak Attack</content><comment commentid="Sneak Attack" />
-    <content contentuid="h61fa56b6g2b42g4d9cg965eg0654c2c6f233" version="1">Second-Story Work</content><comment commentid="Second-Story Work" />
-    <content contentuid="hf4143e78g3b92g433bgbef2g3bb6433a8f32" version="1">Searing Smite</content><comment commentid="Searing Smite" />
-    <content contentuid="h4af7068bg689dg4db5g87fdg614624fc8585" version="1">Shield Master (Shove)</content><comment commentid="Shield Master (Shove)" />
-    <content contentuid="h0159dcd5g7df6g42fag8c0eg6b714977e84a" version="1">Reckless Attack</content><comment commentid="Reckless Attack" />
-    <content contentuid="he756c6dcgf2d5g49d2g99ffg9ad47269f091" version="1">Multiattack</content><comment commentid="Multiattack (Giant Badger)" />
-    <content contentuid="h6116fc36ga798g4599g9dc1gd74b0408f1e1" version="1">Multiattack</content><comment commentid="Multiattack (Brown Bear)" />
+    <!-- Passive Display Name -->
+    <content contentuid="h15a2faa5gf385g456dg8aa8gbf5a1029919f" version="1">Walk</content><!-- Walk -->
+    <content contentuid="haf5c7044g93bcg4d69gbc0fgc1abc7d7b7ea" version="1">Sneak Attack</content><!-- Sneak Attack -->
+    <content contentuid="h61fa56b6g2b42g4d9cg965eg0654c2c6f233" version="1">Second-Story Work</content><!-- Second-Story Work -->
+    <content contentuid="hf4143e78g3b92g433bgbef2g3bb6433a8f32" version="1">Searing Smite</content><!-- Searing Smite -->
+    <content contentuid="h4af7068bg689dg4db5g87fdg614624fc8585" version="1">Shield Master (Shove)</content><!-- Shield Master (Shove) -->
+    <content contentuid="h0159dcd5g7df6g42fag8c0eg6b714977e84a" version="1">Reckless Attack</content><!-- Reckless Attack -->
+    <content contentuid="he756c6dcgf2d5g49d2g99ffg9ad47269f091" version="1">Multiattack</content><!-- Multiattack (Giant Badger) -->
+    <content contentuid="h6116fc36ga798g4599g9dc1gd74b0408f1e1" version="1">Multiattack</content><!-- Multiattack (Brown Bear) -->
 
-    <comment commentid="Passive Description" />
-    <content contentuid="h460e389eg9748g4598g95cdgf796e95397c6" version="1">You start walking instead of running.</content><comment commentid="Walk" />
-    <content contentuid="h01d9015egc084g4378g853agb9b3a787fa6d" version="1">Once per turn, you deal extra [1] when you attack with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; or target someone with one of your allies nearby.</content><comment commentid="Sneak Attack" />
-    <content contentuid="hfc0ecb86gc504g44f1g9d88g957905740457" version="1">You can use the Bonus Action granted by your Cunning Action to Help allies, Distract enemies or Throw an item.</content><comment commentid="Fast Hands" />
-    <content contentuid="hd6a0c096gd133g4bc9ga518g80c70fd5d907" version="1">You've mastered the art of falling and gain resistance to Falling damage. Also, you now use your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; to increase your Jumping distance.</content><comment commentid="Second-Story Work" />
-    <content contentuid="h66b9bd72g4983g4373g95cbge989152c813b" version="1">Your weapon flares with white-hot intensity. It deals an extra [1] and marks the target with Searing Smite.</content><comment commentid="Searing Smite" />
-    <content contentuid="h85d7c071gf5e1g454fg904eg4f6253bf83c0" version="1">If you take the Attack Action on your turn, you can attempt to Shove with your shield using your Bonus Action.</content><comment commentid="Shield Master (Shove)" />
-    <content contentuid="hd8db6255g9df7g4a83g9a83g7ed354602d82" version="1">Throw aside all concern for defense to attack with fierce desperation. Attacking recklessly on your first attack of your turn gives you &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on melee weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; using Strength during this turn, but Attack Rolls against you have Advantage until your next turn.</content><comment commentid="Reckless Attack" />
-    <content contentuid="hd1661bc6gc996g446eg86cfg4c0efb17bea6" version="1">While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, you have Resistance to all damage except psychic damage.</content><comment commentid="Totem Spirit Bear" />
-    <content contentuid="h6768309eg09abg482fg9564g5dccbc2743c2" version="1">While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, foes have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="OpportunityAttack"&gt;Opportunity Attacks&lt;/LSTag&gt; against you, and you can use &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt; as a bonus action.</content><comment commentid="Totem Spirit Eagle" />
-    <content contentuid="h9f9b2f2bga644g4c45ga2dfgf557e17f6a40" version="1">While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, your &lt;LSTag Tooltip="MovementSpeed"&gt;Movement Speed&lt;/LSTag&gt; increases by [1].</content><comment commentid="Totem Spirit Elk" />
-    <content contentuid="h0a2b0a4fg3ca7g4348gb791g5fa69f9e9579" version="1">While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, your jump distance increases by [1].</content><comment commentid="Totem Spirit Tiger" />
-    <content contentuid="h58f5376fg9f9fg4835g9352g0300c7373a64" version="1">While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, your allies have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against enemies within [1] of you.</content><comment commentid="Totem Spirit Wolf" />
-    <content contentuid="hf1dedfbbg9543g40c0g8b9ege0352fe6d738" version="1">The badger makes two attacks: one with its bite and one with its claws.</content><comment commentid="Multiattack (Giant Badger)" />
-    <content contentuid="h9b9799c5g384eg4ce7gbf74gffd49b18451a" version="1">The bear makes two attacks: one with its bite and one with its claws.</content><comment commentid="Multiattack (Brown Bear)" />
+    <!-- Passive Description -->
+    <content contentuid="h460e389eg9748g4598g95cdgf796e95397c6" version="1">You start walking instead of running.</content><!-- Walk -->
+    <content contentuid="h01d9015egc084g4378g853agb9b3a787fa6d" version="1">Once per turn, you deal extra [1] when you attack with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; using a Finesse weapon.</content><!-- Sneak Attack -->
+    <content contentuid="hfc0ecb86gc504g44f1g9d88g957905740457" version="1">You can use the Bonus Action granted by your Cunning Action to Help allies, Distract enemies or Throw an item.</content><!-- Fast Hands -->
+    <content contentuid="hd6a0c096gd133g4bc9ga518g80c70fd5d907" version="1">You've mastered the art of falling and gain resistance to Falling damage. Also, you now use your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; to increase your Jumping distance.</content><!-- Second-Story Work -->
+    <content contentuid="h66b9bd72g4983g4373g95cbge989152c813b" version="1">Your weapon flares with white-hot intensity. It deals an extra [1] and marks the target with Searing Smite.</content><!-- Searing Smite -->
+    <content contentuid="h85d7c071gf5e1g454fg904eg4f6253bf83c0" version="1">If you take the Attack Action on your turn, you can attempt to Shove with your shield using your Bonus Action.</content><!-- Shield Master (Shove) -->
+    <content contentuid="hd8db6255g9df7g4a83g9a83g7ed354602d82" version="1">Throw aside all concern for defense to attack with fierce desperation. Attacking recklessly on your first attack of your turn gives you &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on melee weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; using Strength during this turn, but Attack Rolls against you have Advantage until your next turn.</content><!-- Reckless Attack -->
+    <content contentuid="hd1661bc6gc996g446eg86cfg4c0efb17bea6" version="1">While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, you have Resistance to all damage except psychic damage.</content><!-- Totem Spirit Bear -->
+    <content contentuid="h6768309eg09abg482fg9564g5dccbc2743c2" version="1">While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, foes have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="OpportunityAttack"&gt;Opportunity Attacks&lt;/LSTag&gt; against you, and you can use &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt; as a bonus action.</content><!-- Totem Spirit Eagle -->
+    <content contentuid="h9f9b2f2bga644g4c45ga2dfgf557e17f6a40" version="1">While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, your &lt;LSTag Tooltip="MovementSpeed"&gt;Movement Speed&lt;/LSTag&gt; increases by [1].</content><!-- Totem Spirit Elk -->
+    <content contentuid="h0a2b0a4fg3ca7g4348gb791g5fa69f9e9579" version="1">While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, your jump distance increases by [1].</content><!-- Totem Spirit Tiger -->
+    <content contentuid="h58f5376fg9f9fg4835g9352g0300c7373a64" version="1">While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, your allies have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against enemies within [1] of you.</content><!-- Totem Spirit Wolf -->
+    <content contentuid="hf1dedfbbg9543g40c0g8b9ege0352fe6d738" version="1">The badger makes two attacks: one with its bite and one with its claws.</content><!-- Multiattack (Giant Badger) -->
+    <content contentuid="h9b9799c5g384eg4ce7gbf74gffd49b18451a" version="1">The bear makes two attacks: one with its bite and one with its claws.</content><!-- Multiattack (Brown Bear) -->
 
-    <comment commentid="Passive Extra Description" />
-    <content contentuid="hc0a989cag7bfdg4f36g9642gf0a332244deb" version="1">Walking won't reduce the maximum travelled distance in a turn, it's purely cosmetic.</content><comment commentid="Walk" />
+    <!-- Passive Extra Description -->
+    <content contentuid="hc0a989cag7bfdg4f36g9642gf0a332244deb" version="1">Walking won't reduce the maximum travelled distance in a turn, it's purely cosmetic.</content><!-- Walk -->
+    <content contentuid="h2a2c5846gd594g476fgad73gd4abe1c825e2" version="1">Also works if you have an ally within [1] of the target and you don't have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;.</content><!-- Sneak Attack -->
 
-    <comment commentid="Projectile Display Name" />
-    <content contentuid="h4c76db83gcc4eg438ag9d00ge9b156dd1bbe" version="1">Jump (Thief)</content><comment commentid="Jump Thief" />
-    <content contentuid="he7373ea1ge596g4f74gbbd1g5763f2e77273" version="1">Produce Flame: Hurl (Free)</content><comment commentid="Produce Flame Hurl Free" />
+    <!-- Projectile Display Name -->
+    <content contentuid="h4c76db83gcc4eg438ag9d00ge9b156dd1bbe" version="1">Jump (Thief)</content><!-- Jump Thief -->
+    <content contentuid="he7373ea1ge596g4f74gbbd1g5763f2e77273" version="1">Produce Flame: Hurl (Free)</content><!-- Produce Flame Hurl Free -->
 
-    <comment commentid="Projectile Description" />
-    <content contentuid="hc25fd2e1g6a3cg4c99g8690gcf48eabe53a1" version="1">Jump to a destination.
+    <!-- Projectile Description -->
+    <content contentuid="hc25fd2e1g6a3cg4c99g8690gcf48eabe53a1" version="1">Jump up, down, and across. Your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; affects how far you can jump.</content><!-- Jump Thief -->
 
-Your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; affects how far you can jump.</content><comment commentid="Jump Thief" />
+    <!-- Shout Display Name -->
+    <content contentuid="haf813ecag5ad0g464cg8749g68d9ebd9b71d" version="1">End Short Rest</content><!-- End Short Rest -->
+    <content contentuid="h6c541127gda12g4b7cgbfdbg37c49ac85aba" version="1">Dodge</content><!-- Dodge -->
+    <content contentuid="h5d311bfdg3b88g4a78gb8fcgbb8645c6a5f7" version="1">Cunning Action</content><!-- Cunning Action -->
+    <content contentuid="h0611af1fg455ag4511ga7e5g9768ccd017d8" version="1">Cunning Action: Hide</content><!-- Hide Cunning Action -->
+    <content contentuid="h6b04ef7fg75dfg45b5g8a2ag2d1222e96a59" version="1">Wild Shape: Wolf</content><!-- Wild Shape Wolf -->
+    <content contentuid="h9bc99999g85cbg48e8ga3e8g8490a8f24483" version="1">Wild Shape: Dire Wolf</content><!-- Wild Shape Dire Wolf -->
+    <content contentuid="hf254ddbbg4086g493fgb116g42f77769d238" version="1">Remove Ensnared</content><!-- Remove Ensnared -->
 
-    <comment commentid="Shout Display Name" />
-    <content contentuid="haf813ecag5ad0g464cg8749g68d9ebd9b71d" version="1">End Short Rest</content><comment commentid="End Short Rest" />
-    <content contentuid="h6c541127gda12g4b7cgbfdbg37c49ac85aba" version="1">Dodge</content><comment commentid="Dodge" />
-    <content contentuid="h5d311bfdg3b88g4a78gb8fcgbb8645c6a5f7" version="1">Cunning Action</content><comment commentid="Cunning Action" />
-    <content contentuid="h0611af1fg455ag4511ga7e5g9768ccd017d8" version="1">Cunning Action: Hide</content><comment commentid="Hide Cunning Action" />
-    <content contentuid="h6b04ef7fg75dfg45b5g8a2ag2d1222e96a59" version="1">Wild Shape: Wolf</content><comment commentid="Wild Shape Wolf" />
-    <content contentuid="h9bc99999g85cbg48e8ga3e8g8490a8f24483" version="1">Wild Shape: Dire Wolf</content><comment commentid="Wild Shape Dire Wolf" />
-    <content contentuid="hf254ddbbg4086g493fgb116g42f77769d238" version="1">Remove Ensnared</content><comment commentid="Remove Ensnared" />
+    <!-- Shout Description -->
+    <content contentuid="h276bd4b5g1c97g4768ga645gf0d414ba9f06" version="1">Spend 1 Hit Dice to regain [1].</content><!-- Regain HP -->
+    <content contentuid="h1aff6b78gc632g459cgbb15g9c17e56b611a" version="1">Ends the &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt; for you and your party members around you.</content><!-- Short Rest -->
+    <content contentuid="h43261ff4gfee1g42f4g9bb3gc6120976fe3d" version="1">Until the start of your next turn, any &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; made against you has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;, and you make Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;. You lose this benefit if you are incapacitated or if your speed drops to 0.</content><!-- Dodge -->
+    <content contentuid="he7d837b8g404fg4dbdg85c2g9d69c019d63d" version="1">You can use your Bonus Action to Dash, Disengage or Hide.</content><!-- Cunning Action -->
+    <content contentuid="h21e470adgd2e5g4641gbbd5g5cfd6f4c8685" version="1">Take the shape of a brown bear with high HP.</content><!-- Bear Wild Shape -->
+    <content contentuid="h668116e4g5e9ag412fgbe5ag00b8762f202b" version="1">Take the shape of a wolf that can use its allies for advantageous attacks and leave its enemies vulnerable.</content><!-- Wild Shape Wolf -->
+    <content contentuid="h573ca0f0geb06g440cgb526gbcd88053850e" version="1">Take the shape of a dire wolf that can use its allies for advantageous attacks and leave its enemies vulnerable.</content><!-- Wild Shape Dire Wolf -->
+    <content contentuid="hd15cadd1g5891g4287gbde0gf4c73445a69d" version="1">Bolster yourself with a necromantic facsimile of life to gain [1] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;Temporary Hit Points&lt;/LSTag&gt;.</content><!-- False Life -->
+    <content contentuid="hbeba3ad3g8801g4a4fg8d77g7507fa9bb7c6" version="1">Once per day, during a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;, you can replenish expended &lt;LSTag Tooltip="SpellSlot"&gt;Spell Slots&lt;/LSTag&gt;.</content><!-- Arcane Recovery -->
+    <content contentuid="h75e85388g3e7dg4e70g8101g612860c4a857" version="1">Once per day, during a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;, you can replenish expended &lt;LSTag Tooltip="SpellSlot"&gt;Spell Slots&lt;/LSTag&gt;.</content><!-- Natural Recovery -->
+    <content contentuid="hc6229ed7gbb1eg49edga9c7gddef6469b2e4" version="1">Make a Strength &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against the caster's spell save DC to free yourself from the vines.</content><!-- Remove Ensnared -->
 
-    <comment commentid="Shout Description" />
-    <content contentuid="h276bd4b5g1c97g4768ga645gf0d414ba9f06" version="1">Spend 1 Hit Dice to regain [1].</content><comment commentid="Regain HP" />
-    <content contentuid="h1aff6b78gc632g459cgbb15g9c17e56b611a" version="1">Ends the &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt; for you and your party members around you.</content><comment commentid="Short Rest" />
-    <content contentuid="h43261ff4gfee1g42f4g9bb3gc6120976fe3d" version="1">Until the start of your next turn, any &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; made against you has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;, and you make Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;. You lose this benefit if you are incapacitated or if your speed drops to 0.</content><comment commentid="Dodge" />
-    <content contentuid="he7d837b8g404fg4dbdg85c2g9d69c019d63d" version="1">You can use your Bonus Action to Dash, Disengage or Hide.</content><comment commentid="Cunning Action" />
-    <content contentuid="h21e470adgd2e5g4641gbbd5g5cfd6f4c8685" version="1">Take the shape of a brown bear with high HP.</content><comment commentid="Bear Wild Shape" />
-    <content contentuid="h668116e4g5e9ag412fgbe5ag00b8762f202b" version="1">Take the shape of a wolf that can use its allies for advantageous attacks and leave its enemies vulnerable.</content><comment commentid="Wild Shape Wolf" />
-    <content contentuid="h573ca0f0geb06g440cgb526gbcd88053850e" version="1">Take the shape of a dire wolf that can use its allies for advantageous attacks and leave its enemies vulnerable.</content><comment commentid="Wild Shape Dire Wolf" />
-    <content contentuid="hd15cadd1g5891g4287gbde0gf4c73445a69d" version="1">Bolster yourself with a necromantic facsimile of life to gain [1] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;Temporary Hit Points&lt;/LSTag&gt;.</content><comment commentid="False Life" />
-    <content contentuid="hbeba3ad3g8801g4a4fg8d77g7507fa9bb7c6" version="1">Once per day, during a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;, you can replenish expended &lt;LSTag Tooltip="SpellSlot"&gt;Spell Slots&lt;/LSTag&gt;.</content><comment commentid="Arcane Recovery" />
-    <content contentuid="h75e85388g3e7dg4e70g8101g612860c4a857" version="1">Once per day, during a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;, you can replenish expended &lt;LSTag Tooltip="SpellSlot"&gt;Spell Slots&lt;/LSTag&gt;.</content><comment commentid="Natural Recovery" />
-    <content contentuid="hc6229ed7gbb1eg49edga9c7gddef6469b2e4" version="1">Make a Strength &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against the caster's spell save DC to free yourself from the vines.</content><comment commentid="Remove Ensnared" />
+    <!-- Status Boost Display Name -->
+    <content contentuid="h50a9a6d6g789ag4718g8c65g4c0a3a077353" version="1">Hit Dice (0)</content><!-- Hit Dice 0 -->
+    <content contentuid="hb86493e0g970bg4bcbg985bg52189540904e" version="1">Hit Dice (1)</content><!-- Hit Dice 1 -->
+    <content contentuid="h1a3ba32cg1267g4727g901fg61d77b66af2f" version="1">Hit Dice (2)</content><!-- Hit Dice 2 -->
+    <content contentuid="h38db25cbga3e7g4e8dgbb99g9a17bc427a44" version="1">Hit Dice (3)</content><!-- Hit Dice 3 -->
+    <content contentuid="hd8b2e639ge54cg40f2g9d43g260563a14e01" version="1">Hit Dice (4)</content><!-- Hit Dice 4 -->
+    <content contentuid="hd4957bcag88b6g4e6eg895cg3169fec5a604" version="1">Hit Dice (5)</content><!-- Hit Dice 5 -->
+    <content contentuid="hc3710865g4106g4f9fg93f0gc5e2c0f950d9" version="1">Hit Dice (All)</content><!-- Hit Dice Max -->
+    <content contentuid="hd7046718g6e1ag4867g9e30g6900297f0d58" version="1">Short Rest</content><!-- Short Rest -->
+    <content contentuid="hbd0dde92g9845g4382ga349g00b37c950f86" version="1">Dodge</content><!-- Dodge -->
+    <content contentuid="h7dc1d907gd5e6g4947gb22cgbd53b0665475" version="1">Searing Smite</content><!-- Searing Smite Initial -->
+    <content contentuid="h096216f2ge492g4bb9g9a3cgc88694a8a96b" version="1">Distracted</content><!-- Distracted -->
+    <content contentuid="hc3e6277egfaf8g4707gaf01g67daf469b21d" version="1">Multiattack</content><!-- Multiattack Helper -->
 
-    <comment commentid="Status Boost Display Name" />
-    <content contentuid="h50a9a6d6g789ag4718g8c65g4c0a3a077353" version="1">Hit Dice (0)</content><comment commentid="Hit Dice 0" />
-    <content contentuid="hb86493e0g970bg4bcbg985bg52189540904e" version="1">Hit Dice (1)</content><comment commentid="Hit Dice 1" />
-    <content contentuid="h1a3ba32cg1267g4727g901fg61d77b66af2f" version="1">Hit Dice (2)</content><comment commentid="Hit Dice 2" />
-    <content contentuid="h38db25cbga3e7g4e8dgbb99g9a17bc427a44" version="1">Hit Dice (3)</content><comment commentid="Hit Dice 3" />
-    <content contentuid="hd8b2e639ge54cg40f2g9d43g260563a14e01" version="1">Hit Dice (4)</content><comment commentid="Hit Dice 4" />
-    <content contentuid="hd4957bcag88b6g4e6eg895cg3169fec5a604" version="1">Hit Dice (5)</content><comment commentid="Hit Dice 5" />
-    <content contentuid="hc3710865g4106g4f9fg93f0gc5e2c0f950d9" version="1">Hit Dice (All)</content><comment commentid="Hit Dice Max" />
-    <content contentuid="hd7046718g6e1ag4867g9e30g6900297f0d58" version="1">Short Rest</content><comment commentid="Short Rest" />
-    <content contentuid="hbd0dde92g9845g4382ga349g00b37c950f86" version="1">Dodge</content><comment commentid="Dodge" />
-    <content contentuid="h7dc1d907gd5e6g4947gb22cgbd53b0665475" version="1">Searing Smite</content><comment commentid="Searing Smite Initial" />
-    <content contentuid="h096216f2ge492g4bb9g9a3cgc88694a8a96b" version="1">Distracted</content><comment commentid="Distracted" />
-    <content contentuid="hc3e6277egfaf8g4707gaf01g67daf469b21d" version="1">Multiattack</content><comment commentid="Multiattack Helper" />
+    <!-- Status Boost Description -->
+    <content contentuid="h3d6724a5gd115g401agb296ga7ed52f6120b" version="1">You haven't spent any Hit Dice. You can spend up to [1] Hit Dice</content><!-- Hit Dice 0 -->
+    <content contentuid="h98031fe4g347dg476cgb35eg175b31b18443" version="1">You have spent 1 Hit Die. You can spend up to [1] Hit Dice</content><!-- Hit Dice 1 -->
+    <content contentuid="h28ba6624g48d3g4b8ega5b0g757530ac6e8e" version="1">You have spent 2 Hit Dice. You can spend up to [1] Hit Dice</content><!-- Hit Dice 2 -->
+    <content contentuid="hfdb7ec72g621dg4b92gbd34g51a37e5fd478" version="1">You have spent 3 Hit Dice. You can spend up to [1] Hit Dice</content><!-- Hit Dice 3 -->
+    <content contentuid="h61b20598ge011g433ag9cc2gddadc3fe3bec" version="1">You have spent 4 Hit Dice. You can spend up to [1] Hit Dice</content><!-- Hit Dice 4 -->
+    <content contentuid="hc0e68a3fg68eag4b3agaabegf010802d7d05" version="1">You have spent 5 Hit Dice. You can spend up to [1] Hit Dice</content><!-- Hit Dice 5 -->
+    <content contentuid="h8d2d015eg2d7ag422cgb563gcc1c6486ade8" version="1">You have spent all of your Hit Dice ([1])</content><!-- Hit Dice Max -->
+    <content contentuid="h2f4288c1g1e4fg4852g80e1g09db0b94bb3d" version="1">Taking a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content><!-- Short Rest -->
+    <content contentuid="h910d365egd00ag49abg853agfeec0d6e5137" version="1">&lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; made against you has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;, and you make Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;</content><!-- Dodge -->
+    <content contentuid="h599e295bg2b58g419fga2b7gba12247ecaeb" version="1">Gained &lt;LSTag Tooltip="TemporaryHitPoints"&gt;Temporary Hit Points&lt;/LSTag&gt;.</content><!-- False Life -->
+    <content contentuid="h893dd1e5gd3e5g41dcg9940g36e09791d185" version="1">Your weapon flares with white-hot intensity. Your next attack deals an extra [1] and marks the target with Searing Smite.</content><!-- Searing Smite Initial -->
+    <content contentuid="h25d8863egdaf1g47e3gba46gb6bade9f3a93" version="1">The next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; not from the Distracted Source is made with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.</content><!-- Distracted -->
+    <content contentuid="h0d5d7494ga6b3g4f9ag82d3g9cc482ead351" version="1">Has attacked recklessly. Enemies have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against them.</content><!-- Reckless Attack -->
+    <content contentuid="h1da4e14fg4ec9g4efcga8b3g1b177560c9bd" version="1">Free attack after using the first one.</content><!-- Multiattack Helper -->
 
-    <comment commentid="Status Boost Description" />
-    <content contentuid="h3d6724a5gd115g401agb296ga7ed52f6120b" version="1">You haven't spent any Hit Dice. You can spend up to [1] Hit Dice</content><comment commentid="Hit Dice 0" />
-    <content contentuid="h98031fe4g347dg476cgb35eg175b31b18443" version="1">You have spent 1 Hit Die. You can spend up to [1] Hit Dice</content><comment commentid="Hit Dice 1" />
-    <content contentuid="h28ba6624g48d3g4b8ega5b0g757530ac6e8e" version="1">You have spent 2 Hit Dice. You can spend up to [1] Hit Dice</content><comment commentid="Hit Dice 2" />
-    <content contentuid="hfdb7ec72g621dg4b92gbd34g51a37e5fd478" version="1">You have spent 3 Hit Dice. You can spend up to [1] Hit Dice</content><comment commentid="Hit Dice 3" />
-    <content contentuid="h61b20598ge011g433ag9cc2gddadc3fe3bec" version="1">You have spent 4 Hit Dice. You can spend up to [1] Hit Dice</content><comment commentid="Hit Dice 4" />
-    <content contentuid="hc0e68a3fg68eag4b3agaabegf010802d7d05" version="1">You have spent 5 Hit Dice. You can spend up to [1] Hit Dice</content><comment commentid="Hit Dice 5" />
-    <content contentuid="h8d2d015eg2d7ag422cgb563gcc1c6486ade8" version="1">You have spent all of your Hit Dice ([1])</content><comment commentid="Hit Dice Max" />
-    <content contentuid="h2f4288c1g1e4fg4852g80e1g09db0b94bb3d" version="1">Taking a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content><comment commentid="Short Rest" />
-    <content contentuid="h910d365egd00ag49abg853agfeec0d6e5137" version="1">&lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; made against you has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;, and you make Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;</content><comment commentid="Dodge" />
-    <content contentuid="h599e295bg2b58g419fga2b7gba12247ecaeb" version="1">Gained &lt;LSTag Tooltip="TemporaryHitPoints"&gt;Temporary Hit Points&lt;/LSTag&gt;.</content><comment commentid="False Life" />
-    <content contentuid="h893dd1e5gd3e5g41dcg9940g36e09791d185" version="1">Your weapon flares with white-hot intensity. Your next attack deals an extra [1] and marks the target with Searing Smite.</content><comment commentid="Searing Smite Initial" />
-    <content contentuid="h25d8863egdaf1g47e3gba46gb6bade9f3a93" version="1">The next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; not from the Distracted Source is made with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.</content><comment commentid="Distracted" />
-    <content contentuid="h0d5d7494ga6b3g4f9ag82d3g9cc482ead351" version="1">Has attacked recklessly. Enemies have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against them.</content><comment commentid="Reckless Attack" />
-    <content contentuid="h1da4e14fg4ec9g4efcga8b3g1b177560c9bd" version="1">Free attack after using the first one.</content><comment commentid="Multiattack Helper" />
-
-    <comment commentid="Status Downed Description" />
+    <!-- Status Downed Description -->
     <content contentuid="h788b3d9dgb19cg43adg8d49gdb0f922e7400" version="1">You are Unconscious and must make Death Saving Throws. On 3 successes, you stop bleeding out and become Stable. On 3 failures, you die.
 
-If you regain any Hit Points, lose Downed. If an ally Helps you and succeeds on their &lt;LSTag Tooltip="Medicine"&gt;Medicine&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt;, you become stabilised and regain 1 &lt;LSTag Tooltip="HitPoints"&gt;Hit Point&lt;/LSTag&gt; when Out of Combat.</content><comment commentid="Downed" />
+If you regain any Hit Points, lose Downed. If an ally Helps you and succeeds on their &lt;LSTag Tooltip="Medicine"&gt;Medicine&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt;, you become stabilised and regain 1 &lt;LSTag Tooltip="HitPoints"&gt;Hit Point&lt;/LSTag&gt; when Out of Combat.</content><!-- Downed -->
 
-    <comment commentid="Status Knocked Downed Description" />
-    <content contentuid="hf9fcc402g8592g454cga793g52f04804a411" version="1">Can't move or act. Attacks against a Prone creature have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; if they're made within [1] of the creature, otherwise they have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;A Prone creature must spend half its &lt;LSTag Tooltip="MovementSpeed"&gt;Movement Speed&lt;/LSTag&gt; to stand up.</content>
+    <!-- Status Knocked Downed Description -->
+    <content contentuid="hf9fcc402g8592g454cga793g52f04804a411" version="1">Can't move or take actions, bonus actions, or reactions.&lt;br&gt;&lt;br&gt;Attacks against a Prone creature have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; if they're made within [1] of the creature, otherwise they have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;A Prone creature must spend half its &lt;LSTag Tooltip="MovementSpeed"&gt;Movement Speed&lt;/LSTag&gt; to stand up.</content><!-- Prone -->
 
-    <comment commentid="Status Polymorphed Display Name" />
-    <content contentuid="hd3eaf8fbg50f0g4076g8a63gaf6ab15e8dfc" version="1">Wild Shape: Brown Bear</content><comment commentid="Wild Shape Brown Bear" />
-    <content contentuid="h8a5e4725g2a13g4ed9ga9e9gfe4e3531a61e" version="1">Wild Shape: Wolf</content><comment commentid="Wild Shape Wolf" />
+    <!-- Status Polymorphed Display Name -->
+    <content contentuid="hd3eaf8fbg50f0g4076g8a63gaf6ab15e8dfc" version="1">Wild Shape: Brown Bear</content><!-- Wild Shape Brown Bear -->
+    <content contentuid="h8a5e4725g2a13g4ed9ga9e9gfe4e3531a61e" version="1">Wild Shape: Wolf</content><!-- Wild Shape Wolf -->
 
-    <comment commentid="Target Display Name" />
-    <content contentuid="h5877647dg40fbg4c09gb1c5g16af8009e38b" version="1">Shove (Push)</content><comment commentid="Shove Push" />
-    <content contentuid="hb461d04cg1cfbg4ba1g83a2g5bd1421d1a20" version="1">Shove (Prone)</content><comment commentid="Shove Prone" />
-    <content contentuid="hacff287aga587g493bg8074ga79a9969f0c7" version="1">Distract</content><comment commentid="Distract" />
-    <content contentuid="h868da50cg1553g4d69gb8d6g491c06156b08" version="1">Distract (Cunning Action)</content><comment commentid="Distract Cunning Action" />
-    <content contentuid="h9dae9cf6gd51dg4176g9654g137136bdc8c1" version="1">Help (Cunning Action)</content><comment commentid="Help Cunning Action" />
+    <!-- Target Display Name -->
+    <content contentuid="h5877647dg40fbg4c09gb1c5g16af8009e38b" version="1">Shove (Push)</content><!-- Shove Push -->
+    <content contentuid="hb461d04cg1cfbg4ba1g83a2g5bd1421d1a20" version="1">Shove (Prone)</content><!-- Shove Prone -->
+    <content contentuid="hacff287aga587g493bg8074ga79a9969f0c7" version="1">Distract</content><!-- Distract -->
+    <content contentuid="h868da50cg1553g4d69gb8d6g491c06156b08" version="1">Distract (Cunning Action)</content><!-- Distract Cunning Action -->
+    <content contentuid="h9dae9cf6gd51dg4176g9654g137136bdc8c1" version="1">Help (Cunning Action)</content><!-- Help Cunning Action -->
 
-    <comment commentid="Target Description" />
-    <content contentuid="h39b0e6f4g2f5cg4038g8944g625faa062c38" version="1">Shove a target to push it [1].</content><comment commentid="Shove" />
-    <content contentuid="h29df2d23ga713g4cf9gaacdg7cf61bb3b2ee" version="1">Shove a target. You can try to push it away or knock it prone.</content><comment commentid="Shove Player" />
-    <content contentuid="h8cd12a69g8980g4a55g8737g3f6183de78c1" version="1">Shove a target to knock it prone.</content><comment commentid="Shove Prone" />
-    <content contentuid="h8a5eb4d5g32beg46b6g9c83g8b4832766545" version="1">Feint, distract the target, or in some other way team up to make your ally's next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; before your next turn have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.</content><comment commentid="Distract" />
-    <content contentuid="h76afdb93gdd39g4cfdg9121g03081409865e" version="1">Conjure ten magical berries for yourself or a companion. Creatures who eat a berry regain [1].</content><comment commentid="Goodberry" />
-    <content contentuid="h418e3086g1f94g47e5g9d8ag712fd92aa4c0" version="1">Burrow into the ground and emerge at the target position.</content><comment commentid="Giant Badger Burrow" />
-    <content contentuid="h32d73faeg184cg419bg8fb6gdd67958d7817" version="1">Help an ally in need.
+    <!-- Target Description -->
+    <content contentuid="h39b0e6f4g2f5cg4038g8944g625faa062c38" version="1">Shove a target to push it [1].</content><!-- Shove -->
+    <content contentuid="h29df2d23ga713g4cf9gaacdg7cf61bb3b2ee" version="1">Shove a target. You can try to push it away or knock it prone.</content><!-- Shove Player -->
+    <content contentuid="h8cd12a69g8980g4a55g8737g3f6183de78c1" version="1">Shove a target to knock it prone.</content><!-- Shove Prone -->
+    <content contentuid="h8a5eb4d5g32beg46b6g9c83g8b4832766545" version="1">Feint, distract the target, or in some other way team up to make your ally's next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; before your next turn have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.</content><!-- Distract -->
+    <content contentuid="h76afdb93gdd39g4cfdg9121g03081409865e" version="1">Conjure ten magical berries for yourself or a companion. Creatures who eat a berry regain [1].</content><!-- Goodberry -->
+    <content contentuid="h418e3086g1f94g47e5g9d8ag712fd92aa4c0" version="1">Burrow into the ground and emerge at the target position.</content><!-- Giant Badger Burrow -->
+    <content contentuid="h32d73faeg184cg419bg8fb6gdd67958d7817" version="1">Makes a &lt;LSTag Tooltip="Medicine"&gt;Medicine&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; to stabilise a &lt;LSTag Tooltip="Downed"&gt;Downed&lt;/LSTag&gt; character.</content><!-- Help -->
 
-Makes a &lt;LSTag Tooltip="Medicine"&gt;Medicine&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; to stabilise a &lt;LSTag Tooltip="Downed"&gt;Downed&lt;/LSTag&gt; character. Removes Burning, Ensnared, Entangled, Enwebbed, Prone, and Sleeping.</content><comment commentid="Help" />
+    <!-- Target Extra Description -->
+    <content contentuid="hc68b30c2g7032g449cg8f2bga512ecc16839" version="1">Entangled creatures are Restrained and can use their action to try and tear away the vines, making a Strength &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against your spell save DC.</content><!-- Entangle -->
+    <content contentuid="hed88db7bgfbe4g4ab0g9252g068a8bcc48c0" version="1">Shoving depends on your &lt;LSTag Tooltip="Athletics"&gt;Athletics&lt;/LSTag&gt;, and the higher of the target's Athletics or &lt;LSTag Tooltip="Acrobatics"&gt;Acrobatics&lt;/LSTag&gt;.</content><!-- Shove -->
+    <content contentuid="h53da955bgfbadg4d77gb962g11eec4070db8" version="1">Removes Burning, Ensnared, Entangled, Enwebbed, Prone, and Sleeping.</content><!-- Help -->
 
-    <comment commentid="Target Extra Description" />
-    <content contentuid="hc68b30c2g7032g449cg8f2bga512ecc16839" version="1">Entangled creatures are Restrained and can use their action to try and tear away the vines, making a Strength &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against your spell save DC.</content><comment commentid="Entangle" />
-    <content contentuid="hed88db7bgfbe4g4ab0g9252g068a8bcc48c0" version="1">Shoving depends on your &lt;LSTag Tooltip="Athletics"&gt;Athletics&lt;/LSTag&gt;, and the higher of the target's Athletics or &lt;LSTag Tooltip="Acrobatics"&gt;Acrobatics&lt;/LSTag&gt;.</content><comment commentid="Shove" />
+    <!-- Throw Display Name -->
+    <content contentuid="h42ce0a1eg03e9g492dg9457g553a25b8a68c" version="1">Throw (Item)</content><!-- Throw -->
+    <content contentuid="hb3284f80g9ea7g4eefg92bbg6c0d18aa322b" version="1">Throw (Cunning Action)</content><!-- Throw Cunning Action -->
+    <content contentuid="h6ecf3783gaec3g4933g9d97ga93f5eb2ffd1" version="1">Throw (MainHand)</content><!-- Throw Weapon -->
+    <content contentuid="hcb77aa27g6e23g401egb640g6251e9584b0c" version="1">Throw (OffHand)</content><!-- Throw Weapon OffHand -->
 
-    <comment commentid="Throw Display Name" />
-    <content contentuid="h42ce0a1eg03e9g492dg9457g553a25b8a68c" version="1">Throw (Item)</content><comment commentid="Throw" />
-    <content contentuid="hb3284f80g9ea7g4eefg92bbg6c0d18aa322b" version="1">Throw (Cunning Action)</content><comment commentid="Throw Cunning Action" />
-    <content contentuid="h6ecf3783gaec3g4933g9d97ga93f5eb2ffd1" version="1">Throw (MainHand)</content><comment commentid="Throw Weapon" />
-    <content contentuid="hcb77aa27g6e23g401egb640g6251e9584b0c" version="1">Throw (OffHand)</content><comment commentid="Throw Weapon OffHand" />
+    <!-- Throw Description -->
+    <content contentuid="h7c08af75gd6d2g4535g8e96g88ddffc3f0ce" version="1">Throw an item from the floor or your inventory.</content><!-- Throw -->
+    <content contentuid="h49ed29fcg4ac2g459egbc2cg0c6264341656" version="1">Throw an item from the floor or your inventory, without dealing damage to the target.&lt;br&gt;&lt;br&gt;Throwable items like grenades will still activate their effects.</content><!-- Throw Cunning Action -->
+    <content contentuid="h73c67cf6g5850g4e17gbbc6gabb0186cfd4d" version="1">Pick up an item and use it to make a melee attack.</content><!-- Improvised Weapon -->
+    <content contentuid="h8b86b170gd26eg460cg8562g2d4f2b911e88" version="1">&lt;LSTag Tooltip="Thrown"&gt;Throw&lt;/LSTag&gt; your main weapon.</content><!-- Throw Weapon -->
+    <content contentuid="hecbf5369g4424g4914ga10bgd4b42b8cd386" version="1">&lt;LSTag Tooltip="Thrown"&gt;Throw&lt;/LSTag&gt; your offhand weapon.</content><!-- Throw Weapon OffHand -->
 
-    <comment commentid="Throw Description" />
-    <content contentuid="h7c08af75gd6d2g4535g8e96g88ddffc3f0ce" version="1">Throw an item from the floor or your inventory.&lt;br&gt;&lt;br&gt;Your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; affects how much weight you can throw. Heavier items deal more damage.</content><comment commentid="Throw" />
-    <content contentuid="h49ed29fcg4ac2g459egbc2cg0c6264341656" version="1">Throw an item from the floor or your inventory, without dealing damage as an improvised weapon.&lt;br&gt;&lt;br&gt;Throwable items like grenades will still activate their effects.</content><comment commentid="Throw Cunning Action" />
-    <content contentuid="h73c67cf6g5850g4e17gbbc6gabb0186cfd4d" version="1">Pick up an item and use it to make a melee attack.&lt;br&gt;&lt;br&gt;Your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; affects how much weight you can lift. Heavier items deal more damage.</content><comment commentid="Improvised Weapon" />
-    <content contentuid="h8b86b170gd26eg460cg8562g2d4f2b911e88" version="1">&lt;LSTag Tooltip="Thrown"&gt;Throw&lt;/LSTag&gt; your main weapon.&lt;br&gt;&lt;br&gt;Attacking further than the normal range ([1]) impose &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on the &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt;.</content><comment commentid="Throw Weapon" />
-    <content contentuid="hecbf5369g4424g4914ga10bgd4b42b8cd386" version="1">&lt;LSTag Tooltip="Thrown"&gt;Throw&lt;/LSTag&gt; your offhand weapon.&lt;br&gt;&lt;br&gt;Attacking further than the normal range ([1]) impose &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on the &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt;.</content><comment commentid="Throw Weapon OffHand" />
+    <!-- Throw Extra Description -->
+    <content contentuid="hf080f971g5582g46d8g8938gdb8c8b560d42" version="1">Your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; affects how much weight you can throw. Heavier items deal more damage.</content><!-- Throw -->
+    <content contentuid="h6da3fafbgfe47g420fgb449g9756dc4146fe" version="1">Your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; affects how much weight you can throw.</content><!-- Throw Cunning Action -->
+    <content contentuid="h12c219aag52b4g4a22gb0e3g160edbaffbb7" version="1">Attacking further than the normal range ([1]) impose &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on the &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt;.</content><!-- Throw Weapon -->
 
-    <comment commentid="Action Resource Definitions Display Name" />
-    <content contentuid="h0006ac15g5189g4586gb0b0ge45030db2100" version="1">Sneak Attack</content><comment commentid="Sneak Attack" />
+    <!-- Progression Description -->
+    <content contentuid="h2e3ab9b3g7c96g4274gbb27g66c15be10707" version="1">You can use the Bonus Action granted by your Cunning Action to Help allies, Distract enemies or Throw an item.</content><!-- Fast Hands -->
+    <content contentuid="hc7499bffg5070g4107g9e4bg6a62a9d4fa8a" version="1">You've mastered the art of falling and gain resistance to Falling damage. Also, you now use your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; to increase your Jumping distance.</content><!-- Second-Story Work -->
 
-    <comment commentid="Action Resource Definitions Description" />
-    <content contentuid="h3fbcf170g59d8g4b15ga88bgd5bd3461012d" version="1">Allows the usage of the Sneak Attack Passive</content><comment commentid="Sneak Attack" />
-
-    <comment commentid="Progression Description" />
-    <content contentuid="h2e3ab9b3g7c96g4274gbb27g66c15be10707" version="1">You can use the Bonus Action granted by your Cunning Action to Help allies, Distract enemies or Throw an item.</content><comment commentid="Fast Hands" />
-    <content contentuid="hc7499bffg5070g4107g9e4bg6a62a9d4fa8a" version="1">You've mastered the art of falling and gain resistance to Falling damage. Also, you now use your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; to increase your Jumping distance.</content><comment commentid="Second-Story Work" />
-
-    <comment commentid="Surface Description" />
-    <content contentuid="h38d14185g6dc2g4cbcg8307gb3fd2f65572e" version="1">Difficult terrain - &lt;LSTag Tooltip="MovementSpeed"&gt;Movement Speed&lt;/LSTag&gt; is halved.</content><comment commentid="Twisting Vines" />
+    <!-- Surface Description -->
+    <content contentuid="h38d14185g6dc2g4cbcg8307gb3fd2f65572e" version="1">Difficult terrain - &lt;LSTag Tooltip="MovementSpeed"&gt;Movement Speed&lt;/LSTag&gt; is halved.</content><!-- Twisting Vines -->
 </contentList>

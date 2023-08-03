@@ -21,13 +21,13 @@
                     <attribute id="Tags" type="LSString" value=""/>
                     <attribute id="Type" type="FixedString" value="Add-on"/>
                     <attribute id="UUID" type="FixedString" value="f19c68ed-70be-4c3d-b610-e94afc5c5103"/>
-                    <attribute id="Version64" type="int64" value="1266637395197954"/>
+                    <attribute id="Version64" type="int64" value="36028797018963968"/>
                     <children>
                         <node id="PublishVersion">
                             <attribute id="Version64" type="int64" value="36028797018963968"/>
                         </node>
                         <node id="Scripts">
-                            <children>
+                            <!-- <children>
                                 <node id="Script">
                                     <attribute id="UUID" type="FixedString" value="679933c1-2487-4f54-8d6e-b10d2ba938c4"/>
                                     <children>
@@ -42,7 +42,7 @@
                                         </node>
                                     </children>
                                 </node>
-                            </children>
+                            </children> -->
                         </node>
                         <node id="TargetModes">
                             <children>
