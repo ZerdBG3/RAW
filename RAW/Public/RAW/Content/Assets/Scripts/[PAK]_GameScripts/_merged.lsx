@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <save>
-	<version major="4" minor="0" revision="0" build="51" />
+	<version major="4" minor="0" revision="9" build="0" />
 	<region id="ScriptBank">
 		<node id="ScriptBank">
 			<children>
@@ -9,7 +9,7 @@
 					<attribute id="Localized" type="bool" value="False" />
 					<attribute id="Name" type="LSString" value="RAW_Statuses" />
 					<attribute id="SourceFile" type="LSWString" value="Public/RAW/Scripts/Game/RAW_Statuses.gameScript" />
-					<attribute id="_OriginalFileVersion_" type="int32" value="1073741866" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="36028797018963968" />
 					<children>
 						<node id="Parameters" />
 					</children>

@@ -23,7 +23,8 @@ Zerd's Rules As Written for Baldur's Gate 3
 * There's also various modifications to classes progressions, spells, actions, etc. This means other mods that change the same entries might cause conflict. Using other mods may result in weird interactions and not intended behaviors
 
 # Error
-* **IMPORTANT:** When loading the game, you'll get a notification regarding an invalid story set-up. Since the mod doesn't have any story files, the fallback to the main story allows the game to load correctly. Tl;dr: ignore the error warning you'll get
+* **IMPORTANT:** When opening the launcher, you'll get several notifications telling you about how mods might break and crash your game. Ignore them
+* When loading the game or creating a new one, you'll get a notification regarding an invalid story set-up. Since the mod doesn't have any story files, the fallback to the main story allows the game to load correctly. Tl;dr: ignore the error warning you'll get
 
 # Discord
 * Feel free to join my Discord server: https://discord.gg/jJUxKgw
