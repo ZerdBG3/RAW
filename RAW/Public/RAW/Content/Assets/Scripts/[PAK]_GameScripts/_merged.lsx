@@ -8,7 +8,7 @@
 					<attribute id="ID" type="FixedString" value="679933c1-2487-4f54-8d6e-b10d2ba938c4" />
 					<attribute id="Localized" type="bool" value="False" />
 					<attribute id="Name" type="LSString" value="RAW_Statuses" />
-					<attribute id="SourceFile" type="LSWString" value="Public/RAW/Scripts/Game/RAW_Statuses.gameScript" />
+					<attribute id="SourceFile" type="LSString" value="Public/RAW/Scripts/Game/RAW_Statuses.gameScript" />
 					<attribute id="_OriginalFileVersion_" type="int64" value="36028797018963968" />
 					<children>
 						<node id="Parameters" />

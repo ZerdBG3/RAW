@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<save>
+    <version major="4" minor="0" revision="9" build="328"/>
+    <region id="LevelMapValues">
+        <node id="root">
+            <children>
+                <node id="LevelMapSeries">
+                    <attribute id="Level1" type="LSString" value="2d6"/>
+                    <attribute id="Level3" type="LSString" value="4d6"/>
+                    <attribute id="Level5" type="LSString" value="6d6"/>
+                    <attribute id="Level7" type="LSString" value="8d6"/>
+                    <attribute id="Level9" type="LSString" value="10d6"/>
+                    <attribute id="Name" type="FixedString" value="SneakAttackCrit"/>
+                    <attribute id="PreferredClassUUID" type="guid" value="e8b1eab0-ef11-40a2-8a0b-cee8d062bf2a"/>
+                    <attribute id="UUID" type="guid" value="05437932-9d88-4e83-bc35-637bba8f59bf"/>
+                </node>
+            </children>
+        </node>
+    </region>
+</save>
