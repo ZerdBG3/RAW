@@ -6,8 +6,8 @@ Striked through features were present on the EA version of the mod but still are
 * **Barbarian:**
   - ~~Level 1: Fixes Rage so it only deals damage on actual hits, from Strength-based melee weapons~~
   - **Level 2: Reckless Attack**
-    - **Interrupt changed to no longer consider the roll before asking, so it can always activate even if the attack will hit without needing advantage**
-    - **Spell can only be used if it is the first attack of the turn**
+    - **Both the Interrupt and the Spell can only be used on the first attack of the turn**
+    - **Interrupt changed to no longer consider the roll before asking, so it can always activate even if the attack will hit without needing advantage. Unfortunately, I wasn't able to hide the attack roll.**
     - **Attacking Recklessly allows for all attacks on the same turn to be done with advantage (but not after the turn ends, so no advantage on AoO). The enemies can still gain advantage on attacks aganinst the barbarian until the start of the barbairan's next turn**
   - **Level 3 (Path of the Berserker): Removed Throw as a bonus action**
   - ~~Level 3 (Path of the Totem Warrior): Removed all custom spells added by each Spirit Animal~~
