@@ -51,11 +51,11 @@ Striked through features were present on the EA version of the mod but still are
   - **Base summons (not the ones granted by Pact of the Chain) had all their attacks replaced by the Distract Action (kept their attack animations because they're cool, though)**
   - **Removed all separate actions they had, except the Cat's Meow, because it has no combat functionality**
   - **Raven now has the Flyby passive, so it doesn't receive AoOs - Since Owl isn't an option in Vanilla, I decided to make Raven the go-to pick for Arcane Tricksters**
-* **Flaming Sphere can only act if the caster uses their bonus action to command it to**
+* **Flaming Sphere is indesctrutible and ignored by enemies. It can only act if the caster uses their bonus action to command it to.**
 * **Shield: fixes the tooltip so it states the bonus AC lasts for only 1 turn**
 * **Sleep lasts for 10 turns instead of 2 and it's a circular area, which the targets are selected based on HP on increasing order**
 * **Spare the Dying introduced as a new cantrip for Clerics. Stabilises the target (no check required), and the stabilized character is healed once out of combat. If the character is stabilised own their own by succeeding the Death Saving Throws, they will still require a Help Action (and the Medicine Check) or a cast of Spare The Dying to regain 1 HP.**
-* **Spiritual Weapon can only act if the caster uses their bonus action to command it to (except on the turn they're cast). Also removed all special attacks**
+* **Spiritual Weapon is indesctrutible and ignored by enemies. It can only act if the caster uses their bonus action to command it to (except on the turn it is cast). Also removed all special attacks**
 * **Produce Flame is a spell container, with instant attacking as an option (but it seems a bit buggy how the spell container is organizing it)**
 * **Removes surface interaction for spells that are not AoE. They can still interact with surfaces, but must target the ground directly, instead of interacting when targeting a character on top of the surface**
   <details>

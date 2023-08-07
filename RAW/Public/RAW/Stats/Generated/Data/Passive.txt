@@ -109,6 +109,11 @@ data "BoostContext" "OnCreate;OnStatusApplied;OnStatusRemoved;OnTurn;OnCombatEnd
 data "BoostConditions" "TurnBased(context.Source) and not HasStatus('RAW_SUMMON_RESOURCE_ALLOW')"
 data "Boosts" "ActionResourceBlock(Movement);ActionResourceBlock(BonusActionPoint)"
 
+new entry "RAW_AI_Helper_IgnoreSummon"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "Boosts" "Tag(AI_IGNORED_TARGET)"
+
 new entry "RAW_Flyby"
 type "PassiveData"
 data "DisplayName" "h81c15d09gdee7g4cd4ga39eg6ec6273a8398;1"
