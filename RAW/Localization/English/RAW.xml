@@ -10,6 +10,7 @@
     <content contentuid="he756c6dcgf2d5g49d2g99ffg9ad47269f091" version="1">Multiattack</content><!-- Multiattack (Giant Badger) -->
     <content contentuid="h6116fc36ga798g4599g9dc1gd74b0408f1e1" version="1">Multiattack</content><!-- Multiattack (Brown Bear) -->
     <content contentuid="h347bdf44gbb6dg4e83g83feg9f48169b16f0" version="1">Resources Blocked</content><!-- Summon Resource Blocked -->
+    <content contentuid="h1d26d698g3c6dg4212gad8dga725fb76bda2" version="1">Intangible Summon</content><!-- Summon Indestructible -->
     <content contentuid="h81c15d09gdee7g4cd4ga39eg6ec6273a8398" version="1">Flyby</content><!-- Flyby -->
 
     <!-- Passive Description -->
@@ -28,7 +29,7 @@
     <content contentuid="hf1dedfbbg9543g40c0g8b9ege0352fe6d738" version="1">The badger makes two attacks: one with its bite and one with its claws.</content><!-- Multiattack (Giant Badger) -->
     <content contentuid="h9b9799c5g384eg4ce7gbf74gffd49b18451a" version="1">The bear makes two attacks: one with its bite and one with its claws.</content><!-- Multiattack (Brown Bear) -->
     <content contentuid="ha3c41950g6a08g4bbdg9a88g2c14f3c6e8b7" version="1">This summon can only act if the Owner uses the Command Spell.</content><!-- Summon Resource Blocked -->
-    <content contentuid="h7162476egad83g4f42g8fccg22f6c6e40b37" version="1">Doesn't provoke opportunity attacks when flying out of an enemy's reach</content><!-- Flyby -->
+    <content contentuid="h7162476egad83g4f42g8fccg22f6c6e40b37" version="1">Doesn't provoke opportunity attacks when flying out of an enemy's reach.</content><!-- Flyby -->
 
     <!-- Passive Extra Description -->
     <content contentuid="hc0a989cag7bfdg4f36g9642gf0a332244deb" version="1">Walking won't reduce the maximum travelled distance in a turn, it's purely cosmetic.</content><!-- Walk -->
@@ -128,6 +129,7 @@ If you regain any Hit Points, the condition is removed. If an ally &lt;LSTag Typ
     <content contentuid="h418e3086g1f94g47e5g9d8ag712fd92aa4c0" version="1">Burrow into the ground and emerge at the target position.</content><!-- Giant Badger Burrow -->
     <content contentuid="h32d73faeg184cg419bg8fb6gdd67958d7817" version="1">Makes a DC 10 &lt;LSTag Tooltip="Medicine"&gt;Medicine&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; to stabilise a &lt;LSTag Tooltip="Downed"&gt;Downed&lt;/LSTag&gt; character.</content><!-- Help -->
     <content contentuid="hc01e959cg7d3dg4542gac9fg68099deb9746" version="1">Use your Bonus Action to command your summon to act.</content><!-- Summon Command -->
+    <content contentuid="h9204dac0g5de4g4199ga876g8eb69468ee8a" version="1">Put creatures into a magical slumber. Targets in an area are affected in ascending order of their current hit points (ignoring unconscious creatures), up to a combined of [1].</content><!-- Summon Command -->
 
     <!-- Target Extra Description -->
     <content contentuid="hc68b30c2g7032g449cg8f2bga512ecc16839" version="1">Entangled creatures are Restrained and can use their action to try and tear away the vines, making a Strength &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against your spell save DC.</content><!-- Entangle -->
