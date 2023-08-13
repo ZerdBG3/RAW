@@ -7,9 +7,10 @@ Striked through features were present on the EA version of the mod but still are
   - ~~Level 1: Fixes Rage so it only deals damage on actual hits, from Strength-based melee weapons~~
   - **Level 2: Reckless Attack**
     - **Both the Interrupt and the Spell can only be used on the first attack of the turn**
-    - **Interrupt changed to no longer consider the roll before asking, so it can always activate even if the attack will hit without needing advantage. Unfortunately, I wasn't able to hide the attack roll.**
+    - **Interrupt changed to no longer consider the roll before asking, so it can always activate even if the attack will hit without needing advantage. Unfortunately, I wasn't able to hide the attack roll. If you use the interrupt without the "asking" option, it will always trigger.**
     - **Attacking Recklessly allows for all attacks on the same turn to be done with advantage (but not after the turn ends, so no advantage on AoO). The enemies can still gain advantage on attacks aganinst the barbarian until the start of the barbairan's next turn**
   - **Level 3 (Path of the Berserker): Removed Throw as a bonus action**
+  - **Level 3 (Path of Wild Magic): Makes all bonus actions granted by the random outcomes castable in the first round for free (next rounds it still requires a bonus action)**
   - ~~Level 3 (Path of the Totem Warrior): Removed all custom spells added by each Spirit Animal~~
 * **Druid:**
   - **Level 2 (Circle of the Land): Natural Recovery is only usable during a Short Rest**
@@ -25,7 +26,8 @@ Striked through features were present on the EA version of the mod but still are
   - **Level 1: Hunter's Mark counts as a separate damage entry and can critically strike**
 * **Rogue:**
   - **Level 1: Sneak Attack**
-    - **Interrupt changed to ask before dealing the damage. It also adjusts the damage on the attack interrupted, so it doesn't count as two different damage sources (important for Concentration interruption, for example). Downside for unifying attacks is that the roll for Sneak Attack isn't detailed, you only see the sum (but I did account for critical strikes, so don't worry, if it's a crit, it will roll double the dice)**
+    - **Fixes Sneak Attack Interrupt being possible to apply the damage on AoE effects (such as the explosion of a Fire Arrow). Only the main target will be prompted - the side effect is AoEs that roll for attack rolls on each target, such as a Cleave, will only allow you to deal sneak attack damage to the first one**
+    - **Removes check for killing blow on Sneak Attack Interrupt. You'll still be able to see the character died, but you can opt into deal your sneak attack regardless (honor system) or if you're not asking to be prompted by the interrupt, it will consume regardless if the base damage killed the target**
     - **Spells no longer consume the Sneak Attack Charge if it missed (thus allowing for retries on other attacks on the same turn, specially offhand attacks)**
   - **Level 2: Cunning Action transformed into a Spell Container**
   - **Level 3 (Thief): Fast Hands no longer provides an extra Bonus Action - instead, it gives Help, Distract and Throw (no damage) as possible Cunning Actions (bonus action)**
