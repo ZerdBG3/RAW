@@ -80,7 +80,8 @@
     <content contentuid="hc3e6277egfaf8g4707gaf01g67daf469b21d" version="1">Multiattack</content><!-- Multiattack Helper -->
     <content contentuid="h5df0213dg5488g435dgab52g6b9520c0b521" version="1">Stabilized</content><!-- Stabilized -->
     <content contentuid="h75be88fcg63f2g4e6dg9017g35c69b889191" version="1">Commanded</content><!-- Summon Resource Allowed -->
-
+    <content contentuid="h0dc08f11gb7b2g442fga75dg8e01b1989e5d" version="1">Call Lightning</content><!-- Call Lightning -->
+    
     <!-- Status Boost Description -->
     <content contentuid="h3d6724a5gd115g401agb296ga7ed52f6120b" version="1">You haven't spent any Hit Dice. You can spend up to [1] Hit Dice</content><!-- Hit Dice 0 -->
     <content contentuid="h98031fe4g347dg476cgb35eg175b31b18443" version="1">You have spent 1 Hit Die. You can spend up to [1] Hit Dice</content><!-- Hit Dice 1 -->
@@ -98,7 +99,8 @@
     <content contentuid="h1da4e14fg4ec9g4efcga8b3g1b177560c9bd" version="1">Free attack after using the first one.</content><!-- Multiattack Helper -->
     <content contentuid="h4507b659g8c44g4f43gaf5cgb83ac55eec62" version="1">A stabilized character no longer has to roll Death Saving Throws and will regain [1] after leaving combat.</content><!-- Stabilized -->
     <content contentuid="h518c02f3gda53g498dg95e8g21599aaae760" version="1">This summon can act because its Owner commanded it.</content><!-- Summon Resource Allowed -->
-
+    <content contentuid="he3c1c67bgae0cg4968ga86egd2b1325c01b3" version="1">While inside the storm, this character can be target by a lightning bolt</content><!-- Call Lightning -->
+    
     <!-- Status Downed Description -->
     <content contentuid="h788b3d9dgb19cg43adg8d49gdb0f922e7400" version="1">If you reach 0 hit points, you fall Unconscious and must make Death Saving Throws. On 3 successes, you stop bleeding out and become Stable. On 3 failures, you die.
 
