@@ -10,7 +10,7 @@ Zerd's Rules As Written for Baldur's Gate 3
 
 # Discord
 
-![Discord Banner 4](https://discordapp.com/api/guilds/767878527634243624/widget.png?style=banner2)
+[![Discord Banner 4](https://discordapp.com/api/guilds/767878527634243624/widget.png?style=banner2)](https://discord.gg/FFKTbzKktj)
 
 # Description
 * This mod's main objective is to modify vanilla content so that it respects D&D 5th edition ruleset. This means removing some of Larian's takes on the ruleset and adapting it to more closely resemble the tabletop experience. As of right now, the guideline followed is the Player's Handbook and Dungeon's Master Guide contents.
