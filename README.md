@@ -8,6 +8,10 @@ Zerd's Rules As Written for Baldur's Gate 3
 | ![](https://i.imgur.com/jUXpr2A.png) | ![](https://i.imgur.com/s8b4zk3.png) |
 |:---:|:---:|
 
+# Discord
+
+![Discord Banner 4](https://discordapp.com/api/guilds/767878527634243624/widget.png?style=banner2)
+
 # Description
 * This mod's main objective is to modify vanilla content so that it respects D&D 5th edition ruleset. This means removing some of Larian's takes on the ruleset and adapting it to more closely resemble the tabletop experience. As of right now, the guideline followed is the Player's Handbook and Dungeon's Master Guide contents.
 * However, not all original rules are applicable or possible to be implemented on BG3. Therefore, this is my personal take on how better to apply 5e's ruleset to BG3.
@@ -25,9 +29,6 @@ Zerd's Rules As Written for Baldur's Gate 3
 # Error
 * **IMPORTANT:** When opening the launcher, you'll get several notifications telling you about how mods might break and crash your game. Ignore them
 * When loading the game or creating a new one, you'll get a notification regarding an invalid story set-up. Since the mod doesn't have any story files, the fallback to the main story allows the game to load correctly. Tl;dr: ignore the error warning you'll get
-
-# Discord
-* Feel free to join my Discord server: https://discord.gg/jJUxKgw
 
 # Attribution
 - [Baldur's Gate 3](https://store.steampowered.com/app/1086940/Baldurs_Gate_3/), a game by [Larian Studios](http://larian.com/)
