@@ -47,6 +47,7 @@ data "DisplayName" "h5d311bfdg3b88g4a78gb8fcgbb8645c6a5f7;1"
 data "Description" "he7d837b8g404fg4dbdg85c2g9d69c019d63d;1"
 data "PreviewCursor" "Melee"
 data "CastTextEvent" "Cast"
+data "UseCosts" "BonusActionPoint:1"
 data "SpellFlags" "IsMelee;CannotTargetTerrain;IsLinkedSpellContainer"
 
 new entry "Shout_Disengage_CunningAction"

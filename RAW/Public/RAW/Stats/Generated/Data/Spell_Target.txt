@@ -635,7 +635,7 @@ data "SpellProperties" "GROUND:Summon(683c8203-9e1d-445a-be43-b55c71289de4, 100,
 data "TargetConditions" "not Dead()"
 data "Icon" "Spell_Conjuration_CallLightning"
 data "DisplayName" "hefdeeb64g42d0g4766g9b48g25a2e70e1edb;2"
-data "Description" "h8ad2e147ge1d6g4ff9gb18fg7292e28e36a5;3"
+data "Description" "h63b15a52g69efg4c70g93acge877ff55d83e;1"
 data "TooltipDamageList" "DealDamage(3d10,Lightning)"
 data "TooltipAttackSave" "Dexterity"
 data "TooltipStatusApply" "ApplyStatus(CALL_LIGHTNING_TECHNICAL,100,100)"

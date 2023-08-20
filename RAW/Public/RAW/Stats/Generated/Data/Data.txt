@@ -1,1 +1,11 @@
 key "HighGroundAttackRollBonus","0"
+
+key "InitiativeDie","20"
+
+key "BlindRangePenalty","3"
+
+key "JoinAllyInCombatRadius","7"
+
+key "SeekHiddenRange","3"
+
+key "SeekHiddenTimeout","0.5"

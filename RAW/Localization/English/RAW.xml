@@ -131,7 +131,8 @@ If you regain any Hit Points, the condition is removed. If an ally &lt;LSTag Typ
     <content contentuid="h418e3086g1f94g47e5g9d8ag712fd92aa4c0" version="1">Burrow into the ground and emerge at the target position.</content><!-- Giant Badger Burrow -->
     <content contentuid="h32d73faeg184cg419bg8fb6gdd67958d7817" version="1">Makes a DC 10 &lt;LSTag Tooltip="Medicine"&gt;Medicine&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; to stabilise a &lt;LSTag Tooltip="Downed"&gt;Downed&lt;/LSTag&gt; character.</content><!-- Help -->
     <content contentuid="hc01e959cg7d3dg4542gac9fg68099deb9746" version="1">Use your Bonus Action to command your summon to act.</content><!-- Summon Command -->
-    <content contentuid="h9204dac0g5de4g4199ga876g8eb69468ee8a" version="1">Put creatures into a magical slumber. Targets in an area are affected in ascending order of their current hit points (ignoring unconscious creatures), up to a combined of [1].</content><!-- Summon Command -->
+    <content contentuid="h9204dac0g5de4g4199ga876g8eb69468ee8a" version="1">Put creatures into a magical slumber. Targets in an area are affected in ascending order of their current hit points (ignoring unconscious creatures), up to a combined of [1].</content><!-- Sleep -->
+    <content contentuid="h63b15a52g69efg4c70g93acge877ff55d83e" version="1">Creates a storm cloud in the targeted area. Then, you can call down lightning on an area inside the storm striking all targets. For the next 10 turns, you can call down lightning again using an Action.</content><!-- Call Lightning -->
 
     <!-- Target Extra Description -->
     <content contentuid="hc68b30c2g7032g449cg8f2bga512ecc16839" version="1">Entangled creatures are Restrained and can use their action to try and tear away the vines, making a Strength &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against your spell save DC.</content><!-- Entangle -->
