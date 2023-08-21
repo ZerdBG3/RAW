@@ -13,6 +13,7 @@ Striked through features were present on the EA version of the mod but still are
   - **Level 3 (Path of Wild Magic): Makes all bonus actions granted by the random outcomes castable in the first round for free (next rounds it still requires a bonus action)**
   - ~~Level 3 (Path of the Totem Warrior): Removed all custom spells added by each Spirit Animal~~
 * **Druid:**
+  - **Level 2: Wild Shape allows for spells that require reactivation to be usable (eg.: Heat Metal, Moonbeam, Call Lightning)** 
   - **Level 2 (Circle of the Land): Natural Recovery is only usable during a Short Rest**
   - ~~Level 2: Wild Shape dismissal costs a bonus action~~
   - ~~Level 2: Wild Shape Giant Badger changes to attacks and movements~~
@@ -49,6 +50,7 @@ Striked through features were present on the EA version of the mod but still are
 * **Shield Master: Gives Shove (both options) as a bonus action after attacking on your turn**
 
 ## Spells
+* **Call Lightning creates a storm area, inside which the caster can target a smaller area to deal damage each turn**
 * **Find Familiar**
   - **Base summons (not the ones granted by Pact of the Chain) had all their attacks replaced by the Distract Action (kept their attack animations because they're cool, though)**
   - **Removed all separate actions they had, except the Cat's Meow, because it has no combat functionality**
@@ -121,6 +123,7 @@ Striked through features were present on the EA version of the mod but still are
 * ~~Long Rest recharges half the character's level worth of Hit Dice (rounded up)~~
 
 ## Global changes
+* **Changes Initiative Dice Roll from 1d4 to 1d20**
 * **Removes weapon abilities (like Cleave, Smash and Pin Down) for default weapons (not on magic weapons yet)**
 * **Removes the disadvantage on Strength and Dexterity Saving Throws when Prone, and adds the Disadvantage to Ranged Attack Rolls**
 * **Gives a Walk passive to players that allows them to toggle between walking and running for cinematic and roleplay purposes (as requested by fmarzullo)**

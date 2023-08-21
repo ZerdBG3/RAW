@@ -1,1 +1,3 @@
 key "HighGroundAttackRollBonus","0"
+
+key "InitiativeDie","20"
