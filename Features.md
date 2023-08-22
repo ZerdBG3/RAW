@@ -21,8 +21,6 @@ Striked through features were present on the EA version of the mod but still are
   - ~~Level 2 (Circle of the Land): Replaces Dire Wolf with Wolf for Circle of the Land Druids~~
   - ~~Level 2 (Circle of the Moon): Changed stats of Dire Wolf to match Monster's Manual stats~~
   - ~~Level 2 (Circle of the Moon): Polar Bear is replaced with Brown Bear, visual and stat wise~~
-* **Cleric:**
-  - **Level 1: Replaces Produce Flame Cantrip option with Spare The Dying**
 * **Ranger:**
   - **Level 1: Hunter's Mark counts as a separate damage entry and can critically strike**
 * **Rogue:**
@@ -38,13 +36,13 @@ Striked through features were present on the EA version of the mod but still are
   - ~~Level 1 (Abjuration School): Arcane Ward subsequent abjuration casts after the first of the day provides the correct `2*Spell Level THP`~~
 
 ## Actions
-* **Shove is an action (from bonus action). It's a spell container with the option to push (fixed 1.5 m) or knock prone**
+* **Shove is an action (from bonus action). It's a spell container with the option to push (fixed 1.5 m) or knock prone. Can be used as part of your Extra Attack**
 * **Introduces Distract and Dodge as actions to player characters and summons (see Find Familiar)**
 * **Removes Bonus Action Cost from Jump and the Movement Cost is the same as the distance travelled**
 * **Throw and Improvised Weapon can no longer be used on enemies that are alive, and can't throw equipped items either. Throwing a weapon from inventory counts as an improvised weapon (`1d4 bludgeoning` damage)**
 * **Thrown Weapons now provide specific spells that correctly calculate Range, Attack Roll, and Damage Roll, while also allowing for Two-Weapon Fighting (and correctly applying Sneak Attack). The range shown is the long range, but it will show the Disadvantage UI if you're attacking outside the short range**
   - _PS.:This still wasn't done properly for magical weapons that are throwable_
-* **Help stabilises the target (Medicine `DC 10`), and the stabilised character is healed once out of combat. If the character is stabilised own their own by succeeding the Death Saving Throws, they will still require a Help Action (and the Medicine Check) or a cast of Spare The Dying to regain 1 HP.**
+* **Help stabilizes the target (Medicine `DC 10`), and the stabilized character is healed once out of combat. If the character is stabilized own their own by succeeding the Death Saving Throws, they will still require a Help Action (and the Medicine Check) to regain 1 HP.**
 
 ## Feats
 * **Shield Master: Gives Shove (both options) as a bonus action after attacking on your turn**
@@ -55,11 +53,10 @@ Striked through features were present on the EA version of the mod but still are
   - **Base summons (not the ones granted by Pact of the Chain) had all their attacks replaced by the Distract Action (kept their attack animations because they're cool, though)**
   - **Removed all separate actions they had, except the Cat's Meow, because it has no combat functionality**
   - **Raven now has the Flyby passive, so it doesn't receive AoOs - Since Owl isn't an option in Vanilla, I decided to make Raven the go-to pick for Arcane Tricksters**
-* **Flaming Sphere is indesctrutible and ignored by enemies. It can only act if the caster uses their bonus action to command it to.**
+* **Flaming Sphere is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to.**
 * **Shield: fixes the tooltip so it states the bonus AC lasts for only 1 turn**
 * **Sleep lasts for 10 turns instead of 2 and it's a circular area, which the targets are selected based on HP on increasing order**
-* **Spare the Dying introduced as a new cantrip for Clerics. Stabilises the target (no check required), and the stabilized character is healed once out of combat. If the character is stabilised own their own by succeeding the Death Saving Throws, they will still require a Help Action (and the Medicine Check) or a cast of Spare The Dying to regain 1 HP.**
-* **Spiritual Weapon is indesctrutible and ignored by enemies. It can only act if the caster uses their bonus action to command it to (except on the turn it is cast). Also removed all special attacks**
+* **Spiritual Weapon is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to (except on the turn it is cast). Also removed all special attacks**
 * **Produce Flame is a spell container, with instant attacking as an option (but it seems a bit buggy how the spell container is organizing it)**
 * **Removes surface interaction for spells that are not AoE. They can still interact with surfaces, but must target the ground directly, instead of interacting when targeting a character on top of the surface**
   <details>

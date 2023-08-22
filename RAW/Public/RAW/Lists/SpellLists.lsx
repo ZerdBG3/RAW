@@ -12,11 +12,6 @@
                     <attribute id="Spells" type="LSString" value="Target_FrenziedStrike"/>
                     <attribute id="UUID" type="guid" value="17803035-4762-4143-8f2f-1143d47e4f40"/>
                 </node>
-                <node id="SpellList">
-                    <attribute id="Comment" type="LSString" value="Cleric cantrips (Wisdom)"/>
-                    <attribute id="Spells" type="LSString" value="Shout_Thaumaturgy;Target_SacredFlame;Target_Guidance;Target_Resistance;Target_Light;Shout_BladeWard;Target_SpareTheDying"/>
-                    <attribute id="UUID" type="guid" value="2f43a103-5bf1-4534-b14f-663decc0c525"/>
-                </node>
             </children>
         </node>
     </region>

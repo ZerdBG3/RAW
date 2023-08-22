@@ -1,0 +1,3 @@
+function RAW_ExtraAttackCheck()
+    return (HasStringInSpellRoll('WeaponAttack') | HasStringInSpellRoll('UnarmedAttack') | HasStringInSpellRoll('ThrowAttack') | SpellId('Target_CommandersStrike') | SpellId('Projectile_ArrowOfSmokepowder') | SpellId('Target_Shove') | SpellId('RAW_Target_Shove_Player') | SpellId('RAW_Target_Shove_Player_Push') | SpellId('RAW_Target_Shove_Player_Prone')) & HasUseCosts('ActionPoint')
+end
