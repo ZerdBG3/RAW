@@ -100,7 +100,7 @@
     <content contentuid="h4507b659g8c44g4f43gaf5cgb83ac55eec62" version="1">A stabilized character no longer has to roll Death Saving Throws and will regain [1] after leaving combat.</content><!-- Stabilized -->
     <content contentuid="h518c02f3gda53g498dg95e8g21599aaae760" version="1">This summon can act because its Owner commanded it.</content><!-- Summon Resource Allowed -->
     <content contentuid="he3c1c67bgae0cg4968ga86egd2b1325c01b3" version="1">While inside the storm, this character can be target by a lightning bolt</content><!-- Call Lightning -->
-    <content contentuid="a79d9187053947ab83babc46d76b8834" version="1">Next ranged weapon attack deals [1] to target and creatures within [2] of them.</content><!-- Hail of Thorns -->
+    <content contentuid="ha79d9187g0539g47abg83bagbc46d76b8834" version="1">Next ranged weapon attack deals [1] to target and creatures within [2] of them.</content><!-- Hail of Thorns -->
 
     <!-- Status Downed Description -->
     <content contentuid="h788b3d9dgb19cg43adg8d49gdb0f922e7400" version="1">If you reach 0 hit points, you fall Unconscious and must make Death Saving Throws. On 3 successes, you stop bleeding out and become Stable. On 3 failures, you die.
