@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <save>
-	<version major="4" minor="0" revision="9" build="304" />
+	<version major="4" minor="0" revision="10" build="100" />
 	<region id="Templates">
 		<node id="Templates">
 			<children>
@@ -18,6 +18,10 @@
 					<attribute id="BloodType" type="FixedString" value="Green" />
 					<attribute id="DeathEffect" type="guid" value="bc26118a-6fab-4aee-76a5-0bd9b2967557" />
 					<attribute id="BloodSurfaceType" type="FixedString" value="SurfaceNone" />
+					<attribute id="VocalAlertResourceID" type="FixedString" value="8268dead-bc71-e85b-fcfe-eb28b051d114" />
+					<attribute id="VocalAngryResourceID" type="FixedString" value="6f0101dc-b785-a5cb-1592-0a882767451d" />
+					<attribute id="VocalBoredResourceID" type="FixedString" value="b309a407-65a2-9392-e269-7aae7ed3fe2d" />
+					<attribute id="VocalRelaxedResourceID" type="FixedString" value="6a0ab902-6653-484a-f3ab-786077bcf229" />
 					<attribute id="CharacterVisualResourceID" type="FixedString" value="4bb42f8a-3882-e3be-3ad1-4af7d85aed35" />
 					<attribute id="IsLootable" type="bool" value="False" />
 					<attribute id="AnubisConfigName" type="FixedString" value="DefaultBeast" />
@@ -83,10 +87,6 @@
 									<attribute id="StartRound" type="int32" value="0" />
 									<attribute id="FallbackStartRound" type="int32" value="-1" />
 									<attribute id="MinimumImpact" type="int32" value="0" />
-									<attribute id="CasualExplorer" type="bool" value="True" />
-									<attribute id="Classic" type="bool" value="True" />
-									<attribute id="TacticianHardcore" type="bool" value="True" />
-									<attribute id="HonorHardcore" type="bool" value="True" />
 									<attribute id="OnlyCastOnSelf" type="bool" value="False" />
 									<attribute id="AIFlags" type="uint16" value="0" />
 									<children>
@@ -114,10 +114,6 @@
 									<attribute id="StartRound" type="int32" value="0" />
 									<attribute id="FallbackStartRound" type="int32" value="-1" />
 									<attribute id="MinimumImpact" type="int32" value="0" />
-									<attribute id="CasualExplorer" type="bool" value="True" />
-									<attribute id="Classic" type="bool" value="True" />
-									<attribute id="TacticianHardcore" type="bool" value="True" />
-									<attribute id="HonorHardcore" type="bool" value="True" />
 									<attribute id="OnlyCastOnSelf" type="bool" value="False" />
 									<attribute id="AIFlags" type="uint16" value="0" />
 									<children>

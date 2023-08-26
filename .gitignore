@@ -1,5 +1,9 @@
-# Zip file for Candor compatibility # 
+# Compressed file for Vortex compatibility
 *.zip
+*.rar
 
-# Pak file with the latest release #
+# Pak file with the latest release
 *.pak
+
+# Local stash
+Stash/

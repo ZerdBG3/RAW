@@ -31,6 +31,7 @@ data "SpellCastingAbility" "Wisdom"
 data "ActionResources" "BonusActionPoint:1;Movement:6"
 data "Passives" "Ethereal;RAW_Flyby;RAW_SummonResourceBlock;RAW_SummonResourceCreate_AllowAct;RAW_IndestructibleSummon_AI_Ignore"
 data "DarkvisionRange" "9"
+data "DifficultyStatuses" ""
 
 new entry "FlamingSphere"
 type "Character"
@@ -51,7 +52,7 @@ data "PathInfluence" "BloodElectrified,100;BloodFrozen,30;Lava,700;HolyFire,40;P
 data "ActionResources" "BonusActionPoint:1;Movement:9"
 data "Passives" "DarknessRules;RAW_Flyby;RAW_SummonResourceBlock;RAW_SummonResourceCreate_BlockAct;RAW_IndestructibleSummon_AI_Ignore"
 data "ArmorType" "None"
-data "DifficultyStatuses" "STATUS_EASY:PLAYER_BONUSES_EASYMODE"
+data "DifficultyStatuses" ""
 
 new entry "Familiar_Cat"
 type "Character"
