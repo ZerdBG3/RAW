@@ -137,6 +137,13 @@ data "StatsFunctorContext" "OnCast;OnStatusRemoved"
 data "Conditions" "(not context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and (HasStringInSpellRoll('WeaponAttack') or HasStringInSpellRoll('UnarmedAttack') or SpellId('Target_CommandersStrike') or SpellId('Projectile_ArrowOfSmokepowder') or SpellId('Target_Shove') or SpellId('RAW_Target_Shove_Player_Push') or SpellId('RAW_Target_Shove_Player_Prone')) and HasUseCosts('ActionPoint', true) and not Tagged('EXTRA_ATTACK_BLOCKED',context.Source) and TurnBased(context.Source)) or (context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and StatusId('INITIAL_ATTACK_TECHNICAL') and TurnBased())"
 data "StatsFunctors" "IF(HasAnyExtraAttack(context.Source) and not context.HasContextFlag(StatsFunctorContext.OnStatusRemoved)):ApplyStatus(SELF,EXTRA_ATTACK_2_Q,100,1);IF(not HasAnyExtraAttack(context.Source) and not context.HasContextFlag(StatsFunctorContext.OnStatusRemoved)):ApplyStatus(SELF,EXTRA_ATTACK_2,100,1);IF(HasAnyExtraAttack(context.Target) and context.HasContextFlag(StatsFunctorContext.OnStatusRemoved)):ApplyStatus(EXTRA_ATTACK_2_Q,100,1);IF(not HasAnyExtraAttack(context.Target) and context.HasContextFlag(StatsFunctorContext.OnStatusRemoved)):ApplyStatus(EXTRA_ATTACK_2,100,1)"
 
+new entry "RAW_Haste"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "BoostContext" "OnActionResourcesChanged;OnStatusApplied;OnStatusRemoved"
+data "BoostConditions" "HasActionResource('RAW_HastePoint',1,0,false,false,context.Source)"
+data "Boosts" "UnlockSpellVariant(RAW_HasteCheck(),ModifyUseCosts(Replace,RAW_HastePoint,1,0,ActionPoint),ModifyIconGlow())"
+
 new entry "RAW_HailOfThorns"
 type "PassiveData"
 data "DisplayName" "hec3e702ege82bg4096gb1f0g71c07209f8da;1"

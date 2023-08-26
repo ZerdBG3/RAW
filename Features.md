@@ -54,10 +54,10 @@ Striked through features were present on the EA version of the mod but still are
   - **Removed all separate actions they had, except the Cat's Meow, because it has no combat functionality**
   - **Raven now has the Flyby passive, so it doesn't receive AoOs - Since Owl isn't an option in Vanilla, I decided to make Raven the go-to pick for Arcane Tricksters**
 * **Flaming Sphere is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to.**
-* **Shield: fixes the tooltip so it states the bonus AC lasts for only 1 turn**
+* **Haste extra action can only be used for attacking (one attack only - no Extra Attack), Dash, Disengage or Hide**
 * **Sleep lasts for 10 turns instead of 2 and it's a circular area, which the targets are selected based on HP on increasing order**
 * **Spiritual Weapon is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to (except on the turn it is cast). Also removed all special attacks**
-* **Produce Flame is a spell container, with instant attacking as an option (but it seems a bit buggy how the spell container is organizing it)**
+* **Produce Flame is a spell container, with instant attacking as an option (normal temporary spells after summoning the flame are still there as well)**
 * **Removes surface interaction for spells that are not AoE. They can still interact with surfaces, but must target the ground directly, instead of interacting when targeting a character on top of the surface**
   <details>
     <summary>List of Spells with surface interaction changed</summary>
