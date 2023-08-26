@@ -63,7 +63,8 @@
     <content contentuid="h6f61be82gf4e8g4224gb3a5gb3ea351852da" version="1">Creature has a +2 bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;, &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;, its &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is doubled, and it can take one additional action per turn.&lt;br&gt;&lt;br&gt;When the condition ends, the creature becomes &lt;LSTag Type="Status" Tooltip="HASTE_LETHARGY"&gt;Lethargic&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;The extra action can be used only to take the Attack (one weapon attack only), Dash, Disengage or Hide.</content><!-- Haste -->
     <content contentuid="ha79d9187g0539g47abg83bagbc46d76b8834" version="1">Next ranged weapon attack deals [1] to target and creatures within [2] of them.</content><!-- Hail of Thorns -->
     <content contentuid="hcd0ce8fcg1ba9g43e0g977fg81ed262e3f53" version="3">Affected entity can't be targeted by enemy attacks or spells. However, it can still take damage from spells that influence a larger area. Condition ends if the affected entity attacks or harms another creature.</content><!-- Sanctuary -->
-  
+    <content contentuid="h45dc0873gf5d3g4623ga4cagf3268cbfb6c1" version="3">Cannot harm creature warded by Sanctuary.</content>
+	
     <!-- Status Downed Description -->
     <content contentuid="h788b3d9dgb19cg43adg8d49gdb0f922e7400" version="1">If you reach 0 hit points, you fall Unconscious and must make Death Saving Throws. On 3 successes, you stop bleeding out and become Stable. On 3 failures, you die.
 
