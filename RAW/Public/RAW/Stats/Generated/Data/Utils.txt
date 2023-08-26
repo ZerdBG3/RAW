@@ -1,0 +1,10 @@
+// -----------------------------------------------
+// -------------------- Dummy --------------------
+// -----------------------------------------------
+
+// Used mostly to make sure the hotbar updates regarding spell requirements
+
+new entry "RAW_DUMMY"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"

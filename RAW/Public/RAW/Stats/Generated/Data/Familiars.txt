@@ -1,0 +1,205 @@
+// Changes were also made to the Root Template entries of the familiars
+// Familiar default attacks depend on the Distract action from DefaultActions.txt
+
+// ---------------------------------------------
+// -------------------- Cat --------------------
+// ---------------------------------------------
+
+new entry "Familiar_Cat"
+type "Character"
+using "Familiar_Cat"
+data "Strength" ""
+data "Passives" "FelineFall;ShortResting;DarknessRules"
+data "ActionResources" "ActionPoint:1;BonusActionPoint:1;Movement:12;ReactionActionPoint:1"
+
+new entry "RAW_Target_Claws_Cat_Familiar"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Claws_Cat"
+data "SpellProperties" "ApplyStatus(DISTRACTED,100,1)"
+data "SpellRoll" ""
+data "SpellSuccess" ""
+data "TargetConditions" "Character() and not Dead()"
+data "DisplayName" "hacff287aga587g493bg8074ga79a9969f0c7;1"
+data "Description" "h8a5eb4d5g32beg46b6g9c83g8b4832766545;1"
+data "ExtraDescription" ""
+data "TooltipStatusApply" "ApplyStatus(DISTRACTED,100,1)"
+data "TooltipDamageList" ""
+data "TooltipAttackSave" ""
+data "CycleConditions" "Enemy() and not Dead()"
+data "VerbalIntent" "Debuff"
+
+// Depends on the changes to Jump from DefaultActions.txt
+new entry "RAW_Projectile_Jump_Cat"
+type "SpellData"
+data "SpellType" "Projectile"
+using "RAW_Projectile_Jump_Thief"
+data "DisplayName" "h64247e79gece7g4d43g9a17g38dd2fbb94fd;1"
+
+// ----------------------------------------------
+// -------------------- Crab --------------------
+// ----------------------------------------------
+
+new entry "Familiar_Crab"
+type "Character"
+using "Familiar_Crab"
+data "Passives" "ShortResting;DarknessRules"
+data "ActionResources" "ActionPoint:1;BonusActionPoint:1;Movement:6;ReactionActionPoint:1"
+
+new entry "RAW_Target_CripplingPinch_Crab_Familiar"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_CripplingPinch_Crab_Summon"
+data "SpellProperties" "ApplyStatus(DISTRACTED,100,1)"
+data "SpellRoll" ""
+data "SpellSuccess" ""
+data "TargetConditions" "Character() and not Dead()"
+data "DisplayName" "hacff287aga587g493bg8074ga79a9969f0c7;1"
+data "Description" "h8a5eb4d5g32beg46b6g9c83g8b4832766545;1"
+data "ExtraDescription" ""
+data "TooltipStatusApply" "ApplyStatus(DISTRACTED,100,1)"
+data "TooltipDamageList" ""
+data "TooltipAttackSave" ""
+data "CycleConditions" "Enemy() and not Dead()"
+data "VerbalIntent" "Debuff"
+
+// ----------------------------------------------
+// -------------------- Frog --------------------
+// ----------------------------------------------
+
+new entry "Familiar_Frog"
+type "Character"
+using "Familiar_Frog"
+data "Passives" "ShortResting;DarknessRules"
+data "ActionResources" "ActionPoint:1;BonusActionPoint:1;Movement:6;ReactionActionPoint:1"
+
+new entry "RAW_Target_Bufotoxin_Frog_Familiar"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Bufotoxin_Frog_Summon"
+data "SpellProperties" "ApplyStatus(DISTRACTED,100,1)"
+data "SpellRoll" ""
+data "SpellSuccess" ""
+data "TargetConditions" "Character() and not Dead()"
+data "DisplayName" "hacff287aga587g493bg8074ga79a9969f0c7;1"
+data "Description" "h8a5eb4d5g32beg46b6g9c83g8b4832766545;1"
+data "ExtraDescription" ""
+data "TooltipStatusApply" "ApplyStatus(DISTRACTED,100,1)"
+data "TooltipDamageList" ""
+data "TooltipAttackSave" ""
+data "CycleConditions" "Enemy() and not Dead()"
+data "VerbalIntent" "Debuff"
+
+// ---------------------------------------------
+// -------------------- Rat --------------------
+// ---------------------------------------------
+
+new entry "Rat"
+type "Character"
+using "Rat"
+data "DarkvisionRange" "9"
+
+new entry "Familiar_Rat"
+type "Character"
+using "Familiar_Rat"
+data "DefaultBoosts" "ProficiencyBonus(Skill, Perception);DialogueBlock();BlockRegainHP(Undead;Construct)"
+data "Passives" "ShortResting;DarknessRules;Darkvision"
+data "ActionResources" "ActionPoint:1;BonusActionPoint:1;Movement:6;ReactionActionPoint:1"
+
+new entry "RAW_Target_Bite_Rat_Familiar"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Bite_Rat_Summon"
+data "SpellProperties" "ApplyStatus(DISTRACTED,100,1)"
+data "SpellRoll" ""
+data "SpellSuccess" ""
+data "TargetConditions" "Character() and not Dead()"
+data "DisplayName" "hacff287aga587g493bg8074ga79a9969f0c7;1"
+data "Description" "h8a5eb4d5g32beg46b6g9c83g8b4832766545;1"
+data "ExtraDescription" ""
+data "TooltipStatusApply" "ApplyStatus(DISTRACTED,100,1)"
+data "TooltipDamageList" ""
+data "TooltipAttackSave" ""
+data "CycleConditions" "Enemy() and not Dead()"
+data "VerbalIntent" "Debuff"
+
+// -----------------------------------------------
+// -------------------- Raven --------------------
+// -----------------------------------------------
+
+new entry "Familiar_Raven"
+type "Character"
+using "Familiar_Raven"
+data "Passives" "ShortResting;DarknessRules;RAW_Flyby"
+data "ActionResources" "ActionPoint:1;BonusActionPoint:1;Movement:18;ReactionActionPoint:1"
+
+new entry "RAW_Flyby"
+type "PassiveData"
+data "DisplayName" "h81c15d09gdee7g4cd4ga39eg6ec6273a8398;1"
+data "Description" "h7162476egad83g4f42g8fccg22f6c6e40b37;1"
+data "Icon" "Action_Disengage"
+data "Properties" "Highlighted"
+data "Boosts" "IgnoreLeaveAttackRange()"
+
+new entry "RAW_Target_Beak_Raven_Familiar"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Beak_Raven_Familiar"
+data "SpellProperties" "ApplyStatus(DISTRACTED,100,1)"
+data "SpellRoll" ""
+data "SpellSuccess" ""
+data "TargetConditions" "Character() and not Dead()"
+data "DisplayName" "hacff287aga587g493bg8074ga79a9969f0c7;1"
+data "Description" "h8a5eb4d5g32beg46b6g9c83g8b4832766545;1"
+data "ExtraDescription" ""
+data "TooltipStatusApply" "ApplyStatus(DISTRACTED,100,1)"
+data "TooltipDamageList" ""
+data "TooltipAttackSave" ""
+data "CycleConditions" "Enemy() and not Dead()"
+data "VerbalIntent" "Debuff"
+
+new entry "RAW_Projectile_Fly_Raven"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Projectile_Fly"
+data "TargetRadius" "18"
+data "UseCosts" "Movement:Distance"
+
+// ------------------------------------------------
+// -------------------- Spider --------------------
+// ------------------------------------------------
+
+new entry "Familiar_Spider"
+type "Character"
+using "Familiar_Spider"
+data "Strength" "2"
+data "Dexterity" "14"
+data "Constitution" "8"
+data "Intelligence" "1"
+data "Wisdom" "10"
+data "Charisma" "2"
+data "Vitality" "1"
+data "Passives" "SpiderWalk;ShortResting;Darkvision;DarknessRules"
+
+new entry "RAW_Target_Bite_TinySpider_Familiar"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Bite_TinySpider_Familiar"
+data "SpellProperties" "ApplyStatus(DISTRACTED,100,1)"
+data "SpellRoll" ""
+data "SpellSuccess" ""
+data "TargetConditions" "Character() and not Dead()"
+data "DisplayName" "hacff287aga587g493bg8074ga79a9969f0c7;1"
+data "Description" "h8a5eb4d5g32beg46b6g9c83g8b4832766545;1"
+data "ExtraDescription" ""
+data "TooltipStatusApply" "ApplyStatus(DISTRACTED,100,1)"
+data "TooltipDamageList" ""
+data "TooltipAttackSave" ""
+data "CycleConditions" "Enemy() and not Dead()"
+data "VerbalIntent" "Debuff"
+
+new entry "Projectile_Jump_Spider"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Projectile_Jump_Spider"
+data "UseCosts" "Movement:Distance"

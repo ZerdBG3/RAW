@@ -1,0 +1,134 @@
+// Default Actions are given by Public\RAW\Stats\Generated\SpellSet.txt
+
+// --------------------------------------------------
+// -------------------- Distract --------------------
+// --------------------------------------------------
+
+new entry "Target_Distract"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Distract"
+data "TargetConditions" "Character() and not Dead()"
+data "Icon" "Status_Distracted"
+data "DisplayName" "hacff287aga587g493bg8074ga79a9969f0c7;1"
+data "Description" "h8a5eb4d5g32beg46b6g9c83g8b4832766545;1"
+data "CycleConditions" "Enemy() and not Dead()"
+
+new entry "RAW_Target_Distract_Summon"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Distract"
+data "PrepareSound" "Generic_GeneralAction_Start"
+data "PrepareLoopSound" "Generic_GeneralAction_Loop"
+data "CastSound" "Action_Cast_Disengage"
+data "TargetSound" "Action_Impact_Disengage"
+data "SpellAnimation" "5e57443f-284e-47b2-915e-5b6417db269c,,;925779e7-8bf6-4d56-8c4d-42c3bc01c60c,,;50398f4e-dd82-4d6a-ad43-aedd578543d9,,;1c343e00-7e6c-4f53-b588-074a3cdb9c7d,,;5bcdefbb-2194-46c2-ac77-0b2d8472a5f7,,;,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "PrepareEffect" "f56fb8e0-815b-41e0-9071-3c2305c93660"
+data "CastEffect" "08ecdc25-31ea-4f32-8787-19b97971a9f1"
+
+new entry "DISTRACTED"
+type "StatusData"
+data "StatusType" "BOOST"
+using "DISTRACTED"
+data "DisplayName" "h096216f2ge492g4bb9g9a3cgc88694a8a96b;1"
+data "Description" "h25d8863egdaf1g47e3gba46gb6bade9f3a93;1"
+data "Boosts" "IF(not HasStatus('DISTRACTED',context.Target,context.Source)):Advantage(AttackTarget)"
+data "RemoveConditions" "IsAttack() and not IsInflicterEqualToSource()"
+
+// -----------------------------------------------
+// -------------------- Dodge --------------------
+// -----------------------------------------------
+
+new entry "RAW_Shout_Dodge"
+type "SpellData"
+data "SpellType" "Shout"
+data "AIFlags" "CanNotUse"
+data "SpellProperties" "ApplyStatus(DODGE,100,1)"
+data "TargetConditions" "Self()"
+data "Icon" "Status_Invulnerable"
+data "DisplayName" "h6c541127gda12g4b7cgbfdbg37c49ac85aba;1"
+data "Description" "h43261ff4gfee1g42f4g9bb3gc6120976fe3d;1"
+data "TooltipStatusApply" "ApplyStatus(DODGE,100,1)"
+data "PrepareSound" "Generic_GeneralAction_Start"
+data "PrepareLoopSound" "Generic_GeneralAction_Loop"
+data "CastSound" "Action_Cast_Disengage"
+data "TargetSound" "Action_Impact_Disengage"
+data "CastTextEvent" "Cast"
+data "UseCosts" "ActionPoint:1"
+data "SpellAnimation" "5e57443f-284e-47b2-915e-5b6417db269c,,;925779e7-8bf6-4d56-8c4d-42c3bc01c60c,,;50398f4e-dd82-4d6a-ad43-aedd578543d9,,;1c343e00-7e6c-4f53-b588-074a3cdb9c7d,,;5bcdefbb-2194-46c2-ac77-0b2d8472a5f7,,;,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "VerbalIntent" "Utility"
+data "SpellFlags" "NoCameraMove"
+data "SpellAnimationIntentType" "Aggressive"
+data "RequirementConditions" "not Immobilized()"
+data "PrepareEffect" "f56fb8e0-815b-41e0-9071-3c2305c93660"
+data "CastEffect" "08ecdc25-31ea-4f32-8787-19b97971a9f1"
+data "CinematicArenaFlags" "Ignore"
+data "Sheathing" "DontChange"
+
+new entry "DODGE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "DODGE"
+data "Description" "h910d365egd00ag49abg853agfeec0d6e5137;1"
+data "Icon" "Status_Invulnerable"
+data "SoundVocalStart" "DODGE"
+data "TickType" "StartTurn"
+data "RemoveConditions" "HasStatus('SG_Incapacitated') or Immobilized()"
+data "RemoveEvents" "OnStatusApplied;OnActionResourcesChanged"
+
+// ----------------------------------------------
+// -------------------- Jump --------------------
+// ----------------------------------------------
+
+new entry "Projectile_Jump"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Projectile_Jump"
+data "UseCosts" "Movement:Distance"
+
+// -----------------------------------------------
+// -------------------- Shove --------------------
+// -----------------------------------------------
+
+// Changes to default Shove only includes the removal of advantage on Sneaking, the fixed distance and the action cost
+// The introduction of Shove to Prone is done only to the player's version
+
+new entry "Target_Shove"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Shove"
+data "SpellRoll" "Dead() or SkillCheck(Skill.Athletics,math.max(context.Target.GetPassiveSkill(Skill.Athletics),context.Target.GetPassiveSkill(Skill.Acrobatics)))"
+data "SpellSuccess" "IF(not Ally()):Force(1.5,OriginToEntity,Aggressive);IF(Ally()):Force(1.5,OriginToEntity,Friendly)"
+data "Description" "h39b0e6f4g2f5cg4038g8944g625faa062c38;1"
+data "DescriptionParams" "Distance(1.5)"
+data "ExtraDescription" "hed88db7bgfbe4g4ab0g9252g068a8bcc48c0;1"
+data "UseCosts" "ActionPoint:1"
+
+new entry "RAW_Target_Shove_Player"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Shove"
+data "Description" "h29df2d23ga713g4cf9gaacdg7cf61bb3b2ee;1"
+data "DescriptionParams" ""
+data "ContainerSpells" "RAW_Target_Shove_Player_Push;RAW_Target_Shove_Player_Prone"
+data "SpellFlags" "IsMelee;AddFallDamageOnLand;IsHarmful;CombatLogSetSingleLineRoll;IsLinkedSpellContainer"
+
+new entry "RAW_Target_Shove_Player_Push"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Shove"
+data "DisplayName" "h5877647dg40fbg4c09gb1c5g16af8009e38b;1"
+data "SpellContainerID" "RAW_Target_Shove_Player"
+data "SpellActionType" "None"
+
+new entry "RAW_Target_Shove_Player_Prone"
+type "SpellData"
+data "SpellType" "Target"
+using "RAW_Target_Shove_Player"
+data "SpellContainerID" "RAW_Target_Shove_Player"
+data "SpellSuccess" "ApplyStatus(PRONE,100,1)"
+data "Icon" "Status_Prone"
+data "DisplayName" "hb461d04cg1cfbg4ba1g83a2g5bd1421d1a20;1"
+data "Description" "h8cd12a69g8980g4a55g8737g3f6183de78c1;1"
+data "SpellFlags" "IsMelee;CannotTargetTerrain;CombatLogSetSingleLineRoll"
+data "SpellActionType" "None"

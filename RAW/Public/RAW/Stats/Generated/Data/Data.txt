@@ -1,3 +1,6 @@
+// Removes the bonus to attack roll when attacking from High Ground
+// Decided to keep the penalty from attacking in Low Ground to simulate a cover
 key "HighGroundAttackRollBonus","0"
 
+// Vanilla's Initiative Die is a d4
 key "InitiativeDie","20"

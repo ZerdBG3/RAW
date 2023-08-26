@@ -1,0 +1,123 @@
+// -----------------------------------------------
+// -------------------- Utils --------------------
+// -----------------------------------------------
+
+// Make the summon Armor and Vitality 10 so it gets a round 1000HP and 100AC with the passives
+// Give the RAW_IndestructibleSummon_AI_Ignore Passive so it is indestructible and ignored by AI
+// Give the RAW_SummonResourceBlock Passive so it can't act unless commanded and choose one of the passives below
+//   ↳ RAW_SummonResourceCreate_AllowAct so it can act once without being commanded
+//   ↳ RAW_SummonResourceCreate_BlockAct so it can't act at all without being commanded
+// The Passives will give the summoner the RAW_Target_Summon_Command spell to command the summon
+
+new entry "RAW_IndestructibleSummon_AI_Ignore"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "DisplayName" "h1d26d698g3c6dg4212gad8dga725fb76bda2;1"
+data "Description" "h1d26d698g3c6dg4212gad8dga725fb76bda2;1"
+data "Boosts" "Tag(AI_IGNORED_TARGET);Invulnerable();IgnoreLeaveAttackRange();IncreaseMaxHP(990);AC(90);Resistance(Bludgeoning,Immune);Resistance(Slashing,Immune);Resistance(Piercing,Immune);Resistance(Acid,Immune);Resistance(Cold,Immune);Resistance(Fire,Immune);Resistance(Force,Immune);Resistance(Lightning,Immune);Resistance(Necrotic,Immune);Resistance(Poison,Immune);Resistance(Psychic,Immune);Resistance(Radiant,Immune);Resistance(Thunder,Immune);StatusImmunity(SG_Condition);StatusImmunity(SG_Blinded);StatusImmunity(SG_Charmed);StatusImmunity(SG_Cursed);StatusImmunity(SG_Disease);StatusImmunity(SG_Exhausted);StatusImmunity(SG_Frightened);StatusImmunity(SG_Incapacitated);StatusImmunity(SG_Invisible);StatusImmunity(SG_Poisoned);StatusImmunity(SG_Prone);StatusImmunity(SG_Restrained);StatusImmunity(SG_Stunned);StatusImmunity(SG_Unconscious);StatusImmunity(SG_Polymorph);StatusImmunity(SG_Paralyzed);StatusImmunity(SG_Petrified);StatusImmunity(SG_Drunk);StatusImmunity(SG_Sleeping);StatusImmunity(SG_CanBePickedUp);StatusImmunity(SG_Approaching);StatusImmunity(SG_Taunted);StatusImmunity(SG_Dominated);StatusImmunity(SG_Fleeing);StatusImmunity(SG_Confused);StatusImmunity(SG_Mad);"
+
+new entry "RAW_SummonResourceBlock"
+type "PassiveData"
+data "DisplayName" "h347bdf44gbb6dg4e83g83feg9f48169b16f0;1"
+data "Description" "ha3c41950g6a08g4bbdg9a88g2c14f3c6e8b7;1"
+data "Icon" "statIcons_HandsOffPetal"
+data "Properties" "Highlighted"
+data "BoostContext" "OnCreate;OnStatusApplied;OnStatusRemoved;OnTurn;OnCombatEnded"
+data "BoostConditions" "TurnBased(context.Source) and not HasStatus('RAW_SUMMON_RESOURCE_ALLOW')"
+data "Boosts" "ActionResourceBlock(Movement);ActionResourceBlock(BonusActionPoint)"
+
+new entry "RAW_SummonResourceCreate_AllowAct"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnCreate"
+data "StatsFunctors" "ApplyStatus(SELF,RAW_SUMMON_ACTION_AURA,100,-1);ApplyStatus(SELF,RAW_SUMMON_RESOURCE_ALLOW,100,1)"
+
+new entry "RAW_SummonResourceCreate_BlockAct"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnCreate"
+data "StatsFunctors" "ApplyStatus(SELF,RAW_SUMMON_ACTION_AURA,100,-1);ApplyStatus(SELF,RAW_SUMMON_RESOURCE_BLOCK,100,-1)"
+
+new entry "RAW_SUMMON_ACTION_AURA"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "RAW_SUMMON_ACTION_AURA"
+data "AuraRadius" "36"
+data "AuraStatuses" "TARGET:IF(Character() and HasStatus('UNSUMMON_ABLE',context.Source,context.Target)):ApplyStatus(RAW_SUMMON_ACTION_OWNER)"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+new entry "RAW_SUMMON_ACTION_OWNER"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "RAW_SUMMON_ACTION_OWNER"
+data "Boosts" "UnlockSpell(RAW_Target_Summon_Command)"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+new entry "RAW_SUMMON_RESOURCE_ALLOW"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "h75be88fcg63f2g4e6dg9017g35c69b889191;1"
+data "Description" "h518c02f3gda53g498dg95e8g21599aaae760;1"
+data "Icon" "Spell_Enchantment_CommandFlee"
+data "StackId" "RAW_SPIRITUAL_WEAPON_RESOURCE"
+data "OnApplyFunctors" "RemoveStatus(RAW_SUMMON_RESOURCE_BLOCK)"
+data "OnRemoveFunctors" "ApplyStatus(RAW_SUMMON_RESOURCE_BLOCK,100,-1)"
+data "TickType" "EndTurn"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog"
+
+new entry "RAW_SUMMON_RESOURCE_BLOCK"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "h347bdf44gbb6dg4e83g83feg9f48169b16f0;1"
+data "Description" "ha3c41950g6a08g4bbdg9a88g2c14f3c6e8b7;1"
+data "Icon" "statIcons_HandsOffPetal"
+data "StackId" "RAW_SUMMON_RESOURCE_BLOCK"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog"
+
+new entry "RAW_Target_Summon_Command"
+type "SpellData"
+data "SpellType" "Target"
+data "TargetRadius" "36"
+data "SpellProperties" "ApplyStatus(RAW_SUMMON_RESOURCE_ALLOW,100,1)"
+data "TargetConditions" "Summon() and HasStatus('UNSUMMON_ABLE',context.Target,context.Source)"
+data "Icon" "Spell_Abjuration_BanishingSmite_Melee"
+data "DisplayName" "h7d6311c9g4e07g40c9ga6b9g65ab8583ca90;1"
+data "Description" "hc01e959cg7d3dg4542gac9fg68099deb9746;1"
+data "CastTextEvent" "Cast"
+data "UseCosts" "BonusActionPoint:1"
+data "SpellAnimation" "554a18f7-952e-494a-b301-7702a85d4bc9,,;,,;3e441d3f-11f9-432d-877c-c0ba4d92c74a,,;8b7ae969-2a04-4720-9685-3bde54c18ffe,,;22dfbbf4-f417-4c84-b39e-2039315961e6,,;,,;5bfbe9f9-4fc3-4f26-b112-43d404db6a89,,;,,;,,"
+data "VerbalIntent" "Control"
+data "SpellFlags" "IgnoreVisionBlock;RangeIgnoreVerticalThreshold;Temporary;Wildshape"
+data "PrepareEffect" "17f11731-a1c7-4653-a15b-6c7f871574b3"
+data "CastEffect" "28a8039d-9df1-4210-8137-f396dd23614e"
+data "TargetEffect" "6b316222-955e-4539-87eb-a098db22c98b"
+data "BeamEffect" "2d8309ab-c73d-40eb-a42f-fa4935858786"
+
+// --------------------------------------------------------
+// -------------------- Flaming Sphere --------------------
+// --------------------------------------------------------
+
+new entry "FlamingSphere"
+type "Character"
+using "FlamingSphere"
+data "Vitality" "10"
+data "Armor" "10"
+data "XPReward" ""
+data "Flags" "InvulnerableAndInteractive"
+data "Passives" "DarknessRules;RAW_SummonResourceBlock;RAW_SummonResourceCreate_BlockAct;RAW_IndestructibleSummon_AI_Ignore"
+data "DifficultyStatuses" ""
+
+// ----------------------------------------------------------
+// -------------------- Spiritual Weapon --------------------
+// ----------------------------------------------------------
+
+// Accompanied by changes to the Root Templates of all Spiritual Weapons
+new entry "SpiritualWeapon_Greataxe"
+type "Character"
+using "SpiritualWeapon_Greataxe"
+data "Vitality" "10"
+data "Armor" "10"
+data "XPReward" ""
+data "Flags" "Grounded;Floating;InvulnerableAndInteractive"
+data "Passives" "Ethereal;RAW_SummonResourceBlock;RAW_SummonResourceCreate_AllowAct;RAW_IndestructibleSummon_AI_Ignore"
+data "DifficultyStatuses" ""

@@ -1,0 +1,36 @@
+// ----------------------------------------------------
+// -------------------- Short Rest --------------------
+// ----------------------------------------------------
+
+// Status removed when short resting are handled by Public\RAW\Scripts\Game\RAW_Statuses.gameScript
+
+new entry "ShortResting"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctors" "ApplyStatus(SELF,RAW_SHORT_REST,100,-1);IF(not HasPassive('Durable') and CheckRulesetModifier('1d9a608a-3885-4d48-8816-458e40d1136e', false)):RegainHitPoints(MaxHP/2);IF(HasPassive('Durable') or CheckRulesetModifier('1d9a608a-3885-4d48-8816-458e40d1136e', true)):RegainHitPoints(MaxHP)"
+data "StatsFunctorContext" "OnShortRest"
+
+new entry "RAW_SHORT_REST"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "hd7046718g6e1ag4867g9e30g6900297f0d58;1"
+data "Description" "h2f4288c1g1e4fg4852g80e1g09db0b94bb3d;1"
+data "Icon" "statIcons_CrossLeggedSitting"
+data "StackId" "RAW_SHORT_REST"
+data "StillAnimationType" "Sitting"
+data "StillAnimationPriority" "Sitting"
+data "Boosts" "ActionResourceBlock(Movement);ActionResourceBlock(ActionPoint);ActionResourceBlock(BonusActionPoint);UnlockSpell(RAW_Shout_EndShortRest)"
+data "OnApplyFunctors" "RemoveStatus(SG_Disguise);RemoveStatus(SG_Polymorph_BeastShape)"
+
+new entry "RAW_Shout_EndShortRest"
+type "SpellData"
+data "SpellType" "Shout"
+data "SpellProperties" "RemoveStatus(RAW_SHORT_REST)"
+data "AreaRadius" "36"
+data "TargetConditions" "Ally()"
+data "Icon" "statIcons_Enlarged"
+data "DisplayName" "haf813ecag5ad0g464cg8749g68d9ebd9b71d;1"
+data "Description" "h1aff6b78gc632g459cgbb15g9c17e56b611a;1"
+data "CastTextEvent" "Cast"
+data "SpellAnimation" "dd86aa43-8189-4d9f-9a5c-454b5fe4a197,,;,,;bcc3b0d9-f04f-4448-aab0-e0ad641167cc,,;bf924cc6-8b39-4c3b-b1c0-eda264cf6150,,;cc5b0caf-3ed1-4711-a50d-11dc3f1fdc6a,,;,,;1715b877-4512-472e-9bd0-fd568a112e90,,;,,;,,"
+data "SpellFlags" "IgnoreVisionBlock;RangeIgnoreVerticalThreshold;Temporary"

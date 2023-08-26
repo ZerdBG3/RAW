@@ -1,0 +1,25 @@
+// Depends on RAW_ExtraAttackCheck() from Scripts\thoth\helpers\RAW.khn
+// Depends on the changes to Shove from DefaultActions.txt
+
+new entry "ExtraAttack"
+type "PassiveData"
+using "ExtraAttack"
+data "Conditions" "(not context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and (HasStringInSpellRoll('WeaponAttack') or HasStringInSpellRoll('UnarmedAttack') or SpellId('Target_CommandersStrike') or SpellId('Projectile_ArrowOfSmokepowder') or SpellId('Target_Shove') or SpellId('RAW_Target_Shove_Player_Push') or SpellId('RAW_Target_Shove_Player_Prone')) and HasUseCosts('ActionPoint', true) and not Tagged('EXTRA_ATTACK_BLOCKED',context.Source) and TurnBased(context.Source)) or (context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and StatusId('INITIAL_ATTACK_TECHNICAL') and TurnBased())"
+
+new entry "ExtraAttack_2"
+type "PassiveData"
+using "ExtraAttack_2"
+data "Conditions" "(not context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and (HasStringInSpellRoll('WeaponAttack') or HasStringInSpellRoll('UnarmedAttack') or SpellId('Target_CommandersStrike') or SpellId('Projectile_ArrowOfSmokepowder') or SpellId('Target_Shove') or SpellId('RAW_Target_Shove_Player_Push') or SpellId('RAW_Target_Shove_Player_Prone')) and HasUseCosts('ActionPoint', true) and not Tagged('EXTRA_ATTACK_BLOCKED',context.Source) and TurnBased(context.Source)) or (context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and StatusId('INITIAL_ATTACK_TECHNICAL') and TurnBased())"
+
+new entry "EXTRA_ATTACK"
+type "StatusData"
+data "StatusType" "BOOST"
+using "EXTRA_ATTACK"
+data "Boosts" "UnlockSpellVariant(RAW_ExtraAttackCheck(),ModifyUseCosts(Replace,ActionPoint,0,0,ActionPoint),ModifyIconGlow(),ModifyTooltipDescription())"
+data "RemoveConditions" "(HasStringInSpellRoll('WeaponAttack') or HasStringInSpellRoll('UnarmedAttack') or SpellId('Target_CommandersStrike') or SpellId('Target_Shove') or SpellId('RAW_Target_Shove_Player_Push') or SpellId('RAW_Target_Shove_Player_Prone')) and HasUseCosts('ActionPoint',false,context.Target) and not IsOffHandAttack()"
+
+new entry "EXTRA_ATTACK_2"
+type "StatusData"
+data "StatusType" "BOOST"
+using "EXTRA_ATTACK_2"
+data "Boosts" "UnlockSpellVariant(RAW_ExtraAttackCheck(),ModifyUseCosts(Replace,ActionPoint,0,0,ActionPoint),ModifyIconGlow(),ModifyTooltipDescription())"

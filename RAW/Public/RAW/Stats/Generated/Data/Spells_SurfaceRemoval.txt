@@ -1,0 +1,40 @@
+// --------------------------------------------------------
+// -------------------- Surface Change --------------------
+// --------------------------------------------------------
+
+// Spells that only interact with the surface if they're targeting it directly
+
+// Apply the status to SELF on the SpellProperties. Since an attack to the ground doesn't result in the status
+// being applied, it is possible to use that to check if the attack had a target or not
+// Keep in mind the order is important in this case; ApplyStatus() first, then check if the caster has it
+new entry "RAW_SURFACECHANGE_HELPER"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "RAW_SURFACECHANGE_HELPER"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+new entry "Projectile_FireBolt"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Projectile_FireBolt"
+data "SpellProperties" "ApplyStatus(SELF,RAW_SURFACECHANGE_HELPER,100,0);GROUND:IF(not HasStatus('RAW_SURFACECHANGE_HELPER',context.Source)):SurfaceChange(Ignite);GROUND:IF(not HasStatus('RAW_SURFACECHANGE_HELPER',context.Source)):SurfaceChange(Melt);"
+
+// Produce Flame is on Spells.txt since it has more changes outside the surface interaction
+
+new entry "Projectile_RayOfFrost"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Projectile_RayOfFrost"
+data "SpellProperties" "ApplyStatus(SELF,RAW_SURFACECHANGE_HELPER,100,0);GROUND:IF(not HasStatus('RAW_SURFACECHANGE_HELPER',context.Source)):SurfaceChange(Freeze);GROUND:IF(not HasStatus('RAW_SURFACECHANGE_HELPER',context.Source)):SurfaceChange(Douse);"
+
+new entry "Projectile_ScorchingRay"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Projectile_ScorchingRay"
+data "SpellProperties" "ApplyStatus(SELF,RAW_SURFACECHANGE_HELPER,100,0);GROUND:IF(not HasStatus('RAW_SURFACECHANGE_HELPER',context.Source)):SurfaceChange(Ignite);GROUND:IF(not HasStatus('RAW_SURFACECHANGE_HELPER',context.Source)):SurfaceChange(Melt);"
+
+new entry "Target_ShockingGrasp"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ShockingGrasp"
+data "SpellProperties" "ApplyStatus(SELF,RAW_SURFACECHANGE_HELPER,100,0);GROUND:IF(not HasStatus('RAW_SURFACECHANGE_HELPER',context.Source)):SurfaceChange(Electrify)"
