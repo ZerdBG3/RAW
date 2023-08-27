@@ -1,0 +1,73 @@
+// ---------------------------------------------------------
+// -------------------- Arcane Recovery --------------------
+// ---------------------------------------------------------
+
+// Depends on ShortRest.txt
+
+new entry "Shout_ArcaneRecovery"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_ArcaneRecovery"
+data "Description" "hbeba3ad3g8801g4a4fg8d77g7507fa9bb7c6;1"
+data "UseCosts" "ArcaneRecoveryPoint:1"
+data "RequirementConditions" "HasStatus('RAW_SHORT_REST')"
+
+new entry "Shout_ArcaneRecovery_2"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_ArcaneRecovery_2"
+data "UseCosts" "ArcaneRecoveryPoint:2"
+
+new entry "Shout_ArcaneRecovery_3"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_ArcaneRecovery_3"
+data "UseCosts" "ArcaneRecoveryPoint:3"
+
+new entry "Shout_ArcaneRecovery_4"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_ArcaneRecovery_4"
+data "UseCosts" "ArcaneRecoveryPoint:4"
+
+new entry "Shout_ArcaneRecovery_5"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_ArcaneRecovery_5"
+data "UseCosts" "ArcaneRecoveryPoint:5"
+
+new entry "Shout_MAG_SpellSlotRestoration"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MAG_SpellSlotRestoration"
+data "RequirementConditions" ""
+
+new entry "Shout_MAG_WarlockSpellRestoration"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MAG_WarlockSpellRestoration"
+data "RequirementConditions" ""
+
+new entry "Shout_MAG_SpellSlotRestoration_PearlOfPower"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MAG_SpellSlotRestoration_PearlOfPower"
+data "RequirementConditions" ""
+
+new entry "Shout_MAG_SpellSlotRestoration_PearlOfPower_1"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MAG_SpellSlotRestoration_PearlOfPower_1"
+data "RequirementConditions" ""
+
+new entry "Shout_MAG_SpellSlotRestoration_PearlOfPower_2"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MAG_SpellSlotRestoration_PearlOfPower_2"
+data "RequirementConditions" ""
+
+new entry "Shout_MAG_SpellSlotRestoration_PearlOfPower_3"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MAG_SpellSlotRestoration_PearlOfPower_3"
+data "RequirementConditions" ""

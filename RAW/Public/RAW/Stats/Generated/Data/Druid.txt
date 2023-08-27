@@ -1,0 +1,37 @@
+// ----------------------------------------------------------
+// -------------------- Natural Recovery --------------------
+// ----------------------------------------------------------
+
+// Depends on ShortRest.txt
+
+new entry "Shout_NaturalRecovery"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_NaturalRecovery"
+data "Description" "h75e85388g3e7dg4e70g8101g612860c4a857;1"
+data "UseCosts" "NaturalRecoveryPoint:1"
+data "RequirementConditions" "HasStatus('RAW_SHORT_REST')"
+
+new entry "Shout_NaturalRecovery_2"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_NaturalRecovery_2"
+data "UseCosts" "NaturalRecoveryPoint:2"
+
+new entry "Shout_NaturalRecovery_3"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_NaturalRecovery_3"
+data "UseCosts" "NaturalRecoveryPoint:3"
+
+new entry "Shout_NaturalRecovery_4"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_NaturalRecovery_4"
+data "UseCosts" "NaturalRecoveryPoint:4"
+
+new entry "Shout_NaturalRecovery_5"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_NaturalRecovery_5"
+data "UseCosts" "NaturalRecoveryPoint:5"

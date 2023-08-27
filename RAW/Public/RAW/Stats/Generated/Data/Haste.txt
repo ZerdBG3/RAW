@@ -1,0 +1,21 @@
+// -----------------------------------------------
+// -------------------- Haste --------------------
+// -----------------------------------------------
+
+// Depends on RAW_HasteCheck() from Scripts\thoth\helpers\RAW.khn
+// Depends on RAW_HastePoint created by Public\RAW\ActionResourceDefinitions\ActionResourceDefinitions.lsx
+
+new entry "RAW_Haste"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "BoostContext" "OnActionResourcesChanged;OnStatusApplied;OnStatusRemoved"
+data "BoostConditions" "HasActionResource('RAW_HastePoint',1,0,false,false,context.Source)"
+data "Boosts" "UnlockSpellVariant(RAW_HasteCheck(),ModifyUseCosts(Replace,RAW_HastePoint,1,0,ActionPoint),ModifyIconGlow())"
+
+new entry "HASTE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "HASTE"
+data "Description" "h6f61be82gf4e8g4224gb3a5gb3ea351852da;1"
+data "Boosts" "ActionResource(Movement,9,0);AC(2);ActionResource(RAW_HastePoint,1,0);Advantage(SavingThrow, Dexterity)"
+data "Passives" "RAW_Haste"
