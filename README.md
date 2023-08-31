@@ -21,6 +21,7 @@ Zerd's Rules As Written for Baldur's Gate 3
 
 # Installing
 * Installation and updating instructions are found on the [Installation Guide](https://github.com/ZerdBG3/RAW/blob/main/Installing.md)
+* This mod requires Norbyte's [BG3 Script Extender](https://github.com/Norbyte/bg3se/releases)
 
 # Compatibility
 * This mod alters a lot of core mechanics, thus it might not be compatible with saves that were started without it. If possible, start a new game when using this mod

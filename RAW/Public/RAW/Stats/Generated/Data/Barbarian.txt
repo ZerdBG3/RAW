@@ -2,32 +2,35 @@
 // -------------------- Reckless Attack --------------------
 // ---------------------------------------------------------
 
-// Removes the IsRerollInterruptInteresting() clause and makes it so the interrupt is only triggerable on the first attack of the turn
+// Removes the IsRerollInterruptInteresting() clause and makes the interrupt and attack only usable on the first attack of the turn
 // It also breaks the status into two
-//   ↳ RAW_RECKLESS_ATTACK_SELF lasts until the end of the current turn and gives advantage for the Barbarian to attack
-//   ↳ RECKLESS_ATTACK lasts until the start of the Barbarian's next turn and gives advantages for the enmies to attack the Barbarian
+//   ↳ RAW_RECKLESS_ATTACK_SELF lasts until the end of the current turn and gives advantage for the Barbarian
+//   ↳ RECKLESS_ATTACK lasts until the start of the Barbarian's next turn and gives advantages for the enemies
+
+new entry "RecklessAttack"
+type "PassiveData"
+using "RecklessAttack"
+data "Conditions" "IsAttack() and not HasStatus('FIRST_ATTACK_TURN',context.Source) and not HasStatus('RECKLESS_ATTACK',context.Source)"
+
+new entry "FIRST_ATTACK_TURN"
+type "StatusData"
+data "StatusType" "BOOST"
+using "FIRST_ATTACK_TURN"
+data "OnApplyFunctors" "ApplyStatus(RAW_DUMMY,100,0)"
+data "OnRemoveFunctors" "ApplyStatus(RAW_DUMMY,100,0)"
+data "TickType" "StartTurn"
 
 new entry "Interrupt_RecklessAttack"
 type "InterruptData"
 using "Interrupt_RecklessAttack"
-data "Conditions" "not Dead(context.Observer) and HasInterruptedAttack() and Self(context.Observer,context.Source) and IsMeleeWeaponAttack() and not HasStatus('RECKLESS_ATTACK',context.Observer) and not SpellId('Target_RecklessAttack') and not AnyEntityIsItem() and not HasStatus('RAW_RECKLESS_ATTACK_BLOCK',context.Observer)"
+data "Conditions" "not Dead(context.Observer) and HasInterruptedAttack() and Self(context.Observer,context.Source) and IsMeleeWeaponAttack() and not HasStatus('RECKLESS_ATTACK',context.Observer) and not SpellId('Target_RecklessAttack') and not AnyEntityIsItem() and not HasStatus('FIRST_ATTACK_TURN',context.Observer)"
 data "Properties" "SetAdvantage();ApplyStatus(OBSERVER_OBSERVER,RECKLESS_ATTACK,100,1);ApplyStatus(OBSERVER_OBSERVER,RAW_RECKLESS_ATTACK_SELF,100,1)"
-
-// Passive given on Public\RAW\Progressions\Progressions.lsx
-new entry "RAW_RecklessAttackBlock"
-type "PassiveData"
-data "DisplayName" "h0159dcd5g7df6g42fag8c0eg6b714977e84a;1"
-data "Description" "hd8db6255g9df7g4a83g9a83g7ed354602d82;1"
-data "Conditions" "IsAttack() and not HasStatus('RAW_RECKLESS_ATTACK_BLOCK',context.Source) and not HasStatus('RECKLESS_ATTACK',context.Source)"
-data "Properties" "IsHidden"
-data "StatsFunctors" "ApplyStatus(SELF,RAW_RECKLESS_ATTACK_BLOCK,100,1)"
-data "StatsFunctorContext" "OnAttack"
 
 new entry "Target_RecklessAttack"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_RecklessAttack"
-data "RequirementConditions" "not HasStatus('RAW_RECKLESS_ATTACK_BLOCK')"
+data "RequirementConditions" "not HasStatus('FIRST_ATTACK_TURN')"
 data "SpellProperties" "ApplyStatus(SELF,RECKLESS_ATTACK,100,1);ApplyStatus(SELF,RAW_RECKLESS_ATTACK_SELF,100,1);GROUND:DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(MainHand)"
 data "SpellRoll" "Attack(AttackType.MeleeWeaponAttack,true)"
 
@@ -49,12 +52,3 @@ data "StatusType" "BOOST"
 using "RECKLESS_ATTACK"
 data "Description" "h0d5d7494ga6b3g4f9ag82d3g9cc482ead351;1"
 data "Boosts" "Advantage(AttackTarget)"
-
-new entry "RAW_RECKLESS_ATTACK_BLOCK"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StackId" "RAW_RECKLESS_ATTACK_BLOCK"
-data "OnApplyFunctors" "ApplyStatus(RAW_DUMMY,100,0)"
-data "OnRemoveFunctors" "ApplyStatus(RAW_DUMMY,100,0)"
-data "TickType" "StartTurn"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"

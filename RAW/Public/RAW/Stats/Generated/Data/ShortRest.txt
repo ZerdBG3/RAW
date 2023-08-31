@@ -34,3 +34,111 @@ data "Description" "h1aff6b78gc632g459cgbb15g9c17e56b611a;1"
 data "CastTextEvent" "Cast"
 data "SpellAnimation" "dd86aa43-8189-4d9f-9a5c-454b5fe4a197,,;,,;bcc3b0d9-f04f-4448-aab0-e0ad641167cc,,;bf924cc6-8b39-4c3b-b1c0-eda264cf6150,,;cc5b0caf-3ed1-4711-a50d-11dc3f1fdc6a,,;,,;1715b877-4512-472e-9bd0-fd568a112e90,,;,,;,,"
 data "SpellFlags" "IgnoreVisionBlock;RangeIgnoreVerticalThreshold;Temporary"
+
+// ---------------------------------------------------------
+// -------------------- Arcane Recovery --------------------
+// ---------------------------------------------------------
+
+new entry "Shout_ArcaneRecovery"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_ArcaneRecovery"
+data "Description" "hbeba3ad3g8801g4a4fg8d77g7507fa9bb7c6;1"
+data "UseCosts" "ArcaneRecoveryPoint:1"
+data "RequirementConditions" "HasStatus('RAW_SHORT_REST')"
+
+new entry "Shout_ArcaneRecovery_2"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_ArcaneRecovery_2"
+data "UseCosts" "ArcaneRecoveryPoint:2"
+
+new entry "Shout_ArcaneRecovery_3"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_ArcaneRecovery_3"
+data "UseCosts" "ArcaneRecoveryPoint:3"
+
+new entry "Shout_ArcaneRecovery_4"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_ArcaneRecovery_4"
+data "UseCosts" "ArcaneRecoveryPoint:4"
+
+new entry "Shout_ArcaneRecovery_5"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_ArcaneRecovery_5"
+data "UseCosts" "ArcaneRecoveryPoint:5"
+
+new entry "Shout_MAG_SpellSlotRestoration"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MAG_SpellSlotRestoration"
+data "RequirementConditions" ""
+
+new entry "Shout_MAG_WarlockSpellRestoration"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MAG_WarlockSpellRestoration"
+data "RequirementConditions" ""
+
+new entry "Shout_MAG_SpellSlotRestoration_PearlOfPower"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MAG_SpellSlotRestoration_PearlOfPower"
+data "RequirementConditions" ""
+
+new entry "Shout_MAG_SpellSlotRestoration_PearlOfPower_1"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MAG_SpellSlotRestoration_PearlOfPower_1"
+data "RequirementConditions" ""
+
+new entry "Shout_MAG_SpellSlotRestoration_PearlOfPower_2"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MAG_SpellSlotRestoration_PearlOfPower_2"
+data "RequirementConditions" ""
+
+new entry "Shout_MAG_SpellSlotRestoration_PearlOfPower_3"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MAG_SpellSlotRestoration_PearlOfPower_3"
+data "RequirementConditions" ""
+
+// ----------------------------------------------------------
+// -------------------- Natural Recovery --------------------
+// ----------------------------------------------------------
+
+new entry "Shout_NaturalRecovery"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_NaturalRecovery"
+data "Description" "h75e85388g3e7dg4e70g8101g612860c4a857;1"
+data "UseCosts" "NaturalRecoveryPoint:1"
+data "RequirementConditions" "HasStatus('RAW_SHORT_REST')"
+
+new entry "Shout_NaturalRecovery_2"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_NaturalRecovery_2"
+data "UseCosts" "NaturalRecoveryPoint:2"
+
+new entry "Shout_NaturalRecovery_3"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_NaturalRecovery_3"
+data "UseCosts" "NaturalRecoveryPoint:3"
+
+new entry "Shout_NaturalRecovery_4"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_NaturalRecovery_4"
+data "UseCosts" "NaturalRecoveryPoint:4"
+
+new entry "Shout_NaturalRecovery_5"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_NaturalRecovery_5"
+data "UseCosts" "NaturalRecoveryPoint:5"

@@ -5,7 +5,7 @@
 // Spells that only interact with the surface if they're targeting it directly
 
 // Apply the status to SELF on the SpellProperties. Since an attack to the ground doesn't result in the status
-// being applied, it is possible to use that to check if the attack had a target or not
+//   being applied, it is possible to use that to check if the attack had a target or not
 // Keep in mind the order is important in this case; ApplyStatus() first, then check if the caster has it
 new entry "RAW_SURFACECHANGE_HELPER"
 type "StatusData"
