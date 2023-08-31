@@ -1,12 +1,36 @@
 new entry "_Hero"
 type "Character"
 using "_Hero"
-data "Passives" "ShortResting;NonLethal;WeaponThrow;Perform;AttackOfOpportunity;DarknessRules;CombatStartAttack;RAW_Walk;RAW_OnTurnTracker"
+data "Passives" "ShortResting;NonLethal;WeaponThrow;Perform;AttackOfOpportunity;DarknessRules;CombatStartAttack;RAW_Walk;RAW_OnTurnTracker;RAW_Loading_Block_ExtraAttack"
 
 new entry "ORIGIN_Karlach"
 type "Character"
 using "ORIGIN_Karlach"
-data "Passives" "ShortResting;NonLethal;WeaponThrow;Perform;AttackOfOpportunity;DarknessRules;CombatStartAttack;ORI_Karlach_SweatImmune;RAW_Walk;RAW_OnTurnTracker"
+data "Passives" "ShortResting;NonLethal;WeaponThrow;Perform;AttackOfOpportunity;DarknessRules;CombatStartAttack;ORI_Karlach_SweatImmune;RAW_Walk;RAW_OnTurnTracker;RAW_Loading_Block_ExtraAttack"
+
+// ----------------------------------------------------------
+// -------------------- Loading Crossbow --------------------
+// ----------------------------------------------------------
+
+// Extra Attack doesn't work for Crossbows, unless the attacker has the Crossbow Expert feat (Feats.txt)
+// The status is checked at RAW_ExtraAttackCheck() at Scripts\thoth\helpers\RAW.khn
+
+new entry "RAW_Loading_Block_ExtraAttack"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnCast"
+data "Conditions" "RAW_LoadingBlockExtraAttack(context.Source) and TurnBased(context.Source)"
+data "StatsFunctors" "ApplyStatus(SELF,RAW_EXTRA_ATTACK_LOADING,100,1)"
+
+new entry "RAW_EXTRA_ATTACK_LOADING"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "RAW_EXTRA_ATTACK_LOADING"
+data "TickType" "StartTurn"
+data "OnApplyFunctors" "IF(not RAW_HasHigherPriorityExtraAttackQueued('EXTRA_ATTACK_WAR_MAGIC_Q') and not HasAnyExtraAttack()):RemoveStatus(RAW_EXTRA_ATTACK_LOADING)"
+data "RemoveConditions" "not RAW_HasHigherPriorityExtraAttackQueued('EXTRA_ATTACK_WAR_MAGIC_Q') and not HasAnyExtraAttack()"
+data "RemoveEvents" "OnStatusRemoved"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 
 // ------------------------------------------------------
 // -------------------- Turn Tracker --------------------

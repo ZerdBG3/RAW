@@ -30,7 +30,7 @@ data "SpellProperties" "ApplyEquipmentStatus(MainHand, WILD_MAGIC_BARBARIAN_WEAP
 new entry "RAW_WILD_MAGIC_BARBARIAN_WEAPON_INFUSION_THROW"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StackId" "RAW_THROW_WEAPON"
+data "StackId" "RAW_WILD_MAGIC_BARBARIAN_WEAPON_INFUSION_THROW"
 data "DescriptionParams" "DealDamage(1d6,Force)"
 data "Boosts" "UnlockSpell(RAW_Throw_Weapon)"
 data "RemoveConditions" "not HasStatus('SG_Rage')"
