@@ -61,6 +61,9 @@
     <content contentuid="h518c02f3gda53g498dg95e8g21599aaae760" version="1">This summon can act because its Owner commanded it.</content><!-- Summon Resource Allowed -->
     <content contentuid="he3c1c67bgae0cg4968ga86egd2b1325c01b3" version="1">While inside the storm, this character can be target by a lightning bolt</content><!-- Call Lightning -->
     <content contentuid="h6f61be82gf4e8g4224gb3a5gb3ea351852da" version="1">Creature has a +2 bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;, &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;, its &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is doubled, and it can take one additional action per turn.&lt;br&gt;&lt;br&gt;When the condition ends, the creature becomes &lt;LSTag Type="Status" Tooltip="HASTE_LETHARGY"&gt;Lethargic&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;The extra action can be used only to take the Attack (one weapon attack only), Dash, Disengage or Hide.</content><!-- Haste -->
+    <content contentuid="hcd0ce8fcg1ba9g43e0g977fg81ed262e3f53" version="3">Affected entity can't be targeted by enemy attacks or spells. However, it can still take damage from spells that influence a larger area. Condition ends if the affected entity attacks or harms another creature.</content><!-- Sanctuary -->
+    <content contentuid="h45dc0873gf5d3g4623ga4cagf3268cbfb6c1" version="3">Cannot harm creature warded by Sanctuary.</content><!-- Sanctuary -->
+    <content contentuid="ha79d9187g0539g47abg83bagbc46d76b8834" version="1">Next ranged weapon attack deals [1] to target and creatures within [2] of them.</content><!-- Hail of Thorns -->
     
     <!-- Status Downed Description -->
     <content contentuid="h788b3d9dgb19cg43adg8d49gdb0f922e7400" version="1">If you reach 0 hit points, you fall Unconscious and must make Death Saving Throws. On 3 successes, you stop bleeding out and become Stable. On 3 failures, you die.
@@ -77,6 +80,7 @@ If you regain any Hit Points, the condition is removed. If an ally &lt;LSTag Typ
     <content contentuid="h868da50cg1553g4d69gb8d6g491c06156b08" version="1">Distract (Cunning Action)</content><!-- Distract Cunning Action -->
     <content contentuid="h9dae9cf6gd51dg4176g9654g137136bdc8c1" version="1">Help (Cunning Action)</content><!-- Help Cunning Action -->
     <content contentuid="h7d6311c9g4e07g40c9ga6b9g65ab8583ca90" version="1">Command Summon</content><!-- Summon Command -->
+    <content contentuid="9f00ff64-e055-4a55-bfb2-755cf0dfb838" version="1">Feign Death: Dismiss</content><!-- Feign Death: Dismiss -->
 
     <!-- Target Description -->
     <content contentuid="h39b0e6f4g2f5cg4038g8944g625faa062c38" version="1">Shove a target to push it [1].</content><!-- Shove -->
@@ -88,7 +92,9 @@ If you regain any Hit Points, the condition is removed. If an ally &lt;LSTag Typ
     <content contentuid="hc01e959cg7d3dg4542gac9fg68099deb9746" version="1">Use your Bonus Action to command your summon to act.</content><!-- Summon Command -->
     <content contentuid="h9204dac0g5de4g4199ga876g8eb69468ee8a" version="1">Put creatures into a magical slumber. Targets in an area are affected in ascending order of their current hit points (ignoring unconscious creatures), up to a combined of [1].</content><!-- Sleep -->
     <content contentuid="h63b15a52g69efg4c70g93acge877ff55d83e" version="1">Creates a storm cloud in the targeted area. Then, you can call down lightning on an area inside the storm striking all targets. For the next 10 turns, you can call down lightning again using an Action.</content><!-- Call Lightning -->
-
+    <content contentuid="ffa9d7cd-a608-4a40-9a5e-47ab6219c7f0" version="1">Dismiss the effects of Feign Death on a creature.</content><!-- Feign Death: Dismiss -->
+	<content contentuid="4ce29ea436f44ee4b0dc2017764b5327" version="5">Prepare to make a volley of thorns the next time you hit a creature with a ranged weapon attack, dealing [1] to it and creatures within [2] of them.</content> <!-- Hail of Thorns -->
+    
     <!-- Target Extra Description -->
     <content contentuid="hed88db7bgfbe4g4ab0g9252g068a8bcc48c0" version="1">Shoving depends on your &lt;LSTag Tooltip="Athletics"&gt;Athletics&lt;/LSTag&gt;, and the higher of the target's Athletics or &lt;LSTag Tooltip="Acrobatics"&gt;Acrobatics&lt;/LSTag&gt;.</content><!-- Shove -->
     <content contentuid="h53da955bgfbadg4d77gb962g11eec4070db8" version="1">Removes Burning, Ensnared, Entangled, Enwebbed, Prone, and Sleeping.</content><!-- Help -->
