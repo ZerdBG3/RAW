@@ -13,6 +13,7 @@ data "Icon" "Status_Distracted"
 data "DisplayName" "hacff287aga587g493bg8074ga79a9969f0c7;1"
 data "Description" "h8a5eb4d5g32beg46b6g9c83g8b4832766545;1"
 data "CycleConditions" "Enemy() and not Dead()"
+data "SpellFlags" "IsMelee;UnavailableInDialogs"
 
 new entry "RAW_Target_Distract_Summon"
 type "SpellData"

@@ -41,3 +41,7 @@ function RAW_IsThrowAttackRoll()
     local res = IsMeleeWeaponAttack() & SpellTypeIs(SpellType.Throw) & HasWeaponProperty(WeaponProperties.Finesse, context.HitDescription.ThrownObject)
     return ConditionResult(res.Result)
 end
+
+function RAW_CunningActionThiefCheck()
+    return (SpellId('Target_Distract') | SpellId('Target_Help')) & HasUseCosts('ActionPoint')
+end

@@ -2,11 +2,20 @@
 // -------------------- Fast Hands --------------------
 // ----------------------------------------------------
 
+// Fast Hands provides a toggleable passive to overwrite the use costs for Distract and Help
+// Depends on the Distract action from DefaultActions.txt
+// Depends on the changes to the Help action from Stabilize.txt
+
 new entry "FastHands"
 type "PassiveData"
 using "FastHands"
 data "Description" "hfc0ecb86gc504g44f1g9d88g957905740457;1"
-data "Boosts" "UnlockSpell(RAW_Target_Distract_CunningAction);UnlockSpell(RAW_Target_Help_CunningAction);UnlockSpell(RAW_Throw_Throw_CunningAction)"
+data "EnabledConditions" "HasActionResource('BonusActionPoint', 1, 0, false, false, context.Source)"
+data "EnabledContext" "OnTurn;OnStatusApplied;OnActionResourcesChanged;OnCast;OnCastResolved"
+data "Properties" "ToggledDefaultOn;ToggledDefaultAddToHotbar;IsToggled"
+data "Boosts" "UnlockSpellVariant(RAW_CunningActionThiefCheck(),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint),ModifyTooltipDescription())"
+
+// The following spells are given on Public\RAW\Progressions\Progressions.lsx pointing to Public\RAW\Lists\SpellLists.lsx
 
 // Depends on the Distract action from DefaultActions.txt
 new entry "RAW_Target_Distract_CunningAction"

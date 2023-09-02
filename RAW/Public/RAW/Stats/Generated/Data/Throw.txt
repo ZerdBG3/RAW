@@ -34,7 +34,7 @@ type "SpellData"
 data "SpellType" "Throw"
 using "Throw_ImprovisedWeapon"
 data "SpellSuccess" "TARGET:IF(IsLightThrownObject(context.HitDescription.ThrownObject, false)):DealDamage(1d4,Bludgeoning);TARGET:IF(IsMediumThrownObject(context.HitDescription.ThrownObject, false)):DealDamage(2d4,Bludgeoning);TARGET:IF(IsHeavyThrownObject(context.HitDescription.ThrownObject, false)):DealDamage(2d4,Bludgeoning);TARGET:IF(HasWeaponProperty(WeaponProperties.Thrown,context.HitDescription.ThrownObject)):DealDamage(1d4, Bludgeoning);TARGET:IF(HasWeightGreaterThan(context.Target.Weight/2, context.HitDescription.ThrownObject)):Force(2);TARGET:IF(HasWeightGreaterThan(context.Target.Weight, context.HitDescription.ThrownObject)):ApplyStatus(PRONE,100,1)"
-data "ThrowableTargetConditions" "not Character() and IsImprovisedWeapon() and CanImprovisedWeaponWeight() and not Grounded() and not IsItemDisabled() and not HasAttribute('InventoryBound') and (IsMovable() or Dead()) and CanMove(context.Target, context.Source, false) and not IsEquipped() and not Tagged('CANT_SHOVE_THROW')"
+data "ThrowableTargetConditions" "not Character() and IsImprovisedWeapon() and CanImprovisedWeaponWeight() and not Grounded() and not IsItemDisabled() and not HasAttribute('InventoryBound') and (IsMovable() or Dead()) and CanMove(context.Target, context.Source, false) and (not IsEquipped() or IsEquipmentSlot(EquipmentSlot.MeleeMainHand) or IsEquipmentSlot(EquipmentSlot.MeleeOffHand)) and not Tagged('CANT_SHOVE_THROW')"
 data "Description" "h73c67cf6g5850g4e17gbbc6gabb0186cfd4d;1"
 
 // ------------------------------------------------------

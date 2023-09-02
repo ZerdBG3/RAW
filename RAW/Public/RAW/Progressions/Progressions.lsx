@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<save>
+    <version major="4" minor="0" revision="10" build="100"/>
+    <region id="Progressions">
+        <node id="root">
+            <children>
+                <node id="Progression">
+                    <attribute id="AllowImprovement" type="bool" value="false"/>
+                    <attribute id="Level" type="uint8" value="2"/>
+                    <attribute id="Name" type="LSString" value="Rogue"/>
+                    <attribute id="PassivesAdded" type="LSString" value="RAW_CunningAction"/>
+                    <attribute id="ProgressionType" type="uint8" value="0"/>
+                    <attribute id="Selectors" type="LSString" value="AddSpells(2dc120ff-903b-494b-8dc8-38721098ce38)"/>
+                    <attribute id="TableUUID" type="guid" value="9a44e828-92db-4d6c-acbc-a4f8ef340415"/>
+                    <attribute id="UUID" type="guid" value="35863719-e935-4757-a9f3-eb38a8cd8cb7"/>
+                </node>
+                <node id="Progression">
+                    <attribute id="Level" type="uint8" value="3"/>
+                    <attribute id="Name" type="LSString" value="Thief"/>
+                    <attribute id="PassivesAdded" type="LSString" value="FastHands;SecondStoryWork"/>
+                    <attribute id="ProgressionType" type="uint8" value="1"/>
+                    <attribute id="Selectors" type="LSString" value="AddSpells(de819b48-ba8a-4e9b-a3bb-554863b8fe66)"/>
+                    <attribute id="TableUUID" type="guid" value="f6acc595-46b4-4d96-b7d5-6f33366fc2de"/>
+                    <attribute id="UUID" type="guid" value="3f95146b-90bc-4064-b3e0-4e1e751cd08d"/>
+                </node>
+            </children>
+        </node>
+    </region>
+</save>
