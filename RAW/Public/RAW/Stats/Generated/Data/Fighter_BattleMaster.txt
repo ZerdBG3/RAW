@@ -1,0 +1,10 @@
+// ----------------------------------------------------------
+// -------------------- Battle Maneuvers --------------------
+// ----------------------------------------------------------
+
+new entry "Target_FeintingAttack"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_FeintingAttack"
+data "UseCosts" "ActionPoint:1;BonusActionPoint:1;SuperiorityDie:1"
+data "HitCosts" ""

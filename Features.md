@@ -11,6 +11,8 @@
 * **Druid:**
   - Level 2: Wild Shape allows for spells that require reactivation to be usable (eg.: Heat Metal, Moonbeam, Call Lightning) 
   - Level 2 (Circle of the Land): Natural Recovery is only usable during a Short Rest
+* **Fighter:**
+  - Level 3 (Battle Master): Feinting Attack (Maneuver) fixed to cost a bonus action and a superiority die regardless if the attack hits or misses
 * **Ranger:**
   - Level 1: Hunter's Mark counts as a separate damage entry and can critically strike
 * **Rogue:**
@@ -18,9 +20,9 @@
     - Fixes Sneak Attack Interrupt being possible to apply the damage on AoE effects (such as the explosion of a Fire Arrow). Only the main target will be prompted - the side effect is AoEs that roll for attack rolls on each target, such as a Cleave, will only allow you to deal sneak attack damage to the first one
     - Removes check for killing blow on Sneak Attack Interrupt. You'll still be able to see the character died, but you can opt into deal your sneak attack regardless (honor system) or if you're not asking to be prompted by the interrupt, it will consume regardless if the base damage killed the target
     - Spells no longer consume the Sneak Attack Charge if it missed (thus allowing for retries on other attacks on the same turn, specially offhand attacks)
-  - Level 2: Cunning Action transformed into a Spell Container
-  - Level 3 (Thief): Fast Hands no longer provides an extra Bonus Action - instead, it gives Help, Distract and Throw (no damage) as possible Cunning Actions (bonus action)
-  - Level 3 (Thief): Second-Story Work now replaces Jump for a Dexterity-based version
+  - Level 2: Cunning Action provides a toggleable passive (default on) that replaces the action cost for Dash, Disengage and Hide for a Bonus Action. It is automatically disabled when the rogue doesn't have a bonus action or when they're hasted. Cunning Action is also available as a Spell Container with all bonus actions inside it for when the player must enforce the bonus action cost (such as when they're hasted)
+  - Level 3 (Thief): Fast Hands no longer provides an extra Bonus Action - instead, it gives Help, Distract and Throw (no damage) as possible Cunning Actions (bonus action). There's a toggleable passive just as above, except for Throw - since it doesn't deal damage, it's not a simple action cost replacement, it's a separate spell kept inside the Cunning Action Spell Container
+  - Level 3 (Thief): Second-Story Work now provides a Jump with distance scaling with Dexterity
 * **Wizard:**
   - Level 1: Arcane Recovery is only usable during a Short Rest
 

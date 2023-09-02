@@ -2,6 +2,17 @@
 // -------------------- Cunning Action --------------------
 // --------------------------------------------------------
 
+// Passive is given on Public\RAW\Progressions\Progressions.lsx
+new entry "RAW_CunningAction"
+type "PassiveData"
+data "DisplayName" "h5d311bfdg3b88g4a78gb8fcgbb8645c6a5f7;1"
+data "Description" "he7d837b8g404fg4dbdg85c2g9d69c019d63d;1"
+data "Icon" "statIcons_Refreshed"
+data "EnabledConditions" "HasActionResource('BonusActionPoint', 1, 0, false, false, context.Source) and not HasActionResource('RAW_HastePoint', 1, 0, false, false, context.Source)"
+data "EnabledContext" "OnTurn;OnStatusApplied;OnActionResourcesChanged;OnCast;OnCastResolved"
+data "Properties" "ToggledDefaultOn;ToggledDefaultAddToHotbar;IsToggled"
+data "Boosts" "UnlockSpellVariant(SpellId('Shout_Dash') and HasUseCosts('ActionPoint'),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint),ModifyTooltipDescription(),ModifyVisuals(Action_Dash_Bonus));UnlockSpellVariant(SpellId('Shout_Hide') and HasUseCosts('ActionPoint'),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint),ModifyTooltipDescription(),ModifyVisuals(Action_Hide));UnlockSpellVariant(SpellId('Shout_Disengage') and HasUseCosts('ActionPoint'),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint),ModifyTooltipDescription(),ModifyVisuals(Action_Disengage_Bonus))"
+
 // Spell container given on Public\RAW\Lists\SpellLists.lsx
 new entry "RAW_Shout_CunningAction"
 type "SpellData"
