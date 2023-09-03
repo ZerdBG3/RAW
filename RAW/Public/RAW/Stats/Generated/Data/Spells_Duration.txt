@@ -312,6 +312,15 @@ data "SpellType" "Target"
 using "Target_MagicWeapon_6"
 data "SpellProperties" "IF(Item()):ApplyStatus(MAGIC_WEAPON_6,100,600);IF(not Item()):ApplyEquipmentStatus(MainHand,MAGIC_WEAPON_6,100,600)"
 
+\\ Larian hasn't implemented the actual 6th level upcasting of Magic Weapon yet.
+new entry "MAGIC_WEAPON_6"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAGIC_WEAPON"
+data "DescriptionParams" "3"
+data "StackPriority" "2"
+data "Boosts" "WeaponEnchantment(3);WeaponProperty(Magical)"
+
 new entry "Shout_PassWithoutTrace"
 type "SpellData"
 data "SpellType" "Shout"
