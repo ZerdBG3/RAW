@@ -297,22 +297,22 @@ new entry "Target_MagicWeapon"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_MagicWeapon"
-data "SpellProperties" "IF(Item()):ApplyStatus(MAGIC_WEAPON,100,600);IF(not Item()):ApplyEquipmentStatus(MainHand,MAGIC_WEAPON,100,600)"
+data "SpellProperties" "IF(Item()):ApplyStatus(MAGIC_WEAPON,100,600);IF(not Item()):ApplyEquipmentStatus(MainHand,MAGIC_WEAPON,100,600);GROUND:ApplyStatus(SELF,RAW_CONCENTRATION_HELPER,100,600)"
 data "TooltipStatusApply" "ApplyStatus(MAGIC_WEAPON,100,600)"
 
 new entry "Target_MagicWeapon_4"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_MagicWeapon_4"
-data "SpellProperties" "IF(Item()):ApplyStatus(MAGIC_WEAPON_4,100,600);IF(not Item()):ApplyEquipmentStatus(MainHand,MAGIC_WEAPON_4,100,600)"
+data "SpellProperties" "IF(Item()):ApplyStatus(MAGIC_WEAPON_4,100,600);IF(not Item()):ApplyEquipmentStatus(MainHand,MAGIC_WEAPON_4,100,600);GROUND:ApplyStatus(SELF,RAW_CONCENTRATION_HELPER,100,600)"
 
 new entry "Target_MagicWeapon_6"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_MagicWeapon_6"
-data "SpellProperties" "IF(Item()):ApplyStatus(MAGIC_WEAPON_6,100,600);IF(not Item()):ApplyEquipmentStatus(MainHand,MAGIC_WEAPON_6,100,600)"
+data "SpellProperties" "IF(Item()):ApplyStatus(MAGIC_WEAPON_6,100,600);IF(not Item()):ApplyEquipmentStatus(MainHand,MAGIC_WEAPON_6,100,600);GROUND:ApplyStatus(SELF,RAW_CONCENTRATION_HELPER,100,600)"
 
-\\ Larian hasn't implemented the actual 6th level upcasting of Magic Weapon yet.
+// Larian hasn't implemented the actual 6th level upcasting of Magic Weapon yet.
 new entry "MAGIC_WEAPON_6"
 type "StatusData"
 data "StatusType" "BOOST"

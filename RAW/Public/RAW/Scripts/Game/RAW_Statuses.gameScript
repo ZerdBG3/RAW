@@ -13,8 +13,11 @@ ACTIONS
     
     ListClear(_RemoveList)
     ListAdd(_RemoveList, EXPEDITIOUS_RETREAT)
+    ListAdd(_RemoveList, FLY)
     ListAdd(_RemoveList, PROTECTION_FROM_EVIL_AND_GOOD)
     ListAdd(_RemoveList, SHIELD_OF_FAITH)
+    ListAdd(_RemoveList, PETPAL)
+    ListAdd(_RemoveList, SPEAK_WITH_DEAD_RECAST)
 
     ListAdd(_RemoveList, ARMOR_OF_AGATHYS)
     ListAdd(_RemoveList, ARMOR_OF_AGATHYS_2)
@@ -35,10 +38,18 @@ ACTIONS
     ListAdd(_RemoveList, FALSE_LIFE_4)
     ListAdd(_RemoveList, FALSE_LIFE_5)
     ListAdd(_RemoveList, FALSE_LIFE_6)
+    ListAdd(_RemoveList, GASEOUS_FORM)
     ListAdd(_RemoveList, INVISIBILITY)
     ListAdd(_RemoveList, LONGSTRIDER)
     ListAdd(_RemoveList, PASS_WITHOUT_TRACE_AURA)
+    ListAdd(_RemoveList, PROTECTION_FROM_ENERGY_ACID)
+    ListAdd(_RemoveList, PROTECTION_FROM_ENERGY_COLD)
+    ListAdd(_RemoveList, PROTECTION_FROM_ENERGY_FIRE)
+    ListAdd(_RemoveList, PROTECTION_FROM_ENERGY_LIGHTNING)
+    ListAdd(_RemoveList, PROTECTION_FROM_ENERGY_THUNDER)
     ListAdd(_RemoveList, PROTECTION_FROM_POISON)
+    ListAdd(_RemoveList, WARDING_BOND)
+    ListAdd(_RemoveList, WARDING_BOND_CASTER)
 
     ListAdd(_RemoveList, RAW_CONCENTRATION_HELPER)
 
