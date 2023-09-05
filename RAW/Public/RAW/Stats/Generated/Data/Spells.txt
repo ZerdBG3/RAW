@@ -113,6 +113,30 @@ data "RemoveEvents" "OnSpellCast"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 
 // -----------------------------------------------
+// ------------- Feign Death Dismiss -------------
+// -----------------------------------------------
+// Adjusted Feign Death spell in Spells_Duration.txt for the Dimiss portion here. Also added Wildshape spell flag
+new entry "Target_FeignDeath_Dismiss"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_FeignDeath"
+data "SpellProperties" "RemoveStatus(FEIGN_DEATH);RemoveStatus(SELF,RAW_FEIGN_DEATH_TECHNICAL)"
+data "TargetConditions" "HasStatus('FEIGN_DEATH',context.Target,context.Source)"
+data "DisplayName" "hea829cd9ge8f4g42ecg9d63g702ed2764a96;1"
+data "Description" "hd58f9063g3911g45aag9236g2115019b3240;1"
+data "UseCosts" "ActionPoint:1"
+data "SpellFlags" "IsMelee;Temporary;Wildshape"
+
+new entry "RAW_FEIGN_DEATH_DISMISS"
+type "StatusData"
+data "StatusType" "BOOST"
+data "Boosts" "UnlockSpell(Target_FeignDeath_Dismiss)"
+data "RemoveConditions" "not HasStatus('FEIGN_DEATH')"
+data "RemoveEvents" "OnStatusRemoved"
+data "StackId" "RAW_FEIGN_DEATH_DISMISS"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
+
+// -----------------------------------------------
 // -------------------- Fireball -----------------
 // -----------------------------------------------
 // Changed area and explode radius
