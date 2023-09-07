@@ -13,6 +13,7 @@
 
 # Optional Configurations
 * To turn on/off the mod features, copy the [`ModOptions.json`](https://github.com/ZerdBG3/RAW/blob/main/ModOptions.json) file to the `Script Extender` folder inside the Profile folder, creating it if necessary. The complete path should look something like `\Users\{USER_NAME}\AppData\Local\Larian Studios\Baldur's Gate 3\Script Extender`
+* You only need to set the configuration file if you want to alter the default behavior. Therefore, there is no need to download and set the file up if you are not going to change any of its values
 * Simply change the values from `true` to `false` to whichever feature you want to turn off
 
 | Option | Default | Description | 
