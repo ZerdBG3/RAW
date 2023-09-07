@@ -113,6 +113,291 @@ data "RemoveEvents" "OnSpellCast"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 
 // -----------------------------------------------
+// ------------- Feign Death Dismiss -------------
+// -----------------------------------------------
+
+// Adjusted Feign Death spell in Spells_Duration.txt for the Dimiss portion here. Also added Wildshape spell flag
+new entry "RAW_Target_FeignDeath_Dismiss"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_FeignDeath"
+data "SpellProperties" "RemoveStatus(FEIGN_DEATH);ApplyStatus(SELF,RAW_FEIGN_DEATH_TECHNICAL_REMOVE,100,-1)"
+data "TargetConditions" "HasStatus('FEIGN_DEATH',context.Target,context.Source)"
+data "DisplayName" "hea829cd9ge8f4g42ecg9d63g702ed2764a96;1"
+data "Description" "hd58f9063g3911g45aag9236g2115019b3240;1"
+data "UseCosts" "ActionPoint:1"
+data "RitualCosts" ""
+data "SpellFlags" "IsMelee;Temporary;Wildshape"
+
+// Status stacking and removal are handled by Public\RAW\Scripts\Game\RAW_Statuses.gameScript
+new entry "RAW_FEIGN_DEATH_TECHNICAL_STACK"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
+
+new entry "RAW_FEIGN_DEATH_TECHNICAL_REMOVE"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
+
+new entry "RAW_FEIGN_DEATH_DISMISS"
+type "StatusData"
+data "StatusType" "BOOST"
+data "Boosts" "UnlockSpell(RAW_Target_FeignDeath_Dismiss)"
+data "StackId" "RAW_FEIGN_DEATH_DISMISS"
+data "StackPriority" "1"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
+
+new entry "RAW_FEIGN_DEATH_DISMISS_2"
+type "StatusData"
+data "StatusType" "BOOST"
+using "RAW_FEIGN_DEATH_DISMISS"
+data "StackPriority" "2"
+
+new entry "RAW_FEIGN_DEATH_DISMISS_3"
+type "StatusData"
+data "StatusType" "BOOST"
+using "RAW_FEIGN_DEATH_DISMISS"
+data "StackPriority" "3"
+
+new entry "RAW_FEIGN_DEATH_DISMISS_4"
+type "StatusData"
+data "StatusType" "BOOST"
+using "RAW_FEIGN_DEATH_DISMISS"
+data "StackPriority" "4"
+
+new entry "RAW_FEIGN_DEATH_DISMISS_5"
+type "StatusData"
+data "StatusType" "BOOST"
+using "RAW_FEIGN_DEATH_DISMISS"
+data "StackPriority" "5"
+
+new entry "RAW_FEIGN_DEATH_DISMISS_6"
+type "StatusData"
+data "StatusType" "BOOST"
+using "RAW_FEIGN_DEATH_DISMISS"
+data "StackPriority" "6"
+
+new entry "RAW_FEIGN_DEATH_DISMISS_7"
+type "StatusData"
+data "StatusType" "BOOST"
+using "RAW_FEIGN_DEATH_DISMISS"
+data "StackPriority" "7"
+
+new entry "RAW_FEIGN_DEATH_DISMISS_8"
+type "StatusData"
+data "StatusType" "BOOST"
+using "RAW_FEIGN_DEATH_DISMISS"
+data "StackPriority" "8"
+
+new entry "RAW_FEIGN_DEATH_DISMISS_9"
+type "StatusData"
+data "StatusType" "BOOST"
+using "RAW_FEIGN_DEATH_DISMISS"
+data "StackPriority" "9"
+
+// -----------------------------------------------
+// -------------------- Fireball -----------------
+// -----------------------------------------------
+
+// Changed area and explode radius
+new entry "Projectile_Fireball"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Projectile_Fireball"
+data "AreaRadius" "6"
+data "ExplodeRadius" "6"
+
+// -----------------------------------------------
+// --------------- Hail of Thorns ----------------
+// -----------------------------------------------
+
+// Changed spell to become a Shout that applies the Hail of Thorns effect through a status as a CreateExplosion functor
+
+new entry "Projectile_HailOfThorns"
+type "SpellData"
+data "SpellType" "Shout"
+data "Level" "1"
+data "SpellSchool" "Conjuration"
+data "TargetRadius" "0"
+data "SpellProperties" "ApplyStatus(RAW_HAIL_OF_THORNS,100,10)"
+data "TargetConditions" "Self()"
+data "Icon" "Spell_Conjuration_HailOfThorns"
+data "DisplayName" "hec3e702ege82bg4096gb1f0g71c07209f8da;1"
+data "Description" "h2149d9f2gd22fg4923ga45bged71c17b76ef;1"
+data "DescriptionParams" "DealDamage(1d10,Piercing);Distance(2)"
+data "ExtraDescriptionParams" "DealDamage(MainRangedWeapon, MainRangedWeaponDamageType);DealDamage(1d10,Piercing)"
+data "TooltipStatusApply" "ApplyStatus(RAW_HAIL_OF_THORNS,100,10)"
+data "TooltipDamageList" "DealDamage(1d10,Piercing)"
+data "TooltipAttackSave" "Dexterity"
+data "TooltipOnMiss" "662f6ca7-fd71-4ed7-b4d5-60b5889a2465"
+data "TooltipOnSave" "7c90317e-f915-4395-9315-822b39cfe6c4"
+data "TooltipUpcastDescription" "181607a1-09d4-4f58-b688-c81ef5aba8d8"
+data "TooltipUpcastDescriptionParams" "DealDamage(1d10,Piercing)"
+data "CastTextEvent" "Cast"
+data "CastSound" "Spell_Cast_Damage_Physical_HailOfThorns_L1to3"
+data "CycleConditions" "Enemy() and not Dead()"
+data "UseCosts" "SpellSlotsGroup:1:1:1;BonusActionPoint:1"
+data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;,,;35b644cf-5c13-4407-9dc1-23bf4309216e,,;823e3ddf-c670-41ef-b7b4-9f4a4e38300b,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;,,;,,;,,;,,"
+data "VerbalIntent" "Damage"
+data "WeaponTypes" "Ammunition"
+data "SpellFlags" "IsSpell;HasVerbalComponent;IsConcentration"
+data "MemoryCost" "1"
+data "PrepareEffect" "67770f05-890a-4b11-8a80-d60079041ab7"
+data "CastEffect" "17fb1fe6-7dd9-4ce9-a7a3-d46453d26398"
+data "DamageType" "Piercing"
+
+new entry "Projectile_HailOfThorns_2"
+type "SpellData"
+data "SpellType" "Shout"
+using "Projectile_HailOfThorns"
+data "SpellProperties" "ApplyStatus(RAW_HAIL_OF_THORNS_2,100,10)"
+data "UseCosts" "SpellSlotsGroup:1:1:2;BonusActionPoint:1"
+data "RootSpellID" "Projectile_HailOfThorns"
+data "PowerLevel" "2"
+
+new entry "Projectile_HailOfThorns_3"
+type "SpellData"
+data "SpellType" "Shout"
+using "Projectile_HailOfThorns"
+data "SpellProperties" "ApplyStatus(RAW_HAIL_OF_THORNS_3,100,10)"
+data "UseCosts" "SpellSlotsGroup:1:1:3;BonusActionPoint:1"
+data "RootSpellID" "Projectile_HailOfThorns"
+data "PowerLevel" "3"
+
+new entry "Projectile_HailOfThorns_4"
+type "SpellData"
+data "SpellType" "Shout"
+using "Projectile_HailOfThorns"
+data "SpellProperties" "ApplyStatus(RAW_HAIL_OF_THORNS_4,100,10)"
+data "UseCosts" "SpellSlotsGroup:1:1:4;BonusActionPoint:1"
+data "RootSpellID" "Projectile_HailOfThorns"
+data "PowerLevel" "4"
+
+new entry "Projectile_HailOfThorns_5"
+type "SpellData"
+data "SpellType" "Shout"
+using "Projectile_HailOfThorns"
+data "SpellProperties" "ApplyStatus(RAW_HAIL_OF_THORNS_5,100,10)"
+data "UseCosts" "SpellSlotsGroup:1:1:5;BonusActionPoint:1"
+data "RootSpellID" "Projectile_HailOfThorns"
+data "PowerLevel" "5"
+
+new entry "Projectile_HailOfThorns_6"
+type "SpellData"
+data "SpellType" "Shout"
+using "Projectile_HailOfThorns"
+data "SpellProperties" "ApplyStatus(RAW_HAIL_OF_THORNS_6,100,10)"
+data "UseCosts" "SpellSlotsGroup:1:1:6;BonusActionPoint:1"
+data "RootSpellID" "Projectile_HailOfThorns"
+data "PowerLevel" "6"
+
+new entry "RAW_HAIL_OF_THORNS"
+type "StatusData"
+data "StatusType" "BOOST"
+data "Icon" "Spell_Conjuration_HailOfThorns"
+data "DisplayName" "h990994ddg1181g4092g91d0gc459f4cf970f;1"
+data "Description" "ha79d9187g0539g47abg83bagbc46d76b8834;1"
+data "DescriptionParams" "DealDamage(1d10,Piercing);Distance(2)"
+data "StackId" "RAW_HAIL_OF_THORNS"
+data "StackPriority" "1"
+data "Passives" "RAW_HailOfThorns"
+
+new entry "RAW_HAIL_OF_THORNS_2"
+type "StatusData"
+data "StatusType" "BOOST"
+using "RAW_HAIL_OF_THORNS"
+data "DescriptionParams" "DealDamage(2d10,Piercing);Distance(2)"
+data "StackPriority" "2"
+
+new entry "RAW_HAIL_OF_THORNS_3"
+type "StatusData"
+data "StatusType" "BOOST"
+using "RAW_HAIL_OF_THORNS"
+data "DescriptionParams" "DealDamage(3d10,Piercing);Distance(2)"
+data "StackPriority" "3"
+
+new entry "RAW_HAIL_OF_THORNS_4"
+type "StatusData"
+data "StatusType" "BOOST"
+using "RAW_HAIL_OF_THORNS"
+data "DescriptionParams" "DealDamage(4d10,Piercing);Distance(2)"
+data "StackPriority" "4"
+
+new entry "RAW_HAIL_OF_THORNS_5"
+type "StatusData"
+data "StatusType" "BOOST"
+using "RAW_HAIL_OF_THORNS"
+data "DescriptionParams" "DealDamage(5d10,Piercing);Distance(2)"
+data "StackPriority" "5"
+
+new entry "RAW_HAIL_OF_THORNS_6"
+type "StatusData"
+data "StatusType" "BOOST"
+using "RAW_HAIL_OF_THORNS"
+data "DescriptionParams" "DealDamage(6d10,Piercing);Distance(2)"
+data "StackPriority" "6"
+
+new entry "RAW_HailOfThorns"
+type "PassiveData"
+data "DisplayName" "hec3e702ege82bg4096gb1f0g71c07209f8da;1"
+data "Properties" "IsHidden"
+data "Conditions" "IsRangedAttack() and IsWeaponAttack() and HasDamageEffectFlag(DamageFlags.Hit) and ConditionResult(context.HitDescription.FirstAttack) and (HasStatus('RAW_HAIL_OF_THORNS',context.Source) or HasStatus('RAW_HAIL_OF_THORNS_2',context.Source) or HasStatus('RAW_HAIL_OF_THORNS_3',context.Source) or HasStatus('RAW_HAIL_OF_THORNS_4',context.Source) or HasStatus('RAW_HAIL_OF_THORNS_5',context.Source) or HasStatus('RAW_HAIL_OF_THORNS_6',context.Source) or HasStatus('RAW_HAIL_OF_THORNS_7',context.Source) or HasStatus('RAW_HAIL_OF_THORNS_8',context.Source) or HasStatus('RAW_HAIL_OF_THORNS_9',context.Source))"
+data "StatsFunctors" "IF(HasStatus('RAW_HAIL_OF_THORNS',context.Source)):CreateExplosion(RAW_Projectile_HailOfThorns_Explosion);IF(HasStatus('RAW_HAIL_OF_THORNS_2',context.Source)):CreateExplosion(RAW_Projectile_HailOfThorns_2_Explosion);IF(HasStatus('RAW_HAIL_OF_THORNS_3',context.Source)):CreateExplosion(RAW_Projectile_HailOfThorns_3_Explosion);IF(HasStatus('RAW_HAIL_OF_THORNS_4',context.Source)):CreateExplosion(RAW_Projectile_HailOfThorns_4_Explosion);IF(HasStatus('RAW_HAIL_OF_THORNS_5',context.Source)):CreateExplosion(RAW_Projectile_HailOfThorns_5_Explosion);IF(HasStatus('RAW_HAIL_OF_THORNS_6',context.Source)):CreateExplosion(RAW_Projectile_HailOfThorns_6_Explosion);IF(HasStatus('RAW_HAIL_OF_THORNS_7',context.Source)):CreateExplosion(RAW_Projectile_HailOfThorns_7_Explosion);IF(HasStatus('RAW_HAIL_OF_THORNS_8',context.Source)):CreateExplosion(RAW_Projectile_HailOfThorns_8_Explosion);IF(HasStatus('RAW_HAIL_OF_THORNS_9',context.Source)):CreateExplosion(RAW_Projectile_HailOfThorns_9_Explosion);RemoveStatus(SELF,RAW_HAIL_OF_THORNS);RemoveStatus(SELF,RAW_HAIL_OF_THORNS_2);RemoveStatus(SELF,RAW_HAIL_OF_THORNS_3);RemoveStatus(SELF,RAW_HAIL_OF_THORNS_4);RemoveStatus(SELF,RAW_HAIL_OF_THORNS_5);RemoveStatus(SELF,RAW_HAIL_OF_THORNS_6);RemoveStatus(SELF,RAW_HAIL_OF_THORNS_7);RemoveStatus(SELF,RAW_HAIL_OF_THORNS_8);RemoveStatus(SELF,RAW_HAIL_OF_THORNS_9)"
+data "StatsFunctorContext" "OnAttack"
+
+new entry "RAW_Projectile_HailOfThorns_Explosion"
+type "SpellData"
+data "SpellType" "Projectile"
+data "TargetFloor" "-1"
+data "TargetRadius" "18"
+data "ExplodeRadius" "2"
+data "SpellRoll" "not SavingThrow(Ability.Dexterity, SourceSpellDC())"
+data "SpellSuccess" "TARGET:AOE:IF(not HasEvasion()):DealDamage(1d10,Piercing,Magical);TARGET:AOE:IF(HasEvasion()):DealDamage(1d10/2,Piercing,Magical);TARGET:AOE:IF(HasEvasion()):RemoveStatus(SHIELD_MASTER)"
+data "SpellFail" "TARGET:AOE:IF((not HasEvasion())):DealDamage((1d10/2),Piercing,Magical)"
+data "ProjectileCount" "1"
+data "Trajectories" "f78a99dd-80a7-4427-a950-239dc0041490,b4866815-93f5-6b2f-ff06-5f343f008f81"
+data "DisplayName" "hec3e702ege82bg4096gb1f0g71c07209f8da;1"
+data "SpellFlags" "IsSpell;HasHighGroundRangeExtension;HasVerbalComponent;RangeIgnoreVerticalThreshold;IsHarmful"
+data "PrepareEffect" "67770f05-890a-4b11-8a80-d60079041ab7"
+data "CastEffect" "17fb1fe6-7dd9-4ce9-a7a3-d46453d26398"
+
+new entry "RAW_Projectile_HailOfThorns_2_Explosion"
+type "SpellData"
+data "SpellType" "Projectile"
+using "RAW_Projectile_HailOfThorns_Explosion"
+data "SpellSuccess" "TARGET:AOE:IF(not HasEvasion()):DealDamage(2d10,Piercing,Magical);TARGET:AOE:IF(HasEvasion()):DealDamage(2d10/2,Piercing,Magical);TARGET:AOE:IF(HasEvasion()):RemoveStatus(SHIELD_MASTER)"
+data "SpellFail" "TARGET:AOE:IF(not HasEvasion()):DealDamage((2d10/2),Piercing,Magical)"
+
+new entry "RAW_Projectile_HailOfThorns_3_Explosion"
+type "SpellData"
+data "SpellType" "Projectile"
+using "RAW_Projectile_HailOfThorns_Explosion"
+data "SpellSuccess" "TARGET:AOE:IF(not HasEvasion()):DealDamage(3d10,Piercing,Magical);TARGET:AOE:IF(HasEvasion()):DealDamage(3d10/2,Piercing,Magical);TARGET:AOE:IF(HasEvasion()):RemoveStatus(SHIELD_MASTER)"
+data "SpellFail" "TARGET:AOE:IF(not HasEvasion()):DealDamage((3d10/2),Piercing,Magical)"
+
+new entry "RAW_Projectile_HailOfThorns_4_Explosion"
+type "SpellData"
+data "SpellType" "Projectile"
+using "RAW_Projectile_HailOfThorns_Explosion"
+data "SpellSuccess" "TARGET:AOE:IF(not HasEvasion()):DealDamage(4d10,Piercing,Magical);TARGET:AOE:IF(HasEvasion()):DealDamage(4d10/2,Piercing,Magical);TARGET:AOE:IF(HasEvasion()):RemoveStatus(SHIELD_MASTER)"
+data "SpellFail" "TARGET:AOE:IF(not HasEvasion()):DealDamage((4d10/2),Piercing,Magical)"
+
+new entry "RAW_Projectile_HailOfThorns_5_Explosion"
+type "SpellData"
+data "SpellType" "Projectile"
+using "RAW_Projectile_HailOfThorns_Explosion"
+data "SpellSuccess" "TARGET:AOE:IF(not HasEvasion()):DealDamage(5d10,Piercing,Magical);TARGET:AOE:IF(HasEvasion()):DealDamage(5d10/2,Piercing,Magical);TARGET:AOE:IF(HasEvasion()):RemoveStatus(SHIELD_MASTER)"
+data "SpellFail" "TARGET:AOE:IF(not HasEvasion()):DealDamage((5d10/2),Piercing,Magical)"
+
+new entry "RAW_Projectile_HailOfThorns_6_Explosion"
+type "SpellData"
+data "SpellType" "Projectile"
+using "RAW_Projectile_HailOfThorns_Explosion"
+data "SpellSuccess" "TARGET:AOE:IF(not HasEvasion()):DealDamage(6d10,Piercing,Magical);TARGET:AOE:IF(HasEvasion()):DealDamage(6d10/2,Piercing,Magical);TARGET:AOE:IF(HasEvasion()):RemoveStatus(SHIELD_MASTER)"
+data "SpellFail" "TARGET:AOE:IF(not HasEvasion()):DealDamage((6d10/2),Piercing,Magical)"
+
+// -----------------------------------------------
 // -------------------- Haste --------------------
 // -----------------------------------------------
 
@@ -145,6 +430,17 @@ type "PassiveData"
 using "HuntersMark"
 data "Boosts" ""
 data "StatsFunctors" "ApplyStatus(PASSIVE_HUNTERS_MARK,100,0);IF(IsAttackType(AttackType.MeleeWeaponAttack)):DealDamage(1d6, MainMeleeWeaponDamageType);IF(IsAttackType(AttackType.RangedWeaponAttack)):DealDamage(1d6, MainRangedWeaponDamageType);IF(IsAttackType(AttackType.MeleeOffHandWeaponAttack)):DealDamage(1d6, OffhandMeleeWeaponDamageType);IF(IsAttackType(AttackType.RangedOffHandWeaponAttack)):DealDamage(1d6, OffhandRangedWeaponDamageType);"
+
+// -----------------------------------------------
+// ------------------ Ice Knife ------------------
+// -----------------------------------------------
+
+// Removed the ice surface creation
+new entry "Projectile_IceKnife"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Projectile_IceKnife"
+data "SpellProperties" ""
 
 // -------------------------------------------------------
 // -------------------- Produce Flame --------------------

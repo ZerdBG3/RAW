@@ -49,6 +49,7 @@
     <content contentuid="he7d837b8g404fg4dbdg85c2g9d69c019d63d" version="1">You can use your Bonus Action to Dash, Disengage or Hide.</content><!-- Cunning Action -->
     <content contentuid="hbeba3ad3g8801g4a4fg8d77g7507fa9bb7c6" version="1">Replenish expended &lt;LSTag Tooltip="SpellSlot"&gt;spell slots&lt;/LSTag&gt; during a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;. You cannot restore spell slots above 5th level.</content><!-- Arcane Recovery -->
     <content contentuid="h75e85388g3e7dg4e70g8101g612860c4a857" version="1">Replenish expended &lt;LSTag Tooltip="SpellSlot"&gt;spell slots&lt;/LSTag&gt; during a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;. You cannot restore spell slots above 5th level.</content><!-- Natural Recovery -->
+    <content contentuid="h2149d9f2gd22fg4923ga45bged71c17b76ef" version="1">Prepare to make a volley of thorns the next time you hit a creature with a ranged weapon attack, dealing [1] to it and creatures within [2] of them.</content> <!-- Hail of Thorns -->
 
     <!-- Status Boost Display Name -->
     <content contentuid="hd7046718g6e1ag4867g9e30g6900297f0d58" version="1">Short Rest</content><!-- Short Rest -->
@@ -56,6 +57,7 @@
     <content contentuid="h5df0213dg5488g435dgab52g6b9520c0b521" version="1">Stabilized</content><!-- Stabilized -->
     <content contentuid="h75be88fcg63f2g4e6dg9017g35c69b889191" version="1">Commanded</content><!-- Summon Resource Allowed -->
     <content contentuid="h0dc08f11gb7b2g442fga75dg8e01b1989e5d" version="1">Call Lightning</content><!-- Call Lightning -->
+    <content contentuid="h990994ddg1181g4092g91d0gc459f4cf970f" version="1">Hail of Thorns</content><!-- Hail of Thorns -->
     
     <!-- Status Boost Description -->
     <content contentuid="h2f4288c1g1e4fg4852g80e1g09db0b94bb3d" version="1">Taking a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content><!-- Short Rest -->
@@ -66,6 +68,7 @@
     <content contentuid="h518c02f3gda53g498dg95e8g21599aaae760" version="1">This summon can act because its Owner commanded it.</content><!-- Summon Resource Allowed -->
     <content contentuid="he3c1c67bgae0cg4968ga86egd2b1325c01b3" version="1">While inside the storm, this character can be target by a lightning bolt</content><!-- Call Lightning -->
     <content contentuid="h6f61be82gf4e8g4224gb3a5gb3ea351852da" version="1">Creature has a +2 bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;, &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;, its &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is doubled, and it can take one additional action per turn.&lt;br&gt;&lt;br&gt;When the condition ends, the creature becomes &lt;LSTag Type="Status" Tooltip="HASTE_LETHARGY"&gt;Lethargic&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;The extra action can be used only to take the Attack (one weapon attack only), Dash, Disengage or Hide.</content><!-- Haste -->
+    <content contentuid="ha79d9187g0539g47abg83bagbc46d76b8834" version="1">Next ranged weapon attack deals [1] to target and creatures within [2] of them.</content><!-- Hail of Thorns -->
     
     <!-- Status Downed Description -->
     <content contentuid="h788b3d9dgb19cg43adg8d49gdb0f922e7400" version="1">If you reach 0 hit points, you fall Unconscious and must make Death Saving Throws. On 3 successes, you stop bleeding out and become Stable. On 3 failures, you die.
@@ -82,6 +85,7 @@ If you regain any Hit Points, the condition is removed. If an ally &lt;LSTag Typ
     <content contentuid="h868da50cg1553g4d69gb8d6g491c06156b08" version="1">Distract (Cunning Action)</content><!-- Distract Cunning Action -->
     <content contentuid="h9dae9cf6gd51dg4176g9654g137136bdc8c1" version="1">Help (Cunning Action)</content><!-- Help Cunning Action -->
     <content contentuid="h7d6311c9g4e07g40c9ga6b9g65ab8583ca90" version="1">Command Summon</content><!-- Summon Command -->
+    <content contentuid="hea829cd9ge8f4g42ecg9d63g702ed2764a96" version="1">Feign Death: Dismiss</content><!-- Feign Death: Dismiss -->
 
     <!-- Target Description -->
     <content contentuid="h39b0e6f4g2f5cg4038g8944g625faa062c38" version="1">Shove a target to push it [1].</content><!-- Shove -->
@@ -93,7 +97,8 @@ If you regain any Hit Points, the condition is removed. If an ally &lt;LSTag Typ
     <content contentuid="hc01e959cg7d3dg4542gac9fg68099deb9746" version="1">Use your Bonus Action to command your summon to act.</content><!-- Summon Command -->
     <content contentuid="h9204dac0g5de4g4199ga876g8eb69468ee8a" version="1">Put creatures into a magical slumber. Targets in an area are affected in ascending order of their current hit points (ignoring unconscious creatures), up to a combined of [1].</content><!-- Sleep -->
     <content contentuid="h63b15a52g69efg4c70g93acge877ff55d83e" version="1">Creates a storm cloud in the targeted area. Then, you can call down lightning on an area inside the storm striking all targets. For the next 10 turns, you can call down lightning again using an Action.</content><!-- Call Lightning -->
-
+    <content contentuid="hd58f9063g3911g45aag9236g2115019b3240" version="1">Dismiss the effects of Feign Death on a creature.</content><!-- Feign Death: Dismiss -->
+    
     <!-- Target Extra Description -->
     <content contentuid="hed88db7bgfbe4g4ab0g9252g068a8bcc48c0" version="1">Shoving depends on your &lt;LSTag Tooltip="Athletics"&gt;Athletics&lt;/LSTag&gt;, and the higher of the target's Athletics or &lt;LSTag Tooltip="Acrobatics"&gt;Acrobatics&lt;/LSTag&gt;.</content><!-- Shove -->
     <content contentuid="h53da955bgfbadg4d77gb962g11eec4070db8" version="1">Removes Burning, Ensnared, Entangled, Enwebbed, Prone, and Sleeping.</content><!-- Help -->
