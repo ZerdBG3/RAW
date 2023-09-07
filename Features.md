@@ -43,7 +43,7 @@
 * Shield Master: Gives Shove (both options) as a bonus action after attacking on your turn
 
 ## Spells
-* Leveled spells with a casting cost of a bonus action block characters from casting another leveled spell on the same turn. Casting a leveled spell that doesn't require a bonus action will also block casting a leveled bonus action spell after ⚙️
+* Leveled spells with a casting cost of a bonus action block characters from casting another leveled spell on the same turn. Casting a leveled spell that doesn't require a bonus action will also block casting a leveled bonus action spell after ⚙️ `spells_bonusAction`
   - _Multiple spells with a casting cost of an Action is still allowed (by the likes of Action Surge)_
   - _The restriction includes Quickened Spell (Metamagic) and spells from Class/Race or Items that are proper spells (even without a spell slot cost)_
   - _Due to an technical limitation, scrolls for spells your character don't know inside a container (such as a backpack) can bypass this rule, so can scrolls send to the character after they already cast a spell on their turn_
@@ -128,7 +128,7 @@
   - Multiple sources no longer stack (Martial, Warlock and Wildshape)
   - Better priority logic on which extra attack to use, when considering War Priest, War Magic and Stalker's Flurry
   - Crossbows loading property only allows shooting once on an Extra Attack sequence (Crossbow Expert feat ignores the loading property)
-* Removes weapon abilities (like Cleave, Smash and Pin Down) from all weapons ⚙️
+* Removes weapon abilities (like Cleave, Smash and Pin Down) from all weapons ⚙️ `weaponSpells`
 * Removes the disadvantage on Strength and Dexterity Saving Throws when Prone, and adds the Disadvantage to Ranged Attack Rolls
 * Gives a Walk passive to players that allows them to toggle between walking and running for cinematic and roleplay purposes (as requested by fmarzullo)
 
