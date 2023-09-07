@@ -1,6 +1,8 @@
 # Requirements
 * This mod requires Norbyte's [BG3 Script Extender](https://github.com/Norbyte/bg3se/releases). You can install it following the instructions on its page, or install through Laughing Leader's [Mod Manager](https://github.com/LaughingLeader/BG3ModManager)
 
+![](https://github.com/ZerdBG3/RAW/assets/40004649/cd17077f-d8da-48e9-ba20-d258266e6367)
+
 # First installation
 * Locate your Profile Folder. You can click on the `Open Profile Folder` on the launcher
 ![](https://i.imgur.com/hvJVL0j.png)
@@ -17,6 +19,16 @@
 |---|---|---|
 | spells_bonusAction | true | Enforces the spell casted as a bonus action rule stopping casting other leveled spells on the same turn. |
 | weaponSpells | true | Removes weapon spells/passives from basic weapons, such as Cleave, Overwhelm, Piercing Shot and Topple. |
+
+* If you want to make sure your configurations are being loaded properly, turn on the Debug Console for the Script Extender by creating a `ScriptExtenderSettings.json` file on the same folder the extender was installed (`\steamapps\common\Baldurs Gate 3\bin`). The file should contain the following:
+```json
+{
+    "CreateConsole": true
+}
+```
+* Upon entering the game with this file, a console will open alongside the game. You should see something similar to this, indicating your Mod Options loaded properly and are applied (_don't close the console, or your game will close as well. Just remove the `ScriptExtenderSettings.json` afterwards if you no longer want it to open alongside your game_)
+
+![image](https://github.com/ZerdBG3/RAW/assets/40004649/9cf40487-80a8-42d8-a40b-c81b719b6558)
 
 # Updating your version
 * Be aware that some updates won't work on existing save files and might require new games to work
