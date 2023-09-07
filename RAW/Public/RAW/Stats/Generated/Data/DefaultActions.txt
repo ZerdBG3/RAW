@@ -33,6 +33,7 @@ data "StatusType" "BOOST"
 using "DISTRACTED"
 data "DisplayName" "h096216f2ge492g4bb9g9a3cgc88694a8a96b;1"
 data "Description" "h25d8863egdaf1g47e3gba46gb6bade9f3a93;1"
+data "StackId" "DISTRACTED"
 data "Boosts" "IF(not HasStatus('DISTRACTED',context.Target,context.Source)):Advantage(AttackTarget)"
 data "RemoveConditions" "IsAttack() and not IsInflicterEqualToSource()"
 

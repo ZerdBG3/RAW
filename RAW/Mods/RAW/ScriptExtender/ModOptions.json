@@ -1,0 +1,95 @@
+{
+    "rogue": {
+        "displayName": "Rogue",
+        "description": "Changes to Cunning Action and Sneak Attack.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [
+            "throw"
+        ],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Rogue.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
+    "rogue_thief": {
+        "displayName": "Rogue (Thief)",
+        "description": "Changes to Fast Hands and Second-Story Work.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [
+            "rogue"
+        ],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Rogue_Thief.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
+    "shortRest": {
+        "displayName": "Short Rest",
+        "description": "Short Rest becomes an active downtime period, removing statuses that last up to 1 hour.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/ShortRest.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
+    "spells_bonusAction": {
+        "displayName": "Spells (Bonus Action Rule)",
+        "description": "Enforces the spell casted as a bonus action rule stopping casting other leveled spells on the same turn.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": []
+        }
+    },
+    "throw": {
+        "displayName": "Throw Changes",
+        "description": "Changes to throwing rules, specially for thrown weapons.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Throw.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
+    "weaponSpells": {
+        "displayName": "Weapon Spells",
+        "description": "Removes weapon spells/passives from basic weapons, such as Cleave, Overwhelm, Piercing Shot and Topple.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {}
+    }
+}

@@ -1,12 +1,12 @@
 new entry "_Hero"
 type "Character"
 using "_Hero"
-data "Passives" "ShortResting;NonLethal;WeaponThrow;Perform;AttackOfOpportunity;DarknessRules;CombatStartAttack;RAW_Walk;RAW_OnTurnTracker;RAW_Loading_Block_ExtraAttack"
+data "Passives" "ShortResting;NonLethal;WeaponThrow;Perform;AttackOfOpportunity;DarknessRules;CombatStartAttack;RAW_Walk;RAW_Loading_Block_ExtraAttack"
 
 new entry "ORIGIN_Karlach"
 type "Character"
 using "ORIGIN_Karlach"
-data "Passives" "ShortResting;NonLethal;WeaponThrow;Perform;AttackOfOpportunity;DarknessRules;CombatStartAttack;ORI_Karlach_SweatImmune;RAW_Walk;RAW_OnTurnTracker;RAW_Loading_Block_ExtraAttack"
+data "Passives" "ShortResting;NonLethal;WeaponThrow;Perform;AttackOfOpportunity;DarknessRules;CombatStartAttack;ORI_Karlach_SweatImmune;RAW_Walk;RAW_Loading_Block_ExtraAttack"
 
 // ----------------------------------------------------------
 // -------------------- Loading Crossbow --------------------
@@ -30,25 +30,6 @@ data "TickType" "StartTurn"
 data "OnApplyFunctors" "IF(not RAW_HasHigherPriorityExtraAttackQueued('EXTRA_ATTACK_WAR_MAGIC_Q') and not HasAnyExtraAttack()):RemoveStatus(RAW_EXTRA_ATTACK_LOADING)"
 data "RemoveConditions" "not RAW_HasHigherPriorityExtraAttackQueued('EXTRA_ATTACK_WAR_MAGIC_Q') and not HasAnyExtraAttack()"
 data "RemoveEvents" "OnStatusRemoved"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
-
-// ------------------------------------------------------
-// -------------------- Turn Tracker --------------------
-// ------------------------------------------------------
-
-new entry "RAW_OnTurnTracker"
-type "PassiveData"
-data "Properties" "IsHidden"
-data "StatsFunctorContext" "OnTurn"
-data "StatsFunctors" "ApplyStatus(SELF,RAW_CURRENT_TURN,100,1)"
-
-new entry "RAW_CURRENT_TURN"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StackId" "RAW_CURRENT_TURN"
-data "OnApplyFunctors" "ApplyStatus(RAW_DUMMY,100,0)"
-data "OnRemoveFunctors" "ApplyStatus(RAW_DUMMY,100,0)"
-data "TickType" "EndTurn"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 
 // ----------------------------------------------

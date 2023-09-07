@@ -41,7 +41,7 @@ data "Description" "h73c67cf6g5850g4e17gbbc6gabb0186cfd4d;1"
 // -------------------- Throw Weapon --------------------
 // ------------------------------------------------------
 
-// Spells added by Weapon.txt
+// Spells added by Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_WeaponThrown.lua
 // Depends on OffHand rule changes
 
 new entry "RAW_Throw_Weapon"

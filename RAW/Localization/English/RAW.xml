@@ -1,6 +1,8 @@
 <contentList date="13/05/2021 17:29">
     <!-- Action Resource Definition Name -->
     <content contentuid="h9b9372c9g28e7g4fbcga73dgad4bfec682c1" version="1">Haste</content><!-- Haste Point -->
+    <content contentuid="h81bc6dd8ga190g4893g97f6g865ed02e1096" version="1">Bonus Action Leveled Spell</content><!-- Bonus Action Spell Point -->
+    <content contentuid="hbbebdff2g9793g4335g928bg204330014249" version="1">Not Bonus Action Leveled Spell</content><!-- Not Bonus Action Spell Point -->
 
     <!-- Feat Description -->
     <content contentuid="h15b473b7gf59dg40f4g9d6bg7015eb159089" version="1">When you make crossbow attacks within melee range, the &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; do not have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;You ignore the loading property of crossbows for the purposes of Extra Attack.</content><!-- Crossbow Expert -->
@@ -14,7 +16,7 @@
     <content contentuid="h347bdf44gbb6dg4e83g83feg9f48169b16f0" version="1">Resources Blocked</content><!-- Summon Resource Blocked -->
     <content contentuid="h1d26d698g3c6dg4212gad8dga725fb76bda2" version="1">Intangible Summon</content><!-- Summon Indestructible -->
     <content contentuid="h81c15d09gdee7g4cd4ga39eg6ec6273a8398" version="1">Flyby</content><!-- Flyby -->
-    <content contentuid="h2c5ddf7eg8dbcg4b9fga803g537c44e0ff16" version="1">Crossbow Expert: Loading </content><!-- Crossbow Expert: Wounding -->
+    <content contentuid="h2c5ddf7eg8dbcg4b9fga803g537c44e0ff16" version="1">Crossbow Expert: Loading</content><!-- Crossbow Expert: Wounding -->
 
     <!-- Passive Description -->
     <content contentuid="h460e389eg9748g4598g95cdgf796e95397c6" version="1">You start walking instead of running.</content><!-- Walk -->
@@ -58,6 +60,7 @@
     <content contentuid="h75be88fcg63f2g4e6dg9017g35c69b889191" version="1">Commanded</content><!-- Summon Resource Allowed -->
     <content contentuid="h0dc08f11gb7b2g442fga75dg8e01b1989e5d" version="1">Call Lightning</content><!-- Call Lightning -->
     <content contentuid="h990994ddg1181g4092g91d0gc459f4cf970f" version="1">Hail of Thorns</content><!-- Hail of Thorns -->
+    <content contentuid="h22935d1ag4b4fg42b3gb9degfde9bd560f65" version="1">Bonus Action Spells Rule</content><!-- Bonus Action Spell -->
     
     <!-- Status Boost Description -->
     <content contentuid="h2f4288c1g1e4fg4852g80e1g09db0b94bb3d" version="1">Taking a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content><!-- Short Rest -->
@@ -69,6 +72,8 @@
     <content contentuid="he3c1c67bgae0cg4968ga86egd2b1325c01b3" version="1">While inside the storm, this character can be target by a lightning bolt</content><!-- Call Lightning -->
     <content contentuid="h6f61be82gf4e8g4224gb3a5gb3ea351852da" version="1">Creature has a +2 bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;, &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;, its &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is doubled, and it can take one additional action per turn.&lt;br&gt;&lt;br&gt;When the condition ends, the creature becomes &lt;LSTag Type="Status" Tooltip="HASTE_LETHARGY"&gt;Lethargic&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;The extra action can be used only to take the Attack (one weapon attack only), Dash, Disengage or Hide.</content><!-- Haste -->
     <content contentuid="ha79d9187g0539g47abg83bagbc46d76b8834" version="1">Next ranged weapon attack deals [1] to target and creatures within [2] of them.</content><!-- Hail of Thorns -->
+    <content contentuid="hb7c0af17gcd17g422dg96f2gda8a553610d7" version="1">You can't cast leveled spells after you cast a bonus action spell.</content><!-- Cast Bonus Action Spell -->
+    <content contentuid="h31af9e75g2b8bg4207gb1begc463e085f561" version="1">You can't cast leveled bonus action spells after casting a leveled spell.</content><!-- Cast Not Bonus Action Spell -->
     
     <!-- Status Downed Description -->
     <content contentuid="h788b3d9dgb19cg43adg8d49gdb0f922e7400" version="1">If you reach 0 hit points, you fall Unconscious and must make Death Saving Throws. On 3 successes, you stop bleeding out and become Stable. On 3 failures, you die.

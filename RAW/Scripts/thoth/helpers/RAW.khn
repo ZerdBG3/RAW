@@ -45,3 +45,11 @@ end
 function RAW_CunningActionThiefCheck()
     return (SpellId('Target_Distract') | SpellId('Target_Help')) & HasUseCosts('ActionPoint')
 end
+
+function RAW_BonusActionSpellCheck()
+    return IsSpell() & ~IsCantrip() & HasUseCosts('BonusActionPoint')
+end
+
+function RAW_NotBonusActionSpellCheck()
+    return IsSpell() & ~IsCantrip() & ~HasUseCosts('BonusActionPoint')
+end

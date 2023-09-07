@@ -1,7 +1,3 @@
--- Global variables
-local RAW_WeaponSpells_UUID = "f0ea0d62-5e9e-4596-a32f-05bd109d2392"
-RAW_IsWeaponSpellsLoaded = Ext.Mod.IsModLoaded(RAW_WeaponSpells_UUID)
-
 -- Data string helpers
 function RAW_RemoveRepeatedSemicolon(s)
     s = string.gsub(s, ";;+", ";")
@@ -26,39 +22,57 @@ function RAW_Set(list)
     return set
 end
 
--- Prints a table recursively, identing basend on the value passed
-function RAW_TPrint(tbl, indent)
-    indent = indent or 0
-    for k, v in pairs(tbl) do
-        local formatting = string.rep("  ", indent) .. k .. ": "
-        if type(v) == "table" then
-            Ext.Utils.Print(formatting)
-            RAW_TPrint(v, indent+1)
-        else
-            Ext.Utils.Print(formatting .. tostring(v) .. "   Type (" .. type(v) .. ")")
-        end
+-- Adds an element to a Set
+function RAW_Set_Add(set, elem)
+    if not set[elem] then
+        set[elem] = true
     end
 end
 
-function RAW_PrintAnyVariable(v, indent)
-    if type(v) == "string" then
-        Ext.Utils.Print(v)
-    elseif type(v) == "table" then
-        RAW_TPrint(v, indent)
+-- Concatenates the elements of set to a string, using sep as a separator
+function RAW_Set_Concat(set, sep)
+    local str = ""
+    for elem in pairs(set) do
+        local prefix = ""
+        if str ~= "" then
+            prefix = sep
+        end
+        str = str .. prefix .. tostring(elem)
     end
+    return str
 end
 
 -- Print only if the value is set (not commented) on the table
-RAW_PrintTable_WeaponSpells = 0
-RAW_PrintTable_WeaponThrown = 1
+RAW_PrintTable_ModOptions = 0
+RAW_PrintTable_CharacterPassives = 1
+RAW_PrintTable_Spells_BonusAction = 2
+RAW_PrintTable_WeaponSpells = 3
+RAW_PrintTable_WeaponThrown = 4
 
 local ENUM_RAW_PrintTable = RAW_Set {
+    RAW_PrintTable_ModOptions,
+    -- RAW_PrintTable_CharacterPassives,
+    -- RAW_PrintTable_Spells_BonusAction,
     -- RAW_PrintTable_WeaponSpells,
     -- RAW_PrintTable_WeaponThrown,
 }
 
-function RAW_PrintIfDebug(text, type, indent)
-    if ENUM_RAW_PrintTable[type] then
-        RAW_PrintAnyVariable(text, indent)
+function RAW_PrintIfDebug(text, debug)
+    if ENUM_RAW_PrintTable[debug] then
+        if type(text) == "string" then
+            Ext.Utils.Print(text)
+        else
+            _D(text)
+        end
     end
+end
+
+function CentralizedString(text, width)
+    width = width or 70
+    local spaces = (width - string.len(text))//2
+    return string.rep(" ", spaces) .. text
+end
+
+function IsModOptionEnabled(modOption)
+    return modOption == "base" or (ModOptions[modOption] ~= nil and ModOptions[modOption].enabled)
 end

@@ -1,5 +1,7 @@
 # Features
 
+* Features with ⚙️ means they are optional. You can turn them on/off following the instructions on the [Installation Guide](https://github.com/ZerdBG3/RAW/blob/main/Installing.md#optional-configurations).
+
 ## Classes
 * **Barbarian:**
   - Level 2: Reckless Attack
@@ -23,6 +25,8 @@
   - Level 2: Cunning Action provides a toggleable passive (default on) that replaces the action cost for Dash, Disengage and Hide for a Bonus Action. It is automatically disabled when the rogue doesn't have a bonus action or when they're hasted. Cunning Action is also available as a Spell Container with all bonus actions inside it for when the player must enforce the bonus action cost (such as when they're hasted)
   - Level 3 (Thief): Fast Hands no longer provides an extra Bonus Action - instead, it gives Help, Distract and Throw (no damage) as possible Cunning Actions (bonus action). There's a toggleable passive just as above, except for Throw - since it doesn't deal damage, it's not a simple action cost replacement, it's a separate spell kept inside the Cunning Action Spell Container
   - Level 3 (Thief): Second-Story Work now provides a Jump with distance scaling with Dexterity
+* **Sorcerer:**
+  - Level 3: Quickened Spell Metamagic cost reduced from 3 Sorcery Points to 2
 * **Wizard:**
   - Level 1: Arcane Recovery is only usable during a Short Rest
 
@@ -39,6 +43,10 @@
 * Shield Master: Gives Shove (both options) as a bonus action after attacking on your turn
 
 ## Spells
+* Leveled spells with a casting cost of a bonus action block characters from casting another leveled spell on the same turn. Casting a leveled spell that doesn't require a bonus action will also block casting a leveled bonus action spell after ⚙️
+  - _Multiple spells with a casting cost of an Action is still allowed (by the likes of Action Surge)_
+  - _The restriction includes Quickened Spell (Metamagic) and spells from Class/Race or Items that are proper spells (even without a spell slot cost)_
+  - _Due to an technical limitation, scrolls for spells your character don't know inside a container (such as a backpack) can bypass this rule, so can scrolls send to the character after they already cast a spell on their turn_
 * Call Lightning creates a storm area, inside which the caster can target a smaller area to deal damage each turn
 * Feign Death provides a Dismiss spell to the caster
 * Find Familiar
@@ -120,7 +128,7 @@
   - Multiple sources no longer stack (Martial, Warlock and Wildshape)
   - Better priority logic on which extra attack to use, when considering War Priest, War Magic and Stalker's Flurry
   - Crossbows loading property only allows shooting once on an Extra Attack sequence (Crossbow Expert feat ignores the loading property)
-* Removes weapon abilities (like Cleave, Smash and Pin Down) from all weapons (The `Raw_WeaponSpells.pak` mod can be used to keep the weapon spells)
+* Removes weapon abilities (like Cleave, Smash and Pin Down) from all weapons ⚙️
 * Removes the disadvantage on Strength and Dexterity Saving Throws when Prone, and adds the Disadvantage to Ranged Attack Rolls
 * Gives a Walk passive to players that allows them to toggle between walking and running for cinematic and roleplay purposes (as requested by fmarzullo)
 
