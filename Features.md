@@ -40,12 +40,16 @@
 
 ## Spells
 * Call Lightning creates a storm area, inside which the caster can target a smaller area to deal damage each turn
+* Feign Death provides a Dismiss spell to the caster
 * Find Familiar
   - Base summons (not the ones granted by Pact of the Chain) had all their attacks replaced by the Distract Action (kept their attack animations because they're cool, though)
   - Removed all separate actions they had, except the Cat's Meow, because it has no combat functionality
   - Raven now has the Flyby passive, so it doesn't receive AoOs - Since Owl isn't an option in Vanilla, I decided to make Raven the go-to pick for Arcane Tricksters
-* Flaming Sphere is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to.
+* Fireball radius increased from 4 to 6 meters
+* Flaming Sphere is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to
+* Hail of Thorns converted to a concentration self-buff spell that applies the effect on the next ranged attack
 * Haste extra action can only be used for attacking (one attack only - no Extra Attack), Dash, Disengage or Hide
+* Ice Knife no longer interacts with surfaces
 * Sleep lasts for 10 turns instead of 2 and it's a circular area, which the targets are selected based on HP on increasing order
 * Spiritual Weapon is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to (except on the turn it is cast). Also removed all special attacks
 * Produce Flame is a spell container, with instant attacking as an option (normal temporary spells after summoning the flame are still there as well)
@@ -71,21 +75,30 @@
       - 10 minutes (100 turns)
         - Darkness
         - Expeditious Retreat
+        - Fly
         - Flame Blade
         - Protection from Evil and Good
         - Shield of Faith
         - Silence
+        - Speak with Animals
+        - Speak with Dead
 
       - 1 Hour (600 turns)
         - Armor of Agathys
         - Barkskin
+        - Daylight
         - Enhance Ability
-        - Fog Cloud
         - False Life
+        - Feign Death
+        - Fog Cloud
+        - Gaseous Form
         - Invisibility
         - Longstrider
+        - Magic Weapon
         - Pass without Trace
+        - Protection from Energy
         - Protection from Poison
+        - Warding Bond
 
       - Infinite, but still ends with Short Rest
         - Disguise Self

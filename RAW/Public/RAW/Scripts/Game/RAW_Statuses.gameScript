@@ -38,6 +38,16 @@ ACTIONS
     ListAdd(_RemoveList, FALSE_LIFE_4)
     ListAdd(_RemoveList, FALSE_LIFE_5)
     ListAdd(_RemoveList, FALSE_LIFE_6)
+    ListAdd(_RemoveList, FEIGN_DEATH)
+    ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS)
+    ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS_2)
+    ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS_3)
+    ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS_4)
+    ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS_5)
+    ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS_6)
+    ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS_7)
+    ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS_8)
+    ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS_9)
     ListAdd(_RemoveList, GASEOUS_FORM)
     ListAdd(_RemoveList, INVISIBILITY)
     ListAdd(_RemoveList, LONGSTRIDER)
@@ -52,5 +62,121 @@ ACTIONS
     ListAdd(_RemoveList, WARDING_BOND_CASTER)
 
     ListAdd(_RemoveList, RAW_CONCENTRATION_HELPER)
+
+    RETURN(_RemoveList,_Result,null)
+
+
+EVENT RAW_FetchCharacterApplyStatusData_RAW_FEIGN_DEATH_TECHNICAL_STACK
+VARS
+    CHARACTER:_Character
+    LIST<STATUS>:_RemoveList
+    STATUS:_Result
+ON
+    FetchCharacterApplyStatusData(_Character, RAW_FEIGN_DEATH_TECHNICAL_STACK)
+ACTIONS
+    Set(_Result, RAW_FEIGN_DEATH_DISMISS)
+    ListClear(_RemoveList)
+
+    IF "c1"
+        CharacterHasStatus(_Character, RAW_FEIGN_DEATH_DISMISS)
+    THEN
+        ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS)
+        Set(_Result, RAW_FEIGN_DEATH_DISMISS_2)
+    ELIF "c1"
+        CharacterHasStatus(_Character, RAW_FEIGN_DEATH_DISMISS_2)
+    THEN
+        ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS_2)
+        Set(_Result, RAW_FEIGN_DEATH_DISMISS_3)
+    ELIF "c1"
+        CharacterHasStatus(_Character, RAW_FEIGN_DEATH_DISMISS_3)
+    THEN
+        ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS_3)
+        Set(_Result, RAW_FEIGN_DEATH_DISMISS_4)
+    ELIF "c1"
+        CharacterHasStatus(_Character, RAW_FEIGN_DEATH_DISMISS_4)
+    THEN
+        ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS_4)
+        Set(_Result, RAW_FEIGN_DEATH_DISMISS_5)
+    ELIF "c1"
+        CharacterHasStatus(_Character, RAW_FEIGN_DEATH_DISMISS_5)
+    THEN
+        ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS_5)
+        Set(_Result, RAW_FEIGN_DEATH_DISMISS_6)
+    ELIF "c1"
+        CharacterHasStatus(_Character, RAW_FEIGN_DEATH_DISMISS_6)
+    THEN
+        ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS_6)
+        Set(_Result, RAW_FEIGN_DEATH_DISMISS_7)
+    ELIF "c1"
+        CharacterHasStatus(_Character, RAW_FEIGN_DEATH_DISMISS_7)
+    THEN
+        ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS_7)
+        Set(_Result, RAW_FEIGN_DEATH_DISMISS_8)
+    ELIF "c1"
+        CharacterHasStatus(_Character, RAW_FEIGN_DEATH_DISMISS_8)
+    THEN
+        ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS_8)
+        Set(_Result, RAW_FEIGN_DEATH_DISMISS_9) 
+    ENDIF
+
+    RETURN(_RemoveList,_Result,null)
+
+
+EVENT RAW_FetchCharacterApplyStatusData_RAW_FEIGN_DEATH_TECHNICAL_REMOVE
+VARS
+    CHARACTER:_Character
+    LIST<STATUS>:_RemoveList
+    STATUS:_Result
+ON
+    FetchCharacterApplyStatusData(_Character, RAW_FEIGN_DEATH_TECHNICAL_REMOVE)
+ACTIONS
+    Set(_Result, null)
+    ListClear(_RemoveList)
+
+    IF "c1"
+        CharacterHasStatus(_Character, RAW_FEIGN_DEATH_DISMISS_9)
+    THEN
+        ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS_9)
+        Set(_Result, RAW_FEIGN_DEATH_DISMISS_8)
+    ELIF "c1"
+        CharacterHasStatus(_Character, RAW_FEIGN_DEATH_DISMISS_8)
+    THEN
+        ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS_8)
+        Set(_Result, RAW_FEIGN_DEATH_DISMISS_7)
+    ELIF "c1"
+        CharacterHasStatus(_Character, RAW_FEIGN_DEATH_DISMISS_7)
+    THEN
+        ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS_7)
+        Set(_Result, RAW_FEIGN_DEATH_DISMISS_6)
+    ELIF "c1"
+        CharacterHasStatus(_Character, RAW_FEIGN_DEATH_DISMISS_6)
+    THEN
+        ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS_6)
+        Set(_Result, RAW_FEIGN_DEATH_DISMISS_5)
+    ELIF "c1"
+        CharacterHasStatus(_Character, RAW_FEIGN_DEATH_DISMISS_5)
+    THEN
+        ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS_5)
+        Set(_Result, RAW_FEIGN_DEATH_DISMISS_4)
+    ELIF "c1"
+        CharacterHasStatus(_Character, RAW_FEIGN_DEATH_DISMISS_4)
+    THEN
+        ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS_4)
+        Set(_Result, RAW_FEIGN_DEATH_DISMISS_3)
+    ELIF "c1"
+        CharacterHasStatus(_Character, RAW_FEIGN_DEATH_DISMISS_3)
+    THEN
+        ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS_3)
+        Set(_Result, RAW_FEIGN_DEATH_DISMISS_2)
+    ELIF "c1"
+        CharacterHasStatus(_Character, RAW_FEIGN_DEATH_DISMISS_2)
+    THEN
+        ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS_2)
+        Set(_Result, RAW_FEIGN_DEATH_DISMISS)
+    ELIF "c1"
+        CharacterHasStatus(_Character, RAW_FEIGN_DEATH_DISMISS)
+    THEN
+        ListAdd(_RemoveList, RAW_FEIGN_DEATH_DISMISS)
+    ENDIF
 
     RETURN(_RemoveList,_Result,null)

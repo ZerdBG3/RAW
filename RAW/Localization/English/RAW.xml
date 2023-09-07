@@ -49,6 +49,7 @@
     <content contentuid="he7d837b8g404fg4dbdg85c2g9d69c019d63d" version="1">You can use your Bonus Action to Dash, Disengage or Hide.</content><!-- Cunning Action -->
     <content contentuid="hbeba3ad3g8801g4a4fg8d77g7507fa9bb7c6" version="1">Replenish expended &lt;LSTag Tooltip="SpellSlot"&gt;spell slots&lt;/LSTag&gt; during a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;. You cannot restore spell slots above 5th level.</content><!-- Arcane Recovery -->
     <content contentuid="h75e85388g3e7dg4e70g8101g612860c4a857" version="1">Replenish expended &lt;LSTag Tooltip="SpellSlot"&gt;spell slots&lt;/LSTag&gt; during a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;. You cannot restore spell slots above 5th level.</content><!-- Natural Recovery -->
+    <content contentuid="h2149d9f2gd22fg4923ga45bged71c17b76ef" version="1">Prepare to make a volley of thorns the next time you hit a creature with a ranged weapon attack, dealing [1] to it and creatures within [2] of them.</content> <!-- Hail of Thorns -->
 
     <!-- Status Boost Display Name -->
     <content contentuid="hd7046718g6e1ag4867g9e30g6900297f0d58" version="1">Short Rest</content><!-- Short Rest -->
@@ -56,6 +57,7 @@
     <content contentuid="h5df0213dg5488g435dgab52g6b9520c0b521" version="1">Stabilized</content><!-- Stabilized -->
     <content contentuid="h75be88fcg63f2g4e6dg9017g35c69b889191" version="1">Commanded</content><!-- Summon Resource Allowed -->
     <content contentuid="h0dc08f11gb7b2g442fga75dg8e01b1989e5d" version="1">Call Lightning</content><!-- Call Lightning -->
+    <content contentuid="h990994ddg1181g4092g91d0gc459f4cf970f" version="1">Hail of Thorns</content><!-- Hail of Thorns -->
     
     <!-- Status Boost Description -->
     <content contentuid="h2f4288c1g1e4fg4852g80e1g09db0b94bb3d" version="1">Taking a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content><!-- Short Rest -->
@@ -96,7 +98,6 @@ If you regain any Hit Points, the condition is removed. If an ally &lt;LSTag Typ
     <content contentuid="h9204dac0g5de4g4199ga876g8eb69468ee8a" version="1">Put creatures into a magical slumber. Targets in an area are affected in ascending order of their current hit points (ignoring unconscious creatures), up to a combined of [1].</content><!-- Sleep -->
     <content contentuid="h63b15a52g69efg4c70g93acge877ff55d83e" version="1">Creates a storm cloud in the targeted area. Then, you can call down lightning on an area inside the storm striking all targets. For the next 10 turns, you can call down lightning again using an Action.</content><!-- Call Lightning -->
     <content contentuid="hd58f9063g3911g45aag9236g2115019b3240" version="1">Dismiss the effects of Feign Death on a creature.</content><!-- Feign Death: Dismiss -->
-	<content contentuid="4ce29ea436f44ee4b0dc2017764b5327" version="5">Prepare to make a volley of thorns the next time you hit a creature with a ranged weapon attack, dealing [1] to it and creatures within [2] of them.</content> <!-- Hail of Thorns -->
     
     <!-- Target Extra Description -->
     <content contentuid="hed88db7bgfbe4g4ab0g9252g068a8bcc48c0" version="1">Shoving depends on your &lt;LSTag Tooltip="Athletics"&gt;Athletics&lt;/LSTag&gt;, and the higher of the target's Athletics or &lt;LSTag Tooltip="Acrobatics"&gt;Acrobatics&lt;/LSTag&gt;.</content><!-- Shove -->
