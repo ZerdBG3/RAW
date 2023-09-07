@@ -1,0 +1,21 @@
+// ------------------------------------------------------
+// -------------------- Turn Tracker --------------------
+// ------------------------------------------------------
+
+// Passive added to all characters by Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_CharacterPassives.lua
+
+new entry "RAW_OnTurnTracker"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnTurn"
+data "StatsFunctors" "ApplyStatus(SELF,RAW_CURRENT_TURN,100,1)"
+
+// Ending the turn replenish ActionResources that should restore when the turn ends
+new entry "RAW_CURRENT_TURN"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "RAW_CURRENT_TURN"
+data "OnApplyFunctors" "ApplyStatus(RAW_DUMMY,100,0)"
+data "OnRemoveFunctors" "RestoreResource(SneakAttack_Charge,100%,0);RestoreResource(RAW_BonusActionSpellPoint,100%,0);RestoreResource(RAW_NotBonusActionSpellPoint,100%,0);ApplyStatus(RAW_DUMMY,100,0)"
+data "TickType" "EndTurn"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"

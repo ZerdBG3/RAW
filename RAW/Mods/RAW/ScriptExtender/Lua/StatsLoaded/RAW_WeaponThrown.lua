@@ -27,9 +27,18 @@ end
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_WeaponThrown()
-    Ext.Utils.Print("\n===================================================================")
-    Ext.Utils.Print("           Starting the addition of Weapon Throw Spells")
-    Ext.Utils.Print("===================================================================\n")
+    RAW_PrintIfDebug(("\n======================================================================"), RAW_PrintTable_WeaponThrown)
+    RAW_PrintIfDebug((CentralizedString("Option: throw")), RAW_PrintTable_WeaponThrown)
+
+    if not IsModOptionEnabled("throw") then
+        RAW_PrintIfDebug((CentralizedString("Disabled!")), RAW_PrintTable_WeaponThrown)
+        RAW_PrintIfDebug((CentralizedString("Skipping the addition of Throw Weapon Spells")), RAW_PrintTable_WeaponThrown)
+        RAW_PrintIfDebug(("======================================================================\n"), RAW_PrintTable_WeaponThrown)
+        return
+    end
+
+    RAW_PrintIfDebug((CentralizedString("Enabled!")), RAW_PrintTable_WeaponThrown)
+    RAW_PrintIfDebug((CentralizedString("Starting the addition of Weapon Throw Spells")), RAW_PrintTable_WeaponThrown)
 
     for _, name in pairs(Ext.Stats.GetStats("Weapon")) do
         local weapon = Ext.Stats.Get(name)
@@ -38,7 +47,6 @@ function RAW_WeaponThrown()
         RAW_AddThrownSpells(weapon)
     end
 
-    Ext.Utils.Print("\n===================================================================")
-    Ext.Utils.Print("           Finished the addition of Weapon Throw Spells")
-    Ext.Utils.Print("===================================================================\n")
+    RAW_PrintIfDebug(("\n" .. CentralizedString("Finished the addition of Weapon Throw Spells")), RAW_PrintTable_WeaponThrown)
+    RAW_PrintIfDebug(("======================================================================\n"), RAW_PrintTable_WeaponThrown)
 end

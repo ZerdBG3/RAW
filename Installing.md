@@ -4,10 +4,19 @@
 # First installation
 * Locate your Profile Folder. You can click on the `Open Profile Folder` on the launcher
 ![](https://i.imgur.com/hvJVL0j.png)
-* Download the latest `RAW.pak` file from [Releases](https://github.com/ZerdBG3/RAW/releases) and place it on the `Mods` folder insider the Profile folder opened previously, creating the `Mods` folder if it doesn't exist (the complete path should look something like `\Users\{USER_NAME}\AppData\Local\Larian Studios\Baldur's Gate 3\Mods`)
+* Download the latest `RAW.pak` file from [Releases](https://github.com/ZerdBG3/RAW/releases) and place it on the `Mods` folder inside the Profile folder opened previously, creating the `Mods` folder if it doesn't exist (the complete path should look something like `\Users\{USER_NAME}\AppData\Local\Larian Studios\Baldur's Gate 3\Mods`)
 * Next, you need to setup your mod's profile:
   * I recommend using Laughing Leader's [Mod Manager](https://github.com/LaughingLeader/BG3ModManager) to set up your mod profile
   * If you wish to manually set it up, download the `modsettings.lsx` file on the root of this project (or access it [here](https://github.com/ZerdBG3/RAW/blob/main/modsettings.lsx)) and place it on the Public Player Profile (the complete path should look something like `\Users\{USER_NAME}\AppData\Local\Larian Studios\Baldur's Gate 3\PlayerProfiles\Public`). You should replace the file that already exists there
+
+# Optional Configurations
+* To turn on/off the mod features, copy the [`ModOptions.json`](https://github.com/ZerdBG3/RAW/blob/main/ModOptions.json) file to the `Script Extender` folder inside the Profile folder, creating it if necessary. The complete path should look something like `\Users\{USER_NAME}\AppData\Local\Larian Studios\Baldur's Gate 3\Script Extender`
+* Simply change the values from `true` to `false` to whichever feature you want to turn off
+
+| Option | Default | Description | 
+|---|---|---|
+| spells_bonusAction | true | Enforces the spell casted as a bonus action rule stopping casting other leveled spells on the same turn. |
+| weaponSpells | true | Removes weapon spells/passives from basic weapons, such as Cleave, Overwhelm, Piercing Shot and Topple. |
 
 # Updating your version
 * Be aware that some updates won't work on existing save files and might require new games to work
@@ -22,7 +31,3 @@
 * Next, on the `<node id="Mods">`, there will also be a commented block. Uncomment it and replace the attributes `Folder`, `Name`, `UUID` and `Version` with the ones available from the other mod
 * The `ModOrder` is of your choosing. As a rule of thumb, place the mods you want to have priority on the bottom of the mod order. To change the load order, you need to swap the entire `<node id="Module"> ... </node>` at the top with each other
 * More mods can be added by including new nodes inside `<node id="ModOrder">` and `<node id="Mods">`
-
-# Optional files
-* If you want to use one of the optional files on this mod, install it as you did with the main mod
-* There is no requirement on the order the mods must be loaded

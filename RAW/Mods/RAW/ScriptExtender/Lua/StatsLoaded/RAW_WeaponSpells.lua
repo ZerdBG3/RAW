@@ -62,16 +62,18 @@ end
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_WeaponSpells()
-    if RAW_IsWeaponSpellsLoaded then
-        Ext.Utils.Print("\n===================================================================")
-        Ext.Utils.Print("  RAW_WeaponSpells is loaded, skipping removal of Weapon Spells")
-        Ext.Utils.Print("===================================================================\n")
+    Ext.Utils.Print("\n======================================================================")
+    Ext.Utils.Print(CentralizedString("Option: weaponSpells"))
+
+    if not IsModOptionEnabled("weaponSpells") then
+        Ext.Utils.Print(CentralizedString("Disabled!"))
+        Ext.Utils.Print(CentralizedString("Skipping the removal of Weapon Spells"))
+        Ext.Utils.Print("======================================================================\n")
         return
     end
 
-    Ext.Utils.Print("\n===================================================================")
-    Ext.Utils.Print("              Starting the removal of Weapon Spells")
-    Ext.Utils.Print("===================================================================\n")
+    Ext.Utils.Print(CentralizedString("Enabled!"))
+    Ext.Utils.Print(CentralizedString("Starting the removal of Weapon Spells"))
 
     for _, name in pairs(Ext.Stats.GetStats("Weapon")) do
         local weapon = Ext.Stats.Get(name)
@@ -82,7 +84,6 @@ function RAW_WeaponSpells()
         RAW_RemovePassivesOnEquip(weapon)
     end
 
-    Ext.Utils.Print("\n===================================================================")
-    Ext.Utils.Print("              Finished the removal of Weapon Spells")
-    Ext.Utils.Print("===================================================================\n")
+    Ext.Utils.Print("\n" .. CentralizedString("Finished the removal of Weapon Spells"))
+    Ext.Utils.Print("======================================================================\n")
 end
