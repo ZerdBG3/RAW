@@ -1,8 +1,8 @@
+// Passives given by Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_CharacterPassives.lua
+
 // ------------------------------------------------------
 // -------------------- Turn Tracker --------------------
 // ------------------------------------------------------
-
-// Passive added to all characters by Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_CharacterPassives.lua
 
 new entry "RAW_OnTurnTracker"
 type "PassiveData"

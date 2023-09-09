@@ -24,9 +24,12 @@ function RAW_Spells_BonusAction()
 
     for _, name in pairs(Ext.Stats.GetStats("Character")) do
         local char = Ext.Stats.Get(name)
-        RAW_PrintIfDebug("\nCharacter: " .. name, RAW_PrintTable_Spells_BonusAction)
 
-        RAW_AddCharacterBonusActionSpellPassives(char)
+        -- Temporarily giving the passives just to players
+        if StatHasParent(char, "_Hero") then
+            RAW_PrintIfDebug("\nCharacter: " .. name, RAW_PrintTable_Spells_BonusAction)
+            RAW_AddCharacterBonusActionSpellPassives(char)
+        end
     end
 
     Ext.Utils.Print("\n" .. CentralizedString("Finished the the application of Bonus Action Spell Rules"))

@@ -2,6 +2,9 @@
 // -------------------- Bonus Action --------------------
 // ------------------------------------------------------
 
+// Depends on RAW_BonusActionSpellPoint and RAW_NotBonusActionSpellPoint created by
+//   Public\RAW\ActionResourceDefinitions\ActionResourceDefinitions.lsx
+
 new entry "RAW_BonusActionSpells"
 type "PassiveData"
 data "Properties" "IsHidden"

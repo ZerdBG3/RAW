@@ -42,6 +42,27 @@ function RAW_Set_Concat(set, sep)
     return str
 end
 
+function CentralizedString(text, width)
+    width = width or 70
+    local spaces = (width - string.len(text))//2
+    return string.rep(" ", spaces) .. text
+end
+
+function IsModOptionEnabled(modOption)
+    return modOption == "base" or (ModOptions[modOption] ~= nil and ModOptions[modOption].enabled)
+end
+
+-- Checks if the stat has the parent in its using tree
+function StatHasParent(stat, parentName)
+    if stat.Name == parentName then
+        return true
+    end
+    if stat.Using ~= nil and stat.Using ~= "" then
+        return StatHasParent(Ext.Stats.Get(stat.Using), parentName)
+    end
+    return false
+end
+
 -- Print only if the value is set (not commented) on the table
 RAW_PrintTable_ModOptions = 0
 RAW_PrintTable_CharacterPassives = 1
@@ -65,14 +86,4 @@ function RAW_PrintIfDebug(text, debug)
             _D(text)
         end
     end
-end
-
-function CentralizedString(text, width)
-    width = width or 70
-    local spaces = (width - string.len(text))//2
-    return string.rep(" ", spaces) .. text
-end
-
-function IsModOptionEnabled(modOption)
-    return modOption == "base" or (ModOptions[modOption] ~= nil and ModOptions[modOption].enabled)
 end
