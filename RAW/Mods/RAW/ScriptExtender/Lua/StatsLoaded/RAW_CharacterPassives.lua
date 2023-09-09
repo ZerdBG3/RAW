@@ -1,7 +1,11 @@
 local function RAW_AddCharacterDefaultPassives(char)
-    for _, passive in pairs(ENUM_RAW_CharacterDefaultPassives) do
-        RAW_PrintIfDebug("\tAdding passive: " .. passive, RAW_PrintTable_CharacterPassives)
-        char.Passives = passive .. ";" .. char.Passives
+    for parent, passives in pairs(ENUM_RAW_CharacterDefaultPassives) do
+        if parent == "all" or StatHasParent(char, parent) then
+            for _, passive in pairs(passives) do
+                RAW_PrintIfDebug("\tAdding passive: " .. passive, RAW_PrintTable_CharacterPassives)
+                char.Passives = passive .. ";" .. char.Passives
+            end
+        end
     end
     RAW_PrintIfDebug("\tPassives: " .. char.Passives, RAW_PrintTable_CharacterPassives)
 end

@@ -1,12 +1,6 @@
-new entry "_Hero"
-type "Character"
-using "_Hero"
-data "Passives" "ShortResting;NonLethal;WeaponThrow;Perform;AttackOfOpportunity;DarknessRules;CombatStartAttack;RAW_Walk;RAW_Loading_Block_ExtraAttack"
-
-new entry "ORIGIN_Karlach"
-type "Character"
-using "ORIGIN_Karlach"
-data "Passives" "ShortResting;NonLethal;WeaponThrow;Perform;AttackOfOpportunity;DarknessRules;CombatStartAttack;ORI_Karlach_SweatImmune;RAW_Walk;RAW_Loading_Block_ExtraAttack"
+// Passives given by Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_CharacterPassives.lua
+// They're only given to Character entries that have "_Hero" in their "Using" tree,
+//   as per defined on Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_CharacterPassives_Model.lua
 
 // ----------------------------------------------------------
 // -------------------- Loading Crossbow --------------------

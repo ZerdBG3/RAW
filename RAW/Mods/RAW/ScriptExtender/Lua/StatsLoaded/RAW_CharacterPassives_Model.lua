@@ -1,3 +1,9 @@
 ENUM_RAW_CharacterDefaultPassives = {
-    "RAW_OnTurnTracker",
+    ["all"] = {
+        "RAW_OnTurnTracker",
+    },
+    ["_Hero"] = {
+        "RAW_Loading_Block_ExtraAttack",
+        "RAW_Walk",
+    },
 }

@@ -44,10 +44,12 @@
 
 ## Spells
 * Leveled spells with a casting cost of a bonus action block characters from casting another leveled spell on the same turn. Casting a leveled spell that doesn't require a bonus action will also block casting a leveled bonus action spell after ⚙️ `spells_bonusAction`
+  - **_Currently, due to a bug crashing the game, only players are bound by this rule_**
   - _Multiple spells with a casting cost of an Action is still allowed (by the likes of Action Surge)_
   - _The restriction includes Quickened Spell (Metamagic) and spells from Class/Race or Items that are proper spells (even without a spell slot cost)_
   - _Due to an technical limitation, scrolls for spells your character don't know inside a container (such as a backpack) can bypass this rule, so can scrolls send to the character after they already cast a spell on their turn_
 * Call Lightning creates a storm area, inside which the caster can target a smaller area to deal damage each turn
+* Chromatic Orb deals 3d8 base damage and no longer create surfaces. It can still interact with surfaces if targeting the surface directly (for cold, fire and lightning versions)
 * Feign Death provides a Dismiss spell to the caster
 * Find Familiar
   - Base summons (not the ones granted by Pact of the Chain) had all their attacks replaced by the Distract Action (kept their attack animations because they're cool, though)
@@ -66,6 +68,7 @@
     <summary>List of Spells with surface interaction changed</summary>
     <p>
 
+      - Chromatic Orb
       - Firebolt
       - Produce Flame
       - Ray of Frost
@@ -124,10 +127,10 @@
 
 ## Global changes
 * Changes Initiative Dice Roll from 1d4 to 1d20
-* Extra Attack: 
+* Extra Attack:
   - Multiple sources no longer stack (Martial, Warlock and Wildshape)
   - Better priority logic on which extra attack to use, when considering War Priest, War Magic and Stalker's Flurry
-  - Crossbows loading property only allows shooting once on an Extra Attack sequence (Crossbow Expert feat ignores the loading property)
+  - Players only: Crossbows loading property only allows shooting once on an Extra Attack sequence (Crossbow Expert feat ignores the loading property)
 * Removes weapon abilities (like Cleave, Smash and Pin Down) from all weapons ⚙️ `weaponSpells`
 * Removes the disadvantage on Strength and Dexterity Saving Throws when Prone, and adds the Disadvantage to Ranged Attack Rolls
 * Gives a Walk passive to players that allows them to toggle between walking and running for cinematic and roleplay purposes (as requested by fmarzullo)
