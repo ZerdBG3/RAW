@@ -28,7 +28,7 @@ end
 function RAW_ApplyStaticData(defTable, printDebug)
     for defType, defList in pairs(defTable) do
         for guid, changes in pairs (defList) do
-            local resource = Ext.StaticData.Get(guid, defType)
+            local resource = Ext.Definition.Get(guid, defType)
             RAW_PrintIfDebug("\n" .. defType .. ": " .. guid, printDebug)
             for attribute, replacement in pairs(changes) do
                 if replacement.Type == "add" then
