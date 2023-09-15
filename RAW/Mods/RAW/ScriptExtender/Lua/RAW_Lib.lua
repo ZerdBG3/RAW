@@ -1,4 +1,4 @@
--- Data string helpers
+-- Data helpers
 function RAW_RemoveRepeatedSemicolon(s)
     s = string.gsub(s, ";;+", ";")
     return string.gsub(s, "^;", "")
@@ -11,6 +11,49 @@ function RAW_HasValueInList(list, value)
         end
     end
     return false
+end
+
+-- Checks if the stat has the parent in its using tree
+function StatHasParent(stat, parentName)
+    if stat.Name == parentName then
+        return true
+    end
+    if stat.Using ~= nil and stat.Using ~= "" then
+        return StatHasParent(Ext.Stats.Get(stat.Using), parentName)
+    end
+    return false
+end
+
+-- Static Data helpers
+function RAW_ApplyStaticData(defTable, printDebug)
+    for defType, defList in pairs(defTable) do
+        for guid, changes in pairs (defList) do
+            local resource = Ext.StaticData.Get(guid, defType)
+            RAW_PrintIfDebug("\n" .. defType .. ": " .. guid, printDebug)
+            for attribute, replacement in pairs(changes) do
+                if replacement.Type == "add" then
+                    if type(replacement.Value) == "string" then
+                        RAW_PrintIfDebug("\tAdding to " .. attribute .. " - " .. replacement.Value, printDebug)
+                        resource[attribute] = replacement.Value .. ";" .. resource[attribute]
+                    elseif type(replacement.Value) == "table" then
+                        RAW_PrintIfDebug("\tAdding to " .. attribute .. " table", printDebug)
+                        for _, value in pairs(replacement.Value) do
+                            table.insert(resource[attribute], value)
+                        end
+                    end
+                elseif replacement.Type == "overwrite" then
+                    if type(replacement.Value) == "string" then
+                        RAW_PrintIfDebug("\tOverwriting " .. attribute .. " - " .. replacement.Value, printDebug)
+                    elseif type(replacement.Value) == "table" then
+                        RAW_PrintIfDebug("\tOverwriting " .. attribute .. " table", printDebug)
+                        RAW_PrintIfDebug(replacement.Value, printDebug)
+                    end
+                    resource[attribute] = replacement.Value
+                end
+            end
+            RAW_PrintIfDebug(resource, printDebug)
+        end
+    end
 end
 
 -- Creates a Set from a list
@@ -48,40 +91,49 @@ function CentralizedString(text, width)
     return string.rep(" ", spaces) .. text
 end
 
-function IsModOptionEnabled(modOption)
-    return modOption == "base" or (ModOptions[modOption] ~= nil and ModOptions[modOption].enabled)
+function RAW_IsInteger(v)
+    return type(v) == "number" and math.floor(v) == v
 end
 
--- Checks if the stat has the parent in its using tree
-function StatHasParent(stat, parentName)
-    if stat.Name == parentName then
-        return true
-    end
-    if stat.Using ~= nil and stat.Using ~= "" then
-        return StatHasParent(Ext.Stats.Get(stat.Using), parentName)
-    end
-    return false
+function RAW_IsIntegerBetween(v, min, max)
+    return RAW_IsInteger(v) and v >= min and v <= max
 end
 
 -- Print only if the value is set (not commented) on the table
 RAW_PrintTable_ModOptions = 0
-RAW_PrintTable_CharacterPassives = 1
-RAW_PrintTable_Spells_BonusAction = 2
-RAW_PrintTable_WeaponSpells = 3
-RAW_PrintTable_WeaponThrown = 4
+RAW_PrintTable_Attunement = 1
+RAW_PrintTable_CharacterPassives = 2
+RAW_PrintTable_Rogue = 3
+RAW_PrintTable_Rogue_Thief = 4
+RAW_PrintTable_Spells_BonusAction = 5
+RAW_PrintTable_WeaponSpells = 6
+RAW_PrintTable_WeaponThrown = 7
 
 local ENUM_RAW_PrintTable = RAW_Set {
     RAW_PrintTable_ModOptions,
+    -- RAW_PrintTable_Attunement,
     -- RAW_PrintTable_CharacterPassives,
+    -- RAW_PrintTable_Rogue,
+    -- RAW_PrintTable_Rogue_Thief,
     -- RAW_PrintTable_Spells_BonusAction,
     -- RAW_PrintTable_WeaponSpells,
     -- RAW_PrintTable_WeaponThrown,
 }
 
-function RAW_PrintIfDebug(text, debug)
+RAW_PrintTypeInfo = "info"
+RAW_PrintTypeWarning = "warning"
+RAW_PrintTypeError = "error"
+
+function RAW_PrintIfDebug(text, debug, level)
     if ENUM_RAW_PrintTable[debug] then
         if type(text) == "string" then
-            Ext.Utils.Print(text)
+            if level == RAW_PrintTypeError then
+                Ext.Utils.PrintError(text)
+            elseif level == RAW_PrintTypeWarning then
+                Ext.Utils.PrintWarning(text)
+            else
+                Ext.Utils.Print(text)
+            end
         else
             _D(text)
         end

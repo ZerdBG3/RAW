@@ -2,6 +2,61 @@
 
 * Features with ⚙️ means they are optional. You can turn them on/off following the instructions on the [Installation Guide](https://github.com/ZerdBG3/RAW/blob/main/Installing.md#optional-configurations).
 
+## Attunement ⚙️ `attunement`
+* Several magical items now require attunement. [Here's the list](https://docs.google.com/spreadsheets/d/1yCJ9ITC180dqykK713iHMEsrvVOHkgOmLF882-yr_hQ/edit#gid=0&fvid=1734738953)
+  - To attune to an item, you simply equip it while outside of combat
+  - Items that require attunement can only be equipped outside of combat (except for Thrown weapons)
+* You have a maximum number of items that can be attuned at once to each character (amount modifiable on the optional files)
+  - After reaching your maximum amount of attuned items, you can no longer equip items that require attunement
+  - To end an attunement, simply unequip an item that requires it
+
+## Bonus Action Spells Rule ⚙️ `spells_bonusAction`
+* Leveled spells with a casting cost of a bonus action block characters from casting another leveled spell on the same turn. Casting a leveled spell that doesn't require a bonus action will also block casting a leveled bonus action spell after
+  - **_Currently, due to a bug crashing the game, only players are bound by this rule_**
+  - _Multiple spells with a casting cost of an Action is still allowed (by the likes of Action Surge)_
+  - _The restriction includes Quickened Spell (Metamagic) and spells from Class/Race or Items that are proper spells (even without a spell slot cost)_
+  - _Due to an technical limitation, scrolls for spells your character don't know inside a container (such as a backpack) can bypass this rule, so can scrolls send to the character after they already cast a spell on their turn_
+
+## Weapon Spells ⚙️ `weaponSpells`
+* Removes weapon abilities (like Cleave, Smash and Pin Down) from all weapons
+<details>
+  <summary>Only the following list is removed, any other ability granted by a weapon is still granted</summary>
+  <p>
+
+    Spells:
+    ```
+    - Projectile_HamstringShot
+    - Projectile_Headcrack
+    - Projectile_MobileShooting
+    - Projectile_PiercingShot
+    - Rush_SpringAttack
+    - Shout_FullSwing
+    - Shout_Steady
+    - Shout_SteadyRanged
+    - Shout_SteadyRangedCrossbow
+    - Target_ConcussiveSmash
+    - Target_CripplingStrike
+    - Target_DisarmingStrike
+    - Target_HeartStopper
+    - Target_HinderingSmash
+    - Target_OpeningAttack
+    - Target_PiercingThrust
+    - Target_PommelStrike
+    - Target_PostureBreaker
+    - Target_Slash_New
+    - Target_Topple
+    - Zone_Cleave
+    ```
+
+    Passives:
+    ```
+    - Overwhelm
+    ```
+
+  </p>
+</details>
+
+
 ## Classes
 * **Barbarian:**
   - Level 2: Reckless Attack
@@ -43,11 +98,6 @@
 * Shield Master: Gives Shove (both options) as a bonus action after attacking on your turn
 
 ## Spells
-* Leveled spells with a casting cost of a bonus action block characters from casting another leveled spell on the same turn. Casting a leveled spell that doesn't require a bonus action will also block casting a leveled bonus action spell after ⚙️ `spells_bonusAction`
-  - **_Currently, due to a bug crashing the game, only players are bound by this rule_**
-  - _Multiple spells with a casting cost of an Action is still allowed (by the likes of Action Surge)_
-  - _The restriction includes Quickened Spell (Metamagic) and spells from Class/Race or Items that are proper spells (even without a spell slot cost)_
-  - _Due to an technical limitation, scrolls for spells your character don't know inside a container (such as a backpack) can bypass this rule, so can scrolls send to the character after they already cast a spell on their turn_
 * Call Lightning creates a storm area, inside which the caster can target a smaller area to deal damage each turn
 * Chromatic Orb deals 3d8 base damage and no longer create surfaces. It can still interact with surfaces if targeting the surface directly (for cold, fire and lightning versions)
 * Feign Death provides a Dismiss spell to the caster
@@ -63,7 +113,7 @@
 * Sleep lasts for 10 turns instead of 2 and it's a circular area, which the targets are selected based on HP on increasing order
 * Spiritual Weapon is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to (except on the turn it is cast). Also removed all special attacks
 * Produce Flame is a spell container, with instant attacking as an option (normal temporary spells after summoning the flame are still there as well)
-* Removes surface interaction for spells that are not AoE. They can still interact with surfaces, but must target the ground directly, instead of interacting when targeting a character on top of the surface
+* Removes surface interaction for spells that are not AoE. They can still interact with surfaces (or create them), but must target the ground directly, instead of interacting when targeting a character on top of the surface
   <details>
     <summary>List of Spells with surface interaction changed</summary>
     <p>
@@ -131,7 +181,6 @@
   - Multiple sources no longer stack (Martial, Warlock and Wildshape)
   - Better priority logic on which extra attack to use, when considering War Priest, War Magic and Stalker's Flurry
   - Players only: Crossbows loading property only allows shooting once on an Extra Attack sequence (Crossbow Expert feat ignores the loading property)
-* Removes weapon abilities (like Cleave, Smash and Pin Down) from all weapons ⚙️ `weaponSpells`
 * Removes the disadvantage on Strength and Dexterity Saving Throws when Prone, and adds the Disadvantage to Ranged Attack Rolls
 * Gives a Walk passive to players that allows them to toggle between walking and running for cinematic and roleplay purposes (as requested by fmarzullo)
 

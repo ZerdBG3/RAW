@@ -17,6 +17,7 @@
     <content contentuid="h1d26d698g3c6dg4212gad8dga725fb76bda2" version="1">Intangible Summon</content><!-- Summon Indestructible -->
     <content contentuid="h81c15d09gdee7g4cd4ga39eg6ec6273a8398" version="1">Flyby</content><!-- Flyby -->
     <content contentuid="h2c5ddf7eg8dbcg4b9fga803g537c44e0ff16" version="1">Crossbow Expert: Loading</content><!-- Crossbow Expert: Wounding -->
+    <content contentuid="h07cedaa6g2c7bg4906ga832g28ebde232fa4" version="1">Attunement</content><!-- Attunement -->
 
     <!-- Passive Description -->
     <content contentuid="h460e389eg9748g4598g95cdgf796e95397c6" version="1">You start walking instead of running.</content><!-- Walk -->
@@ -27,6 +28,7 @@
     <content contentuid="ha3c41950g6a08g4bbdg9a88g2c14f3c6e8b7" version="1">This summon can only act if the Owner uses the Command Spell.</content><!-- Summon Resource Blocked -->
     <content contentuid="h7162476egad83g4f42g8fccg22f6c6e40b37" version="1">Doesn't provoke opportunity attacks when flying out of an enemy's reach.</content><!-- Flyby -->
     <content contentuid="h171c2107gb858g4e96ga500g0d861916042c" version="1">You ignore the loading property of crossbows for the purposes of Extra Attack.</content><!-- Crossbow Expert: Wounding -->
+    <content contentuid="h34e14ad6gb0d5g4892ga3c9gdb7dce2c7b9a" version="1">This item requires an attunement to be equipped and counts towards the maximum of attuned items.</content><!-- Attunement -->
 
     <!-- Passive Extra Description -->
     <content contentuid="hc0a989cag7bfdg4f36g9642gf0a332244deb" version="1">Walking won't reduce the maximum travelled distance in a turn, it's purely cosmetic.</content><!-- Walk -->
@@ -38,6 +40,13 @@
 
     <!-- Projectile Description -->
     <content contentuid="hc25fd2e1g6a3cg4c99g8690gcf48eabe53a1" version="1">Jump up, down, and across. Your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; affects how far you can jump.</content><!-- Jump Thief -->
+    <content contentuid="he87f6103ga16bg459dg889agb0871d51ef92" version="1">Hurl a sphere that deals [1] and possibly creates a surface if aiming to the ground. Alternatively, choose a different type of damage.</content><!-- Chromatic Orb -->
+    <content contentuid="h0ba8b53eg3e84g48f1g9f02gcfc823b861cd" version="1">Hurl caustic energy that damages the target. Creates an &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt; surface if aiming to the ground.</content><!-- Chromatic Orb: Acid -->
+    <content contentuid="h4ed0c491gf024g401agb82agbd594521004f" version="1">Hurl freezing energy that damages the target. Creates a frosty surface to knock creatures &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; if aiming to the ground.</content><!-- Chromatic Orb: Cold -->
+    <content contentuid="hce5f50aeg4996g488ega2c7g6fff5e79d85b" version="1">Hurl fiery energy that damages the target. Creates a &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; surface if aiming to the ground.</content><!-- Chromatic Orb: Fire -->
+    <content contentuid="he450b731gd24ag4ee3ga2d4g8faabdf18dea" version="1">Hurl lightning energy that damages the target. Creates an electrified surface if aiming to the ground.</content><!-- Chromatic Orb: Lightning -->
+    <content contentuid="h023befb4g9bc2g450eg83cdg8ec3bf36237a" version="1">Hurl poisonous energy that damages the target. Creates a bubbling surface to &lt;LSTag Type="Status" Tooltip="POISONED"&gt;Poison&lt;/LSTag&gt; creatures if aiming to the ground.</content><!-- Chromatic Orb: Poison -->
+    <content contentuid="h8ff59facg4ab1g4356g8753g6ab543485aa2" version="1">Hurl a sphere that deals [1] and possibly creates a surface if aiming to the ground.</content><!-- Chromatic Orb (Monk) -->
 
     <!-- Shout Display Name -->
     <content contentuid="haf813ecag5ad0g464cg8749g68d9ebd9b71d" version="1">End Short Rest</content><!-- End Short Rest -->

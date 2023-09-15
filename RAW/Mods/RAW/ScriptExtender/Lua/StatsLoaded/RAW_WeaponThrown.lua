@@ -1,3 +1,5 @@
+local ENUM_RAW_WeaponThrown_Spells
+
 local function RAW_AddThrownSpells(weapon)
     local spellsToAdd = {}
     local priority = 0
@@ -50,3 +52,53 @@ function RAW_WeaponThrown()
     RAW_PrintIfDebug(("\n" .. CentralizedString("Finished the addition of Weapon Throw Spells")), RAW_PrintTable_WeaponThrown)
     RAW_PrintIfDebug(("======================================================================\n"), RAW_PrintTable_WeaponThrown)
 end
+
+---------------------------------------- MODELS ----------------------------------------
+
+-- Must have all values previously stated inside each attribute
+-- Eg.: must have the Thrown Weapon Property to check for Finesse
+ENUM_RAW_WeaponThrown_Spells = {
+    ["Weapon Properties"] = {
+        ["Thrown"] = {
+            ["Mandatory"] = true,
+            ["Priority"] = 1,
+            ["Spells"] = {
+                ["BoostsOnEquipMainHand"] = {
+                    "RAW_Throw_Weapon",
+                    "RAW_Throw_Weapon_OffHand_Transition",
+                },
+                ["BoostsOnEquipOffHand"] = {
+                    "RAW_Throw_Weapon_OffHand",
+                },
+            },
+        },
+        ["Finesse"] = {
+            ["Mandatory"] = false,
+            ["Priority"] = 2,
+            ["Spells"] = {
+                ["BoostsOnEquipMainHand"] = {
+                    "RAW_Throw_Finesse",
+                    "RAW_Throw_Finesse_OffHand_Transition",
+                },
+                ["BoostsOnEquipOffHand"] = {
+                    "RAW_Throw_Finesse_OffHand",
+                },
+            },
+        },
+    },
+    ["Proficiency Group"] = {
+        ["Javelins"] = {
+            ["Mandatory"] = false,
+            ["Priority"] = 3,
+            ["Spells"] = {
+                ["BoostsOnEquipMainHand"] = {
+                    "RAW_Throw_Javelin",
+                    "RAW_Throw_Javelin_OffHand_Transition",
+                },
+                ["BoostsOnEquipOffHand"] = {
+                    "RAW_Throw_Javelin_OffHand",
+                },
+            },
+        },
+    },
+}

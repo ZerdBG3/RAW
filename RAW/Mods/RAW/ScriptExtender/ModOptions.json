@@ -1,4 +1,21 @@
 {
+    "attunement": {
+        "displayName": "Attunement",
+        "description": "Sets a limit to the amount of magic items a character can have attuned at once (choose a value between 1 and 10).",
+        "enabled": true,
+        "value": 3,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Attunement.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
     "rogue": {
         "displayName": "Rogue",
         "description": "Changes to Cunning Action and Sneak Attack.",
@@ -49,6 +66,23 @@
             "disabled": [
                 {
                     "from": "Public/RAW/Stats/Generated/Data/ShortRest.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
+    "spells": {
+        "displayName": "Spells",
+        "description": "Various changes to spell and statuses applied by spells.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Spells.txt",
                     "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
                 }
             ]
