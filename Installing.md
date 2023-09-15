@@ -18,9 +18,9 @@
 
 | Option | Default | Description | 
 |---|---|---|
-| [attunement](https://github.com/ZerdBG3/RAW/blob/main/Features.md#attunement) | 3 | Maximum amount of items a character can be attuned to at once. Value must from 1 to 10 (inclusive). |
-| [spells_bonusAction](https://github.com/ZerdBG3/RAW/blob/main/Features.md#bonus-action-spells-rule) | - | Enforces the spell casted as a bonus action rule stopping casting other leveled spells on the same turn. |
-| [weaponSpells](https://github.com/ZerdBG3/RAW/blob/main/Features.md#weapon-spells) | - | Removes weapon spells/passives from basic weapons, such as Cleave, Overwhelm, Piercing Shot and Topple. |
+| [attunement](https://github.com/ZerdBG3/RAW/blob/main/Features.md#attunement-%EF%B8%8F-attunement) | 3 | Maximum amount of items a character can be attuned to at once. Value must from 1 to 10 (inclusive). |
+| [spells_bonusAction](https://github.com/ZerdBG3/RAW/blob/main/Features.md#bonus-action-spells-rule-%EF%B8%8F-spells_bonusaction) | - | Enforces the spell casted as a bonus action rule stopping casting other leveled spells on the same turn. |
+| [weaponSpells](https://github.com/ZerdBG3/RAW/blob/main/Features.md#weapon-spells-%EF%B8%8F-weaponspells) | - | Removes weapon spells/passives from basic weapons, such as Cleave, Overwhelm, Piercing Shot and Topple. |
 
 * If you want to make sure your configurations are being loaded properly, turn on the Debug Console for the Script Extender by creating a `ScriptExtenderSettings.json` file on the same folder the extender was installed (`\steamapps\common\Baldurs Gate 3\bin`). The file should contain the following:
 ```json
