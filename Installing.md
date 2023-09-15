@@ -12,14 +12,15 @@
   * If you wish to manually set it up, download the `modsettings.lsx` file on the root of this project (or access it [here](https://github.com/ZerdBG3/RAW/blob/main/modsettings.lsx)) and place it on the Public Player Profile (the complete path should look something like `\Users\{USER_NAME}\AppData\Local\Larian Studios\Baldur's Gate 3\PlayerProfiles\Public`). You should replace the file that already exists there
 
 # Optional Configurations
-* To turn on/off the mod features, copy the [`ModOptions.json`](https://github.com/ZerdBG3/RAW/blob/main/ModOptions.json) file to the `Script Extender` folder inside the Profile folder, creating it if necessary. The complete path should look something like `\Users\{USER_NAME}\AppData\Local\Larian Studios\Baldur's Gate 3\Script Extender`
-* You only need to set the configuration file if you want to alter the default behavior. Therefore, there is no need to download and set the file up if you are not going to change any of its values
-* Simply change the values from `true` to `false` to whichever feature you want to turn off (_for a more complete description of what the Option does, look for its name on the [Features](https://github.com/ZerdBG3/RAW/blob/main/Features.md) page_)
+* To turn on/off the mod features or customize them, copy the [`ModOptions.json`](https://github.com/ZerdBG3/RAW/blob/main/ModOptions.json) file to the `Script Extender` folder inside the Profile folder, creating it if necessary. The complete path should look something like `\Users\{USER_NAME}\AppData\Local\Larian Studios\Baldur's Gate 3\Script Extender`
+* You only need to set the configuration file if you want to alter the default behavior. Therefore, there is no need to download and set the file up if you are not going to change any of its values. All features are enabled by default
+* Simply change the `enabled` from `true` to `false` on whichever feature you want to turn off. For customizable features, keep `enabled` as `true` and change the `value` for a valid one specified by the option's description
 
 | Option | Default | Description | 
 |---|---|---|
-| spells_bonusAction | true | Enforces the spell casted as a bonus action rule stopping casting other leveled spells on the same turn. |
-| weaponSpells | true | Removes weapon spells/passives from basic weapons, such as Cleave, Overwhelm, Piercing Shot and Topple. |
+| [attunement](https://github.com/ZerdBG3/RAW/blob/main/Features.md#attunement) | 3 | Maximum amount of items a character can be attuned to at once. Value must from 1 to 10 (inclusive). |
+| [spells_bonusAction](https://github.com/ZerdBG3/RAW/blob/main/Features.md#bonus-action-spells-rule) | - | Enforces the spell casted as a bonus action rule stopping casting other leveled spells on the same turn. |
+| [weaponSpells](https://github.com/ZerdBG3/RAW/blob/main/Features.md#weapon-spells) | - | Removes weapon spells/passives from basic weapons, such as Cleave, Overwhelm, Piercing Shot and Topple. |
 
 * If you want to make sure your configurations are being loaded properly, turn on the Debug Console for the Script Extender by creating a `ScriptExtenderSettings.json` file on the same folder the extender was installed (`\steamapps\common\Baldurs Gate 3\bin`). The file should contain the following:
 ```json

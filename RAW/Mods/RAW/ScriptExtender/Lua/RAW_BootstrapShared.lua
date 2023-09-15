@@ -3,6 +3,7 @@ Ext.Require("RAW_Lib.lua")
 
 -- Config
 Ext.Require("RAW_Config.lua")
+RAW_LoadModOptions()
 
 -- ModuleLoadStarted Event
 local RAW_ModuleLoadStarted = "ModuleLoad/"
@@ -26,16 +27,12 @@ Ext.Events.ModuleLoadStarted:Subscribe(RAW_ModuleLoadStarted)
 -- StatsLoaded Event
 local RAW_StatsLoadedPath = "StatsLoaded/"
 
-Ext.Require(RAW_StatsLoadedPath .. "RAW_CharacterPassives_Model.lua")
+Ext.Require(RAW_StatsLoadedPath .. "RAW_Attunement.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_CharacterPassives.lua")
-
-Ext.Require(RAW_StatsLoadedPath .. "RAW_Spells_BonusAction_Model.lua")
+Ext.Require(RAW_StatsLoadedPath .. "RAW_Rogue.lua")
+Ext.Require(RAW_StatsLoadedPath .. "RAW_Rogue_Thief.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_Spells_BonusAction.lua")
-
-Ext.Require(RAW_StatsLoadedPath .. "RAW_WeaponSpells_Model.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_WeaponSpells.lua")
-
-Ext.Require(RAW_StatsLoadedPath .. "RAW_WeaponThrown_Model.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_WeaponThrown.lua")
 
 local function RAW_StatsLoaded()
@@ -43,7 +40,10 @@ local function RAW_StatsLoaded()
     Ext.Utils.Print(CentralizedString("[RAW:BootstrapShared.lua] StatsLoaded Start"))
     Ext.Utils.Print("======================================================================\n")
 
+    RAW_Attunement()
     RAW_CharacterPassives()
+    RAW_Rogue()
+    -- RAW_Rogue_Thief()
     RAW_Spells_BonusAction()
     RAW_WeaponSpells()
     RAW_WeaponThrown()

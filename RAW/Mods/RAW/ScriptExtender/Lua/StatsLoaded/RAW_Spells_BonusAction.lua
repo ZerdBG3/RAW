@@ -1,3 +1,5 @@
+local ENUM_RAW_Spells_BonusAction_Passives
+
 local function RAW_AddCharacterBonusActionSpellPassives(char)
     for _, passive in pairs(ENUM_RAW_Spells_BonusAction_Passives) do
         RAW_PrintIfDebug("\tAdding passive: " .. passive, RAW_PrintTable_Spells_BonusAction)
@@ -32,6 +34,13 @@ function RAW_Spells_BonusAction()
         end
     end
 
-    Ext.Utils.Print("\n" .. CentralizedString("Finished the the application of Bonus Action Spell Rules"))
+    Ext.Utils.Print("\n" .. CentralizedString("Finished the application of Bonus Action Spell Rules"))
     Ext.Utils.Print("======================================================================\n")
 end
+
+---------------------------------------- MODELS ----------------------------------------
+
+ENUM_RAW_Spells_BonusAction_Passives = {
+    "RAW_BonusActionSpells",
+    "RAW_NotBonusActionSpells",
+}

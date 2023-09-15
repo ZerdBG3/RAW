@@ -1,3 +1,5 @@
+local ENUM_RAW_CharacterDefaultPassives
+
 local function RAW_AddCharacterDefaultPassives(char)
     for parent, passives in pairs(ENUM_RAW_CharacterDefaultPassives) do
         if parent == "all" or StatHasParent(char, parent) then
@@ -26,3 +28,15 @@ function RAW_CharacterPassives()
     Ext.Utils.Print("\n" .. CentralizedString("Finished the addition of Character Passives"))
     Ext.Utils.Print("======================================================================\n")
 end
+
+---------------------------------------- MODELS ----------------------------------------
+
+ENUM_RAW_CharacterDefaultPassives = {
+    ["all"] = {
+        "RAW_OnTurnTracker",
+    },
+    ["_Hero"] = {
+        "RAW_Loading_Block_ExtraAttack",
+        "RAW_Walk",
+    },
+}
