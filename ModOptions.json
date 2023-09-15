@@ -1,5 +1,9 @@
 {
     "f19c68ed-70be-4c3d-b610-e94afc5c5103": {
+        "attunement": {
+            "enabled": true,
+            "value": 3
+        },
         "spells_bonusAction": {
             "enabled": true
         },
