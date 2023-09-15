@@ -3,8 +3,9 @@
 * Features with ⚙️ means they are optional. You can turn them on/off following the instructions on the [Installation Guide](https://github.com/ZerdBG3/RAW/blob/main/Installing.md#optional-configurations).
 
 ## Attunement ⚙️ `attunement`
+_Developed in partnership with [Eric](https://www.nexusmods.com/baldursgate3/mods/2155)_
 * Several magical items now require attunement. [Here's the list](https://docs.google.com/spreadsheets/d/1yCJ9ITC180dqykK713iHMEsrvVOHkgOmLF882-yr_hQ/edit#gid=0&fvid=1734738953)
-  - To attune to an item, you simply equip it while outside of combat
+  - To attune to an item, you simply equip it
   - Items that require attunement can only be equipped outside of combat (except for Thrown weapons)
 * You have a maximum number of items that can be attuned at once to each character (amount modifiable on the optional files)
   - After reaching your maximum amount of attuned items, you can no longer equip items that require attunement
@@ -24,7 +25,6 @@
   <p>
 
     Spells:
-    ```
     - Projectile_HamstringShot
     - Projectile_Headcrack
     - Projectile_MobileShooting
@@ -46,12 +46,9 @@
     - Target_Slash_New
     - Target_Topple
     - Zone_Cleave
-    ```
 
     Passives:
-    ```
     - Overwhelm
-    ```
 
   </p>
 </details>
