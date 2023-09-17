@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<save>
+    <version major="4" minor="0" revision="9" build="312"/>
+    <region id="ActionResourceGroupDefinitions">
+        <node id="root">
+            <children>
+                <node id="ActionResourceGroupDefinition">
+                    <attribute id="ActionResourceDefinitions" type="LSString" value="259ebcf7-67c5-462e-a360-387d0d3c74ed;734cbcfb-8922-4b6d-8330-b2a7e4c14b6a"/>
+                    <attribute id="Name" type="LSString" value="RAW_EquipWeaponGroup"/>
+                    <attribute id="UUID" type="guid" value="a01bbc78-b72c-4aa5-b226-f67adbf8c489"/>
+                </node>
+            </children>
+        </node>
+    </region>
+</save>

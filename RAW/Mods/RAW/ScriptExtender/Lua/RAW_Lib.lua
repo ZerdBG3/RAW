@@ -14,14 +14,19 @@ function RAW_HasValueInList(list, value)
 end
 
 -- Checks if the stat has the parent in its using tree
-function StatHasParent(stat, parentName)
+function RAW_StatHasParent(stat, parentName)
     if stat.Name == parentName then
         return true
     end
     if stat.Using ~= nil and stat.Using ~= "" then
-        return StatHasParent(Ext.Stats.Get(stat.Using), parentName)
+        return RAW_StatHasParent(Ext.Stats.Get(stat.Using), parentName)
     end
     return false
+end
+
+-- Checks if the character stat object is _Hero or inherits it
+function RAW_CharIsHero(char)
+    return char ~= nil and string.find(char.Passives, "WeaponThrow") and string.find(char.Passives, "CombatStartAttack")
 end
 
 -- Static Data helpers
@@ -106,8 +111,9 @@ RAW_PrintTable_CharacterPassives = 2
 RAW_PrintTable_Rogue = 3
 RAW_PrintTable_Rogue_Thief = 4
 RAW_PrintTable_Spells_BonusAction = 5
-RAW_PrintTable_WeaponSpells = 6
-RAW_PrintTable_WeaponThrown = 7
+RAW_PrintTable_Spells_Duration = 6
+RAW_PrintTable_WeaponSpells = 7
+RAW_PrintTable_WeaponThrown = 8
 
 local ENUM_RAW_PrintTable = RAW_Set {
     RAW_PrintTable_ModOptions,
@@ -116,6 +122,7 @@ local ENUM_RAW_PrintTable = RAW_Set {
     -- RAW_PrintTable_Rogue,
     -- RAW_PrintTable_Rogue_Thief,
     -- RAW_PrintTable_Spells_BonusAction,
+    -- RAW_PrintTable_Spells_Duration,
     -- RAW_PrintTable_WeaponSpells,
     -- RAW_PrintTable_WeaponThrown,
 }

@@ -28,7 +28,7 @@ function RAW_Spells_BonusAction()
         local char = Ext.Stats.Get(name)
 
         -- Temporarily giving the passives just to players
-        if StatHasParent(char, "_Hero") then
+        if RAW_CharIsHero(char) then
             RAW_PrintIfDebug("\nCharacter: " .. name, RAW_PrintTable_Spells_BonusAction)
             RAW_AddCharacterBonusActionSpellPassives(char)
         end

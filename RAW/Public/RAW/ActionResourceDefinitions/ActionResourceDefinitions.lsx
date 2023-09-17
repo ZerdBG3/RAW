@@ -28,6 +28,14 @@
                     <attribute id="ShowOnActionResourcePanel" type="bool" value="false"/>
                     <attribute id="UUID" type="guid" value="f80a1214-f33c-4da6-b918-8bd8251c36c2"/>
                 </node>
+                <node id="ActionResourceDefinition">
+                    <attribute id="DisplayName" type="TranslatedString" handle="hea889d6fg61e7g4b9fgbf6dg5287a8df42da" version="1"/>
+                    <attribute id="IsHidden" type="bool" value="true"/>
+                    <attribute id="Name" type="FixedString" value="RAW_EquipWeaponPoint"/>
+                    <attribute id="ReplenishType" type="FixedString" value="Turn"/>
+                    <attribute id="ShowOnActionResourcePanel" type="bool" value="false"/>
+                    <attribute id="UUID" type="guid" value="259ebcf7-67c5-462e-a360-387d0d3c74ed"/>
+                </node>
             </children>
         </node>
     </region>

@@ -1,15 +1,15 @@
 EVENTS
 
 
-EVENT RAW_FetchCharacterApplyStatusData_RAW_SHORT_REST
+EVENT RAW_FetchCharacterApplyStatusData_RAW_SHORT_REST_STATUS_REMOVAL
 VARS
     CHARACTER:_Character
     LIST<STATUS>:_RemoveList
     STATUS:_Result
 ON
-    FetchCharacterApplyStatusData(_Character, RAW_SHORT_REST)
+    FetchCharacterApplyStatusData(_Character, RAW_SHORT_REST_STATUS_REMOVAL)
 ACTIONS
-    Set(_Result,RAW_SHORT_REST)
+    Set(_Result,RAW_SHORT_REST_STATUS_REMOVAL)
     
     ListClear(_RemoveList)
     ListAdd(_RemoveList, EXPEDITIOUS_RETREAT)

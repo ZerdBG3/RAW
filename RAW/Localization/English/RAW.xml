@@ -3,9 +3,11 @@
     <content contentuid="h9b9372c9g28e7g4fbcga73dgad4bfec682c1" version="1">Haste</content><!-- Haste Point -->
     <content contentuid="h81bc6dd8ga190g4893g97f6g865ed02e1096" version="1">Bonus Action Leveled Spell</content><!-- Bonus Action Spell Point -->
     <content contentuid="hbbebdff2g9793g4335g928bg204330014249" version="1">Not Bonus Action Leveled Spell</content><!-- Not Bonus Action Spell Point -->
+    <content contentuid="hea889d6fg61e7g4b9fgbf6dg5287a8df42da" version="1">Free Weapon Equip</content><!-- Equip Weapon Point -->
 
     <!-- Feat Description -->
     <content contentuid="h15b473b7gf59dg40f4g9d6bg7015eb159089" version="1">When you make crossbow attacks within melee range, the &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; do not have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;You ignore the loading property of crossbows for the purposes of Extra Attack.</content><!-- Crossbow Expert -->
+    <content contentuid="h4671f1fag7c08g4921ga35bg07713c95c4d9" version="1">You can use Two-Weapon Fighting even if your weapons aren't &lt;LSTag Tooltip="Light"&gt;Light&lt;/LSTag&gt;, you can equip two weapons for free on your turn instead of one, and you gain a +1 bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; while wielding a melee weapon in each hand. You cannot dual-wield &lt;LSTag Tooltip="Heavy"&gt;Heavy&lt;/LSTag&gt; weapons.</content><!-- Dual Wielder -->
 
     <!-- Passive Display Name -->
     <content contentuid="h15a2faa5gf385g456dg8aa8gbf5a1029919f" version="1">Walk</content><!-- Walk -->
@@ -29,6 +31,7 @@
     <content contentuid="h7162476egad83g4f42g8fccg22f6c6e40b37" version="1">Doesn't provoke opportunity attacks when flying out of an enemy's reach.</content><!-- Flyby -->
     <content contentuid="h171c2107gb858g4e96ga500g0d861916042c" version="1">You ignore the loading property of crossbows for the purposes of Extra Attack.</content><!-- Crossbow Expert: Wounding -->
     <content contentuid="h34e14ad6gb0d5g4892ga3c9gdb7dce2c7b9a" version="1">This item requires an attunement to be equipped and counts towards the maximum of attuned items.</content><!-- Attunement -->
+    <content contentuid="h52822a0agd71bg4caega40dgc7017940b99b" version="1">You can use Two-Weapon Fighting even if the weapons you are wielding aren't Light and you can equip two weapons for free on your turn instead of one. You cannot dual-wield &lt;LSTag Tooltip="Heavy"&gt;Heavy&lt;/LSTag&gt; weapons.</content><!-- Dual Wielder -->
 
     <!-- Passive Extra Description -->
     <content contentuid="hc0a989cag7bfdg4f36g9642gf0a332244deb" version="1">Walking won't reduce the maximum travelled distance in a turn, it's purely cosmetic.</content><!-- Walk -->

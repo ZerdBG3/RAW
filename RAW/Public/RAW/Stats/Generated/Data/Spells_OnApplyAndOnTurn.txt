@@ -1,0 +1,193 @@
+// Based on Page 16 of https://media.wizards.com/2019/dnd/downloads/SA-Compendium.pdf
+// Spells that specify a character takes damage when they first enter the AoE or start their turn there
+//   shall not damage them when they're casted on top of them or moved to their position
+// The damage is applied when a characer moves to the AoE (voluntarily or not)
+// Due to a technical limitation of implementation, it was decided to make these spells not apply the damage
+//   during the caster's turn, while also giving the target an immunity status against the spell which lasts
+//   until the end of their turn
+// The end result is similar to RAW: most of the times, the characters will take damage only on their turn start
+//   or if they move to the AoE during their movement. Shoving a target to the AoE will damage them (if not during
+//   the caster's turn), but won't damage them again at their turn start
+
+// ------------------------------------------------------
+// ------------------ Cloud of Daggers ------------------
+// ------------------------------------------------------
+
+new entry "RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED"
+type "StatusData"
+data "StatusType" "BOOST"
+data "TickType" "EndTurn"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+new entry "CLOUD_OF_DAGGERS"
+type "StatusData"
+data "StatusType" "BOOST"
+using "CLOUD_OF_DAGGERS"
+data "OnApplyFunctors" "IF(not HasStatus('RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(4d4,Slashing,Magical);IF(not HasStatus('RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED,100,1)"
+data "TickFunctors" "IF(not HasStatus('RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(4d4,Slashing,Magical);IF(not HasStatus('RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED,100,1)"
+
+new entry "CLOUD_OF_DAGGERS_3"
+type "StatusData"
+data "StatusType" "BOOST"
+using "CLOUD_OF_DAGGERS_3"
+data "OnApplyFunctors" "IF(not HasStatus('RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(6d4,Slashing,Magical);IF(not HasStatus('RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED,100,1)"
+data "TickFunctors" "IF(not HasStatus('RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(6d4,Slashing,Magical);IF(not HasStatus('RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED,100,1)"
+
+new entry "CLOUD_OF_DAGGERS_4"
+type "StatusData"
+data "StatusType" "BOOST"
+using "CLOUD_OF_DAGGERS_4"
+data "OnApplyFunctors" "IF(not HasStatus('RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(8d4,Slashing,Magical);IF(not HasStatus('RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED,100,1)"
+data "TickFunctors" "IF(not HasStatus('RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(8d4,Slashing,Magical);IF(not HasStatus('RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED,100,1)"
+
+new entry "CLOUD_OF_DAGGERS_5"
+type "StatusData"
+data "StatusType" "BOOST"
+using "CLOUD_OF_DAGGERS_5"
+data "OnApplyFunctors" "IF(not HasStatus('RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(10d4,Slashing,Magical);IF(not HasStatus('RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED,100,1)"
+data "TickFunctors" "IF(not HasStatus('RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(10d4,Slashing,Magical);IF(not HasStatus('RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED,100,1)"
+
+new entry "CLOUD_OF_DAGGERS_6"
+type "StatusData"
+data "StatusType" "BOOST"
+using "CLOUD_OF_DAGGERS_6"
+data "OnApplyFunctors" "IF(not HasStatus('RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(12d4,Slashing,Magical);IF(not HasStatus('RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED,100,1)"
+data "TickFunctors" "IF(not HasStatus('RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(12d4,Slashing,Magical);IF(not HasStatus('RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED,100,1)"
+
+// ----------------------------------------------
+// ------------------ Moonbeam ------------------
+// ----------------------------------------------
+
+new entry "RAW_MOONBEAM_DAMAGE_RECEIVED"
+type "StatusData"
+data "StatusType" "BOOST"
+data "TickType" "EndTurn"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+new entry "MOONBEAM"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MOONBEAM"
+data "OnApplySuccess" "IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(2d10,Radiant,Magical);IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_MOONBEAM_DAMAGE_RECEIVED,100,1)"
+data "OnApplyFail" "IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(2d10/2,Radiant,Magical);IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_MOONBEAM_DAMAGE_RECEIVED,100,1)"
+data "OnTickSuccess" "IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(2d10,Radiant,Magical);IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_MOONBEAM_DAMAGE_RECEIVED,100,1)"
+data "OnTickFail" "IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(2d10/2,Radiant,Magical);IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_MOONBEAM_DAMAGE_RECEIVED,100,1)"
+
+new entry "MOONBEAM_3"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MOONBEAM_3"
+data "OnApplySuccess" "IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(3d10,Radiant,Magical);IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_MOONBEAM_DAMAGE_RECEIVED,100,1)"
+data "OnApplyFail" "IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(3d10/2,Radiant,Magical);IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_MOONBEAM_DAMAGE_RECEIVED,100,1)"
+data "OnTickSuccess" "IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(3d10,Radiant,Magical);IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_MOONBEAM_DAMAGE_RECEIVED,100,1)"
+data "OnTickFail" "IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(3d10/2,Radiant,Magical);IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_MOONBEAM_DAMAGE_RECEIVED,100,1)"
+
+new entry "MOONBEAM_4"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MOONBEAM_4"
+data "OnApplySuccess" "IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(4d10,Radiant,Magical);IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_MOONBEAM_DAMAGE_RECEIVED,100,1)"
+data "OnApplyFail" "IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(4d10/2,Radiant,Magical);IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_MOONBEAM_DAMAGE_RECEIVED,100,1)"
+data "OnTickSuccess" "IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(4d10,Radiant,Magical);IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_MOONBEAM_DAMAGE_RECEIVED,100,1)"
+data "OnTickFail" "IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(4d10/2,Radiant,Magical);IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_MOONBEAM_DAMAGE_RECEIVED,100,1)"
+
+new entry "MOONBEAM_5"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MOONBEAM_5"
+data "OnApplySuccess" "IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(5d10,Radiant,Magical);IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_MOONBEAM_DAMAGE_RECEIVED,100,1)"
+data "OnApplyFail" "IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(5d10/2,Radiant,Magical);IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_MOONBEAM_DAMAGE_RECEIVED,100,1)"
+data "OnTickSuccess" "IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(5d10,Radiant,Magical);IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_MOONBEAM_DAMAGE_RECEIVED,100,1)"
+data "OnTickFail" "IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(5d10/2,Radiant,Magical);IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_MOONBEAM_DAMAGE_RECEIVED,100,1)"
+
+new entry "MOONBEAM_6"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MOONBEAM_6"
+data "OnApplySuccess" "IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(6d10,Radiant,Magical);IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_MOONBEAM_DAMAGE_RECEIVED,100,1)"
+data "OnApplyFail" "IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(6d10/2,Radiant,Magical);IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_MOONBEAM_DAMAGE_RECEIVED,100,1)"
+data "OnTickSuccess" "IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(6d10,Radiant,Magical);IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_MOONBEAM_DAMAGE_RECEIVED,100,1)"
+data "OnTickFail" "IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):DealDamage(6d10/2,Radiant,Magical);IF(not HasStatus('RAW_MOONBEAM_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',GetSummoner(context.Source))):ApplyStatus(RAW_MOONBEAM_DAMAGE_RECEIVED,100,1)"
+
+// ------------------------------------------------------
+// ------------------ Spirit Guardians ------------------
+// ------------------------------------------------------
+
+new entry "SPIRIT_GUARDIANS_DAMAGE_RECEIVED"
+type "StatusData"
+data "StatusType" "BOOST"
+data "TickType" "EndTurn"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+new entry "SPIRIT_GUARDIANS_RADIANT"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SPIRIT_GUARDIANS_RADIANT"
+data "StatusPropertyFlags" ""
+data "OnApplySuccess" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(3d8,Radiant,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnApplyFail" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(3d8/2,Radiant,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnTickSuccess" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(3d8,Radiant,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnTickFail" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(3d8/2,Radiant,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+
+new entry "SPIRIT_GUARDIANS_RADIANT_4"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SPIRIT_GUARDIANS_RADIANT_4"
+data "OnApplySuccess" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(4d8,Radiant,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnApplyFail" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(4d8/2,Radiant,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnTickSuccess" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(4d8,Radiant,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnTickFail" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(4d8/2,Radiant,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+
+new entry "SPIRIT_GUARDIANS_RADIANT_5"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SPIRIT_GUARDIANS_RADIANT_5"
+data "OnApplySuccess" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(5d8,Radiant,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnApplyFail" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(5d8/2,Radiant,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnTickSuccess" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(5d8,Radiant,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnTickFail" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(5d8/2,Radiant,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+
+new entry "SPIRIT_GUARDIANS_RADIANT_6"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SPIRIT_GUARDIANS_RADIANT_6"
+data "OnApplySuccess" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(6d8,Radiant,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnApplyFail" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(6d8/2,Radiant,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnTickSuccess" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(6d8,Radiant,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnTickFail" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(6d8/2,Radiant,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+
+new entry "SPIRIT_GUARDIANS_NECROTIC"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SPIRIT_GUARDIANS_NECROTIC"
+data "OnApplySuccess" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(3d8,Necrotic,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnApplyFail" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(3d8/2,Necrotic,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnTickSuccess" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(3d8,Necrotic,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnTickFail" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(3d8/2,Necrotic,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+
+new entry "SPIRIT_GUARDIANS_NECROTIC_4"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SPIRIT_GUARDIANS_NECROTIC_4"
+data "OnApplySuccess" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(4d8,Necrotic,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnApplyFail" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(4d8/2,Necrotic,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnTickSuccess" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(4d8,Necrotic,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnTickFail" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(4d8/2,Necrotic,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+
+new entry "SPIRIT_GUARDIANS_NECROTIC_5"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SPIRIT_GUARDIANS_NECROTIC_5"
+data "OnApplySuccess" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(5d8,Necrotic,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnApplyFail" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(5d8/2,Necrotic,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnTickSuccess" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(5d8,Necrotic,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnTickFail" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(5d8/2,Necrotic,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+
+new entry "SPIRIT_GUARDIANS_NECROTIC_6"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SPIRIT_GUARDIANS_NECROTIC_6"
+data "OnApplySuccess" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(6d8,Necrotic,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnApplyFail" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(6d8/2,Necrotic,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnTickSuccess" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(6d8,Necrotic,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"
+data "OnTickFail" "IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):DealDamage(6d8/2,Necrotic,Magical);IF(not HasStatus('SPIRIT_GUARDIANS_DAMAGE_RECEIVED',context.Target,context.Source) and not HasStatus('RAW_CURRENT_TURN',context.Source)):ApplyStatus(SPIRIT_GUARDIANS_DAMAGE_RECEIVED,100,1)"

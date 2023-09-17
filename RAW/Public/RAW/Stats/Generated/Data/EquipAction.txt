@@ -1,0 +1,25 @@
+// RAW_EquipWeaponGroup is defined on Public\RAW\ActionResourceGroupDefinitions\ActionResourceGroupDefinitions.lsx
+//   and combines the new RAW_EquipWeaponPoint from Public\RAW\ActionResourceDefinitions\ActionResourceDefinitions.lsx
+//   with ActionPoint. It always prioritize using RAW_EquipWeaponPoint first
+
+// -------------------------------------------------
+// -------------------- Weapons --------------------
+// -------------------------------------------------
+
+new entry "_BaseWeapon"
+type "Weapon"
+using "_BaseWeapon"
+data "UseCosts" "RAW_EquipWeaponGroup:1"
+
+// The free action resource is given to all players at Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_CharacterPassives.lua
+new entry "RAW_UnlockEquipWeaponPoint"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "Boosts" "ActionResource(RAW_EquipWeaponPoint,1,0)"
+
+// Dual Wielder allows two weapon equips per turn instead of one
+new entry "DualWielder_PassiveBonuses"
+type "PassiveData"
+using "DualWielder_PassiveBonuses"
+data "Description" "h52822a0agd71bg4caega40dgc7017940b99b;1"
+data "Boosts" "DualWielding(true);ActionResource(RAW_EquipWeaponPoint,1,0)"

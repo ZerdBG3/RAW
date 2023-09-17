@@ -32,6 +32,7 @@ Ext.Require(RAW_StatsLoadedPath .. "RAW_CharacterPassives.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_Rogue.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_Rogue_Thief.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_Spells_BonusAction.lua")
+Ext.Require(RAW_StatsLoadedPath .. "RAW_Spells_Duration.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_WeaponSpells.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_WeaponThrown.lua")
 
@@ -45,6 +46,7 @@ local function RAW_StatsLoaded()
     RAW_Rogue()
     -- RAW_Rogue_Thief()
     RAW_Spells_BonusAction()
+    RAW_Spells_Duration()
     RAW_WeaponSpells()
     RAW_WeaponThrown()
 
@@ -54,3 +56,20 @@ local function RAW_StatsLoaded()
 end
 
 Ext.Events.StatsLoaded:Subscribe(RAW_StatsLoaded)
+
+-- Osiris Files
+local RAW_OsirisFilesPath = "Osiris/"
+
+Ext.Require(RAW_OsirisFilesPath .. "RAW_WeaponSets.lua")
+
+if Ext.IsServer() then
+    Ext.Utils.Print("\n======================================================================")
+    Ext.Utils.Print(CentralizedString("[RAW:BootstrapShared.lua] Osiris Registration Start"))
+    Ext.Utils.Print("======================================================================\n")
+
+    RAW_WeaponSets()
+
+    Ext.Utils.Print("\n======================================================================")
+    Ext.Utils.Print(CentralizedString("[RAW:BootstrapShared.lua] Osiris Registration Ended"))
+    Ext.Utils.Print("======================================================================\n")
+end

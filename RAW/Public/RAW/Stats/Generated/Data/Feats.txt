@@ -10,6 +10,12 @@ data "DisplayName" "h2c5ddf7eg8dbcg4b9fga803g537c44e0ff16;1"
 data "Description" "h171c2107gb858g4e96ga500g0d861916042c;1"
 data "Boosts" ""
 
+// ------------------------------------------------------
+// -------------------- Dual Wielder --------------------
+// ------------------------------------------------------
+
+// Changes applied on Public\RAW\Stats\Generated\Data\EquipAction.txt
+
 // -------------------------------------------------------
 // -------------------- Shield Master --------------------
 // -------------------------------------------------------
@@ -52,6 +58,7 @@ data "SpellFlags" "IsMelee;AddFallDamageOnLand;IsHarmful;CombatLogSetSingleLineR
 data "SpellActionType" "None"
 data "Sheathing" "Melee"
 data "RequirementConditions" "HasShieldEquipped(context.Source)"
+data "RequirementEvents" "OnEquip;OnUnequip"
 
 new entry "RAW_Target_Shove_ShieldMaster_Push"
 type "SpellData"

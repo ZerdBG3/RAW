@@ -1,6 +1,5 @@
 // Passives given by Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_CharacterPassives.lua
-// They're only given to Character entries that have "_Hero" in their "Using" tree,
-//   as per defined on Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_CharacterPassives_Model.lua
+// They're only given to Players using the RAW_CharIsHero function on Mods\RAW\ScriptExtender\Lua\RAW_Lib.lua
 
 // ----------------------------------------------------------
 // -------------------- Loading Crossbow --------------------

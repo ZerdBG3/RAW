@@ -4,6 +4,82 @@ data "DisplayName" "h07cedaa6g2c7bg4906ga832g28ebde232fa4;1"
 data "Description" "h34e14ad6gb0d5g4892ga3c9gdb7dce2c7b9a;1"
 data "Properties" "Highlighted"
 
+new entry "RAW_Attunement_Helmet"
+type "PassiveData"
+using "RAW_Attunement"
+
+new entry "RAW_Attunement_Breast"
+type "PassiveData"
+using "RAW_Attunement"
+
+new entry "RAW_Attunement_Cloak"
+type "PassiveData"
+using "RAW_Attunement"
+
+new entry "RAW_Attunement_Melee_Main_Weapon"
+type "PassiveData"
+using "RAW_Attunement"
+
+new entry "RAW_Attunement_Melee_Offhand_Weapon"
+type "PassiveData"
+using "RAW_Attunement"
+
+new entry "RAW_Attunement_Ranged_Main_Weapon"
+type "PassiveData"
+using "RAW_Attunement"
+
+new entry "RAW_Attunement_Ranged_Offhand_Weapon"
+type "PassiveData"
+using "RAW_Attunement"
+
+new entry "RAW_Attunement_Ring"
+type "PassiveData"
+using "RAW_Attunement"
+
+new entry "RAW_Attunement_Underwear"
+type "PassiveData"
+using "RAW_Attunement"
+
+new entry "RAW_Attunement_Boots"
+type "PassiveData"
+using "RAW_Attunement"
+
+new entry "RAW_Attunement_Gloves"
+type "PassiveData"
+using "RAW_Attunement"
+
+new entry "RAW_Attunement_Amulet"
+type "PassiveData"
+using "RAW_Attunement"
+
+new entry "RAW_Attunement_Ring2"
+type "PassiveData"
+using "RAW_Attunement"
+
+new entry "RAW_Attunement_Wings"
+type "PassiveData"
+using "RAW_Attunement"
+
+new entry "RAW_Attunement_Horns"
+type "PassiveData"
+using "RAW_Attunement"
+
+new entry "RAW_Attunement_Overhead"
+type "PassiveData"
+using "RAW_Attunement"
+
+new entry "RAW_Attunement_MusicalInstrument"
+type "PassiveData"
+using "RAW_Attunement"
+
+new entry "RAW_Attunement_VanityBody"
+type "PassiveData"
+using "RAW_Attunement"
+
+new entry "RAW_Attunement_VanityBoots"
+type "PassiveData"
+using "RAW_Attunement"
+
 new entry "RAW_ATTUNEMENT_COUNT_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"

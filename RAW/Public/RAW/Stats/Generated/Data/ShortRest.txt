@@ -2,8 +2,6 @@
 // -------------------- Short Rest --------------------
 // ----------------------------------------------------
 
-// Status removed when short resting are handled by Public\RAW\Scripts\Game\RAW_Statuses.gameScript
-
 new entry "ShortResting"
 type "PassiveData"
 data "Properties" "IsHidden"
@@ -46,6 +44,7 @@ using "Shout_ArcaneRecovery"
 data "Description" "hbeba3ad3g8801g4a4fg8d77g7507fa9bb7c6;1"
 data "UseCosts" "ArcaneRecoveryPoint:1"
 data "RequirementConditions" "HasStatus('RAW_SHORT_REST')"
+data "RequirementEvents" "OnStatusApplied;OnStatusRemoved"
 
 new entry "Shout_ArcaneRecovery_2"
 type "SpellData"
@@ -118,6 +117,7 @@ using "Shout_NaturalRecovery"
 data "Description" "h75e85388g3e7dg4e70g8101g612860c4a857;1"
 data "UseCosts" "NaturalRecoveryPoint:1"
 data "RequirementConditions" "HasStatus('RAW_SHORT_REST')"
+data "RequirementEvents" "OnStatusApplied;OnStatusRemoved"
 
 new entry "Shout_NaturalRecovery_2"
 type "SpellData"

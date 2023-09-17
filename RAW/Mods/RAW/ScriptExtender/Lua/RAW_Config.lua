@@ -89,7 +89,7 @@ local function RAW_ValidateModOptions(forceDependencies)
     end
 
     if ok then
-        RAW_PrintIfDebug("---- Mod Validation OK ----", RAW_PrintTable_ModOptions)
+        RAW_PrintIfDebug(CentralizedString("---- Mod Validation OK ----"), RAW_PrintTable_ModOptions)
     end
 end
 
