@@ -180,7 +180,7 @@ _Developed in partnership with [Eric](https://www.nexusmods.com/baldursgate3/mod
         - Protection from Poison
         - Warding Bond
 
-      - Infinite, but still ends with Short Rest (⚙️ `spells_bonusAction`)
+      - Infinite, but still ends with Short Rest (⚙️ `spells_duration`)
         - Disguise Self
 
     </p>
@@ -192,7 +192,7 @@ _Developed in partnership with [Eric](https://www.nexusmods.com/baldursgate3/mod
 * Some abilities are only available while short resting:
   - Wizard's Arcane Recovery
   - Druid's Natural Recovery (Circle of the Land)
-* Short Rest is considered an hour long downtime period, thus ending effects that last up to 1 hour (⚙️ `spells_bonusAction`)
+* Short Rest is considered an hour long downtime period, thus ending effects that last up to 1 hour (⚙️ `spells_duration`)
 
 ## Global changes
 * Changes Initiative Dice Roll from 1d4 to 1d20
@@ -209,7 +209,7 @@ _Developed in partnership with [Eric](https://www.nexusmods.com/baldursgate3/mod
 * Equipping a thrown weapon now provide specific spells that correctly calculate Range, Attack Roll, and Damage Roll, while also allowing for Two-Weapon Fighting (and correctly applying Sneak Attack). The range shown is the long range, but it will show the Disadvantage UI if you're attacking outside the short range
   - Throw Weapon (Main Hand): throws the weapon from your main hand using an action, using a melee weapon attack roll and deals the normal damage as if using a melee weapon attack. Can be used as part of your extra attack
   - Throw Weapon (Off Hand): available after attacking with your main hand weapon. Throws the weapon from your off hand using a bonus action, using a melee off hand weapon attack roll, dealing the normal damage as if using a melee off hand weapon attack (subtracts the ability modifier from the damage if the caster doesn't have Two Weapon Fighting Style)
-  - Throw Weapon (Main Hand) - Transition: available after throwing your main hand weapon. Throws the weapon from your main hand using a bonus action, behaving similarly to the Throw Off Hand. Because the game automatically switches weapon hands, this is to ensure you can still throw your off hand weapon using a bonus action
+  - Throw Weapon (Main Hand) - Transition: available after throwing your main hand weapon. Throws the weapon from your main hand using a bonus action, behaving similarly to the Throw Off Hand. Because the game automatically switches weapon hands, this is to ensure you can still throw your off hand weapon using a bonus action after it was automatically moved to your main hand
 * Due to the change to equip cost mentioned on [Global Changes](https://github.com/ZerdBG3/RAW/blob/main/Features.md#global-changes), you can always equip one weapon per turn for free, allowing you to equip one weapon as part of your throwing action
 
 ## Two-Weapon Fighting
