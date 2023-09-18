@@ -18,7 +18,6 @@ data "StackId" "RAW_SHORT_REST"
 data "StillAnimationType" "Sitting"
 data "StillAnimationPriority" "Sitting"
 data "Boosts" "ActionResourceBlock(Movement);ActionResourceBlock(ActionPoint);ActionResourceBlock(BonusActionPoint);UnlockSpell(RAW_Shout_EndShortRest)"
-data "OnApplyFunctors" "RemoveStatus(SG_Disguise);RemoveStatus(SG_Polymorph_BeastShape)"
 
 new entry "RAW_Shout_EndShortRest"
 type "SpellData"

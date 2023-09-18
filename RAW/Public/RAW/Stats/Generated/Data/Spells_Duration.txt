@@ -17,6 +17,7 @@ new entry "RAW_SHORT_REST_STATUS_REMOVAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "OnApplyFunctors" "RemoveStatus(SG_Disguise);RemoveStatus(SG_Polymorph_BeastShape)"
 
 // ------------------------------------------------------------
 // -------------------- 100 turns (10 min) --------------------
