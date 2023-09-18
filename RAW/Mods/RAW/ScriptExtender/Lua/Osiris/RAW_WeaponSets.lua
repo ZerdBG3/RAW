@@ -1,7 +1,7 @@
 local function RAW_RegisterWeaponSetEvent()
     Ext.Osiris.RegisterListener("Equipped", 2, "after",
         function(item, char)
-            if not Osi.IsPlayer(char) then
+            if not RAW_Bool(Osi.IsPlayer(char)) then
                 return
             end
 
