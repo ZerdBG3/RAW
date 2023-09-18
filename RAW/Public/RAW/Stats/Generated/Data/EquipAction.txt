@@ -18,8 +18,15 @@ data "Properties" "IsHidden"
 data "Boosts" "ActionResource(RAW_EquipWeaponPoint,1,0)"
 
 // Dual Wielder allows two weapon equips per turn instead of one
+// Changes the description on the existing one, but applies the modification on the custom one to avoid
+//   giving the Action Resource to NPCs
 new entry "DualWielder_PassiveBonuses"
 type "PassiveData"
 using "DualWielder_PassiveBonuses"
 data "Description" "h52822a0agd71bg4caega40dgc7017940b99b;1"
-data "Boosts" "DualWielding(true);ActionResource(RAW_EquipWeaponPoint,1,0)"
+
+// Given by Public\RAW\Feats\Feats.lsx
+new entry "RAW_DualWielder_FreeEquip"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "Boosts" "ActionResource(RAW_EquipWeaponPoint,1,0)"

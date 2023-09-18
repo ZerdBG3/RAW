@@ -9,6 +9,11 @@
                     <attribute id="PassivesAdded" type="LSString" value="ShieldMaster_PassiveBonuses;ShieldMaster_Block;RAW_ShieldMaster_Shove"/>
                     <attribute id="UUID" type="guid" value="3fe71254-d1b2-44c7-886c-927552fe5f2e"/>
                 </node>
+                <node id="Feat">
+                    <attribute id="Name" type="FixedString" value="DualWielder"/>
+                    <attribute id="PassivesAdded" type="LSString" value="DualWielder_BonusAC;DualWielder_PassiveBonuses;RAW_DualWielder_FreeEquip"/>
+                    <attribute id="UUID" type="guid" value="f692f7b5-ffd5-4942-91a1-a71ebb2f5e7c"/>
+                </node>
             </children>
         </node>
     </region>
