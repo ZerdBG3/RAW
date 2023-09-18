@@ -37,12 +37,12 @@ local function RAW_RegisterWeaponSetEvent()
 end
 
 function RAW_WeaponSets()
-    Ext.Utils.Print("\n======================================================================")
+    Ext.Utils.Print("\n====================================================================================================")
     Ext.Utils.Print(CentralizedString("Option: weaponSets"))
 
     if not IsModOptionEnabled("weaponSets") then
         Ext.Utils.Print(CentralizedString("Disabled!"))
-        Ext.Utils.Print("======================================================================\n")
+        Ext.Utils.Print("====================================================================================================\n")
         return
     end
 
@@ -51,5 +51,5 @@ function RAW_WeaponSets()
     RAW_RegisterWeaponSetEvent()
 
     Ext.Utils.Print("\n" .. CentralizedString("Finished the Weapon Set Restrictions"))
-    Ext.Utils.Print("======================================================================\n")
+    Ext.Utils.Print("====================================================================================================\n")
 end

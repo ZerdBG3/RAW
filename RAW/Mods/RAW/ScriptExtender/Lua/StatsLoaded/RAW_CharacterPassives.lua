@@ -15,7 +15,7 @@ end
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_CharacterPassives()
-    Ext.Utils.Print("\n======================================================================")
+    Ext.Utils.Print("\n====================================================================================================")
     Ext.Utils.Print(CentralizedString("Starting the addition of Character Passives"))
 
     for _, name in pairs(Ext.Stats.GetStats("Character")) do
@@ -26,7 +26,7 @@ function RAW_CharacterPassives()
     end
 
     Ext.Utils.Print("\n" .. CentralizedString("Finished the addition of Character Passives"))
-    Ext.Utils.Print("======================================================================\n")
+    Ext.Utils.Print("====================================================================================================\n")
 end
 
 ---------------------------------------- MODELS ----------------------------------------

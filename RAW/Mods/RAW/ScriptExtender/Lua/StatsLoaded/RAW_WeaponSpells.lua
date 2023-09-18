@@ -64,13 +64,13 @@ end
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_WeaponSpells()
-    Ext.Utils.Print("\n======================================================================")
+    Ext.Utils.Print("\n====================================================================================================")
     Ext.Utils.Print(CentralizedString("Option: weaponSpells"))
 
     if not IsModOptionEnabled("weaponSpells") then
         Ext.Utils.Print(CentralizedString("Disabled!"))
         Ext.Utils.Print(CentralizedString("Skipping the removal of Weapon Spells"))
-        Ext.Utils.Print("======================================================================\n")
+        Ext.Utils.Print("====================================================================================================\n")
         return
     end
 
@@ -87,7 +87,7 @@ function RAW_WeaponSpells()
     end
 
     Ext.Utils.Print("\n" .. CentralizedString("Finished the removal of Weapon Spells"))
-    Ext.Utils.Print("======================================================================\n")
+    Ext.Utils.Print("====================================================================================================\n")
 end
 
 ---------------------------------------- MODELS ----------------------------------------

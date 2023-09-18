@@ -91,7 +91,7 @@ function RAW_Set_Concat(set, sep)
 end
 
 function CentralizedString(text, width)
-    width = width or 70
+    width = width or 100
     local spaces = (width - string.len(text))//2
     return string.rep(" ", spaces) .. text
 end

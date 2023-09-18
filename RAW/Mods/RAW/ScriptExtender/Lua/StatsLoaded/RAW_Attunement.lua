@@ -35,13 +35,13 @@ end
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_Attunement()
-    Ext.Utils.Print("\n======================================================================")
+    Ext.Utils.Print("\n====================================================================================================")
     Ext.Utils.Print(CentralizedString("Option: attunement"))
 
     if not IsModOptionEnabled("attunement") then
         Ext.Utils.Print(CentralizedString("Disabled!"))
         Ext.Utils.Print(CentralizedString("Skipping the Attunement rules application"))
-        Ext.Utils.Print("======================================================================\n")
+        Ext.Utils.Print("====================================================================================================\n")
         return
     end
 
@@ -64,7 +64,7 @@ function RAW_Attunement()
     end
 
     Ext.Utils.Print("\n" .. CentralizedString("Finished the Attunement rules application"))
-    Ext.Utils.Print("======================================================================\n")
+    Ext.Utils.Print("====================================================================================================\n")
 end
 
 ---------------------------------------- MODELS ----------------------------------------

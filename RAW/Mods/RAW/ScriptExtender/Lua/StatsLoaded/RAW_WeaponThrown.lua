@@ -29,13 +29,13 @@ end
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_WeaponThrown()
-    RAW_PrintIfDebug(("\n======================================================================"), RAW_PrintTable_WeaponThrown)
+    RAW_PrintIfDebug(("\n===================================================================================================="), RAW_PrintTable_WeaponThrown)
     RAW_PrintIfDebug((CentralizedString("Option: throw")), RAW_PrintTable_WeaponThrown)
 
     if not IsModOptionEnabled("throw") then
         RAW_PrintIfDebug((CentralizedString("Disabled!")), RAW_PrintTable_WeaponThrown)
         RAW_PrintIfDebug((CentralizedString("Skipping the addition of Throw Weapon Spells")), RAW_PrintTable_WeaponThrown)
-        RAW_PrintIfDebug(("======================================================================\n"), RAW_PrintTable_WeaponThrown)
+        RAW_PrintIfDebug(("====================================================================================================\n"), RAW_PrintTable_WeaponThrown)
         return
     end
 
@@ -50,7 +50,7 @@ function RAW_WeaponThrown()
     end
 
     RAW_PrintIfDebug(("\n" .. CentralizedString("Finished the addition of Weapon Throw Spells")), RAW_PrintTable_WeaponThrown)
-    RAW_PrintIfDebug(("======================================================================\n"), RAW_PrintTable_WeaponThrown)
+    RAW_PrintIfDebug(("====================================================================================================\n"), RAW_PrintTable_WeaponThrown)
 end
 
 ---------------------------------------- MODELS ----------------------------------------

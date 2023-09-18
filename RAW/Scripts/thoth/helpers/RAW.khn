@@ -54,6 +54,16 @@ function RAW_NotBonusActionSpellCheck()
     return IsSpell() & ~IsCantrip() & ~HasUseCosts('BonusActionPoint')
 end
 
+function RAW_IsMeleeMainHandWeaponAttack()
+    result = context.HitDescription.AttackType == AttackType.MeleeWeaponAttack
+    return ConditionResult(result)
+end
+
+function RAW_IsRangedMainHandWeaponAttack()
+    result = context.HitDescription.AttackType == AttackType.RangedWeaponAttack
+    return ConditionResult(result)
+end
+
 function RAW_FightingStyle_TwoWeapons_Ranged(entity)
 	-- Default to Target, like cpp functions
     entity = entity or context.Target

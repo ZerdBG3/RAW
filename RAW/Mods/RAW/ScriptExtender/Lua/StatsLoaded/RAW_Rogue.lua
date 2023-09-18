@@ -3,13 +3,13 @@ local ENUM_RAW_RogueResources
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_Rogue()
-    Ext.Utils.Print("\n======================================================================")
+    Ext.Utils.Print("\n====================================================================================================")
     Ext.Utils.Print(CentralizedString("Option: rogue"))
 
     if not IsModOptionEnabled("rogue") then
         Ext.Utils.Print(CentralizedString("Disabled!"))
         Ext.Utils.Print(CentralizedString("Skipping the Rogue Changes"))
-        Ext.Utils.Print("======================================================================\n")
+        Ext.Utils.Print("====================================================================================================\n")
         return
     end
 
@@ -19,7 +19,7 @@ function RAW_Rogue()
     RAW_ApplyStaticData(ENUM_RAW_RogueResources, RAW_PrintTable_Rogue)
 
     Ext.Utils.Print("\n" .. CentralizedString("Finished the Rogue Changes"))
-    Ext.Utils.Print("======================================================================\n")
+    Ext.Utils.Print("====================================================================================================\n")
 end
 
 ---------------------------------------- MODELS ----------------------------------------

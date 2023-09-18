@@ -149,21 +149,23 @@ data "SpellRoll" "not SavingThrow(Ability.Dexterity, SourceSpellDC(10,GetSummone
 // -------------------- Guardian of Faith --------------------
 // -----------------------------------------------------------
 
-// Accompanied by changes to the Root Template 
+// Accompanied by new Root Templates
 // Removes GuardianOfFaith_Retaliate and its Action Resources
-new entry "GuardianOfFaith"
+new entry "RAW_GuardianOfFaith"
 type "Character"
 using "GuardianOfFaith"
 data "Armor" "98"
 data "ActionResources" ""
 data "Passives" "GuardianOfFaith_Attack;ImmuneToDisarm;Ethereal;RAW_IndestructibleSummon_AI_Ignore_GuardianOfFaith"
 
+// Summons the new root templates. Also gives the option for the summon to Dispell Self
 new entry "Target_GuardianOfFaith"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_GuardianOfFaith"
-data "SpellProperties" "GROUND:IF(Tagged('ALIGN_GOOD',context.Source)):Summon(4c90b3c1-55dd-4b7e-b08f-8d7cc15f8d41,Permanent,Projectile_AiHelper_Summon_Strong,,'GuardianOfFaithStack',GUARDIAN_OF_FAITH_AURA,UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK);GROUND:IF(not Tagged('ALIGN_GOOD',context.Source) and not Tagged('ALIGN_EVIL',context.Source)):Summon(d243badc-a763-4d9e-8037-2da9c3e39d5e,Permanent,Projectile_AiHelper_Summon_Strong,,'GuardianOfFaithStack',GUARDIAN_OF_FAITH_AURA,UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK);GROUND:IF(Tagged('ALIGN_EVIL',context.Source)):Summon(fb497660-2eb3-4757-bf6d-b8815b577e7e,Permanent,Projectile_AiHelper_Summon_Strong,,'GuardianOfFaithStack',GUARDIAN_OF_FAITH_AURA,UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
+data "SpellProperties" "GROUND:IF(Tagged('ALIGN_GOOD',context.Source)):Summon(f1b7cb05-dd6a-412a-92c8-3d9adba3c033,Permanent,Projectile_AiHelper_Summon_Strong,,'GuardianOfFaithStack',GUARDIAN_OF_FAITH_AURA,UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK);GROUND:IF(not Tagged('ALIGN_GOOD',context.Source) and not Tagged('ALIGN_EVIL',context.Source)):Summon(62f00b71-b6a3-447f-9c8d-61520b0bb887,Permanent,Projectile_AiHelper_Summon_Strong,,'GuardianOfFaithStack',GUARDIAN_OF_FAITH_AURA,UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK);GROUND:IF(Tagged('ALIGN_EVIL',context.Source)):Summon(8c087630-ffcf-41d1-bf37-ace2b009529a,Permanent,Projectile_AiHelper_Summon_Strong,,'GuardianOfFaithStack',GUARDIAN_OF_FAITH_AURA,UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
 
+// No longer "loses control" of summon - Allows to cast Dispell Self
 new entry "GUARDIAN_OF_FAITH_AURA"
 type "StatusData"
 data "StatusType" "BOOST"

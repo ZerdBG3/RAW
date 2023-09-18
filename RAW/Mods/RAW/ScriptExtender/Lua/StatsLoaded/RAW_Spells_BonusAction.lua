@@ -11,13 +11,13 @@ end
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_Spells_BonusAction()
-    Ext.Utils.Print("\n======================================================================")
+    Ext.Utils.Print("\n====================================================================================================")
     Ext.Utils.Print(CentralizedString("Option: spells_bonusAction"))
 
     if not IsModOptionEnabled("spells_bonusAction") then
         Ext.Utils.Print(CentralizedString("Disabled!"))
         Ext.Utils.Print(CentralizedString("Skipping the application of Bonus Action Spell Rules"))
-        Ext.Utils.Print("======================================================================\n")
+        Ext.Utils.Print("====================================================================================================\n")
         return
     end
 
@@ -35,7 +35,7 @@ function RAW_Spells_BonusAction()
     end
 
     Ext.Utils.Print("\n" .. CentralizedString("Finished the application of Bonus Action Spell Rules"))
-    Ext.Utils.Print("======================================================================\n")
+    Ext.Utils.Print("====================================================================================================\n")
 end
 
 ---------------------------------------- MODELS ----------------------------------------
