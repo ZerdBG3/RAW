@@ -113,7 +113,7 @@ _Developed in partnership with [Eric](https://www.nexusmods.com/baldursgate3/mod
   - Raven now has the Flyby passive, so it doesn't receive AoOs - Since Owl isn't an option in Vanilla, I decided to make Raven the go-to pick for Arcane Tricksters
 * Fireball radius increased from 4 to 6 meters
 * Flaming Sphere is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to
-* Guardian of Faith no longer attacks enemies in retaliation and no longer participate on the turn order (attacking enemies on its turn). Now, it only attacks creatures entering its attack range. It is also invulnerable (except to its own damage), ignored by the AI and has no hitbox.
+* Guardian of Faith no longer attacks enemies in retaliation and no longer can attack enemies during its turn. Now, it only attacks creatures entering its attack range. It is also invulnerable (except to its own damage), ignored by the AI and has no hitbox.
 * Hail of Thorns converted to a concentration self-buff spell that applies the effect on the next ranged attack
 * Haste extra action can only be used for attacking (one attack only - no Extra Attack), Dash, Disengage or Hide
 * Ice Knife no longer interacts with surfaces
