@@ -163,7 +163,7 @@ new entry "Target_GuardianOfFaith"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_GuardianOfFaith"
-data "SpellProperties" "GROUND:IF(Tagged('ALIGN_GOOD',context.Source)):Summon(f1b7cb05-dd6a-412a-92c8-3d9adba3c033,Permanent,Projectile_AiHelper_Summon_Strong,,'GuardianOfFaithStack',GUARDIAN_OF_FAITH_AURA,UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK);GROUND:IF(not Tagged('ALIGN_GOOD',context.Source) and not Tagged('ALIGN_EVIL',context.Source)):Summon(62f00b71-b6a3-447f-9c8d-61520b0bb887,Permanent,Projectile_AiHelper_Summon_Strong,,'GuardianOfFaithStack',GUARDIAN_OF_FAITH_AURA,UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK);GROUND:IF(Tagged('ALIGN_EVIL',context.Source)):Summon(8c087630-ffcf-41d1-bf37-ace2b009529a,Permanent,Projectile_AiHelper_Summon_Strong,,'GuardianOfFaithStack',GUARDIAN_OF_FAITH_AURA,UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
+data "SpellProperties" "GROUND:IF(Tagged('ALIGN_GOOD',context.Source)):Summon(f1b7cb05-dd6a-412a-92c8-3d9adba3c033,-1,Projectile_AiHelper_Summon_Strong,,'GuardianOfFaithStack',GUARDIAN_OF_FAITH_AURA,UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK);GROUND:IF(not Tagged('ALIGN_GOOD',context.Source) and not Tagged('ALIGN_EVIL',context.Source)):Summon(62f00b71-b6a3-447f-9c8d-61520b0bb887,-1,Projectile_AiHelper_Summon_Strong,,'GuardianOfFaithStack',GUARDIAN_OF_FAITH_AURA,UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK);GROUND:IF(Tagged('ALIGN_EVIL',context.Source)):Summon(8c087630-ffcf-41d1-bf37-ace2b009529a,-1,Projectile_AiHelper_Summon_Strong,,'GuardianOfFaithStack',GUARDIAN_OF_FAITH_AURA,UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
 
 // No longer "loses control" of summon - Allows to cast Dispell Self
 new entry "GUARDIAN_OF_FAITH_AURA"
