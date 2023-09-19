@@ -82,19 +82,19 @@ local function RAW_ValidateModOptions(forceDependencies)
     end
     if next(conflictsDetected) ~= nil then
         ok = false
-        RAW_PrintIfDebug("\n======================================================================", RAW_PrintTable_ModOptions, RAW_PrintTypeError)
+        RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_ModOptions, RAW_PrintTypeError)
         RAW_PrintIfDebug(CentralizedString("Conflicting options: " .. RAW_Set_Concat(conflictsDetected, ",")), RAW_PrintTable_ModOptions, RAW_PrintTypeError)
-        RAW_PrintIfDebug("======================================================================\n", RAW_PrintTable_ModOptions, RAW_PrintTypeError)
+        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_ModOptions, RAW_PrintTypeError)
         -- Ext.Utils.ShowErrorAndExitGame("Zerd's RAW\nYour Mod Options had conflicting options:\n" .. RAW_Set_Concat(conflictsDetected, ","))
     end
 
     if ok then
-        RAW_PrintIfDebug("---- Mod Validation OK ----", RAW_PrintTable_ModOptions)
+        RAW_PrintIfDebug(CentralizedString("---- Mod Validation OK ----"), RAW_PrintTable_ModOptions)
     end
 end
 
 function RAW_LoadModOptions()
-    RAW_PrintIfDebug("\n======================================================================", RAW_PrintTable_ModOptions)
+    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_ModOptions)
     RAW_PrintIfDebug(CentralizedString("[RAW:Config.lua] Mod Options") .. "\n", RAW_PrintTable_ModOptions)
 
     RAW_LoadUserOptions()
@@ -148,7 +148,7 @@ function RAW_LoadModOptions()
 
     RAW_ValidateModOptions(true)
 
-    RAW_PrintIfDebug("======================================================================\n", RAW_PrintTable_ModOptions)
+    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_ModOptions)
 end
 
 function IsModOptionEnabled(modOption)

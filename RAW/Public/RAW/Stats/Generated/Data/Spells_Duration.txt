@@ -5,6 +5,20 @@ data "StackId" "RAW_CONCENTRATION_HELPER"
 data "OnRemoveFunctors" "BreakConcentration()"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 
+// Passive given by Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_Spells_Duration.lua
+new entry "RAW_RemoveStatusesOnShortRest"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctors" "ApplyStatus(SELF,RAW_SHORT_REST_STATUS_REMOVAL,100,0)"
+data "StatsFunctorContext" "OnShortRest"
+
+// Status removed when short resting are handled by Public\RAW\Scripts\Game\RAW_Statuses.gameScript
+new entry "RAW_SHORT_REST_STATUS_REMOVAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "OnApplyFunctors" "RemoveStatus(SG_Disguise);RemoveStatus(SG_Polymorph_BeastShape)"
+
 // ------------------------------------------------------------
 // -------------------- 100 turns (10 min) --------------------
 // ------------------------------------------------------------

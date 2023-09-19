@@ -11,13 +11,13 @@ end
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_Spells_BonusAction()
-    Ext.Utils.Print("\n======================================================================")
+    Ext.Utils.Print("\n====================================================================================================")
     Ext.Utils.Print(CentralizedString("Option: spells_bonusAction"))
 
     if not IsModOptionEnabled("spells_bonusAction") then
         Ext.Utils.Print(CentralizedString("Disabled!"))
         Ext.Utils.Print(CentralizedString("Skipping the application of Bonus Action Spell Rules"))
-        Ext.Utils.Print("======================================================================\n")
+        Ext.Utils.Print("====================================================================================================\n")
         return
     end
 
@@ -28,14 +28,14 @@ function RAW_Spells_BonusAction()
         local char = Ext.Stats.Get(name)
 
         -- Temporarily giving the passives just to players
-        if StatHasParent(char, "_Hero") then
+        if RAW_CharIsHero(char) then
             RAW_PrintIfDebug("\nCharacter: " .. name, RAW_PrintTable_Spells_BonusAction)
             RAW_AddCharacterBonusActionSpellPassives(char)
         end
     end
 
     Ext.Utils.Print("\n" .. CentralizedString("Finished the application of Bonus Action Spell Rules"))
-    Ext.Utils.Print("======================================================================\n")
+    Ext.Utils.Print("====================================================================================================\n")
 end
 
 ---------------------------------------- MODELS ----------------------------------------

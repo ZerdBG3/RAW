@@ -14,14 +14,19 @@ function RAW_HasValueInList(list, value)
 end
 
 -- Checks if the stat has the parent in its using tree
-function StatHasParent(stat, parentName)
+function RAW_StatHasParent(stat, parentName)
     if stat.Name == parentName then
         return true
     end
     if stat.Using ~= nil and stat.Using ~= "" then
-        return StatHasParent(Ext.Stats.Get(stat.Using), parentName)
+        return RAW_StatHasParent(Ext.Stats.Get(stat.Using), parentName)
     end
     return false
+end
+
+-- Checks if the character stat object is _Hero or inherits it
+function RAW_CharIsHero(char)
+    return char ~= nil and string.find(char.Passives, "WeaponThrow") and string.find(char.Passives, "CombatStartAttack")
 end
 
 -- Static Data helpers
@@ -86,7 +91,7 @@ function RAW_Set_Concat(set, sep)
 end
 
 function CentralizedString(text, width)
-    width = width or 70
+    width = width or 100
     local spaces = (width - string.len(text))//2
     return string.rep(" ", spaces) .. text
 end
@@ -99,6 +104,27 @@ function RAW_IsIntegerBetween(v, min, max)
     return RAW_IsInteger(v) and v >= min and v <= max
 end
 
+-- Converts a string or number to a boolean
+function RAW_Bool(v)
+    if type(v) == "boolean" then
+        return v
+    end
+    if type(v) == "string" then
+        if v == "false" or v == "No" then
+            return false
+        end
+        return true
+
+    elseif type(v) == "number" then
+        if v == 0 or v ~= v then
+            return false
+        end
+        return true
+    end
+
+    return false
+end
+
 -- Print only if the value is set (not commented) on the table
 RAW_PrintTable_ModOptions = 0
 RAW_PrintTable_Attunement = 1
@@ -106,8 +132,9 @@ RAW_PrintTable_CharacterPassives = 2
 RAW_PrintTable_Rogue = 3
 RAW_PrintTable_Rogue_Thief = 4
 RAW_PrintTable_Spells_BonusAction = 5
-RAW_PrintTable_WeaponSpells = 6
-RAW_PrintTable_WeaponThrown = 7
+RAW_PrintTable_Spells_Duration = 6
+RAW_PrintTable_WeaponSpells = 7
+RAW_PrintTable_WeaponThrown = 8
 
 local ENUM_RAW_PrintTable = RAW_Set {
     RAW_PrintTable_ModOptions,
@@ -116,6 +143,7 @@ local ENUM_RAW_PrintTable = RAW_Set {
     -- RAW_PrintTable_Rogue,
     -- RAW_PrintTable_Rogue_Thief,
     -- RAW_PrintTable_Spells_BonusAction,
+    -- RAW_PrintTable_Spells_Duration,
     -- RAW_PrintTable_WeaponSpells,
     -- RAW_PrintTable_WeaponThrown,
 }

@@ -7,6 +7,12 @@
         "spells_bonusAction": {
             "enabled": true
         },
+        "spells_duration": {
+            "enabled": true
+        },
+        "weaponSets": {
+            "enabled": true
+        },
         "weaponSpells": {
             "enabled": true
         }

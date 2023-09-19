@@ -1,17 +1,54 @@
+// -----------------------------------------------
+// -------------------- Utils --------------------
+// -----------------------------------------------
+
+// Passive given to all characters by Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_CharacterPassives.lua
+new entry "RAW_OffHand_Enabler"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnAttack"
+data "Conditions" "RAW_IsMeleeMainHandWeaponAttack() and FightingStyle_TwoWeapons(context.Source) or RAW_IsRangedMainHandWeaponAttack() and RAW_FightingStyle_TwoWeapons_Ranged(context.Source)"
+data "StatsFunctors" "ApplyStatus(SELF,RAW_OFFHAND_HELPER,100,1)"
+
 new entry "RAW_OFFHAND_HELPER"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StackId" "RAW_OFFHAND_HELPER"
-data "OnApplyFunctors" "ApplyStatus(RAW_DUMMY,100,0)"
-data "OnRemoveFunctors" "ApplyStatus(RAW_DUMMY,100,0)"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 data "TickType" "StartTurn"
+data "RemoveEvents" "OnAttack"
+data "RemoveConditions" "IsOffHandAttack()"
+
+// ---------------------------------------------------------
+// -------------------- Offhand Attacks --------------------
+// ---------------------------------------------------------
+
+new entry "Target_OffhandAttack"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_OffhandAttack"
+data "RequirementConditions" "not Tagged('AI_BLOCKOFFHANDATTACK') and (HasStatus('RAW_OFFHAND_HELPER') or not Combat())"
+data "RequirementEvents" "OnStatusApplied;OnStatusRemoved;OnTurn;OnCombatEnded"
+
+new entry "Projectile_OffhandAttack"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Projectile_OffhandAttack"
+data "RequirementConditions" "not Tagged('AI_BLOCKOFFHANDATTACK') and (HasStatus('RAW_OFFHAND_HELPER') or not Combat())"
+data "RequirementEvents" "OnStatusApplied;OnStatusRemoved;OnTurn;OnCombatEnded"
+
+// ------------------------------------------------------
+// -------------------- Cast Offhand --------------------
+// ------------------------------------------------------
+
+// Removes CastOffhand, AlternativeCastTextEvents, DualWieldingUseCosts, and CanDualWield, from all spells
+// Target_RecklessAttack is on Public\RAW\Stats\Generated\Data\Barbarian.txt
 
 new entry "Target_MainHandAttack"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_MainHandAttack"
-data "SpellProperties" "GROUND:DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(MainHand);IF(not Player(context.Source)):ApplyStatus(SELF,AI_HELPER_EXTRAATTACK,100,1);IF(FightingStyle_TwoWeapons(context.Source)):ApplyStatus(SELF,RAW_OFFHAND_HELPER,100,1)"
+data "SpellProperties" "GROUND:DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(MainHand);IF(not Player(context.Source)):ApplyStatus(SELF,AI_HELPER_EXTRAATTACK,100,1)"
 data "SpellRoll" "Attack(AttackType.MeleeWeaponAttack)"
 data "SpellSuccess" "DealDamage(max(1,MainMeleeWeapon), MainMeleeWeaponDamageType);ExecuteWeaponFunctors(MainHand)"
 data "AlternativeCastTextEvents" ""
@@ -24,11 +61,11 @@ data "SpellType" "Target"
 using "Target_GreatWeaponMaster_BonusAttack"
 data "SpellProperties" "RemoveStatus(SELF,GREAT_WEAPON_MASTER_BONUS_ATTACK);GROUND:DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(MainHand);IF(not Player(context.Source)):ApplyStatus(SELF,AI_HELPER_EXTRAATTACK,100,1)"
 
-new entry "Target_OffhandAttack"
+new entry "Target_Topple"
 type "SpellData"
 data "SpellType" "Target"
-using "Target_OffhandAttack"
-data "RequirementConditions" "not Tagged('AI_BLOCKOFFHANDATTACK') and (HasStatus('RAW_OFFHAND_HELPER') or not Combat())"
+using "Target_Topple"
+data "SpellRoll" "Attack(AttackType.MeleeWeaponAttack)"
 
 new entry "Target_ExtraAttack"
 type "SpellData"
@@ -36,19 +73,55 @@ data "SpellType" "Target"
 using "Target_ExtraAttack"
 data "SpellProperties" "GROUND:DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(MainHand);"
 
+new entry "Target_DivineStrike_Melee_Life"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_DivineStrike_Melee_Life"
+data "SpellProperties" "GROUND:DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(MainHand);IF(not Player(context.Source)):ApplyStatus(SELF,AI_HELPER_EXTRAATTACK,100,1);ApplyStatus(SELF,DIVINE_STRIKE_TECHNICAL,100,1)"
+
+new entry "Target_PolearmMaster_BonusAttack"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_PolearmMaster_BonusAttack"
+data "SpellProperties" "RemoveStatus(SELF, POLEARM_MASTER_BONUS_ATTACK);GROUND:DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(MainHand);IF(not Player(context.Source)):ApplyStatus(SELF,AI_HELPER_EXTRAATTACK,100,1)"
+
+new entry "Target_HAV_TakingIsobel_MHA_Override_Marcus"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_HAV_TakingIsobel_MHA_Override_Marcus"
+data "SpellSuccess" "IF(not Tagged('ACT2_HAV_ISOBEL',context.Target)):DealDamage(max(1,MainMeleeWeapon), MainMeleeWeaponDamageType);IF(Tagged('ACT2_HAV_ISOBEL',context.Target)):DealDamage(max(1,MainMeleeWeapon), MainMeleeWeaponDamageType,,Nonlethal);ExecuteWeaponFunctors(MainHand);AI_ONLY:IF(Tagged('ACT2_HAV_ISOBEL',context.Target)):ApplyStatus(SELF,AI_HELPER_BUFF_LARGE,100,4)"
+
+new entry "Target_MAG_Critical_Critical_Combo"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_MAG_Critical_Critical_Combo"
+data "SpellProperties" "RemoveStatus(SELF, MAG_CRITICAL_DONE_CRITICAL);GROUND:DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(MainHand);IF(not Player(context.Source)):ApplyStatus(SELF,AI_HELPER_EXTRAATTACK,100,1)"
+
+new entry "Target_LightningBlade"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_LightningBlade"
+data "SpellProperties" "GROUND:SurfaceChange(Electrify);GROUND:DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(MainHand);IF(not Player(context.Source)):ApplyStatus(SELF,AI_HELPER_EXTRAATTACK,100,1);"
+
+new entry "Target_LOW_UnholyAssassin_SneakAttack"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_LOW_UnholyAssassin_SneakAttack"
+data "SpellProperties" "GROUND:DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(MainHand);IF(not Player(context.Source)):ApplyStatus(SELF,AI_HELPER_EXTRAATTACK,100,1);AI_ONLY:IF(HasStatus('HOLD_PERSON')):DealDamage(5d6,Piercing)"
+
 new entry "Projectile_MainHandAttack"
 type "SpellData"
 data "SpellType" "Projectile"
 using "Projectile_MainHandAttack"
-data "SpellProperties" "GROUND:DealDamage(MainRangedWeapon, MainRangedWeaponDamageType);GROUND:ExecuteWeaponFunctors(MainHand);IF(not Player(context.Source)):ApplyStatus(SELF,AI_HELPER_EXTRAATTACK,100,1);IF(WieldingWeapon('Ammunition', false, false, context.Source) and not WieldingWeapon('Twohanded', false, false, context.Source) and (WieldingWeapon('Melee', true, false, context.Source) or WieldingWeapon('Ammunition', true, false, context.Source))):ApplyStatus(SELF,RAW_OFFHAND_HELPER,100,1)"
+data "SpellProperties" "GROUND:DealDamage(MainRangedWeapon, MainRangedWeaponDamageType);GROUND:ExecuteWeaponFunctors(MainHand);IF(not Player(context.Source)):ApplyStatus(SELF,AI_HELPER_EXTRAATTACK,100,1)"
 data "SpellRoll" "Attack(AttackType.RangedWeaponAttack)"
 data "SpellSuccess" "DealDamage(max(1,MainRangedWeapon), MainRangedWeaponDamageType); ExecuteWeaponFunctors(MainHand);"
 data "AlternativeCastTextEvents" ""
 data "DualWieldingUseCosts" ""
 data "SpellFlags" "IsAttack;HasHighGroundRangeExtension;RangeIgnoreVerticalThreshold;IsHarmful"
 
-new entry "Projectile_OffhandAttack"
+new entry "Projectile_MAG_Victory_Longbow_RoaringShot"
 type "SpellData"
 data "SpellType" "Projectile"
-using "Projectile_OffhandAttack"
-data "RequirementConditions" "not Tagged('AI_BLOCKOFFHANDATTACK') and (HasStatus('RAW_OFFHAND_HELPER') or not Combat())"
+using "Projectile_MAG_Victory_Longbow_RoaringShot"
+data "SpellProperties" "ApplyEquipmentStatus(SELF, RangedMainHand, MAG_RADIANT_RADIANCE_WEAPON,100,10);GROUND:DealDamage(MainRangedWeapon, MainRangedWeaponDamageType);GROUND:ExecuteWeaponFunctors(MainHand);IF(not Player(context.Source)):ApplyStatus(SELF,AI_HELPER_EXTRAATTACK,100,1);"

@@ -11,15 +11,15 @@ data "Boosts" "IF(SpellTypeIs(SpellType.Throw) and (SpellId('RAW_Throw_Javelin')
 data "StatsFunctorContext" "OnAttack"
 
 // No longer deals weapon damage when throwing a weapon; there are specific spells for that
-// No longer can throw live characters
+// No longer can throw living characters
 new entry "Throw_Throw"
 type "SpellData"
 data "SpellType" "Throw"
 using "Throw_Throw"
-data "SpellSuccess" "TARGET:IF(IsLightThrownObject(context.HitDescription.ThrownObject, false)):DealDamage(1,Bludgeoning);TARGET:IF(IsMediumThrownObject(context.HitDescription.ThrownObject, false)):DealDamage(1d4,Bludgeoning);TARGET:IF(IsHeavyThrownObject(context.HitDescription.ThrownObject, false)):DealDamage(2d4,Bludgeoning);TARGET:IF(HasWeaponProperty(WeaponProperties.Thrown,context.HitDescription.ThrownObject)):DealDamage(1d4,Bludgeoning);TARGET:IF(HasWeightGreaterThan(context.Target.Weight/2, context.HitDescription.ThrownObject)):Force(2);TARGET:IF(HasWeightGreaterThan(context.Target.Weight, context.HitDescription.ThrownObject)):ApplyStatus(PRONE,100,1);TARGET:IF(Tagged('BOO',context.HitDescription.ThrownObject)):ApplyStatus(BLINDED,100,1,,,,not SavingThrow(Ability.Dexterity, 15));TARGET:IF(Tagged('DWARF', context.Source) and HasStatus('MAG_DWARVEN_THROWER_TECHNICAL', context.HitDescription.ThrownObject) and not SizeEqualOrGreater(Size.Large)):DealDamage(1d8, Bludgeoning);TARGET:IF(Tagged('DWARF', context.Source) and HasStatus('MAG_DWARVEN_THROWER_TECHNICAL', context.HitDescription.ThrownObject) and SizeEqualOrGreater(Size.Large)):DealDamage(2d8, Bludgeoning);"
+data "SpellSuccess" "TARGET:IF(IsLightThrownObject(context.HitDescription.ThrownObject, false)):DealDamage(1d4,Bludgeoning);TARGET:IF(IsMediumThrownObject(context.HitDescription.ThrownObject, false)):DealDamage(1d4,Bludgeoning);TARGET:IF(IsHeavyThrownObject(context.HitDescription.ThrownObject, false)):DealDamage(2d4,Bludgeoning);TARGET:IF(HasWeaponProperty(WeaponProperties.Thrown,context.HitDescription.ThrownObject)):DealDamage(1d4,Bludgeoning);TARGET:IF(HasWeightGreaterThan(context.Target.Weight/2, context.HitDescription.ThrownObject)):Force(2);TARGET:IF(HasWeightGreaterThan(context.Target.Weight, context.HitDescription.ThrownObject)):ApplyStatus(PRONE,100,1);TARGET:IF(Tagged('BOO',context.HitDescription.ThrownObject)):ApplyStatus(BLINDED,100,1,,,,not SavingThrow(Ability.Dexterity, 15));TARGET:IF(Tagged('DWARF', context.Source) and HasStatus('MAG_DWARVEN_THROWER_TECHNICAL', context.HitDescription.ThrownObject) and not SizeEqualOrGreater(Size.Large)):DealDamage(1d8, Bludgeoning);TARGET:IF(Tagged('DWARF', context.Source) and HasStatus('MAG_DWARVEN_THROWER_TECHNICAL', context.HitDescription.ThrownObject) and SizeEqualOrGreater(Size.Large)):DealDamage(2d8, Bludgeoning);"
 data "ThrowableSpellRoll" ""
 data "ThrowableSpellSuccess" ""
-data "ThrowableTargetConditions" "not Character() and CanThrowWeight() and not Grounded() and not IsItemDisabled() and not HasAttribute('InventoryBound') and (IsMovable() or Dead()) and CanMove(context.Target, context.Source, false) and (not IsEquipped() or IsEquipmentSlot(EquipmentSlot.MeleeMainHand) or IsEquipmentSlot(EquipmentSlot.MeleeOffHand)) and not Tagged('CANT_SHOVE_THROW')"
+data "ThrowableTargetConditions" "not Character() and CanThrowWeight() and not Grounded() and not IsItemDisabled() and not HasAttribute('InventoryBound') and (IsMovable() or Dead()) and CanMove(context.Target, context.Source, false) and (not IsEquipped() or IsEquipmentSlot(EquipmentSlot.MeleeMainHand) or IsEquipmentSlot(EquipmentSlot.MeleeOffHand) or IsEquipmentSlot(EquipmentSlot.RangedMainHand) or IsEquipmentSlot(EquipmentSlot.RangedOffHand)) and not Tagged('CANT_SHOVE_THROW')"
 data "DisplayName" "h42ce0a1eg03e9g492dg9457g553a25b8a68c;1"
 data "Description" "h7c08af75gd6d2g4535g8e96g88ddffc3f0ce;1"
 data "ExtraDescription" "hf080f971g5582g46d8g8938gdb8c8b560d42;1"
@@ -28,13 +28,13 @@ data "ExtraDescription" "hf080f971g5582g46d8g8938gdb8c8b560d42;1"
 // -------------------- Improvised Weapon --------------------
 // -----------------------------------------------------------
 
-// No longer can pick up live characters
+// No longer can pick up living characters
 new entry "Throw_ImprovisedWeapon"
 type "SpellData"
 data "SpellType" "Throw"
 using "Throw_ImprovisedWeapon"
 data "SpellSuccess" "TARGET:IF(IsLightThrownObject(context.HitDescription.ThrownObject, false)):DealDamage(1d4,Bludgeoning);TARGET:IF(IsMediumThrownObject(context.HitDescription.ThrownObject, false)):DealDamage(2d4,Bludgeoning);TARGET:IF(IsHeavyThrownObject(context.HitDescription.ThrownObject, false)):DealDamage(2d4,Bludgeoning);TARGET:IF(HasWeaponProperty(WeaponProperties.Thrown,context.HitDescription.ThrownObject)):DealDamage(1d4, Bludgeoning);TARGET:IF(HasWeightGreaterThan(context.Target.Weight/2, context.HitDescription.ThrownObject)):Force(2);TARGET:IF(HasWeightGreaterThan(context.Target.Weight, context.HitDescription.ThrownObject)):ApplyStatus(PRONE,100,1)"
-data "ThrowableTargetConditions" "not Character() and IsImprovisedWeapon() and CanImprovisedWeaponWeight() and not Grounded() and not IsItemDisabled() and not HasAttribute('InventoryBound') and (IsMovable() or Dead()) and CanMove(context.Target, context.Source, false) and (not IsEquipped() or IsEquipmentSlot(EquipmentSlot.MeleeMainHand) or IsEquipmentSlot(EquipmentSlot.MeleeOffHand)) and not Tagged('CANT_SHOVE_THROW')"
+data "ThrowableTargetConditions" "not Character() and IsImprovisedWeapon() and CanImprovisedWeaponWeight() and not Grounded() and not IsItemDisabled() and not HasAttribute('InventoryBound') and (IsMovable() or Dead()) and CanMove(context.Target, context.Source, false) and (not IsEquipped() or IsEquipmentSlot(EquipmentSlot.MeleeMainHand) or IsEquipmentSlot(EquipmentSlot.MeleeOffHand) or IsEquipmentSlot(EquipmentSlot.RangedMainHand) or IsEquipmentSlot(EquipmentSlot.RangedOffHand)) and not Tagged('CANT_SHOVE_THROW')"
 data "Description" "h73c67cf6g5850g4e17gbbc6gabb0186cfd4d;1"
 
 // ------------------------------------------------------
@@ -42,13 +42,13 @@ data "Description" "h73c67cf6g5850g4e17gbbc6gabb0186cfd4d;1"
 // ------------------------------------------------------
 
 // Spells added by Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_WeaponThrown.lua
-// Depends on OffHand rule changes
+// Depends on OffHand rule changes on Public\RAW\Stats\Generated\Data\TwoWeaponFighting.txt
 
 new entry "RAW_Throw_Weapon"
 type "SpellData"
 data "SpellType" "Throw"
 using "Throw_Throw"
-data "SpellProperties" "GROUND:DealDamage(1,Bludgeoning);ApplyStatus(SELF,RAW_WEAPON_THROWN,100,1);IF(WieldingWeapon('Melee', false, false, context.Source)):ApplyStatus(SELF,RAW_OFFHAND_HELPER,100,1);TARGET:IF(HasStatus('MAG_PROJECTILE_SHOES_TECHNICAL', context.HitDescription.ThrownObject)):DealDamage(2d4, Psychic);TARGET:IF(HasStatus('MAG_THE_THORNS_WEAPON_BOND', context.HitDescription.ThrownObject)):ApplyStatus(MAG_THE_THORNS_AOE_DAMAGE_TECHNICAL, 100, 0);TARGET:IF(HasStatus('MAG_FIRE_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Fire);TARGET:IF(HasStatus('MAG_COLD_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Cold);TARGET:IF(HasStatus('MAG_LIGHTNING_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Lightning);TARGET:IF(HasStatus('MAG_THUNDER_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Thunder);TARGET:IF(HasStatus('MAG_ACID_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Acid);TARGET:IF(HasStatus('MAG_POISON_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Poison);TARGET:IF(HasStatus('MAG_NECROTIC_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Necrotic);TARGET:IF(HasStatus('MAG_FORCE_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Force);TARGET:IF(HasStatus('MAG_PSYCHIC_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Psychic);TARGET:IF((HasStatus('BURNING', context.HitDescription.ThrownObject) or HasStatus('FLAMING_SPHERE_AURA', context.HitDescription.ThrownObject))):ApplyStatus(SELF, BURNING,100,1)"
+data "SpellProperties" "ApplyStatus(SELF,RAW_WEAPON_THROWN,100,1);TARGET:IF(HasStatus('MAG_PROJECTILE_SHOES_TECHNICAL', context.HitDescription.ThrownObject)):DealDamage(2d4, Psychic);TARGET:IF(HasStatus('MAG_THE_THORNS_WEAPON_BOND', context.HitDescription.ThrownObject)):ApplyStatus(MAG_THE_THORNS_AOE_DAMAGE_TECHNICAL, 100, 0);TARGET:IF(HasStatus('MAG_FIRE_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Fire);TARGET:IF(HasStatus('MAG_COLD_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Cold);TARGET:IF(HasStatus('MAG_LIGHTNING_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Lightning);TARGET:IF(HasStatus('MAG_THUNDER_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Thunder);TARGET:IF(HasStatus('MAG_ACID_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Acid);TARGET:IF(HasStatus('MAG_POISON_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Poison);TARGET:IF(HasStatus('MAG_NECROTIC_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Necrotic);TARGET:IF(HasStatus('MAG_FORCE_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Force);TARGET:IF(HasStatus('MAG_PSYCHIC_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Psychic);TARGET:IF((HasStatus('BURNING', context.HitDescription.ThrownObject) or HasStatus('FLAMING_SPHERE_AURA', context.HitDescription.ThrownObject))):ApplyStatus(SELF, BURNING,100,1)"
 data "TargetRadius" "18"
 data "AreaRadius" ""
 data "SpellRoll" "Attack(AttackType.MeleeWeaponAttack)"
@@ -59,6 +59,8 @@ data "DisplayName" "h6ecf3783gaec3g4933g9d97ga93f5eb2ffd1;1"
 data "Description" "h8b86b170gd26eg460cg8562g2d4f2b911e88;1"
 data "ExtraDescription" "h12c219aag52b4g4a22gb0e3g160edbaffbb7;1"
 data "ExtraDescriptionParams" "Distance(6)"
+data "TooltipDamageList" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType)"
+data "TooltipAttackSave" "MeleeWeaponAttack"
 data "PreviewCursor" "Melee"
 data "SpellFlags" "InventorySelection;RangeIgnoreVerticalThreshold;IsHarmful;HasHighGroundRangeExtension;IgnoreSilence;TrajectoryRules;CombatLogSetSingleLineRoll"
 data "SpellActionType" ""
@@ -73,9 +75,11 @@ data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
 data "SpellSuccess" "TARGET:IF(HasPassive('FightingStyle_TwoWeaponFighting',context.Source)):DealDamage(ThrownWeapon, ThrownWeaponDamageType);TARGET:IF(not HasPassive('FightingStyle_TwoWeaponFighting',context.Source)):DealDamage(max(1,ThrownWeapon-max(0,StrengthModifier)), ThrownWeaponDamageType);TARGET:IF(Tagged('BOO',context.HitDescription.ThrownObject)):ApplyStatus(BLINDED,100,1,,,,not SavingThrow(Ability.Dexterity, 15));TARGET:IF(Tagged('DWARF', context.Source) and HasStatus('MAG_DWARVEN_THROWER_TECHNICAL', context.HitDescription.ThrownObject) and not SizeEqualOrGreater(Size.Large)):DealDamage(1d8, Bludgeoning);TARGET:IF(Tagged('DWARF', context.Source) and HasStatus('MAG_DWARVEN_THROWER_TECHNICAL', context.HitDescription.ThrownObject) and SizeEqualOrGreater(Size.Large)):DealDamage(2d8, Bludgeoning);"
 data "DisplayName" "hcb77aa27g6e23g401egb640g6251e9584b0c;1"
 data "Description" "hecbf5369g4424g4914ga10bgd4b42b8cd386;1"
+data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType)"
 data "UseCosts" "BonusActionPoint:1"
 data "ThrowableTargetConditions" "not HasAttribute('InventoryBound') and IsEquipmentSlot(EquipmentSlot.MeleeOffHand)"
 data "RequirementConditions" "HasStatus('RAW_OFFHAND_HELPER') or not Combat()"
+data "RequirementEvents" "OnStatusApplied;OnStatusRemoved;OnTurn;OnCombatEnded"
 
 new entry "RAW_Throw_Weapon_OffHand_Transition"
 type "SpellData"
@@ -85,6 +89,7 @@ data "SpellSuccess" "TARGET:IF(HasPassive('FightingStyle_TwoWeaponFighting',cont
 data "SpellProperties" "GROUND:DealDamage(1,Bludgeoning)"
 data "UseCosts" "BonusActionPoint:1"
 data "RequirementConditions" "HasStatus('RAW_OFFHAND_HELPER') and HasStatus('RAW_WEAPON_THROWN')"
+data "RequirementEvents" "OnStatusApplied;OnStatusRemoved"
 
 new entry "RAW_Throw_Finesse"
 type "SpellData"
@@ -125,7 +130,5 @@ new entry "RAW_WEAPON_THROWN"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StackId" "RAW_WEAPON_THROWN"
-data "OnApplyFunctors" "ApplyStatus(RAW_DUMMY,100,0)"
-data "OnRemoveFunctors" "ApplyStatus(RAW_DUMMY,100,0)"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 data "TickType" "EndTurn"

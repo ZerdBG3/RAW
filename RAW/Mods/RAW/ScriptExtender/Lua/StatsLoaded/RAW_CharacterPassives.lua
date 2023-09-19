@@ -1,8 +1,8 @@
 local ENUM_RAW_CharacterDefaultPassives
 
 local function RAW_AddCharacterDefaultPassives(char)
-    for parent, passives in pairs(ENUM_RAW_CharacterDefaultPassives) do
-        if parent == "all" or StatHasParent(char, parent) then
+    for target, passives in pairs(ENUM_RAW_CharacterDefaultPassives) do
+        if target == "all" or (target == "hero" and RAW_CharIsHero(char)) then
             for _, passive in pairs(passives) do
                 RAW_PrintIfDebug("\tAdding passive: " .. passive, RAW_PrintTable_CharacterPassives)
                 char.Passives = passive .. ";" .. char.Passives
@@ -15,7 +15,7 @@ end
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_CharacterPassives()
-    Ext.Utils.Print("\n======================================================================")
+    Ext.Utils.Print("\n====================================================================================================")
     Ext.Utils.Print(CentralizedString("Starting the addition of Character Passives"))
 
     for _, name in pairs(Ext.Stats.GetStats("Character")) do
@@ -26,17 +26,19 @@ function RAW_CharacterPassives()
     end
 
     Ext.Utils.Print("\n" .. CentralizedString("Finished the addition of Character Passives"))
-    Ext.Utils.Print("======================================================================\n")
+    Ext.Utils.Print("====================================================================================================\n")
 end
 
 ---------------------------------------- MODELS ----------------------------------------
 
 ENUM_RAW_CharacterDefaultPassives = {
     ["all"] = {
+        "RAW_OffHand_Enabler",
         "RAW_OnTurnTracker",
     },
-    ["_Hero"] = {
+    ["hero"] = {
         "RAW_Loading_Block_ExtraAttack",
+        "RAW_UnlockEquipWeaponPoint",
         "RAW_Walk",
     },
 }
