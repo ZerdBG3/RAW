@@ -135,7 +135,7 @@ _Developed in partnership with [Eric](https://www.nexusmods.com/baldursgate3/mod
     </p>
   </details>
 
-* Spells that deal damage when a character enters the AoE or when they start their turn on the AoE, no longer deal damage when the AoE is cast or moved during the caster's turn, and only deal damage once per round (Page 16 of the [Sage Advice Compedium](https://media.wizards.com/2019/dnd/downloads/SA-Compendium.pdf)). The implementation will stop forced movement dealing damage more than once per round, but it brings much closer to RAI, since you can't move AoEs to deal damage on your turn then damage enemies again when their turn inevitably starts on the AoE.
+* Spells that deal damage when a character enters the AoE or when they start their turn on the AoE, no longer deal damage when the AoE is cast or moved during the caster's turn, and only deal damage on the target's turn (Page 16 of the [Sage Advice Compedium](https://media.wizards.com/2019/dnd/downloads/SA-Compendium.pdf)). The implementation will stop forced movement dealing damage more than once per round, but it brings much closer to RAI, since you can't move AoEs to deal damage on your turn then damage enemies again when their turn inevitably starts on the AoE.
   <details>
     <summary>List of Spells with damage application changed</summary>
     <p>
