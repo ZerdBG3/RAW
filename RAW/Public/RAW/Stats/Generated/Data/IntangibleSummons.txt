@@ -150,13 +150,13 @@ data "SpellRoll" "not SavingThrow(Ability.Dexterity, SourceSpellDC(10,GetSummone
 // -----------------------------------------------------------
 
 // Accompanied by new Root Templates
-// Removes GuardianOfFaith_Retaliate and its Action Resources
+// Removes GuardianOfFaith_Attack, GuardianOfFaith_Retaliate and its Action Resources
 new entry "RAW_GuardianOfFaith"
 type "Character"
 using "GuardianOfFaith"
 data "Armor" "98"
 data "ActionResources" ""
-data "Passives" "GuardianOfFaith_Attack;ImmuneToDisarm;Ethereal;RAW_IndestructibleSummon_AI_Ignore_GuardianOfFaith"
+data "Passives" "ImmuneToDisarm;Ethereal;RAW_IndestructibleSummon_AI_Ignore_GuardianOfFaith"
 
 // Summons the new root templates. Also gives the option for the summon to Dispell Self
 new entry "Target_GuardianOfFaith"
@@ -164,13 +164,6 @@ type "SpellData"
 data "SpellType" "Target"
 using "Target_GuardianOfFaith"
 data "SpellProperties" "GROUND:IF(Tagged('ALIGN_GOOD',context.Source)):Summon(f1b7cb05-dd6a-412a-92c8-3d9adba3c033,-1,Projectile_AiHelper_Summon_Strong,,'GuardianOfFaithStack',GUARDIAN_OF_FAITH_AURA,UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK);GROUND:IF(not Tagged('ALIGN_GOOD',context.Source) and not Tagged('ALIGN_EVIL',context.Source)):Summon(62f00b71-b6a3-447f-9c8d-61520b0bb887,-1,Projectile_AiHelper_Summon_Strong,,'GuardianOfFaithStack',GUARDIAN_OF_FAITH_AURA,UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK);GROUND:IF(Tagged('ALIGN_EVIL',context.Source)):Summon(8c087630-ffcf-41d1-bf37-ace2b009529a,-1,Projectile_AiHelper_Summon_Strong,,'GuardianOfFaithStack',GUARDIAN_OF_FAITH_AURA,UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
-
-// No longer "loses control" of summon - Allows to cast Dispell Self
-new entry "GUARDIAN_OF_FAITH_AURA"
-type "StatusData"
-data "StatusType" "BOOST"
-using "GUARDIAN_OF_FAITH_AURA"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 
 // Gives immunity to all damage, except Radiant, which is only ImmuneToMagical
 // Most Radiant damage dealt is magical, so by making the Guardian attack deal a non-magical Radiant damage to itself
@@ -186,6 +179,30 @@ data "SpellType" "Target"
 using "Target_MainHandAttack_GuardianOfFaith"
 data "SpellSuccess" "DealDamage(20,Radiant,Magical);AI_IGNORE:DealDamage(SELF,20,Radiant)"
 data "SpellFail" "DealDamage(10,Radiant,Magical);AI_IGNORE:DealDamage(SELF,10,Radiant)"
+
+// Applies the same treatment from spells at Public\RAW\Stats\Generated\Data\Spells_OnApplyAndOnTurn.txt
+// The Guardian automatically attacks any enemy that enters its aura or start its turn there
+new entry "GUARDIAN_OF_FAITH_AURA"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GUARDIAN_OF_FAITH_AURA"
+data "AuraRadius" "3"
+data "AuraStatuses" "TARGET:IF(Enemy() and (HasStatus('RAW_CURRENT_TURN') or not Combat()) and not (Dead() or HasStatus('KNOCKED_OUT') or HasStatus('RAW_GUARDIAN_OF_FAITH_ATTACKED',context.Target,context.Source))):ApplyStatus(RAW_GUARDIAN_OF_FAITH_ATTACK,100,-1)"
+data "AuraFlags" "ShouldCheckLOS"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;"
+
+new entry "RAW_GUARDIAN_OF_FAITH_ATTACKED"
+type "StatusData"
+data "StatusType" "BOOST"
+data "TickType" "EndTurn"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+new entry "RAW_GUARDIAN_OF_FAITH_ATTACK"
+type "StatusData"
+data "StatusType" "BOOST"
+data "Icon" "Spell_Conjuration_GuardianOfFaith"
+data "OnApplyFunctors" "UseAttack();ApplyStatus(RAW_GUARDIAN_OF_FAITH_ATTACKED,100,1)"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 
 // ----------------------------------------------------------
 // -------------------- Spiritual Weapon --------------------
