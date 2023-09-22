@@ -6,9 +6,9 @@ local function RAW_AddAttunement(item)
         useConditionsPrefix = "(" .. item.UseConditions .. ") and "
     end
 
-    -- Attunement items can't be equipped in combat, except weapons (because of thrown weapons)
+    -- Attunement items can't be equipped in combat, except weapons (because of thrown weapons and weapon sets)
     local combatRestriction = "((Player(context.Source) and not Combat(context.Source)) or not Player(context.Source)) and "
-    if item.Slot == "Melee Main Weapon" then
+    if item.Slot == "Melee Main Weapon" or item.Slot == "Ranged Main Weapon" then
         combatRestriction = ""
     end
 
