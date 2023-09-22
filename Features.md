@@ -196,6 +196,7 @@ _Developed in partnership with [Eric](https://www.nexusmods.com/baldursgate3/mod
 
 ## Global changes
 * Changes Initiative Dice Roll from 1d4 to 1d20
+* Healing a downed character allows them to play their turn normally
 * The first weapon equipped in a turn doesn't cost an Action Point. Further equips cost one Action Point each
 * Extra Attack:
   - Multiple sources no longer stack (Martial, Warlock and Wildshape)
