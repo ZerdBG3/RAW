@@ -180,6 +180,7 @@ using "Target_MainHandAttack_GuardianOfFaith"
 data "SpellSuccess" "DealDamage(20,Radiant,Magical);AI_IGNORE:DealDamage(SELF,20,Radiant)"
 data "SpellFail" "DealDamage(10,Radiant,Magical);AI_IGNORE:DealDamage(SELF,10,Radiant)"
 
+// No longer "loses control" of summon - Allows to cast Dispell Self
 // Applies the same treatment from spells at Public\RAW\Stats\Generated\Data\Spells_OnApplyAndOnTurn.txt
 // The Guardian automatically attacks any enemy that enters its aura or start its turn there
 new entry "GUARDIAN_OF_FAITH_AURA"
