@@ -148,6 +148,13 @@ data "DescriptionParams" "DealDamage(6d4,Piercing)"
 data "TooltipDamage" "DealDamage(6d4,Piercing)"
 data "OnApplyFunctors" "DealDamage(6d4,Piercing,Magical);ApplyStatus(RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED,100,1)"
 
+// -------------------------------------------------------
+// ------------------ Guardian of Faith ------------------
+// -------------------------------------------------------
+
+// Guardian of Faith received a similar treatment, but being a summon and all, it was
+//   modified at Public\RAW\Stats\Generated\Data\IntangibleSummons.txt
+
 // ----------------------------------------------
 // ------------------ Moonbeam ------------------
 // ----------------------------------------------
