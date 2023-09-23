@@ -32,12 +32,12 @@ ENUM_RAW_RogueThiefResources = {
                 ["Value"] = {
                     {
                         ["Ability"] = "None",
+                        ["ActionResource"] = "d136c5d9-0ff0-43da-acce-a74a07f8d6bf",
+                        ["ClassUUID"] = "00000000-0000-0000-0000-000000000000",
                         ["CooldownType"] = "Default",
                         ["PrepareType"] = "Unknown",
+                        ["SelectorId"] = " ",
                         ["SpellUUID"] = "de819b48-ba8a-4e9b-a3bb-554863b8fe66",
-                        ["field_10"] = " ",
-                        ["field_30"] = "d136c5d9-0ff0-43da-acce-a74a07f8d6bf",
-                        ["field_48"] = "00000000-0000-0000-0000-000000000000",
                     },
                 },
             },

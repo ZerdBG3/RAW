@@ -5,10 +5,6 @@
         <node id="root">
             <children>
                 <node id="SpellList">
-                    <attribute id="Spells" type="LSString" value="RAW_Shout_CunningAction"/>
-                    <attribute id="UUID" type="guid" value="2dc120ff-903b-494b-8dc8-38721098ce38"/>
-                </node>
-                <node id="SpellList">
                     <attribute id="Spells" type="LSString" value="RAW_Target_Distract_CunningAction;RAW_Target_Help_CunningAction;RAW_Throw_Throw_CunningAction"/>
                     <attribute id="UUID" type="guid" value="de819b48-ba8a-4e9b-a3bb-554863b8fe66"/>
                 </node>
