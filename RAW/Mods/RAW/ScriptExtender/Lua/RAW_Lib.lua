@@ -33,27 +33,33 @@ end
 function RAW_ApplyStaticData(defTable, printDebug)
     for defType, defList in pairs(defTable) do
         for guid, changes in pairs (defList) do
-            local resource = Ext.Definition.Get(guid, defType)
+            local resource = Ext.StaticData.Get(guid, defType)
             RAW_PrintIfDebug("\n" .. defType .. ": " .. guid, printDebug)
             for attribute, replacement in pairs(changes) do
-                if replacement.Type == "add" then
-                    if type(replacement.Value) == "string" then
+                local newValue
+                if type(resource[attribute]) == "string" then
+                    if replacement.Type == "add" then
                         RAW_PrintIfDebug("\tAdding to " .. attribute .. " - " .. replacement.Value, printDebug)
-                        resource[attribute] = replacement.Value .. ";" .. resource[attribute]
-                    elseif type(replacement.Value) == "table" then
-                        RAW_PrintIfDebug("\tAdding to " .. attribute .. " table", printDebug)
-                        for _, value in pairs(replacement.Value) do
-                            table.insert(resource[attribute], value)
-                        end
-                    end
-                elseif replacement.Type == "overwrite" then
-                    if type(replacement.Value) == "string" then
+                        newValue = replacement.Value .. ";" .. resource[attribute]
+                    elseif replacement.Type == "overwrite" then
                         RAW_PrintIfDebug("\tOverwriting " .. attribute .. " - " .. replacement.Value, printDebug)
-                    elseif type(replacement.Value) == "table" then
-                        RAW_PrintIfDebug("\tOverwriting " .. attribute .. " table", printDebug)
-                        RAW_PrintIfDebug(replacement.Value, printDebug)
+                        newValue = replacement.Value
                     end
-                    resource[attribute] = replacement.Value
+                    resource[attribute] = newValue
+                elseif type(resource[attribute]) == "userdata"  then
+                    if replacement.Type == "add" then
+                        RAW_PrintIfDebug("\tAdding to " .. attribute .. " userdata", printDebug)
+                        newValue = Ext.Types.Serialize(resource[attribute])
+                        for _, value in pairs(replacement.Value) do
+                            table.insert(newValue, value)
+                        end
+                    elseif replacement.Type == "overwrite" then
+                        RAW_PrintIfDebug("\tOverwriting " .. attribute .. " userdata", printDebug)
+                        newValue = replacement.Value
+                    end
+                    Ext.Types.Unserialize(resource[attribute], newValue)
+                else
+                    RAW_PrintIfDebug("StaticData Type not mapped: " .. attribute .. " - " .. type(resource[attribute]), printDebug, RAW_PrintTypeError)
                 end
             end
             RAW_PrintIfDebug(resource, printDebug)
