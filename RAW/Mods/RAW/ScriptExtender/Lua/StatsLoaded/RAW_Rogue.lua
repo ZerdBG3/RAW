@@ -31,30 +31,16 @@ ENUM_RAW_RogueResources = {
                 ["Type"] = "add",
                 ["Value"] = "RAW_CunningAction",
             },
-            -- ["AddSpells"] = {
-            --     ["Type"] = "overwrite",
-            --     ["Value"] = {
-            --         {
-            --             ["Ability"] = "None",
-            --             ["CooldownType"] = "Default",
-            --             ["PrepareType"] = "Unknown",
-            --             ["SpellUUID"] = "fd443792-81a4-4e1c-adbd-efb7ef871651",
-            --             ["field_10"] = " ",
-            --             ["field_30"] = "d136c5d9-0ff0-43da-acce-a74a07f8d6bf",
-            --             ["field_48"] = "00000000-0000-0000-0000-000000000000",
-            --         },
-            --     },
-            -- },
         },
     },
-    -- ["SpellList"] = {
-    --     ["2dc120ff-903b-494b-8dc8-38721098ce38"] = {
-    --         ["Spells"] = {
-    --             ["Type"] = "overwrite",
-    --             ["Value"] = {
-    --                 ["0"] = "RAW_Shout_CunningAction",
-    --             },
-    --         },
-    --     },
-    -- },
+    ["SpellList"] = {
+        ["2dc120ff-903b-494b-8dc8-38721098ce38"] = {
+            ["Spells"] = {
+                ["Type"] = "overwrite",
+                ["Value"] = {
+                    "RAW_Shout_CunningAction",
+                },
+            },
+        },
+    },
 }
