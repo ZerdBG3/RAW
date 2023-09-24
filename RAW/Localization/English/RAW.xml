@@ -56,6 +56,9 @@
     <content contentuid="h6c541127gda12g4b7cgbfdbg37c49ac85aba" version="1">Dodge</content><!-- Dodge -->
     <content contentuid="h5d311bfdg3b88g4a78gb8fcgbb8645c6a5f7" version="1">Cunning Action</content><!-- Cunning Action -->
     <content contentuid="h0611af1fg455ag4511ga7e5g9768ccd017d8" version="1">Cunning Action: Hide</content><!-- Hide Cunning Action -->
+    <content contentuid="h62d0a556gad6ag44c8ga390g15e4501a63c7" version="1">Stand Up</content><!-- Stand Up -->
+    <content contentuid="h06b028a4g35e3g4ce7g9741g3b3e2cf3bb1d" version="1">Stand Up (Athlete)</content><!-- Stand Up (Athlete) -->
+    <content contentuid="h809e21ddg308bg4143g8a14gc55bb6697a20" version="1">Lie Prone</content><!-- Lie Prone -->
 
     <!-- Shout Description -->
     <content contentuid="h1aff6b78gc632g459cgbb15g9c17e56b611a" version="1">Ends the &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt; for you and your party members around you.</content><!-- Short Rest -->
@@ -64,6 +67,9 @@
     <content contentuid="hbeba3ad3g8801g4a4fg8d77g7507fa9bb7c6" version="1">Replenish expended &lt;LSTag Tooltip="SpellSlot"&gt;spell slots&lt;/LSTag&gt; during a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;. You cannot restore spell slots above 5th level.</content><!-- Arcane Recovery -->
     <content contentuid="h75e85388g3e7dg4e70g8101g612860c4a857" version="1">Replenish expended &lt;LSTag Tooltip="SpellSlot"&gt;spell slots&lt;/LSTag&gt; during a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;. You cannot restore spell slots above 5th level.</content><!-- Natural Recovery -->
     <content contentuid="h2149d9f2gd22fg4923ga45bged71c17b76ef" version="1">Prepare to make a volley of thorns the next time you hit a creature with a ranged weapon attack, dealing [1] to it and creatures within [2] of them.</content> <!-- Hail of Thorns -->
+    <content contentuid="hd25db33ag7f0dg4e14gbb26g6282c26042f9" version="1">Spend half of your movement to stand up.</content><!-- Stand Up -->
+    <content contentuid="h608460d6g0e2eg4018g8abdgbe95b7395b3e" version="1">Spend [1] of your movement to stand up.</content><!-- Stand Up (Athlete) -->
+    <content contentuid="ha3c5e6b9gfe31g4463ga81dg9df56d8159a0" version="1">Lie on the floor, becoming &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.</content><!-- Lie Prone -->
 
     <!-- Status Boost Display Name -->
     <content contentuid="hd7046718g6e1ag4867g9e30g6900297f0d58" version="1">Short Rest</content><!-- Short Rest -->
@@ -86,14 +92,12 @@
     <content contentuid="ha79d9187g0539g47abg83bagbc46d76b8834" version="1">Next ranged weapon attack deals [1] to target and creatures within [2] of them.</content><!-- Hail of Thorns -->
     <content contentuid="hb7c0af17gcd17g422dg96f2gda8a553610d7" version="1">You can't cast leveled spells after you cast a bonus action spell.</content><!-- Cast Bonus Action Spell -->
     <content contentuid="h31af9e75g2b8bg4207gb1begc463e085f561" version="1">You can't cast leveled bonus action spells after casting a leveled spell.</content><!-- Cast Not Bonus Action Spell -->
+    <content contentuid="hf9fcc402g8592g454cga793g52f04804a411" version="1">Can't move and have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;Attacks against a Prone creature have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; if they're made within [1] of the creature, otherwise they have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;.</content><!-- Prone -->
     
     <!-- Status Downed Description -->
     <content contentuid="h788b3d9dgb19cg43adg8d49gdb0f922e7400" version="1">If you reach 0 hit points, you fall Unconscious and must make Death Saving Throws. On 3 successes, you stop bleeding out and become Stable. On 3 failures, you die.
 
 If you regain any Hit Points, the condition is removed. If an ally &lt;LSTag Type="Spell" Tooltip="Target_Help"&gt;Helps&lt;/LSTag&gt; you and succeeds on their DC 10 &lt;LSTag Tooltip="Medicine"&gt;Medicine&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt;, you become stabilized and regain [1] when Out of Combat.</content><!-- Downed -->
-
-    <!-- Status Knocked Downed Description -->
-    <content contentuid="hf9fcc402g8592g454cga793g52f04804a411" version="1">Can't move or take actions, bonus actions, or reactions.&lt;br&gt;&lt;br&gt;Attacks against a Prone creature have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; if they're made within [1] of the creature, otherwise they have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;A Prone creature must spend half its &lt;LSTag Tooltip="MovementSpeed"&gt;Movement Speed&lt;/LSTag&gt; to stand up.</content><!-- Prone -->
 
     <!-- Target Display Name -->
     <content contentuid="h5877647dg40fbg4c09gb1c5g16af8009e38b" version="1">Shove (Push)</content><!-- Shove Push -->

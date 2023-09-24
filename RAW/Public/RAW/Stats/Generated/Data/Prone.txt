@@ -1,6 +1,109 @@
+// -----------------------------------------------
+// -------------------- Prone --------------------
+// -----------------------------------------------
+
+// Changes the StatusType of PRONE and its children from KNOCKED_DONW to BOOST
+// It's very similar to RAW, except it blocks movement instead of allowing crawling at double
+//   the movement cost. This is done because the lack of crawling animations make it so it's
+//   hard to tell when a character is knocked prone during their movement
+// However, the characters can still act normally while prone, although there is no animations for
+//   taking actions while prone, so they always stand up to perform the action and lie down right after
+
 new entry "PRONE"
 type "StatusData"
-data "StatusType" "KNOCKED_DOWN"
 using "PRONE"
+data "StatusType" "BOOST"
 data "Description" "hf9fcc402g8592g454cga793g52f04804a411;1"
+data "Boosts" "IF(not HasPassive('Athlete_StandUp',context.Source)):UnlockSpell(RAW_Shout_StandUp);IF(HasPassive('Athlete_StandUp',context.Source)):UnlockSpell(RAW_Shout_Athlete_StandUp);ActionResourceBlock(Movement);Disadvantage(AttackRoll);IF(not DistanceToTargetGreaterThan(3)):Advantage(AttackTarget);IF(DistanceToTargetGreaterThan(3)):Disadvantage(AttackTarget)"
+data "StatusPropertyFlags" "InitiateCombat;DisableOverhead"
+data "RemoveEvents" ""
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.TimeOut) and TurnBased(context.Source) and not HasPassive('Athlete_StandUp')):UseActionResource(Movement, 50%, 0, true);IF(RemoveCause(StatusRemoveCause.TimeOut) and TurnBased(context.Source) and HasPassive('Athlete_StandUp') and HasActionResource('Movement', 1.5, 0)):UseActionResource(Movement, 1.5, 0, true);IF(RemoveCause(StatusRemoveCause.Condition) and TurnBased(context.Source) and HasPassive('Athlete_StandUp') and not HasActionResource('Movement', 1.5, 0)):UseActionResource(Movement, 100%, 0, true)"
+data "Sheathing" ""
+
+new entry "PRONE_GREASE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "PRONE_GREASE"
+data "OnRemoveFunctors" ""
+
+new entry "PRONE_SEWER"
+type "StatusData"
+data "StatusType" "BOOST"
+using "PRONE_SEWER"
+
+new entry "PRONE_ICE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "PRONE_ICE"
+data "OnRemoveFunctors" ""
+
+new entry "PRONE_FALLEN"
+type "StatusData"
+data "StatusType" "BOOST"
+using "PRONE_FALLEN"
+data "StatusPropertyFlags" "InitiateCombat"
+
+new entry "PRONE_THUNDEROUS_SMITE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "PRONE_THUNDEROUS_SMITE"
+
+new entry "RAW_Shout_StandUp"
+type "SpellData"
+data "SpellType" "Shout"
+data "SpellProperties" "RemoveStatus(SG_Prone);AI_IGNORE:UseActionResource(Movement, 50%, 0, true);AI_ONLY:ApplyStatus(AI_HELPER_BUFF,100,2)"
+data "TargetConditions" "Self()"
+data "Autocast" "Yes"
+data "Icon" "statIcons_Enlarged"
+data "DisplayName" "h62d0a556gad6ag44c8ga390g15e4501a63c7;1"
+data "Description" "hd25db33ag7f0dg4e14gbb26g6282c26042f9;1"
+data "CastTextEvent" "Cast"
+data "SpellAnimation" "dd86aa43-8189-4d9f-9a5c-454b5fe4a197,,;,,;bcc3b0d9-f04f-4448-aab0-e0ad641167cc,,;bf924cc6-8b39-4c3b-b1c0-eda264cf6150,,;cc5b0caf-3ed1-4711-a50d-11dc3f1fdc6a,,;,,;1715b877-4512-472e-9bd0-fd568a112e90,,;,,;,,"
+data "SpellFlags" "Temporary"
+
+new entry "RAW_Shout_Athlete_StandUp"
+type "SpellData"
+data "SpellType" "Shout"
+using "RAW_Shout_StandUp"
+data "SpellProperties" "RemoveStatus(SG_Prone);AI_IGNORE:UseActionResource(Movement, 1.5, 0, true);AI_ONLY:ApplyStatus(AI_HELPER_BUFF,100,2)"
+data "Icon" "PassiveFeature_Athlete_StandUp"
+data "DisplayName" "h06b028a4g35e3g4ce7g9741g3b3e2cf3bb1d;1"
+data "Description" "h608460d6g0e2eg4018g8abdgbe95b7395b3e;1"
+data "DescriptionParams" "Distance(1.5)"
+
+new entry "RAW_Shout_LieProne"
+type "SpellData"
+data "SpellType" "Shout"
+data "SpellProperties" "ApplyStatus(PRONE_FALLEN,100,-1)"
+data "TargetConditions" "Self()"
+data "Autocast" "Yes"
+data "Icon" "statIcons_Reduced"
+data "DisplayName" "h809e21ddg308bg4143g8a14gc55bb6697a20;1"
+data "Description" "ha3c5e6b9gfe31g4463ga81dg9df56d8159a0;1"
+data "CastTextEvent" "Cast"
+data "SpellAnimation" "dd86aa43-8189-4d9f-9a5c-454b5fe4a197,,;,,;bcc3b0d9-f04f-4448-aab0-e0ad641167cc,,;bf924cc6-8b39-4c3b-b1c0-eda264cf6150,,;cc5b0caf-3ed1-4711-a50d-11dc3f1fdc6a,,;,,;1715b877-4512-472e-9bd0-fd568a112e90,,;,,;,,"
+
+// ------------------------------------------------------
+// -------------------- Knocked Down --------------------
+// ------------------------------------------------------
+
+// These entries extend Prone. Since Prone had its StatusType replaced, it is required to
+// change these ones back to KNOCKED_DOWN, since they are meant to be a hard CC
+
+new entry "KNOCKED_DOWN"
+type "StatusData"
+data "StatusType" "KNOCKED_DOWN"
+using "KNOCKED_DOWN"
 data "Boosts" "IF(not DistanceToTargetGreaterThan(3)):Advantage(AttackTarget);IF(DistanceToTargetGreaterThan(3)):Disadvantage(AttackTarget);DetectDisturbancesBlock(false);"
+
+new entry "HIDEOUS_LAUGHTER"
+type "StatusData"
+data "StatusType" "KNOCKED_DOWN"
+using "HIDEOUS_LAUGHTER"
+data "Boosts" "IF(not DistanceToTargetGreaterThan(3)):Advantage(AttackTarget);IF(DistanceToTargetGreaterThan(3)):Disadvantage(AttackTarget);DetectDisturbancesBlock(false);"
+
+new entry "TWN_DISTILLERY_DRUNK_03"
+type "StatusData"
+data "StatusType" "BOOST"
+using "TWN_DISTILLERY_DRUNK_03"
+data "RemoveEvents" "OnTurn"
