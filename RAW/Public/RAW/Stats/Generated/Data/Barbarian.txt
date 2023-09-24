@@ -21,7 +21,7 @@ data "TickType" "StartTurn"
 new entry "Interrupt_RecklessAttack"
 type "InterruptData"
 using "Interrupt_RecklessAttack"
-data "Conditions" "not Dead(context.Observer) and HasInterruptedAttack() and Self(context.Observer,context.Source) and IsMeleeWeaponAttack() and not HasStatus('RECKLESS_ATTACK',context.Observer) and not SpellId('Target_RecklessAttack') and not AnyEntityIsItem() and not HasStatus('FIRST_ATTACK_TURN',context.Observer)"
+data "Conditions" "not Dead(context.Observer) and HasInterruptedAttack() and Self(context.Observer,context.Source) and IsMeleeWeaponAttack() and not HasStatus('RECKLESS_ATTACK',context.Observer) and not SpellId('Target_RecklessAttack') and not AnyEntityIsItem() and not HasStatus('FIRST_ATTACK_TURN',context.Observer) and (HasStatus('RAW_CURRENT_TURN',context.Observer) or not Combat(context.Observer))"
 data "Properties" "SetAdvantage();ApplyStatus(OBSERVER_OBSERVER,RECKLESS_ATTACK,100,1);ApplyStatus(OBSERVER_OBSERVER,RAW_RECKLESS_ATTACK_SELF,100,1)"
 
 new entry "Target_RecklessAttack"
