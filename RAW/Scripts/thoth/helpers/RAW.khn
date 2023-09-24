@@ -9,8 +9,6 @@ function RAW_HasHigherPriorityExtraAttackQueued(status, entity)
         , 'STALKERS_FLURRY_Q'
         , 'EXTRA_ATTACK_WAR_MAGIC_Q'
         , 'EXTRA_ATTACK_WAR_PRIEST_Q'
-        , 'COMMANDERS_STRIKE_Q_D10'
-        , 'COMMANDERS_STRIKE_Q_D8'
     }
     for i,v in ipairs(eaQueuedStatuses) do
         if (v == status) then
@@ -26,6 +24,10 @@ end
 
 function RAW_ExtraAttackCheck()
     return ((HasStringInSpellRoll('WeaponAttack') | HasStringInSpellRoll('UnarmedAttack') | HasStringInSpellRoll('ThrowAttack') | SpellId('Target_CommandersStrike') | SpellId('Projectile_ArrowOfSmokepowder') | SpellId('Target_Shove') | SpellId('RAW_Target_Shove_Player') | SpellId('RAW_Target_Shove_Player_Push') | SpellId('RAW_Target_Shove_Player_Prone')) & ~(HasStringInSpellRoll('RangedWeaponAttack') & HasStatus('RAW_EXTRA_ATTACK_LOADING', context.Source))) & HasUseCosts('ActionPoint')
+end
+
+function RAW_ExtraAttackSpellCheck()
+    return HasStringInSpellRoll('WeaponAttack') | HasStringInSpellRoll('UnarmedAttack') | HasStringInSpellRoll('ThrowAttack') | SpellId('Target_CommandersStrike') | SpellId('Target_Bufotoxin_Frog_Summon') | SpellId('Projectile_ArrowOfSmokepowder') | SpellId('Target_Shove') | SpellId('RAW_Target_Shove_Player_Push') | SpellId('RAW_Target_Shove_Player_Prone')
 end
 
 function RAW_LoadingBlockExtraAttack(entity)
