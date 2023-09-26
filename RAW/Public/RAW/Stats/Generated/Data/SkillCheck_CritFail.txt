@@ -1,0 +1,4 @@
+new entry "RAW_DisableSkillCheckCritFail"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "Boosts" "MinimumRollResult(RawAbility,2);MinimumRollResult(SkillCheck,2)"

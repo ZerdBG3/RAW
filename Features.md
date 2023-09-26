@@ -11,6 +11,12 @@ _Developed in partnership with [Eric](https://www.nexusmods.com/baldursgate3/mod
   - After reaching your maximum amount of attuned items, you can no longer equip items that require attunement
   - To end an attunement, simply unequip an item that requires it
 
+## Critical Fails on Skill Checks ⚙️ `skillCheck_critFail`
+* Disables critical fails on skill checks and raw ability checks (like raw strength or dexterity checks - not Saving Throws) by setting the minimum roll as 2. This means you can't roll a 1 anymore, so no more crit fails on dialogues or lockpicking.
+* The downside is, of course, the specific cases where a 2 is enough to pass a check but a 1 wouldn't be. So `+3` on a `DC 5` or `+8` on a `DC 10`. On those cases, you have a 5% chance of being unfairly benefited from the mod. However, given the biggest frustration tends to be on `+15` on `DC 10`, I think it's a fair tradeoff.
+* Through testing, I've confirmed that the minimum roll is enforced after the roll, so this doesn't increase your probability of getting higher rolls. You still have a 5% chance of getting any value on dice rolls, but 1's will become 2.
+* This also means that there's no interaction with `Reroll` features, like Halfling's Lucky. Mechanically speaking, the roll is made first, checks for a reroll possibility, returns the raw value of the dice, then it's set to the minimum specificed by the passive. So Halflings will still reroll their 1's in skill/ability checks, but if they roll a 1 again, it'll be increased to a 2.
+
 ## Bonus Action Spells Rule ⚙️ `spells_bonusAction`
 * Leveled spells with a casting cost of a bonus action block characters from casting another leveled spell on the same turn. Casting a leveled spell that doesn't require a bonus action will also block casting a leveled bonus action spell after
   - **_Currently, due to a bug crashing the game, only players are bound by this rule_**

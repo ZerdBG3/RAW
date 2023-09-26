@@ -4,6 +4,9 @@
             "enabled": true,
             "value": 3
         },
+        "skillCheck_critFail": {
+            "enabled": true
+        },
         "spells_bonusAction": {
             "enabled": true
         },
