@@ -3,6 +3,8 @@
 // ----------------------------------------------------
 
 // Fast Hands provides a toggleable passive to overwrite the use costs for Distract and Help
+//   in addition to the usual Cunning Actions. The lvl 2 Cunning Action passive is removed by
+//   altering the progression on Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_Rogue_Thief.lua
 // Depends on the Distract action from DefaultActions.txt
 // Depends on the changes to the Help action from Stabilize.txt
 
@@ -10,12 +12,13 @@ new entry "FastHands"
 type "PassiveData"
 using "FastHands"
 data "Description" "hfc0ecb86gc504g44f1g9d88g957905740457;1"
-data "EnabledConditions" "HasActionResource('BonusActionPoint', 1, 0, false, false, context.Source)"
+data "EnabledConditions" "HasActionResource('BonusActionPoint', 1, 0, false, false, context.Source) and not HasActionResource('RAW_HastePoint', 1, 0, false, false, context.Source)"
 data "EnabledContext" "OnTurn;OnStatusApplied;OnActionResourcesChanged;OnCast;OnCastResolved"
 data "Properties" "ToggledDefaultOn;ToggledDefaultAddToHotbar;IsToggled"
-data "Boosts" "UnlockSpellVariant(RAW_CunningActionThiefCheck(),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint),ModifyTooltipDescription())"
+data "Boosts" "UnlockSpellVariant(RAW_CunningActionThiefCheck(),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint),ModifyTooltipDescription());UnlockSpellVariant(SpellId('Shout_Dash') and HasUseCosts('ActionPoint'),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint),ModifyTooltipDescription(),ModifyVisuals(Action_Dash_Bonus));UnlockSpellVariant(SpellId('Shout_Hide') and HasUseCosts('ActionPoint'),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint),ModifyTooltipDescription(),ModifyVisuals(Action_Hide));UnlockSpellVariant(SpellId('Shout_Disengage') and HasUseCosts('ActionPoint'),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint),ModifyTooltipDescription(),ModifyVisuals(Action_Disengage_Bonus))"
 
-// The following spells are given on Public\RAW\Progressions\Progressions.lsx pointing to Public\RAW\Lists\SpellLists.lsx
+// The following spells are defined on Public\RAW\Lists\SpellLists.lsx
+//   and included on Thief's progression on Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_Rogue_Thief.lua
 
 // Depends on the Distract action from DefaultActions.txt
 new entry "RAW_Target_Distract_CunningAction"

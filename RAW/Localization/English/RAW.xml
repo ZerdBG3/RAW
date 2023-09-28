@@ -27,7 +27,7 @@
 
     <!-- Passive Description -->
     <content contentuid="h460e389eg9748g4598g95cdgf796e95397c6" version="1">You start walking instead of running.</content><!-- Walk -->
-    <content contentuid="hfc0ecb86gc504g44f1g9d88g957905740457" version="1">You can also use the Bonus Action granted by your Cunning Action to Help allies, Distract enemies or Throw an item.</content><!-- Fast Hands -->
+    <content contentuid="hfc0ecb86gc504g44f1g9d88g957905740457" version="1">You can use the Bonus Action granted by your Cunning Action to Help allies, Distract enemies or Throw an item, in addition to Dash, Disengage or Hide.</content><!-- Fast Hands -->
     <content contentuid="hd6a0c096gd133g4bc9ga518g80c70fd5d907" version="1">You've mastered the art of falling and gain resistance to Falling damage. Also, you now use your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; to increase your Jumping distance.</content><!-- Second-Story Work -->
     <content contentuid="h85d7c071gf5e1g454fg904eg4f6253bf83c0" version="1">If you take the Attack Action on your turn, you can attempt to Shove with your shield using your Bonus Action.</content><!-- Shield Master (Shove) -->
     <content contentuid="hd8db6255g9df7g4a83g9a83g7ed354602d82" version="1">Throw aside all concern for defense to attack with fierce desperation. Attacking recklessly on your first attack of your turn gives you &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on melee weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; using Strength during this turn, but Attack Rolls against you have Advantage until your next turn.</content><!-- Reckless Attack -->

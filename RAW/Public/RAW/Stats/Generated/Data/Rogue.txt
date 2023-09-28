@@ -2,7 +2,7 @@
 // -------------------- Cunning Action --------------------
 // --------------------------------------------------------
 
-// Passive is given on Public\RAW\Progressions\Progressions.lsx
+// Passive is given by Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_Rogue.lua
 new entry "RAW_CunningAction"
 type "PassiveData"
 data "DisplayName" "h5d311bfdg3b88g4a78gb8fcgbb8645c6a5f7;1"
@@ -13,7 +13,7 @@ data "EnabledContext" "OnTurn;OnStatusApplied;OnActionResourcesChanged;OnCast;On
 data "Properties" "ToggledDefaultOn;ToggledDefaultAddToHotbar;IsToggled"
 data "Boosts" "UnlockSpellVariant(SpellId('Shout_Dash') and HasUseCosts('ActionPoint'),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint),ModifyTooltipDescription(),ModifyVisuals(Action_Dash_Bonus));UnlockSpellVariant(SpellId('Shout_Hide') and HasUseCosts('ActionPoint'),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint),ModifyTooltipDescription(),ModifyVisuals(Action_Hide));UnlockSpellVariant(SpellId('Shout_Disengage') and HasUseCosts('ActionPoint'),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint),ModifyTooltipDescription(),ModifyVisuals(Action_Disengage_Bonus))"
 
-// Spell container given on Public\RAW\Lists\SpellLists.lsx
+// Normal Cunning Action spells are replaced by Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_Rogue.lua
 new entry "RAW_Shout_CunningAction"
 type "SpellData"
 data "SpellType" "Shout"
