@@ -5,6 +5,10 @@
     <content contentuid="hbbebdff2g9793g4335g928bg204330014249" version="1">Not Bonus Action Leveled Spell</content><!-- Not Bonus Action Spell Point -->
     <content contentuid="hea889d6fg61e7g4b9fgbf6dg5287a8df42da" version="1">Free Weapon Equip</content><!-- Equip Weapon Point -->
 
+    <!-- Condition Error -->
+    <content contentuid="h0afc3739g41e7g4c3fgb280g4978d95e03ae" version="1">Can't attune items while in combat</content><!-- Attunement while in combat -->
+    <content contentuid="h57e004ccg5136g4ec6gba3fg521d0e4c6626" version="1">Maximum amount of attuned items</content><!-- Attunement maximum items -->
+
     <!-- Feat Description -->
     <content contentuid="h15b473b7gf59dg40f4g9d6bg7015eb159089" version="1">When you make crossbow attacks within melee range, the &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; do not have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;You ignore the loading property of crossbows for the purposes of Extra Attack.</content><!-- Crossbow Expert -->
     <content contentuid="h4671f1fag7c08g4921ga35bg07713c95c4d9" version="1">You can use Two-Weapon Fighting even if your weapons aren't &lt;LSTag Tooltip="Light"&gt;Light&lt;/LSTag&gt;, you can equip two weapons for free on your turn instead of one, and you gain a +1 bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; while wielding a melee weapon in each hand. You cannot dual-wield &lt;LSTag Tooltip="Heavy"&gt;Heavy&lt;/LSTag&gt; weapons.</content><!-- Dual Wielder -->

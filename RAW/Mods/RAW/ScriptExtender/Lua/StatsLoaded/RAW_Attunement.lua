@@ -7,15 +7,13 @@ local function RAW_AddAttunement(item)
     end
 
     -- Attunement items can't be equipped in combat, except weapons (because of thrown weapons and weapon sets)
-    local combatRestriction = "((Player(context.Source) and not Combat(context.Source)) or not Player(context.Source)) and "
+    local combatRestriction = "RAW_AttunementCombatRestriction(context.Source) and "
     if item.Slot == "Melee Main Weapon" or item.Slot == "Ranged Main Weapon" then
         combatRestriction = ""
     end
 
     item.UseConditions = useConditionsPrefix .. combatRestriction ..
-            "((not HasStatus('" .. maxAttunementStatus .."', context.Source) and not ClassLevelHigherOrEqualThan(10,'Artificer')) or " ..
-            "(not HasStatus('" .. maxAttunementStatusArtificer .. "', context.Source) and ClassLevelHigherOrEqualThan(10,'Artificer')) or " ..
-            "not Player(context.Source))"
+            "RAW_AttunementMaximumRestriction(context.Source, '" .. maxAttunementStatus .. "','" .. maxAttunementStatusArtificer .. "')"
     RAW_PrintIfDebug("\tUseConditions: " .. item.UseConditions, RAW_PrintTable_Attunement)
 
     item.StatusOnEquip = RAW_RemoveRepeatedSemicolon(item.StatusOnEquip .. ";RAW_ATTUNEMENT_COUNT_TECHNICAL")
