@@ -67,6 +67,7 @@ end
 
 ---------------------------------------- MODELS ----------------------------------------
 
+-- Source: https://docs.google.com/spreadsheets/d/1yCJ9ITC180dqykK713iHMEsrvVOHkgOmLF882-yr_hQ/edit#gid=0&fvid=1734738953
 ENUM_RAW_AttunementList = {
     "ACT1_HAG_HagMask",
     "ARM_BootsOfSpeed",
