@@ -107,3 +107,18 @@ function RAW_IsSkillCheck(entity)
         isNature or isReligion or isAnimalHandling or isInsight or isMedicine or isPerception or isSurvival or isDeception or
         isIntimidation or isPerformance or isPersuasion)
 end
+
+function RAW_AttunementCombatRestriction(entity)
+    local entity = entity or context.Source
+    result = (Player(entity) & ~Combat(entity)) | ~Player(entity)
+    return ConditionResult(result.Result, {ConditionError("RAW_AttunementCombat_False")})
+end
+
+function RAW_AttunementMaximumRestriction(entity, status, artificerStatus)
+    local entity = entity or context.Source
+    result = (~HasStatus(status, entity) & ~ClassLevelHigherOrEqualThan(10, 'Artificer', entity)) |
+        (~HasStatus(artificerStatus, entity) & ClassLevelHigherOrEqualThan(10, 'Artificer', entity)) |
+        ~Player(entity)
+
+    return ConditionResult(result.Result, {ConditionError("RAW_AttunementMaxItems_False")})
+end
