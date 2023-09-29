@@ -26,6 +26,7 @@ end
 
 ENUM_RAW_RogueThiefResources = {
     ["Progression"] = {
+        -- Thief Level 3
         ["3f95146b-90bc-4064-b3e0-4e1e751cd08d"] = {
             ["AddSpells"] = {
                 ["Type"] = "add",
@@ -40,6 +41,10 @@ ENUM_RAW_RogueThiefResources = {
                         ["SpellUUID"] = "de819b48-ba8a-4e9b-a3bb-554863b8fe66",
                     },
                 },
+            },
+            ["PassivesRemoved"] = {
+                ["Type"] = "add",
+                ["Value"] = "RAW_CunningAction",
             },
         },
     },
