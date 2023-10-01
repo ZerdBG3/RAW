@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <save>
-	<version major="4" minor="0" revision="9" build="201" />
+	<version major="4" minor="0" revision="9" build="201" lslib_meta="v1,bswap_guids" />
 	<region id="Templates">
 		<node id="Templates">
 			<children>
@@ -15,7 +15,7 @@
 					<attribute id="Icon" type="FixedString" value="9803ee89-70d2-38bc-e903-aee6aebc6a15-_(Icon_Crab)" />
 					<attribute id="Stats" type="FixedString" value="Familiar_Crab" />
 					<attribute id="SpellSet" type="FixedString" value="CommonSummonActions" />
-					<attribute id="DeathEffect" type="guid" value="bc26118a-6fab-4aee-76a5-0bd9b2967557" />
+					<attribute id="DeathEffect" type="guid" value="bc26118a-6fab-4aee-a576-d90b96b25775" />
 					<attribute id="BloodSurfaceType" type="FixedString" value="SurfaceNone" />
 					<attribute id="VocalAlertResourceID" type="FixedString" value="2ebebd33-596f-edea-a781-24177c129887" />
 					<attribute id="VocalBoredResourceID" type="FixedString" value="4c7e170d-c456-8c04-cd87-75d8d64e0253" />
@@ -30,10 +30,10 @@
 						<node id="Tags">
 							<children>
 								<node id="Tag">
-									<attribute id="Object" type="guid" value="26c78224-a4c1-43e4-43b9-e7751bfa41fa" />
+									<attribute id="Object" type="guid" value="26c78224-a4c1-43e4-b943-75e7fa1bfa41" />
 								</node>
 								<node id="Tag">
-									<attribute id="Object" type="guid" value="8713fda9-1855-42ef-548c-e2a1a4d59491" />
+									<attribute id="Object" type="guid" value="8713fda9-1855-42ef-8c54-a1e2d5a49194" />
 								</node>
 							</children>
 						</node>
@@ -68,7 +68,7 @@
 						<node id="SpeakerGroupList">
 							<children>
 								<node id="SpeakerGroup">
-									<attribute id="Object" type="guid" value="02cdc15e-1dc3-5eb4-3cf7-5894f9b49f0b" />
+									<attribute id="Object" type="guid" value="02cdc15e-1dc3-5eb4-f73c-9458b4f90b9f" />
 								</node>
 							</children>
 						</node>

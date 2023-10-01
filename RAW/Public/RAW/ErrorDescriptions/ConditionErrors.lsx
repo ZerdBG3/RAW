@@ -5,13 +5,13 @@
         <node id="root">
             <children>
                 <node id="ConditionErrors">
-                    <attribute id="DisplayName" type="TranslatedString" handle="h0afc3739g41e7g4c3fgb280g4978d95e03ae" version="2"/>
+                    <attribute id="DisplayName" type="TranslatedString" handle="h0afc3739g41e7g4c3fgb280g4978d95e03ae" version="1"/>
                     <attribute id="ErrorDescriptionType" type="uint8" value="0"/>
                     <attribute id="Identifier" type="FixedString" value="RAW_AttunementCombat_False"/>
                     <attribute id="UUID" type="guid" value="27a69948-d186-4a3f-ad29-38fd472b3a73"/>
                 </node>
                 <node id="ConditionErrors">
-                    <attribute id="DisplayName" type="TranslatedString" handle="h57e004ccg5136g4ec6gba3fg521d0e4c6626" version="2"/>
+                    <attribute id="DisplayName" type="TranslatedString" handle="h57e004ccg5136g4ec6gba3fg521d0e4c6626" version="1"/>
                     <attribute id="ErrorDescriptionType" type="uint8" value="0"/>
                     <attribute id="Identifier" type="FixedString" value="RAW_AttunementMaxItems_False"/>
                     <attribute id="UUID" type="guid" value="6a49b0ce-7151-44ac-9a5a-ecdb97285ef7"/>

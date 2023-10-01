@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <save>
-	<version major="4" minor="0" revision="9" build="309" />
+	<version major="4" minor="0" revision="9" build="309" lslib_meta="v1,bswap_guids" />
 	<region id="Templates">
 		<node id="Templates">
 			<children>
@@ -15,14 +15,14 @@
 					<attribute id="Icon" type="FixedString" value="c8a553f2-5557-c76b-3a63-e89cbb01f2ca-_(Icon_Cat)" />
 					<attribute id="Stats" type="FixedString" value="Familiar_Cat" />
 					<attribute id="SpellSet" type="FixedString" value="RAW_CommonSummonActions_NoJump" />
-					<attribute id="DeathEffect" type="guid" value="bc26118a-6fab-4aee-76a5-0bd9b2967557" />
+					<attribute id="DeathEffect" type="guid" value="bc26118a-6fab-4aee-a576-d90b96b25775" />
 					<attribute id="BloodSurfaceType" type="FixedString" value="SurfaceNone" />
 					<attribute id="VocalAlertResourceID" type="FixedString" value="8b091a07-6525-644e-57c1-ebe09daf67cc" />
 					<attribute id="VocalAngryResourceID" type="FixedString" value="a91cd2e5-b6ce-cf4a-7843-b7c3fb7895c3" />
 					<attribute id="VocalBoredResourceID" type="FixedString" value="10757ddd-9886-27ac-bcc1-c0c28d8f93b3" />
 					<attribute id="VocalRelaxedResourceID" type="FixedString" value="9b370e50-c560-9091-681a-6e9606c12f0f" />
 					<attribute id="VocalExhaustedResourceID" type="FixedString" value="21ea4898-60b5-d512-289c-709a89b5e0b3" />
-					<attribute id="CharacterVisualResourceID" type="FixedString" value="c8a553f2-5557-c76b-3a63-e89cbb01f2ca" />
+					<attribute id="CharacterVisualResourceID" type="FixedString" value="aa3b874e-2fc5-5399-dfca-99c68954152b" />
 					<attribute id="IsLootable" type="bool" value="False" />
 					<attribute id="AnubisConfigName" type="FixedString" value="DefaultBeast" />
 					<attribute id="DisableEquipping" type="bool" value="True" />
@@ -31,17 +31,17 @@
 						<node id="Tags">
 							<children>
 								<node id="Tag">
-									<attribute id="Object" type="guid" value="26c78224-a4c1-43e4-43b9-e7751bfa41fa" />
+									<attribute id="Object" type="guid" value="26c78224-a4c1-43e4-b943-75e7fa1bfa41" />
 								</node>
 								<node id="Tag">
-									<attribute id="Object" type="guid" value="8713fda9-1855-42ef-548c-e2a1a4d59491" />
+									<attribute id="Object" type="guid" value="8713fda9-1855-42ef-8c54-a1e2d5a49194" />
 								</node>
 							</children>
 						</node>
 						<node id="SpeakerGroupList">
 							<children>
 								<node id="SpeakerGroup">
-									<attribute id="Object" type="guid" value="02cdc15e-1dc3-5eb4-3cf7-5894f9b49f0b" />
+									<attribute id="Object" type="guid" value="02cdc15e-1dc3-5eb4-f73c-9458b4f90b9f" />
 								</node>
 							</children>
 						</node>
@@ -56,10 +56,6 @@
 									<attribute id="StartRound" type="int32" value="0" />
 									<attribute id="FallbackStartRound" type="int32" value="-1" />
 									<attribute id="MinimumImpact" type="int32" value="0" />
-									<attribute id="CasualExplorer" type="bool" value="True" />
-									<attribute id="Classic" type="bool" value="True" />
-									<attribute id="TacticianHardcore" type="bool" value="True" />
-									<attribute id="HonorHardcore" type="bool" value="True" />
 									<attribute id="OnlyCastOnSelf" type="bool" value="False" />
 									<attribute id="AIFlags" type="uint16" value="0" />
 									<children>
@@ -87,10 +83,6 @@
 									<attribute id="StartRound" type="int32" value="0" />
 									<attribute id="FallbackStartRound" type="int32" value="-1" />
 									<attribute id="MinimumImpact" type="int32" value="0" />
-									<attribute id="CasualExplorer" type="bool" value="True" />
-									<attribute id="Classic" type="bool" value="True" />
-									<attribute id="TacticianHardcore" type="bool" value="True" />
-									<attribute id="HonorHardcore" type="bool" value="True" />
 									<attribute id="OnlyCastOnSelf" type="bool" value="False" />
 									<attribute id="AIFlags" type="uint16" value="0" />
 									<children>
@@ -118,10 +110,6 @@
 									<attribute id="StartRound" type="int32" value="0" />
 									<attribute id="FallbackStartRound" type="int32" value="-1" />
 									<attribute id="MinimumImpact" type="int32" value="0" />
-									<attribute id="CasualExplorer" type="bool" value="True" />
-									<attribute id="Classic" type="bool" value="True" />
-									<attribute id="TacticianHardcore" type="bool" value="True" />
-									<attribute id="HonorHardcore" type="bool" value="True" />
 									<attribute id="OnlyCastOnSelf" type="bool" value="False" />
 									<attribute id="AIFlags" type="uint16" value="0" />
 									<children>
