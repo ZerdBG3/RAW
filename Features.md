@@ -11,6 +11,11 @@ _Developed in partnership with [Eric](https://www.nexusmods.com/baldursgate3/mod
   - After reaching your maximum amount of attuned items, you can no longer equip items that require attunement
   - To end an attunement, simply unequip an item that requires it
 
+## Concentration Blocker ⚙️ `concentration_block`
+_Quality of Life feature_
+* Provides a toggleable passive for players that prevents casting spells that requires Concentration while concentrating in another spell.
+* Toggle it off or manually stop the concentration (clicking the `X` below the portrait) to cast another concentration spell.
+
 ## Critical Fails on Skill Checks ⚙️ `skillCheck_critFail`
 * Disables critical fails on skill checks and raw ability checks (like raw strength or dexterity checks - not Saving Throws) by setting the minimum roll as 2. This means you can't roll a 1 anymore, so no more crit fails on dialogues or lockpicking.
 * The downside is, of course, the specific cases where a 2 is enough to pass a check but a 1 wouldn't be. So `+3` on a `DC 5` or `+8` on a `DC 10`. On those cases, you have a 5% chance of being unfairly benefited from the mod. However, given the biggest frustration tends to be on `+15` on `DC 10`, I think it's a fair tradeoff.

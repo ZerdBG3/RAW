@@ -16,6 +16,12 @@
                     <attribute id="Identifier" type="FixedString" value="RAW_AttunementMaxItems_False"/>
                     <attribute id="UUID" type="guid" value="6a49b0ce-7151-44ac-9a5a-ecdb97285ef7"/>
                 </node>
+                <node id="ConditionErrors">
+                    <attribute id="DisplayName" type="TranslatedString" handle="h1eceeeb7gcaeeg46eagb8afg4ff8386033a5" version="1"/>
+                    <attribute id="ErrorDescriptionType" type="uint8" value="0"/>
+                    <attribute id="Identifier" type="FixedString" value="RAW_ConcentrationBlocker_False"/>
+                    <attribute id="UUID" type="guid" value="cbbdecc2-d6ff-4f8a-af88-232a6cf1f135"/>
+                </node>
             </children>
         </node>
     </region>

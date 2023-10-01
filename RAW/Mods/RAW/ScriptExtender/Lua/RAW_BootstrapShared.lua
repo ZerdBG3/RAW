@@ -29,6 +29,7 @@ local RAW_StatsLoadedPath = "StatsLoaded/"
 
 Ext.Require(RAW_StatsLoadedPath .. "RAW_Attunement.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_CharacterPassives.lua")
+Ext.Require(RAW_StatsLoadedPath .. "RAW_Concentration.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_Rogue.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_Rogue_Thief.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_SkillCheck_CritFail.lua")
@@ -44,6 +45,7 @@ local function RAW_StatsLoaded()
 
     RAW_Attunement()
     RAW_CharacterPassives()
+    RAW_Concentration()
     RAW_Rogue()
     RAW_Rogue_Thief()
     RAW_SkillCheck_CritFail()
