@@ -135,18 +135,20 @@ end
 RAW_PrintTable_ModOptions = 0
 RAW_PrintTable_Attunement = 1
 RAW_PrintTable_CharacterPassives = 2
-RAW_PrintTable_Rogue = 3
-RAW_PrintTable_Rogue_Thief = 4
-RAW_PrintTable_SkillCheck_CritFail = 5
-RAW_PrintTable_Spells_BonusAction = 6
-RAW_PrintTable_Spells_Duration = 7
-RAW_PrintTable_WeaponSpells = 8
-RAW_PrintTable_WeaponThrown = 9
+RAW_PrintTable_Concentration = 3
+RAW_PrintTable_Rogue = 4
+RAW_PrintTable_Rogue_Thief = 5
+RAW_PrintTable_SkillCheck_CritFail = 6
+RAW_PrintTable_Spells_BonusAction = 7
+RAW_PrintTable_Spells_Duration = 8
+RAW_PrintTable_WeaponSpells = 9
+RAW_PrintTable_WeaponThrown = 10
 
 local ENUM_RAW_PrintTable = RAW_Set {
     RAW_PrintTable_ModOptions,
     -- RAW_PrintTable_Attunement,
     -- RAW_PrintTable_CharacterPassives,
+    -- RAW_PrintTable_Concentration,
     -- RAW_PrintTable_Rogue,
     -- RAW_PrintTable_Rogue_Thief,
     -- RAW_PrintTable_SkillCheck_CritFail,

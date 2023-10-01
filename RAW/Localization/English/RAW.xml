@@ -8,6 +8,7 @@
     <!-- Condition Error -->
     <content contentuid="h0afc3739g41e7g4c3fgb280g4978d95e03ae" version="1">Can't attune items while in combat</content><!-- Attunement while in combat -->
     <content contentuid="h57e004ccg5136g4ec6gba3fg521d0e4c6626" version="1">Maximum amount of attuned items</content><!-- Attunement maximum items -->
+    <content contentuid="h1eceeeb7gcaeeg46eagb8afg4ff8386033a5" version="1">Already concentrating on a spell</content><!-- Concentration blocker -->
 
     <!-- Feat Description -->
     <content contentuid="h15b473b7gf59dg40f4g9d6bg7015eb159089" version="1">When you make crossbow attacks within melee range, the &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; do not have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;You ignore the loading property of crossbows for the purposes of Extra Attack.</content><!-- Crossbow Expert -->
@@ -24,6 +25,7 @@
     <content contentuid="h81c15d09gdee7g4cd4ga39eg6ec6273a8398" version="1">Flyby</content><!-- Flyby -->
     <content contentuid="h2c5ddf7eg8dbcg4b9fga803g537c44e0ff16" version="1">Crossbow Expert: Loading</content><!-- Crossbow Expert: Wounding -->
     <content contentuid="h07cedaa6g2c7bg4906ga832g28ebde232fa4" version="1">Attunement</content><!-- Attunement -->
+    <content contentuid="h4d215fa7g6d15g4acbg8139g56cb67212a5c" version="1">Concentration Failsafe</content><!-- Concentration Block -->
 
     <!-- Passive Description -->
     <content contentuid="h460e389eg9748g4598g95cdgf796e95397c6" version="1">You start walking instead of running.</content><!-- Walk -->
@@ -36,6 +38,7 @@
     <content contentuid="h171c2107gb858g4e96ga500g0d861916042c" version="1">You ignore the loading property of crossbows for the purposes of Extra Attack.</content><!-- Crossbow Expert: Wounding -->
     <content contentuid="h34e14ad6gb0d5g4892ga3c9gdb7dce2c7b9a" version="1">This item requires an attunement to be equipped and counts towards the maximum of attuned items.</content><!-- Attunement -->
     <content contentuid="h52822a0agd71bg4caega40dgc7017940b99b" version="1">You can use Two-Weapon Fighting even if the weapons you are wielding aren't Light and you can equip two weapons for free on your turn instead of one. You cannot dual-wield &lt;LSTag Tooltip="Heavy"&gt;Heavy&lt;/LSTag&gt; weapons.</content><!-- Dual Wielder -->
+    <content contentuid="h7af02440ga775g44ddga0e4g04987028c1e7" version="1">Prevents casting spells that requires &lt;LSTag Tooltip="Concentration"&gt;Concentration&lt;/LSTag&gt; while concentrating in another spell.</content><!-- Concentration Block -->
 
     <!-- Passive Extra Description -->
     <content contentuid="hc0a989cag7bfdg4f36g9642gf0a332244deb" version="1">Walking won't reduce the maximum travelled distance in a turn, it's purely cosmetic.</content><!-- Walk -->

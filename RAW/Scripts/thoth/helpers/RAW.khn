@@ -122,3 +122,8 @@ function RAW_AttunementMaximumRestriction(entity, status, artificerStatus)
 
     return ConditionResult(result.Result, {ConditionError("RAW_AttunementMaxItems_False")})
 end
+
+function RAW_ConcentrationBlocker()
+    result = ~HasStatus('RAW_CONCENTRATION_BLOCKER')
+    return ConditionResult(result.Result, {ConditionError("RAW_ConcentrationBlocker_False")})
+end

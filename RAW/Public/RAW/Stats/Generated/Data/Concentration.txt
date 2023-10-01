@@ -1,0 +1,38 @@
+// ---------------------------------------------------------------
+// -------------------- Concentration Blocker --------------------
+// ---------------------------------------------------------------
+
+// While the passive is toggled on, the player can't cast a concentration spell while already concentrating
+// The prevention is added to all spells at Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_Concentration.lua
+
+new entry "RAW_Concentration_Block"
+type "PassiveData"
+data "DisplayName" "h4d215fa7g6d15g4acbg8139g56cb67212a5c;1"
+data "Description" "h7af02440ga775g44ddga0e4g04987028c1e7;1"
+data "Icon" "PassiveFeature_Banite_TacticalDiscipline"
+data "Properties" "ToggledDefaultOn;ToggledDefaultAddToHotbar;IsToggled"
+data "StatsFunctorContext" "OnCast"
+data "Conditions" "HasSpellFlag(SpellFlags.Concentration)"
+data "StatsFunctors" "ApplyStatus(SELF,RAW_CONCENTRATION_BLOCKER,100,-1)"
+data "ToggleOnFunctors" "IF(IsConcentrating()):ApplyStatus(SELF,RAW_CONCENTRATION_BLOCKER,100,-1)"
+data "ToggleOffFunctors" "RemoveStatus(SELF,RAW_CONCENTRATION_BLOCKER)"
+
+new entry "RAW_CONCENTRATION_BLOCKER"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "h4d215fa7g6d15g4acbg8139g56cb67212a5c;1"
+data "Description" "h7af02440ga775g44ddga0e4g04987028c1e7;1"
+data "Icon" "PassiveFeature_Banite_TacticalDiscipline"
+data "StackId" "RAW_CONCENTRATION_BLOCKER"
+data "RemoveConditions" "not IsConcentrating()"
+data "RemoveEvents" "OnTurn;OnSpellCast;OnDamage;OnEquip;OnUnequip;OnMove;OnStatusApplied;OnStatusRemoved;OnCombatEnded"
+data "OnApplyFunctors" "ApplyStatus(RAW_CONCENTRATION_BLOCKER_UPDATE_HOTBAR,100,1)"
+data "OnRemoveFunctors" "ApplyStatus(RAW_CONCENTRATION_BLOCKER_UPDATE_HOTBAR,100,1)"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+// Unlocking a spell forces the hotbar to syncronize, even if the character already has it
+new entry "RAW_CONCENTRATION_BLOCKER_UPDATE_HOTBAR"
+type "StatusData"
+data "StatusType" "BOOST"
+data "Boosts" "UnlockSpell(Shout_Dash)"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"

@@ -16,6 +16,23 @@
             ]
         }
     },
+    "concentration_block": {
+        "displayName": "Concentration Blocker",
+        "description": "Gives the player a toggleable passive that stops them from casting concentration spells while already concentrating.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Concentration.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
     "rogue": {
         "displayName": "Rogue",
         "description": "Changes to Cunning Action and Sneak Attack.",
