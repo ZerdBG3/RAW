@@ -30,9 +30,9 @@ data "OnApplyFunctors" "ApplyStatus(RAW_CONCENTRATION_BLOCKER_UPDATE_HOTBAR,100,
 data "OnRemoveFunctors" "ApplyStatus(RAW_CONCENTRATION_BLOCKER_UPDATE_HOTBAR,100,1)"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 
-// Unlocking a spell forces the hotbar to syncronize, even if the character already has it
+// Unlocking a spell forces the hotbar to syncronize, even if the spell doesn't exist
 new entry "RAW_CONCENTRATION_BLOCKER_UPDATE_HOTBAR"
 type "StatusData"
 data "StatusType" "BOOST"
-data "Boosts" "UnlockSpell(Shout_Dash)"
+data "Boosts" "UnlockSpell(RAW_Shout_Noop)"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
