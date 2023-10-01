@@ -15,6 +15,7 @@ _Developed in partnership with [Eric](https://www.nexusmods.com/baldursgate3/mod
 _Quality of Life feature_
 * Provides a toggleable passive for players that prevents casting spells that requires Concentration while concentrating in another spell.
 * Toggle it off or manually stop the concentration (clicking the `X` below the portrait) to cast another concentration spell.
+* Given the implementation, spells that are concentration but don't give the caster a status might result in the concentration spells being blocked even so the caster ended concentration manually (or timeout). Basically taking any action (even moving) will remove the blockage, but if nothing works, just untoggle the passive to remove the blockage.
 
 ## Critical Fails on Skill Checks ⚙️ `skillCheck_critFail`
 * Disables critical fails on skill checks and raw ability checks (like raw strength or dexterity checks - not Saving Throws) by setting the minimum roll as 2. This means you can't roll a 1 anymore, so no more crit fails on dialogues or lockpicking.
