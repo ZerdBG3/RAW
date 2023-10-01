@@ -38,7 +38,7 @@
     <content contentuid="h171c2107gb858g4e96ga500g0d861916042c" version="1">You ignore the loading property of crossbows for the purposes of Extra Attack.</content><!-- Crossbow Expert: Wounding -->
     <content contentuid="h34e14ad6gb0d5g4892ga3c9gdb7dce2c7b9a" version="1">This item requires an attunement to be equipped and counts towards the maximum of attuned items.</content><!-- Attunement -->
     <content contentuid="h52822a0agd71bg4caega40dgc7017940b99b" version="1">You can use Two-Weapon Fighting even if the weapons you are wielding aren't Light and you can equip two weapons for free on your turn instead of one. You cannot dual-wield &lt;LSTag Tooltip="Heavy"&gt;Heavy&lt;/LSTag&gt; weapons.</content><!-- Dual Wielder -->
-    <content contentuid="h7af02440ga775g44ddga0e4g04987028c1e7" version="1">Prevents casting spells that requires &lt;LSTag Tooltip="Concentration"&gt;Concentration&lt;/LSTag&gt; while concentrating in another spell.</content><!-- Concentration Block -->
+    <content contentuid="h7af02440ga775g44ddga0e4g04987028c1e7" version="1">Prevents casting spells that require &lt;LSTag Tooltip="Concentration"&gt;Concentration&lt;/LSTag&gt; while concentrating on another spell.</content><!-- Concentration Block -->
 
     <!-- Passive Extra Description -->
     <content contentuid="hc0a989cag7bfdg4f36g9642gf0a332244deb" version="1">Walking won't reduce the maximum travelled distance in a turn, it's purely cosmetic.</content><!-- Walk -->
