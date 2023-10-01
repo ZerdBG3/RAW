@@ -4,6 +4,9 @@
             "enabled": true,
             "value": 3
         },
+        "concentration_block": {
+            "enabled": true
+        },
         "skillCheck_critFail": {
             "enabled": true
         },
