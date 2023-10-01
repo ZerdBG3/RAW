@@ -1,4 +1,4 @@
-local ENUM_RAW_Concentration_RequirementEvents
+local ENUM_RAW_Concentration_RequirementEvents, RAW_ConcentrationBlocker_Passive
 
 local function RAW_AddConcentrationRequirement(name)
     local spell = Ext.Stats.Get(name)
@@ -35,12 +35,11 @@ local function RAW_AddConcentrationPassive(name)
     end
 
     RAW_PrintIfDebug("\nCharacter: " .. char.Name, RAW_PrintTable_Concentration)
-    local passive = "RAW_Concentration_Block"
-    if string.find(char.Passives, passive) then
-        RAW_PrintIfDebug("\tSkipping - already has passive: " .. passive, RAW_PrintTable_Concentration)
+    if string.find(char.Passives, RAW_ConcentrationBlocker_Passive) then
+        RAW_PrintIfDebug("\tSkipping - already has passive: " .. RAW_ConcentrationBlocker_Passive, RAW_PrintTable_Concentration)
     else
-        RAW_PrintIfDebug("\tAdding passive: " .. passive, RAW_PrintTable_Concentration)
-        char.Passives = passive .. ";" .. char.Passives
+        RAW_PrintIfDebug("\tAdding passive: " .. RAW_ConcentrationBlocker_Passive, RAW_PrintTable_Concentration)
+        char.Passives = RAW_ConcentrationBlocker_Passive .. ";" .. char.Passives
     end
     RAW_PrintIfDebug("\tPassives: " .. char.Passives, RAW_PrintTable_Concentration)
 end
@@ -49,9 +48,9 @@ end
 
 function RAW_Concentration()
     Ext.Utils.Print("\n====================================================================================================")
-    Ext.Utils.Print(CentralizedString("Option: concentration_block"))
+    Ext.Utils.Print(CentralizedString("Option: concentration_failsafe"))
 
-    if not IsModOptionEnabled("concentration_block") then
+    if not IsModOptionEnabled("concentration_failsafe") then
         Ext.Utils.Print(CentralizedString("Disabled!"))
         Ext.Utils.Print(CentralizedString("Skipping the Concentration Helper"))
         Ext.Utils.Print("====================================================================================================\n")
@@ -80,3 +79,5 @@ ENUM_RAW_Concentration_RequirementEvents = {
     "OnStatusRemoved",
     "OnSpellCast",
 }
+
+RAW_ConcentrationBlocker_Passive = "RAW_Concentration_Block"

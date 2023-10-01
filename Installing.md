@@ -19,6 +19,7 @@
 | Option | Default | Description | 
 |---|---|---|
 | [attunement](https://github.com/ZerdBG3/RAW/blob/main/Features.md#attunement-%EF%B8%8F-attunement) | 3 | Sets a limit to the amount of magic items a character can have attuned at once (choose a value between 1 and 10). |
+| [concentration_failsafe](https://github.com/ZerdBG3/RAW/blob/main/Features.md#concentration-failsafe-%EF%B8%8F-concentration_failsafe) | - | Gives the player a toggleable passive that stops them from casting concentration spells while already concentrating. |
 | [skillCheck_critFail](https://github.com/ZerdBG3/RAW/blob/main/Features.md#critical-fails-on-skill-checks-%EF%B8%8F-skillcheck_critfail) | - | Disables the possibility of a critical fail on skill checks by setting a minimum of 2 on rolls. |
 | [spells_bonusAction](https://github.com/ZerdBG3/RAW/blob/main/Features.md#bonus-action-spells-rule-%EF%B8%8F-spells_bonusaction) | - | Enforces the spell casted as a bonus action rule stopping casting other leveled spells on the same turn. |
 | [spells_duration](https://github.com/ZerdBG3/RAW/blob/main/Features.md#spells-duration-%EF%B8%8F-spells_duration) | - | Removes statuses that last up to 1 hour on Short Rest. |

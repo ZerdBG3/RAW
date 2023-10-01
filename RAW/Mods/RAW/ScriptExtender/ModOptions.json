@@ -16,8 +16,8 @@
             ]
         }
     },
-    "concentration_block": {
-        "displayName": "Concentration Blocker",
+    "concentration_failsafe": {
+        "displayName": "Concentration Failsafe",
         "description": "Gives the player a toggleable passive that stops them from casting concentration spells while already concentrating.",
         "enabled": true,
         "value": null,
