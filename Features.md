@@ -13,7 +13,7 @@ _Developed in partnership with [Eric](https://www.nexusmods.com/baldursgate3/mod
 
 ## Concentration Failsafe ⚙️ `concentration_failsafe`
 _Quality of Life feature_
-* Provides a toggleable passive for players that prevents casting spells that requires Concentration while concentrating in another spell.
+* Provides a toggleable passive for players that prevents casting spells that require Concentration while concentrating on another spell.
 * Toggle it off or manually stop the concentration (clicking the `X` below the portrait) to cast another concentration spell.
 * Given the implementation, spells that are concentration but don't give the caster a status might result in the concentration spells being blocked even so the caster ended concentration manually (or timeout). Basically taking any action (even moving) will remove the blockage, but if nothing works, just untoggle the passive to remove the blockage.
 
