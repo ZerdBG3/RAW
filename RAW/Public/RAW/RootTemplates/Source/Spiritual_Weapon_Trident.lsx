@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <save>
-	<version major="4" minor="0" revision="9" build="319" />
+	<version major="4" minor="0" revision="9" build="319" lslib_meta="v1,bswap_guids" />
 	<region id="Templates">
 		<node id="Templates">
 			<children>
@@ -17,7 +17,7 @@
 						<node id="Tags">
 							<children>
 								<node id="Tag">
-									<attribute id="Object" type="guid" value="c808f076-4a0f-422a-db97-85e935cef9f3" />
+									<attribute id="Object" type="guid" value="c808f076-4a0f-422a-97db-e985ce35f3f9" />
 								</node>
 							</children>
 						</node>

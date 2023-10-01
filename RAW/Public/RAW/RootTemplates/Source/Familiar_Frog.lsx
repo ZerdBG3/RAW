@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <save>
-	<version major="4" minor="0" revision="9" build="201" />
+	<version major="4" minor="0" revision="9" build="201" lslib_meta="v1,bswap_guids" />
 	<region id="Templates">
 		<node id="Templates">
 			<children>
@@ -18,7 +18,7 @@
 					<attribute id="SpellSet" type="FixedString" value="RAW_CommonSummonActions_NoJump" />
 					<attribute id="LadderLoopSpeed" type="float" value="2.3" />
 					<attribute id="JumpUpLadders" type="bool" value="True" />
-					<attribute id="DeathEffect" type="guid" value="bc26118a-6fab-4aee-76a5-0bd9b2967557" />
+					<attribute id="DeathEffect" type="guid" value="bc26118a-6fab-4aee-a576-d90b96b25775" />
 					<attribute id="BloodSurfaceType" type="FixedString" value="SurfaceNone" />
 					<attribute id="VocalBoredResourceID" type="FixedString" value="ca5e6074-1f5f-d7df-6817-5751a21d2064" />
 					<attribute id="VocalRelaxedResourceID" type="FixedString" value="6a362669-8637-209f-6d2d-9d7584ea4ed8" />
@@ -33,17 +33,17 @@
 						<node id="Tags">
 							<children>
 								<node id="Tag">
-									<attribute id="Object" type="guid" value="26c78224-a4c1-43e4-43b9-e7751bfa41fa" />
+									<attribute id="Object" type="guid" value="26c78224-a4c1-43e4-b943-75e7fa1bfa41" />
 								</node>
 								<node id="Tag">
-									<attribute id="Object" type="guid" value="8713fda9-1855-42ef-548c-e2a1a4d59491" />
+									<attribute id="Object" type="guid" value="8713fda9-1855-42ef-8c54-a1e2d5a49194" />
 								</node>
 							</children>
 						</node>
 						<node id="SpeakerGroupList">
 							<children>
 								<node id="SpeakerGroup">
-									<attribute id="Object" type="guid" value="02cdc15e-1dc3-5eb4-3cf7-5894f9b49f0b" />
+									<attribute id="Object" type="guid" value="02cdc15e-1dc3-5eb4-f73c-9458b4f90b9f" />
 								</node>
 							</children>
 						</node>
