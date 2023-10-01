@@ -11,7 +11,7 @@ _Developed in partnership with [Eric](https://www.nexusmods.com/baldursgate3/mod
   - After reaching your maximum amount of attuned items, you can no longer equip items that require attunement
   - To end an attunement, simply unequip an item that requires it
 
-## Concentration Blocker ⚙️ `concentration_block`
+## Concentration Failsafe ⚙️ `concentration_failsafe`
 _Quality of Life feature_
 * Provides a toggleable passive for players that prevents casting spells that requires Concentration while concentrating in another spell.
 * Toggle it off or manually stop the concentration (clicking the `X` below the portrait) to cast another concentration spell.
