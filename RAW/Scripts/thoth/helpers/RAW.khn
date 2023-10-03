@@ -45,7 +45,7 @@ function RAW_IsThrowAttackRoll()
 end
 
 function RAW_CunningActionThiefCheck()
-    return (SpellId('Target_Distract') | SpellId('Target_Help')) & HasUseCosts('ActionPoint')
+    return SpellId('Target_Distract') & HasUseCosts('ActionPoint')
 end
 
 function RAW_BonusActionSpellCheck()
