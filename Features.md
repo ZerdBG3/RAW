@@ -90,6 +90,8 @@ _Quality of Life feature_
 * Level 2 (Circle of the Land): Natural Recovery is only usable during a Short Rest
 ### Fighter
 * Level 3 (Battle Master): Feinting Attack (Maneuver) fixed to cost a bonus action and a superiority die regardless if the attack hits or misses
+### Monk
+* Level 1: Martial Arts damage scaling corrected (starts at `1d4`, increases to `1d6` at level 5 and `1d8` at level 11)
 ### Ranger
 * Level 1: Hunter's Mark counts as a separate damage entry and can critically strike
 ### Rogue
@@ -117,6 +119,7 @@ _Quality of Life feature_
 * Shield Master: Gives Shove (both options) as a bonus action after attacking on your turn
 
 ## Spells
+* Changes last cantrip damage buff from level 10 to level 11
 * Call Lightning creates a storm area, inside which the caster can target a smaller area to deal damage each turn
 * Chromatic Orb deals 3d8 base damage and no longer create surfaces. It can still interact with surfaces if targeting the surface directly (for cold, fire and lightning versions)
 * Feign Death provides a Dismiss spell to the caster
