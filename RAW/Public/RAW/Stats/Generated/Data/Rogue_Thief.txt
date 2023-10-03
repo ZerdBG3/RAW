@@ -15,7 +15,7 @@ data "Description" "hfc0ecb86gc504g44f1g9d88g957905740457;1"
 data "EnabledConditions" "HasActionResource('BonusActionPoint', 1, 0, false, false, context.Source) and not HasActionResource('RAW_HastePoint', 1, 0, false, false, context.Source)"
 data "EnabledContext" "OnTurn;OnStatusApplied;OnActionResourcesChanged;OnCast;OnCastResolved"
 data "Properties" "ToggledDefaultOn;ToggledDefaultAddToHotbar;IsToggled"
-data "Boosts" "UnlockSpellVariant(RAW_CunningActionThiefCheck(),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint),ModifyTooltipDescription());UnlockSpellVariant(SpellId('Shout_Dash') and HasUseCosts('ActionPoint'),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint),ModifyTooltipDescription(),ModifyVisuals(Action_Dash_Bonus));UnlockSpellVariant(SpellId('Shout_Hide') and HasUseCosts('ActionPoint'),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint),ModifyTooltipDescription(),ModifyVisuals(Action_Hide));UnlockSpellVariant(SpellId('Shout_Disengage') and HasUseCosts('ActionPoint'),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint),ModifyTooltipDescription(),ModifyVisuals(Action_Disengage_Bonus))"
+data "Boosts" "UnlockSpellVariant(RAW_CunningActionThiefCheck(),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint),ModifyTooltipDescription());UnlockSpellVariant(SpellId('Target_Help') and HasUseCosts('ActionPoint'),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint),ModifyTooltipDescription(),ModifyVisuals(PassiveFeature_Help));UnlockSpellVariant(SpellId('Shout_Dash') and HasUseCosts('ActionPoint'),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint),ModifyTooltipDescription(),ModifyVisuals(Action_Dash_Bonus));UnlockSpellVariant(SpellId('Shout_Hide') and HasUseCosts('ActionPoint'),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint),ModifyTooltipDescription(),ModifyVisuals(Action_Hide));UnlockSpellVariant(SpellId('Shout_Disengage') and HasUseCosts('ActionPoint'),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint),ModifyTooltipDescription(),ModifyVisuals(Action_Disengage_Bonus))"
 
 // The following spells are defined on Public\RAW\Lists\SpellLists.lsx
 //   and included on Thief's progression on Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_Rogue_Thief.lua
@@ -37,6 +37,7 @@ data "SpellType" "Target"
 using "Target_Help"
 data "DisplayName" "h9dae9cf6gd51dg4176g9654g137136bdc8c1;1"
 data "SpellContainerID" "RAW_Shout_CunningAction"
+data "Icon" "PassiveFeature_Help"
 data "UseCosts" "BonusActionPoint:1"
 data "SpellActionType" ""
 
