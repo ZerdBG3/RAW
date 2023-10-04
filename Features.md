@@ -98,7 +98,7 @@ _Quality of Life feature_
 * Level 1: Sneak Attack
   - Fixes Sneak Attack Interrupt being possible to apply the damage on AoE effects (such as the explosion of a Fire Arrow). Only the main target will be prompted - the side effect is AoEs that roll for attack rolls on each target, such as a Cleave, will only allow you to deal sneak attack damage to the first one
   - Removes check for killing blow on Sneak Attack Interrupt. You'll still be able to see the character died, but you can opt into deal your sneak attack regardless (honor system) or if you're not asking to be prompted by the interrupt, it will consume regardless if the base damage killed the target
-  - Spells no longer consume the Sneak Attack Charge if it missed (thus allowing for retries on other attacks on the same turn, specially off hand attacks)
+  - Spells no longer consume the Sneak Attack Charge if it missed (thus allowing for retries on other attacks on the same turn, specially off-hand attacks)
 * Level 2: Cunning Action provides a toggleable passive (default on) that replaces the action cost for Dash, Disengage and Hide for a Bonus Action. It is automatically disabled when the rogue doesn't have a bonus action or when they're hasted. Cunning Action is also available as a Spell Container with all bonus actions inside it for when the player must enforce the bonus action cost (such as when they're hasted)
 * Level 3 (Thief): Fast Hands no longer provides an extra Bonus Action - instead, it gives Help, Distract and Throw (no damage) as possible Cunning Actions (bonus action). There's a toggleable passive just as above, except for Throw - since it doesn't deal damage, it's not a simple action cost replacement, it's a separate spell kept inside the Cunning Action Spell Container
 * Level 3 (Thief): Second-Story Work now provides a Jump with distance scaling with Dexterity
@@ -223,12 +223,14 @@ _Quality of Life feature_
 
 ## Throw and Thrown Weapons
 * Throw and Improvised Weapon can no longer be used on enemies that are alive, and can't throw equipped items either, except for weapons. Throwing a weapon using this action counts as an improvised weapon (`1d4 bludgeoning` damage), regardless of the weapon properties
-* Equipping a thrown weapon now provide specific spells that correctly calculate Range, Attack Roll, and Damage Roll, while also allowing for Two-Weapon Fighting (and correctly applying Sneak Attack). The range shown is the long range, but it will show the Disadvantage UI if you're attacking outside the short range
-  - Throw Weapon (Main Hand): throws the weapon from your main hand using an action, using a melee weapon attack roll and deals the normal damage as if using a melee weapon attack. Can be used as part of your extra attack
-  - Throw Weapon (Off Hand): available after attacking with your main hand weapon. Throws the weapon from your off hand using a bonus action, using a melee off hand weapon attack roll, dealing the normal damage as if using a melee off hand weapon attack (subtracts the ability modifier from the damage if the caster doesn't have Two Weapon Fighting Style)
-  - Throw Weapon (Main Hand) - Transition: available after throwing your main hand weapon. Throws the weapon from your main hand using a bonus action, behaving similarly to the Throw Off Hand. Because the game automatically switches weapon hands, this is to ensure you can still throw your off hand weapon using a bonus action after it was automatically moved to your main hand
+* All players have access to two Throw Weapon Spells (Main Hand and Off-Hand). They're only usable once you have melee weapons with the thrown property equipped on the respective slots
+  - _Feel free to remove them from your hotbar if you're not planning on using thrown weapons_
+* They correctly calculate Range, Attack Roll, and Damage Roll, while also allowing for Two-Weapon Fighting (and correctly applying Sneak Attack). The range shown is the long range, but it will show the Disadvantage UI if you're attacking outside the short range
+  - `Throw Weapon (Main Hand)`: throws the weapon from your main hand using an action, using a melee weapon attack roll and deals the normal damage as if using a melee weapon attack. Can be used as part of your extra attack
+  - `Throw Weapon (Off-Hand)`: available after attacking with your main hand weapon. Throws the weapon from your off-hand using a bonus action, using a melee off-hand weapon attack roll, dealing the normal damage as if using a melee off-hand weapon attack (by subtracting the ability modifier from the damage if the caster doesn't have Two Weapon Fighting Style)
+  - `Throw Weapon (Transition)`: a temporary spell that shows up after throwing your main hand weapon. Throws the weapon from your main hand using a bonus action, behaving similarly to `Throw Weapon (Off-Hand)`. Because the game automatically switches weapon hands, this is to ensure you can still throw your off-hand weapon using a bonus action after it was automatically moved to your main hand
 * Due to the change to equip cost mentioned on [Global Changes](https://github.com/ZerdBG3/RAW/blob/main/Features.md#global-changes), you can always equip one weapon per turn for free, allowing you to equip one weapon as part of your throwing action
 
 ## Two-Weapon Fighting
-* Removes the automatic off hand bonus attack option when Dual Wielding (This removes Dual Wielding AoO as well)
-* The Off Hand Attack is only available after attacking with the main hand weapon while Dual Wielding (or when outside of Combat)
+* Removes the automatic off-hand bonus attack option when Dual Wielding (This removes Dual Wielding AoO as well)
+* The Off-Hand Attack is only available after attacking with the main hand weapon while Dual Wielding (or when outside of Combat)
