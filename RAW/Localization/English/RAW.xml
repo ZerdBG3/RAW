@@ -130,18 +130,20 @@ If you regain any Hit Points, the condition is removed. If an ally &lt;LSTag Typ
     <!-- Throw Display Name -->
     <content contentuid="h42ce0a1eg03e9g492dg9457g553a25b8a68c" version="1">Throw (Item)</content><!-- Throw -->
     <content contentuid="hb3284f80g9ea7g4eefg92bbg6c0d18aa322b" version="1">Throw (Cunning Action)</content><!-- Throw Cunning Action -->
-    <content contentuid="h6ecf3783gaec3g4933g9d97ga93f5eb2ffd1" version="1">Throw (MainHand)</content><!-- Throw Weapon -->
-    <content contentuid="hcb77aa27g6e23g401egb640g6251e9584b0c" version="1">Throw (OffHand)</content><!-- Throw Weapon OffHand -->
+    <content contentuid="h6ecf3783gaec3g4933g9d97ga93f5eb2ffd1" version="1">Throw Weapon (Main Hand)</content><!-- Throw Weapon -->
+    <content contentuid="hcb77aa27g6e23g401egb640g6251e9584b0c" version="1">Throw Weapon (Off-Hand)</content><!-- Throw Weapon Off Hand -->
+    <content contentuid="hdd4cc2e3ge909g47f7gb352g27b5d5aa5d80" version="1">Throw Weapon (Transition)</content><!-- Throw Weapon Transition -->
 
     <!-- Throw Description -->
     <content contentuid="h7c08af75gd6d2g4535g8e96g88ddffc3f0ce" version="1">Throw an item from the floor or your inventory.</content><!-- Throw -->
     <content contentuid="h49ed29fcg4ac2g459egbc2cg0c6264341656" version="1">Throw an item from the floor or your inventory, without dealing damage to the target.&lt;br&gt;&lt;br&gt;Throwable items like grenades will still activate their effects.</content><!-- Throw Cunning Action -->
     <content contentuid="h73c67cf6g5850g4e17gbbc6gabb0186cfd4d" version="1">Pick up an item and use it to make a melee attack.</content><!-- Improvised Weapon -->
-    <content contentuid="h8b86b170gd26eg460cg8562g2d4f2b911e88" version="1">&lt;LSTag Tooltip="Thrown"&gt;Throw&lt;/LSTag&gt; your main weapon.</content><!-- Throw Weapon -->
-    <content contentuid="hecbf5369g4424g4914ga10bgd4b42b8cd386" version="1">&lt;LSTag Tooltip="Thrown"&gt;Throw&lt;/LSTag&gt; your offhand weapon.</content><!-- Throw Weapon OffHand -->
+    <content contentuid="h8b86b170gd26eg460cg8562g2d4f2b911e88" version="1">&lt;LSTag Tooltip="Thrown"&gt;Throw&lt;/LSTag&gt; the weapon on your main hand.</content><!-- Throw Weapon -->
+    <content contentuid="hecbf5369g4424g4914ga10bgd4b42b8cd386" version="1">&lt;LSTag Tooltip="Thrown"&gt;Throw&lt;/LSTag&gt; the weapon on your off-hand.</content><!-- Throw Weapon Off Hand -->
+    <content contentuid="hcbf0d347g1ea7g4a2dga7ebg71de5e4a4094" version="1">&lt;LSTag Tooltip="Thrown"&gt;Throw&lt;/LSTag&gt; the weapon that was in your off-hand before you threw the main hand one.</content><!-- Throw Weapon Transition -->
 
     <!-- Throw Extra Description -->
     <content contentuid="hf080f971g5582g46d8g8938gdb8c8b560d42" version="1">Your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; affects how much weight you can throw. Heavier items deal more damage.</content><!-- Throw -->
     <content contentuid="h6da3fafbgfe47g420fgb449g9756dc4146fe" version="1">Your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; affects how much weight you can throw.</content><!-- Throw Cunning Action -->
-    <content contentuid="h12c219aag52b4g4a22gb0e3g160edbaffbb7" version="1">Attacking further than the normal range ([1]) impose &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on the &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt;.</content><!-- Throw Weapon -->
+    <content contentuid="h12c219aag52b4g4a22gb0e3g160edbaffbb7" version="1">Attacking further than the normal range ([1] for Javelins and [2] for other weapons) impose &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on the &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt;.</content><!-- Throw Weapon -->
 </contentList>

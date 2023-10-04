@@ -15,24 +15,3 @@ data "StackId" "RAW_WILD_MAGIC_BARBARIAN_FIRST_TURN"
 data "Boosts" "UnlockSpellVariant(SpellId('Target_WildMagicBarbarian_Teleport') or SpellId('Target_WildMagicBarbarian_ExplodingFlumph') or SpellId('Projectile_WildMagicBarbarian_LightBolt'),ModifyUseCosts(Replace,BonusActionPoint,0,0,BonusActionPoint))"
 data "TickType" "EndTurn"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
-
-// ---------------------------------------------------------
-// -------------------- Weapon Infusion --------------------
-// ---------------------------------------------------------
-
-new entry "Shout_WildMagicBarbarian_WeaponInfusion"
-type "SpellData"
-data "SpellType" "Shout"
-using "Shout_WildMagicBarbarian_WeaponInfusion"
-data "SpellProperties" "ApplyEquipmentStatus(MainHand, WILD_MAGIC_BARBARIAN_WEAPON_INFUSION,100,10);ApplyStatus(SELF,RAGE_MUTE,100,10);ApplyStatus(SELF,RAW_WILD_MAGIC_BARBARIAN_WEAPON_INFUSION_THROW,100,10)"
-
-// Depends on the changes from Throw.txt
-new entry "RAW_WILD_MAGIC_BARBARIAN_WEAPON_INFUSION_THROW"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StackId" "RAW_WILD_MAGIC_BARBARIAN_WEAPON_INFUSION_THROW"
-data "DescriptionParams" "DealDamage(1d6,Force)"
-data "Boosts" "UnlockSpell(RAW_Throw_Weapon)"
-data "RemoveConditions" "not HasStatus('SG_Rage')"
-data "RemoveEvents" "OnTurn;OnStatusRemoved"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"

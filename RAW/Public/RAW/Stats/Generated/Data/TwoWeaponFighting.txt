@@ -7,7 +7,7 @@ new entry "RAW_OffHand_Enabler"
 type "PassiveData"
 data "Properties" "IsHidden"
 data "StatsFunctorContext" "OnAttack"
-data "Conditions" "RAW_IsMeleeMainHandWeaponAttack() and FightingStyle_TwoWeapons(context.Source) or RAW_IsRangedMainHandWeaponAttack() and RAW_FightingStyle_TwoWeapons_Ranged(context.Source)"
+data "Conditions" "RAW_IsMeleeMainHandWeaponAttack() and (FightingStyle_TwoWeapons(context.Source) or SpellTypeIs(SpellType.Throw) and WieldingWeapon('Melee', false, false, context.Source)) or RAW_IsRangedMainHandWeaponAttack() and RAW_FightingStyle_TwoWeapons_Ranged(context.Source)"
 data "StatsFunctors" "ApplyStatus(SELF,RAW_OFFHAND_HELPER,100,1)"
 
 new entry "RAW_OFFHAND_HELPER"

@@ -38,9 +38,7 @@
         "description": "Changes to Cunning Action and Sneak Attack.",
         "enabled": true,
         "value": null,
-        "dependencies": [
-            "throw"
-        ],
+        "dependencies": [],
         "conflicts": [],
         "files": {
             "enabled": [],
@@ -146,23 +144,6 @@
             "disabled": [
                 {
                     "from": "Public/RAW/Stats/Generated/Data/Spells_Duration.txt",
-                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
-                }
-            ]
-        }
-    },
-    "throw": {
-        "displayName": "Throw Changes",
-        "description": "Changes to throwing rules, specially for thrown weapons.",
-        "enabled": true,
-        "value": null,
-        "dependencies": [],
-        "conflicts": [],
-        "files": {
-            "enabled": [],
-            "disabled": [
-                {
-                    "from": "Public/RAW/Stats/Generated/Data/Throw.txt",
                     "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
                 }
             ]

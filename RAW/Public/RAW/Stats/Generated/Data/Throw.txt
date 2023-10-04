@@ -2,12 +2,12 @@
 // -------------------- Throw Action --------------------
 // ------------------------------------------------------
 
-// The passive was reworked to apply the Long Range property of thrown weapons
+// The passive was reworked to apply the Long Range property of thrown weapons and give specific throw weapon spells
 new entry "WeaponThrow"
 type "PassiveData"
 data "DisplayName" "h7448849bged25g488ag810dg15d3da1916a2;1"
 data "Properties" "IsHidden"
-data "Boosts" "IF(SpellTypeIs(SpellType.Throw) and (SpellId('RAW_Throw_Javelin') or SpellId('RAW_Throw_Javelin_OffHand') or SpellId('RAW_Throw_Javelin_OffHand_Transition')) and DistanceToTargetGreaterThan(9)):Disadvantage(AttackRoll);IF(SpellTypeIs(SpellType.Throw) and not SpellId('RAW_Throw_Javelin') and not SpellId('RAW_Throw_Javelin_OffHand') and not SpellId('RAW_Throw_Javelin_OffHand_Transition') and DistanceToTargetGreaterThan(6)):Disadvantage(AttackRoll)"
+data "Boosts" "UnlockSpell(RAW_Throw_Weapon);UnlockSpell(RAW_Throw_Weapon_OffHand);IF((SpellId('RAW_Throw_Weapon') or SpellId('RAW_Throw_Weapon_OffHand_Transition')) and IsWeaponOfProficiencyGroup('Javelins', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand)) and DistanceToTargetGreaterThan(9)):Disadvantage(AttackRoll);IF(SpellId('RAW_Throw_Weapon_OffHand') and IsWeaponOfProficiencyGroup('Javelins', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand)) and DistanceToTargetGreaterThan(9)):Disadvantage(AttackRoll);IF((SpellId('RAW_Throw_Weapon') or SpellId('RAW_Throw_Weapon_OffHand_Transition')) and not IsWeaponOfProficiencyGroup('Javelins', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand)) and DistanceToTargetGreaterThan(6)):Disadvantage(AttackRoll);IF(SpellId('RAW_Throw_Weapon_OffHand') and not IsWeaponOfProficiencyGroup('Javelins', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand)) and DistanceToTargetGreaterThan(6)):Disadvantage(AttackRoll)"
 data "StatsFunctorContext" "OnAttack"
 
 // No longer deals weapon damage when throwing a weapon; there are specific spells for that
@@ -41,7 +41,6 @@ data "Description" "h73c67cf6g5850g4e17gbbc6gabb0186cfd4d;1"
 // -------------------- Throw Weapon --------------------
 // ------------------------------------------------------
 
-// Spells added by Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_WeaponThrown.lua
 // Depends on OffHand rule changes on Public\RAW\Stats\Generated\Data\TwoWeaponFighting.txt
 
 new entry "RAW_Throw_Weapon"
@@ -58,13 +57,15 @@ data "Icon" "Action_ThrowWeapon"
 data "DisplayName" "h6ecf3783gaec3g4933g9d97ga93f5eb2ffd1;1"
 data "Description" "h8b86b170gd26eg460cg8562g2d4f2b911e88;1"
 data "ExtraDescription" "h12c219aag52b4g4a22gb0e3g160edbaffbb7;1"
-data "ExtraDescriptionParams" "Distance(6)"
+data "ExtraDescriptionParams" "Distance(9);Distance(6)"
 data "TooltipDamageList" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType)"
 data "TooltipAttackSave" "MeleeWeaponAttack"
 data "PreviewCursor" "Melee"
 data "SpellFlags" "InventorySelection;RangeIgnoreVerticalThreshold;IsHarmful;HasHighGroundRangeExtension;IgnoreSilence;TrajectoryRules;CombatLogSetSingleLineRoll"
 data "SpellActionType" ""
 data "ThrowableTargetConditions" "not HasAttribute('InventoryBound') and IsEquipmentSlot(EquipmentSlot.MeleeMainHand)"
+data "RequirementConditions" "WieldingWeapon('Thrown', false, false, context.Source)"
+data "RequirementEvents" "OnStatusApplied;OnStatusRemoved;OnEquip"
 
 new entry "RAW_Throw_Weapon_OffHand"
 type "SpellData"
@@ -72,63 +73,34 @@ data "SpellType" "Throw"
 using "RAW_Throw_Weapon"
 data "SpellProperties" "GROUND:DealDamage(1,Bludgeoning);TARGET:IF(HasStatus('MAG_PROJECTILE_SHOES_TECHNICAL', context.HitDescription.ThrownObject)):DealDamage(2d4, Psychic);TARGET:IF(HasStatus('MAG_THE_THORNS_WEAPON_BOND', context.HitDescription.ThrownObject)):ApplyStatus(MAG_THE_THORNS_AOE_DAMAGE_TECHNICAL, 100, 0);TARGET:IF(HasStatus('MAG_FIRE_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Fire);TARGET:IF(HasStatus('MAG_COLD_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Cold);TARGET:IF(HasStatus('MAG_LIGHTNING_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Lightning);TARGET:IF(HasStatus('MAG_THUNDER_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Thunder);TARGET:IF(HasStatus('MAG_ACID_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Acid);TARGET:IF(HasStatus('MAG_POISON_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Poison);TARGET:IF(HasStatus('MAG_NECROTIC_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Necrotic);TARGET:IF(HasStatus('MAG_FORCE_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Force);TARGET:IF(HasStatus('MAG_PSYCHIC_THROW', context.HitDescription.ThrownObject)):DealDamage(1d4, Psychic);TARGET:IF((HasStatus('BURNING', context.HitDescription.ThrownObject) or HasStatus('FLAMING_SPHERE_AURA', context.HitDescription.ThrownObject))):ApplyStatus(SELF, BURNING,100,1)"
 data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
-data "SpellSuccess" "TARGET:IF(HasPassive('FightingStyle_TwoWeaponFighting',context.Source)):DealDamage(ThrownWeapon, ThrownWeaponDamageType);TARGET:IF(not HasPassive('FightingStyle_TwoWeaponFighting',context.Source)):DealDamage(max(1,ThrownWeapon-max(0,StrengthModifier)), ThrownWeaponDamageType);TARGET:IF(Tagged('BOO',context.HitDescription.ThrownObject)):ApplyStatus(BLINDED,100,1,,,,not SavingThrow(Ability.Dexterity, 15));TARGET:IF(Tagged('DWARF', context.Source) and HasStatus('MAG_DWARVEN_THROWER_TECHNICAL', context.HitDescription.ThrownObject) and not SizeEqualOrGreater(Size.Large)):DealDamage(1d8, Bludgeoning);TARGET:IF(Tagged('DWARF', context.Source) and HasStatus('MAG_DWARVEN_THROWER_TECHNICAL', context.HitDescription.ThrownObject) and SizeEqualOrGreater(Size.Large)):DealDamage(2d8, Bludgeoning);"
+data "SpellSuccess" "TARGET:IF(HasPassive('FightingStyle_TwoWeaponFighting',context.Source)):DealDamage(ThrownWeapon, ThrownWeaponDamageType);TARGET:IF(not HasPassive('FightingStyle_TwoWeaponFighting',context.Source) and not HasWeaponProperty(WeaponProperties.Finesse, context.HitDescription.ThrownObject)):DealDamage(max(1,ThrownWeapon-max(0,StrengthModifier)), ThrownWeaponDamageType);TARGET:IF(not HasPassive('FightingStyle_TwoWeaponFighting',context.Source) and HasWeaponProperty(WeaponProperties.Finesse, context.HitDescription.ThrownObject)):DealDamage(max(1,ThrownWeapon-max(0,max(StrengthModifier,DexterityModifier))), ThrownWeaponDamageType);TARGET:IF(Tagged('BOO',context.HitDescription.ThrownObject)):ApplyStatus(BLINDED,100,1,,,,not SavingThrow(Ability.Dexterity, 15));TARGET:IF(Tagged('DWARF', context.Source) and HasStatus('MAG_DWARVEN_THROWER_TECHNICAL', context.HitDescription.ThrownObject) and not SizeEqualOrGreater(Size.Large)):DealDamage(1d8, Bludgeoning);TARGET:IF(Tagged('DWARF', context.Source) and HasStatus('MAG_DWARVEN_THROWER_TECHNICAL', context.HitDescription.ThrownObject) and SizeEqualOrGreater(Size.Large)):DealDamage(2d8, Bludgeoning);"
+data "Icon" "Action_Barbarian_FrenziedThrow"
 data "DisplayName" "hcb77aa27g6e23g401egb640g6251e9584b0c;1"
 data "Description" "hecbf5369g4424g4914ga10bgd4b42b8cd386;1"
 data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType)"
 data "UseCosts" "BonusActionPoint:1"
 data "ThrowableTargetConditions" "not HasAttribute('InventoryBound') and IsEquipmentSlot(EquipmentSlot.MeleeOffHand)"
-data "RequirementConditions" "HasStatus('RAW_OFFHAND_HELPER') or not Combat()"
-data "RequirementEvents" "OnStatusApplied;OnStatusRemoved;OnTurn;OnCombatEnded"
+data "RequirementConditions" "(HasStatus('RAW_OFFHAND_HELPER') or not Combat()) and WieldingWeapon('Thrown', true, false, context.Source)"
+data "RequirementEvents" "OnStatusApplied;OnStatusRemoved;OnTurn;OnCombatEnded;OnEquip"
 
 new entry "RAW_Throw_Weapon_OffHand_Transition"
 type "SpellData"
 data "SpellType" "Throw"
 using "RAW_Throw_Weapon"
-data "SpellSuccess" "TARGET:IF(HasPassive('FightingStyle_TwoWeaponFighting',context.Source)):DealDamage(ThrownWeapon, ThrownWeaponDamageType);TARGET:IF(not HasPassive('FightingStyle_TwoWeaponFighting',context.Source)):DealDamage(max(1,ThrownWeapon-max(0,StrengthModifier)), ThrownWeaponDamageType);TARGET:IF(Tagged('BOO',context.HitDescription.ThrownObject)):ApplyStatus(BLINDED,100,1,,,,not SavingThrow(Ability.Dexterity, 15));TARGET:IF(Tagged('DWARF', context.Source) and HasStatus('MAG_DWARVEN_THROWER_TECHNICAL', context.HitDescription.ThrownObject) and not SizeEqualOrGreater(Size.Large)):DealDamage(1d8, Bludgeoning);TARGET:IF(Tagged('DWARF', context.Source) and HasStatus('MAG_DWARVEN_THROWER_TECHNICAL', context.HitDescription.ThrownObject) and SizeEqualOrGreater(Size.Large)):DealDamage(2d8, Bludgeoning);"
-data "SpellProperties" "GROUND:DealDamage(1,Bludgeoning)"
+data "SpellProperties" "RemoveStatus(SELF,RAW_WEAPON_THROWN);GROUND:DealDamage(1,Bludgeoning)"
+data "SpellSuccess" "TARGET:IF(HasPassive('FightingStyle_TwoWeaponFighting',context.Source)):DealDamage(ThrownWeapon, ThrownWeaponDamageType);TARGET:IF(not HasPassive('FightingStyle_TwoWeaponFighting',context.Source) and not HasWeaponProperty(WeaponProperties.Finesse, context.HitDescription.ThrownObject)):DealDamage(max(1,ThrownWeapon-max(0,StrengthModifier)), ThrownWeaponDamageType);TARGET:IF(not HasPassive('FightingStyle_TwoWeaponFighting',context.Source) and HasWeaponProperty(WeaponProperties.Finesse, context.HitDescription.ThrownObject)):DealDamage(max(1,ThrownWeapon-max(0,max(StrengthModifier,DexterityModifier))), ThrownWeaponDamageType);TARGET:IF(Tagged('BOO',context.HitDescription.ThrownObject)):ApplyStatus(BLINDED,100,1,,,,not SavingThrow(Ability.Dexterity, 15));TARGET:IF(Tagged('DWARF', context.Source) and HasStatus('MAG_DWARVEN_THROWER_TECHNICAL', context.HitDescription.ThrownObject) and not SizeEqualOrGreater(Size.Large)):DealDamage(1d8, Bludgeoning);TARGET:IF(Tagged('DWARF', context.Source) and HasStatus('MAG_DWARVEN_THROWER_TECHNICAL', context.HitDescription.ThrownObject) and SizeEqualOrGreater(Size.Large)):DealDamage(2d8, Bludgeoning);"
+data "Icon" "Action_Barbarian_FrenziedThrow"
+data "DisplayName" "hdd4cc2e3ge909g47f7gb352g27b5d5aa5d80;1"
+data "Description" "hcbf0d347g1ea7g4a2dga7ebg71de5e4a4094;1"
 data "UseCosts" "BonusActionPoint:1"
-data "RequirementConditions" "HasStatus('RAW_OFFHAND_HELPER') and HasStatus('RAW_WEAPON_THROWN')"
-data "RequirementEvents" "OnStatusApplied;OnStatusRemoved"
-
-new entry "RAW_Throw_Finesse"
-type "SpellData"
-data "SpellType" "Throw"
-using "RAW_Throw_Weapon"
-
-new entry "RAW_Throw_Finesse_OffHand"
-type "SpellData"
-data "SpellType" "Throw"
-using "RAW_Throw_Weapon_OffHand"
-data "SpellSuccess" "TARGET:IF(HasPassive('FightingStyle_TwoWeaponFighting',context.Source)):DealDamage(ThrownWeapon, ThrownWeaponDamageType);TARGET:IF(not HasPassive('FightingStyle_TwoWeaponFighting',context.Source)):DealDamage(max(1,ThrownWeapon-max(0,max(StrengthModifier,DexterityModifier))), ThrownWeaponDamageType);TARGET:IF(Tagged('BOO',context.HitDescription.ThrownObject)):ApplyStatus(BLINDED,100,1,,,,not SavingThrow(Ability.Dexterity, 15));TARGET:IF(Tagged('DWARF', context.Source) and HasStatus('MAG_DWARVEN_THROWER_TECHNICAL', context.HitDescription.ThrownObject) and not SizeEqualOrGreater(Size.Large)):DealDamage(1d8, Bludgeoning);TARGET:IF(Tagged('DWARF', context.Source) and HasStatus('MAG_DWARVEN_THROWER_TECHNICAL', context.HitDescription.ThrownObject) and SizeEqualOrGreater(Size.Large)):DealDamage(2d8, Bludgeoning);"
-
-new entry "RAW_Throw_Finesse_OffHand_Transition"
-type "SpellData"
-data "SpellType" "Throw"
-using "RAW_Throw_Weapon_OffHand_Transition"
-data "SpellSuccess" "TARGET:IF(HasPassive('FightingStyle_TwoWeaponFighting',context.Source)):DealDamage(ThrownWeapon, ThrownWeaponDamageType);TARGET:IF(not HasPassive('FightingStyle_TwoWeaponFighting',context.Source)):DealDamage(max(1,ThrownWeapon-max(0,max(StrengthModifier,DexterityModifier))), ThrownWeaponDamageType);TARGET:IF(Tagged('BOO',context.HitDescription.ThrownObject)):ApplyStatus(BLINDED,100,1,,,,not SavingThrow(Ability.Dexterity, 15));TARGET:IF(Tagged('DWARF', context.Source) and HasStatus('MAG_DWARVEN_THROWER_TECHNICAL', context.HitDescription.ThrownObject) and not SizeEqualOrGreater(Size.Large)):DealDamage(1d8, Bludgeoning);TARGET:IF(Tagged('DWARF', context.Source) and HasStatus('MAG_DWARVEN_THROWER_TECHNICAL', context.HitDescription.ThrownObject) and SizeEqualOrGreater(Size.Large)):DealDamage(2d8, Bludgeoning);"
-
-new entry "RAW_Throw_Javelin"
-type "SpellData"
-data "SpellType" "Throw"
-using "RAW_Throw_Weapon"
-data "DescriptionParams" "Distance(9)"
-
-new entry "RAW_Throw_Javelin_OffHand"
-type "SpellData"
-data "SpellType" "Throw"
-using "RAW_Throw_Weapon_OffHand"
-data "DescriptionParams" "Distance(9)"
-
-new entry "RAW_Throw_Javelin_OffHand_Transition"
-type "SpellData"
-data "SpellType" "Throw"
-using "RAW_Throw_Weapon_OffHand_Transition"
-data "DescriptionParams" "Distance(9)"
+data "RequirementConditions" "HasStatus('RAW_OFFHAND_HELPER') and WieldingWeapon('Thrown', false, false, context.Source)"
+data "RequirementEvents" "OnStatusApplied;OnStatusRemoved;OnEquip"
+data "SpellFlags" "InventorySelection;RangeIgnoreVerticalThreshold;IsHarmful;HasHighGroundRangeExtension;IgnoreSilence;TrajectoryRules;CombatLogSetSingleLineRoll;Temporary"
 
 new entry "RAW_WEAPON_THROWN"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StackId" "RAW_WEAPON_THROWN"
+data "Boosts" "UnlockSpell(RAW_Throw_Weapon_OffHand_Transition)"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 data "TickType" "EndTurn"
