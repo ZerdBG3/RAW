@@ -28,7 +28,7 @@ _Quality of Life feature_
   - **_Currently, due to a bug crashing the game, only players are bound by this rule_**
   - _Multiple spells with a casting cost of an Action is still allowed (by the likes of Action Surge)_
   - _The restriction includes Quickened Spell (Metamagic) and spells from Class/Race or Items that are proper spells (even without a spell slot cost)_
-  - _Due to an technical limitation, scrolls for spells your character don't know inside a container (such as a backpack) can bypass this rule, so can scrolls send to the character after they already cast a spell on their turn_
+  - _Due to a technical limitation, scrolls for spells your character don't know inside a container (such as a backpack) can bypass this rule, so can scrolls sent to the character after they've already cast a spell on their turn_
 
 ## Spells Duration ⚙️ `spells_duration`
 
