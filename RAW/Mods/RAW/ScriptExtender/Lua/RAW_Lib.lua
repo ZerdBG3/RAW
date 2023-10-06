@@ -141,7 +141,8 @@ RAW_PrintTable_Rogue_Thief = 5
 RAW_PrintTable_SkillCheck_CritFail = 6
 RAW_PrintTable_Spells_BonusAction = 7
 RAW_PrintTable_Spells_Duration = 8
-RAW_PrintTable_WeaponSpells = 9
+RAW_PrintTable_WeaponSets = 9
+RAW_PrintTable_WeaponSpells = 10
 
 local ENUM_RAW_PrintTable = RAW_Set {
     RAW_PrintTable_ModOptions,
@@ -153,6 +154,7 @@ local ENUM_RAW_PrintTable = RAW_Set {
     -- RAW_PrintTable_SkillCheck_CritFail,
     -- RAW_PrintTable_Spells_BonusAction,
     -- RAW_PrintTable_Spells_Duration,
+    -- RAW_PrintTable_WeaponSets,
     -- RAW_PrintTable_WeaponSpells,
 }
 
