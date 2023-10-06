@@ -89,6 +89,7 @@ _Quality of Life feature_
   - Attacking Recklessly allows for all attacks on the same turn to be done with advantage (but not after the turn ends, so no advantage on AoO). The enemies can still gain advantage on attacks aganinst the barbarian until the start of the barbairan's next turn
 * Level 3 (Path of the Berserker): Removed Throw as a bonus action
 * Level 3 (Path of Wild Magic): Makes all bonus actions granted by the random outcomes castable in the first round for free (next rounds it still requires a bonus action)
+* Level 3 (Path of Wild Magic): Shadowy Tendrils random outcome only damages enemies
 ### Druid
 * Level 2: Wild Shape allows for spells that require reactivation to be usable (eg.: Heat Metal, Moonbeam, Call Lightning) 
 * Level 2 (Circle of the Land): Natural Recovery is only usable during a Short Rest
