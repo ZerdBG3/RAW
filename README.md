@@ -27,6 +27,11 @@ Zerd's Rules As Written for Baldur's Gate 3
 * This mod alters a lot of core mechanics, thus it might not be compatible with saves that were started without it. If possible, start a new game when using this mod
 * There's also various modifications to classes progressions, spells, actions, etc. This means other mods that change the same entries might cause conflict. Using other mods may result in weird interactions and not intended behaviors
 
+# Languages
+* In-game content is currently translated to the following languages
+  - English
+  - German
+
 # Error
 * **IMPORTANT:** When opening the launcher, you'll get several notifications telling you about how mods might break and crash your game. Ignore them
 * When loading the game or creating a new one, you'll get a notification regarding an invalid story set-up. Since the mod doesn't have any story files, the fallback to the main story allows the game to load correctly. Tl;dr: ignore the error warning you'll get
