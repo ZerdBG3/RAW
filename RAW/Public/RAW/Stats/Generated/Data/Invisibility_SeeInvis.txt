@@ -25,12 +25,12 @@ data "SpellType" "Shout"
 using "Shout_SeeInvisibility_Seek"
 data "SpellProperties" "ApplyStatus(SEE_INVISIBILITY_SEEK,100,1)"
 
+// ----------------------------------------------------------
+// --------------------- Invisibility -----------------------
+// ----------------------------------------------------------
+
 // All INVISIBLE statuses now apply a _SEEN version if removed by SEE_INVISIBILITY_REVEAL
 // Also, invisibility shouldn't break when you take damage
-
-// ----------------------------------------------------------
-// ----------- Invisibility Statuses from Shared ------------
-// ----------------------------------------------------------
 
 new entry "INVISIBLE"
 type "StatusData"
@@ -67,10 +67,6 @@ type "StatusData"
 data "StatusType" "INVISIBLE"
 using "POTION_OF_INVISIBILITY"
 data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(POTION_OF_INVISIBILITY_SEEN,100,Target.POTION_OF_INVISIBILITY.Duration,,,,,true)"
-
-// ----------------------------------------------------------
-// ---------- Invisibility Statuses from SharedDev ----------
-// ----------------------------------------------------------
 
 new entry "CLOAK_OF_SHADOWS"
 type "StatusData"
@@ -170,10 +166,7 @@ data "RemoveConditions" ""
 data "OnRemoveFunctors" "ApplyStatus(INVOKE_DUPLICITY_AURA,100,-1)"
 data "StatusGroups" ""
 
-// ----------------------------------------------------------
-// ---------- Invisibility Statuses from GustavDev ----------
-// ----------------------------------------------------------
-
+//Seems unaffected by See Invisible even when unattended.
 new entry "MAG_INVISIBLE_WEAPON"
 type "StatusData"
 data "StatusType" "INVISIBLE"
@@ -186,12 +179,12 @@ data "StatusType" "INVISIBLE"
 using "LOW_POLTERGEIST_INVISIBLE"
 data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(LOW_POLTERGEIST_INVISIBLE_SEEN,100,Target.LOW_POLTERGEIST_INVISIBLE.Duration,,,,,true)"
 
+// ----------------------------------------------------------
+// ------------------ Invisibility _SEEN --------------------
+// ----------------------------------------------------------
+
 // These statuses are applied when their corresponding INVISIBLE status is removed by SEE_INVISIBILITY_REVEAL
 // Original INVISIBLE statuses are reapplied when SEE_INVISIBLE_REVEAL is removed
-
-// ----------------------------------------------------------
-// ----------- Invisibility Statuses from Shared ------------
-// ----------------------------------------------------------
 
 new entry "INVISIBLE_SEEN"
 type "StatusData"
@@ -231,10 +224,6 @@ using "POTION_OF_INVISIBILITY"
 data "Boosts" "Disadvantage(AttackTarget); Advantage(AttackRoll);"
 data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack) and not HasStatus('SEE_INVISIBILITY_REVEAL'))"
 data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and not HasStatus('SEE_INVISIBILITY_REVEAL'))):ApplyStatus(POTION_OF_INVISIBILITY,100,Target.POTION_OF_INVISIBILITY_SEEN.Duration,,,,,true)"
-
-// ----------------------------------------------------------
-// ---------- Invisibility Statuses from SharedDev ----------
-// ----------------------------------------------------------
 
 new entry "CLOAK_OF_SHADOWS_SEEN"
 type "StatusData"
@@ -345,11 +334,7 @@ data "RemoveConditions" ""
 data "OnRemoveFunctors" "ApplyStatus(INVOKE_DUPLICITY_AURA,100,-1)"
 data "StatusGroups" ""
 
-// ----------------------------------------------------------
-// ---------- Invisibility Statuses from GustavDev ----------
-// ----------------------------------------------------------
-
-// CannotBeDisarmed() doesn't seem to work here.
+// CannotBeDisarmed() doesn't seem to work here
 new entry "MAG_INVISIBLE_WEAPON_SEEN"
 type "StatusData"
 data "StatusType" "INVISIBLE"
