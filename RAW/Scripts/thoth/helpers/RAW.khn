@@ -126,3 +126,31 @@ function RAW_ConcentrationBlocker()
     result = ~HasStatus('RAW_CONCENTRATION_BLOCKER')
     return ConditionResult(result.Result, {ConditionError("RAW_ConcentrationBlocker_False")})
 end
+
+function RAW_IsInvisibleSeen(entity)
+    entity = entity or context.Target
+    return HasStatus('INVISIBLE_SEEN',entity) 
+        |  HasStatus('INVISIBLE_MAGEHAND_SEEN',entity) 
+        |  HasStatus('INVISIBILITY_SEEN',entity) 
+        |  HasStatus('ONE_WITH_SHADOWS_SEEN',entity) 
+        |  HasStatus('POTION_OF_INVISIBILITY_SEEN',entity) 
+        |  HasStatus('CLOAK_OF_SHADOWS_SEEN',entity) 
+        |  HasStatus('CLOAK_OF_SHADOWS_MONK_SEEN',entity) 
+        |  HasStatus('UMBRAL_CLOAK_SEEN',entity) 
+        |  HasStatus('GREATER_INVISIBILITY_SEEN',entity) 
+        |  HasStatus('SHADOWBLEND_SEEN',entity) 
+        |  HasStatus('INVISIBILITY_SHADARKAI_GLOOMWEAVER_SEEN',entity) 
+        |  HasStatus('HIDE_IN_PLAIN_SIGHT_SEEN',entity) 
+        |  HasStatus('MISTY_ESCAPE_INVISIBLE_SEEN',entity) 
+        |  HasStatus('INVISIBILITY_PANTHER_SEEN',entity) 
+        |  HasStatus('SHROUD_SELF_SEEN',entity) 
+        |  HasStatus('SUPREME_SNEAK_SEEN',entity) 
+        |  HasStatus('MAG_INVISIBLE_WEAPON_SEEN',entity) 
+        |  HasStatus('LOW_POLTERGEIST_INVISIBLE_SEEN',entity)
+end
+
+function RAW_CanSeeInvisibleTarget()
+    return Tagged('BLINDSIGHT', context.Source) 
+        | (HasStatus('SEE_INVISIBILITY', context.Source) or HasStatus('MAG_SEE_INVISIBILITY_HIDDEN_IGNORE_RESTING', context.Source)) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 9)
+        | (HasStatus('SEE_INVISIBILITY_SEEK', context.Source) or HasPassive('BlindFighting', context.Source)) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 3)
+end
