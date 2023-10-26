@@ -2,7 +2,7 @@
 // -------------------- See Invisibility --------------------
 // ----------------------------------------------------------
 
-// Skips SEE_INVISIBILITY_SEEN/Dexterity Saves and just applies SEE_INVISIBILITY_SEEN
+// Skips SEE_INVISIBILITY_SEEN/Dexterity Saves and just applies SEE_INVISIBILITY_REVEAL
 new entry "SEE_INVISIBILITY"
 type "StatusData"
 data "StatusType" "BOOST"
