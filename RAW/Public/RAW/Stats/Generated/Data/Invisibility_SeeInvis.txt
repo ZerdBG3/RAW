@@ -1,0 +1,367 @@
+// ----------------------------------------------------------
+// -------------------- See Invisibility --------------------
+// ----------------------------------------------------------
+
+// Skips SEE_INVISIBILITY_SEEN/Dexterity Saves and just applies SEE_INVISIBILITY_SEEN
+new entry "SEE_INVISIBILITY"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SEE_INVISIBILITY"
+data "AuraStatuses" "TARGET:IF(not HasAnyStatus({'SG_Unconscious','SG_Incapacitated','SG_Blinded'},{},{},context.Source) and not Ally() and HasStatus('SG_Invisible')):ApplyStatus(SEE_INVISIBILITY_REVEAL)"
+
+// Also removes SG_Invisible on removal to replace original INVISIBLE statuses
+new entry "SEE_INVISIBILITY_REVEAL"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SEE_INVISIBILITY_REVEAL"
+data "OnApplyFunctors" "IF(not RAW_IsInvisibleSeen()):RemoveStatus(SG_Invisible)"
+data "OnRemoveFunctors" "IF(RAW_IsInvisibleSeen() and not HasStatus('SEE_INVISIBILITY_REVEAL')):RemoveStatus(SG_Invisible)"
+data "StatusEffect" "d26436d4-d019-4dfc-b2f1-da0ac195575f"
+
+// Increased status duration to 1. At 0, it just removed SG_Invisible without replacing statuses
+new entry "Shout_SeeInvisibility_Seek"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_SeeInvisibility_Seek"
+data "SpellProperties" "ApplyStatus(SEE_INVISIBILITY_SEEK,100,1)"
+
+// All INVISIBLE statuses now apply a _SEEN version if removed by SEE_INVISIBILITY_REVEAL
+// Also, invisibility shouldn't break when you take damage
+
+// ----------------------------------------------------------
+// ----------- Invisibility Statuses from Shared ------------
+// ----------------------------------------------------------
+
+new entry "INVISIBLE"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "INVISIBLE"
+data "RemoveEvents" "OnSpellCast;OnAttack;OnEntityPickUp;OnEntityDrop;OnEntityDrag"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack))"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(INVISIBLE_SEEN,100,Target.INVISIBLE.Duration,,,,,true)"
+
+new entry "INVISIBLE_MAGEHAND"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "INVISIBLE_MAGEHAND"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External)and HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(INVISIBLE_MAGEHAND_SEEN,100,Target.INVISIBLE_MAGEHAND.Duration,,,,,true)"
+
+new entry "INVISIBILITY"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "INVISIBILITY"
+data "RemoveEvents" "OnSpellCast;OnAttack;OnEntityPickUp;OnEntityDrop;OnEntityDrag"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack))"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(INVISIBILITY_SEEN,100,Target.INVISIBILITY.Duration,,,,,true)"
+
+new entry "ONE_WITH_SHADOWS"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "ONE_WITH_SHADOWS"
+data "RemoveEvents" "OnSpellCast;OnAttack;OnEntityPickUp;OnEntityDrop;OnEntityDrag;OnMove"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack)) or SpellId('Projectile_Jump') or SpellId('Projectile_Fly') or SpellId('Projectile_Fly_Spell')"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(ONE_WITH_SHADOWS_SEEN,100,Target.ONE_WITH_SHADOWS.Duration,,,,,true)"
+
+new entry "POTION_OF_INVISIBILITY"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "POTION_OF_INVISIBILITY"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(POTION_OF_INVISIBILITY_SEEN,100,Target.POTION_OF_INVISIBILITY.Duration,,,,,true)"
+
+// ----------------------------------------------------------
+// ---------- Invisibility Statuses from SharedDev ----------
+// ----------------------------------------------------------
+
+new entry "CLOAK_OF_SHADOWS"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "CLOAK_OF_SHADOWS"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(CLOAK_OF_SHADOWS_SEEN,100,Target.CLOAK_OF_SHADOWS.Duration,,,,,true)"
+
+new entry "CLOAK_OF_SHADOWS_MONK"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "CLOAK_OF_SHADOWS_MONK"
+data "RemoveEvents" "OnSpellCast;OnAttack;OnEntityDrop;OnEntityPickUp;OnEntityDrag;OnObscurityChanged"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (IsStatusEvent(StatusEvent.OnObscurityChanged) and HasObscuredState(ObscuredState.Clear,context.Source)) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack) and not IsStatusEvent(StatusEvent.OnObscurityChanged))"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(CLOAK_OF_SHADOWS_MONK_SEEN,100,Target.CLOAK_OF_SHADOWS_MONK.Duration,,,,,true)"
+
+new entry "UMBRAL_CLOAK"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "UMBRAL_CLOAK"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(UMBRAL_CLOAK_SEEN,100,Target.UMBRAL_CLOAK.Duration,,,,,true)"
+
+new entry "GREATER_INVISIBILITY"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "GREATER_INVISIBILITY"
+data "OnApplyFunctors" ""
+data "RemoveEvents" ""
+data "RemoveConditions" ""
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(GREATER_INVISIBILITY_SEEN,100,Target.GREATER_INVISIBILITY.Duration,,,,,true)"
+
+new entry "SHADOWBLEND"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "SHADOWBLEND"
+data "RemoveEvents" "OnSpellCast;OnAttack;OnEntityPickUp;OnEntityDrop;OnEntityDrag;OnObscurityChanged;OnMove"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or ((IsStatusEvent(StatusEvent.OnObscurityChanged) or IsStatusEvent(StatusEvent.OnMove)) and (HasObscuredState(ObscuredState.Clear,context.Source))) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack) and not IsStatusEvent(StatusEvent.OnObscurityChanged) and not IsStatusEvent(StatusEvent.OnMove)) or (IsStatusEvent(StatusEvent.OnStatusApplied) and (HasStatus('SEE_INVISIBILITY_REVEAL') or HasStatus('FAERIE_FIRE') or HasStatus('BRANDING_SMITE')))"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(SHADOWBLEND_SEEN,100,Target.SHADOWBLEND.Duration,,,,,true)"
+
+new entry "INVISIBILITY_SHADARKAI_GLOOMWEAVER"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "INVISIBILITY_SHADARKAI_GLOOMWEAVER"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or ((IsStatusEvent(StatusEvent.OnObscurityChanged) or IsStatusEvent(StatusEvent.OnMove)) and (HasObscuredState(ObscuredState.Clear,context.Source))) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack) and not IsStatusEvent(StatusEvent.OnObscurityChanged) and not IsStatusEvent(StatusEvent.OnMove)) or (IsStatusEvent(StatusEvent.OnStatusApplied) and (HasStatus('FAERIE_FIRE') or HasStatus('BRANDING_SMITE')))"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(INVISIBILITY_SHADARKAI_GLOOMWEAVER_SEEN,100,Target.INVISIBILITY_SHADARKAI_GLOOMWEAVER.Duration,,,,,true)"
+
+new entry "HIDE_IN_PLAIN_SIGHT"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "HIDE_IN_PLAIN_SIGHT"
+data "RemoveEvents" "OnSpellCast;OnAttack;OnEntityPickUp;OnEntityDrop;OnEntityDrag;OnMove"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(HIDE_IN_PLAIN_SIGHT_SEEN,100,Target.HIDE_IN_PLAIN_SIGHT.Duration,,,,,true)"
+
+new entry "MISTY_ESCAPE_INVISIBLE"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "MISTY_ESCAPE_INVISIBLE"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(MISTY_ESCAPE_INVISIBLE_SEEN,100,Target.MISTY_ESCAPE_INVISIBLE.Duration,,,,,true)"
+
+new entry "INVISIBILITY_PANTHER"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "INVISIBILITY_PANTHER"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack)) or not HasStatus('WILDSHAPE_PANTHER_PLAYER')"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(INVISIBILITY_PANTHER_SEEN,100,Target.INVISIBILITY_PANTHER.Duration,,,,,true)"
+
+new entry "SHROUD_SELF"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "SHROUD_SELF"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(SHROUD_SELF_SEEN,100,Target.SHROUD_SELF.Duration,,,,,true)"
+
+// unaffected by See Invisibility, so copied over original GREATER_INVISIBILITY lines it used to inherit
+new entry "FADE_APPEAR"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "FADE_APPEAR"
+data "OnApplyFunctors" "ApplyStatus(GREATER_INVISIBILITY_TRACKER,100,-1)"
+data "RemoveEvents" "OnSpellCast;OnEntityPickUp;OnEntityDrop;OnEntityDrag"
+data "RemoveConditions" "GreaterInvisibilityCheck_InvisSpellOrRoll()"
+data "OnRemoveFunctors" "RemoveStatus(GREATER_INVISIBILITY_TRACKER);RemoveStatus(GREATER_INVISIBILITY_SUCCESS)"
+
+new entry "SUPREME_SNEAK"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "SUPREME_SNEAK"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(SUPREME_SNEAK_SEEN,100,Target.SUPREME_SNEAK.Duration,,,,,true)"
+
+// unaffected by See Invisibility
+new entry "INVOKE_DUPLICITY_TECHNICAL"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "INVISIBLE"
+data "Boosts" ""
+data "StatusPropertyFlags" "UnavailableInActiveRoll;ExcludeFromPortraitRendering;DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
+data "RemoveEvents" ""
+data "RemoveConditions" ""
+data "OnRemoveFunctors" "ApplyStatus(INVOKE_DUPLICITY_AURA,100,-1)"
+data "StatusGroups" ""
+
+// ----------------------------------------------------------
+// ---------- Invisibility Statuses from GustavDev ----------
+// ----------------------------------------------------------
+
+new entry "MAG_INVISIBLE_WEAPON"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "MAG_INVISIBLE_WEAPON"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(MAG_INVISIBLE_WEAPON_SEEN,100,Target.MAG_INVISIBLE_WEAPON.Duration,,,,,true)"
+
+new entry "LOW_POLTERGEIST_INVISIBLE"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "LOW_POLTERGEIST_INVISIBLE"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(LOW_POLTERGEIST_INVISIBLE_SEEN,100,Target.LOW_POLTERGEIST_INVISIBLE.Duration,,,,,true)"
+
+// These statuses are applied when their corresponding INVISIBLE status is removed by SEE_INVISIBILITY_REVEAL
+// Original INVISIBLE statuses are reapplied when SEE_INVISIBLE_REVEAL is removed
+
+// ----------------------------------------------------------
+// ----------- Invisibility Statuses from Shared ------------
+// ----------------------------------------------------------
+
+new entry "INVISIBLE_SEEN"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "INVISIBLE"
+data "Boosts" "Disadvantage(AttackTarget); Advantage(AttackRoll);"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack) and not HasStatus('SEE_INVISIBILITY_REVEAL'))"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and not HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(INVISIBLE,100,Target.INVISIBLE_SEEN.Duration,,,,,true)"
+
+new entry "INVISIBLE_MAGEHAND_SEEN"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "INVISIBLE_MAGEHAND"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack) and not HasStatus('SEE_INVISIBILITY_REVEAL'))"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and not HasStatus('SEE_INVISIBILITY_REVEAL'))):ApplyStatus(INVISIBLE_MAGEHAND,100,Target.INVISIBLE_MAGEHAND_SEEN.Duration,,,,,true)"
+
+new entry "INVISIBILITY_SEEN"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "INVISIBILITY"
+data "Boosts" "Disadvantage(AttackTarget); Advantage(AttackRoll);"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack) and not HasStatus('SEE_INVISIBILITY_REVEAL'))"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and not HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(INVISIBILITY,100,Target.INVISIBILITY_SEEN.Duration,,,,,true)"
+
+new entry "ONE_WITH_SHADOWS_SEEN"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "ONE_WITH_SHADOWS"
+data "Boosts" "Disadvantage(AttackTarget); Advantage(AttackRoll);"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack) and not HasStatus('SEE_INVISIBILITY_REVEAL')) or SpellId('Projectile_Jump') or SpellId('Projectile_Fly') or SpellId('Projectile_Fly_Spell')"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and not HasStatus('SEE_INVISIBILITY_REVEAL'))):ApplyStatus(ONE_WITH_SHADOWS,100,Target.ONE_WITH_SHADOWS_SEEN.Duration,,,,,true)"
+
+new entry "POTION_OF_INVISIBILITY_SEEN"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "POTION_OF_INVISIBILITY"
+data "Boosts" "Disadvantage(AttackTarget); Advantage(AttackRoll);"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack) and not HasStatus('SEE_INVISIBILITY_REVEAL'))"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and not HasStatus('SEE_INVISIBILITY_REVEAL'))):ApplyStatus(POTION_OF_INVISIBILITY,100,Target.POTION_OF_INVISIBILITY_SEEN.Duration,,,,,true)"
+
+// ----------------------------------------------------------
+// ---------- Invisibility Statuses from SharedDev ----------
+// ----------------------------------------------------------
+
+new entry "CLOAK_OF_SHADOWS_SEEN"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "CLOAK_OF_SHADOWS"
+data "Boosts" "Disadvantage(AttackTarget); Advantage(AttackRoll);"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack) and not HasStatus('SEE_INVISIBILITY_REVEAL'))"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and not HasStatus('SEE_INVISIBILITY_REVEAL'))):ApplyStatus(CLOAK_OF_SHADOWS,100,Target.CLOAK_OF_SHADOWS_SEEN.Duration,,,,,true)"
+
+new entry "CLOAK_OF_SHADOWS_MONK_SEEN"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "CLOAK_OF_SHADOWS_MONK"
+data "Boosts" "Disadvantage(AttackTarget); Advantage(AttackRoll);"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (IsStatusEvent(StatusEvent.OnObscurityChanged) and HasObscuredState(ObscuredState.Clear,context.Source)) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack) and not IsStatusEvent(StatusEvent.OnObscurityChanged) and not HasStatus('SEE_INVISIBILITY_REVEAL'))"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and not HasStatus('SEE_INVISIBILITY_REVEAL'))):ApplyStatus(CLOAK_OF_SHADOWS_MONK,100,Target.CLOAK_OF_SHADOWS_MONK_SEEN.Duration,,,,,true)"
+
+new entry "UMBRAL_CLOAK_SEEN"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "UMBRAL_CLOAK"
+data "Boosts" "Disadvantage(AttackTarget); Advantage(AttackRoll);"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (IsStatusEvent(StatusEvent.OnObscurityChanged) and HasObscuredState(ObscuredState.Clear,context.Source)) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack) and not IsStatusEvent(StatusEvent.OnObscurityChanged) and not HasStatus('SEE_INVISIBILITY_REVEAL'))"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and not HasStatus('SEE_INVISIBILITY_REVEAL'))):ApplyStatus(UMBRAL_CLOAK,100,Target.UMBRAL_CLOAK_SEEN.Duration,,,,,true)"
+
+new entry "GREATER_INVISIBILITY_SEEN"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "GREATER_INVISIBILITY"
+data "Boosts" "Disadvantage(AttackTarget); Advantage(AttackRoll);"
+data "RemoveConditions" "not HasStatus('SEE_INVISIBILITY_REVEAL')"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External)):ApplyStatus(GREATER_INVISIBILITY,100,Target.GREATER_INVISIBILITY_SEEN.Duration,,,,,true)"
+
+new entry "SHADOWBLEND_SEEN"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "SHADOWBLEND"
+data "Boosts" "Disadvantage(AttackTarget); Advantage(AttackRoll);"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or ((IsStatusEvent(StatusEvent.OnObscurityChanged) or IsStatusEvent(StatusEvent.OnMove)) and (HasObscuredState(ObscuredState.Clear,context.Source))) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack) and not IsStatusEvent(StatusEvent.OnObscurityChanged) and not IsStatusEvent(StatusEvent.OnMove) and not HasStatus('SEE_INVISIBILITY_REVEAL'))) or (IsStatusEvent(StatusEvent.OnStatusApplied) and (HasStatus('FAERIE_FIRE') or HasStatus('BRANDING_SMITE')))"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and not HasStatus('SEE_INVISIBILITY_REVEAL'))):ApplyStatus(SHADOWBLEND,100,Target.SHADOWBLEND_SEEN.Duration,,,,,true)"
+
+new entry "INVISIBILITY_SHADARKAI_GLOOMWEAVER_SEEN"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "INVISIBILITY_SHADARKAI_GLOOMWEAVER"
+data "Boosts" "Disadvantage(AttackTarget); Advantage(AttackRoll); UnlockSpell(Target_MistyEscape_ShadarKai_GloomWeaver)"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack) and not HasStatus('SEE_INVISIBILITY_REVEAL'))"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and not HasStatus('SEE_INVISIBILITY_REVEAL'))):ApplyStatus(INVISIBILITY_SHADARKAI_GLOOMWEAVER,100,Target.INVISIBILITY_SHADARKAI_GLOOMWEAVER_SEEN.Duration,,,,,true)"
+
+new entry "HIDE_IN_PLAIN_SIGHT_SEEN"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "HIDE_IN_PLAIN_SIGHT"
+data "Boosts" "Disadvantage(AttackTarget); Advantage(AttackRoll); Skill(Stealth, 10)"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack) and not HasStatus('SEE_INVISIBILITY_REVEAL'))"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and not HasStatus('SEE_INVISIBILITY_REVEAL'))):ApplyStatus(HIDE_IN_PLAIN_SIGHT,100,Target.HIDE_IN_PLAIN_SIGHT_SEEN.Duration,,,,,true)"
+
+new entry "MISTY_ESCAPE_INVISIBLE_SEEN"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "MISTY_ESCAPE_INVISIBLE"
+data "Boosts" "Disadvantage(AttackTarget); Advantage(AttackRoll); UnlockSpell(Target_MistyStep_Free)"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack) and not HasStatus('SEE_INVISIBILITY_REVEAL'))"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and not HasStatus('SEE_INVISIBILITY_REVEAL'))):ApplyStatus(MISTY_ESCAPE_INVISIBLE,100,Target.MISTY_ESCAPE_INVISIBLE_SEEN.Duration,,,,,true)"
+
+new entry "INVISIBILITY_PANTHER_SEEN"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "INVISIBILITY_PANTHER"
+data "Boosts" "Disadvantage(AttackTarget); Advantage(AttackRoll); Advantage(Skill, Stealth)"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack) and not HasStatus('SEE_INVISIBILITY_REVEAL')) or not HasStatus('WILDSHAPE_PANTHER_PLAYER')"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and not HasStatus('SEE_INVISIBILITY_REVEAL'))):ApplyStatus(INVISIBILITY_PANTHER,100,Target.INVISIBILITY_PANTHER_SEEN.Duration,,,,,true)"
+
+new entry "SHROUD_SELF_SEEN"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "SHROUD_SELF"
+data "Boosts" "Disadvantage(AttackTarget); Advantage(AttackRoll);"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack) and not HasStatus('SEE_INVISIBILITY_REVEAL'))"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and not HasStatus('SEE_INVISIBILITY_REVEAL'))):ApplyStatus(SHROUD_SELF,100,Target.SHROUD_SELF_SEEN.Duration,,,,,true)"
+
+// original status wouldn't be removed by See Invisibility
+new entry "FADE_APPEAR_SEEN"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "FADE_APPEAR"
+data "StatusPropertyFlags" "UnavailableInActiveRoll;DisableCombatlog;DisableOverhead;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+data "StatusGroups" "SG_None"
+data "StatusEffect" "6e9a55e5-56ae-4098-a789-ba4a21bf170e"
+
+new entry "SUPREME_SNEAK_SEEN"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "SUPREME_SNEAK"
+data "Boosts" "Disadvantage(AttackTarget); Advantage(AttackRoll);"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack) and not HasStatus('SEE_INVISIBILITY_REVEAL'))"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and not HasStatus('SEE_INVISIBILITY_REVEAL'))):ApplyStatus(SUPREME_SNEAK,100,Target.SUPREME_SNEAK_SEEN.Duration,,,,,true)"
+
+//original status wouldn't be removed by See Invisibility
+new entry "INVOKE_DUPLICITY_TECHNICAL_SEEN"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "INVOKE_DUPLICITY_TECHNICAL"
+data "Boosts" ""
+data "StatusPropertyFlags" "UnavailableInActiveRoll;ExcludeFromPortraitRendering;DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
+data "RemoveEvents" ""
+data "RemoveConditions" ""
+data "OnRemoveFunctors" "ApplyStatus(INVOKE_DUPLICITY_AURA,100,-1)"
+data "StatusGroups" ""
+
+// ----------------------------------------------------------
+// ---------- Invisibility Statuses from GustavDev ----------
+// ----------------------------------------------------------
+
+// CannotBeDisarmed() doesn't seem to work here.
+new entry "MAG_INVISIBLE_WEAPON_SEEN"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "MAG_INVISIBLE_WEAPON"
+data "Boosts" "CannotBeDisarmed()"
+data "RemoveConditions" "not HasStatus('SEE_INVISIBILITY_REVEAL')"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and not HasStatus('SEE_INVISIBILITY_REVEAL'))):ApplyStatus(MAG_INVISIBLE_WEAPON,100,Target.MAG_INVISIBLE_WEAPON_SEEN.Duration,,,,,true)"
+
+new entry "LOW_POLTERGEIST_INVISIBLE_SEEN"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "LOW_POLTERGEIST_INVISIBLE"
+data "Boosts" "Disadvantage(AttackTarget); Advantage(AttackRoll);"
+data "RemoveConditions" "IsStatusEvent(StatusEvent.OnAttacked) or not HasStatus('SEE_INVISIBILITY_REVEAL'))"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and not HasStatus('SEE_INVISIBILITY_REVEAL'))):ApplyStatus(LOW_POLTERGEIST_INVISIBLE,100,Target.LOW_POLTERGEIST_INVISIBLE_SEEN.Duration,,,,,true)"
