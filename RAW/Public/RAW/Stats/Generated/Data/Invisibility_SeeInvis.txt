@@ -10,6 +10,7 @@ using "SEE_INVISIBILITY"
 data "AuraStatuses" "TARGET:IF(not HasAnyStatus({'SG_Unconscious','SG_Incapacitated','SG_Blinded'},{},{},context.Source) and not Ally() and HasStatus('SG_Invisible')):ApplyStatus(SEE_INVISIBILITY_REVEAL)"
 
 // Also removes SG_Invisible on removal to replace original INVISIBLE statuses
+// RAW_IsInvisibleSeen() is defined at Scripts\thoth\helpers\RAW.khn
 new entry "SEE_INVISIBILITY_REVEAL"
 type "StatusData"
 data "StatusType" "BOOST"
