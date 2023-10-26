@@ -1,4 +1,4 @@
-// Added checks for invisibility and ability to sense target
+// Added RAW_IsInvisibleSeen() and RAW_CanSeeInvisibleTarget() defined at Scripts\thoth\helpers\RAW.khn to weapon range based reactions
 new entry "Interrupt_AttackOfOpportunity"
 type "InterruptData"
 using "Interrupt_AttackOfOpportunity"
