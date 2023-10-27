@@ -150,7 +150,8 @@ function RAW_IsInvisibleSeen(entity)
 end
 
 function RAW_CanSeeInvisibleTarget()
-    return Tagged('BLINDSIGHT', context.Source) or HasStatus('TRUESIGHT',context.Source) 
+    return Tagged('BLINDSIGHT', context.Source) 
+        |  HasStatus('TRUESIGHT', context.Source) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 36.5)
         | (HasStatus('SEE_INVISIBILITY', context.Source) or HasStatus('MAG_SEE_INVISIBILITY_HIDDEN_IGNORE_RESTING', context.Source)) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 9)
         | (HasStatus('SEE_INVISIBILITY_SEEK', context.Source) or HasPassive('BlindFighting', context.Source)) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 3)
 end
