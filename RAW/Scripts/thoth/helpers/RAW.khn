@@ -154,5 +154,5 @@ function RAW_CanSeeInvisible(entity)
     return Tagged('BLINDSIGHT', entity) 
         |  HasStatus('TRUESIGHT', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 36.5)
         | (HasStatus('SEE_INVISIBILITY', entity) | HasStatus('MAG_SEE_INVISIBILITY_HIDDEN_IGNORE_RESTING', entity)) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 9)
-        | (HasStatus('SEE_INVISIBILITY_SEEK', entity) | HasPassive('BlindFighting', entity)) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 3)
+        | (HasStatus('SEE_INVISIBILITY_SEEK', entity) | HasPassive('FightingStyle_BlindFighting', entity)) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 3)
 end
