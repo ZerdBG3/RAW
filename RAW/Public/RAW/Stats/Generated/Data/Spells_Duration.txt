@@ -286,14 +286,7 @@ using "Shout_FalseLife_6"
 data "SpellProperties" "ApplyStatus(FALSE_LIFE_6,100,600)"
 data "TooltipStatusApply" "ApplyStatus(FALSE_LIFE_6,100,600)"
 
-// Added Dismiss Spell in Spells.txt and included RitualCost
-new entry "Target_FeignDeath"
-type "SpellData"
-data "SpellType" "Target"
-using "Target_FeignDeath"
-data "SpellProperties" "ApplyStatus(FEIGN_DEATH,100,600);ApplyStatus(SELF,RAW_FEIGN_DEATH_TECHNICAL_STACK,100,-1)"
-data "TooltipStatusApply" "ApplyStatus(FEIGN_DEATH,100,600)"
-data "RitualCosts" "ActionPoint:1"
+// Feign Death is modified at Spells.txt due to other changes beside duration
 
 new entry "Target_GaseousForm"
 type "SpellData"

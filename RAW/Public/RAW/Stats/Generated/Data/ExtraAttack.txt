@@ -1,6 +1,4 @@
 // Depends on RAW_ExtraAttackCheck() and RAW_HasHigherPriorityExtraAttackQueued from Scripts\thoth\helpers\RAW.khn
-// Crossbow Loading property is considered due to the passive given to players (Player.txt) and the Crossbow
-//   expert feat (Feats.txt)
 
 // Depends on the changes to Shove from DefaultActions.txt
 // All forms of Extra Attack here count Shove as a possible replacement for the Attack Action
@@ -14,12 +12,12 @@
 new entry "ExtraAttack"
 type "PassiveData"
 using "ExtraAttack"
-data "Conditions" "(not context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and RAW_ExtraAttackSpellCheck() and HasUseCosts('ActionPoint', true) and not Tagged('EXTRA_ATTACK_BLOCKED',context.Source) and TurnBased(context.Source)) or (context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and StatusId('INITIAL_ATTACK_TECHNICAL') and TurnBased())"
+data "Conditions" "(not context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and RAW_ExtraAttackSpellCheck() and HasUseCosts('ActionPoint', true) and not Tagged('EXTRA_ATTACK_BLOCKED',context.Source) and not HasStatus('SLAYER_PLAYER',context.Source) and not HasStatus('SLAYER_PLAYER_10',context.Source) and TurnBased(context.Source)) or (context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and StatusId('INITIAL_ATTACK_TECHNICAL') and TurnBased())"
 
 new entry "ExtraAttack_2"
 type "PassiveData"
 using "ExtraAttack_2"
-data "Conditions" "(not context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and RAW_ExtraAttackSpellCheck() and HasUseCosts('ActionPoint', true) and not Tagged('EXTRA_ATTACK_BLOCKED',context.Source) and TurnBased(context.Source)) or (context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and StatusId('INITIAL_ATTACK_TECHNICAL') and TurnBased())"
+data "Conditions" "(not context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and RAW_ExtraAttackSpellCheck() and HasUseCosts('ActionPoint', true) and not Tagged('EXTRA_ATTACK_BLOCKED',context.Source) and not HasStatus('SLAYER_PLAYER',context.Source) and not HasStatus('SLAYER_PLAYER_10',context.Source) and TurnBased(context.Source)) or (context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and StatusId('INITIAL_ATTACK_TECHNICAL') and TurnBased())"
 
 new entry "EXTRA_ATTACK"
 type "StatusData"
@@ -168,3 +166,40 @@ data "StatusType" "BOOST"
 using "EXTRA_ATTACK_WAR_PRIEST_Q"
 data "RemoveConditions" "(not IsStatusEvent(StatusEvent.OnSpellCast) and not RAW_HasHigherPriorityExtraAttackQueued('EXTRA_ATTACK_WAR_PRIEST_Q') and not HasAnyExtraAttack()) or (IsStatusEvent(StatusEvent.OnSpellCast) and not HasActionResource('BonusActionPoint', 1, 0, false, false))"
 data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.Condition) and HasActionResource('BonusActionPoint', 1, 0, false, false)):ApplyStatus(EXTRA_ATTACK_WAR_PRIEST, 100, 1)"
+
+// ----------------------------------------------------------
+// -------------------- Loading Crossbow --------------------
+// ----------------------------------------------------------
+
+// Extra Attack doesn't work for Crossbows, unless the attacker has the Crossbow Expert feat
+// The status is checked at RAW_ExtraAttackCheck() at Scripts\thoth\helpers\RAW.khn
+
+new entry "RAW_Loading_Block_ExtraAttack"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnCast"
+data "Conditions" "RAW_LoadingBlockExtraAttack(context.Source) and TurnBased(context.Source)"
+data "StatsFunctors" "ApplyStatus(SELF,RAW_EXTRA_ATTACK_LOADING,100,1)"
+
+new entry "RAW_EXTRA_ATTACK_LOADING"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "RAW_EXTRA_ATTACK_LOADING"
+data "TickType" "StartTurn"
+data "OnApplyFunctors" "IF(not RAW_HasHigherPriorityExtraAttackQueued('EXTRA_ATTACK_WAR_MAGIC_Q') and not HasAnyExtraAttack()):RemoveStatus(RAW_EXTRA_ATTACK_LOADING)"
+data "RemoveConditions" "not RAW_HasHigherPriorityExtraAttackQueued('EXTRA_ATTACK_WAR_MAGIC_Q') and not HasAnyExtraAttack()"
+data "RemoveEvents" "OnStatusRemoved"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+// ---------------------------------------------------------
+// -------------------- Crossbow Expert --------------------
+// ---------------------------------------------------------
+
+// This passive is checked on RAW_ExtraAttackCheck() at Scripts\thoth\helpers\RAW.khn
+
+new entry "CrossbowExpert_Wounding"
+type "PassiveData"
+using "CrossbowExpert_Wounding"
+data "DisplayName" "h2c5ddf7eg8dbcg4b9fga803g537c44e0ff16;1"
+data "Description" "h171c2107gb858g4e96ga500g0d861916042c;1"
+data "Boosts" ""

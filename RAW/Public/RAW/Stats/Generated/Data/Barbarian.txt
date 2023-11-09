@@ -10,7 +10,7 @@
 new entry "RecklessAttack"
 type "PassiveData"
 using "RecklessAttack"
-data "Conditions" "IsAttack() and not HasStatus('FIRST_ATTACK_TURN',context.Source) and not HasStatus('RECKLESS_ATTACK',context.Source)"
+data "Conditions" "IsAttack()"
 
 new entry "FIRST_ATTACK_TURN"
 type "StatusData"

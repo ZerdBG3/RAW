@@ -117,7 +117,14 @@ data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndi
 // ------------- Feign Death Dismiss -------------
 // -----------------------------------------------
 
-// Adjusted Feign Death spell in Spells_Duration.txt for the Dimiss portion here. Also added Wildshape spell flag
+new entry "Target_FeignDeath"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_FeignDeath"
+data "SpellProperties" "ApplyStatus(FEIGN_DEATH,100,600);ApplyStatus(SELF,RAW_FEIGN_DEATH_TECHNICAL_STACK,100,-1)"
+data "TooltipStatusApply" "ApplyStatus(FEIGN_DEATH,100,600)"
+data "RitualCosts" "ActionPoint:1"
+
 new entry "RAW_Target_FeignDeath_Dismiss"
 type "SpellData"
 data "SpellType" "Target"

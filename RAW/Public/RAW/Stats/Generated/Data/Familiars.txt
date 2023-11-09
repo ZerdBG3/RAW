@@ -33,8 +33,10 @@ data "VerbalIntent" "Debuff"
 new entry "RAW_Projectile_Jump_Cat"
 type "SpellData"
 data "SpellType" "Projectile"
-using "RAW_Projectile_Jump_Thief"
+using "Projectile_Jump"
+data "AddRangeFromAbility" "Dexterity,1"
 data "DisplayName" "h64247e79gece7g4d43g9a17g38dd2fbb94fd;1"
+data "Description" "hc25fd2e1g6a3cg4c99g8690gcf48eabe53a1;1"
 
 // ----------------------------------------------
 // -------------------- Crab --------------------

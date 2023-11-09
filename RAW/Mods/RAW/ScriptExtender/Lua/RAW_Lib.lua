@@ -134,26 +134,36 @@ end
 -- Print only if the value is set (not commented) on the table
 RAW_PrintTable_ModOptions = 0
 RAW_PrintTable_Attunement = 1
-RAW_PrintTable_CharacterPassives = 2
-RAW_PrintTable_Concentration = 3
-RAW_PrintTable_Rogue = 4
-RAW_PrintTable_Rogue_Thief = 5
-RAW_PrintTable_SkillCheck_CritFail = 6
-RAW_PrintTable_Spells_BonusAction = 7
-RAW_PrintTable_Spells_Duration = 8
-RAW_PrintTable_WeaponSets = 9
-RAW_PrintTable_WeaponSpells = 10
+RAW_PrintTable_Barbarian_Berserker = 2
+RAW_PrintTable_CharacterPassives = 3
+RAW_PrintTable_Concentration = 4
+RAW_PrintTable_ExtraAttack = 5
+RAW_PrintTable_Feats = 6
+RAW_PrintTable_FreeWeaponEquip = 7
+RAW_PrintTable_Rogue = 8
+RAW_PrintTable_Rogue_Thief = 9
+RAW_PrintTable_SkillCheck_CritFail = 10
+RAW_PrintTable_Spells_BonusAction = 11
+RAW_PrintTable_Spells_Duration = 12
+RAW_PrintTable_TwoWeaponFighting = 13
+RAW_PrintTable_WeaponSets = 14
+RAW_PrintTable_WeaponSpells = 15
 
 local ENUM_RAW_PrintTable = RAW_Set {
     RAW_PrintTable_ModOptions,
     -- RAW_PrintTable_Attunement,
+    -- RAW_PrintTable_Barbarian_Berserker,
     -- RAW_PrintTable_CharacterPassives,
     -- RAW_PrintTable_Concentration,
+    -- RAW_PrintTable_ExtraAttack,
+    -- RAW_PrintTable_Feats,
+    -- RAW_PrintTable_FreeWeaponEquip,
     -- RAW_PrintTable_Rogue,
     -- RAW_PrintTable_Rogue_Thief,
     -- RAW_PrintTable_SkillCheck_CritFail,
     -- RAW_PrintTable_Spells_BonusAction,
     -- RAW_PrintTable_Spells_Duration,
+    -- RAW_PrintTable_TwoWeaponFighting,
     -- RAW_PrintTable_WeaponSets,
     -- RAW_PrintTable_WeaponSpells,
 }
