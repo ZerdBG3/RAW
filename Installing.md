@@ -18,13 +18,9 @@
 
 | Option | Default | Description | 
 |---|---|---|
-| [attunement](https://github.com/ZerdBG3/RAW/blob/main/Features.md#attunement-%EF%B8%8F-attunement) | 3 | Sets a limit to the amount of magic items a character can have attuned at once (choose a value between 1 and 10). |
+| [attunement](https://github.com/ZerdBG3/RAW/blob/main/Features.md#attunement-%EF%B8%8F-attunement) | 5 | Sets a limit to the amount of magic items a character can have attuned at once (choose a value between 1 and 12). |
 | [concentration_failsafe](https://github.com/ZerdBG3/RAW/blob/main/Features.md#concentration-failsafe-%EF%B8%8F-concentration_failsafe) | - | Gives the player a toggleable passive that stops them from casting concentration spells while already concentrating. |
-| [skillCheck_critFail](https://github.com/ZerdBG3/RAW/blob/main/Features.md#critical-fails-on-skill-checks-%EF%B8%8F-skillcheck_critfail) | - | Disables the possibility of a critical fail on skill checks by setting a minimum of 2 on rolls. |
-| [spells_bonusAction](https://github.com/ZerdBG3/RAW/blob/main/Features.md#bonus-action-spells-rule-%EF%B8%8F-spells_bonusaction) | - | Enforces the spell casted as a bonus action rule stopping casting other leveled spells on the same turn. |
-| [spells_duration](https://github.com/ZerdBG3/RAW/blob/main/Features.md#spells-duration-%EF%B8%8F-spells_duration) | - | Removes statuses that last up to 1 hour on Short Rest. |
 | [weaponSets](https://github.com/ZerdBG3/RAW/blob/main/Features.md#weapon-sets-%EF%B8%8F-weaponsets) | - | Disable Weapon Sets. Equipping a ranged weapon unequips melee weapons and vice-versa. |
-| [weaponSpells](https://github.com/ZerdBG3/RAW/blob/main/Features.md#weapon-spells-%EF%B8%8F-weaponspells) | - | Removes weapon spells/passives from basic weapons, such as Cleave, Overwhelm, Piercing Shot and Topple. |
 
 * If you want to make sure your configurations are being loaded properly, turn on the Debug Console for the Script Extender by creating a `ScriptExtenderSettings.json` file on the same folder the extender was installed (`\steamapps\common\Baldurs Gate 3\bin`). The file should contain the following:
 ```json

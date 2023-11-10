@@ -2,24 +2,15 @@
     "f19c68ed-70be-4c3d-b610-e94afc5c5103": {
         "attunement": {
             "enabled": true,
-            "value": 3
+            "value": 5
         },
         "concentration_failsafe": {
             "enabled": true
         },
-        "skillCheck_critFail": {
-            "enabled": true
-        },
-        "spells_bonusAction": {
-            "enabled": true
-        },
-        "spells_duration": {
+        "spells": {
             "enabled": true
         },
         "weaponSets": {
-            "enabled": true
-        },
-        "weaponSpells": {
             "enabled": true
         }
     }
