@@ -1,5 +1,0 @@
-new entry "Shout_Dismiss_Self"
-type "SpellData"
-data "SpellType" "Shout"
-using "Shout_Dismiss_Self"
-data "UseCosts" ""

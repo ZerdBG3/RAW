@@ -1,6 +1,0 @@
-new entry "PRONE"
-type "StatusData"
-data "StatusType" "KNOCKED_DOWN"
-using "PRONE"
-data "Description" "hf9fcc402g8592g454cga793g52f04804a411;1"
-data "Boosts" "IF(not DistanceToTargetGreaterThan(3)):Advantage(AttackTarget);IF(DistanceToTargetGreaterThan(3)):Disadvantage(AttackTarget);DetectDisturbancesBlock(false);"
