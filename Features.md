@@ -7,7 +7,7 @@ _Developed in partnership with [Eric](https://www.nexusmods.com/baldursgate3/mod
 * Several magical items now require attunement. [Here's the list](https://docs.google.com/spreadsheets/d/1yCJ9ITC180dqykK713iHMEsrvVOHkgOmLF882-yr_hQ/edit#gid=0&fvid=1734738953)
   - To attune to an item, you simply equip it
   - Items that require attunement can only be equipped outside of combat (except for weapons)
-* You have a maximum number of items that can be attuned at once to each character (amount modifiable on the optional files)
+* You have a maximum number of items that can be attuned at once to each character (amount modifiable on the optional files, maximum is 12, default is 5)
   - After reaching your maximum amount of attuned items, you can no longer equip items that require attunement
   - To end an attunement, simply unequip an item that requires it
 
@@ -22,19 +22,18 @@ _Quality of Life feature_
   - _The reasoning for this is to avoid benefiting from bonuses (like AC from shields, or Spells from weapons) while using the other set_
 * Upon equipping a melee weapon or a shield, both ranged weapon slots are unequipped. Upon equipping a ranged weapon, both melee weapon slots are unequipped
   - _Due to the change to equip cost mentioned on [Global Changes](https://github.com/ZerdBG3/RAW/blob/main/Features.md#global-changes), you can always equip one weapon per turn for free, allowing you to switch "sets" without necessarily spending an action_
-* _One useful tip is to place your commonly used weapons on the hotbar (drag it from your inventory to your hotbar) to make switching sets easier. That way, you don't need to keep on finding your weapons on your inventory every time_
+* _One useful tip is to place your commonly used weapons on the hotbar (drag it from your inventory to your hotbar) to make switching sets easier. That way, you don't need to keep on finding your weapons on your inventory every time (ISSUE: Doesn't work if all attunement slots are used)_
 
 ## Actions
 * Help stabilizes the target (Medicine `DC 10`), and the stabilized character is healed once out of combat. If the character is stabilized own their own by succeeding the Death Saving Throws, they will still require a Help Action (and the Medicine Check) to regain 1 HP.
 
 ## Feats
 * Dual Wielder: Allows you to equip two weapons for free per turn (See [Global Changes](https://github.com/ZerdBG3/RAW/blob/main/Features.md#global-changes))
-* Shield Master: Gives Shove (both options) as a bonus action after attacking on your turn
 
 ## Spells
-* Flaming Sphere is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to
+* Flaming Sphere is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to _(ISSUE: Resummoning a second Flaming Sphere without dismissing the first one will bugged out the `command` action, movement speed was increased to 60ft to compensate for this bug)_
 * Guardian of Faith is indestructible (except by its own damage), ignored by enemies and has no hitbox. It only attacks enemies that enter its range on their turn, or start their turn in its range (similar to Moonbeam and other spells affected by the "List of Spells with damage application changed"). No longer retaliates when attacks are made in range or during its turn in combat
-* Spiritual Weapon is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to (except on the turn it is cast). Also removed all special attacks
+* Spiritual Weapon is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to (except on the turn it is cast). _(ISSUE: Resummoning a second Spiritual Weapon without dismissing the first one will bugged out the `command` action, movement speed was increased to 60ft to compensate for this bug)_
 
 ## Global changes
 * Healing a downed character allows them to play their turn normally

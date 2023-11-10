@@ -2,6 +2,10 @@ Zerd's Rules As Written for Baldur's Gate 3
 =======
 
 # DISCLAIMER
+* This is the trimmed down version of the mod. Check the [forked repo](https://github.com/ZerdBG3/RAW/) if you want the full version.
+* The main goal of this repo is to remove some features that already exists on popular mods, make this mod less monolithic and more compatible with other mods.
+* Changes applied on this repo is based on my biases.
+* The attunement required items does have additional equipment entries from other mods, assuming the player will also used the mods I use. You can comment the items if you want. You can download the [LSLib Toolkit here](https://github.com/Norbyte/lslib/releases).
 * Since modding BG3 is not yet officially supported by Larian Studios, you might encounter unexpected problems that it's not in their current scope to fix. **PLEASE DISABLE AUTOMATIC TELEMETRY** and don't post bug reports on their official platforms, as you're playing with an unsuported mod
 * How to disable telemetry:
 
@@ -11,6 +15,7 @@ Zerd's Rules As Written for Baldur's Gate 3
 # Discord
 
 [![Discord Banner 4](https://discordapp.com/api/guilds/767878527634243624/widget.png?style=banner2)](https://discord.gg/FFKTbzKktj)
+
 
 # Description
 * This mod's main objective is to modify vanilla content so that it respects D&D 5th edition ruleset. This means removing some of Larian's takes on the ruleset and adapting it to more closely resemble the tabletop experience. As of right now, the guideline followed is the Player's Handbook and Dungeon's Master Guide contents.
@@ -25,12 +30,11 @@ Zerd's Rules As Written for Baldur's Gate 3
 
 # Compatibility
 * This mod alters a lot of core mechanics, thus it might not be compatible with saves that were started without it. If possible, start a new game when using this mod
-* There's also various modifications to classes progressions, spells, actions, etc. This means other mods that change the same entries might cause conflict. Using other mods may result in weird interactions and not intended behaviors
+* There's also various modifications to spells, actions, etc. This means other mods that change the same entries might cause conflict. Using other mods may result in weird interactions and not intended behaviors
 
 # Languages
 * In-game content is currently translated to the following languages
   - English
-  - German
 
 # Error
 * **IMPORTANT:** When opening the launcher, you'll get several notifications telling you about how mods might break and crash your game. Ignore them
