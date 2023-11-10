@@ -7,9 +7,6 @@
         "concentration_failsafe": {
             "enabled": true
         },
-        "spells": {
-            "enabled": true
-        },
         "weaponSets": {
             "enabled": true
         }
