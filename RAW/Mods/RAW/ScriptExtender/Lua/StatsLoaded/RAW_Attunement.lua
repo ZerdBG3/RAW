@@ -47,11 +47,12 @@ function RAW_Attunement()
     Ext.Utils.Print(CentralizedString("Starting the Attunement rules application"))
 
     local maxAttunement = ModOptions["attunement"].value
-    if not RAW_IsIntegerBetween(maxAttunement, 1, 10) then
-        RAW_PrintIfDebug("Zerd's RAW\nInvalid attunement value on config file (should be an integer between 1 and 10)\nReverting to default (3)",
+    if not RAW_IsIntegerBetween(maxAttunement, 1, 12) then
+        RAW_PrintIfDebug("Zerd's RAW\nInvalid attunement value on config file (should be an integer between 1 and 12)\nReverting to default (5)",
             RAW_PrintTable_ModOptions, RAW_PrintTypeError)
-        maxAttunement = 3
+        maxAttunement = 5
     end
+
     maxAttunementStatus = "RAW_ATTUNEMENT_COUNT_" .. tostring(maxAttunement)
     maxAttunementStatusArtificer = "RAW_ATTUNEMENT_COUNT_" .. tostring(maxAttunement+1)
 
