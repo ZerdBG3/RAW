@@ -3,7 +3,7 @@
         "displayName": "Attunement",
         "description": "Sets a limit to the amount of magic items a character can have attuned at once (choose a value between 1 and 10).",
         "enabled": true,
-        "value": 3,
+        "value": 5,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -28,69 +28,6 @@
             "disabled": [
                 {
                     "from": "Public/RAW/Stats/Generated/Data/Concentration.txt",
-                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
-                }
-            ]
-        }
-    },
-    "shortRest": {
-        "displayName": "Short Rest",
-        "description": "Short Rest becomes an active downtime period.",
-        "enabled": true,
-        "value": null,
-        "dependencies": [],
-        "conflicts": [],
-        "files": {
-            "enabled": [],
-            "disabled": [
-                {
-                    "from": "Public/RAW/Stats/Generated/Data/ShortRest.txt",
-                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
-                }
-            ]
-        }
-    },
-    "spells": {
-        "displayName": "Spells",
-        "description": "Various changes to spell and statuses applied by spells.",
-        "enabled": true,
-        "value": null,
-        "dependencies": [],
-        "conflicts": [],
-        "files": {
-            "enabled": [],
-            "disabled": [
-                {
-                    "from": "Public/RAW/Stats/Generated/Data/Spells.txt",
-                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
-                }
-            ]
-        }
-    },
-    "spells_bonusAction": {
-        "displayName": "Spells (Bonus Action Rule)",
-        "description": "Enforces the spell casted as a bonus action rule stopping casting other leveled spells on the same turn.",
-        "enabled": true,
-        "value": null,
-        "dependencies": [],
-        "conflicts": [],
-        "files": {
-            "enabled": [],
-            "disabled": []
-        }
-    },
-    "spells_duration": {
-        "displayName": "Spells Duration",
-        "description": "Changes duration of several spells and removes statuses that last up to 1 hour on Short Rest.",
-        "enabled": true,
-        "value": null,
-        "dependencies": [],
-        "conflicts": [],
-        "files": {
-            "enabled": [],
-            "disabled": [
-                {
-                    "from": "Public/RAW/Stats/Generated/Data/Spells_Duration.txt",
                     "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
                 }
             ]
