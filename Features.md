@@ -42,18 +42,6 @@ _Quality of Life feature_
 * Guardian of Faith is indestructible (except by its own damage), ignored by enemies and has no hitbox. It only attacks enemies that enter its range on their turn, or start their turn in its range (similar to Moonbeam and other spells affected by the "List of Spells with damage application changed"). No longer retaliates when attacks are made in range or during its turn in combat
 * Spiritual Weapon is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to (except on the turn it is cast). Also removed all special attacks
 
-* Spells that deal damage when a character enters the AoE or when they start their turn on the AoE, no longer deal damage when the AoE is cast or moved during the caster's turn, and only deal damage on the target's turn (Page 16 of the [Sage Advice Compedium](https://media.wizards.com/2019/dnd/downloads/SA-Compendium.pdf)). The implementation will stop forced movement dealing damage more than once per round, but it brings much closer to RAI, since you can't move AoEs to deal damage on your turn then damage enemies again when their turn inevitably starts on the AoE.
-  <details>
-    <summary>List of Spells with damage application changed</summary>
-    <p>
-
-      - Cloud of Daggers
-      - Moonbeam
-      - Spirit Guardians
-
-    </p>
-  </details>
-
 ## Global changes
 * Healing a downed character allows them to play their turn normally
 * The first weapon equipped in a turn doesn't cost an Action Point. Further equips cost one Action Point each
