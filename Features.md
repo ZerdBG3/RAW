@@ -36,8 +36,6 @@ _Quality of Life feature_
 * Shield Master: Gives Shove (both options) as a bonus action after attacking on your turn
 
 ## Spells
-* Find Familiar
-  - Raven now has the Flyby passive, so it doesn't receive AoOs - Since Owl isn't an option in Vanilla, I decided to make Raven the go-to pick for Arcane Tricksters
 * Flaming Sphere is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to
 * Guardian of Faith is indestructible (except by its own damage), ignored by enemies and has no hitbox. It only attacks enemies that enter its range on their turn, or start their turn in its range (similar to Moonbeam and other spells affected by the "List of Spells with damage application changed"). No longer retaliates when attacks are made in range or during its turn in combat
 * Spiritual Weapon is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to (except on the turn it is cast). Also removed all special attacks
