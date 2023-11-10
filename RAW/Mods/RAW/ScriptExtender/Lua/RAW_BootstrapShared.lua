@@ -29,7 +29,6 @@ local RAW_StatsLoadedPath = "StatsLoaded/"
 
 Ext.Require(RAW_StatsLoadedPath .. "RAW_CharacterPassives.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_Concentration.lua")
-Ext.Require(RAW_StatsLoadedPath .. "RAW_WeaponSets.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_Attunement.lua")
 
 local function RAW_StatsLoaded()
@@ -39,7 +38,6 @@ local function RAW_StatsLoaded()
 
     RAW_CharacterPassives()
     RAW_Concentration()
-    RAW_WeaponSets_Passive()
     RAW_Attunement()
 
     Ext.Utils.Print("\n====================================================================================================")

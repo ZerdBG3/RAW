@@ -22,10 +22,6 @@ _Quality of Life feature_
   - _The reasoning for this is to avoid benefiting from bonuses (like AC from shields, or Spells from weapons) while using the other set_
 * Upon equipping a melee weapon or a shield, both ranged weapon slots are unequipped. Upon equipping a ranged weapon, both melee weapon slots are unequipped
   - _Due to the change to equip cost mentioned on [Global Changes](https://github.com/ZerdBG3/RAW/blob/main/Features.md#global-changes), you can always equip one weapon per turn for free, allowing you to switch "sets" without necessarily spending an action_
-* To better organize the hotbar, players are be given all default attacks (Melee and Ranged Main and Off-Hand Attack, plus the Unarmed Attack)
-  - The default attacks are only usable when equipped with the correct weapons. These attacks are technically different from the ones given by the items, but they behave mechanically the same. It's safe to use them and ignore the ones given when equipping weapons
-  - You can also remove the ones you don't intend to use from your hotbar (like off-hand ranged attack if you don't plan on dual wielding hand crossbows). They're always available on your spellbook
-  - To make sure you're putting the everlasting ones on your hotbar when organizing, it's useful to remove all your weapons so only they are available on the spellbook
 * _One useful tip is to place your commonly used weapons on the hotbar (drag it from your inventory to your hotbar) to make switching sets easier. That way, you don't need to keep on finding your weapons on your inventory every time_
 
 ## Actions
