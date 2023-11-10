@@ -104,14 +104,5 @@
         "dependencies": [],
         "conflicts": [],
         "files": {}
-    },
-    "weaponSpells": {
-        "displayName": "Weapon Spells",
-        "description": "Removes weapon spells/passives from basic weapons, such as Cleave, Overwhelm, Piercing Shot and Topple.",
-        "enabled": true,
-        "value": null,
-        "dependencies": [],
-        "conflicts": [],
-        "files": {}
     }
 }
