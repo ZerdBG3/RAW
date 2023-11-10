@@ -63,42 +63,6 @@ function RAW_FightingStyle_TwoWeapons_Ranged(entity)
     return WieldingWeapon('Ammunition', false, false, entity) & ~WieldingWeapon('Twohanded', false, false, entity) & WieldingWeapon('Ammunition', true, false, entity)
 end
 
-function RAW_IsAbilityCheck(entity)
-    local entity = entity or context.Source
-    local isStr = context.CheckedAbility == Ability.Strength
-    local isDex = context.CheckedAbility == Ability.Dexterity
-    local isCon = context.CheckedAbility == Ability.Constitution
-    local isInt = context.CheckedAbility == Ability.Intelligence
-    local isWis = context.CheckedAbility == Ability.Wisdom
-    local isCha = context.CheckedAbility == Ability.Charisma
-    return ConditionResult(isStr or isDex or isCon or isInt or isWis or isCha)
-end
-
-function RAW_IsSkillCheck(entity)
-    local entity = entity or context.Source
-    local isAthletics = context.CheckedSkill == Skill.Athletics
-    local isAcrobatics = context.CheckedSkill == Skill.Acrobatics
-    local isSleightOfHand = context.CheckedSkill == Skill.SleightOfHand
-    local isStealth = context.CheckedSkill == Skill.Stealth
-    local isArcana = context.CheckedSkill == Skill.Arcana
-    local isHistory = context.CheckedSkill == Skill.History
-    local isInvestigation = context.CheckedSkill == Skill.Investigation
-    local isNature = context.CheckedSkill == Skill.Nature
-    local isReligion = context.CheckedSkill == Skill.Religion
-    local isAnimalHandling = context.CheckedSkill == Skill.AnimalHandling
-    local isInsight = context.CheckedSkill == Skill.Insight
-    local isMedicine = context.CheckedSkill == Skill.Medicine
-    local isPerception = context.CheckedSkill == Skill.Perception
-    local isSurvival = context.CheckedSkill == Skill.Survival
-    local isDeception = context.CheckedSkill == Skill.Deception
-    local isIntimidation = context.CheckedSkill == Skill.Intimidation
-    local isPerformance = context.CheckedSkill == Skill.Performance
-    local isPersuasion = context.CheckedSkill == Skill.Persuasion
-    return ConditionResult(isAthletics or isAcrobatics or isSleightOfHand or isStealth or isArcana or isHistory or isInvestigation or
-        isNature or isReligion or isAnimalHandling or isInsight or isMedicine or isPerception or isSurvival or isDeception or
-        isIntimidation or isPerformance or isPersuasion)
-end
-
 function RAW_AttunementCombatRestriction(entity)
     local entity = entity or context.Source
     result = (Player(entity) & ~Combat(entity)) | ~Player(entity)

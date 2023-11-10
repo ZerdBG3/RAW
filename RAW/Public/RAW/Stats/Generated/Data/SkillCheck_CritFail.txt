@@ -1,4 +1,0 @@
-new entry "RAW_DisableSkillCheckCritFail"
-type "PassiveData"
-data "Properties" "IsHidden"
-data "Boosts" "IF(RAW_IsSkillCheck(context.Source)):MinimumRollResult(SkillCheck,2);IF(RAW_IsAbilityCheck(context.Source)):MinimumRollResult(RawAbility,2)"

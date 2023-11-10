@@ -50,23 +50,6 @@
             ]
         }
     },
-    "skillCheck_critFail": {
-        "displayName": "Skill Checks Critical Fail",
-        "description": "Disables the possibility of a critical fail on skill checks by setting a minimum of 2 on rolls.",
-        "enabled": true,
-        "value": null,
-        "dependencies": [],
-        "conflicts": [],
-        "files": {
-            "enabled": [],
-            "disabled": [
-                {
-                    "from": "Public/RAW/Stats/Generated/Data/SkillCheck_CritFail.txt",
-                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
-                }
-            ]
-        }
-    },
     "spells": {
         "displayName": "Spells",
         "description": "Various changes to spell and statuses applied by spells.",
