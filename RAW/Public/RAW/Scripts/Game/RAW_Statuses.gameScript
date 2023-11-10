@@ -1,3 +1,4 @@
+EVENTS
 
 EVENT RAW_FetchCharacterApplyStatusData_RAW_ATTUNEMENT_COUNT_STACK
 VARS
@@ -60,6 +61,16 @@ ACTIONS
     THEN
         ListAdd(_RemoveList, RAW_ATTUNEMENT_COUNT_10)
         Set(_Result, RAW_ATTUNEMENT_COUNT_11)
+    ELIF "c1"
+        CharacterHasStatus(_Character, RAW_ATTUNEMENT_COUNT_11)
+    THEN
+        ListAdd(_RemoveList, RAW_ATTUNEMENT_COUNT_11)
+        Set(_Result, RAW_ATTUNEMENT_COUNT_12)
+    ELIF "c1"
+        CharacterHasStatus(_Character, RAW_ATTUNEMENT_COUNT_12)
+    THEN
+        ListAdd(_RemoveList, RAW_ATTUNEMENT_COUNT_12)
+        Set(_Result, RAW_ATTUNEMENT_COUNT_13)
     ENDIF
 
     RETURN(_RemoveList,_Result,null)
@@ -77,6 +88,16 @@ ACTIONS
     ListClear(_RemoveList)
 
     IF "c1"
+        CharacterHasStatus(_Character, RAW_ATTUNEMENT_COUNT_13)
+    THEN
+        ListAdd(_RemoveList, RAW_ATTUNEMENT_COUNT_13)
+        Set(_Result, RAW_ATTUNEMENT_COUNT_12)
+    ELIF "c1"
+        CharacterHasStatus(_Character, RAW_ATTUNEMENT_COUNT_12)
+    THEN
+        ListAdd(_RemoveList, RAW_ATTUNEMENT_COUNT_12)
+        Set(_Result, RAW_ATTUNEMENT_COUNT_11)
+    ELIF "c1"
         CharacterHasStatus(_Character, RAW_ATTUNEMENT_COUNT_11)
     THEN
         ListAdd(_RemoveList, RAW_ATTUNEMENT_COUNT_11)
