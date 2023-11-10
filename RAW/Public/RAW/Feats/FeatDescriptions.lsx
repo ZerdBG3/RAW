@@ -5,13 +5,6 @@
         <node id="root">
             <children>
                 <node id="FeatDescription">
-                    <attribute id="Description" type="TranslatedString" handle="h15b473b7gf59dg40f4g9d6bg7015eb159089" version="1"/>
-                    <attribute id="DisplayName" type="TranslatedString" handle="hd025b817g4bf9g4411g8f23g73cd511a0d81" version="2"/>
-                    <attribute id="ExactMatch" type="FixedString" value="CrossbowExpert"/>
-                    <attribute id="FeatId" type="guid" value="94a78b4c-a8f2-404f-8cdc-2d454c13cb97"/>
-                    <attribute id="UUID" type="guid" value="0715b482-2377-4288-a2b3-9c818a1836b3"/>
-                </node>
-                <node id="FeatDescription">
                     <attribute id="Description" type="TranslatedString" handle="h4671f1fag7c08g4921ga35bg07713c95c4d9" version="1"/>
                     <attribute id="DisplayName" type="TranslatedString" handle="h1d620270gba24g434egad17g5ee9b72a6e3e" version="1"/>
                     <attribute id="ExactMatch" type="FixedString" value="DualWielder"/>

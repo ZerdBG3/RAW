@@ -44,11 +44,6 @@ function RAW_IsMeleeMainHandWeaponAttack()
     return ConditionResult(result)
 end
 
-function RAW_IsRangedMainHandWeaponAttack()
-    result = context.HitDescription.AttackType == AttackType.RangedWeaponAttack
-    return ConditionResult(result)
-end
-
 function RAW_FightingStyle_TwoWeapons_Ranged(entity)
 	-- Default to Target, like cpp functions
     entity = entity or context.Target
