@@ -33,42 +33,6 @@
             ]
         }
     },
-    "rogue": {
-        "displayName": "Rogue",
-        "description": "Changes to Cunning Action and Sneak Attack.",
-        "enabled": true,
-        "value": null,
-        "dependencies": [],
-        "conflicts": [],
-        "files": {
-            "enabled": [],
-            "disabled": [
-                {
-                    "from": "Public/RAW/Stats/Generated/Data/Rogue.txt",
-                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
-                }
-            ]
-        }
-    },
-    "rogue_thief": {
-        "displayName": "Rogue (Thief)",
-        "description": "Changes to Fast Hands and Second-Story Work.",
-        "enabled": true,
-        "value": null,
-        "dependencies": [
-            "rogue"
-        ],
-        "conflicts": [],
-        "files": {
-            "enabled": [],
-            "disabled": [
-                {
-                    "from": "Public/RAW/Stats/Generated/Data/Rogue_Thief.txt",
-                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
-                }
-            ]
-        }
-    },
     "shortRest": {
         "displayName": "Short Rest",
         "description": "Short Rest becomes an active downtime period.",

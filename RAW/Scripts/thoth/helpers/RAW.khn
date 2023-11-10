@@ -39,15 +39,6 @@ function RAW_HasteCheck()
     return (HasStringInSpellRoll('WeaponAttack') | HasStringInSpellRoll('UnarmedAttack') | HasStringInSpellRoll('ThrowAttack') | SpellId('Target_CommandersStrike') | SpellId('Projectile_ArrowOfSmokepowder') | SpellId('Target_Shove') | SpellId('RAW_Target_Shove_Player') | SpellId('RAW_Target_Shove_Player_Push') | SpellId('RAW_Target_Shove_Player_Prone') | SpellId('Shout_Dash') | SpellId('Shout_Disengage') | SpellId('Shout_Hide')) & HasUseCosts('ActionPoint')
 end
 
-function RAW_IsThrowAttackRoll()
-    local res = IsMeleeWeaponAttack() & SpellTypeIs(SpellType.Throw) & HasWeaponProperty(WeaponProperties.Finesse, context.HitDescription.ThrownObject)
-    return ConditionResult(res.Result)
-end
-
-function RAW_CunningActionThiefCheck()
-    return SpellId('Target_Distract') & HasUseCosts('ActionPoint')
-end
-
 function RAW_BonusActionSpellCheck()
     return IsSpell() & ~IsCantrip() & HasUseCosts('BonusActionPoint')
 end

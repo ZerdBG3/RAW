@@ -41,12 +41,3 @@ data "Description" "h31af9e75g2b8bg4207gb1begc463e085f561;1"
 data "StackId" "RAW_CAST_NOT_BONUS_ACTION_SPELL"
 data "Boosts" "UnlockSpellVariant(RAW_BonusActionSpellCheck(),ModifyTooltipDescription())"
 data "RemoveConditions" "HasActionResource('RAW_BonusActionSpellPoint', 1, 0, false, false, context.Source)"
-
-// Not only adjusts the EnabledCondition to accomodate for the RAW_BonusActionSpellPoint action resource
-//   but also fixes the cost from 3 Sorcery Points to 2
-new entry "Metamagic_Quickened"
-type "PassiveData"
-using "Metamagic_Quickened"
-data "DescriptionParams" "2"
-data "EnabledConditions" "HasActionResource('SorceryPoint', 2, 0, false, false, context.Source) and HasActionResource('RAW_BonusActionSpellPoint', 1, 0, false, false, context.Source)"
-data "Boosts" "UnlockSpellVariant(QuickenedSpellCheck(),ModifyUseCosts(Add,SorceryPoint,2,0),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint))"
