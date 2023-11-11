@@ -30,11 +30,6 @@ _Quality of Life feature_
 ## Feats
 * Dual Wielder: Allows you to equip two weapons for free per turn (See [Global Changes](https://github.com/ZerdBG3/RAW/blob/main/Features.md#global-changes))
 
-## Spells
-* Flaming Sphere is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to _(ISSUE: Resummoning a second Flaming Sphere without dismissing the first one will bugged out the `command` action, movement speed was increased to 60ft to compensate for this bug)_
-* Guardian of Faith is indestructible (except by its own damage), ignored by enemies and has no hitbox. It only attacks enemies that enter its range on their turn, or start their turn in its range (similar to Moonbeam and other spells affected by the "List of Spells with damage application changed"). No longer retaliates when attacks are made in range or during its turn in combat
-* Spiritual Weapon is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to (except on the turn it is cast). _(ISSUE: Resummoning a second Spiritual Weapon without dismissing the first one will bugged out the `command` action, movement speed was increased to 60ft to compensate for this bug)_
-
 ## Global changes
 * Healing a downed character allows them to play their turn normally
 * The first weapon equipped in a turn doesn't cost an Action Point. Further equips cost one Action Point each
