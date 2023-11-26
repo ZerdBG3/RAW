@@ -15,18 +15,18 @@ end
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_EquipAction()
-    Ext.Utils.Print("\n====================================================================================================")
-    Ext.Utils.Print(CentralizedString("Option: freeWeaponEquip"))
+    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_FreeWeaponEquip)
+    RAW_PrintIfDebug(CentralizedString("Option: freeWeaponEquip"), RAW_PrintTable_FreeWeaponEquip)
 
     if not IsModOptionEnabled("freeWeaponEquip") then
-        Ext.Utils.Print(CentralizedString("Disabled!"))
-        Ext.Utils.Print(CentralizedString("Skipping the Free Weapon Equip changes"))
-        Ext.Utils.Print("====================================================================================================\n")
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_FreeWeaponEquip)
+        RAW_PrintIfDebug(CentralizedString("Skipping the Free Weapon Equip changes"), RAW_PrintTable_FreeWeaponEquip)
+        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_FreeWeaponEquip)
         return
     end
 
-    Ext.Utils.Print(CentralizedString("Enabled!"))
-    Ext.Utils.Print(CentralizedString("Starting the Free Weapon Equip changes"))
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_FreeWeaponEquip)
+    RAW_PrintIfDebug(CentralizedString("Starting the Free Weapon Equip changes"), RAW_PrintTable_FreeWeaponEquip)
 
     for _, name in pairs(Ext.Stats.GetStats("Character")) do
         RAW_AddFreeWeaponEquipPassive(name)
@@ -34,8 +34,8 @@ function RAW_EquipAction()
 
     RAW_ApplyStaticData(ENUM_RAW_DualWielderFeat, RAW_PrintTable_FreeWeaponEquip)
 
-    Ext.Utils.Print("\n" .. CentralizedString("Finished the Free Weapon Equip changes"))
-    Ext.Utils.Print("====================================================================================================\n")
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Free Weapon Equip changes"), RAW_PrintTable_FreeWeaponEquip)
+    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_FreeWeaponEquip)
 end
 
 ---------------------------------------- MODELS ----------------------------------------

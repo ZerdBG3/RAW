@@ -15,25 +15,25 @@ end
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_TwoWeaponFighting()
-    Ext.Utils.Print("\n====================================================================================================")
-    Ext.Utils.Print(CentralizedString("Option: twoWeaponFighting"))
+    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_TwoWeaponFighting)
+    RAW_PrintIfDebug(CentralizedString("Option: twoWeaponFighting"), RAW_PrintTable_TwoWeaponFighting)
 
     if not IsModOptionEnabled("twoWeaponFighting") then
-        Ext.Utils.Print(CentralizedString("Disabled!"))
-        Ext.Utils.Print(CentralizedString("Skipping the Two Weapon Fighting changes"))
-        Ext.Utils.Print("====================================================================================================\n")
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_TwoWeaponFighting)
+        RAW_PrintIfDebug(CentralizedString("Skipping the Two Weapon Fighting changes"), RAW_PrintTable_TwoWeaponFighting)
+        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_TwoWeaponFighting)
         return
     end
 
-    Ext.Utils.Print(CentralizedString("Enabled!"))
-    Ext.Utils.Print(CentralizedString("Starting the Two Weapon Fighting changes"))
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_TwoWeaponFighting)
+    RAW_PrintIfDebug(CentralizedString("Starting the Two Weapon Fighting changes"), RAW_PrintTable_TwoWeaponFighting)
 
     for _, name in pairs(Ext.Stats.GetStats("Character")) do
         RAW_AddOffhandPassive(name)
     end
 
-    Ext.Utils.Print("\n" .. CentralizedString("Finished the Two Weapon Fighting changes"))
-    Ext.Utils.Print("====================================================================================================\n")
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Two Weapon Fighting changes"), RAW_PrintTable_TwoWeaponFighting)
+    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_TwoWeaponFighting)
 end
 
 ---------------------------------------- MODELS ----------------------------------------

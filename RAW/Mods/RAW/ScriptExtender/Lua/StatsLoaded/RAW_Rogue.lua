@@ -3,23 +3,23 @@ local ENUM_RAW_RogueResources
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_Rogue()
-    Ext.Utils.Print("\n====================================================================================================")
-    Ext.Utils.Print(CentralizedString("Option: rogue"))
+    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_Rogue)
+    RAW_PrintIfDebug(CentralizedString("Option: rogue"), RAW_PrintTable_Rogue)
 
     if not IsModOptionEnabled("rogue") then
-        Ext.Utils.Print(CentralizedString("Disabled!"))
-        Ext.Utils.Print(CentralizedString("Skipping the Rogue Changes"))
-        Ext.Utils.Print("====================================================================================================\n")
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_Rogue)
+        RAW_PrintIfDebug(CentralizedString("Skipping the Rogue Changes"), RAW_PrintTable_Rogue)
+        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Rogue)
         return
     end
 
-    Ext.Utils.Print(CentralizedString("Enabled!"))
-    Ext.Utils.Print(CentralizedString("Starting the Rogue Changes"))
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_Rogue)
+    RAW_PrintIfDebug(CentralizedString("Starting the Rogue Changes"), RAW_PrintTable_Rogue)
 
     RAW_ApplyStaticData(ENUM_RAW_RogueResources, RAW_PrintTable_Rogue)
 
-    Ext.Utils.Print("\n" .. CentralizedString("Finished the Rogue Changes"))
-    Ext.Utils.Print("====================================================================================================\n")
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Rogue Changes"), RAW_PrintTable_Rogue)
+    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Rogue)
 end
 
 ---------------------------------------- MODELS ----------------------------------------

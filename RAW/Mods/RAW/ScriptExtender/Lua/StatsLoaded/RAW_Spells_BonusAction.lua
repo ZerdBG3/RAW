@@ -11,18 +11,18 @@ end
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_Spells_BonusAction()
-    Ext.Utils.Print("\n====================================================================================================")
-    Ext.Utils.Print(CentralizedString("Option: spells_bonusAction"))
+    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_Spells_BonusAction)
+    RAW_PrintIfDebug(CentralizedString("Option: spells_bonusAction"), RAW_PrintTable_Spells_BonusAction)
 
     if not IsModOptionEnabled("spells_bonusAction") then
-        Ext.Utils.Print(CentralizedString("Disabled!"))
-        Ext.Utils.Print(CentralizedString("Skipping the application of Bonus Action Spell Rules"))
-        Ext.Utils.Print("====================================================================================================\n")
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_Spells_BonusAction)
+        RAW_PrintIfDebug(CentralizedString("Skipping the application of Bonus Action Spell Rules"), RAW_PrintTable_Spells_BonusAction)
+        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Spells_BonusAction)
         return
     end
 
-    Ext.Utils.Print(CentralizedString("Enabled!"))
-    Ext.Utils.Print(CentralizedString("Starting the application of Bonus Action Spell Rules"))
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_Spells_BonusAction)
+    RAW_PrintIfDebug(CentralizedString("Starting the application of Bonus Action Spell Rules"), RAW_PrintTable_Spells_BonusAction)
 
     for _, name in pairs(Ext.Stats.GetStats("Character")) do
         local char = Ext.Stats.Get(name)
@@ -34,8 +34,8 @@ function RAW_Spells_BonusAction()
         end
     end
 
-    Ext.Utils.Print("\n" .. CentralizedString("Finished the application of Bonus Action Spell Rules"))
-    Ext.Utils.Print("====================================================================================================\n")
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the application of Bonus Action Spell Rules"), RAW_PrintTable_Spells_BonusAction)
+    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Spells_BonusAction)
 end
 
 ---------------------------------------- MODELS ----------------------------------------

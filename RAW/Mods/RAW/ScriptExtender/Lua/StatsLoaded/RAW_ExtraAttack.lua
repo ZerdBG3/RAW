@@ -15,18 +15,18 @@ end
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_ExtraAttack()
-    Ext.Utils.Print("\n====================================================================================================")
-    Ext.Utils.Print(CentralizedString("Option: extraAttack"))
+    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_ExtraAttack)
+    RAW_PrintIfDebug(CentralizedString("Option: extraAttack"), RAW_PrintTable_ExtraAttack)
 
     if not IsModOptionEnabled("extraAttack") then
-        Ext.Utils.Print(CentralizedString("Disabled!"))
-        Ext.Utils.Print(CentralizedString("Skipping the Extra Attack changes"))
-        Ext.Utils.Print("====================================================================================================\n")
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_ExtraAttack)
+        RAW_PrintIfDebug(CentralizedString("Skipping the Extra Attack changes"), RAW_PrintTable_ExtraAttack)
+        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_ExtraAttack)
         return
     end
 
-    Ext.Utils.Print(CentralizedString("Enabled!"))
-    Ext.Utils.Print(CentralizedString("Starting the Extra Attack changes"))
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_ExtraAttack)
+    RAW_PrintIfDebug(CentralizedString("Starting the Extra Attack changes"), RAW_PrintTable_ExtraAttack)
 
     for _, name in pairs(Ext.Stats.GetStats("Character")) do
         RAW_AddLoadingPropertyPassive(name)
@@ -34,8 +34,8 @@ function RAW_ExtraAttack()
 
     RAW_ApplyStaticData(ENUM_RAW_CrossbowExpert, RAW_PrintTable_ExtraAttack)
 
-    Ext.Utils.Print("\n" .. CentralizedString("Finished the Extra Attack changes"))
-    Ext.Utils.Print("====================================================================================================\n")
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Extra Attack changes"), RAW_PrintTable_ExtraAttack)
+    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_ExtraAttack)
 end
 
 ---------------------------------------- MODELS ----------------------------------------

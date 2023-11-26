@@ -10,8 +10,10 @@ local RAW_StatsLoadedPath = "StatsLoaded/"
 
 Ext.Require(RAW_StatsLoadedPath .. "RAW_Attunement.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_Barbarian_Berserker.lua")
+Ext.Require(RAW_StatsLoadedPath .. "RAW_CantripsScaling.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_CharacterPassives.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_Concentration.lua")
+Ext.Require(RAW_StatsLoadedPath .. "RAW_DefaultActions.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_EquipAction.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_ExtraAttack.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_Feats.lua")
@@ -24,14 +26,16 @@ Ext.Require(RAW_StatsLoadedPath .. "RAW_WeaponSets.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_WeaponSpells.lua")
 
 local function RAW_StatsLoaded()
-    Ext.Utils.Print("\n====================================================================================================")
-    Ext.Utils.Print(CentralizedString("[RAW:BootstrapShared.lua] StatsLoaded Start"))
-    Ext.Utils.Print("====================================================================================================\n")
+    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_ModOptions)
+    RAW_PrintIfDebug(CentralizedString("[RAW:BootstrapShared.lua] StatsLoaded Start"), RAW_PrintTable_ModOptions)
+    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_ModOptions)
 
     RAW_Attunement()
     RAW_Barbarian_Berserker()
+    RAW_CantripsScaling()
     RAW_CharacterPassives()
     RAW_Concentration()
+    RAW_DefaultActions()
     RAW_EquipAction()
     RAW_ExtraAttack()
     RAW_Feats()
@@ -43,9 +47,9 @@ local function RAW_StatsLoaded()
     RAW_WeaponSets_Passive()
     RAW_WeaponSpells()
 
-    Ext.Utils.Print("\n====================================================================================================")
-    Ext.Utils.Print(CentralizedString("[RAW:BootstrapShared.lua] StatsLoaded Ended"))
-    Ext.Utils.Print("====================================================================================================\n")
+    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_ModOptions)
+    RAW_PrintIfDebug(CentralizedString("[RAW:BootstrapShared.lua] StatsLoaded Ended"), RAW_PrintTable_ModOptions)
+    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_ModOptions)
 end
 
 Ext.Events.StatsLoaded:Subscribe(RAW_StatsLoaded)
@@ -56,13 +60,20 @@ local RAW_OsirisFilesPath = "Osiris/"
 Ext.Require(RAW_OsirisFilesPath .. "RAW_WeaponSets.lua")
 
 if Ext.IsServer() then
-    Ext.Utils.Print("\n====================================================================================================")
-    Ext.Utils.Print(CentralizedString("[RAW:BootstrapShared.lua] Osiris Registration Start"))
-    Ext.Utils.Print("====================================================================================================\n")
+    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_ModOptions)
+    RAW_PrintIfDebug(CentralizedString("[RAW:BootstrapShared.lua] Osiris Registration Start"), RAW_PrintTable_ModOptions)
+    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_ModOptions)
 
     RAW_WeaponSets()
 
-    Ext.Utils.Print("\n====================================================================================================")
-    Ext.Utils.Print(CentralizedString("[RAW:BootstrapShared.lua] Osiris Registration Ended"))
-    Ext.Utils.Print("====================================================================================================\n")
+    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_ModOptions)
+    RAW_PrintIfDebug(CentralizedString("[RAW:BootstrapShared.lua] Osiris Registration Ended"), RAW_PrintTable_ModOptions)
+    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_ModOptions)
 end
+
+-- Menu event for Config popup
+-- Ext.Events.GameStateChanged:Subscribe(function(e)
+--     if e.ToState == "Menu" then
+        -- RAW_LoadModOptions(true)
+--     end
+-- end)

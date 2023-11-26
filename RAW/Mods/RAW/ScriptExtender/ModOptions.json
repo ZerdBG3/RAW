@@ -64,7 +64,7 @@
     },
     "cantrips_scaling": {
         "displayName": "Cantrips Scaling",
-        "description": "Corrects last cantrip damage buff from level 10 to level 11.",
+        "description": "Corrects last cantrip damage buff from level 10 to level 11. Also adjusts Monk's Unarmed Strike damage progression.",
         "enabled": true,
         "value": null,
         "dependencies": [],
@@ -252,9 +252,9 @@
             ]
         }
     },
-    "genericRules": {
-        "displayName": "Generic Rules",
-        "description": "Removes the High Ground bonus to attack roll and changes Initiative Dice Roll from 1d4 to 1d20.",
+    "highGround": {
+        "displayName": "High Ground",
+        "description": "Removes the High Ground bonus to attack rolls.",
         "enabled": true,
         "value": null,
         "dependencies": [],
@@ -263,7 +263,24 @@
             "enabled": [],
             "disabled": [
                 {
-                    "from": "Public/RAW/Stats/Generated/Data/GenericRules.txt",
+                    "from": "Public/RAW/Stats/Generated/Data/HighGround.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
+    "initiative": {
+        "displayName": "Initiative",
+        "description": "Changes Initiative Dice Roll from 1d4 to 1d20.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Initiative.txt",
                     "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
                 }
             ]

@@ -3,23 +3,23 @@ local ENUM_RAW_Feats
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_Feats()
-    Ext.Utils.Print("\n====================================================================================================")
-    Ext.Utils.Print(CentralizedString("Option: feats"))
+    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_Feats)
+    RAW_PrintIfDebug(CentralizedString("Option: feats"), RAW_PrintTable_Feats)
 
     if not IsModOptionEnabled("feats") then
-        Ext.Utils.Print(CentralizedString("Disabled!"))
-        Ext.Utils.Print(CentralizedString("Skipping the Feats changes"))
-        Ext.Utils.Print("====================================================================================================\n")
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_Feats)
+        RAW_PrintIfDebug(CentralizedString("Skipping the Feats changes"), RAW_PrintTable_Feats)
+        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Feats)
         return
     end
 
-    Ext.Utils.Print(CentralizedString("Enabled!"))
-    Ext.Utils.Print(CentralizedString("Starting the Feats changes"))
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_Feats)
+    RAW_PrintIfDebug(CentralizedString("Starting the Feats changes"), RAW_PrintTable_Feats)
 
     RAW_ApplyStaticData(ENUM_RAW_Feats, RAW_PrintTable_Feats)
 
-    Ext.Utils.Print("\n" .. CentralizedString("Finished the Feats changes"))
-    Ext.Utils.Print("====================================================================================================\n")
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Feats changes"), RAW_PrintTable_Feats)
+    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Feats)
 end
 
 ---------------------------------------- MODELS ----------------------------------------

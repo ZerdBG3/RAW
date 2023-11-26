@@ -40,7 +40,10 @@
         "fighter_battleMaster": {
             "enabled": true
         },
-        "genericRules": {
+        "highGround": {
+            "enabled": true
+        },
+        "initiative": {
             "enabled": true
         },
         "intangibleSummons": {

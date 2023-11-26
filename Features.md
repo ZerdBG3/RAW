@@ -71,9 +71,11 @@ _Dependencies: [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Featu
 ## Fighter (Battle Master) ⚙️ `fighter_battleMaster`
 * Level 3: Feinting Attack (Maneuver) fixed to cost a bonus action and a superiority die regardless if the attack hits or misses
 
-## Generic Rules ⚙️ `genericRules`
-* Changes Initiative Dice Roll from 1d4 to 1d20
+## High Ground ⚙️ `highGround`
 * Removes High Ground bonus to attack rolls (Low Ground penalty is kept to emulate cover)
+
+## Initiative ⚙️ `initiative`
+* Changes Initiative Dice Roll from 1d4 to 1d20
 
 ## Intangible Summons ⚙️ `intangibleSummons`
 * Flaming Sphere is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to

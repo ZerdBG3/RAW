@@ -47,18 +47,18 @@ end
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_Concentration()
-    Ext.Utils.Print("\n====================================================================================================")
-    Ext.Utils.Print(CentralizedString("Option: concentration_failsafe"))
+    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_Concentration)
+    RAW_PrintIfDebug(CentralizedString("Option: concentration_failsafe"), RAW_PrintTable_Concentration)
 
     if not IsModOptionEnabled("concentration_failsafe") then
-        Ext.Utils.Print(CentralizedString("Disabled!"))
-        Ext.Utils.Print(CentralizedString("Skipping the Concentration Helper"))
-        Ext.Utils.Print("====================================================================================================\n")
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_Concentration)
+        RAW_PrintIfDebug(CentralizedString("Skipping the Concentration Helper"), RAW_PrintTable_Concentration)
+        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Concentration)
         return
     end
 
-    Ext.Utils.Print(CentralizedString("Enabled!"))
-    Ext.Utils.Print(CentralizedString("Starting the Concentration Helper"))
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_Concentration)
+    RAW_PrintIfDebug(CentralizedString("Starting the Concentration Helper"), RAW_PrintTable_Concentration)
 
     for _, name in pairs(Ext.Stats.GetStats("SpellData")) do
         RAW_AddConcentrationRequirement(name)
@@ -68,8 +68,8 @@ function RAW_Concentration()
         RAW_AddConcentrationPassive(name)
     end
 
-    Ext.Utils.Print("\n" .. CentralizedString("Finished the Concentration Helper"))
-    Ext.Utils.Print("====================================================================================================\n")
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Concentration Helper"), RAW_PrintTable_Concentration)
+    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Concentration)
 end
 
 ---------------------------------------- MODELS ----------------------------------------

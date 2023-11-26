@@ -15,23 +15,23 @@ end
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_WeaponSets_Passive()
-    Ext.Utils.Print("\n====================================================================================================")
-    Ext.Utils.Print(CentralizedString("Option: weaponSets"))
+    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_WeaponSets)
+    RAW_PrintIfDebug(CentralizedString("Option: weaponSets"), RAW_PrintTable_WeaponSets)
 
     if not IsModOptionEnabled("weaponSets") then
-        Ext.Utils.Print(CentralizedString("Disabled!"))
-        Ext.Utils.Print(CentralizedString("Skipping the addition of default weapon attacks"))
-        Ext.Utils.Print("====================================================================================================\n")
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_WeaponSets)
+        RAW_PrintIfDebug(CentralizedString("Skipping the addition of default weapon attacks"), RAW_PrintTable_WeaponSets)
+        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_WeaponSets)
         return
     end
 
-    Ext.Utils.Print(CentralizedString("Enabled!"))
-    Ext.Utils.Print(CentralizedString("Starting the addition of default weapon attacks"))
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_WeaponSets)
+    RAW_PrintIfDebug(CentralizedString("Starting the addition of default weapon attacks"), RAW_PrintTable_WeaponSets)
 
     for _, name in pairs(Ext.Stats.GetStats("Character")) do
         RAW_AddWeaponSetsPassive(name)
     end
 
-    Ext.Utils.Print("\n" .. CentralizedString("Finished the addition of default weapon attacks"))
-    Ext.Utils.Print("====================================================================================================\n")
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the addition of default weapon attacks"), RAW_PrintTable_WeaponSets)
+    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_WeaponSets)
 end

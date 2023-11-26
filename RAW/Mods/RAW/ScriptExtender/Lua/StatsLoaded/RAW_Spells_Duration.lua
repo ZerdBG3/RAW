@@ -11,18 +11,18 @@ end
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_Spells_Duration()
-    Ext.Utils.Print("\n====================================================================================================")
-    Ext.Utils.Print(CentralizedString("Option: spells_duration"))
+    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_Spells_Duration)
+    RAW_PrintIfDebug(CentralizedString("Option: spells_duration"), RAW_PrintTable_Spells_Duration)
 
     if not IsModOptionEnabled("spells_duration") then
-        Ext.Utils.Print(CentralizedString("Disabled!"))
-        Ext.Utils.Print(CentralizedString("Skipping the application of Status Removal on Short Rest"))
-        Ext.Utils.Print("====================================================================================================\n")
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_Spells_Duration)
+        RAW_PrintIfDebug(CentralizedString("Skipping the application of Status Removal on Short Rest"), RAW_PrintTable_Spells_Duration)
+        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Spells_Duration)
         return
     end
 
-    Ext.Utils.Print(CentralizedString("Enabled!"))
-    Ext.Utils.Print(CentralizedString("Starting the application of Status Removal on Short Rest"))
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_Spells_Duration)
+    RAW_PrintIfDebug(CentralizedString("Starting the application of Status Removal on Short Rest"), RAW_PrintTable_Spells_Duration)
 
     for _, name in pairs(Ext.Stats.GetStats("Character")) do
         local char = Ext.Stats.Get(name)
@@ -33,8 +33,8 @@ function RAW_Spells_Duration()
         end
     end
 
-    Ext.Utils.Print("\n" .. CentralizedString("Finished the application of Status Removal on Short Rest"))
-    Ext.Utils.Print("====================================================================================================\n")
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the application of Status Removal on Short Rest"), RAW_PrintTable_Spells_Duration)
+    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Spells_Duration)
 end
 
 ---------------------------------------- MODELS ----------------------------------------
