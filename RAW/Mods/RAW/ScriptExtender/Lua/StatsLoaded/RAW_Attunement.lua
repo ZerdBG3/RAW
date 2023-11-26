@@ -49,7 +49,7 @@ function RAW_Attunement()
     local maxAttunement = ModOptions["attunement"].value
     if not RAW_IsIntegerBetween(maxAttunement, 1, 10) then
         RAW_PrintIfDebug("Zerd's RAW\nInvalid attunement value on config file (should be an integer between 1 and 10)\nReverting to default (3)",
-            RAW_PrintTable_Attunement, RAW_PrintTypeError)
+            RAW_PrintTable_ModOptions, RAW_PrintTypeError)
         maxAttunement = 3
     end
     maxAttunementStatus = "RAW_ATTUNEMENT_COUNT_" .. tostring(maxAttunement)
