@@ -3,23 +3,23 @@ local ENUM_RAW_RogueThiefResources
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_Rogue_Thief()
-    Ext.Utils.Print("\n====================================================================================================")
-    Ext.Utils.Print(CentralizedString("Option: rogue_thief"))
+    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_Rogue_Thief)
+    RAW_PrintIfDebug(CentralizedString("Option: rogue_thief"), RAW_PrintTable_Rogue_Thief)
 
     if not IsModOptionEnabled("rogue_thief") then
-        Ext.Utils.Print(CentralizedString("Disabled!"))
-        Ext.Utils.Print(CentralizedString("Skipping the Rogue (Thief) Changes"))
-        Ext.Utils.Print("====================================================================================================\n")
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_Rogue_Thief)
+        RAW_PrintIfDebug(CentralizedString("Skipping the Rogue (Thief) Changes"), RAW_PrintTable_Rogue_Thief)
+        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Rogue_Thief)
         return
     end
 
-    Ext.Utils.Print(CentralizedString("Enabled!"))
-    Ext.Utils.Print(CentralizedString("Starting the Rogue (Thief) Changes"))
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_Rogue_Thief)
+    RAW_PrintIfDebug(CentralizedString("Starting the Rogue (Thief) Changes"), RAW_PrintTable_Rogue_Thief)
 
     RAW_ApplyStaticData(ENUM_RAW_RogueThiefResources, RAW_PrintTable_Rogue_Thief)
 
-    Ext.Utils.Print("\n" .. CentralizedString("Finished the Rogue (Thief) Changes"))
-    Ext.Utils.Print("====================================================================================================\n")
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Rogue (Thief) Changes"), RAW_PrintTable_Rogue_Thief)
+    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Rogue_Thief)
 end
 
 ---------------------------------------- MODELS ----------------------------------------

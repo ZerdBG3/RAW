@@ -37,19 +37,19 @@ local function RAW_RegisterWeaponSetEvent()
 end
 
 function RAW_WeaponSets()
-    Ext.Utils.Print("\n====================================================================================================")
-    Ext.Utils.Print(CentralizedString("Option: weaponSets"))
+    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_WeaponSets)
+    RAW_PrintIfDebug(CentralizedString("Option: weaponSets"), RAW_PrintTable_WeaponSets)
 
     if not IsModOptionEnabled("weaponSets") then
-        Ext.Utils.Print(CentralizedString("Disabled!"))
-        Ext.Utils.Print("====================================================================================================\n")
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_WeaponSets)
+        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_WeaponSets)
         return
     end
 
-    Ext.Utils.Print(CentralizedString("Enabled!"))
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_WeaponSets)
 
     RAW_RegisterWeaponSetEvent()
 
-    Ext.Utils.Print("\n" .. CentralizedString("Finished the Weapon Set Restrictions"))
-    Ext.Utils.Print("====================================================================================================\n")
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Weapon Set Restrictions"), RAW_PrintTable_WeaponSets)
+    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_WeaponSets)
 end

@@ -11,7 +11,7 @@ type "Weapon"
 using "_BaseWeapon"
 data "UseCosts" "RAW_EquipWeaponGroup:1"
 
-// The free action resource is given to all players at Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_CharacterPassives.lua
+// The free action resource is given to all players at Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_EquipAction.lua
 new entry "RAW_UnlockEquipWeaponPoint"
 type "PassiveData"
 data "Properties" "IsHidden"
@@ -25,7 +25,7 @@ type "PassiveData"
 using "DualWielder_PassiveBonuses"
 data "Description" "h52822a0agd71bg4caega40dgc7017940b99b;1"
 
-// Given by Public\RAW\Feats\Feats.lsx
+// Given by Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_EquipAction.lua
 new entry "RAW_DualWielder_FreeEquip"
 type "PassiveData"
 data "Properties" "IsHidden"

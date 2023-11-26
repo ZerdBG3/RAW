@@ -18,6 +18,7 @@ data "TooltipStatusApply" "ApplyStatus(CALL_LIGHTNING_TECHNICAL,100,100)"
 data "HitAnimationType" ""
 data "TargetEffect" ""
 data "PositionEffect" ""
+data "DamageType" ""
 
 new entry "Target_CallLightning_4"
 type "SpellData"
@@ -60,6 +61,7 @@ data "SpellFlags" "Temporary;Wildshape;CanAreaDamageEvade"
 data "HitAnimationType" "MagicalDamage_Electric"
 data "TargetEffect" "a3e2368b-f486-4cfc-b04a-b02e23383280"
 data "PositionEffect" "de5e4e60-e2b7-44f4-aca8-c11390b4cc48"
+data "DamageType" "Lightning"
 
 new entry "RAW_CALL_LIGHTNING_AURA"
 type "StatusData"
@@ -115,7 +117,14 @@ data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndi
 // ------------- Feign Death Dismiss -------------
 // -----------------------------------------------
 
-// Adjusted Feign Death spell in Spells_Duration.txt for the Dimiss portion here. Also added Wildshape spell flag
+new entry "Target_FeignDeath"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_FeignDeath"
+data "SpellProperties" "ApplyStatus(FEIGN_DEATH,100,600);ApplyStatus(SELF,RAW_FEIGN_DEATH_TECHNICAL_STACK,100,-1)"
+data "TooltipStatusApply" "ApplyStatus(FEIGN_DEATH,100,600)"
+data "RitualCosts" "ActionPoint:1"
+
 new entry "RAW_Target_FeignDeath_Dismiss"
 type "SpellData"
 data "SpellType" "Target"

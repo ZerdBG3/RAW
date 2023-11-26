@@ -134,26 +134,40 @@ end
 -- Print only if the value is set (not commented) on the table
 RAW_PrintTable_ModOptions = 0
 RAW_PrintTable_Attunement = 1
-RAW_PrintTable_CharacterPassives = 2
-RAW_PrintTable_Concentration = 3
-RAW_PrintTable_Rogue = 4
-RAW_PrintTable_Rogue_Thief = 5
-RAW_PrintTable_SkillCheck_CritFail = 6
-RAW_PrintTable_Spells_BonusAction = 7
-RAW_PrintTable_Spells_Duration = 8
-RAW_PrintTable_WeaponSets = 9
-RAW_PrintTable_WeaponSpells = 10
+RAW_PrintTable_Barbarian_Berserker = 2
+RAW_PrintTable_CantripsScaling = 3
+RAW_PrintTable_CharacterPassives = 4
+RAW_PrintTable_Concentration = 5
+RAW_PrintTable_DefaultActions = 6
+RAW_PrintTable_ExtraAttack = 7
+RAW_PrintTable_Feats = 8
+RAW_PrintTable_FreeWeaponEquip = 9
+RAW_PrintTable_Rogue = 10
+RAW_PrintTable_Rogue_Thief = 11
+RAW_PrintTable_SkillCheck_CritFail = 12
+RAW_PrintTable_Spells_BonusAction = 13
+RAW_PrintTable_Spells_Duration = 14
+RAW_PrintTable_TwoWeaponFighting = 15
+RAW_PrintTable_WeaponSets = 16
+RAW_PrintTable_WeaponSpells = 17
 
 local ENUM_RAW_PrintTable = RAW_Set {
     RAW_PrintTable_ModOptions,
     -- RAW_PrintTable_Attunement,
+    -- RAW_PrintTable_Barbarian_Berserker,
+    -- RAW_PrintTable_CantripsScaling,
     -- RAW_PrintTable_CharacterPassives,
     -- RAW_PrintTable_Concentration,
+    -- RAW_PrintTable_DefaultActions,
+    -- RAW_PrintTable_ExtraAttack,
+    -- RAW_PrintTable_Feats,
+    -- RAW_PrintTable_FreeWeaponEquip,
     -- RAW_PrintTable_Rogue,
     -- RAW_PrintTable_Rogue_Thief,
     -- RAW_PrintTable_SkillCheck_CritFail,
     -- RAW_PrintTable_Spells_BonusAction,
     -- RAW_PrintTable_Spells_Duration,
+    -- RAW_PrintTable_TwoWeaponFighting,
     -- RAW_PrintTable_WeaponSets,
     -- RAW_PrintTable_WeaponSpells,
 }
@@ -163,7 +177,7 @@ RAW_PrintTypeWarning = "warning"
 RAW_PrintTypeError = "error"
 
 function RAW_PrintIfDebug(text, debug, level)
-    if ENUM_RAW_PrintTable[debug] then
+    if (type(debug) == "boolean" and debug) or ENUM_RAW_PrintTable[debug] then
         if type(text) == "string" then
             if level == RAW_PrintTypeError then
                 Ext.Utils.PrintError(text)

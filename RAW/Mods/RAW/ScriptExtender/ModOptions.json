@@ -16,6 +16,52 @@
             ]
         }
     },
+    "barbarian": {
+        "displayName": "Barbarian",
+        "description": "Changes to Reckless Attack",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Barbarian.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
+    "barbarian_berserker": {
+        "displayName": "Barbarian (Berserker)",
+        "description": "Removes Throw as a bonus action from Frenzy.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": []
+        }
+    },
+    "barbarian_wildMagic": {
+        "displayName": "Barbarian (Wild Magic)",
+        "description": "Allows Wild Magic results to be used on the first turn and adjusts Shadowy Tendrils targeting.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Barbarian_WildMagic.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
     "concentration_failsafe": {
         "displayName": "Concentration Failsafe",
         "description": "Gives the player a toggleable passive that stops them from casting concentration spells while already concentrating.",
@@ -33,12 +79,271 @@
             ]
         }
     },
+    "defaultActions": {
+        "displayName": "Default Actions",
+        "description": "Changes to Jump and Shove. Introduces Distract and Dodge as player actions.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/SpellSet.txt",
+                    "to": "Public/RAW/Stats/Generated/Empty.txt"
+                },
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/DefaultActions.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                },
+                {
+                    "from": "Public/RAW/RootTemplates/Companion_GiantSpider.lsf",
+                    "to": "Public/RAW/RootTemplates/Empty.lsf"
+                },
+                {
+                    "from": "Public/RAW/RootTemplates/Companion_Raven.lsf",
+                    "to": "Public/RAW/RootTemplates/Empty.lsf"
+                }
+            ]
+        }
+    },
+    "downed": {
+        "displayName": "Downed",
+        "description": "Healing a downed character allows them to play their turn normally.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Downed.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
+    "extraAttack": {
+        "displayName": "Extra Attack",
+        "description": "Removes Extra Attack stacking from multiple sources and allow Shove to be used as part of it.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [
+            "defaultActions"
+        ],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/ExtraAttack.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
+    "familiars": {
+        "displayName": "Familiars",
+        "description": "Replaces familiar attacks with Distract and adjust their stats.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [
+            "defaultActions"
+        ],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Familiars.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                },
+                {
+                    "from": "Public/RAW/RootTemplates/Familiar_Cat.lsf",
+                    "to": "Public/RAW/RootTemplates/Empty.lsf"
+                },
+                {
+                    "from": "Public/RAW/RootTemplates/Familiar_Crab.lsf",
+                    "to": "Public/RAW/RootTemplates/Empty.lsf"
+                },
+                {
+                    "from": "Public/RAW/RootTemplates/Familiar_Frog.lsf",
+                    "to": "Public/RAW/RootTemplates/Empty.lsf"
+                },
+                {
+                    "from": "Public/RAW/RootTemplates/Familiar_Rat.lsf",
+                    "to": "Public/RAW/RootTemplates/Empty.lsf"
+                },
+                {
+                    "from": "Public/RAW/RootTemplates/Familiar_Raven.lsf",
+                    "to": "Public/RAW/RootTemplates/Empty.lsf"
+                },
+                {
+                    "from": "Public/RAW/RootTemplates/Familiar_Spider.lsf",
+                    "to": "Public/RAW/RootTemplates/Empty.lsf"
+                }
+            ]
+        }
+    },
+    "feats": {
+        "displayName": "Feats",
+        "description": "Changes to Shield Master.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [
+            "defaultActions"
+        ],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Feats.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
+    "freeWeaponEquip": {
+        "displayName": "Free Weapon Equip",
+        "description": "The first weapon equipped in a turn doesn't cost an Action Point.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/EquipAction.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
+    "fighter_battleMaster": {
+        "displayName": "Fighter (Battle Master)",
+        "description": "Adjust Feinting Attack Use Cost.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Fighter_BattleMaster.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
+    "highGround": {
+        "displayName": "High Ground",
+        "description": "Removes the High Ground bonus to attack rolls.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/HighGround.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
+    "initiative": {
+        "displayName": "Initiative",
+        "description": "Changes Initiative Dice Roll from 1d4 to 1d20.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Initiative.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
+    "intangibleSummons": {
+        "displayName": "Intangible Summons",
+        "description": "Changes to Flaming Sphere, Guardian of Faith and Spiritual Weapon to make them invulnerable and ignored by the AI.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/IntangibleSummons.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                },
+                {
+                    "from": "Public/RAW/RootTemplates/Spiritual_Weapon_Base.lsf",
+                    "to": "Public/RAW/RootTemplates/Empty.lsf"
+                },
+                {
+                    "from": "Public/RAW/RootTemplates/Spiritual_Weapon_Greataxe.lsf",
+                    "to": "Public/RAW/RootTemplates/Empty.lsf"
+                },
+                {
+                    "from": "Public/RAW/RootTemplates/Spiritual_Weapon_Greatsword.lsf",
+                    "to": "Public/RAW/RootTemplates/Empty.lsf"
+                },
+                {
+                    "from": "Public/RAW/RootTemplates/Spiritual_Weapon_Halberd.lsf",
+                    "to": "Public/RAW/RootTemplates/Empty.lsf"
+                },
+                {
+                    "from": "Public/RAW/RootTemplates/Spiritual_Weapon_Maul.lsf",
+                    "to": "Public/RAW/RootTemplates/Empty.lsf"
+                },
+                {
+                    "from": "Public/RAW/RootTemplates/Spiritual_Weapon_Spear.lsf",
+                    "to": "Public/RAW/RootTemplates/Empty.lsf"
+                },
+                {
+                    "from": "Public/RAW/RootTemplates/Spiritual_Weapon_Trident.lsf",
+                    "to": "Public/RAW/RootTemplates/Empty.lsf"
+                }
+            ]
+        }
+    },
+    "prone": {
+        "displayName": "Prone",
+        "description": "Changes the advantage and disadvantage conditions while Prone.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Prone.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
     "rogue": {
         "displayName": "Rogue",
         "description": "Changes to Cunning Action and Sneak Attack.",
         "enabled": true,
         "value": null,
-        "dependencies": [],
+        "dependencies": [
+            "throw"
+        ],
         "conflicts": [],
         "files": {
             "enabled": [],
@@ -56,7 +361,8 @@
         "enabled": true,
         "value": null,
         "dependencies": [
-            "rogue"
+            "rogue",
+            "stabilize"
         ],
         "conflicts": [],
         "files": {
@@ -105,7 +411,7 @@
     },
     "spells": {
         "displayName": "Spells",
-        "description": "Various changes to spell and statuses applied by spells.",
+        "description": "Various changes to spells and statuses applied by spells.",
         "enabled": true,
         "value": null,
         "dependencies": [],
@@ -116,12 +422,16 @@
                 {
                     "from": "Public/RAW/Stats/Generated/Data/Spells.txt",
                     "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                },
+                {
+                    "from": "Public/RAW/RootTemplates/Call_Lightning.lsf",
+                    "to": "Public/RAW/RootTemplates/Empty.lsf"
                 }
             ]
         }
     },
     "spells_bonusAction": {
-        "displayName": "Spells (Bonus Action Rule)",
+        "displayName": "Spells - Bonus Action Rule",
         "description": "Enforces the spell casted as a bonus action rule stopping casting other leveled spells on the same turn.",
         "enabled": true,
         "value": null,
@@ -129,11 +439,16 @@
         "conflicts": [],
         "files": {
             "enabled": [],
-            "disabled": []
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Spells_BonusAction.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
         }
     },
     "spells_duration": {
-        "displayName": "Spells Duration",
+        "displayName": "Spells - Duration",
         "description": "Changes duration of several spells and removes statuses that last up to 1 hour on Short Rest.",
         "enabled": true,
         "value": null,
@@ -149,6 +464,110 @@
             ]
         }
     },
+    "spells_onApplyAndOnTurn": {
+        "displayName": "Spells - On Apply And On Turn",
+        "description": "Changes the damage application timing of spells like Cloud of Daggers, Moonbeam and Spirit Guardians.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Spells_OnApplyAndOnTurn.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
+    "spells_surfaceRemoval": {
+        "displayName": "Spells - Surface Removal",
+        "description": "Removes surface interaction for spells that are not AoE.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Spells_SurfaceRemoval.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
+    "spells_wildshape": {
+        "displayName": "Spells - Wildshape",
+        "description": "Allows concentration spells to be reactivated during Wildshape.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Spells_Wildshaped.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
+    "stabilize": {
+        "displayName": "Stabilize",
+        "description": "Changes Help to only stabilize a character, healing once out of combat.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Stabilize.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
+    "throw": {
+        "displayName": "Throw",
+        "description": "Changes to the throw action and introduction of the throwing weapon spell.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [
+            "twoWeaponFighting"
+        ],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Throw.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
+    "twoWeaponFighting": {
+        "displayName": "Two Weapon Fighting",
+        "description": "Removes automatic off-hand attacks and only allows them after attacking with a weapon while dual wielding.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/TwoWeaponFighting.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
     "weaponSets": {
         "displayName": "Weapon Sets",
         "description": "Disable Weapon Sets. Equipping a ranged weapon unequips melee weapons and vice-versa.",
@@ -156,7 +575,15 @@
         "value": null,
         "dependencies": [],
         "conflicts": [],
-        "files": {}
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/WeaponSets.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
     },
     "weaponSpells": {
         "displayName": "Weapon Spells",

@@ -33,18 +33,18 @@ end
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_Attunement()
-    Ext.Utils.Print("\n====================================================================================================")
-    Ext.Utils.Print(CentralizedString("Option: attunement"))
+    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_Attunement)
+    RAW_PrintIfDebug(CentralizedString("Option: attunement"), RAW_PrintTable_Attunement)
 
     if not IsModOptionEnabled("attunement") then
-        Ext.Utils.Print(CentralizedString("Disabled!"))
-        Ext.Utils.Print(CentralizedString("Skipping the Attunement rules application"))
-        Ext.Utils.Print("====================================================================================================\n")
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_Attunement)
+        RAW_PrintIfDebug(CentralizedString("Skipping the Attunement rules application"), RAW_PrintTable_Attunement)
+        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Attunement)
         return
     end
 
-    Ext.Utils.Print(CentralizedString("Enabled!"))
-    Ext.Utils.Print(CentralizedString("Starting the Attunement rules application"))
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_Attunement)
+    RAW_PrintIfDebug(CentralizedString("Starting the Attunement rules application"), RAW_PrintTable_Attunement)
 
     local maxAttunement = ModOptions["attunement"].value
     if not RAW_IsIntegerBetween(maxAttunement, 1, 10) then
@@ -61,8 +61,8 @@ function RAW_Attunement()
         RAW_AddAttunement(item)
     end
 
-    Ext.Utils.Print("\n" .. CentralizedString("Finished the Attunement rules application"))
-    Ext.Utils.Print("====================================================================================================\n")
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Attunement rules application"), RAW_PrintTable_Attunement)
+    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Attunement)
 end
 
 ---------------------------------------- MODELS ----------------------------------------

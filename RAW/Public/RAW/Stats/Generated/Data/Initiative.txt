@@ -1,0 +1,2 @@
+// Vanilla's Initiative Die is a d4
+key "InitiativeDie","20"

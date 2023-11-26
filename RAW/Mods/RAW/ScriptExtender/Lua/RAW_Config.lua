@@ -3,23 +3,22 @@ local userOptions = {}
 
 local currentMod = Ext.Mod.GetMod(ModuleUUID).Info
 local modOptionsPath = "Mods/" .. currentMod.Directory .. "/ScriptExtender/ModOptions.json"
--- local modOptionsPath = "Mods/RAW/ScriptExtender/ModOptions.json"
 ModOptions = {}
 
-local function RAW_LoadUserOptions()
-    RAW_PrintIfDebug(CentralizedString("Searching for User ModOptions.json"), RAW_PrintTable_ModOptions)
+local function RAW_LoadUserOptions(shouldPrint)
+    RAW_PrintIfDebug(CentralizedString("Searching for User ModOptions.json"), shouldPrint)
     local optionsFile = Ext.IO.LoadFile(userOptionsPath)
     if optionsFile == nil or optionsFile == "" then
-        RAW_PrintIfDebug(CentralizedString("User ModOptions.json not found"), RAW_PrintTable_ModOptions)
+        RAW_PrintIfDebug(CentralizedString("User ModOptions.json not found"), shouldPrint)
         return
     end
 
     local options = Ext.Json.Parse(optionsFile)
     if options[ModuleUUID] ~= nil then
-        RAW_PrintIfDebug(CentralizedString("Found User ModOptions for: " .. ModuleUUID), RAW_PrintTable_ModOptions)
+        RAW_PrintIfDebug(CentralizedString("Found User ModOptions for: " .. ModuleUUID), shouldPrint)
         userOptions = options[ModuleUUID]
     else
-        RAW_PrintIfDebug(CentralizedString("Not found User ModOptions for: " .. ModuleUUID), RAW_PrintTable_ModOptions)
+        RAW_PrintIfDebug(CentralizedString("Not found User ModOptions for: " .. ModuleUUID), shouldPrint)
     end
 end
 
@@ -46,7 +45,7 @@ local function checkMissingDependencies(enabledOptions, dependencies, missingDep
     end
 end
 
-local function RAW_ValidateModOptions(forceDependencies)
+local function RAW_ValidateModOptions(forceDependencies, shouldPrint)
     forceDependencies = forceDependencies or false
     local enabledOptions = {}
     local dependencies = {}
@@ -62,15 +61,18 @@ local function RAW_ValidateModOptions(forceDependencies)
     checkMissingDependencies(enabledOptions, dependencies, missingDependencies)
     if next(missingDependencies) ~= nil then
         ok = false
-        RAW_PrintIfDebug(CentralizedString("Missing option dependencies: " .. RAW_Set_Concat(missingDependencies, ",")), RAW_PrintTable_ModOptions, RAW_PrintTypeWarning)
+        RAW_PrintIfDebug(CentralizedString("Missing option dependencies: " .. RAW_Set_Concat(missingDependencies, ",")), shouldPrint, RAW_PrintTypeWarning)
         if forceDependencies then
             for dep in pairs(missingDependencies) do
                 ModOptions[dep].enabled = true
                 parseEnabledOption(dep, ModOptions[dep], enabledOptions, dependencies, conflicts)
             end
-            RAW_PrintIfDebug(CentralizedString("Missing dependencies were automatically enabled!"), RAW_PrintTable_ModOptions, RAW_PrintTypeWarning)
-            -- Ext.Utils.ShowErrorAndExitGame("Zerd's RAW\nYour Mod Options had the following missing dependencies, which were " ..
-            -- "automatically enabled to avoid unexpected behaviors:\n" .. RAW_Set_Concat(missingDependencies, ","))
+            RAW_PrintIfDebug(CentralizedString("Missing dependencies were automatically enabled!"), shouldPrint, RAW_PrintTypeWarning)
+            -- To-do: change to "ShowError" without "AndExitGame" when available
+            if shouldPrint then
+                Ext.Utils.ShowErrorAndExitGame("Zerd's RAW\nYour Mod Options had the following missing dependencies, which were " ..
+                "automatically enabled to avoid unexpected behaviors:\n" .. RAW_Set_Concat(missingDependencies, ","))
+            end
         end
     end
 
@@ -82,27 +84,49 @@ local function RAW_ValidateModOptions(forceDependencies)
     end
     if next(conflictsDetected) ~= nil then
         ok = false
-        RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_ModOptions, RAW_PrintTypeError)
-        RAW_PrintIfDebug(CentralizedString("Conflicting options: " .. RAW_Set_Concat(conflictsDetected, ",")), RAW_PrintTable_ModOptions, RAW_PrintTypeError)
-        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_ModOptions, RAW_PrintTypeError)
+        RAW_PrintIfDebug("\n====================================================================================================", shouldPrint, RAW_PrintTypeError)
+        RAW_PrintIfDebug(CentralizedString("Conflicting options: " .. RAW_Set_Concat(conflictsDetected, ",")), shouldPrint, RAW_PrintTypeError)
+        RAW_PrintIfDebug("====================================================================================================\n", shouldPrint, RAW_PrintTypeError)
         -- Ext.Utils.ShowErrorAndExitGame("Zerd's RAW\nYour Mod Options had conflicting options:\n" .. RAW_Set_Concat(conflictsDetected, ","))
     end
 
     if ok then
-        RAW_PrintIfDebug(CentralizedString("---- Mod Validation OK ----"), RAW_PrintTable_ModOptions)
+        RAW_PrintIfDebug(CentralizedString("---- Mod Validation OK ----"), shouldPrint)
     end
 end
 
-function RAW_LoadModOptions()
-    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_ModOptions)
-    RAW_PrintIfDebug(CentralizedString("[RAW:Config.lua] Mod Options") .. "\n", RAW_PrintTable_ModOptions)
+function RAW_PrintConfig(shouldPrint)
+    if not shouldPrint then
+        return
+    end
+    print("\n\27[36mOptions:")
+    local options = {}
+    for optionName, attributes in pairs(ModOptions) do
+        local text = "\27[36m"
+        if IsModOptionEnabled(optionName) then
+            text = text .. optionName .. ":\27[32m enabled"
+            if attributes.value ~= nil then
+                text = text .. "\27[36m value:\27[32m " .. attributes.value
+            end
+        else
+            text = text .. optionName .. ":\27[31m disabled"
+        end
+        table.insert(options, text)
+    end
+    table.sort(options)
+    print(table.concat(options,"\n") .. "\27[0m")
+end
 
-    RAW_LoadUserOptions()
+function RAW_LoadModOptions(shouldPrint)
+    RAW_PrintIfDebug("\n====================================================================================================", shouldPrint)
+    RAW_PrintIfDebug(CentralizedString("[RAW:Config.lua] Mod Options") .. "\n", shouldPrint)
 
-    RAW_PrintIfDebug(CentralizedString("Searching for ModOptions.json at: " .. modOptionsPath), RAW_PrintTable_ModOptions)
+    RAW_LoadUserOptions(shouldPrint)
+
+    RAW_PrintIfDebug(CentralizedString("Searching for ModOptions.json at: " .. modOptionsPath), shouldPrint)
     local optionsFile = Ext.IO.LoadFile(modOptionsPath, "data")
     if optionsFile == nil or optionsFile == "" then
-        RAW_PrintIfDebug(CentralizedString("ModOptions.json not found"), RAW_PrintTable_ModOptions, RAW_PrintTypeWarning)
+        RAW_PrintIfDebug(CentralizedString("ModOptions.json not found"), shouldPrint, RAW_PrintTypeWarning)
         return
     end
 
@@ -130,7 +154,7 @@ function RAW_LoadModOptions()
             if ModOptions[dep] ~= nil then
                 table.insert(filteredDependencies, dep)
             else
-                RAW_PrintIfDebug(CentralizedString("Non-existing dependency on ModOptions: " .. dep), RAW_PrintTable_ModOptions, RAW_PrintTypeWarning)
+                RAW_PrintIfDebug(CentralizedString("Non-existing dependency on ModOptions: " .. dep), shouldPrint, RAW_PrintTypeWarning)
             end
         end
         attributes.dependencies = filteredDependencies
@@ -140,15 +164,16 @@ function RAW_LoadModOptions()
             if ModOptions[con] ~= nil then
                 table.insert(filteredConflicts, con)
             else
-                RAW_PrintIfDebug(CentralizedString("Non-existing conflict on ModOptions: " .. con), RAW_PrintTable_ModOptions, RAW_PrintTypeWarning)
+                RAW_PrintIfDebug(CentralizedString("Non-existing conflict on ModOptions: " .. con), shouldPrint, RAW_PrintTypeWarning)
             end
         end
         attributes.conflicts = filteredConflicts
     end
 
-    RAW_ValidateModOptions(true)
+    RAW_ValidateModOptions(true, shouldPrint)
+    RAW_PrintConfig(shouldPrint)
 
-    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_ModOptions)
+    RAW_PrintIfDebug("====================================================================================================\n", shouldPrint)
 end
 
 function IsModOptionEnabled(modOption)

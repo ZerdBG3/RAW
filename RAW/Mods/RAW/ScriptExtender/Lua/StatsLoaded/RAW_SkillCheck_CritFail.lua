@@ -15,18 +15,18 @@ end
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_SkillCheck_CritFail()
-    Ext.Utils.Print("\n====================================================================================================")
-    Ext.Utils.Print(CentralizedString("Option: skillCheck_critFail"))
+    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_SkillCheck_CritFail)
+    RAW_PrintIfDebug(CentralizedString("Option: skillCheck_critFail"), RAW_PrintTable_SkillCheck_CritFail)
 
     if not IsModOptionEnabled("skillCheck_critFail") then
-        Ext.Utils.Print(CentralizedString("Disabled!"))
-        Ext.Utils.Print(CentralizedString("Skipping the disabling of Critical Fails on Skill Checks"))
-        Ext.Utils.Print("====================================================================================================\n")
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_SkillCheck_CritFail)
+        RAW_PrintIfDebug(CentralizedString("Skipping the disabling of Critical Fails on Skill Checks"), RAW_PrintTable_SkillCheck_CritFail)
+        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_SkillCheck_CritFail)
         return
     end
 
-    Ext.Utils.Print(CentralizedString("Enabled!"))
-    Ext.Utils.Print(CentralizedString("Starting the disabling of Critical Fails on Skill Checks"))
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_SkillCheck_CritFail)
+    RAW_PrintIfDebug(CentralizedString("Starting the disabling of Critical Fails on Skill Checks"), RAW_PrintTable_SkillCheck_CritFail)
 
     for _, name in pairs(Ext.Stats.GetStats("Character")) do
         local char = Ext.Stats.Get(name)
@@ -37,8 +37,8 @@ function RAW_SkillCheck_CritFail()
         end
     end
 
-    Ext.Utils.Print("\n" .. CentralizedString("Finished the disabling of Critical Fails on Skill Checks"))
-    Ext.Utils.Print("====================================================================================================\n")
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the disabling of Critical Fails on Skill Checks"), RAW_PrintTable_SkillCheck_CritFail)
+    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_SkillCheck_CritFail)
 end
 
 ---------------------------------------- MODELS ----------------------------------------

@@ -8,10 +8,6 @@
                     <attribute id="Spells" type="LSString" value="RAW_Target_Distract_CunningAction;RAW_Target_Help_CunningAction;RAW_Throw_Throw_CunningAction"/>
                     <attribute id="UUID" type="guid" value="de819b48-ba8a-4e9b-a3bb-554863b8fe66"/>
                 </node>
-                <node id="SpellList">
-                    <attribute id="Spells" type="LSString" value="Target_FrenziedStrike"/>
-                    <attribute id="UUID" type="guid" value="17803035-4762-4143-8f2f-1143d47e4f40"/>
-                </node>
             </children>
         </node>
     </region>

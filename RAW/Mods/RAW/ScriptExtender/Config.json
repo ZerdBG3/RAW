@@ -1,5 +1,5 @@
 {
-    "RequiredVersion": 1,
+    "RequiredVersion": 10,
     "ModTable": "RAW_f19c68ed-70be-4c3d-b610-e94afc5c5103",
     "FeatureFlags": [
         "Lua"
