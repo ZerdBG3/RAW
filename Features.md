@@ -18,7 +18,7 @@ _Developed in partnership with [Eric](https://www.nexusmods.com/baldursgate3/mod
 * Level 2: Reckless Attack
   - Both the Interrupt and the Spell can only be used on the first attack of the turn
   - Interrupt changed to no longer consider the roll before asking, so it can always activate even if the attack will hit without needing advantage. Unfortunately, I wasn't able to hide the attack roll. If you use the interrupt without the "asking" option, it will always trigger.
-  - Attacking Recklessly allows for all attacks on the same turn to be done with advantage (but not after the turn ends, so no advantage on AoO). The enemies can still gain advantage on attacks aganinst the barbarian until the start of the barbairan's next turn
+  - Attacking Recklessly allows for all attacks on the same turn to be done with advantage (but not after the turn ends, so no advantage on AoO). The enemies can still gain advantage on attacks aganinst the barbarian until the start of the barbarian's next turn
 
 ## Barbarian (Berserker) ⚙️ `barbarian_berserker`
 * Level 3: Removed Throw as a bonus action from Frenzy
@@ -34,7 +34,7 @@ _Quality of Life feature_
 * Given the implementation, spells that are concentration but don't give the caster a status might result in the concentration spells being blocked even so the caster ended concentration manually (or timeout). Basically taking any action (even moving) will remove the blockage, but if nothing works, just untoggle the passive to remove the blockage.
 
 ## Default Actions ⚙️ `defaultActions`
-* Shove is an action (from bonus action). It's a spell container with the option to push (fixed 1.5 m) or knock prone. Can be used as part of your Extra Attack
+* Shove is an action (from bonus action). It's a spell container with the option to push (fixed 1.5 m) or knock prone
 * Introduces Distract and Dodge as actions to player characters and summons
 * Removes Bonus Action Cost from Jump and the Movement Cost is the same as the distance travelled
 * Gives a Walk passive to players that allows them to toggle between walking and running for cinematic and roleplay purposes (as requested by fmarzullo)
