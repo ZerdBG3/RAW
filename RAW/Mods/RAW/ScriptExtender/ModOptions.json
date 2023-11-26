@@ -62,18 +62,6 @@
             ]
         }
     },
-    "cantrips_scaling": {
-        "displayName": "Cantrips Scaling",
-        "description": "Corrects last cantrip damage buff from level 10 to level 11. Also adjusts Monk's Unarmed Strike damage progression.",
-        "enabled": true,
-        "value": null,
-        "dependencies": [],
-        "conflicts": [],
-        "files": {
-            "enabled": [],
-            "disabled": []
-        }
-    },
     "concentration_failsafe": {
         "displayName": "Concentration Failsafe",
         "description": "Gives the player a toggleable passive that stops them from casting concentration spells while already concentrating.",
