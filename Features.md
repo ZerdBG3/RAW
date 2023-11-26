@@ -220,7 +220,7 @@ _Dependencies: [`twoWeaponFighting`](https://github.com/ZerdBG3/RAW/blob/main/Fe
 * Removes the possibility of having a melee and a ranged weapon equipped at the same time, on the different weapon slots
   - _The reasoning for this is to avoid benefiting from bonuses (like AC from shields, or Spells from weapons) while using the other set_
 * Upon equipping a melee weapon or a shield, both ranged weapon slots are unequipped. Upon equipping a ranged weapon, both melee weapon slots are unequipped
-  - _To use this option, I recommend also using the [`freeWeaponEquip`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#free-weapon-equip-%EF%B8%8F-freeweaponequip) option, you can always equip one weapon per turn for free, allowing you to switch "sets" without necessarily spending an action_
+  - _To use this option, I recommend also using the [`freeWeaponEquip`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#free-weapon-equip-%EF%B8%8F-freeweaponequip) option, so you can always equip one weapon per turn for free, allowing you to switch "sets" without necessarily spending an action_
 * To better organize the hotbar, players are be given all default attacks (Melee and Ranged Main and Off-Hand Attack, plus the Unarmed Attack)
   - The default attacks are only usable when equipped with the correct weapons. These attacks are technically different from the ones given by the items, but they behave mechanically the same. It's safe to use them and ignore the ones given when equipping weapons
   - You can also remove the ones you don't intend to use from your hotbar (like off-hand ranged attack if you don't plan on dual wielding hand crossbows). They're always available on your spellbook
