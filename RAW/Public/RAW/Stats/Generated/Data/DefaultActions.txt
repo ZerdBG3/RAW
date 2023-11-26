@@ -120,3 +120,25 @@ data "DisplayName" "hb461d04cg1cfbg4ba1g83a2g5bd1421d1a20;1"
 data "Description" "h8cd12a69g8980g4a55g8737g3f6183de78c1;1"
 data "SpellFlags" "IsMelee;CannotTargetTerrain;CombatLogSetSingleLineRoll"
 data "SpellActionType" "None"
+
+// ----------------------------------------------
+// -------------------- Walk --------------------
+// ----------------------------------------------
+
+new entry "RAW_Walk"
+type "PassiveData"
+data "DisplayName" "h15a2faa5gf385g456dg8aa8gbf5a1029919f;1"
+data "Description" "h460e389eg9748g4598g95cdgf796e95397c6;1"
+data "ExtraDescription" "hc0a989cag7bfdg4f36g9642gf0a332244deb;1"
+data "Icon" "Status_Restrained"
+data "Properties" "IsToggled;ToggledDefaultAddToHotbar"
+data "ToggleOnFunctors" "ApplyStatus(RAW_WALKING,100,-1)"
+data "ToggleOffFunctors" "RemoveStatus(RAW_WALKING)"
+
+new entry "RAW_WALKING"
+type "StatusData"
+data "StatusType" "BOOST"
+data "Icon" "Status_Restrained"
+data "StackId" "RAW_WALKING"
+data "Boosts" "MovementSpeedLimit(Walk)"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
