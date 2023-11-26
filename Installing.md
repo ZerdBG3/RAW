@@ -59,7 +59,7 @@
 ```
 * Upon entering the game with this file, a console will open alongside the game. You should see something similar to this, indicating your Mod Options loaded properly and are applied (_don't close the console, or your game will close as well. Just remove the `ScriptExtenderSettings.json` afterwards if you no longer want it to open alongside your game_)
 
-![image](https://github.com/ZerdBG3/RAW/assets/40004649/9cf40487-80a8-42d8-a40b-c81b719b6558)
+![image](https://github.com/ZerdBG3/RAW/assets/40004649/3b482111-c674-4d47-9821-d94a2c6c614b)
 
 # Updating your version
 * Be aware that some updates won't work on existing save files and might require new games to work
