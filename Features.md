@@ -27,10 +27,6 @@ _Developed in partnership with [Eric](https://www.nexusmods.com/baldursgate3/mod
 * Level 3: Makes all bonus actions granted by the random outcomes castable in the first round for free (next rounds it still requires a bonus action)
 * Level 3: Shadowy Tendrils random outcome only damages enemies
 
-## Cantrips Scaling ⚙️ `cantrips_scaling`
-* Corrects last cantrip damage buff from level 10 to level 11
-* Corrects Monk's Martial Arts damage scaling (starts at `1d4`, increases to `1d6` at level 5 and `1d8` at level 11)
-
 ## Concentration Failsafe ⚙️ `concentration_failsafe`
 _Quality of Life feature_
 * Provides a toggleable passive for players that prevents casting spells that require Concentration while concentrating on another spell.

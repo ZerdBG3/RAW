@@ -32,7 +32,7 @@ local function RAW_StatsLoaded()
 
     RAW_Attunement()
     RAW_Barbarian_Berserker()
-    RAW_CantripsScaling()
+    -- RAW_CantripsScaling()
     RAW_CharacterPassives()
     RAW_Concentration()
     RAW_DefaultActions()
@@ -71,6 +71,7 @@ if Ext.IsServer() then
     RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_ModOptions)
 end
 
+-- To-do: Activate this when the changes to RAW_Config.lua ShowError is made
 -- Menu event for Config popup
 -- Ext.Events.GameStateChanged:Subscribe(function(e)
 --     if e.ToState == "Menu" then

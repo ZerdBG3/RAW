@@ -23,7 +23,6 @@
 | [`barbarian`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#barbarian-%EF%B8%8F-barbarian) | - | - | Changes to Reckless Attack. |
 | [`barbarian_berserker`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#barbarian-berserker-%EF%B8%8F-barbarian_berserker) | - | - | Removes Throw as a bonus action from Frenzy. |
 | [`barbarian_wildMagic`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#barbarian-wild-magic-%EF%B8%8F-barbarian_wildmagic) | - | - | Allows Wild Magic results to be used on the first turn and adjusts Shadowy Tendrils targeting. |
-| [`cantrips_scaling`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#cantrips-scaling-%EF%B8%8F-cantrips_scaling) | - | - | Corrects last cantrip damage buff from level 10 to level 11. Also adjusts Monk's Unarmed Strike damage progression. |
 | [`concentration_failsafe`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#concentration-failsafe-%EF%B8%8F-concentration_failsafe) | - | - | Gives the player a toggleable passive that stops them from casting concentration spells while already concentrating. |
 | [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#default-actions-%EF%B8%8F-defaultactions) | - | - | Changes to Jump and Shove. Introduces Distract and Dodge as player actions. |
 | [`downed`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#downed-%EF%B8%8F-downed) | - | - | Healing a downed character allows them to play their turn normally. |

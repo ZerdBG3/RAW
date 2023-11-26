@@ -3,7 +3,7 @@ Ext.Require("RAW_Lib.lua")
 
 -- Config
 Ext.Require("RAW_Config.lua")
-RAW_LoadModOptions(true)
+RAW_LoadModOptions(true) -- To-do: remove the "true" parameter when the changes to RAW_Config.lua ShowError is made
 
 local function overrideFiles(list)
     for _, override in pairs(list) do

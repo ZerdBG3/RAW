@@ -13,9 +13,6 @@
         "barbarian_wildMagic": {
             "enabled": true
         },
-        "cantrips_scaling": {
-            "enabled": true
-        },
         "concentration_failsafe": {
             "enabled": true
         },
