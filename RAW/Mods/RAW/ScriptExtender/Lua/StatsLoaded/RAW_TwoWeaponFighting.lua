@@ -2,9 +2,6 @@ local ENUM_RAW_OffHandPassive
 
 local function RAW_AddOffhandPassive(name)
     local char = Ext.Stats.Get(name)
-    if not RAW_CharIsHero(char) then
-        return
-    end
 
     RAW_PrintIfDebug("\nCharacter: " .. char.Name, RAW_PrintTable_TwoWeaponFighting)
     RAW_PrintIfDebug("\tAdding passive: " .. ENUM_RAW_OffHandPassive, RAW_PrintTable_TwoWeaponFighting)
