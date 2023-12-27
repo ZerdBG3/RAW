@@ -2,6 +2,7 @@
 // ------------------------- Aid --------------------------
 // --------------------------------------------------------
 
+// Changed SpellType to Target and added AmountOfTargets so it specifically limits it to 3 creatures
 new entry "Shout_Aid"
 type "SpellData"
 data "SpellType" "Target"
@@ -301,6 +302,36 @@ data "AreaRadius" "6"
 data "ExplodeRadius" "6"
 
 // -----------------------------------------------
+// ---------------- Gust of Wind -----------------
+// -----------------------------------------------
+
+// Changed to Concentration spell that lasts 10 turns and becomes usable each turn as a bonus action. Also removed Off Balance status
+new entry "Zone_GustOfWind"
+type "SpellData"
+data "SpellType" "Zone"
+using "Zone_GustOfWind"
+data "ConcentrationSpellID" "Zone_GustOfWind_BonusAction"
+data "SpellSuccess" "Force(5);ApplyStatus(SELF,GUST_OF_WIND,100,10)"
+data "SpellFail" "ApplyStatus(SELF,GUST_OF_WIND,100,10)"
+data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;AddFallDamageOnLand;IsConcentration"
+
+new entry "Zone_GustOfWind_BonusAction"
+type "SpellData"
+data "SpellType" "Zone"
+using "Zone_GustOfWind"
+data "SpellSuccess" "Force(5)"
+data "SpellFail" ""
+data "UseCosts" "BonusActionPoint:1"
+data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;AddFallDamageOnLand;Temporary"
+
+new entry "GUST_OF_WIND"
+type "StatusData"
+data "StatusType" "BOOST"
+data "Boosts" "UnlockSpell(Zone_GustOfWind_BonusAction)"
+data "StackId" "GUST_OF_WIND"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
+
+// -----------------------------------------------
 // --------------- Hail of Thorns ----------------
 // -----------------------------------------------
 
@@ -538,6 +569,7 @@ data "SpellProperties" ""
 // ----------------- Mass Healing Word --------------------
 // --------------------------------------------------------
 
+// Changed SpellType to Target and added AmountOfTargets so it specifically limits it to 6 creatures
 new entry "Shout_HealingWord_Mass"
 type "SpellData"
 data "SpellType" "Target"
