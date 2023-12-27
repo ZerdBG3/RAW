@@ -100,7 +100,9 @@
     <content contentuid="hf709fee8g166eg409ag902eg1c42b9d9053f" version="1">Spend [1] Hit Die to restore [2] plus your Constitution Modifier.</content><!-- Spend Hit Die (Short Rest) -->
     <content contentuid="h187970e4g785dg4703gad3fgf4d9aa7137b8" version="1">You can use soothing music to help revitalize your wounded allies during a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;. The first time you or any friendly creatures who can hear your performance regain hit points by spending a Hit Die, each of those creatures regains extra hit points.</content><!-- Song of Rest -->
     <content contentuid="he24c9b2fg7b2bg4efegb687g368f15af344b" version="1">Stop performing the current song.</content><!-- Stop Performance -->
-
+	<content contentuid="h80f1b00fgf25eg4966g989fg1d9baf7a4069" version="9">Heal up to 3 of your allies and increase their hit point maximum by [1].</content><!-- Aid -->
+    <content contentuid="h25e917a1g4d42g4837gab6fg424fca019500" version="4">Heal up to 6 of your nearby allies.</content>
+    
     <!-- Status Boost Display Name -->
     <content contentuid="hd7046718g6e1ag4867g9e30g6900297f0d58" version="1">Short Rest</content><!-- Short Rest -->
     <content contentuid="h096216f2ge492g4bb9g9a3cgc88694a8a96b" version="1">Distracted</content><!-- Distracted -->
@@ -234,4 +236,7 @@ If you regain any Hit Points, the condition is removed. If an ally &lt;LSTag Typ
     <!-- GUI -->
     <content contentuid="h8ff2772fg1e8ag4927gb7b2ga85b3601cb31" version="1">Stop your party for a brief period, during which they can use Hit Dice to restore &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;. Warlocks restore their &lt;LSTag Tooltip="SpellSlot"&gt;spell slots&lt;/LSTag&gt;.</content><!-- Short Rest -->
     <content contentuid="h6e813ec6g8ba4g4fabgaa61g1fe89999fec5" version="1">Go to camp and end the day.&lt;br&gt;&lt;br&gt;You can use &lt;LSTag Tooltip="CampSupplies"&gt;camp supplies&lt;/LSTag&gt; to regain &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;, &lt;LSTag Tooltip="SpellSlot"&gt;spell slots&lt;/LSTag&gt;, and half each character's total Hit Dice.</content><!-- Long Rest -->
+
+    <!-- Zone Description -->
+    <content contentuid="h6f899a5egd7a2g4961gbc09g4003baabbb48" version="4">Summon a strong wind that clears all clouds and pushes creatures back [1].</content><!-- Gust of Wind -->
 </contentList>
