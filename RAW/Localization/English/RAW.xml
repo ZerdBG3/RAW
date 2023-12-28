@@ -72,8 +72,9 @@
     <content contentuid="h75e85388g3e7dg4e70g8101g612860c4a857" version="1">Replenish expended &lt;LSTag Tooltip="SpellSlot"&gt;spell slots&lt;/LSTag&gt; during a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;. You cannot restore spell slots above 5th level.</content><!-- Natural Recovery -->
     <content contentuid="h2149d9f2gd22fg4923ga45bged71c17b76ef" version="1">Prepare to make a volley of thorns the next time you hit a creature with a ranged weapon attack, dealing [1] to it and creatures within [2] of them.</content> <!-- Hail of Thorns -->
 	<content contentuid="h80f1b00fgf25eg4966g989fg1d9baf7a4069" version="9">Heal up to 3 of your allies and increase their hit point maximum by [1].</content><!-- Aid -->
-    <content contentuid="h25e917a1g4d42g4837gab6fg424fca019500" version="4">Heal up to 6 of your nearby allies.</content>
-    
+    <content contentuid="h25e917a1g4d42g4837gab6fg424fca019500" version="4">Heal up to 6 of your nearby allies.</content><!-- Mass Healing Word -->
+    <content contentuid="h382f3dc6ga6a4g4afdgab57ga58653f736f9" version="8">Heal up to 6 allies that you can see.</content><!-- Prayer of Healing -->
+	
     <!-- Status Boost Display Name -->
     <content contentuid="hd7046718g6e1ag4867g9e30g6900297f0d58" version="1">Short Rest</content><!-- Short Rest -->
     <content contentuid="h096216f2ge492g4bb9g9a3cgc88694a8a96b" version="1">Distracted</content><!-- Distracted -->
