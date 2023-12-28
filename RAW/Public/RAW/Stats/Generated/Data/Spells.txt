@@ -642,6 +642,7 @@ data "PowerLevel" "6"
 // ------------------- Prayer of Healing -----------------
 // -------------------------------------------------------
 
+// Changed SpellType to Target and added AmountOfTargets so it specifically limits it to 6 creatures
 new entry "Shout_PrayerOfHealing"
 type "SpellData"
 data "SpellType" "Target"
