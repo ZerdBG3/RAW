@@ -83,6 +83,18 @@ data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:6"
 data "RootSpellID" "Shout_Aid"
 data "PowerLevel" "6"
 
+// -----------------------------------------------
+// -------------- Aura of Vitality ---------------
+// -----------------------------------------------
+
+// Changed to Concentration spell
+
+new entry "Shout_AuraOfVitality"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_AuraOfVitality"
+data "SpellFlags" "IsSpell;HasVerbalComponent;IsConcentration"
+
 // --------------------------------------------------------
 // -------------------- Call Lightning --------------------
 // --------------------------------------------------------
