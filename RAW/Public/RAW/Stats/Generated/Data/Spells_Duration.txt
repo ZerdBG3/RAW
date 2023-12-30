@@ -377,6 +377,13 @@ using "Target_ProtectionFromPoison"
 data "SpellProperties" "RemoveStatus(SG_Poisoned); ApplyStatus(PROTECTION_FROM_POISON, 100, 600)"
 data "TooltipStatusApply" "ApplyStatus(PROTECTION_FROM_POISON, 100, 600)"
 
+new entry "Target_Stoneskin"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Stoneskin"
+data "SpellProperties" "ApplyStatus(STONESKIN,100,600)"
+data "TooltipStatusApply" "ApplyStatus(STONESKIN,100,600)"
+
 new entry "Target_WardingBond"
 type "SpellData"
 data "SpellType" "Target"
