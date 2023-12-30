@@ -903,3 +903,14 @@ data "OnApplyRoll" "not SavingThrow(Ability.Constitution, CalculateSpellDC(conte
 data "OnApplySuccess" "UseActionResource(ActionPoint,1,0); UseActionResource(EyeStalkActionPoint,1,0)"
 data "StatusGroups" "SG_Poisoned"
 data "StatusEffect" "ceeda0ca-0739-4588-a449-d024389f0c2a"
+
+// -----------------------------------------------------------
+// -------------------- Sunbeam: Recreate --------------------
+// -----------------------------------------------------------
+
+// Removed the IsSpell and component spell flags and added the Wildshape flag so it can be used in wildshape and isn't subjected to the Bonus Action Spell rule, similar to other concentration spells that grant special actions
+new entry "Zone_Sunbeam_Recreate"
+type "SpellData"
+data "SpellType" "Zone"
+using "Zone_Sunbeam_Recreate"
+data "SpellFlags" "IsHarmful;Temporary;Wildshape"
