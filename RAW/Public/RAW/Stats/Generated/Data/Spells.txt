@@ -849,3 +849,14 @@ data "TargetConditions" "not Item() and not HasStatus('SG_Unconscious') and not 
 data "AmountOfTargets" ""
 data "Description" "h9204dac0g5de4g4199ga876g8eb69468ee8a;1"
 data "CombatAIOverrideSpell" ""
+
+// --------------------------------------------------------
+// ----------------- Sunbeam: Recreate --------------------
+// --------------------------------------------------------
+
+// Removed the IsSpell and component spell flags and added the Wildshape flag so it can be used in wildshape and isn't subjected to the Bonus Action Spell rule, similar to other concentration spells that grant special actions
+new entry "Zone_Sunbeam_Recreate"
+type "SpellData"
+data "SpellType" "Zone"
+using "Zone_Sunbeam_Recreate"
+data "SpellFlags" "IsHarmful;Temporary;Wildshape"
