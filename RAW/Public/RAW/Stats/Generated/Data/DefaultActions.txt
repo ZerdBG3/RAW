@@ -74,7 +74,6 @@ data "SpellType" "Projectile"
 using "Projectile_Jump"
 data "UseCosts" "Movement:Distance"
 data "TargetRadius" "3.2"
-data "MinJumpDistance" "2"
 data "AddRangeFromAbility" "Strength,0.61"
 
 // Champion level 7 passive: distance increased by a number of feet equal to your Strength modifier. 5 feet at 20str = 1.5m
