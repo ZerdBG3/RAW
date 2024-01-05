@@ -73,6 +73,43 @@ type "SpellData"
 data "SpellType" "Projectile"
 using "Projectile_Jump"
 data "UseCosts" "Movement:Distance"
+data "TargetRadius" "3.2"
+data "MinJumpDistance" "2"
+data "AddRangeFromAbility" "Strength,0.61"
+
+// Champion level 7 passive: distance increased by a number of feet equal to your Strength modifier. 5 feet at 20str = 1.5m
+new entry "RemarkableAthlete_Jump"
+type "PassiveData"
+using "RemarkableAthlete_Jump"
+data "DescriptionParams" "Distance(1.5)"
+data "Boosts" "JumpMaxDistanceBonus(1.5)"
+
+// Athlete feat: you can jump after moving 5 feet instead of 10. Currently, it improves jumping distance by 1.5 meters.
+new entry "Athlete_StandUp"
+type "PassiveData"
+using "Athlete_StandUp"
+data "Description" "51bcb59d-133a-44df-8d68-bf8cd65fc69d;1"
+data "DescriptionParams" "Distance(1.5)"
+data "Boosts" "JumpMaxDistanceBonus(1.5)"
+
+// Barbarian Tiger Totem, jump increased by 3m instead of 4.5 (which was in fact a 50% multiplier instead of flat distance bonus)
+new entry "TotemSpirit_Tiger"
+type "PassiveData"
+using "TotemSpirit_Tiger"
+data "DescriptionParams" "Distance(3)"
+
+new entry "Shout_Rage_Totem_Tiger"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_Rage_Totem_Tiger"
+data "ExtraDescriptionParams" "Distance(3)"
+
+new entry "RAGE_TOTEM_TIGER"
+type "StatusData"
+data "StatusType" "BOOST"
+using "RAGE_TOTEM_TIGER"
+data "DescriptionParams" "LevelMapValue(RageDamage); Distance(3)"
+data "Boosts" "Tag(VFX_RAGE);BlockSpellCast();UnlockSpell(Shout_EndRage);Attribute(ForceMainhandAlternativeEquipBones);JumpMaxDistanceBonus(3)"
 
 // -----------------------------------------------
 // -------------------- Shove --------------------
