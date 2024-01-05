@@ -146,4 +146,7 @@ If you regain any Hit Points, the condition is removed. If an ally &lt;LSTag Typ
     <content contentuid="hf080f971g5582g46d8g8938gdb8c8b560d42" version="1">Your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; affects how much weight you can throw. Heavier items deal more damage.</content><!-- Throw -->
     <content contentuid="h6da3fafbgfe47g420fgb449g9756dc4146fe" version="1">Your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; affects how much weight you can throw.</content><!-- Throw Cunning Action -->
     <content contentuid="h12c219aag52b4g4a22gb0e3g160edbaffbb7" version="1">Attacking further than the normal range ([1] for Javelins and [2] for other weapons) impose &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on the &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt;.</content><!-- Throw Weapon -->
+
+	<!-- Jump -->
+	<content contentuid="51bcb59d-133a-44df-8d68-bf8cd65fc69d" version="1">When you are &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;, standing up uses only [1] of your &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt;.&lt;br&gt;Your &lt;LSTag Type="Spell" Tooltip="Projectile_Jump"&gt;Jump&lt;/LSTag&gt; distance is increased by [1].</content>
 </contentList>
