@@ -7,7 +7,7 @@ new entry "SEE_INVISIBILITY"
 type "StatusData"
 data "StatusType" "BOOST"
 using "SEE_INVISIBILITY"
-data "AuraStatuses" "TARGET:IF(not HasAnyStatus({'SG_Unconscious','SG_Incapacitated','SG_Blinded'},{},{},context.Source) and not Ally() and HasStatus('SG_Invisible')):ApplyStatus(SEE_INVISIBILITY_REVEAL)"
+data "AuraStatuses" "TARGET:IF(not HasAnyStatus({'SG_Unconscious','SG_Incapacitated','SG_Blinded'},{},{},context.Source) and not Ally() and FacingMe(context.Source,context.Target) and HasStatus('SG_Invisible')):ApplyStatus(SEE_INVISIBILITY_REVEAL)"
 data "AuraFlags" "CanAffectInvisibleItems;AIIgnoreOnSelf;ShouldCheckLOS"
 
 // Also removes SG_Invisible on removal to replace original INVISIBLE statuses
