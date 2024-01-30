@@ -2,11 +2,12 @@
 // -------------------- See Invisibility --------------------
 // ----------------------------------------------------------
 
-// Skips SEE_INVISIBILITY_SEEN/Dexterity Saves and just applies SEE_INVISIBILITY_REVEAL
+// Skips SEE_INVISIBILITY_SEEN/Dexterity Saves and just applies SEE_INVISIBILITY_REVEAL. Also increased radius to hero sight range.
 new entry "SEE_INVISIBILITY"
 type "StatusData"
 data "StatusType" "BOOST"
 using "SEE_INVISIBILITY"
+data "AuraRadius" "18.5"
 data "AuraStatuses" "TARGET:IF(not HasAnyStatus({'SG_Unconscious','SG_Incapacitated','SG_Blinded'},{},{},context.Source) and not Ally() and FacingMe(context.Source,context.Target) and HasStatus('SG_Invisible')):ApplyStatus(SEE_INVISIBILITY_REVEAL)"
 data "AuraFlags" "CanAffectInvisibleItems;AIIgnoreOnSelf;ShouldCheckLOS"
 
@@ -22,6 +23,13 @@ data "RemoveConditions" "not HasStatus('SG_Invisible')"
 data "RemoveEvents" "OnStatusRemoved"
 data "OnRemoveFunctors" "IF(RAW_IsInvisibleSeen() and not HasStatus('SEE_INVISIBILITY_REVEAL')):RemoveStatus(SG_Invisible)"
 data "StatusEffect" "d26436d4-d019-4dfc-b2f1-da0ac195575f"
+
+// Increased range of shout to reflect aura radius increase.
+new entry "Shout_SeeInvisibility"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_SeeInvisibility"
+data "AreaRadius" "18.5"
 
 // Increased status duration to 1. At 0, it just removed SG_Invisible without replacing statuses
 new entry "Shout_SeeInvisibility_Seek"
