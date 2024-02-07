@@ -7,7 +7,8 @@ new entry "SEE_INVISIBILITY"
 type "StatusData"
 data "StatusType" "BOOST"
 using "SEE_INVISIBILITY"
-data "AuraRadius" "18.5"
+data "DescriptionParams" "Distance(18)"
+data "AuraRadius" "18"
 data "AuraStatuses" "TARGET:IF(not HasAnyStatus({'SG_Unconscious','SG_Incapacitated','SG_Blinded'},{},{},context.Source) and not Ally() and FacingMe(context.Source,context.Target) and HasStatus('SG_Invisible')):ApplyStatus(SEE_INVISIBILITY_REVEAL)"
 data "AuraFlags" "CanAffectInvisibleItems;AIIgnoreOnSelf;ShouldCheckLOS"
 
@@ -29,7 +30,7 @@ new entry "Shout_SeeInvisibility"
 type "SpellData"
 data "SpellType" "Shout"
 using "Shout_SeeInvisibility"
-data "AreaRadius" "18.5"
+data "AreaRadius" "18"
 
 // Increased status duration to 1. At 0, it just removed SG_Invisible without replacing statuses
 new entry "Shout_SeeInvisibility_Seek"
