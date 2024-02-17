@@ -55,6 +55,8 @@ data "SpellProperties" "ApplyStatus(SEE_INVISIBILITY_SEEK,100,1)"
 // It's possible I missed adding it to one that doesn't inherit from INVISIBLE or INVISIBILITY.
 new entry "Invisibility_Technical"
 type "PassiveData"
+data "Properties" "IsHidden"
+data "Boosts" "GameplayObscurity(1)"
 data "StatsFunctorContext" "OnStatusApplied;OnStatusRemoved"
 data "Conditions" "StatusId('SNEAKING') and not HasStatus('SEE_INVISIBILITY_REVEAL')"
 data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnStatusApplied) and not IsInvisibleSneaking()):RemoveStatus(SELF,SG_Invisible); IF(context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and IsInvisibleSneaking()):RemoveStatus(SG_Invisible)"
