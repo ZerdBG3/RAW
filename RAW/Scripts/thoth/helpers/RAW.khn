@@ -127,7 +127,7 @@ function RAW_ConcentrationBlocker()
     return ConditionResult(result.Result, {ConditionError("RAW_ConcentrationBlocker_False")})
 end
 
-function IsInvisibleSneaking(entity)
+function RAW_IsInvisibleSneaking(entity)
     local entity = entity or context.Target
     return HasStatus('INVISIBLE_SNEAKING',entity) 
         |  HasStatus('INVISIBLE_MAGEHAND_SNEAKING',entity) 
