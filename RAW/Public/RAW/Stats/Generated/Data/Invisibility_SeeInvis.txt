@@ -20,10 +20,10 @@ data "StatusType" "BOOST"
 using "SEE_INVISIBILITY_REVEAL"
 data "TickType" "EndTurn"
 data "AuraFlags" "CanAffectInvisibleItems;ShouldCheckLOS"
-data "OnApplyFunctors" "IF(IsInvisibleSneaking()):RemoveStatus(SG_Invisible)"
+data "OnApplyFunctors" "IF(RAW_IsInvisibleSneaking()):RemoveStatus(SG_Invisible)"
 data "RemoveConditions" "not HasStatus('SG_Invisible')"
 data "RemoveEvents" "OnStatusRemoved"
-data "OnRemoveFunctors" "IF(HasStatus('SNEAKING') and not IsInvisibleSneaking() and not HasStatus('SEE_INVISIBILITY_REVEAL')):RemoveStatus(SG_Invisible)"
+data "OnRemoveFunctors" "IF(HasStatus('SNEAKING') and not RAW_IsInvisibleSneaking() and not HasStatus('SEE_INVISIBILITY_REVEAL')):RemoveStatus(SG_Invisible)"
 data "StatusEffect" "d26436d4-d019-4dfc-b2f1-da0ac195575f"
 
 // Changed TickType to EndTurn. Now each enemy must seek the player individually on its own turn if it cannot see invisibility.
@@ -59,7 +59,7 @@ data "Properties" "IsHidden"
 data "Boosts" "GameplayObscurity(1)"
 data "StatsFunctorContext" "OnStatusApplied;OnStatusRemoved"
 data "Conditions" "StatusId('SNEAKING') and not HasStatus('SEE_INVISIBILITY_REVEAL')"
-data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnStatusApplied) and not IsInvisibleSneaking()):RemoveStatus(SELF,SG_Invisible); IF(context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and IsInvisibleSneaking()):RemoveStatus(SG_Invisible)"
+data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnStatusApplied) and not RAW_IsInvisibleSneaking()):RemoveStatus(SELF,SG_Invisible); IF(context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and RAW_IsInvisibleSneaking()):RemoveStatus(SG_Invisible)"
 
 // All INVISIBLE statuses now apply a _SEEN version if removed by SEE_INVISIBILITY_REVEAL
 // Also, invisibility shouldn't break when you take damage
