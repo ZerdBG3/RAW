@@ -113,6 +113,16 @@ data "RemoveConditions" "SpellId('Target_CallLightning_LightningBolt') or SpellI
 data "RemoveEvents" "OnSpellCast"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 
+// --------------------------------------------------------
+// -------------------- Cone of Cold ----------------------
+// --------------------------------------------------------
+
+new entry "Zone_ConeOfCold"
+type "SpellData"
+data "SpellType" "Zone"
+using "Zone_ConeOfCold"
+data "Range" "18"
+
 // -----------------------------------------------
 // ------------- Feign Death Dismiss -------------
 // -----------------------------------------------
@@ -438,6 +448,17 @@ type "PassiveData"
 using "HuntersMark"
 data "Boosts" ""
 data "StatsFunctors" "ApplyStatus(PASSIVE_HUNTERS_MARK,100,0);IF(IsAttackType(AttackType.MeleeWeaponAttack)):DealDamage(1d6, MainMeleeWeaponDamageType);IF(IsAttackType(AttackType.RangedWeaponAttack)):DealDamage(1d6, MainRangedWeaponDamageType);IF(IsAttackType(AttackType.MeleeOffHandWeaponAttack)):DealDamage(1d6, OffhandMeleeWeaponDamageType);IF(IsAttackType(AttackType.RangedOffHandWeaponAttack)):DealDamage(1d6, OffhandRangedWeaponDamageType);"
+
+// -------------------------------------------------------
+// -------------------- Hypnotic Pattern -----------------
+// -------------------------------------------------------
+
+new entry "Target_HypnoticPattern"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_HypnoticPattern"
+data "SpellSuccess" "ApplyStatus(HYPNOTIC_PATTERN,100,10)"
+data "TooltipStatusApply" "ApplyStatus(HYPNOTIC_PATTERN,100,10)"
 
 // -----------------------------------------------
 // ------------------ Ice Knife ------------------
