@@ -34,6 +34,7 @@ _Quality of Life feature_
 * Given the implementation, spells that are concentration but don't give the caster a status might result in the concentration spells being blocked even though the caster ended concentration manually (or timeout). Basically taking any action (even moving) will remove the blockage, but if nothing works, just untoggle the passive to remove the blockage.
 
 ## Default Actions ⚙️ `defaultActions`
+Thanks [@KilayPoE2](https://github.com/KilayPoE2) (Kilay) and ogugght for the icons! ❤️
 * Shove is an action (from bonus action). It's a spell container with the option to push (fixed 1.5 m) or knock prone
 * Introduces Distract and Dodge as actions to player characters and summons
 * Removes Bonus Action Cost from Jump and the Movement Cost is the same as the distance travelled
@@ -109,11 +110,13 @@ _Dependencies: [`rogue`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#ro
 
 ## Spells ⚙️ `spells`
 * Call Lightning creates a storm area, inside which the caster can target a smaller area to deal damage each turn (recast is usable while wildshaped, even with the [`spells_wildshape`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#spells---wildshape-%EF%B8%8F-spells_wildshape) option disabled)
+* Cone of Cold range increased to 18 meters
 * Feign Death provides a Dismiss spell to the caster (duration changed as well, even with the [`spells_duration`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#spells---duration-%EF%B8%8F-spells_duration) option disabled)
 * Fireball radius increased from 4 to 6 meters
 * Hail of Thorns converted to a concentration self-buff spell that applies the effect on the next ranged attack
 * Haste extra action can only be used for attacking (one attack only - no Extra Attack), Dash, Disengage or Hide
 * Hunter's Mark counts as a separate damage entry and can critically strike
+* Hypnotic Pattern duration increased to 10 turns
 * Ice Knife no longer interacts with surfaces
 * Produce Flame is a spell container, with instant attacking as an option (normal temporary spells after summoning the flame are still there as well)
 * Sleep lasts for 10 turns instead of 2 and it's a circular area, which the targets are selected based on HP on increasing order
