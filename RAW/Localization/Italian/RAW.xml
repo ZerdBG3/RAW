@@ -38,7 +38,7 @@
     <content contentuid="h171c2107gb858g4e96ga500g0d861916042c" version="1">Ignori la proprietà di ricarica delle balestre ai fini degli Attacchi Extra.</content><!-- Crossbow Expert: Wounding -->
     <content contentuid="h34e14ad6gb0d5g4892ga3c9gdb7dce2c7b9a" version="1">Questo oggetto richiede Sintonizzazione per essere equipaggiato e per il limite massimo degli oggetti sintonizzati.</content><!-- Attunement -->
     <content contentuid="h52822a0agd71bg4caega40dgc7017940b99b" version="1">Puoi utilizzare il Combattimento con Due Armi anche se le armi che stai impugnando non sono Leggere, e puoi equipaggiare due armi gratuitamente nel tuo turno anziché una. Non puoi impugnare due armi &lt;LSTag Tooltip="Heavy"&gt;Pesanti&lt;/LSTag&gt; contemporaneamente.</content><!-- Dual Wielder -->
-    <content contentuid="h7af02440ga775g44ddga0e4g04987028c1e7" version="1">Impedisce di lanciare incantesimi che richiedono &lt;LSTag Tooltip="Concentraz"&gt;Concentrazione&lt;/LSTag&gt; mentre si è concentrati su un altro incantesimo.</content><!-- Concentration Block -->
+    <content contentuid="h7af02440ga775g44ddga0e4g04987028c1e7" version="1">Impedisce di lanciare incantesimi che richiedono &lt;LSTag Tooltip="Concentration"&gt;Concentrazione&lt;/LSTag&gt; mentre si è concentrati su un altro incantesimo.</content><!-- Concentration Block -->
 
     <!-- Passive Extra Description -->
     <content contentuid="hc0a989cag7bfdg4f36g9642gf0a332244deb" version="1">Camminare non ridurrà la distanza massima percorribile in un turno, è puramente estetico.</content><!-- Walk -->
