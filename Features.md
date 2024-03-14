@@ -34,7 +34,7 @@ _Quality of Life feature_
 * Given the implementation, spells that are concentration but don't give the caster a status might result in the concentration spells being blocked even though the caster ended concentration manually (or timeout). Basically taking any action (even moving) will remove the blockage, but if nothing works, just untoggle the passive to remove the blockage.
 
 ## Default Actions ⚙️ `defaultActions`
-Thanks [@KilayPoE2](https://github.com/KilayPoE2) (Kilay) and ogugght for the icons! ❤️
+Thanks [Kilay](https://www.nexusmods.com/users/26711484) and [ogugght](https://www.nexusmods.com/users/176938878) for the icons! ❤️
 * Shove is an action (from bonus action). It's a spell container with the option to push (fixed 1.5 m) or knock prone
 * Introduces Distract and Dodge as actions to player characters and summons
 * Removes Bonus Action Cost from Jump and the Movement Cost is the same as the distance travelled
