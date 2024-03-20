@@ -30,8 +30,9 @@ Zerd's Rules As Written for Baldur's Gate 3
 # Languages
 * In-game content is currently translated to the following languages
   - English
-  - German
-  - Italian
+  - German (MichaLHN)
+  - Italian ([Kilay](https://www.nexusmods.com/users/26711484))
+  - Portuguese - Brazilian (Rorerik)
 
 # Error
 * **IMPORTANT:** When opening the launcher, you'll get several notifications telling you about how mods might break and crash your game. Ignore them
