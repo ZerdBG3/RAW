@@ -36,9 +36,11 @@ _Quality of Life feature_
 ## Default Actions ⚙️ `defaultActions`
 Thanks [Kilay](https://www.nexusmods.com/users/26711484) and [ogugght](https://www.nexusmods.com/users/176938878) for the icons! ❤️
 * Shove is an action (from bonus action). It's a spell container with the option to push (fixed 1.5 m) or knock prone
-* Introduces Distract and Dodge as actions to player characters and summons
 * Removes Bonus Action Cost from Jump and the Movement Cost is the same as the distance travelled
 * Gives a Walk passive to players that allows them to toggle between walking and running for cinematic and roleplay purposes (as requested by fmarzullo)
+
+#### Due to an issue with disabling this option, the following change is always present, even if the option is disabled. You can simply not use those actions if you don't want them (AI won't have them)
+* Introduces Distract and Dodge as actions to player characters and summons
 
 ## Downed ⚙️ `downed`
 * Healing a downed character allows them to play their turn normally
