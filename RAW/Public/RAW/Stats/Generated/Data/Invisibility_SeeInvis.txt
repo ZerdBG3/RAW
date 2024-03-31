@@ -56,10 +56,21 @@ data "SpellProperties" "ApplyStatus(SEE_INVISIBILITY_SEEK,100,1)"
 new entry "Invisibility_Technical"
 type "PassiveData"
 data "Properties" "IsHidden"
-data "Boosts" "GameplayObscurity(1)"
 data "StatsFunctorContext" "OnStatusApplied;OnStatusRemoved"
 data "Conditions" "StatusId('SNEAKING') and not HasStatus('SEE_INVISIBILITY_REVEAL')"
-data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnStatusApplied) and not RAW_IsInvisibleSneaking()):RemoveStatus(SELF,SG_Invisible); IF(context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and RAW_IsInvisibleSneaking()):RemoveStatus(SG_Invisible)"
+data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnStatusApplied) and HasStatus('SNEAKING')):ApplyStatus(INVISIBILITY_SNEAKING_TECHNICAL,100,1); IF(context.HasContextFlag(StatsFunctorContext.OnStatusApplied) and not RAW_IsInvisibleSneaking()):RemoveStatus(SELF,SG_Invisible); IF(context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and RAW_IsInvisibleSneaking()):RemoveStatus(SG_Invisible)"
+
+// Applies obscurity on successfully sneaking so stealth isn't broken before Invisibility can be switched.
+new entry "INVISIBILITY_SNEAKING_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "INVISIBILITY_SNEAKING_TECHNICAL"
+data "StackType" "Ignore"
+data "TickType" "EndTurn"
+data "Boosts" "GameplayObscurity(1)"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnStatusRemoved) and not HasStatus('SNEAKING')) or not IsStatusEvent(StatusEvent.OnStatusRemoved)"
+data "RemoveEvents" "OnStatusRemoved;OnMove"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 
 // All INVISIBLE statuses now apply a _SEEN version if removed by SEE_INVISIBILITY_REVEAL
 // Also, invisibility shouldn't break when you take damage
@@ -87,7 +98,7 @@ data "Boosts" "IF(not CanSeeInvisible()):Disadvantage(AttackTarget); IF(not CanS
 data "Passives" "Invisibility_Technical"
 data "RemoveEvents" "OnSpellCast;OnAttack"
 data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack))"
-data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SNEAKING') and not HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(INVISIBILITY_SNEAKING,100,Target.INVISIBILITY.Duration,,,,,true)"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and IsConcentrating(context.Source) and HasStatus('SNEAKING') and not HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(INVISIBILITY_SNEAKING,100,Target.INVISIBILITY.Duration,,,,,true)"
 
 new entry "ONE_WITH_SHADOWS"
 type "StatusData"
@@ -136,7 +147,7 @@ data "Boosts" "IF(not CanSeeInvisible()):Disadvantage(AttackTarget); IF(not CanS
 data "OnApplyFunctors" ""
 data "RemoveEvents" ""
 data "RemoveConditions" ""
-data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SNEAKING') and not HasStatus('SEE_INVISIBILITY_REVEAL') or HasStatus('GREATER_INVISIBILITY_SNEAKING')):ApplyStatus(GREATER_INVISIBILITY_SNEAKING,100,Target.GREATER_INVISIBILITY.Duration,,,,,true)"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and IsConcentrating(context.Source) and HasStatus('SNEAKING') and not (HasStatus('SEE_INVISIBILITY_REVEAL') or HasStatus('GREATER_INVISIBILITY_SNEAKING'))):ApplyStatus(GREATER_INVISIBILITY_SNEAKING,100,Target.GREATER_INVISIBILITY.Duration,,,,,true)"
 
 new entry "SHADOWBLEND"
 type "StatusData"
@@ -229,7 +240,7 @@ data "Boosts" "IF(not CanSeeInvisible()):Disadvantage(AttackTarget); IF(not CanS
 data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SNEAKING') and not HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(LOW_POLTERGEIST_INVISIBLE_SNEAKING,100,Target.LOW_POLTERGEIST_INVISIBLE.Duration,,,,,true)"
 
 // ----------------------------------------------------------
-// ------------------ Invisibility _SEEN --------------------
+// ------------------ Invisibility _SNEAKING --------------------
 // ----------------------------------------------------------
 
 // These statuses are applied when their corresponding INVISIBLE status is removed by SEE_INVISIBILITY_REVEAL
@@ -255,7 +266,7 @@ type "StatusData"
 data "StatusType" "INVISIBLE"
 using "INVISIBILITY"
 data "Boosts" "IgnoreLeaveAttackRange; Invisibility(); IF(not CanSeeInvisible()):Disadvantage(AttackTarget); IF(not CanSeeInvisible(context.Target)):Advantage(AttackRoll);"
-data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External)):ApplyStatus(INVISIBILITY,100,Target.INVISIBILITY_SNEAKING.Duration,,,,,true)"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and IsConcentrating(context.Source)):ApplyStatus(INVISIBILITY,100,Target.INVISIBILITY_SNEAKING.Duration,,,,,true)"
 data "StatusPropertyFlags" "UnavailableInActiveRoll;ExcludeFromPortraitRendering;DisableCombatlog"
 
 new entry "ONE_WITH_SHADOWS_SNEAKING"
@@ -303,7 +314,7 @@ type "StatusData"
 data "StatusType" "INVISIBLE"
 using "GREATER_INVISIBILITY"
 data "Boosts" "IgnoreLeaveAttackRange; Invisibility(); IF(not CanSeeInvisible()):Disadvantage(AttackTarget); IF(not CanSeeInvisible(context.Target)):Advantage(AttackRoll);"
-data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External)):ApplyStatus(GREATER_INVISIBILITY,100,Target.GREATER_INVISIBILITY_SNEAKING.Duration,,,,,true)"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and IsConcentrating(context.Source)):ApplyStatus(GREATER_INVISIBILITY,100,Target.GREATER_INVISIBILITY_SNEAKING.Duration,,,,,true)"
 data "StatusPropertyFlags" "UnavailableInActiveRoll;ExcludeFromPortraitRendering;DisableCombatlog"
 
 new entry "SHADOWBLEND_SNEAKING"
