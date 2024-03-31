@@ -54,7 +54,6 @@ _Dependencies: [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Featu
 * Crossbow Expert Feat: Allows shooting more than once with a crossbow during an Extra Attack
 
 ## Familiars ⚙️ `familiars`
-_Dependencies: [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#default-actions-%EF%B8%8F-defaultactions)_
 * Base summons (not the ones granted by Pact of the Chain) had all their attacks replaced by the Distract Action (kept their attack animations because they're cool, though)
 * Removed all separate actions they had, except the Cat's Meow, because it has no combat functionality
 * Raven now has the Flyby passive, so it doesn't receive AoOs - _Since Owl isn't an option in Vanilla, I decided to make Raven the go-to pick for Arcane Tricksters_

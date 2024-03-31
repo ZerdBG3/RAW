@@ -27,7 +27,7 @@
 | [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#default-actions-%EF%B8%8F-defaultactions) | - | - | Changes to Jump and Shove. Introduces Distract and Dodge as player actions. |
 | [`downed`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#downed-%EF%B8%8F-downed) | - | - | Healing a downed character allows them to play their turn normally. |
 | [`extraAttack`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#extra-attack-%EF%B8%8F-extraattack) | `defaultActions` | - | Removes Extra Attack stacking from multiple sources and allow Shove to be used as part of it. |
-| [`familiars`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#familiars-%EF%B8%8F-familiars) | `defaultActions` | - | Replaces familiar attacks with Distract and adjust their stats. |
+| [`familiars`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#familiars-%EF%B8%8F-familiars) | - | - | Replaces familiar attacks with Distract and adjust their stats. |
 | [`feats`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#feats-%EF%B8%8F-feats) | `defaultActions` | - | Changes to Shield Master. |
 | [`freeWeaponEquip`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#free-weapon-equip-%EF%B8%8F-freeweaponequip) | - | - | The first weapon equipped in a turn doesn't cost an Action Point. |
 | [`fighter_battleMaster`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#fighter-battle-master-%EF%B8%8F-fighter_battleMaster) | - | - | Adjust Feinting Attack Use Cost. |
