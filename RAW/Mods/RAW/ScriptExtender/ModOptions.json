@@ -81,20 +81,21 @@
     },
     "defaultActions": {
         "displayName": "Default Actions",
-        "description": "Changes to Jump and Shove. Introduces Distract and Dodge as player actions.",
+        "description": "Changes to Jump and Shove. Introduces Distract and Dodge as player actions (even when the options is disabled).",
         "enabled": true,
         "value": null,
         "dependencies": [],
         "conflicts": [],
         "files": {
-            "enabled": [],
+            "enabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/DefaultActions_Off.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ],
             "disabled": [
                 {
-                    "from": "Public/RAW/Stats/Generated/SpellSet.txt",
-                    "to": "Public/RAW/Stats/Generated/Empty.txt"
-                },
-                {
-                    "from": "Public/RAW/Stats/Generated/Data/DefaultActions.txt",
+                    "from": "Public/RAW/Stats/Generated/Data/DefaultActions_On.txt",
                     "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
                 },
                 {
@@ -149,9 +150,7 @@
         "description": "Replaces familiar attacks with Distract and adjust their stats.",
         "enabled": true,
         "value": null,
-        "dependencies": [
-            "defaultActions"
-        ],
+        "dependencies": [],
         "conflicts": [],
         "files": {
             "enabled": [],

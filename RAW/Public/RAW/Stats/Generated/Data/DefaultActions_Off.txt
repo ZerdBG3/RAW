@@ -1,0 +1,4 @@
+new entry "RAW_Target_Shove_Player"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Shove"
