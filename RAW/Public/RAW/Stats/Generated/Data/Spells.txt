@@ -424,7 +424,7 @@ data "AuraStatuses" "IF(FacingMe() and HasStatus('GUST_OF_WIND')):ApplyStatus(GU
 data "Boosts" "UnlockSpell(Zone_GustOfWind_BonusAction)"
 data "TickFunctors" "IF(not HasStatus('GUST_OF_WIND_BONUS')):ApplyStatus(GUST_OF_WIND_BONUS,100,9)"
 data "TickType" "StartTurn"
-data "OnRemoveFunctors" "RemoveStatus(GUST_OF_WIND_BONUS)"
+data "OnRemoveFunctors" "RemoveStatus(GUST_OF_WIND_BONUS);ApplyStatus(GUST_OF_WIND_END,100,1)"
 data "StackId" "GUST_OF_WIND_AURA"
 data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
 
@@ -453,6 +453,13 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "Boosts" "ActionResourceConsumeMultiplier(Movement,2,0); MovementSpeedLimit(Walk)"
 data "StackId" "GUST_OF_WIND_MOVEMENT"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
+
+new entry "GUST_OF_WIND_END"
+type "StatusData"
+data "StatusType" "BOOST"
+data "TickType" "EndTurn"
+data "StackId" "GUST_OF_WIND_END"
 data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
 
 // -----------------------------------------------
