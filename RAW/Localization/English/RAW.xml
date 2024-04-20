@@ -134,7 +134,8 @@
     <content contentuid="h4f3609d8gb3abg45f4g81efgbe06c005895c" version="1">Hit Dice Remaining: 18</content><!-- Hit Dice Remaining: 18 -->
     <content contentuid="h3d517b5age021g4cc3gbe89g3cc2327661d2" version="1">Hit Dice Remaining: 19</content><!-- Hit Dice Remaining: 19 -->
     <content contentuid="hb8186981gd604g49a1g9d41g1b062d8665f6" version="1">Hit Dice Remaining: 20</content><!-- Hit Dice Remaining: 20 -->
-
+    <content contentuid="h364985b1g956fg4689ga3aaga271d1e44c09" version="1">Hampering Winds</content><!-- Gust of Wind -->
+	
     <!-- Status Boost Description -->
     <content contentuid="h2f4288c1g1e4fg4852g80e1g09db0b94bb3d" version="1">Taking a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content><!-- Short Rest -->
     <content contentuid="h910d365egd00ag49abg853agfeec0d6e5137" version="1">Focusing on avoiding attacks.&lt;br&gt;&lt;Br&gt;&lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against the affected entity have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;, and the entity has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;The status is removed if you're either incapacitated or immobilized.</content><!-- Dodge -->
@@ -157,7 +158,8 @@
     <content contentuid="h168680a7g6785g4643g97e9gd531b76e057f" version="1">Can make one more unarmed attack as part of your Flurry of Blows.</content><!-- Flurry of Blows -->
     <content contentuid="hd4d5f4c0g1a6bg4040gbc96g909d8d22bce1" version="1">Affected entity's fists are flickering with flame. It can perform fire unarmed attacks from a [2] distance and dealing an additional [1].</content><!-- Fangs of the Fire Snake -->
     <content contentuid="he2ed8aa6gc245g44ffg98efg20afbeba5bf7" version="1">You're hearing the Bard's performance. The first time you regain hit points by spending Hit Dice, you'll regain an extra [1].</content><!-- Song of Rest: Aura -->
-
+    <content contentuid="hf964b264gdc59g4e18g8563gd4f7d1f317cd" version="1">This entity's &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is halved when moving closer to the source.</content><!-- Gust of Wind -->
+	
     <!-- Status Downed Description -->
     <content contentuid="h788b3d9dgb19cg43adg8d49gdb0f922e7400" version="1">If you reach 0 hit points, you fall Unconscious and must make Death Saving Throws. On 3 successes, you stop bleeding out and become Stable. On 3 failures, you die.
 
@@ -239,5 +241,5 @@ If you regain any Hit Points, the condition is removed. If an ally &lt;LSTag Typ
     <content contentuid="h6e813ec6g8ba4g4fabgaa61g1fe89999fec5" version="1">Go to camp and end the day.&lt;br&gt;&lt;br&gt;You can use &lt;LSTag Tooltip="CampSupplies"&gt;camp supplies&lt;/LSTag&gt; to regain &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;, &lt;LSTag Tooltip="SpellSlot"&gt;spell slots&lt;/LSTag&gt;, and half each character's total Hit Dice.</content><!-- Long Rest -->
 
     <!-- Zone Description -->
-    <content contentuid="h6f899a5egd7a2g4961gbc09g4003baabbb48" version="4">Summon a strong wind that clears all clouds and pushes creatures back [1].</content><!-- Gust of Wind -->
+	<content contentuid="h07d4002dg6964g4331gb98fgf4664cb1b5ce" version="1">Summon a strong wind that clears all clouds and pushes creatures back [1], forcing them to be &lt;LSTag Type="Status" Tooltip="GUST_OF_WIND"&gt;Hampering Winds&lt;/LSTag&gt; when attempting to move towards you.</content><!-- Gust of Wind -->
 </contentList>
