@@ -90,7 +90,8 @@
     <content contentuid="h990994ddg1181g4092g91d0gc459f4cf970f" version="1">Hail of Thorns</content><!-- Hail of Thorns -->
     <content contentuid="h22935d1ag4b4fg42b3gb9degfde9bd560f65" version="1">Bonus Action Spells Rule</content><!-- Bonus Action Spell -->
     <content contentuid="hed8a4e8fg83feg4b36g9485g9dcdc40ff540" version="1">Spotted</content><!-- Found Sneaking -->
-    
+    <content contentuid="h364985b1g956fg4689ga3aaga271d1e44c09" version="1">Hampering Winds</content><!-- Gust of Wind -->
+	
     <!-- Status Boost Description -->
     <content contentuid="h2f4288c1g1e4fg4852g80e1g09db0b94bb3d" version="1">Taking a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content><!-- Short Rest -->
     <content contentuid="h910d365egd00ag49abg853agfeec0d6e5137" version="1">Focusing on avoiding attacks.&lt;br&gt;&lt;Br&gt;&lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against the affected entity have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;, and the entity has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;The status is removed if you're either incapacitated or immobilized.</content><!-- Dodge -->
@@ -111,7 +112,8 @@
     <content contentuid="h74e9fb3fg63b3g4360g9a60g3452e6fc60a8" version="1">Spotted by an enemy using &lt;LSTag Type="Spell" Tooltip="Shout_SeeInvisibility_Seek"&gt;Sense Hidden Presence&lt;/LSTag&gt;.</content><!-- Found Sneaking -->
     <content contentuid="h17a22ad1g17dbg4d8bgb96eg7eea34b956fb" version="1">Your jump distance is doubled for the turn.</content><!-- Step of the Wind -->
     <content contentuid="h168680a7g6785g4643g97e9gd531b76e057f" version="1">Can make one more unarmed attack as part of your Flurry of Blows.</content><!-- Flurry of Blows -->
-    
+    <content contentuid="hf964b264gdc59g4e18g8563gd4f7d1f317cd" version="1">This entity's &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is halved when moving closer to the source.</content><!-- Gust of Wind -->
+	
     <!-- Status Downed Description -->
     <content contentuid="h788b3d9dgb19cg43adg8d49gdb0f922e7400" version="1">If you reach 0 hit points, you fall Unconscious and must make Death Saving Throws. On 3 successes, you stop bleeding out and become Stable. On 3 failures, you die.
 
@@ -189,5 +191,5 @@ If you regain any Hit Points, the condition is removed. If an ally &lt;LSTag Typ
     <content contentuid="hea1370edgac4dg4a8cg8a43g373b34184b7e" version="1">&lt;LSTag Type="Image" Info="SoftWarning"/&gt; Invisibility ends early if you attack, cast another spell or enter a brightly lit area.</content>
 
     <!-- Zone Description -->
-    <content contentuid="h6f899a5egd7a2g4961gbc09g4003baabbb48" version="4">Summon a strong wind that clears all clouds and pushes creatures back [1].</content><!-- Gust of Wind -->
+	<content contentuid="h07d4002dg6964g4331gb98fgf4664cb1b5ce" version="1">Summon a strong wind that clears all clouds and pushes creatures back [1], forcing them to be &lt;LSTag Type="Status" Tooltip="GUST_OF_WIND"&gt;Hampering Winds&lt;/LSTag&gt; when attempting to move towards you.</content><!-- Gust of Wind -->
 </contentList>
