@@ -58,6 +58,7 @@ ACTIONS
     ListAdd(_RemoveList, PROTECTION_FROM_ENERGY_LIGHTNING)
     ListAdd(_RemoveList, PROTECTION_FROM_ENERGY_THUNDER)
     ListAdd(_RemoveList, PROTECTION_FROM_POISON)
+    ListAdd(_RemoveList, STONESKIN)
     ListAdd(_RemoveList, WARDING_BOND)
     ListAdd(_RemoveList, WARDING_BOND_CASTER)
 

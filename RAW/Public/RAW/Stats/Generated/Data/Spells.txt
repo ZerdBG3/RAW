@@ -1,4 +1,101 @@
 // --------------------------------------------------------
+// ------------------------- Aid --------------------------
+// --------------------------------------------------------
+
+// Changed SpellType to Target and added AmountOfTargets so it specifically limits it to 3 creatures
+new entry "Shout_Aid"
+type "SpellData"
+data "SpellType" "Target"
+data "Level" "2"
+data "SpellSchool" "Abjuration"
+data "SpellProperties" "ApplyStatus(AID,100,-1)"
+data "TargetRadius" "9"
+data "TargetConditions" "Ally()"
+data "Icon" "Spell_Abjuration_Aid"
+data "DisplayName" "h7004f952g06a0g4400g855eg74f3029baed1;1"
+data "Description" "h80f1b00fgf25eg4966g989fg1d9baf7a4069;9"
+data "DescriptionParams" "RegainHitPoints(5)"
+data "TooltipDamageList" "RegainHitPoints(5)"
+data "TooltipStatusApply" "ApplyStatus(AID,100,-1)"
+data "TooltipUpcastDescription" "a2c83f37-e6e5-4c05-b2ef-a714c10d6cd3"
+data "TooltipUpcastDescriptionParams" "RegainHitPoints(5)"
+data "CastSound" "Spell_Cast_Healing_Aid_L1to3"
+data "TargetSound" "Spell_Impact_Healing_Aid_L1to3"
+data "VocalComponentSound" "Vocal_Component_BoostMaxHP"
+data "CastTextEvent" "Cast"
+data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:2"
+data "SpellAnimation" "414bbf02-2918-4f01-83fb-1ddc7a588d88,,;,,;7abe77ed-9c77-4eac-872c-5b8caed070b6,,;cb171bda-f065-4520-b470-e447f678ba1f,,;0c5dcc83-fa78-41da-b6a5-440b5ea30936,,;,,;bea988a0-2ec5-40d8-a67e-ffbd7454bc53,,;,,;,,"
+data "VerbalIntent" "Healing"
+data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IgnorePreviouslyPickedEntities"
+data "HitAnimationType" "MagicalNonDamage"
+data "MemoryCost" "1"
+data "PrepareEffect" "96a51ac8-2e7e-4718-bb62-dcfd18964a02"
+data "CastEffect" "b50decc3-5f93-4467-8d3a-aa8b01fc915e"
+data "TargetEffect" "a908e49b-b59f-4a20-b487-e25ae198d926"
+data "AmountOfTargets" "3"
+
+new entry "Shout_Aid_3"
+type "SpellData"
+data "SpellType" "Target"
+using "Shout_Aid"
+data "SpellProperties" "ApplyStatus(AID_3,100,-1)"
+data "Description" "h431cc9ebgd65cg4e45g95fdgc860ea48125c;1"
+data "DescriptionParams" "RegainHitPoints(10)"
+data "TooltipDamageList" "RegainHitPoints(10)"
+data "TooltipStatusApply" "ApplyStatus(AID_3,100,-1)"
+data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:3"
+data "RootSpellID" "Shout_Aid"
+data "PowerLevel" "3"
+
+new entry "Shout_Aid_4"
+type "SpellData"
+data "SpellType" "Target"
+using "Shout_Aid"
+data "SpellProperties" "ApplyStatus(AID_4,100,-1)"
+data "DescriptionParams" "RegainHitPoints(15)"
+data "TooltipDamageList" "RegainHitPoints(15)"
+data "TooltipStatusApply" "ApplyStatus(AID_4,100,-1)"
+data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:4"
+data "RootSpellID" "Shout_Aid"
+data "PowerLevel" "4"
+
+new entry "Shout_Aid_5"
+type "SpellData"
+data "SpellType" "Target"
+using "Shout_Aid"
+data "SpellProperties" "ApplyStatus(AID_5,100,-1)"
+data "DescriptionParams" "RegainHitPoints(20)"
+data "TooltipDamageList" "RegainHitPoints(20)"
+data "TooltipStatusApply" "ApplyStatus(AID_5,100,-1)"
+data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:5"
+data "RootSpellID" "Shout_Aid"
+data "PowerLevel" "5"
+
+new entry "Shout_Aid_6"
+type "SpellData"
+data "SpellType" "Target"
+using "Shout_Aid"
+data "SpellProperties" "ApplyStatus(AID_6,100,-1)"
+data "DescriptionParams" "RegainHitPoints(25)"
+data "TooltipDamageList" "RegainHitPoints(25)"
+data "TooltipStatusApply" "ApplyStatus(AID_6,100,-1)"
+data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:6"
+data "RootSpellID" "Shout_Aid"
+data "PowerLevel" "6"
+
+// -----------------------------------------------
+// -------------- Aura of Vitality ---------------
+// -----------------------------------------------
+
+// Changed to Concentration spell
+
+new entry "Shout_AuraOfVitality"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_AuraOfVitality"
+data "SpellFlags" "IsSpell;HasVerbalComponent;IsConcentration"
+
+// --------------------------------------------------------
 // -------------------- Call Lightning --------------------
 // --------------------------------------------------------
 
@@ -124,6 +221,85 @@ using "Zone_ConeOfCold"
 data "Range" "18"
 
 // -----------------------------------------------
+// -------------- Conjure Elemental --------------
+// -----------------------------------------------
+
+// Making them concentration and changing duration to 600 turns
+new entry "Target_ConjureElemental_Container"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ConjureElemental_Container"
+data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsLinkedSpellContainer;IsConcentration"
+
+new entry "Target_ConjureElemental_Elemental_Air"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ConjureElemental_Elemental_Air"
+data "SpellProperties" "GROUND:Summon(284b9c7f-1e04-48b7-af41-9029d1fa753c, 600,Projectile_AiHelper_Summon_Strong,,'ConjureElemetnalStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
+data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsConcentration"
+
+new entry "Target_ConjureElemental_Elemental_Earth"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ConjureElemental_Elemental_Earth"
+data "SpellProperties" "GROUND:Summon(2ad47124-e41a-460e-b97a-f8e9efd32ed8, 600,Projectile_AiHelper_Summon_Strong,,'ConjureElemetnalStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
+data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsConcentration"
+
+new entry "Target_ConjureElemental_Elemental_Fire"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ConjureElemental_Elemental_Fire"
+data "SpellProperties" "GROUND:Summon(88a6c664-877c-4d6e-81ad-dd377df2634e, 600,Projectile_AiHelper_Summon_Strong,,'ConjureElemetnalStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
+data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsConcentration"
+
+new entry "Target_ConjureElemental_Elemental_Water"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ConjureElemental_Elemental_Water"
+data "SpellProperties" "GROUND:Summon(f21e144a-3237-4faa-a99c-a15e1937bc2c, 600,Projectile_AiHelper_Summon_Strong,,'ConjureElemetnalStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
+data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsConcentration"
+
+new entry "Target_ConjureElemental_Myrmidon_Air"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ConjureElemental_Myrmidon_Air"
+data "SpellProperties" "GROUND:Summon(15928ca3-b38b-4303-9c1c-9945e5e719a1, 600,Projectile_AiHelper_Summon_Strong,,'ConjureElemetnalStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
+data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsConcentration"
+
+new entry "Target_ConjureElemental_Myrmidon_Earth"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ConjureElemental_Myrmidon_Earth"
+data "SpellProperties" "GROUND:Summon(b5bd29ba-8105-4123-920f-a2c64a4e1dfc, 600,Projectile_AiHelper_Summon_Strong,,'ConjureElemetnalStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
+data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsConcentration"
+
+new entry "Target_ConjureElemental_Myrmidon_Fire"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ConjureElemental_Myrmidon_Fire"
+data "SpellProperties" "GROUND:Summon(7794f082-5483-42d2-9d5c-ee6a99de8703, 600,Projectile_AiHelper_Summon_Strong,,'ConjureElemetnalStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
+data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsConcentration"
+
+new entry "Target_ConjureElemental_Myrmidon_Water"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ConjureElemental_Myrmidon_Water"
+data "SpellProperties" "GROUND:Summon(b79527a1-a83d-4b23-82d5-a02b01638469, 600,Projectile_AiHelper_Summon_Strong,,'ConjureElemetnalStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
+data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsConcentration"
+
+// -----------------------------------------------
+// ---------- Conjure Woodland Beings ------------
+// -----------------------------------------------
+
+// Making it concentration and changing duration to 600 turns
+new entry "Target_ConjureWoodlandBeings"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ConjureWoodlandBeings"
+data "SpellProperties" "GROUND:Summon(42da1663-b150-4e9b-abc8-8cdc7240fd56, 600,Projectile_AiHelper_Summon_Strong,,'ConjureWoodlandBeings',DRYAD_VFX,UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
+data "SpellFlags" "IsSpell;HasVerbalComponent;HasSomaticComponent;CannotTargetItems;CannotTargetCharacter;IsConcentration"
+
+// -----------------------------------------------
 // ------------- Feign Death Dismiss -------------
 // -----------------------------------------------
 
@@ -225,6 +401,76 @@ data "SpellType" "Projectile"
 using "Projectile_Fireball"
 data "AreaRadius" "6"
 data "ExplodeRadius" "6"
+
+// -----------------------------------------------
+// ---------------- Gust of Wind -----------------
+// -----------------------------------------------
+
+// Changed to Concentration spell that lasts 10 turns and becomes usable each turn as a bonus action. Also removed Off Balance status and replaced with a RAWer effect
+new entry "Zone_GustOfWind"
+type "SpellData"
+data "SpellType" "Zone"
+using "Zone_GustOfWind"
+data "ConcentrationSpellID" "Zone_GustOfWind_BonusAction"
+data "SpellProperties" "GROUND:SurfaceClearLayer(Cloud); RemoveStatus(BURNING);ApplyStatus(SELF,GUST_OF_WIND_AURA,100,10);IF(Character()):ApplyStatus(GUST_OF_WIND,100,1)"
+data "SpellSuccess" "IF(Character()):Force(5)"
+data "Description" "h07d4002dg6964g4331gb98fgf4664cb1b5ce;1"
+data "Range" "18"
+data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;AddFallDamageOnLand;IsConcentration"
+
+new entry "Zone_GustOfWind_BonusAction"
+type "SpellData"
+data "SpellType" "Zone"
+using "Zone_GustOfWind"
+data "SpellProperties" "GROUND:SurfaceClearLayer(Cloud); RemoveStatus(BURNING);IF(Character()):ApplyStatus(GUST_OF_WIND,100,1)"
+data "UseCosts" "BonusActionPoint:1"
+data "SpellFlags" "Wildshape;AddFallDamageOnLand;Temporary"
+
+new entry "GUST_OF_WIND_AURA"
+type "StatusData"
+data "StatusType" "BOOST"
+data "AuraRadius" "18"
+data "AuraStatuses" "IF(FacingMe() and HasStatus('GUST_OF_WIND')):ApplyStatus(GUST_OF_WIND_MOVEMENT)"
+data "Boosts" "UnlockSpell(Zone_GustOfWind_BonusAction)"
+data "TickFunctors" "IF(not HasStatus('GUST_OF_WIND_BONUS')):ApplyStatus(GUST_OF_WIND_BONUS,100,9)"
+data "TickType" "StartTurn"
+data "OnRemoveFunctors" "RemoveStatus(GUST_OF_WIND_BONUS);ApplyStatus(GUST_OF_WIND_END,100,1)"
+data "StackId" "GUST_OF_WIND_AURA"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
+
+new entry "GUST_OF_WIND"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "h364985b1g956fg4689ga3aaga271d1e44c09;1"
+data "Description" "hf964b264gdc59g4e18g8563gd4f7d1f317cd;1"
+data "Icon" "statIcons_OffBalanced"
+data "StillAnimationType" "Weakened"
+data "StillAnimationPriority" "Weakened"
+data "Icon" "Spell_Evocation_GustOfWind"
+data "StackId" "GUST_OF_WIND"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSourceStatusApplied) and HasStatus('GUST_OF_WIND_END',context.Source)) or IsStatusEvent(StatusEvent.OnSourceDeath)"
+data "RemoveEvents" "OnSourceStatusApplied;OnSourceDeath"
+
+new entry "GUST_OF_WIND_BONUS"
+type "StatusData"
+data "StatusType" "BOOST"
+data "Boosts" "UnlockSpell(Zone_GustOfWind_BonusAction)"
+data "StackId" "GUST_OF_WIND_BONUS"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
+
+new entry "GUST_OF_WIND_MOVEMENT"
+type "StatusData"
+data "StatusType" "BOOST"
+data "Boosts" "ActionResourceConsumeMultiplier(Movement,2,0); MovementSpeedLimit(Walk)"
+data "StackId" "GUST_OF_WIND_MOVEMENT"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
+
+new entry "GUST_OF_WIND_END"
+type "StatusData"
+data "StatusType" "BOOST"
+data "TickType" "EndTurn"
+data "StackId" "GUST_OF_WIND_END"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
 
 // -----------------------------------------------
 // --------------- Hail of Thorns ----------------
@@ -471,6 +717,192 @@ data "SpellType" "Projectile"
 using "Projectile_IceKnife"
 data "SpellProperties" ""
 
+// --------------------------------------------------------
+// ----------------- Mass Healing Word --------------------
+// --------------------------------------------------------
+
+// Changed SpellType to Target and added AmountOfTargets so it specifically limits it to 6 creatures
+new entry "Shout_HealingWord_Mass"
+type "SpellData"
+data "SpellType" "Target"
+data "Level" "3"
+data "SpellSchool" "Evocation"
+data "SpellProperties" "RegainHitPoints(1d4+SpellCastingAbilityModifier)"
+data "TargetRadius" "18"
+data "TargetConditions" "Ally() and not Dead() and not Tagged('UNDEAD') and not Tagged('CONSTRUCT')"
+data "Icon" "Spell_Evocation_MassHealingWord"
+data "DisplayName" "hd9ac7d48g618fg4f1fgb558g291b65671ea1;1"
+data "Description" "h25e917a1g4d42g4837gab6fg424fca019500;4"
+data "DescriptionParams" "RegainHitPoints(1d4+SpellCastingAbilityModifier)"
+data "TooltipDamageList" "RegainHitPoints(1d4+SpellCastingAbilityModifier)"
+data "TooltipPermanentWarnings" "662e013d-e5cb-4669-9a4b-771636b24aa2"
+data "CastSound" "Spell_Cast_Healing_MassHealingWord_L1to3"
+data "TargetSound" "Spell_Impact_Healing_MassHealingWord_L1to3"
+data "VocalComponentSound" "Vocal_Component_HealingHPMass"
+data "CastTextEvent" "Cast"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:3"
+data "SpellAnimation" "414bbf02-2918-4f01-83fb-1ddc7a588d88,,;,,;7abe77ed-9c77-4eac-872c-5b8caed070b6,,;cb171bda-f065-4520-b470-e447f678ba1f,,;0c5dcc83-fa78-41da-b6a5-440b5ea30936,,;,,;bea988a0-2ec5-40d8-a67e-ffbd7454bc53,,;,,;,,"
+data "VerbalIntent" "Healing"
+data "SpellFlags" "HasVerbalComponent;IsSpell;IgnorePreviouslyPickedEntities"
+data "HitAnimationType" "MagicalNonDamage"
+data "MemoryCost" "1"
+data "PrepareEffect" "88532675-7be6-4a54-b750-90e6a8f2c012"
+data "CastEffect" "47f3994a-396b-40ac-a063-aa9ed71dc523"
+data "TargetEffect" "3c7b783e-d2ee-4125-9f94-0d48d44fe3e8"
+data "AmountOfTargets" "6"
+
+new entry "Shout_HealingWord_Mass_4"
+type "SpellData"
+data "SpellType" "Target"
+using "Shout_HealingWord_Mass"
+data "SpellProperties" "RegainHitPoints(2d4+SpellCastingAbilityModifier)"
+data "DescriptionParams" "RegainHitPoints(2d4+SpellCastingAbilityModifier)"
+data "TooltipDamageList" "RegainHitPoints(2d4+SpellCastingAbilityModifier)"
+data "TooltipUpcastDescription" "ef4fc937-9b23-4fcc-a67f-7706f86cfa44"
+data "TooltipUpcastDescriptionParams" "RegainHitPoints(1d4)"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:4"
+data "RootSpellID" "Shout_HealingWord_Mass"
+data "PowerLevel" "4"
+
+new entry "Shout_HealingWord_Mass_5"
+type "SpellData"
+data "SpellType" "Target"
+using "Shout_HealingWord_Mass"
+data "SpellProperties" "RegainHitPoints(3d4+SpellCastingAbilityModifier)"
+data "DescriptionParams" "RegainHitPoints(3d4+SpellCastingAbilityModifier)"
+data "TooltipDamageList" "RegainHitPoints(3d4+SpellCastingAbilityModifier)"
+data "TooltipUpcastDescription" "ef4fc937-9b23-4fcc-a67f-7706f86cfa44"
+data "TooltipUpcastDescriptionParams" "RegainHitPoints(1d4)"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:5"
+data "RootSpellID" "Shout_HealingWord_Mass"
+data "PowerLevel" "5"
+
+new entry "Shout_HealingWord_Mass_6"
+type "SpellData"
+data "SpellType" "Target"
+using "Shout_HealingWord_Mass"
+data "SpellProperties" "RegainHitPoints(4d4+SpellCastingAbilityModifier)"
+data "DescriptionParams" "RegainHitPoints(4d4+SpellCastingAbilityModifier)"
+data "TooltipDamageList" "RegainHitPoints(4d4+SpellCastingAbilityModifier)"
+data "TooltipUpcastDescription" "ef4fc937-9b23-4fcc-a67f-7706f86cfa44"
+data "TooltipUpcastDescriptionParams" "RegainHitPoints(1d4)"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:6"
+data "RootSpellID" "Shout_HealingWord_Mass"
+data "PowerLevel" "6"
+
+// -----------------------------------------------
+// ----------- Minor Conjure Elemental -----------
+// -----------------------------------------------
+
+// Making them concentration and changing duration to 600 turns
+new entry "Target_ConjureElementals_Minor_Container"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ConjureElementals_Minor_Container"
+data "SpellFlags" "IsSpell;HasVerbalComponent;HasSomaticComponent;IsLinkedSpellContainer;CannotTargetCharacter;CannotTargetItems;IsConcentration"
+
+new entry "Target_ConjureElementals_Minor_Azer"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ConjureElementals_Minor_Azer"
+data "SpellProperties" "GROUND:Summon(3fa146c8-7fe0-44fd-9028-0ac2ccac2d44, 600,Projectile_AiHelper_Summon_Weak,,'ConjureMinorElemetnalStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
+data "SpellFlags" "IsSpell;HasVerbalComponent;HasSomaticComponent;CannotTargetItems;CannotTargetCharacter;IsConcentration"
+
+new entry "Target_ConjureElementals_Minor_IceMephit"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ConjureElementals_Minor_IceMephit"
+data "SpellProperties" "GROUND:Summon(9bfb58f1-52d2-45d4-8485-0eb224f1a87f, 600,Projectile_AiHelper_Summon_Weak,,'ConjureMinorElemetnalStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK);GROUND:Summon(9bfb58f1-52d2-45d4-8485-0eb224f1a87f, 600,,,'ConjureElemetnalTwoStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
+data "SpellFlags" "IsSpell;HasVerbalComponent;HasSomaticComponent;CannotTargetItems;CannotTargetCharacter;IsConcentration"
+
+new entry "Target_ConjureElementals_Minor_MudMephit"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ConjureElementals_Minor_MudMephit"
+data "SpellProperties" "GROUND:Summon(74e37928-4361-4d5b-a304-0ba82f5e398a, 600,Projectile_AiHelper_Summon_Weak,,'ConjureMinorElemetnalStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK);GROUND:Summon(74e37928-4361-4d5b-a304-0ba82f5e398a, 600,,,'ConjureElemetnalTwoStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
+data "SpellFlags" "IsSpell;HasVerbalComponent;HasSomaticComponent;CannotTargetItems;CannotTargetCharacter;IsConcentration"
+
+// -------------------------------------------------------
+// ------------------- Prayer of Healing -----------------
+// -------------------------------------------------------
+
+// Changed SpellType to Target and added AmountOfTargets so it specifically limits it to 6 creatures
+new entry "Shout_PrayerOfHealing"
+type "SpellData"
+data "SpellType" "Target"
+data "Level" "2"
+data "SpellSchool" "Evocation"
+data "SpellProperties" "RegainHitPoints(2d8+SpellCastingAbilityModifier)"
+data "AreaRadius" "9"
+data "TargetConditions" "Ally() and not Dead() and not Tagged('UNDEAD') and not Tagged('CONSTRUCT')"
+data "Icon" "Spell_Evocation_PrayerOfHealing"
+data "DisplayName" "hf94be341gafa8g455dgaa74g66168a9721a4;1"
+data "Description" "h382f3dc6ga6a4g4afdgab57ga58653f736f9;8"
+data "TooltipDamageList" "RegainHitPoints(2d8+SpellCastingAbilityModifier)"
+data "TooltipUpcastDescription" "ef4fc937-9b23-4fcc-a67f-7706f86cfa44"
+data "TooltipUpcastDescriptionParams" "RegainHitPoints(1d8)"
+data "TooltipPermanentWarnings" "df2db86c-d049-4fd9-a902-8752ae9bcaae; 662e013d-e5cb-4669-9a4b-771636b24aa2"
+data "CastSound" "Spell_Cast_Healing_PrayerOfHealing_L1to3"
+data "TargetSound" "Spell_Impact_Healing_PrayerOfHealing_L1to3"
+data "VocalComponentSound" "Vocal_Component_Prayer"
+data "CastTextEvent" "Cast"
+data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:2"
+data "SpellAnimation" "414bbf02-2918-4f01-83fb-1ddc7a588d88,,;,,;7abe77ed-9c77-4eac-872c-5b8caed070b6,,;cb171bda-f065-4520-b470-e447f678ba1f,,;0c5dcc83-fa78-41da-b6a5-440b5ea30936,,;,,;bea988a0-2ec5-40d8-a67e-ffbd7454bc53,,;,,;,,"
+data "VerbalIntent" "Healing"
+data "SpellStyleGroup" "Class"
+data "SpellFlags" "HasVerbalComponent;IsSpell;IgnorePreviouslyPickedEntities"
+data "HitAnimationType" "MagicalNonDamage"
+data "Requirements" "!Combat"
+data "MemoryCost" "1"
+data "PrepareEffect" "1406899b-9de3-426b-9251-9e7d3bfacedf"
+data "CastEffect" "df9ffd5a-deb8-4a27-8e37-e7f688579fd4"
+data "TargetEffect" "3c7b783e-d2ee-4125-9f94-0d48d44fe3e8"
+data "AmountOfTargets" "6"
+
+new entry "Shout_PrayerOfHealing_3"
+type "SpellData"
+data "SpellType" "Target"
+using "Shout_PrayerOfHealing"
+data "SpellProperties" "RegainHitPoints(3d8+SpellCastingAbilityModifier)"
+data "DescriptionParams" "RegainHitPoints(3d8+SpellCastingAbilityModifier)"
+data "TooltipDamageList" "RegainHitPoints(3d8+SpellCastingAbilityModifier)"
+data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:3"
+data "RootSpellID" "Shout_PrayerOfHealing"
+data "PowerLevel" "3"
+
+new entry "Shout_PrayerOfHealing_4"
+type "SpellData"
+data "SpellType" "Target"
+using "Shout_PrayerOfHealing"
+data "SpellProperties" "RegainHitPoints(4d8+SpellCastingAbilityModifier)"
+data "DescriptionParams" "RegainHitPoints(4d8+SpellCastingAbilityModifier)"
+data "TooltipDamageList" "RegainHitPoints(4d8+SpellCastingAbilityModifier)"
+data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:4"
+data "RootSpellID" "Shout_PrayerOfHealing"
+data "PowerLevel" "4"
+
+new entry "Shout_PrayerOfHealing_5"
+type "SpellData"
+data "SpellType" "Target"
+using "Shout_PrayerOfHealing"
+data "SpellProperties" "RegainHitPoints(5d8+SpellCastingAbilityModifier)"
+data "DescriptionParams" "RegainHitPoints(3d8+SpellCastingAbilityModifier)"
+data "TooltipDamageList" "RegainHitPoints(5d8+SpellCastingAbilityModifier)"
+data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:5"
+data "RootSpellID" "Shout_PrayerOfHealing"
+data "PowerLevel" "5"
+
+new entry "Shout_PrayerOfHealing_6"
+type "SpellData"
+data "SpellType" "Target"
+using "Shout_PrayerOfHealing"
+data "SpellProperties" "RegainHitPoints(6d8+SpellCastingAbilityModifier)"
+data "DescriptionParams" "RegainHitPoints(3d8+SpellCastingAbilityModifier)"
+data "TooltipDamageList" "RegainHitPoints(6d8+SpellCastingAbilityModifier)"
+data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:6"
+data "RootSpellID" "Shout_PrayerOfHealing"
+data "PowerLevel" "6"
+
 // -------------------------------------------------------
 // -------------------- Produce Flame --------------------
 // -------------------------------------------------------
@@ -589,3 +1021,14 @@ data "TargetConditions" "not Item() and not HasStatus('SG_Unconscious') and not 
 data "AmountOfTargets" ""
 data "Description" "h9204dac0g5de4g4199ga876g8eb69468ee8a;1"
 data "CombatAIOverrideSpell" ""
+
+// --------------------------------------------------------
+// ----------------- Sunbeam: Recreate --------------------
+// --------------------------------------------------------
+
+// Removed the IsSpell and component spell flags and added the Wildshape flag so it can be used in wildshape and isn't subjected to the Bonus Action Spell rule, similar to other concentration spells that grant special actions
+new entry "Zone_Sunbeam_Recreate"
+type "SpellData"
+data "SpellType" "Zone"
+using "Zone_Sunbeam_Recreate"
+data "SpellFlags" "IsHarmful;Temporary;Wildshape"
