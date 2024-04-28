@@ -318,6 +318,23 @@
             ]
         }
     },
+    "massiveDamage": {
+        "displayName": "Massive Damage",
+        "description": "Enables Massive Damage rules, killing a character outright if damage taken exceeds current hit points by hit point maximum.",
+        "enabled": false,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/MassiveDamage.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
     "prone": {
         "displayName": "Prone",
         "description": "Changes the advantage and disadvantage conditions while Prone.",
