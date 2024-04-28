@@ -1,0 +1,15 @@
+// Passive given by Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_MassiveDamage.lua
+
+// ------------------------------------------------------
+// ------------------- Massive Damage -------------------
+// ------------------------------------------------------
+
+new entry "RAW_MassiveDamage"
+type "PassiveData"
+data "Properties" "Highlighted"
+data "Icon" "PassiveFeature_Generic_Death"
+data "DisplayName" ";1"
+data "Description" ";1"
+data "StatsFunctorContext" "OnDamaged"
+data "Conditions" "ConditionResult(context.HitDescription.TotalDamageDone >= (context.Target.HP + context.Target.MaxHP))"
+data "StatsFunctors" "Kill()"
