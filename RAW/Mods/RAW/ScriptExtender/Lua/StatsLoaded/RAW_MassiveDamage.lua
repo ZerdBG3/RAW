@@ -1,9 +1,11 @@
 local function RAW_AddMassiveDamagePassive(name)
     local char = Ext.Stats.Get(name)
-    RAW_PrintIfDebug("\nCharacter: " .. char.Name, RAW_PrintTable_MassiveDamage)
-    RAW_PrintIfDebug("\tAdding passive: RAW_MassiveDamage", RAW_PrintTable_MassiveDamage)
-    char.Passives = "RAW_MassiveDamage;" .. char.Passives
-    RAW_PrintIfDebug("\tPassives: " .. char.Passives, RAW_PrintTable_MassiveDamage)
+    if RAW_CharIsHero(char) then
+        RAW_PrintIfDebug("\nCharacter: " .. char.Name, RAW_PrintTable_MassiveDamage)
+        RAW_PrintIfDebug("\tAdding passive: RAW_MassiveDamage", RAW_PrintTable_MassiveDamage)
+        char.Passives = "RAW_MassiveDamage;" .. char.Passives
+        RAW_PrintIfDebug("\tPassives: " .. char.Passives, RAW_PrintTable_MassiveDamage)
+    end
 end
 
 ---------------------------------------- STATS FUNCTION ----------------------------------------
