@@ -26,6 +26,7 @@ _Developed in partnership with [Eric](https://www.nexusmods.com/baldursgate3/mod
 ## Barbarian (Wild Magic) ⚙️ `barbarian_wildMagic`
 * Level 3: Makes all bonus actions granted by the random outcomes castable in the first round for free (next rounds it still requires a bonus action)
 * Level 3: Shadowy Tendrils random outcome only damages enemies
+* Level 3: Fixes Wild Magic: Teleport applying to everyone around the Barbarian, for some reason (vanilla bug)
 
 ## Concentration Failsafe ⚙️ `concentration_failsafe`
 _Quality of Life feature_
