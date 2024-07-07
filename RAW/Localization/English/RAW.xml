@@ -71,7 +71,10 @@
     <content contentuid="hbeba3ad3g8801g4a4fg8d77g7507fa9bb7c6" version="1">Replenish expended &lt;LSTag Tooltip="SpellSlot"&gt;spell slots&lt;/LSTag&gt; during a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;. You cannot restore spell slots above 5th level.</content><!-- Arcane Recovery -->
     <content contentuid="h75e85388g3e7dg4e70g8101g612860c4a857" version="1">Replenish expended &lt;LSTag Tooltip="SpellSlot"&gt;spell slots&lt;/LSTag&gt; during a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;. You cannot restore spell slots above 5th level.</content><!-- Natural Recovery -->
     <content contentuid="h2149d9f2gd22fg4923ga45bged71c17b76ef" version="1">Prepare to make a volley of thorns the next time you hit a creature with a ranged weapon attack, dealing [1] to it and creatures within [2] of them.</content> <!-- Hail of Thorns -->
-
+	<content contentuid="h80f1b00fgf25eg4966g989fg1d9baf7a4069" version="9">Heal up to 3 of your allies and increase their hit point maximum by [1].</content><!-- Aid -->
+    <content contentuid="h25e917a1g4d42g4837gab6fg424fca019500" version="4">Heal up to 6 of your nearby allies.</content><!-- Mass Healing Word -->
+    <content contentuid="h382f3dc6ga6a4g4afdgab57ga58653f736f9" version="8">Heal up to 6 allies that you can see.</content><!-- Prayer of Healing -->
+	
     <!-- Status Boost Display Name -->
     <content contentuid="hd7046718g6e1ag4867g9e30g6900297f0d58" version="1">Short Rest</content><!-- Short Rest -->
     <content contentuid="h096216f2ge492g4bb9g9a3cgc88694a8a96b" version="1">Distracted</content><!-- Distracted -->
@@ -80,7 +83,8 @@
     <content contentuid="h0dc08f11gb7b2g442fga75dg8e01b1989e5d" version="1">Call Lightning</content><!-- Call Lightning -->
     <content contentuid="h990994ddg1181g4092g91d0gc459f4cf970f" version="1">Hail of Thorns</content><!-- Hail of Thorns -->
     <content contentuid="h22935d1ag4b4fg42b3gb9degfde9bd560f65" version="1">Bonus Action Spells Rule</content><!-- Bonus Action Spell -->
-    
+    <content contentuid="h364985b1g956fg4689ga3aaga271d1e44c09" version="1">Hampering Winds</content><!-- Gust of Wind -->
+	
     <!-- Status Boost Description -->
     <content contentuid="h2f4288c1g1e4fg4852g80e1g09db0b94bb3d" version="1">Taking a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content><!-- Short Rest -->
     <content contentuid="h910d365egd00ag49abg853agfeec0d6e5137" version="1">Focusing on avoiding attacks.&lt;br&gt;&lt;Br&gt;&lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against the affected entity have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;, and the entity has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;The status is removed if you're either incapacitated or immobilized.</content><!-- Dodge -->
@@ -93,7 +97,8 @@
     <content contentuid="ha79d9187g0539g47abg83bagbc46d76b8834" version="1">Next ranged weapon attack deals [1] to target and creatures within [2] of them.</content><!-- Hail of Thorns -->
     <content contentuid="hb7c0af17gcd17g422dg96f2gda8a553610d7" version="1">You can't cast leveled spells after you cast a bonus action spell.</content><!-- Cast Bonus Action Spell -->
     <content contentuid="h31af9e75g2b8bg4207gb1begc463e085f561" version="1">You can't cast leveled bonus action spells after casting a leveled spell.</content><!-- Cast Not Bonus Action Spell -->
-    
+    <content contentuid="hf964b264gdc59g4e18g8563gd4f7d1f317cd" version="1">This entity's &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is halved when moving closer to the source.</content><!-- Gust of Wind -->
+	
     <!-- Status Downed Description -->
     <content contentuid="h788b3d9dgb19cg43adg8d49gdb0f922e7400" version="1">If you reach 0 hit points, you fall Unconscious and must make Death Saving Throws. On 3 successes, you stop bleeding out and become Stable. On 3 failures, you die.
 
@@ -146,4 +151,7 @@ If you regain any Hit Points, the condition is removed. If an ally &lt;LSTag Typ
     <content contentuid="hf080f971g5582g46d8g8938gdb8c8b560d42" version="1">Your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; affects how much weight you can throw. Heavier items deal more damage.</content><!-- Throw -->
     <content contentuid="h6da3fafbgfe47g420fgb449g9756dc4146fe" version="1">Your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; affects how much weight you can throw.</content><!-- Throw Cunning Action -->
     <content contentuid="h12c219aag52b4g4a22gb0e3g160edbaffbb7" version="1">Attacking further than the normal range ([1] for Javelins and [2] for other weapons) impose &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on the &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt;.</content><!-- Throw Weapon -->
+
+    <!-- Zone Description -->
+	<content contentuid="h07d4002dg6964g4331gb98fgf4664cb1b5ce" version="1">Summon a strong wind that clears all clouds and pushes creatures back [1], forcing them to be &lt;LSTag Type="Status" Tooltip="GUST_OF_WIND"&gt;Hampering Winds&lt;/LSTag&gt; when attempting to move towards you.</content><!-- Gust of Wind -->
 </contentList>
