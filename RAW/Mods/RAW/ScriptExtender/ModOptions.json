@@ -273,6 +273,23 @@
             ]
         }
     },
+    "instantDeath": {
+        "displayName": "Instant Death",
+        "description": "Kills players outright if damage taken exceeds current hit points by hit point maximum.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/InstantDeath.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
     "intangibleSummons": {
         "displayName": "Intangible Summons",
         "description": "Changes to Flaming Sphere, Guardian of Faith and Spiritual Weapon to make them invulnerable and ignored by the AI.",

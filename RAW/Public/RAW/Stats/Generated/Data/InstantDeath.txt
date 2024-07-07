@@ -1,0 +1,12 @@
+// Passive given by Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_InstantDeath.lua
+
+// ------------------------------------------------------
+// ------------------- Instant Death -------------------
+// ------------------------------------------------------
+
+new entry "RAW_InstantDeath"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnDamaged"
+data "Conditions" "ConditionResult(context.HitDescription.TotalDamageDone >= (context.Target.HP + context.Target.MaxHP))"
+data "StatsFunctors" "IF(not HasStatus('DEATH_WARD')):Kill()"
