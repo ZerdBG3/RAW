@@ -43,6 +43,9 @@
         "initiative": {
             "enabled": true
         },
+        "instantDeath": {
+            "enabled": true
+        },
         "intangibleSummons": {
             "enabled": true
         },

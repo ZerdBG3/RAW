@@ -1,15 +1,12 @@
-// Passive given by Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_MassiveDamage.lua
+// Passive given by Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_InstantDeath.lua
 
 // ------------------------------------------------------
-// ------------------- Massive Damage -------------------
+// ------------------- Instant Death -------------------
 // ------------------------------------------------------
 
-new entry "RAW_MassiveDamage"
+new entry "RAW_InstantDeath"
 type "PassiveData"
-data "Properties" "Highlighted"
-data "Icon" "PassiveFeature_Generic_Death"
-data "DisplayName" ";1"
-data "Description" ";1"
+data "Properties" "IsHidden"
 data "StatsFunctorContext" "OnDamaged"
 data "Conditions" "ConditionResult(context.HitDescription.TotalDamageDone >= (context.Target.HP + context.Target.MaxHP))"
 data "StatsFunctors" "IF(not HasStatus('DEATH_WARD')):Kill()"

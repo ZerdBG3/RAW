@@ -33,6 +33,7 @@
 | [`fighter_battleMaster`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#fighter-battle-master-%EF%B8%8F-fighter_battleMaster) | - | - | Adjust Feinting Attack Use Cost. |
 | [`highGround`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#high-ground-%EF%B8%8F-highground) | - | - | Removes the High Ground bonus to attack rolls. |
 | [`initiative`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#initiative-%EF%B8%8F-initiative) | - | - | Changes Initiative Dice Roll from 1d4 to 1d20. |
+| [`instantDeath`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#instant-death-%EF%B8%8F-instantDeath) | - | - | Kills players outright if damage taken exceeds current hit points by hit point maximum. |
 | [`intangibleSummons`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#intangible-summons-%EF%B8%8F-intangiblesummons) | - | - | Changes to Flaming Sphere, Guardian of Faith and Spiritual Weapon to make them invulnerable and ignored by the AI. |
 | [`prone`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#prone-%EF%B8%8F-prone) | - | - | Changes the advantage and disadvantage conditions while Prone. |
 | [`rogue`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogue-%EF%B8%8F-rogue) | `throw` | - | Changes to Cunning Action and Sneak Attack. |
