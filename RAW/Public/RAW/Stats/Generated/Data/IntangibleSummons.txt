@@ -163,7 +163,7 @@ new entry "Target_GuardianOfFaith"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_GuardianOfFaith"
-data "SpellProperties" "GROUND:IF(Tagged('ALIGN_GOOD',context.Source)):Summon(f1b7cb05-dd6a-412a-92c8-3d9adba3c033,-1,Projectile_AiHelper_Summon_Strong,,'GuardianOfFaithStack',GUARDIAN_OF_FAITH_AURA,UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK);GROUND:IF(not Tagged('ALIGN_GOOD',context.Source) and not Tagged('ALIGN_EVIL',context.Source)):Summon(62f00b71-b6a3-447f-9c8d-61520b0bb887,-1,Projectile_AiHelper_Summon_Strong,,'GuardianOfFaithStack',GUARDIAN_OF_FAITH_AURA,UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK);GROUND:IF(Tagged('ALIGN_EVIL',context.Source)):Summon(8c087630-ffcf-41d1-bf37-ace2b009529a,-1,Projectile_AiHelper_Summon_Strong,,'GuardianOfFaithStack',GUARDIAN_OF_FAITH_AURA,UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
+data "SpellProperties" "GROUND:IF(Tagged('ALIGN_GOOD',context.Source)):Summon(f1b7cb05-dd6a-412a-92c8-3d9adba3c033,-1,Projectile_AiHelper_Summon_Strong,,'GuardianOfFaithStack',GUARDIAN_OF_FAITH_AURA,UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK);GROUND:IF(not Tagged('ALIGN_GOOD',context.Source) and not Tagged('ALIGN_EVIL',context.Source)):Summon(62f00b71-b6a3-447f-9c8d-61520b0bb887,-1,Projectile_AiHelper_Summon_Strong,,'GuardianOfFaithStack',GUARDIAN_OF_FAITH_AURA,UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK);GROUND:IF(Tagged('ALIGN_EVIL',context.Source)):Summon(8c087630-ffcf-41d1-bf37-ace2b009529a,-1,Projectile_AiHelper_Summon_Strong,,'GuardianOfFaithStack',GUARDIAN_OF_FAITH_AURA,UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK);ApplyStatus(RAW_GUARDIAN_OF_FAITH_PLACEMENT_TECHNICAL,100,1)"
 
 // Gives immunity to all damage, except Radiant, which is only ImmuneToMagical
 // Most Radiant damage dealt is magical, so by making the Guardian attack deal a non-magical Radiant damage to itself
@@ -188,7 +188,7 @@ type "StatusData"
 data "StatusType" "BOOST"
 using "GUARDIAN_OF_FAITH_AURA"
 data "AuraRadius" "3"
-data "AuraStatuses" "TARGET:IF(Enemy() and (HasStatus('RAW_CURRENT_TURN') or not Combat()) and not (Dead() or HasStatus('KNOCKED_OUT') or HasStatus('RAW_GUARDIAN_OF_FAITH_ATTACKED',context.Target,context.Source))):ApplyStatus(RAW_GUARDIAN_OF_FAITH_ATTACK,100,-1)"
+data "AuraStatuses" "TARGET:IF(Character()):ApplyStatus(RAW_GUARDIAN_OF_FAITH_AURA_TECHNICAL,100,-1); TARGET:IF(Enemy() and (not HasStatus('RAW_GUARDIAN_OF_FAITH_PLACEMENT_TECHNICAL',context.Target,context.Source) or not Combat()) and not (Dead() or HasStatus('KNOCKED_OUT') or HasStatus('RAW_GUARDIAN_OF_FAITH_ATTACKED',context.Target,context.Source) or HasStatus('RAW_GUARDIAN_OF_FAITH_TECHNICAL',context.Target,context.Source))):ApplyStatus(RAW_GUARDIAN_OF_FAITH_ATTACK,100,-1)"
 data "AuraFlags" "ShouldCheckLOS"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;"
 
@@ -202,7 +202,28 @@ new entry "RAW_GUARDIAN_OF_FAITH_ATTACK"
 type "StatusData"
 data "StatusType" "BOOST"
 data "Icon" "Spell_Conjuration_GuardianOfFaith"
-data "OnApplyFunctors" "UseAttack();ApplyStatus(RAW_GUARDIAN_OF_FAITH_ATTACKED,100,1)"
+data "OnApplyFunctors" "UseAttack();ApplyStatus(RAW_GUARDIAN_OF_FAITH_ATTACKED,100,1);ApplyStatus(RAW_GUARDIAN_OF_FAITH_TECHNICAL,100,1)"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+new entry "RAW_GUARDIAN_OF_FAITH_AURA_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "TickType" "EndTurn"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+new entry "RAW_GUARDIAN_OF_FAITH_PLACEMENT_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "Radius" "3"
+data "RemoveEvents" "OnStatusRemoved"
+data "RemoveConditions" "not HasStatus('RAW_GUARDIAN_OF_FAITH_AURA_TECHNICAL')"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+new entry "RAW_GUARDIAN_OF_FAITH_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "RemoveEvents" "OnStatusRemoved"
+data "RemoveConditions" "not HasStatus('RAW_GUARDIAN_OF_FAITH_AURA_TECHNICAL')"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 
 // ----------------------------------------------------------
