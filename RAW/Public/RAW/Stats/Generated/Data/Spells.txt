@@ -589,3 +589,36 @@ data "TargetConditions" "not Item() and not HasStatus('SG_Unconscious') and not 
 data "AmountOfTargets" ""
 data "Description" "h9204dac0g5de4g4199ga876g8eb69468ee8a;1"
 data "CombatAIOverrideSpell" ""
+
+// --------------------------------------------------------
+// -------------------- Stinking Cloud --------------------
+// --------------------------------------------------------
+
+//Depends on change to Root Template (Stinking_Cloud.lsx)
+new entry "STINKING_CLOUD"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "h5c9bcccagd4beg4e8cg86e1g2182f8a16667;4"
+data "Description" "h8df73123g2750g49d9gab60g0e8a7efef41b;1"
+data "Icon" "Spell_Conjuration_StinkingCloud"
+data "StackId" "STINKING_CLOUD"
+data "TickType" "StartTurn"
+data "TickFunctors" "ApplyStatus(STINKING_CLOUD_EFFECT,100,1)"
+data "RemoveConditions" "not InSurface('SurfaceStinkingCloud',context.Target)"
+data "RemoveEvents" "OnMove;OnSurfaceEnter"
+data "StatusPropertyFlags" "BringIntoCombat;InitiateCombat"
+
+new entry "STINKING_CLOUD_EFFECT"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "h062316c9g8967g4230gaa69g6aa361d51610;2"
+data "Description" "h9bd31f65g1cb5g4009g8d55ge4cc0256ed59;1"
+data "Icon" "statIcons_Nauseated"
+data "StillAnimationType" "Suffocating"
+data "StillAnimationPriority" "Suffocating"
+data "StackId" "STINKING_CLOUD_EFFECT"
+data "TickType" "EndTurn"
+data "OnApplyRoll" "not SavingThrow(Ability.Constitution, CalculateSpellDC(context.PreferredCastingAbility, GetSummoner(context.Source)), AdvantageOnPoisoned())"
+data "OnApplySuccess" "UseActionResource(ActionPoint,1,0); UseActionResource(EyeStalkActionPoint,1,0)"
+data "StatusGroups" "SG_Poisoned"
+data "StatusEffect" "ceeda0ca-0739-4588-a449-d024389f0c2a"

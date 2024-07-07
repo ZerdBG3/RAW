@@ -93,6 +93,8 @@
     <content contentuid="ha79d9187g0539g47abg83bagbc46d76b8834" version="1">Next ranged weapon attack deals [1] to target and creatures within [2] of them.</content><!-- Hail of Thorns -->
     <content contentuid="hb7c0af17gcd17g422dg96f2gda8a553610d7" version="1">You can't cast leveled spells after you cast a bonus action spell.</content><!-- Cast Bonus Action Spell -->
     <content contentuid="h31af9e75g2b8bg4207gb1begc463e085f561" version="1">You can't cast leveled bonus action spells after casting a leveled spell.</content><!-- Cast Not Bonus Action Spell -->
+	<content contentuid="h8df73123g2750g49d9gab60g0e8a7efef41b" version="1">Surrounded by a cloud of nauseating gas.</content><!-- Stinking Cloud -->
+	<content contentuid="h9bd31f65g1cb5g4009g8d55ge4cc0256ed59" version="1">Lost an action retching and reeling.</content><!-- Stinking Cloud -->
     
     <!-- Status Downed Description -->
     <content contentuid="h788b3d9dgb19cg43adg8d49gdb0f922e7400" version="1">If you reach 0 hit points, you fall Unconscious and must make Death Saving Throws. On 3 successes, you stop bleeding out and become Stable. On 3 failures, you die.

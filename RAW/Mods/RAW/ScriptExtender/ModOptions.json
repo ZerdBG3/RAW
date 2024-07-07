@@ -442,6 +442,10 @@
                 {
                     "from": "Public/RAW/RootTemplates/Call_Lightning.lsf",
                     "to": "Public/RAW/RootTemplates/Empty.lsf"
+                },
+                {
+                    "from": "Public/RAW/RootTemplates/Stinking_Cloud.lsf",
+                    "to": "Public/RAW/RootTemplates/Empty.lsf"
                 }
             ]
         }

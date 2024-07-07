@@ -124,6 +124,7 @@ _Dependencies: [`rogue`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#ro
 * Ice Knife no longer interacts with surfaces
 * Produce Flame is a spell container, with instant attacking as an option (normal temporary spells after summoning the flame are still there as well)
 * Sleep lasts for 10 turns instead of 2 and it's a circular area, which the targets are selected based on HP on increasing order
+* Stinking Cloud no longer blocks action usage, instead consuming one single action from characters inside it on their turn start upon failing the Saving Throw
 
 ## Spells - Bonus Action Rule ⚙️ `spells_bonusAction`
 * Leveled spells with a casting cost of a bonus action block characters from casting another leveled spell on the same turn. Casting a leveled spell that doesn't require a bonus action will also block casting a leveled bonus action spell after
