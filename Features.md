@@ -77,6 +77,7 @@ _Dependencies: [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Featu
 * Changes Initiative Dice Roll from 1d4 to 1d20
 
 ## Instant Death ⚙️ `instantDeath`
+Thanks [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?gameId=3474) for the implementation
 * Players only: Taking damage that exceeds the current hit points by the character's hit point maximum kills them outright, without death saving throws
 
 ## Intangible Summons ⚙️ `intangibleSummons`
