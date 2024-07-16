@@ -2,8 +2,8 @@
 
 * All features are enabled by default. If you want to play with all changes from the list below, there's no additional step beside installing the mod
 * If you want to disable any of the features, you can individually disable them following the instructions on the [Installation Guide](https://github.com/ZerdBG3/RAW/blob/main/Installing.md#optional-configurations)
-* All dependencies of enabled features will be automatically turned on to avoid inconsistencies or bugs in your game
-  - _For example, if you disable [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#default-actions-%EF%B8%8F-defaultactions) on the options file, but keep any of its dependencies (like [`extraAttack`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#extra-attack-%EF%B8%8F-extraattack) or [`feats`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#feats-%EF%B8%8F-feats)), the `defaultActions` option will be re-enabled in-game_
+* ⚠️ All dependencies of enabled features will be automatically turned on to avoid inconsistencies or bugs in your game (if you want to disable a feature, you must also disable every feature listed as `Depended by` to actually disable it) ⚠️
+  - _For example, if you disable [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#default-actions-%EF%B8%8F-defaultactions) on the options file, but keep any of its `Depended by` (like [`extraAttack`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#extra-attack-%EF%B8%8F-extraattack) or [`feats`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#feats-%EF%B8%8F-feats)), the `defaultActions` option will be enabled automatically when the game starts_
 
 ## Attunement ⚙️ `attunement`
 _Developed in partnership with [Eric](https://www.nexusmods.com/baldursgate3/mods/2155). It's redundant to have both mods, since they do the same thing; they aren't compatible either._
@@ -230,7 +230,7 @@ _Depended by: [`rogue`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rog
 * To use this option, I recommend also using the [`freeWeaponEquip`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#free-weapon-equip-%EF%B8%8F-freeweaponequip) option, so you can always equip one weapon per turn for free, allowing you to equip one weapon as part of your throwing action
 
 ## Two Weapon Fighting ⚙️ `twoWeaponFighting`
-_Depended by: [`throw`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#throw-%EF%B8%8F-throw), [`rogue`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogue-%EF%B8%8F-rogue), [`rogue_thief`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogue-thief-%EF%B8%8F-rogue_thief)_
+_Depended by: [`rogue`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogue-%EF%B8%8F-rogue), [`rogue_thief`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogue-thief-%EF%B8%8F-rogue_thief)_, [`throw`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#throw-%EF%B8%8F-throw)
 * Removes the automatic off-hand bonus attack option when Dual Wielding (This removes Dual Wielding AoO as well)
 * The Off-Hand Attack is only available after attacking with the main hand weapon while Dual Wielding (or when outside of Combat)
 
