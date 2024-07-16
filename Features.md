@@ -3,7 +3,7 @@
 * All features are enabled by default. If you want to play with all changes from the list below, there's no additional step beside installing the mod
 * If you want to disable any of the features, you can individually disable them following the instructions on the [Installation Guide](https://github.com/ZerdBG3/RAW/blob/main/Installing.md#optional-configurations)
 * All dependencies of enabled features will be automatically turned on to avoid inconsistencies or bugs in your game
-  - _For example, if you disable [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#default-actions-%EF%B8%8F-defaultactions) on the options file, but keep any of its dependencies (like [`extraAttack`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#extra-attack-%EF%B8%8F-extraattack) or [`familiars`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#familiars-%EF%B8%8F-familiars)), the `defaultActions` option will be re-enabled in-game_
+  - _For example, if you disable [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#default-actions-%EF%B8%8F-defaultactions) on the options file, but keep any of its dependencies (like [`extraAttack`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#extra-attack-%EF%B8%8F-extraattack) or [`feats`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#feats-%EF%B8%8F-feats)), the `defaultActions` option will be re-enabled in-game_
 
 ## Attunement ⚙️ `attunement`
 _Developed in partnership with [Eric](https://www.nexusmods.com/baldursgate3/mods/2155). It's redundant to have both mods, since they do the same thing; they aren't compatible either._
@@ -35,6 +35,8 @@ _Quality of Life feature_
 * Given the implementation, spells that are concentration but don't give the caster a status might result in the concentration spells being blocked even though the caster ended concentration manually (or timeout). Basically taking any action (even moving) will remove the blockage, but if nothing works, just untoggle the passive to remove the blockage.
 
 ## Default Actions ⚙️ `defaultActions`
+_Depended by: [`extraAttack`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#extra-attack-%EF%B8%8F-extraattack)_, [`feats`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#feats-%EF%B8%8F-feats)
+
 Thanks [Kilay](https://www.nexusmods.com/users/26711484) and [ogugght](https://www.nexusmods.com/users/176938878) for the icons! ❤️
 * Shove is an action (from bonus action). It's a spell container with the option to push (fixed 1.5 m) or knock prone
 * Removes Bonus Action Cost from Jump and the Movement Cost is the same as the distance travelled
@@ -47,7 +49,7 @@ Thanks [Kilay](https://www.nexusmods.com/users/26711484) and [ogugght](https://w
 * Healing a downed character allows them to play their turn normally
 
 ## Extra Attack ⚙️ `extraAttack`
-_Dependencies: [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#default-actions-%EF%B8%8F-defaultactions)_
+_Depends on: [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#default-actions-%EF%B8%8F-defaultactions)_
 * Multiple sources no longer stack (Martial, Warlock and Wildshape)
 * Allows shoving (both versions) to be used as part of the Extra Attack
 * Better priority logic on which Extra Attack to use, when considering War Priest, War Magic and Stalker's Flurry
@@ -60,7 +62,7 @@ _Dependencies: [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Featu
 * Raven now has the Flyby passive, so it doesn't receive AoOs - _Since Owl isn't an option in Vanilla, I decided to make Raven the go-to pick for Arcane Tricksters_
 
 ## Feats ⚙️ `feats`
-_Dependencies: [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#default-actions-%EF%B8%8F-defaultactions)_
+_Depends on: [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#default-actions-%EF%B8%8F-defaultactions)_
 * Shield Master: Gives Shove (both options) as a bonus action after attacking on your turn
 
 ## Free Weapon Equip ⚙️ `freeWeaponEquip`
@@ -89,7 +91,9 @@ Thanks [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?gameId=3474
 * Removes the disadvantage on Strength and Dexterity Saving Throws when Prone, and adds the Disadvantage to Ranged Attack Rolls
 
 ## Rogue ⚙️ `rogue`
-_Dependencies: [`throw`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#throw-%EF%B8%8F-throw)_
+_Depends on: [`throw`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#throw-%EF%B8%8F-throw)_
+
+_Depended by: [`rogue_thief`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogue-thief-%EF%B8%8F-rogue_thief)_
 * Level 1: Sneak Attack
   - Fixes Sneak Attack Interrupt being possible to apply the damage on AoE effects (such as the explosion of a Fire Arrow). Only the main target will be prompted - the side effect is AoEs that roll for attack rolls on each target, such as a Cleave, will only allow you to deal sneak attack damage to the first one
   - Removes check for killing blow on Sneak Attack Interrupt. You'll still be able to see the character died, but you can opt into deal your sneak attack regardless (honor system) or if you're not asking to be prompted by the interrupt, it will consume regardless if the base damage killed the target
@@ -97,7 +101,7 @@ _Dependencies: [`throw`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#th
 * Level 2: Cunning Action provides a toggleable passive (default on) that replaces the action cost for Dash, Disengage and Hide for a Bonus Action. It is automatically disabled when the rogue doesn't have a bonus action or when they're hasted. Cunning Action is also available as a Spell Container with all bonus actions inside it for when the player must enforce the bonus action cost (such as when they're hasted)
 
 ## Rogue (Thief) ⚙️ `rogue_thief`
-_Dependencies: [`rogue`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogue-%EF%B8%8F-rogue), [`stabilize`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#stabilize-%EF%B8%8F-stabilize)_
+_Depends on: [`rogue`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogue-%EF%B8%8F-rogue), [`stabilize`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#stabilize-%EF%B8%8F-stabilize)_
 * Level 3: Fast Hands no longer provides an extra Bonus Action - instead, it gives Help, Distract and Throw (no damage) as possible Cunning Actions (bonus action). There's a toggleable passive just as above, except for Throw - since it doesn't deal damage, it's not a simple action cost replacement, it's a separate spell kept inside the Cunning Action Spell Container
 * Level 3: Second-Story Work now provides a Jump with distance scaling with Dexterity
 
@@ -209,10 +213,13 @@ _Dependencies: [`rogue`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#ro
   - _Call Lightning recast while wildshaped is done on the [`spells`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#spells-%EF%B8%8F-spells) option_
 
 ## Stabilize ⚙️ `stabilize`
+_Depended by: [`rogue_thief`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogue-thief-%EF%B8%8F-rogue_thief)_
 * Help stabilizes the target (Medicine `DC 10`), and the stabilized character is healed once out of combat. If the character is stabilized own their own by succeeding the Death Saving Throws, they will still require a Help Action (and the Medicine Check) to regain 1 HP
 
 ## Throw ⚙️ `throw`
-_Dependencies: [`twoWeaponFighting`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#two-weapon-fighting-%EF%B8%8F-twoweaponfighting)_
+_Depends on: [`twoWeaponFighting`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#two-weapon-fighting-%EF%B8%8F-twoweaponfighting)_
+
+_Depended by: [`rogue`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogue-%EF%B8%8F-rogue), [`rogue_thief`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogue-thief-%EF%B8%8F-rogue_thief)_
 * Throw and Improvised Weapon can no longer be used on enemies that are alive, and can't throw equipped items either, except for weapons. Throwing a weapon using this action counts as an improvised weapon (`1d4 bludgeoning` damage), regardless of the weapon properties
 * All players have access to two Throw Weapon Spells (Main Hand and Off-Hand). They're only usable once you have melee weapons with the thrown property equipped on the respective slots
   - _Feel free to remove them from your hotbar if you're not planning on using thrown weapons_
@@ -223,6 +230,7 @@ _Dependencies: [`twoWeaponFighting`](https://github.com/ZerdBG3/RAW/blob/main/Fe
 * To use this option, I recommend also using the [`freeWeaponEquip`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#free-weapon-equip-%EF%B8%8F-freeweaponequip) option, so you can always equip one weapon per turn for free, allowing you to equip one weapon as part of your throwing action
 
 ## Two Weapon Fighting ⚙️ `twoWeaponFighting`
+_Depended by: [`throw`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#throw-%EF%B8%8F-throw), [`rogue`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogue-%EF%B8%8F-rogue), [`rogue_thief`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogue-thief-%EF%B8%8F-rogue_thief)_
 * Removes the automatic off-hand bonus attack option when Dual Wielding (This removes Dual Wielding AoO as well)
 * The Off-Hand Attack is only available after attacking with the main hand weapon while Dual Wielding (or when outside of Combat)
 
