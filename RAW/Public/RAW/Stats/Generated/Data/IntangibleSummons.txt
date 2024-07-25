@@ -102,7 +102,7 @@ new entry "FLAMING_SPHERE_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 using "FLAMING_SPHERE_TECHNICAL"
-data "OnApplyFunctors" "ApplyStatus(SELF,RAW_FLAMINGSPHERE_OWNER,100,-1);ApplyStatus(RAW_SUMMON_RESOURCE_BLOCK,100,-1)"
+data "OnApplyFunctors" "ApplyStatus(SELF,RAW_FLAMINGSPHERE_OWNER,100,-1);ApplyStatus(RAW_SUMMON_RESOURCE_BLOCK,100,-1);ApplyStatus(SHARE_SUMMONER_INITIATIVE,100,-1)"
 data "OnRemoveFunctors" "RemoveStatus(SELF,RAW_FLAMINGSPHERE_OWNER)"
 
 // Overwrites Vanilla entry that doesn't extends FLAMING_SPHERE_TECHNICAL for some reason
@@ -225,7 +225,7 @@ new entry "SPIRITUAL_WEAPON"
 type "StatusData"
 data "StatusType" "BOOST"
 using "SPIRITUAL_WEAPON"
-data "OnApplyFunctors" "ApplyStatus(SELF,RAW_SPIRITUALWEAPON_ACTION_OWNER,100,-1);ApplyStatus(RAW_SUMMON_RESOURCE_ALLOW,100,1)"
+data "OnApplyFunctors" "ApplyStatus(SELF,RAW_SPIRITUALWEAPON_ACTION_OWNER,100,-1);ApplyStatus(RAW_SUMMON_RESOURCE_ALLOW,100,1);ApplyStatus(SHARE_SUMMONER_INITIATIVE,100,-1)"
 data "OnRemoveFunctors" "RemoveStatus(SELF,RAW_SPIRITUALWEAPON_ACTION_OWNER)"
 
 new entry "RAW_SPIRITUALWEAPON_ACTION_OWNER"
