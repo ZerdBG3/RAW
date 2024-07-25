@@ -79,6 +79,6 @@ end
 -- Menu event for Config popup
 -- Ext.Events.GameStateChanged:Subscribe(function(e)
 --     if e.ToState == "Menu" then
-        -- RAW_LoadModOptions(true)
+--         RAW_LoadModOptions(true)
 --     end
 -- end)

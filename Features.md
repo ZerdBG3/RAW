@@ -83,6 +83,7 @@ Thanks [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?gameId=3474
 * Players only: Taking damage that exceeds the current hit points by the character's hit point maximum kills them outright, without death saving throws
 
 ## Intangible Summons ⚙️ `intangibleSummons`
+❗️ I highly recommend using [dr. kekyll's Summon Initiative Fixer mod](https://www.nexusmods.com/baldursgate3/mods/8692?tab=description) to make sure Flaming Sphere and Spiritual Weapon always share their turn with the caster
 * Flaming Sphere is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to
 * Guardian of Faith is indestructible (except by its own damage), ignored by enemies and has no hitbox. It only attacks enemies that enter its range on their turn, or start their turn in its range (similar to the spells changed by [`spells_onApplyAndOnTurn`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#spells---on-apply-and-on-turn-%EF%B8%8F-spells_onapplyandonturn)). No longer retaliates when attacks are made in range or during its turn in combat
 * Spiritual Weapon is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to (except on the turn it is cast). Also removed all special attacks
