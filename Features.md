@@ -141,7 +141,8 @@ _Depends on: [`rogue`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogu
 * Sorcer's Quickened Spell Metamagic cost reduced from 3 Sorcery Points to 2 and is made to work correctly with the bonus action spell ruling
 
 ## Spells - Duration ⚙️ `spells_duration`
-* Spells and effects that should have a duration of 10 minutes or 1 hour but were lasting until a Long Rest had their durations adjusted and are removed upon taking a Short Rest. Spells that last 8 hours or more still last until a Long Rest
+_Depended by: [`spells_durationExpanded`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#spells---duration-expanded-%EF%B8%8F-spells_durationexpanded)_
+* Spells and effects that should have a duration of 10 minutes or 1 hour but were lasting until a Long Rest had their durations adjusted and are removed upon taking a Short Rest. Spells that last 8 hours or more still last until a Long Rest. This doesn't include spells that don't affect combat (see [`spells_durationExpanded`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#spells---duration-expanded-%EF%B8%8F-spells_durationexpanded)) for QoL purposes
   <details>
     <summary>List of Spells with durations changed</summary>
     <p>
@@ -154,8 +155,6 @@ _Depends on: [`rogue`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogu
         - Protection from Evil and Good
         - Shield of Faith
         - Silence
-        - Speak with Animals
-        - Speak with Dead
 
       - 1 hour (600 turns)
         - Armor of Agathys
@@ -176,6 +175,20 @@ _Depends on: [`rogue`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogu
 
       - Infinite, but still ends with Short Rest
         - Disguise Self
+
+    </p>
+  </details>
+
+## Spells - Duration Expanded ⚙️ `spells_durationExpanded`
+_Depends on: [`spells_duration`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#spells---duration-%EF%B8%8F-spells_duration)_
+* Includes the spells ignored by the `spells_duration` option to the list of duration changes
+  <details>
+    <summary>List of Spells with durations changed</summary>
+    <p>
+
+      - 10 minutes (100 turns)
+        - Speak with Animals
+        - Speak with Dead
 
     </p>
   </details>
