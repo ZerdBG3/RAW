@@ -1,7 +1,7 @@
 # Features
 
-* All features are enabled by default. If you want to play with all changes from the list below, there's no additional step beside installing the mod
-* If you want to disable any of the features, you can individually disable them following the instructions on the [Installation Guide](https://github.com/ZerdBG3/RAW/blob/main/Installing.md#optional-configurations)
+* All features are enabled by default, except when stated otherwise. If you want to play with all changes from the list below that aren't explicitly disabled, there's no additional step beside installing the mod
+* If you want to disable any of the features (or enable a disabled one), you can individually modify them following the instructions on the [Installation Guide](https://github.com/ZerdBG3/RAW/blob/main/Installing.md#optional-configurations)
 * ⚠️ All dependencies of enabled features will be automatically turned on to avoid inconsistencies or bugs in your game (if you want to disable a feature, you must also disable every feature listed as `Depended by` to actually disable it) ⚠️
   - _For example, if you disable [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#default-actions-%EF%B8%8F-defaultactions) on the options file, but keep any of its `Depended by` (like [`extraAttack`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#extra-attack-%EF%B8%8F-extraattack) or [`feats`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#feats-%EF%B8%8F-feats)), the `defaultActions` option will be enabled automatically when the game starts_
 
@@ -180,6 +180,8 @@ _Depended by: [`spells_durationExpanded`](https://github.com/ZerdBG3/RAW/blob/ma
   </details>
 
 ## Spells - Duration Expanded ⚙️ `spells_durationExpanded`
+⚠️ ${\color{red}{\text{Disabled by default}}}$
+
 _Depends on: [`spells_duration`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#spells---duration-%EF%B8%8F-spells_duration)_
 * Includes the spells ignored by the `spells_duration` option to the list of duration changes
   <details>
