@@ -1,0 +1,23 @@
+// Status is given by the RAW_RemoveStatusesOnShortRest passive on Spells_Duration.txt
+// Status removed when short resting are handled by Public\RAW\Scripts\Game\RAW_Statuses.gameScript
+new entry "RAW_SHORT_REST_STATUS_REMOVAL_EXPANDED"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+// ------------------------------------------------------------
+// -------------------- 100 turns (10 min) --------------------
+// ------------------------------------------------------------
+
+new entry "Shout_SpeakWithAnimals"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_SpeakWithAnimals"
+data "SpellProperties" "ApplyStatus(PETPAL,100,100)"
+data "TooltipStatusApply" "ApplyStatus(PETPAL,100,100)"
+
+new entry "Target_SpeakWithDead"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_SpeakWithDead"
+data "SpellProperties" "TARGET:ApplyStatus(SELF,SPEAK_WITH_DEAD_RECAST,100,100);TARGET:ApplyStatus(SPEAK_WITH_DEAD,100,0)"

@@ -484,6 +484,25 @@
             ]
         }
     },
+    "spells_durationExpanded": {
+        "displayName": "Spells - Duration Expanded",
+        "description": "Changes the duration of spells that don't affect combat.",
+        "enabled": false,
+        "value": null,
+        "dependencies": [
+            "spells_duration"
+        ],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Spells_DurationExpanded.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
     "spells_onApplyAndOnTurn": {
         "displayName": "Spells - On Apply And On Turn",
         "description": "Changes the damage application timing of spells like Cloud of Daggers, Moonbeam and Spirit Guardians.",

@@ -73,6 +73,9 @@
         "spells_duration": {
             "enabled": true
         },
+        "spells_durationExpanded": {
+            "enabled": false
+        },
         "spells_onApplyAndOnTurn": {
             "enabled": true
         },
