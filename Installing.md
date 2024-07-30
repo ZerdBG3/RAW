@@ -12,8 +12,8 @@
   * If you wish to manually set it up, download the `modsettings.lsx` file on the root of this project (or access it [here](https://github.com/ZerdBG3/RAW/blob/main/modsettings.lsx)) and place it on the Public Player Profile (the complete path should look something like `\Users\{USER_NAME}\AppData\Local\Larian Studios\Baldur's Gate 3\PlayerProfiles\Public`). You should replace the file that already exists there
 
 # Optional Configurations
-* To turn on/off the mod features or customize them, copy the [`ModOptions.json`](https://github.com/ZerdBG3/RAW/blob/main/ModOptions.json) file to the `Script Extender` folder inside the Profile folder, creating it if necessary. The complete path should look something like `\Users\{USER_NAME}\AppData\Local\Larian Studios\Baldur's Gate 3\Script Extender`
-* You only need to set the configuration file if you want to alter the default behavior. Therefore, there is no need to download and set the file up if you are not going to change any of its values.
+* To turn on/off the mod features or customize them, access the `ModOptions.json` file at the folder `\Users\{USER_NAME}\AppData\Local\Larian Studios\Baldur's Gate 3\Script Extender`. If the folder/file doesn't exist, open the game once with the mod active and it will create the file
+* You only need to find and tweak the configuration file if you want to alter the default behavior. Therefore, there is no need to do anything beside installing the mod if you don't want to change any of the mod's default behavior
 * Simply change the `enabled` from `true` to `false` on whichever feature you want to turn off and `false` to `true` for those you want to turn on. For customizable features, keep `enabled` as `true` and change the `value` for a valid one specified by the option's description
 * ⚠️ All dependencies of enabled features will be automatically turned on to avoid inconsistencies or bugs in your game (if you want to disable a feature, you must also disable every feature on the `Depended by` column to actually disable it) ⚠️
 

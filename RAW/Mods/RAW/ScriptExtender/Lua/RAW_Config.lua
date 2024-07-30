@@ -1,4 +1,5 @@
-local userOptionsPath = "ModOptions.json"
+local userOptionsPath = "RAW/ModOptions.json"
+local oldUserOptionsPath = "ModOptions.json" -- Fallback to the old ModOptions.json path
 local userOptions = {}
 
 local currentMod = Ext.Mod.GetMod(ModuleUUID).Info
@@ -9,17 +10,26 @@ local function RAW_LoadUserOptions(shouldPrint)
     RAW_PrintIfDebug(CentralizedString("Searching for User ModOptions.json"), shouldPrint)
     local optionsFile = Ext.IO.LoadFile(userOptionsPath)
     if optionsFile == nil or optionsFile == "" then
-        RAW_PrintIfDebug(CentralizedString("User ModOptions.json not found"), shouldPrint)
-        return
+        local oldOptionsFile = Ext.IO.LoadFile(oldUserOptionsPath)
+        if oldOptionsFile == nil or oldOptionsFile == "" then
+            RAW_PrintIfDebug(CentralizedString("User ModOptions.json not found. Will create one!"), shouldPrint, RAW_PrintTypeWarning)
+            return false
+        end
+
+        RAW_PrintIfDebug(CentralizedString("Found old User ModOptions. Will create a new one at the new folder!"), shouldPrint, RAW_PrintTypeWarning)
+        local options = Ext.Json.Parse(oldOptionsFile)
+        if options[ModuleUUID] ~= nil then
+            RAW_PrintIfDebug(CentralizedString("Found User ModOptions for: " .. ModuleUUID), shouldPrint)
+            userOptions = options[ModuleUUID]
+        else
+            RAW_PrintIfDebug(CentralizedString("Not found User ModOptions for: " .. ModuleUUID), shouldPrint)
+        end
+
+        return false
     end
 
-    local options = Ext.Json.Parse(optionsFile)
-    if options[ModuleUUID] ~= nil then
-        RAW_PrintIfDebug(CentralizedString("Found User ModOptions for: " .. ModuleUUID), shouldPrint)
-        userOptions = options[ModuleUUID]
-    else
-        RAW_PrintIfDebug(CentralizedString("Not found User ModOptions for: " .. ModuleUUID), shouldPrint)
-    end
+    userOptions = Ext.Json.Parse(optionsFile)
+    return true
 end
 
 local function parseEnabledOption(optionName, attributes, enabledOptions, dependencies, conflicts)
@@ -121,7 +131,7 @@ function RAW_LoadModOptions(shouldPrint)
     RAW_PrintIfDebug("\n====================================================================================================", shouldPrint)
     RAW_PrintIfDebug(CentralizedString("[RAW:Config.lua] Mod Options") .. "\n", shouldPrint)
 
-    RAW_LoadUserOptions(shouldPrint)
+    local hasUserOptions = RAW_LoadUserOptions(shouldPrint)
 
     RAW_PrintIfDebug(CentralizedString("Searching for ModOptions.json at: " .. modOptionsPath), shouldPrint)
     local optionsFile = Ext.IO.LoadFile(modOptionsPath, "data")
@@ -145,6 +155,12 @@ function RAW_LoadModOptions(shouldPrint)
 
             enabled  = userOption.enabled or enabled
             value = userOption.value or value
+        else
+            userOptions[optionName] = {}
+            userOptions[optionName].enabled = enabled
+            if value ~= nil then
+                userOptions[optionName].value = value
+            end
         end
         attributes.enabled = enabled
         attributes.value = value
@@ -172,6 +188,11 @@ function RAW_LoadModOptions(shouldPrint)
 
     RAW_ValidateModOptions(true, shouldPrint)
     RAW_PrintConfig(shouldPrint)
+
+    if not hasUserOptions then
+        RAW_PrintIfDebug(CentralizedString("\nUser ModOptions.json created at %%LOCALAPPDATA%%/Larian Studios/Baldur's Gate 3/Script Extender/" .. userOptionsPath), shouldPrint, RAW_PrintTypeWarning)
+        Ext.IO.SaveFile(userOptionsPath, Ext.Json.Stringify(userOptions))
+    end
 
     RAW_PrintIfDebug("====================================================================================================\n", shouldPrint)
 end
