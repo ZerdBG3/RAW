@@ -127,32 +127,10 @@ function RAW_ConcentrationBlocker()
     return ConditionResult(result.Result, {ConditionError("RAW_ConcentrationBlocker_False")})
 end
 
-function RAW_IsInvisibleSneaking(entity)
-    local entity = entity or context.Target
-    return HasStatus('INVISIBLE_SNEAKING',entity) 
-        |  HasStatus('INVISIBLE_MAGEHAND_SNEAKING',entity) 
-        |  HasStatus('INVISIBILITY_SNEAKING',entity) 
-        |  HasStatus('ONE_WITH_SHADOWS_SNEAKING',entity) 
-        |  HasStatus('POTION_OF_INVISIBILITY_SNEAKING',entity) 
-        |  HasStatus('CLOAK_OF_SHADOWS_SNEAKING',entity) 
-        |  HasStatus('CLOAK_OF_SHADOWS_MONK_SNEAKING',entity) 
-        |  HasStatus('UMBRAL_CLOAK_SNEAKING',entity) 
-        |  HasStatus('GREATER_INVISIBILITY_SNEAKING',entity) 
-        |  HasStatus('SHADOWBLEND_SNEAKING',entity) 
-        |  HasStatus('INVISIBILITY_SHADARKAI_GLOOMWEAVER_SNEAKING',entity) 
-        |  HasStatus('HIDE_IN_PLAIN_SIGHT_SNEAKING',entity) 
-        |  HasStatus('MISTY_ESCAPE_INVISIBLE_SNEAKING',entity) 
-        |  HasStatus('INVISIBILITY_PANTHER_SNEAKING',entity) 
-        |  HasStatus('SHROUD_SELF_SNEAKING',entity) 
-        |  HasStatus('SUPREME_SNEAK_SNEAKING',entity) 
-        |  HasStatus('LOW_POLTERGEIST_INVISIBLE_SNEAKING',entity) 
-        |  HasStatus('SHADOW_WALKER_SNEAKING',entity)
-end
-
 function RAW_CanSeeInvisible(entity)
     local entity = entity or context.Source
     return Tagged('BLINDSIGHT', entity) 
         |  HasStatus('TRUESIGHT', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 36.5)
-        | (HasStatus('SEE_INVISIBILITY', entity) | HasStatus('MAG_SEE_INVISIBILITY_HIDDEN_IGNORE_RESTING', entity)) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 9)
-        | (HasStatus('SEE_INVISIBILITY_SEEK', entity) | HasPassive('FightingStyle_BlindFighting', entity)) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 3)
+        | (HasStatus('SEE_INVISIBILITY', entity) | HasStatus('MAG_SEE_INVISIBILITY_HIDDEN_IGNORE_RESTING', entity)) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 18)
+        | (HasPassive('FightingStyle_BlindFighting', entity)) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 3)
 end

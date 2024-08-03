@@ -1,0 +1,209 @@
+// ----------------------------------------------------------
+// -------------------- See Invisibility --------------------
+// ----------------------------------------------------------
+
+// Skips SEE_INVISIBILITY_SEEN/Perception check and just applies SEE_INVISIBILITY_REVEAL. Also increased radius to hero sight range
+new entry "SEE_INVISIBILITY"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SEE_INVISIBILITY"
+data "DescriptionParams" "Distance(18)"
+data "AuraRadius" "18"
+data "AuraStatuses" "TARGET:IF(not HasAnyStatus({'SG_Unconscious','SG_Incapacitated','SG_Blinded'},{},{},context.Source) and not Ally() and IsInSightPyramid(context.Source,context.TargetPosition) and HasStatus('RAW_INVISIBILITY_SNEAKING_TECHNICAL')):ApplyStatus(SEE_INVISIBILITY_REVEAL)"
+data "AuraFlags" "CanAffectInvisibleItems;AIIgnoreOnSelf;ShouldCheckLOS"
+
+// Removes stealth, which contains the portion that actually makes the target invisible to AI gameplay-wise (see RAW_Invisibility_Technical)
+new entry "SEE_INVISIBILITY_REVEAL"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SEE_INVISIBILITY_REVEAL"
+data "TickType" "EndTurn"
+data "AuraFlags" "CanAffectInvisibleItems;ShouldCheckLOS"
+data "OnApplyFunctors" "RemoveStatus(SNEAKING)"
+
+// Increased radius to hero sight range. Still keeps the middle ground SEE_INVISIBILITY_SEEN status
+new entry "SEE_INVISIBILITY_SEEK"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SEE_INVISIBILITY_SEEK"
+data "DescriptionParams" "Distance(18)"
+data "AuraRadius" "18"
+data "AuraStatuses" "TARGET:IF(not HasAnyStatus({'SG_Unconscious','SG_Incapacitated','SG_Blinded'},{},{},context.Source) and not Ally() and HasStatus('SNEAKING')):ApplyStatus(SEE_INVISIBILITY_SEEN)"
+
+// Emulates a perception vs stealth check to find any sneaking character, not only invisible ones. On success, applies SEE_INVISIBILITY_REVEAL
+new entry "SEE_INVISIBILITY_SEEN"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SEE_INVISIBILITY_SEEN"
+data "OnApplyRoll" "Item() or ( (not HasStatus('SEE_INVISIBILITY_SUCCESS') or StatusDurationLessThan(context.Target, 'SEE_INVISIBILITY_SUCCESS', 0.1)) and SkillCheck(Skill.Perception, context.Target.GetPassiveSkill(Skill.Stealth)) )"
+data "OnTickRoll" ""
+data "OnTickSuccess" ""
+data "OnTickFail" ""
+data "HitAnimationType" "None"
+
+// Increased range of shout to reflect aura radius increase
+new entry "Shout_SeeInvisibility"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_SeeInvisibility"
+data "AreaRadius" "18"
+
+// Increased range of shout to reflect aura radius increase
+new entry "Shout_SeeInvisibility_Seek"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_SeeInvisibility_Seek"
+data "AreaRadius" "18"
+
+// ----------------------------------------------------------
+// --------------------- Invisibility -----------------------
+// ----------------------------------------------------------
+
+// New passive controls providing benefit of actual gameplay invisibility when sneaking while invisible
+// It's possible I missed adding it to one that doesn't inherit from INVISIBLE or INVISIBILITY
+new entry "RAW_Invisibility_Technical"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnStatusApply;OnStatusRemoved"
+data "Conditions" "StatusId('SNEAKING') or StatusId('SEE_INVISIBILITY_REVEAL')"
+data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnStatusApply) and StatusId('SNEAKING') and not HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(RAW_INVISIBILITY_SNEAKING_TECHNICAL,100,-1);IF(context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and StatusId('SEE_INVISIBILITY_REVEAL') and HasStatus('SNEAKING')):ApplyStatus(RAW_INVISIBILITY_SNEAKING_TECHNICAL,100,-1)"
+
+// The actual gameplay invisibility benefit. Makes sure it goes away when either stealth or invisibility is lost
+new entry "RAW_INVISIBILITY_SNEAKING_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "RAW_INVISIBILITY_SNEAKING_TECHNICAL"
+data "StackType" "Ignore"
+data "Boosts" "IgnoreLeaveAttackRange;Invisibility()"
+data "RemoveEvents" "OnStatusRemoved"
+data "RemoveConditions" "not HasStatus('SNEAKING') or not HasStatus('SG_Invisible')"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+// Provides the advantage/disadvantage benefits if the target can't see invisible creatures
+// RAW_CanSeeInvisible() is defined at Scripts\thoth\helpers\RAW.khn
+// Also, invisibility shouldn't break when you take damage
+new entry "INVISIBLE"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "INVISIBLE"
+data "Boosts" "IF(not RAW_CanSeeInvisible()):Disadvantage(AttackTarget); IF(not RAW_CanSeeInvisible(context.Target)):Advantage(AttackRoll);"
+data "Passives" "RAW_Invisibility_Technical"
+data "RemoveEvents" "OnSpellCast;OnAttack"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (IsStatusEvent(StatusEvent.OnAttack) and IsAttack())"
+
+new entry "INVISIBILITY"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "INVISIBILITY"
+data "Boosts" "IF(not RAW_CanSeeInvisible()):Disadvantage(AttackTarget); IF(not RAW_CanSeeInvisible(context.Target)):Advantage(AttackRoll);"
+data "Passives" "RAW_Invisibility_Technical"
+data "RemoveEvents" "OnSpellCast;OnAttack"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (IsStatusEvent(StatusEvent.OnAttack) and IsAttack())"
+
+new entry "ONE_WITH_SHADOWS"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "ONE_WITH_SHADOWS"
+data "RemoveEvents" "OnSpellCast;OnAttack;OnEntityPickUp;OnEntityDrop;OnEntityDrag;OnMove"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and (not HasSpellFlag(SpellFlags.Invisible) or HasSpellFlag(SpellFlags.Jump))) or (IsStatusEvent(StatusEvent.OnAttack) and IsAttack()) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack))"
+
+new entry "CLOAK_OF_SHADOWS_MONK"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "CLOAK_OF_SHADOWS_MONK"
+data "RemoveEvents" "OnSpellCast;OnAttack;OnObscurityChanged"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (IsStatusEvent(StatusEvent.OnAttack) and IsAttack()) or (IsStatusEvent(StatusEvent.OnObscurityChanged) and HasObscuredState(ObscuredState.Clear,context.Source))"
+
+// Removes the successive saving throws to keep invisible and any removal event
+new entry "GREATER_INVISIBILITY"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "GREATER_INVISIBILITY"
+data "OnApplyFunctors" ""
+data "RemoveEvents" ""
+data "RemoveConditions" ""
+
+// Vanilla inherits INVISIBLE, but overwrites Boosts. Re-overwriting Boosts
+new entry "SHADOWBLEND"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "SHADOWBLEND"
+data "Boosts" "IF(not RAW_CanSeeInvisible()):Disadvantage(AttackTarget); IF(not RAW_CanSeeInvisible(context.Target)):Advantage(AttackRoll);"
+data "RemoveEvents" "OnSpellCast;OnAttack;OnEntityPickUp;OnEntityDrop;OnEntityDrag;OnObscurityChanged;OnMove"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (IsStatusEvent(StatusEvent.OnAttack) and IsAttack()) or ((IsStatusEvent(StatusEvent.OnObscurityChanged) or IsStatusEvent(StatusEvent.OnMove) or IsStatusEvent(StatusEvent.OnEntityPickUp) or IsStatusEvent(StatusEvent.OnEntityDrop) or IsStatusEvent(StatusEvent.OnEntityDrag)) and (HasObscuredState(ObscuredState.Clear,context.Source)))"
+
+new entry "INVISIBILITY_SHADARKAI_GLOOMWEAVER"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "INVISIBILITY_SHADARKAI_GLOOMWEAVER"
+data "Boosts" "IF(not RAW_CanSeeInvisible()):Disadvantage(AttackTarget); IF(not RAW_CanSeeInvisible(context.Target)):Advantage(AttackRoll); UnlockSpell(Target_MistyEscape_ShadarKai_GloomWeaver)"
+
+new entry "HIDE_IN_PLAIN_SIGHT"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "HIDE_IN_PLAIN_SIGHT"
+data "Boosts" "IF(not RAW_CanSeeInvisible()):Disadvantage(AttackTarget); IF(not RAW_CanSeeInvisible(context.Target)):Advantage(AttackRoll); Skill(Stealth, 10)"
+data "RemoveEvents" "OnSpellCast;OnAttack;OnEntityPickUp;OnEntityDrop;OnEntityDrag;OnMove"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and (not HasSpellFlag(SpellFlags.Invisible) or HasSpellFlag(SpellFlags.Jump))) or (IsStatusEvent(StatusEvent.OnAttack) and IsAttack()) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack))"
+
+new entry "MISTY_ESCAPE_INVISIBLE"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "MISTY_ESCAPE_INVISIBLE"
+data "Boosts" "IF(not RAW_CanSeeInvisible()):Disadvantage(AttackTarget); IF(not RAW_CanSeeInvisible(context.Target)):Advantage(AttackRoll); UnlockSpell(Target_MistyStep_Free)"
+
+new entry "INVISIBILITY_PANTHER"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "INVISIBILITY_PANTHER"
+data "Boosts" "IF(not RAW_CanSeeInvisible()):Disadvantage(AttackTarget); IF(not RAW_CanSeeInvisible(context.Target)):Advantage(AttackRoll); Advantage(Skill, Stealth)"
+data "RemoveEvents" "OnSpellCast;OnAttack;OnStatusRemoved"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (IsStatusEvent(StatusEvent.OnAttack) and IsAttack()) or (IsStatusEvent(StatusEvent.OnStatusRemoved) and not HasStatus('WILDSHAPE_PANTHER_PLAYER'))"
+
+// Copied over original GREATER_INVISIBILITY since it's not an SG_Invisible StatusGroup
+new entry "FADE_APPEAR"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "FADE_APPEAR"
+data "OnApplyFunctors" "ApplyStatus(GREATER_INVISIBILITY_TRACKER,100,-1)"
+data "RemoveEvents" "OnSpellCast;OnEntityPickUp;OnEntityDrop;OnEntityDrag"
+data "RemoveConditions" "GreaterInvisibilityCheck_InvisSpellOrRoll()"
+data "OnRemoveFunctors" "RemoveStatus(GREATER_INVISIBILITY_TRACKER);RemoveStatus(GREATER_INVISIBILITY_SUCCESS)"
+
+// Vanilla removes basically everything Invisible gives, so the mod also removes the passive
+new entry "INVOKE_DUPLICITY_TECHNICAL"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "INVOKE_DUPLICITY_TECHNICAL"
+data "Passives" ""
+
+// -------------------------------------------------
+// --------------------- Wet -----------------------
+// -------------------------------------------------
+
+// Another status that should not remove invisibility
+new entry "WET"
+type "StatusData"
+using "WET"
+data "OnApplyFunctors" "ApplyEquipmentStatus(MainHand,DIPPED_WATER,100,0);ApplyEquipmentStatus(OffHand,DIPPED_WATER,100,0);RemoveStatus(SLEEPING);RemoveStatus(SLEEP);RemoveStatus(SG_Sleeping);"
+
+// --------------------------------------------------------------
+// --------------------- Reaction Attacks -----------------------
+// --------------------------------------------------------------
+
+// Added RAW_CanSeeInvisible() defined at Scripts\thoth\helpers\RAW.khn to weapon reactions
+// Invisible characters still ignore AoO even when not stealthed
+new entry "Interrupt_AttackOfOpportunity"
+type "InterruptData"
+using "Interrupt_AttackOfOpportunity"
+data "Conditions" "IsAbleToReact(context.Observer) and not Self(context.Observer, context.Target) and Enemy() and not HasStatus('SANCTUARY',context.Source) and not WieldingWeapon('Ammunition', false, false, context.Source) and not (not Player(context.Source) and Tagged('AI_IGNORED_TARGET')  and not HasStatus('GNOLL_SUDDENRUSH')) and not HasStatus('SHOCKWAVE') and not (HasStatus('MOBILE_NO_AOO', context.Source) and HasStatus('MOBILE_NO_AOO_SOURCE', context.Target)) and not HasStatus('FLAMING_SPHERE_AURA') and not HasStatus('SNEAKING',context.Target) and (not HasStatus('SG_Invisible',context.Target) or RAW_CanSeeInvisible()) and not HasStatus('SG_Ignore_AOO',context.Target) and not AnyEntityIsItem() and not HasSpellFlag(SpellFlags.IgnoreAoO, context.Target)"
+
+new entry "Interrupt_PolearmMaster"
+type "InterruptData"
+using "Interrupt_PolearmMaster"
+data "Conditions" "IsAbleToReact(context.Observer) and not Self(context.Observer, context.Target) and (HasWeaponProperty(WeaponProperties.Reach, GetActiveWeapon(context.Source)) or Tagged('WPN_STAVE', GetActiveWeapon(context.Source, true)) or Tagged('WPN_SPEAR', GetActiveWeapon(context.Source, true))) and Enemy() and not WieldingWeapon('Ammunition', false, false, context.Source) and not (not Player(context.Source) and Tagged('AI_IGNORED_TARGET')  and not HasStatus('GNOLL_SUDDENRUSH')) and not HasStatus('SHOCKWAVE') and not (HasStatus('MOBILE_NO_AOO', context.Source) and HasStatus('MOBILE_NO_AOO_SOURCE', context.Target)) and not HasStatus('FLAMING_SPHERE_AURA') and not HasStatus('SNEAKING',context.Target) and (not HasStatus('SG_Invisible',context.Target) or RAW_CanSeeInvisible()) and not HasStatus('SG_Ignore_AOO',context.Target) and not AnyEntityIsItem()"
+
+new entry "Interrupt_WarCaster"
+type "InterruptData"
+using "Interrupt_WarCaster"
+data "Conditions" "not HasSpellCastBlocked(context.Observer) and IsAbleToReact(context.Observer) and Self(context.Observer, context.Source) and not Self(context.Observer, context.Target) and Enemy() and not WieldingWeapon('Ammunition', false, false, context.Source) and not HasStatus('SG_Incapacitated', context.Source) and not HasStatus('SG_Unconscious', context.Source) and not (not Player(context.Source) and Tagged('AI_IGNORED_TARGET')  and not HasStatus('GNOLL_SUDDENRUSH')) and not HasStatus('SHOCKWAVE') and not (HasStatus('MOBILE_NO_AOO', context.Source) and HasStatus('MOBILE_NO_AOO_SOURCE', context.Target)) and not HasStatus('FLAMING_SPHERE_AURA') and not HasStatus('SNEAKING',context.Target) and (not HasStatus('SG_Invisible',context.Target) or RAW_CanSeeInvisible()) and not HasStatus('SG_Ignore_AOO',context.Target) and not AnyEntityIsItem()"
