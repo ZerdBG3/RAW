@@ -88,6 +88,25 @@ Thanks [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?gameId=3474
 * Guardian of Faith is indestructible (except by its own damage), ignored by enemies and has no hitbox. It only attacks enemies that enter its range on their turn, or start their turn in its range (similar to the spells changed by [`spells_onApplyAndOnTurn`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#spells---on-apply-and-on-turn-%EF%B8%8F-spells_onapplyandonturn)). No longer retaliates when attacks are made in range or during its turn in combat
 * Spiritual Weapon is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to (except on the turn it is cast). Also removed all special attacks
 
+## Invisibility ⚙️ `invisibility`
+_Depended by: [`invisibility_aoo`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#invisibility-aoo-%EF%B8%8F-invisibilityaoo)_
+
+Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/about-me?gameId=3474) for his initial implementation on [(See) Invisibility Rework](https://www.nexusmods.com/baldursgate3/mods/3902) was the base for this option
+* Invisibility alone no longers makes the character completely undetectable, only providing Advantage to attack rolls against enemies that can't see invisible and Disadvantage when being attack by enemies that can't see invisible
+  * _Unfortunately, there's no defining features on spells like Sacred Flame that indicates the caster needs to see the target. Because of that, invisible characters will be able to be targeted by such spells, which is not RAW. This is the tradeoff for being able to know the invisible character's position and being able to at least attack with disadvantage_
+* Normal Invisibility is no longer removed by being damaged, interacting with items or being _wet_ 💧. Only attacking and casting a spell will remove Invisibility
+* Greater Invisibility is no longer removed at all (no saves)
+* Sneaking while invisible turns the character fully invisible (can be done inside enemy sight cones if they can't see invisible), not being detectable by anyone that can't see invisible
+  * _This is what you should do to properly sneak around enemies and avoid cutscenes_
+* See Invisibility and similar features allows characters to see the invisible+sneaking characters if they're in their Line of Sight (the usual red cone for sneaking), but doesn't remove the invisibility status. It also negates the advantage/disadvantage benefits from Invisibility, so it fully counters invisibility
+* Detect Presence (the NPC seeking ability) makes a perception check against the passive stealth of every sneaking character in a 16 m radius. Upon finding them, it removes the sneaking only, keeping the invisibility and possibly the advantage/disadvantage benefits for the invisible character
+
+## Invisibility AoO ⚙️ `invisibility_aoo`
+⚠️ ${\color{red}{\text{Disabled by default}}}$
+
+_Depends on: [`invisibility`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#invisibility-%EF%B8%8F-invisibility)_
+* Attacks of Opportunity can't be performed on invisible characters, even if they're not sneaking (not RAW)
+
 ## Prone ⚙️ `prone`
 * Removes the disadvantage on Strength and Dexterity Saving Throws when Prone, and adds the Disadvantage to Ranged Attack Rolls
 

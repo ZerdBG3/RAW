@@ -26,8 +26,8 @@ new entry "SEE_INVISIBILITY_SEEK"
 type "StatusData"
 data "StatusType" "BOOST"
 using "SEE_INVISIBILITY_SEEK"
-data "DescriptionParams" "Distance(18)"
-data "AuraRadius" "18"
+data "DescriptionParams" "Distance(16)"
+data "AuraRadius" "16"
 data "AuraStatuses" "TARGET:IF(not HasAnyStatus({'SG_Unconscious','SG_Incapacitated','SG_Blinded'},{},{},context.Source) and not Ally() and HasStatus('SNEAKING')):ApplyStatus(SEE_INVISIBILITY_SEEN)"
 
 // Emulates a perception vs stealth check to find any sneaking character, not only invisible ones. On success, applies SEE_INVISIBILITY_REVEAL
@@ -53,7 +53,7 @@ new entry "Shout_SeeInvisibility_Seek"
 type "SpellData"
 data "SpellType" "Shout"
 using "Shout_SeeInvisibility_Seek"
-data "AreaRadius" "18"
+data "AreaRadius" "16"
 
 // ----------------------------------------------------------
 // --------------------- Invisibility -----------------------
@@ -186,24 +186,3 @@ new entry "WET"
 type "StatusData"
 using "WET"
 data "OnApplyFunctors" "ApplyEquipmentStatus(MainHand,DIPPED_WATER,100,0);ApplyEquipmentStatus(OffHand,DIPPED_WATER,100,0);RemoveStatus(SLEEPING);RemoveStatus(SLEEP);RemoveStatus(SG_Sleeping);"
-
-// --------------------------------------------------------------
-// --------------------- Reaction Attacks -----------------------
-// --------------------------------------------------------------
-
-// Added RAW_CanSeeInvisible() defined at Scripts\thoth\helpers\RAW.khn to weapon reactions
-// Invisible characters still ignore AoO even when not stealthed
-new entry "Interrupt_AttackOfOpportunity"
-type "InterruptData"
-using "Interrupt_AttackOfOpportunity"
-data "Conditions" "IsAbleToReact(context.Observer) and not Self(context.Observer, context.Target) and Enemy() and not HasStatus('SANCTUARY',context.Source) and not WieldingWeapon('Ammunition', false, false, context.Source) and not (not Player(context.Source) and Tagged('AI_IGNORED_TARGET')  and not HasStatus('GNOLL_SUDDENRUSH')) and not HasStatus('SHOCKWAVE') and not (HasStatus('MOBILE_NO_AOO', context.Source) and HasStatus('MOBILE_NO_AOO_SOURCE', context.Target)) and not HasStatus('FLAMING_SPHERE_AURA') and not HasStatus('SNEAKING',context.Target) and (not HasStatus('SG_Invisible',context.Target) or RAW_CanSeeInvisible()) and not HasStatus('SG_Ignore_AOO',context.Target) and not AnyEntityIsItem() and not HasSpellFlag(SpellFlags.IgnoreAoO, context.Target)"
-
-new entry "Interrupt_PolearmMaster"
-type "InterruptData"
-using "Interrupt_PolearmMaster"
-data "Conditions" "IsAbleToReact(context.Observer) and not Self(context.Observer, context.Target) and (HasWeaponProperty(WeaponProperties.Reach, GetActiveWeapon(context.Source)) or Tagged('WPN_STAVE', GetActiveWeapon(context.Source, true)) or Tagged('WPN_SPEAR', GetActiveWeapon(context.Source, true))) and Enemy() and not WieldingWeapon('Ammunition', false, false, context.Source) and not (not Player(context.Source) and Tagged('AI_IGNORED_TARGET')  and not HasStatus('GNOLL_SUDDENRUSH')) and not HasStatus('SHOCKWAVE') and not (HasStatus('MOBILE_NO_AOO', context.Source) and HasStatus('MOBILE_NO_AOO_SOURCE', context.Target)) and not HasStatus('FLAMING_SPHERE_AURA') and not HasStatus('SNEAKING',context.Target) and (not HasStatus('SG_Invisible',context.Target) or RAW_CanSeeInvisible()) and not HasStatus('SG_Ignore_AOO',context.Target) and not AnyEntityIsItem()"
-
-new entry "Interrupt_WarCaster"
-type "InterruptData"
-using "Interrupt_WarCaster"
-data "Conditions" "not HasSpellCastBlocked(context.Observer) and IsAbleToReact(context.Observer) and Self(context.Observer, context.Source) and not Self(context.Observer, context.Target) and Enemy() and not WieldingWeapon('Ammunition', false, false, context.Source) and not HasStatus('SG_Incapacitated', context.Source) and not HasStatus('SG_Unconscious', context.Source) and not (not Player(context.Source) and Tagged('AI_IGNORED_TARGET')  and not HasStatus('GNOLL_SUDDENRUSH')) and not HasStatus('SHOCKWAVE') and not (HasStatus('MOBILE_NO_AOO', context.Source) and HasStatus('MOBILE_NO_AOO_SOURCE', context.Target)) and not HasStatus('FLAMING_SPHERE_AURA') and not HasStatus('SNEAKING',context.Target) and (not HasStatus('SG_Invisible',context.Target) or RAW_CanSeeInvisible()) and not HasStatus('SG_Ignore_AOO',context.Target) and not AnyEntityIsItem()"
