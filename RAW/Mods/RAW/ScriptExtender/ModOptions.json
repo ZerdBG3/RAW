@@ -346,7 +346,7 @@
             "enabled": [],
             "disabled": [
                 {
-                    "from": "Public/RAW/Stats/Generated/Data/Invisible.txt",
+                    "from": "Public/RAW/Stats/Generated/Data/Invisibility.txt",
                     "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
                 }
             ]
@@ -363,7 +363,7 @@
             "enabled": [],
             "disabled": [
                 {
-                    "from": "Public/RAW/Stats/Generated/Data/Invisible_AoO.txt",
+                    "from": "Public/RAW/Stats/Generated/Data/Invisibility_AoO.txt",
                     "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
                 }
             ]

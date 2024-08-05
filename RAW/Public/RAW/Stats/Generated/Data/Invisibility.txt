@@ -2,45 +2,6 @@
 // -------------------- See Invisibility --------------------
 // ----------------------------------------------------------
 
-// Skips SEE_INVISIBILITY_SEEN/Perception check and just applies SEE_INVISIBILITY_REVEAL. Also increased radius to hero sight range
-new entry "SEE_INVISIBILITY"
-type "StatusData"
-data "StatusType" "BOOST"
-using "SEE_INVISIBILITY"
-data "DescriptionParams" "Distance(18)"
-data "AuraRadius" "18"
-data "AuraStatuses" "TARGET:IF(not HasAnyStatus({'SG_Unconscious','SG_Incapacitated','SG_Blinded'},{},{},context.Source) and not Ally() and IsInSightPyramid(context.Source,context.TargetPosition) and HasStatus('RAW_INVISIBILITY_SNEAKING_TECHNICAL')):ApplyStatus(SEE_INVISIBILITY_REVEAL)"
-data "AuraFlags" "CanAffectInvisibleItems;AIIgnoreOnSelf;ShouldCheckLOS"
-
-// Removes stealth, which contains the portion that actually makes the target invisible to AI gameplay-wise (see RAW_Invisibility_Technical)
-new entry "SEE_INVISIBILITY_REVEAL"
-type "StatusData"
-data "StatusType" "BOOST"
-using "SEE_INVISIBILITY_REVEAL"
-data "TickType" "EndTurn"
-data "AuraFlags" "CanAffectInvisibleItems;ShouldCheckLOS"
-data "OnApplyFunctors" "RemoveStatus(SNEAKING)"
-
-// Increased radius to hero sight range. Still keeps the middle ground SEE_INVISIBILITY_SEEN status
-new entry "SEE_INVISIBILITY_SEEK"
-type "StatusData"
-data "StatusType" "BOOST"
-using "SEE_INVISIBILITY_SEEK"
-data "DescriptionParams" "Distance(16)"
-data "AuraRadius" "16"
-data "AuraStatuses" "TARGET:IF(not HasAnyStatus({'SG_Unconscious','SG_Incapacitated','SG_Blinded'},{},{},context.Source) and not Ally() and HasStatus('SNEAKING')):ApplyStatus(SEE_INVISIBILITY_SEEN)"
-
-// Emulates a perception vs stealth check to find any sneaking character, not only invisible ones. On success, applies SEE_INVISIBILITY_REVEAL
-new entry "SEE_INVISIBILITY_SEEN"
-type "StatusData"
-data "StatusType" "BOOST"
-using "SEE_INVISIBILITY_SEEN"
-data "OnApplyRoll" "Item() or ( (not HasStatus('SEE_INVISIBILITY_SUCCESS') or StatusDurationLessThan(context.Target, 'SEE_INVISIBILITY_SUCCESS', 0.1)) and SkillCheck(Skill.Perception, context.Target.GetPassiveSkill(Skill.Stealth)) )"
-data "OnTickRoll" ""
-data "OnTickSuccess" ""
-data "OnTickFail" ""
-data "HitAnimationType" "None"
-
 // Increased range of shout to reflect aura radius increase
 new entry "Shout_SeeInvisibility"
 type "SpellData"
@@ -48,36 +9,133 @@ data "SpellType" "Shout"
 using "Shout_SeeInvisibility"
 data "AreaRadius" "18"
 
+// Skips SEE_INVISIBILITY_SEEN/Perception check and just applies SEE_INVISIBILITY_REVEAL. Also increased radius to hero sight range
+new entry "SEE_INVISIBILITY"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SEE_INVISIBILITY"
+data "Description" "haaf9589cgdf46g45edga985g59c7380bb6c7;1"
+data "DescriptionParams" "Distance(18)"
+data "AuraRadius" "18"
+data "AuraStatuses" "TARGET:IF(not HasAnyStatus({'SG_Unconscious','SG_Incapacitated','SG_Blinded'},{},{},context.Source) and not Ally() and IsInSightPyramid(context.Source,context.TargetPosition) and HasStatus('SG_Invisible')):ApplyStatus(SEE_INVISIBILITY_REVEAL)"
+data "AuraFlags" "CanAffectInvisibleItems;AIIgnoreOnSelf;ShouldCheckLOS"
+
+// Removes RAW_INVISIBILITY_SNEAKING_TECHNICAL, which contains the portion that actually makes the target invisible to AI gameplay-wise
+new entry "SEE_INVISIBILITY_REVEAL"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SEE_INVISIBILITY_REVEAL"
+data "Description" "hf6442c35g03a9g4cc3gb4a9gc4579e6045a3;1"
+data "TickType" "EndTurn"
+data "AuraFlags" "CanAffectInvisibleItems;ShouldCheckLOS"
+data "OnApplyFunctors" "RemoveStatus(RAW_INVISIBILITY_SNEAKING_TECHNICAL)"
+data "Boosts" "StatusImmunity(RAW_INVISIBILITY_SNEAKING_TECHNICAL)"
+data "OnRemoveFunctors" "IF(HasStatus('SNEAKING')):ApplyStatus(RAW_INVISIBILITY_SNEAKING_TECHNICAL,100,-1)"
+
 // Increased range of shout to reflect aura radius increase
+// Changed cost to Action Point
 new entry "Shout_SeeInvisibility_Seek"
 type "SpellData"
 data "SpellType" "Shout"
 using "Shout_SeeInvisibility_Seek"
-data "AreaRadius" "16"
+data "Description" "hba927cdegcddfg4519gbddfge87709ab6d87;1"
+data "Icon" "statIcons_EnemyOfJustice"
+data "AreaRadius" "11"
+data "TooltipStatusApply" "ApplyStatus(SEE_INVISIBILITY_SEEK,100,1)"
+data "UseCosts" "ActionPoint:1"
 
-// ----------------------------------------------------------
-// --------------------- Invisibility -----------------------
-// ----------------------------------------------------------
-
-// New passive controls providing benefit of actual gameplay invisibility when sneaking while invisible
-// It's possible I missed adding it to one that doesn't inherit from INVISIBLE or INVISIBILITY
-new entry "RAW_Invisibility_Technical"
-type "PassiveData"
-data "Properties" "IsHidden"
-data "StatsFunctorContext" "OnStatusApply;OnStatusRemoved"
-data "Conditions" "StatusId('SNEAKING') or StatusId('SEE_INVISIBILITY_REVEAL')"
-data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnStatusApply) and StatusId('SNEAKING') and not HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(RAW_INVISIBILITY_SNEAKING_TECHNICAL,100,-1);IF(context.HasContextFlag(StatsFunctorContext.OnStatusRemoved) and StatusId('SEE_INVISIBILITY_REVEAL') and HasStatus('SNEAKING')):ApplyStatus(RAW_INVISIBILITY_SNEAKING_TECHNICAL,100,-1)"
-
-// The actual gameplay invisibility benefit. Makes sure it goes away when either stealth or invisibility is lost
-new entry "RAW_INVISIBILITY_SNEAKING_TECHNICAL"
+// Increased radius to base hearing range. Still keeps the middle ground SEE_INVISIBILITY_SEEN status
+// Can be used to seek any sneaking character, not only invisible ones
+new entry "SEE_INVISIBILITY_SEEK"
 type "StatusData"
 data "StatusType" "BOOST"
+using "SEE_INVISIBILITY_SEEK"
+data "Description" "h7b23045bgb19bg491egabc4g9cd38ed88424;1"
+data "DescriptionParams" "Distance(11)"
+data "Icon" "statIcons_EnemyOfJustice"
+data "AuraRadius" "11"
+data "AuraFlags" "AIIgnoreOnSelf;IgnoreItems"
+data "AuraStatuses" "TARGET:IF(not HasAnyStatus({'SG_Unconscious','SG_Incapacitated','SG_Blinded'},{},{},context.Source) and not Ally() and HasStatus('SNEAKING')):ApplyStatus(SEE_INVISIBILITY_SEEN)"
+
+// Emulates a perception vs stealth check to find the sneaking character
+new entry "SEE_INVISIBILITY_SEEN"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SEE_INVISIBILITY_SEEN"
+data "OnApplyRoll" "(SkillCheck(Skill.Perception, context.Target.GetPassiveSkill(Skill.Stealth)))"
+data "OnApplySuccess" "ApplyStatus(RAW_FOUND_SNEAKING,100,0)"
+data "OnApplyFail" ""
+data "OnTickRoll" ""
+data "OnTickSuccess" ""
+data "OnTickFail" ""
+data "HitAnimationType" "None"
+
+new entry "RAW_FOUND_SNEAKING"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "hed8a4e8fg83feg4b36g9485g9dcdc40ff540;1"
+data "Description" "h74e9fb3fg63b3g4360g9a60g3452e6fc60a8;1"
+data "Icon" "statIcons_EnemyOfJustice"
+data "StackId" "RAW_FOUND_SNEAKING"
+data "OnApplyFunctors" "RemoveStatus(SNEAKING)"
+data "StatusEffect" "d8452a11-7c66-45fb-8ccb-64e2fa56ada5"
+
+// --------------------------------------------------------------------
+// --------------------- Technical Invisibility -----------------------
+// --------------------------------------------------------------------
+
+// The actual gameplay invisibility benefit, only being given while invisible and sneaking simultaneously
+// The applial/removal control is done by Mods\RAW\ScriptExtender\Lua\Osiris\RAW_Invisibility.lua
+// StatusEffect is also more transparent than the non-sneaking invisibilities
+new entry "RAW_INVISIBILITY_SNEAKING_TECHNICAL"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+data "DisplayName" "h21b240a8g1a5bg4d14g9a7cge5593f7bfd1a;1"
+data "Description" "h47b01802gf74dg4c95g94adg9cc5fc2dea5a;1"
+data "Icon" "Status_Invisible"
 data "StackId" "RAW_INVISIBILITY_SNEAKING_TECHNICAL"
 data "StackType" "Ignore"
 data "Boosts" "IgnoreLeaveAttackRange;Invisibility()"
-data "RemoveEvents" "OnStatusRemoved"
-data "RemoveConditions" "not HasStatus('SNEAKING') or not HasStatus('SG_Invisible')"
+data "StatusPropertyFlags" "DisableOverhead"
+data "StatusEffect" "84be28b3-6fdf-4b62-86e2-1f3b333aab81"
+
+// Status given by Mods\RAW\ScriptExtender\Lua\Osiris\RAW_Invisibility.lua when AI becomes invisible
+// This will prompt one stealth check against the passive perception of each enemy around
+// Succeeding this applies RAW_INVISIBILITY_SNEAKING_TECHNICAL and SNEAKING
+// 11m is the base Hearing radius used for Characters
+new entry "RAW_INVISIBILITY_SNEAKING_ATTEMPT"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "RAW_INVISIBILITY_SNEAKING_ATTEMPT"
+data "AuraRadius" "11"
+data "AuraStatuses" "TARGET:IF(not HasAnyStatus({'SG_Unconscious','SG_Incapacitated','SG_Blinded'},{},{},context.Source) and Enemy()):ApplyStatus(RAW_INVISIBILITY_SNEAKING_ATTEMPT_CONTEST)"
+data "AuraFlags" "AIIgnoreOnSelf;IgnoreItems"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+new entry "RAW_INVISIBILITY_SNEAKING_ATTEMPT_CONTEST"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "RAW_INVISIBILITY_SNEAKING_ATTEMPT_CONTEST"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "OnApplyRoll" "(SkillCheck(Skill.Stealth, context.Target.GetPassiveSkill(Skill.Perception)))"
+data "OnApplyFail" "ApplyStatus(SWAP,RAW_INVISIBILITY_SNEAKING_ATTEMPT_CONTEST_FAILED,100,1)"
+data "HitAnimationType" "None"
+
+new entry "RAW_INVISIBILITY_SNEAKING_ATTEMPT_CONTEST_FAILED"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "RAW_INVISIBILITY_SNEAKING_ATTEMPT_RESULT"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+// -------------------------------------------------------------------
+// --------------------- Invisibility Statuses -----------------------
+// -------------------------------------------------------------------
+
+// Allows the AI to Sneak while they're invisible
+new entry "RAW_Invisible_Hide_Unlock"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "Boosts" "UnlockSpell(Shout_Hide)"
 
 // Provides the advantage/disadvantage benefits if the target can't see invisible creatures
 // RAW_CanSeeInvisible() is defined at Scripts\thoth\helpers\RAW.khn
@@ -86,24 +144,30 @@ new entry "INVISIBLE"
 type "StatusData"
 data "StatusType" "INVISIBLE"
 using "INVISIBLE"
+data "Description" "h11f06e65g400bg4724g9e24ge9b0de4c8e3d;1"
+data "Icon" "Spell_Illusion_Invisibility"
 data "Boosts" "IF(not RAW_CanSeeInvisible()):Disadvantage(AttackTarget); IF(not RAW_CanSeeInvisible(context.Target)):Advantage(AttackRoll);"
-data "Passives" "RAW_Invisibility_Technical"
+data "Passives" "RAW_Invisible_Hide_Unlock"
 data "RemoveEvents" "OnSpellCast;OnAttack"
 data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (IsStatusEvent(StatusEvent.OnAttack) and IsAttack())"
+data "StatusEffect" "6cfae2c8-0b32-487e-b1ce-616f8243ddfa"
 
 new entry "INVISIBILITY"
 type "StatusData"
 data "StatusType" "INVISIBLE"
 using "INVISIBILITY"
+data "Description" "h11f06e65g400bg4724g9e24ge9b0de4c8e3d;1"
 data "Boosts" "IF(not RAW_CanSeeInvisible()):Disadvantage(AttackTarget); IF(not RAW_CanSeeInvisible(context.Target)):Advantage(AttackRoll);"
-data "Passives" "RAW_Invisibility_Technical"
+data "Passives" "RAW_Invisible_Hide_Unlock"
 data "RemoveEvents" "OnSpellCast;OnAttack"
 data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (IsStatusEvent(StatusEvent.OnAttack) and IsAttack())"
+data "StatusEffect" "6cfae2c8-0b32-487e-b1ce-616f8243ddfa"
 
 new entry "ONE_WITH_SHADOWS"
 type "StatusData"
 data "StatusType" "INVISIBLE"
 using "ONE_WITH_SHADOWS"
+data "Description" "hd58ffa12g127cg4a27g83efg989e5fa1a4ec;1"
 data "RemoveEvents" "OnSpellCast;OnAttack;OnEntityPickUp;OnEntityDrop;OnEntityDrag;OnMove"
 data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and (not HasSpellFlag(SpellFlags.Invisible) or HasSpellFlag(SpellFlags.Jump))) or (IsStatusEvent(StatusEvent.OnAttack) and IsAttack()) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack))"
 
@@ -111,14 +175,18 @@ new entry "CLOAK_OF_SHADOWS_MONK"
 type "StatusData"
 data "StatusType" "INVISIBLE"
 using "CLOAK_OF_SHADOWS_MONK"
+data "Description" "hed9a0784g6767g4099ga49cg55527e6b64f0;1"
 data "RemoveEvents" "OnSpellCast;OnAttack;OnObscurityChanged"
 data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (IsStatusEvent(StatusEvent.OnAttack) and IsAttack()) or (IsStatusEvent(StatusEvent.OnObscurityChanged) and HasObscuredState(ObscuredState.Clear,context.Source))"
 
 // Removes the successive saving throws to keep invisible and any removal event
+// Gives higher stack priority than Potion of Invisibility
 new entry "GREATER_INVISIBILITY"
 type "StatusData"
 data "StatusType" "INVISIBLE"
 using "GREATER_INVISIBILITY"
+data "Description" "h81258024g2d63g4afag92ecgc64bb136d956;1"
+data "StackPriority" "6"
 data "OnApplyFunctors" ""
 data "RemoveEvents" ""
 data "RemoveConditions" ""
@@ -128,6 +196,7 @@ new entry "SHADOWBLEND"
 type "StatusData"
 data "StatusType" "INVISIBLE"
 using "SHADOWBLEND"
+data "Description" "h3b6dd94dg17c8g4f4egbd7dga67485beef35;1"
 data "Boosts" "IF(not RAW_CanSeeInvisible()):Disadvantage(AttackTarget); IF(not RAW_CanSeeInvisible(context.Target)):Advantage(AttackRoll);"
 data "RemoveEvents" "OnSpellCast;OnAttack;OnEntityPickUp;OnEntityDrop;OnEntityDrag;OnObscurityChanged;OnMove"
 data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (IsStatusEvent(StatusEvent.OnAttack) and IsAttack()) or ((IsStatusEvent(StatusEvent.OnObscurityChanged) or IsStatusEvent(StatusEvent.OnMove) or IsStatusEvent(StatusEvent.OnEntityPickUp) or IsStatusEvent(StatusEvent.OnEntityDrop) or IsStatusEvent(StatusEvent.OnEntityDrag)) and (HasObscuredState(ObscuredState.Clear,context.Source)))"
@@ -136,12 +205,14 @@ new entry "INVISIBILITY_SHADARKAI_GLOOMWEAVER"
 type "StatusData"
 data "StatusType" "INVISIBLE"
 using "INVISIBILITY_SHADARKAI_GLOOMWEAVER"
+data "Description" "h8fadec97gcad8g4b7eg9528g8c80dde94805;1"
 data "Boosts" "IF(not RAW_CanSeeInvisible()):Disadvantage(AttackTarget); IF(not RAW_CanSeeInvisible(context.Target)):Advantage(AttackRoll); UnlockSpell(Target_MistyEscape_ShadarKai_GloomWeaver)"
 
 new entry "HIDE_IN_PLAIN_SIGHT"
 type "StatusData"
 data "StatusType" "INVISIBLE"
 using "HIDE_IN_PLAIN_SIGHT"
+data "Description" "hd63af1fag49c2g4ba2g9e42gc1b5bf4c48d6;1"
 data "Boosts" "IF(not RAW_CanSeeInvisible()):Disadvantage(AttackTarget); IF(not RAW_CanSeeInvisible(context.Target)):Advantage(AttackRoll); Skill(Stealth, 10)"
 data "RemoveEvents" "OnSpellCast;OnAttack;OnEntityPickUp;OnEntityDrop;OnEntityDrag;OnMove"
 data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and (not HasSpellFlag(SpellFlags.Invisible) or HasSpellFlag(SpellFlags.Jump))) or (IsStatusEvent(StatusEvent.OnAttack) and IsAttack()) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnAttack))"
@@ -165,6 +236,7 @@ new entry "FADE_APPEAR"
 type "StatusData"
 data "StatusType" "INVISIBLE"
 using "FADE_APPEAR"
+data "Description" "ha4468dd2gdefeg4a52ga0c7g91ae57aef8a3;5"
 data "OnApplyFunctors" "ApplyStatus(GREATER_INVISIBILITY_TRACKER,100,-1)"
 data "RemoveEvents" "OnSpellCast;OnEntityPickUp;OnEntityDrop;OnEntityDrag"
 data "RemoveConditions" "GreaterInvisibilityCheck_InvisSpellOrRoll()"
@@ -186,3 +258,78 @@ new entry "WET"
 type "StatusData"
 using "WET"
 data "OnApplyFunctors" "ApplyEquipmentStatus(MainHand,DIPPED_WATER,100,0);ApplyEquipmentStatus(OffHand,DIPPED_WATER,100,0);RemoveStatus(SLEEPING);RemoveStatus(SLEEP);RemoveStatus(SG_Sleeping);"
+
+// ------------------------------------------------------
+// --------------------- Sneaking -----------------------
+// ------------------------------------------------------
+
+// Allows to hide while flanked if invisible and not seen
+// Changes to incentivize the AI to sneak while invisible
+new entry "Shout_Hide"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_Hide"
+data "AIFlags" ""
+data "SpellProperties" "AI_IGNORE:ApplyStatus(SNEAKING,100,-1);AI_ONLY:IF(not HasStatus('SNEAKING') and not HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(AI_HELPER_BUFF_MASSIVE,100,1);"
+data "RequirementConditions" "not HasStatus('FLANKED') or (HasStatus('SG_Invisible') and not HasStatus('SEE_INVISIBILITY_REVEAL'))"
+
+// ----------------------------------------------------------
+// --------------------- Descriptions -----------------------
+// ----------------------------------------------------------
+
+new entry "Target_Invisibility"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Invisibility"
+data "Description" "h18ef7f55gdaf3g435fg9e90ga93cfb6d5eaf;1"
+data "ExtraDescription" "h7931a54eg73b9g425bg9243g2331db1f3a32;1"
+data "TooltipPermanentWarnings" "baeb96c7-023f-4292-af6b-afc9033cc860"
+
+new entry "Shout_Invisibility_Imp"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_Invisibility_Imp"
+data "TooltipPermanentWarnings" "baeb96c7-023f-4292-af6b-afc9033cc860"
+
+new entry "Shout_OneWithShadows"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_OneWithShadows"
+data "TooltipPermanentWarnings" "74c1f171-06ba-4488-a369-b52ecf16fba9"
+
+new entry "Shout_CloakOfShadows"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_CloakOfShadows"
+data "TooltipPermanentWarnings" "baeb96c7-023f-4292-af6b-afc9033cc860"
+
+new entry "Shout_CloakOfShadows_Monk"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_CloakOfShadows_Monk"
+data "TooltipPermanentWarnings" "9fe6cd36-0581-42ef-ad1c-09cd9f51cbf2"
+
+new entry "Target_Invisibility_Greater"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Invisibility_Greater"
+data "Description" "hc207157bg97a8g45ebg8946g67866b4bda43;1"
+data "ExtraDescription" ""
+
+new entry "Shout_Invisibility_ShadarKai_GloomWeaver"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_Invisibility_ShadarKai_GloomWeaver"
+data "Description" "h63e09296gffadg4d58g8468g8964384565d0;1"
+
+new entry "Shout_HideInPlainSight"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_HideInPlainSight"
+data "TooltipPermanentWarnings" "74c1f171-06ba-4488-a369-b52ecf16fba9"
+
+new entry "Shout_SupremeSneak"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_SupremeSneak"
+data "TooltipPermanentWarnings" "baeb96c7-023f-4292-af6b-afc9033cc860"

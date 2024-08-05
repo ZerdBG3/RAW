@@ -61,6 +61,7 @@ Ext.Events.StatsLoaded:Subscribe(RAW_StatsLoaded)
 -- Osiris Files
 local RAW_OsirisFilesPath = "Osiris/"
 
+Ext.Require(RAW_OsirisFilesPath .. "RAW_Invisibility.lua")
 Ext.Require(RAW_OsirisFilesPath .. "RAW_WeaponSets.lua")
 
 if Ext.IsServer() then
@@ -68,6 +69,7 @@ if Ext.IsServer() then
     RAW_PrintIfDebug(CentralizedString("[RAW:BootstrapShared.lua] Osiris Registration Start"), RAW_PrintTable_ModOptions)
     RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_ModOptions)
 
+    RAW_Invisibility()
     RAW_WeaponSets()
 
     RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_ModOptions)
