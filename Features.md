@@ -96,10 +96,12 @@ Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/about-m
   * _Unfortunately, there's no defining features on spells like Sacred Flame that indicates the caster needs to see the target. Because of that, invisible characters will be able to be targeted by such spells, which is not RAW. This is the tradeoff for being able to know the invisible character's position and being able to at least attack with disadvantage_
 * Normal Invisibility is no longer removed by being damaged, interacting with items or being _wet_ 💧. Only attacking and casting a spell will remove Invisibility
 * Greater Invisibility is no longer removed at all (no saves)
-* Sneaking while invisible turns the character fully invisible (can be done inside enemy sight cones if they can't see invisible), not being detectable by anyone that can't see invisible
-  * _This is what you should do to properly sneak around enemies and avoid cutscenes_
-* See Invisibility and similar features allows characters to see the invisible+sneaking characters if they're in their Line of Sight (the usual red cone for sneaking), but doesn't remove the invisibility status. It also negates the advantage/disadvantage benefits from Invisibility, so it fully counters invisibility
-* Detect Presence (the NPC seeking ability) makes a perception check against the passive stealth of every sneaking character in a 16 m radius. Upon finding them, it removes the sneaking only, keeping the invisibility and possibly the advantage/disadvantage benefits for the invisible character
+* Sneaking while invisible turns the character `Hidden & Invisible` (can be done inside enemy sight cones if they can't see invisible), not being detectable by anyone that can't see invisible
+  * _Being `Hidden & Invisible` is the same as Vanilla Invisible. It allows pickpocketing, avoids starting combat when near enemies, etc_
+* See Invisibility and similar features allows characters to see the `Hidden & Invisible` characters if they're in their Line of Sight (the usual red cone for sneaking), but doesn't remove the invisibility status, allowing the usual Stealth check when inside a sight cone. It also negates the advantage/disadvantage benefits from Invisibility, so it fully counters invisibility. Leaving the sight cone of See Invisibility while still sneaking regains `Hidden & Invisible`
+* Sense Hidden Presence (the NPC seeking ability) makes a perception check against the passive stealth of every sneaking character in a radius (no LoS required, since it theoretically uses hearing). Upon succeeding, it removes the sneaking (but never the invisibility). It can be used by players and was readjusted to cost 1 action (emulating RAW Active Perception roll)
+* Enemies gain one free sneak _attempt_ when they become invisible, rolling their stealth against the passive perception of every enemy of theirs in a radius (same radius as Sense Hidden Presence). If they beat ALL passive perceptions, they become `Hidden & Invisible`
+* While invisible, enemies can now attempt to sneak for 1 action, becoming `Hidden & Invisible` without need for a stealth check
 
 ## Invisibility AoO ⚙️ `invisibility_aoo`
 ⚠️ ${\color{red}{\text{Disabled by default}}}$
