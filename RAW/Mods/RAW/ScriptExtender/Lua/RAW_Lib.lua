@@ -143,14 +143,15 @@ RAW_PrintTable_ExtraAttack = 7
 RAW_PrintTable_Feats = 8
 RAW_PrintTable_FreeWeaponEquip = 9
 RAW_PrintTable_InstantDeath = 10
-RAW_PrintTable_Rogue = 11
-RAW_PrintTable_Rogue_Thief = 12
-RAW_PrintTable_SkillCheck_CritFail = 13
-RAW_PrintTable_Spells_BonusAction = 14
-RAW_PrintTable_Spells_Duration = 15
-RAW_PrintTable_TwoWeaponFighting = 16
-RAW_PrintTable_WeaponSets = 17
-RAW_PrintTable_WeaponSpells = 18
+RAW_PrintTable_Invisible = 11
+RAW_PrintTable_Rogue = 12
+RAW_PrintTable_Rogue_Thief = 13
+RAW_PrintTable_SkillCheck_CritFail = 14
+RAW_PrintTable_Spells_BonusAction = 15
+RAW_PrintTable_Spells_Duration = 16
+RAW_PrintTable_TwoWeaponFighting = 17
+RAW_PrintTable_WeaponSets = 18
+RAW_PrintTable_WeaponSpells = 19
 
 local ENUM_RAW_PrintTable = RAW_Set {
     RAW_PrintTable_ModOptions,
@@ -164,6 +165,7 @@ local ENUM_RAW_PrintTable = RAW_Set {
     -- RAW_PrintTable_Feats,
     -- RAW_PrintTable_FreeWeaponEquip,
     -- RAW_PrintTable_InstantDeath,
+    RAW_PrintTable_Invisible,
     -- RAW_PrintTable_Rogue,
     -- RAW_PrintTable_Rogue_Thief,
     -- RAW_PrintTable_SkillCheck_CritFail,

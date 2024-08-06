@@ -9,6 +9,7 @@
     <content contentuid="h0afc3739g41e7g4c3fgb280g4978d95e03ae" version="1">Can't attune items while in combat</content><!-- Attunement while in combat -->
     <content contentuid="h57e004ccg5136g4ec6gba3fg521d0e4c6626" version="1">Maximum amount of attuned items</content><!-- Attunement maximum items -->
     <content contentuid="h1eceeeb7gcaeeg46eagb8afg4ff8386033a5" version="1">Already concentrating on a spell</content><!-- Concentration blocker -->
+    <content contentuid="h0730e799gc410g42f2g9cceg0120ee90b886" version="1">Can't target invisible characters</content><!-- Spell against invisible target -->
 
     <!-- Feat Description -->
     <content contentuid="h15b473b7gf59dg40f4g9d6bg7015eb159089" version="1">When you make crossbow attacks within melee range, the &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; do not have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;You ignore the loading property of crossbows for the purposes of Extra Attack.</content><!-- Crossbow Expert -->
@@ -71,6 +72,8 @@
     <content contentuid="hbeba3ad3g8801g4a4fg8d77g7507fa9bb7c6" version="1">Replenish expended &lt;LSTag Tooltip="SpellSlot"&gt;spell slots&lt;/LSTag&gt; during a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;. You cannot restore spell slots above 5th level.</content><!-- Arcane Recovery -->
     <content contentuid="h75e85388g3e7dg4e70g8101g612860c4a857" version="1">Replenish expended &lt;LSTag Tooltip="SpellSlot"&gt;spell slots&lt;/LSTag&gt; during a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;. You cannot restore spell slots above 5th level.</content><!-- Natural Recovery -->
     <content contentuid="h2149d9f2gd22fg4923ga45bged71c17b76ef" version="1">Prepare to make a volley of thorns the next time you hit a creature with a ranged weapon attack, dealing [1] to it and creatures within [2] of them.</content> <!-- Hail of Thorns -->
+    <content contentuid="h63e09296gffadg4d58g8468g8964384565d0" version="1">Become Invisible. The spell ends if you attack or cast another spell.</content><!-- Invisibility ShadarKai Gloomweaver -->
+    <content contentuid="hba927cdegcddfg4519gbddfge87709ab6d87" version="1">Focus your attention in an attempt to sense nearby &lt;LSTag Type="Status" Tooltip="SNEAKING"&gt;Hidden&lt;/LSTag&gt; enemies, possibly spotting them.</content><!-- See Invisibility Seek -->
 
     <!-- Status Boost Display Name -->
     <content contentuid="hd7046718g6e1ag4867g9e30g6900297f0d58" version="1">Short Rest</content><!-- Short Rest -->
@@ -80,6 +83,7 @@
     <content contentuid="h0dc08f11gb7b2g442fga75dg8e01b1989e5d" version="1">Call Lightning</content><!-- Call Lightning -->
     <content contentuid="h990994ddg1181g4092g91d0gc459f4cf970f" version="1">Hail of Thorns</content><!-- Hail of Thorns -->
     <content contentuid="h22935d1ag4b4fg42b3gb9degfde9bd560f65" version="1">Bonus Action Spells Rule</content><!-- Bonus Action Spell -->
+    <content contentuid="hed8a4e8fg83feg4b36g9485g9dcdc40ff540" version="1">Spotted</content><!-- Found Sneaking -->
     
     <!-- Status Boost Description -->
     <content contentuid="h2f4288c1g1e4fg4852g80e1g09db0b94bb3d" version="1">Taking a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content><!-- Short Rest -->
@@ -93,13 +97,30 @@
     <content contentuid="ha79d9187g0539g47abg83bagbc46d76b8834" version="1">Next ranged weapon attack deals [1] to target and creatures within [2] of them.</content><!-- Hail of Thorns -->
     <content contentuid="hb7c0af17gcd17g422dg96f2gda8a553610d7" version="1">You can't cast leveled spells after you cast a bonus action spell.</content><!-- Cast Bonus Action Spell -->
     <content contentuid="h31af9e75g2b8bg4207gb1begc463e085f561" version="1">You can't cast leveled bonus action spells after casting a leveled spell.</content><!-- Cast Not Bonus Action Spell -->
-	<content contentuid="h8df73123g2750g49d9gab60g0e8a7efef41b" version="1">Surrounded by a cloud of nauseating gas.</content><!-- Stinking Cloud -->
-	<content contentuid="h9bd31f65g1cb5g4009g8d55ge4cc0256ed59" version="1">Lost an action retching and reeling.</content><!-- Stinking Cloud -->
+    <content contentuid="h8df73123g2750g49d9gab60g0e8a7efef41b" version="1">Surrounded by a cloud of nauseating gas.</content><!-- Stinking Cloud -->
+    <content contentuid="h9bd31f65g1cb5g4009g8d55ge4cc0256ed59" version="1">Lost an action retching and reeling.</content><!-- Stinking Cloud -->
+    <content contentuid="haaf9589cgdf46g45edga985g59c7380bb6c7" version="1">Can see &lt;LSTag Type="Status" Tooltip="INVISIBLE"&gt;Invisible&lt;/LSTag&gt; creatures within [1]. Automatically finds &lt;LSTag Type="Status" Tooltip="RAW_INVISIBILITY_SNEAKING_TECHNICAL"&gt;Hidden &amp; Invisible&lt;/LSTag&gt; enemies inside your vision cone.</content><!-- See Invisibility -->
+    <content contentuid="hf6442c35g03a9g4cc3gb4a9gc4579e6045a3" version="1">Affected entity can't benefit from &lt;LSTag Type="Status" Tooltip="RAW_INVISIBILITY_SNEAKING_TECHNICAL"&gt;Hidden &amp; Invisible&lt;/LSTag&gt; due to the effects of &lt;LSTag Type="Spell" Tooltip="Shout_SeeInvisibility"&gt;See Invisibility&lt;/LSTag&gt;.</content><!-- See Invisibility Reveal -->
+    <content contentuid="h7b23045bgb19bg491egabc4g9cd38ed88424" version="1">Searching for &lt;LSTag Type="Status" Tooltip="SNEAKING"&gt;Hidden&lt;/LSTag&gt; enemies within [1]. Makes a &lt;LSTag Tooltip="Perception"&gt;Perception&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against all hidden enemies' passive &lt;LSTag Tooltip="Stealth"&gt;Stealth&lt;/LSTag&gt;, revealing the ones won.</content><!-- See Invisibility Seek -->
+    <content contentuid="h74e9fb3fg63b3g4360g9a60g3452e6fc60a8" version="1">Spotted by an enemy using &lt;LSTag Type="Spell" Tooltip="Shout_SeeInvisibility_Seek"&gt;Sense Hidden Presence&lt;/LSTag&gt;.</content><!-- Found Sneaking -->
     
     <!-- Status Downed Description -->
     <content contentuid="h788b3d9dgb19cg43adg8d49gdb0f922e7400" version="1">If you reach 0 hit points, you fall Unconscious and must make Death Saving Throws. On 3 successes, you stop bleeding out and become Stable. On 3 failures, you die.
 
 If you regain any Hit Points, the condition is removed. If an ally &lt;LSTag Type="Spell" Tooltip="Target_Help"&gt;Helps&lt;/LSTag&gt; you and succeeds on their DC 10 &lt;LSTag Tooltip="Medicine"&gt;Medicine&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt;, you become stabilized and regain [1] when Out of Combat.</content><!-- Downed -->
+
+    <!-- Status Invisible Display Name -->
+    <content contentuid="h21b240a8g1a5bg4d14g9a7cge5593f7bfd1a" version="1">Hidden &amp; Invisible</content><!-- Invisibility Sneaking Technical -->
+
+    <!-- Status Invisible Description -->
+    <content contentuid="h47b01802gf74dg4c95g94adg9cc5fc2dea5a" version="1">Entity is completely undetectable by the enemies until it loses its Invisibility or its &lt;LSTag Type="Status" Tooltip="SNEAKING"&gt;Hidden&lt;/LSTag&gt; status.</content><!-- Invisibility Sneaking Technical -->
+    <content contentuid="h11f06e65g400bg4724g9e24ge9b0de4c8e3d" version="1">Has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and imposes &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on Attack Rolls against enemies that can't see invisible. &lt;br&gt;&lt;Br&gt;Invisibility ends early if the invisible entity attacks or casts another spell.</content><!-- Invisible / Invisibility -->
+    <content contentuid="hd58ffa12g127cg4a27g83efg989e5fa1a4ec" version="1">Affected entity is invisible. It has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and imposes &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on Attack Rolls against enemies that can't see invisible. &lt;br&gt;&lt;Br&gt;Invisibility ends early if the invisible entity moves, attacks or casts another spell.</content><!-- One With Shadows -->
+    <content contentuid="hed9a0784g6767g4099ga49cg55527e6b64f0" version="1">Has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and imposes &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on Attack Rolls against enemies that can't see invisible. &lt;br&gt;&lt;Br&gt;Attacking, casting spells, or entering a brightly lit area ends this condition.</content><!-- Cloak of Shadows (Monk) -->
+    <content contentuid="h81258024g2d63g4afag92ecgc64bb136d956" version="1">Has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and imposes &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on Attack Rolls against enemies that can't see invisible.</content><!-- Greater Invisibility -->
+    <content contentuid="h3b6dd94dg17c8g4f4egbd7dga67485beef35" version="1">Affected entity is invisible. It has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and imposes &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on Attack Rolls against enemies that can't see invisible. &lt;br&gt;&lt;Br&gt;Attacking, casting spells, or entering a brightly lit area ends this condition.</content><!-- Shadowblend -->
+    <content contentuid="h8fadec97gcad8g4b7eg9528g8c80dde94805" version="1">Has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and imposes &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on Attack Rolls against enemies that can't see invisible. &lt;br&gt;&lt;Br&gt;Attacking or casting spells that aren't &lt;LSTag Type="Spell" Tooltip="Target_MistyEscape_ShadarKai_GloomWeaver"&gt;Shadowslip&lt;/LSTag&gt; ends this condition.</content><!-- Invisibility ShadarKai Gloomweaver -->
+    <content contentuid="hd63af1fag49c2g4ba2g9e42gc1b5bf4c48d6" version="1">Affected entity is invisible. It has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and imposes &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on Attack Rolls against enemies that can't see invisible. It has a +[1] bonus to Stealth &lt;LSTag Tooltip="AbilityCheck"&gt;Checks&lt;/LSTag&gt;. &lt;br&gt;&lt;br&gt;Invisibility ends early if the invisible entity moves, attacks or casts another spell.</content><!-- Hide in Plain Sight -->
 
     <!-- Status Knocked Downed Description -->
     <content contentuid="hf9fcc402g8592g454cga793g52f04804a411" version="1">Can't move or take actions, bonus actions, or reactions.&lt;br&gt;&lt;br&gt;Attacks against a Prone creature have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; if they're made within [1] of the creature, otherwise they have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;A Prone creature must spend half its &lt;LSTag Tooltip="MovementSpeed"&gt;Movement Speed&lt;/LSTag&gt; to stand up.</content><!-- Prone -->
@@ -124,10 +145,13 @@ If you regain any Hit Points, the condition is removed. If an ally &lt;LSTag Typ
     <content contentuid="h9204dac0g5de4g4199ga876g8eb69468ee8a" version="1">Put creatures into a magical slumber. Targets in an area are affected in ascending order of their current hit points (ignoring unconscious creatures), up to a combined of [1].</content><!-- Sleep -->
     <content contentuid="h63b15a52g69efg4c70g93acge877ff55d83e" version="1">Creates a storm cloud in the targeted area. Then, you can call down lightning on an area inside the storm striking all targets. For the next 10 turns, you can call down lightning again using an Action.</content><!-- Call Lightning -->
     <content contentuid="hd58f9063g3911g45aag9236g2115019b3240" version="1">Dismiss the effects of Feign Death on a creature.</content><!-- Feign Death: Dismiss -->
+    <content contentuid="h18ef7f55gdaf3g435fg9e90ga93cfb6d5eaf" version="1">Touch a creature to turn it &lt;LSTag Type="Status" Tooltip="INVISIBILITY"&gt;Invisible&lt;/LSTag&gt;. It has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and imposes &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on Attack Rolls against enemies that can't see invisible.</content><!-- Invisibility -->
+    <content contentuid="hc207157bg97a8g45ebg8946g67866b4bda43" version="1">Turn a creature &lt;LSTag Type="Status" Tooltip="GREATER_INVISIBILITY"&gt;Invisible&lt;/LSTag&gt;. It has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and imposes &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on Attack Rolls against enemies that can't see invisible.</content><!-- Greater Invisibility -->
     
     <!-- Target Extra Description -->
     <content contentuid="hed88db7bgfbe4g4ab0g9252g068a8bcc48c0" version="1">Shoving depends on your &lt;LSTag Tooltip="Athletics"&gt;Athletics&lt;/LSTag&gt;, and the higher of the target's Athletics or &lt;LSTag Tooltip="Acrobatics"&gt;Acrobatics&lt;/LSTag&gt;.</content><!-- Shove -->
     <content contentuid="h53da955bgfbadg4d77gb962g11eec4070db8" version="1">Removes Burning, Ensnared, Entangled, Enwebbed, Prone, and Sleeping.</content><!-- Help -->
+    <content contentuid="h7931a54eg73b9g425bg9243g2331db1f3a32" version="1">Invisibility breaks when you attack or cast another spell.</content><!-- Invisibility -->
 
     <!-- Throw Display Name -->
     <content contentuid="h42ce0a1eg03e9g492dg9457g553a25b8a68c" version="1">Throw (Item)</content><!-- Throw -->
@@ -148,4 +172,9 @@ If you regain any Hit Points, the condition is removed. If an ally &lt;LSTag Typ
     <content contentuid="hf080f971g5582g46d8g8938gdb8c8b560d42" version="1">Your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; affects how much weight you can throw. Heavier items deal more damage.</content><!-- Throw -->
     <content contentuid="h6da3fafbgfe47g420fgb449g9756dc4146fe" version="1">Your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; affects how much weight you can throw.</content><!-- Throw Cunning Action -->
     <content contentuid="h12c219aag52b4g4a22gb0e3g160edbaffbb7" version="1">Attacking further than the normal range ([1] for Javelins and [2] for other weapons) impose &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on the &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt;.</content><!-- Throw Weapon -->
+
+    <!-- Tooltip Extra Texts -->
+    <content contentuid="hc2a51188g0925g4599g981bg32cd90d92c01" version="1">&lt;LSTag Type="Image" Info="SoftWarning"/&gt; Invisibility ends early if you attack or cast another spell.</content>
+    <content contentuid="hb4b0e8ccge8a7g4844g946cg52e24f6422ea" version="1">&lt;LSTag Type="Image" Info="SoftWarning"/&gt; Invisibility ends early if you move, attack or cast another spell.</content>
+    <content contentuid="hea1370edgac4dg4a8cg8a43g373b34184b7e" version="1">&lt;LSTag Type="Image" Info="SoftWarning"/&gt; Invisibility ends early if you attack, cast another spell or enter a brightly lit area.</content>
 </contentList>
