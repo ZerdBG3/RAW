@@ -106,7 +106,7 @@ local function RAW_RegisterInvisibilityControlEvent()
         function(char, status, causee, storyActionID)
             if not RAW_Bool(Osi.IsStatusFromGroup(status, "SG_Invisible")) or
                 not RAW_Bool(Osi.IsCharacter(char)) or
-                not RAW_Bool(Osi.IsPlayer(char)) or
+                RAW_Bool(Osi.IsPlayer(char)) or
                 RAW_Bool(Osi.HasActiveStatus(char, "SEE_INVISIBILITY_REVEAL")) or
                 RAW_Bool(Osi.HasActiveStatus(char, "SNEAKING")) then
 
@@ -146,7 +146,7 @@ local function RAW_RegisterInvisibilityControlEvent()
 
 end
 
-function RAW_Invisibility()
+function RAW_InvisibilityServer()
     RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_Invisible)
     RAW_PrintIfDebug(CentralizedString("Option: invisibility"), RAW_PrintTable_Invisible)
 

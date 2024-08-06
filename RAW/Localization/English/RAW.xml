@@ -9,6 +9,7 @@
     <content contentuid="h0afc3739g41e7g4c3fgb280g4978d95e03ae" version="1">Can't attune items while in combat</content><!-- Attunement while in combat -->
     <content contentuid="h57e004ccg5136g4ec6gba3fg521d0e4c6626" version="1">Maximum amount of attuned items</content><!-- Attunement maximum items -->
     <content contentuid="h1eceeeb7gcaeeg46eagb8afg4ff8386033a5" version="1">Already concentrating on a spell</content><!-- Concentration blocker -->
+    <content contentuid="h0730e799gc410g42f2g9cceg0120ee90b886" version="1">Can't target invisible characters</content><!-- Spell against invisible target -->
 
     <!-- Feat Description -->
     <content contentuid="h15b473b7gf59dg40f4g9d6bg7015eb159089" version="1">When you make crossbow attacks within melee range, the &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; do not have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;You ignore the loading property of crossbows for the purposes of Extra Attack.</content><!-- Crossbow Expert -->

@@ -93,7 +93,86 @@ _Depended by: [`invisibility_aoo`](https://github.com/ZerdBG3/RAW/blob/main/Feat
 
 Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/about-me?gameId=3474) for his initial implementation on [(See) Invisibility Rework](https://www.nexusmods.com/baldursgate3/mods/3902) was the base for this option
 * Invisibility alone no longers makes the character completely undetectable, only providing Advantage to attack rolls against enemies that can't see invisible and Disadvantage when being attack by enemies that can't see invisible
-  * _Unfortunately, there's no defining features on spells like Sacred Flame that indicates the caster needs to see the target. Because of that, invisible characters will be able to be targeted by such spells, which is not RAW. This is the tradeoff for being able to know the invisible character's position and being able to at least attack with disadvantage_
+  * _Spells that require the caster to see the target also can't be used against an invisible creature, unless the caster has See invisibility or similar_
+
+<details>
+  <summary>List of Spells that can't be used against unseen targets</summary>
+    <p>
+
+    - Vanilla spells
+      - Projectile_AcidSplash
+      - Target_AnimalFriendship
+      - Target_Bane
+      - Target_Banishment
+      - Target_Blight
+      - Target_Blindness
+      - Projectile_ChainLightning
+      - Target_CharmPerson
+      - Projectile_ChromaticOrb
+      - Target_Command_Container
+      - Target_CompelledDuel
+      - Target_Counterspell
+      - Target_CrownOfMadness
+      - Projectile_Disintegrate
+      - Target_DominateBeast
+      - Target_DominatePerson
+      - Target_EnlargeReduce
+      - Target_Enthrall
+      - Target_Eyebite
+      - Target_Eyebite_Asleep_Free
+      - Target_Eyebite_Panicked_Free
+      - Target_Eyebite_Sickened_Free
+      - Target_FleshToStone
+      - Target_Harm
+      - Target_Haste
+      - Target_Heal
+      - Target_HealingWord
+      - Target_HeatMetal
+      - Target_HellishRebuke
+      - Target_Hex
+      - Target_Hex_Reapply
+      - Target_HoldMonster
+      - Target_HoldPerson
+      - Target_HuntersMark
+      - Target_HuntersMark_Reapply
+      - Target_Knock
+      - Projectile_MagicMissile
+      - Shout_HealingWord_Mass
+      - Target_IrresistibleDance
+      - Target_PhantasmalForce
+      - Target_PhantasmalKiller
+      - Projectile_PoisonSpray
+      - Target_Polymorph
+      - Target_PowerWordKill
+      - Shout_PrayerOfHealing
+      - Target_SacredFlame
+      - Target_Seeming
+      - Target_HideousLaughter
+      - Throw_Telekinesis
+      - "Target_ViciousMockery"
+
+    - 5e Spells
+      - Target_Catnap
+      - Target_CauseFear
+      - Target_CharmMonster
+      - Target_Frostbite
+      - Target_Infestation
+      - Target_IntellectFortress
+      - Target_LifeTransference
+      - Target_LightningLure
+      - Target_MaximiliansEarthenGrasp
+      - Target_MindSliver
+      - Target_MindSpike
+      - Projectile_NegativeEnergyFlood
+      - Target_PowerWordStun
+      - Target_SteelWindStrike
+      - Target_TashasMindWhip
+      - Target_TollTheDead
+      - Shout_WordOfRadiance
+
+  </p>
+</details>
+
 * Normal Invisibility is no longer removed by being damaged, interacting with items or being _wet_ 💧. Only attacking and casting a spell will remove Invisibility
 * Greater Invisibility is no longer removed at all (no saves)
 * Sneaking while invisible turns the character `Hidden & Invisible` (can be done inside enemy sight cones if they can't see invisible), not being detectable by anyone that can't see invisible

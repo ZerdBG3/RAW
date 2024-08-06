@@ -134,3 +134,8 @@ function RAW_CanSeeInvisible(entity)
         | (HasStatus('SEE_INVISIBILITY', entity) | HasStatus('MAG_SEE_INVISIBILITY_HIDDEN_IGNORE_RESTING', entity)) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 18)
         | (HasPassive('FightingStyle_BlindFighting', entity)) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 3)
 end
+
+function RAW_SpellAgainstInvisibleTarget()
+    result = ~HasStatus('SG_Invisible', context.Target) | RAW_CanSeeInvisible(context.Source)
+    return ConditionResult(result.Result, {ConditionError("RAW_SpellAgainstInbisibleTarget_False")})
+end
