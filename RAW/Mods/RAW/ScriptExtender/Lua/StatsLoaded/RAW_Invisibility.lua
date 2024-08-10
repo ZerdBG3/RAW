@@ -1,8 +1,8 @@
 local ENUM_RAW_SpellsAgainstInvisibleTargets, ENUM_RAW_SpellsAgainstInvisibleTargetsIgnore
 local RAW_UserSpellsAdded, RAW_UserSpellsRemoved
 
-local userSpellsAddedFileName = "Invisibility_Spells_Add.json"
-local userSpellsRemovedFileName = "Invisibility_Spells_Remove.json"
+local userSpellsAddedFileName = "invisibility/Spells_Add.json"
+local userSpellsRemovedFileName = "invisibility/Spells_Remove.json"
 
 local invisibleCondition = "RAW_SpellAgainstInvisibleTarget"
 local spellConditionVars = "(context.Target, context.Source)"

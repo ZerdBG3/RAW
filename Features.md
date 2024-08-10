@@ -92,12 +92,24 @@ Thanks [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?gameId=3474
 _Depended by: [`invisibility_aoo`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#invisibility-aoo-%EF%B8%8F-invisibilityaoo)_
 
 Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/about-me?gameId=3474) for his initial implementation on [(See) Invisibility Rework](https://www.nexusmods.com/baldursgate3/mods/3902) was the base for this option
-* Invisibility alone no longers makes the character completely undetectable, only providing Advantage to attack rolls against enemies that can't see invisible and Disadvantage when being attack by enemies that can't see invisible
-  * _Spells that require the caster to see the target also can't be used against an invisible creature, unless the caster has See invisibility or similar_
+* Invisibility alone no longers makes the character completely undetectable, only providing Advantage to attack rolls against enemies that can't see invisible and Disadvantage when being attacked by enemies that can't see invisible
+* Spells that require the caster to see the target also can't be used against an invisible creature, unless the caster has See invisibility or similar
+* Normal Invisibility is no longer removed by being damaged, interacting with items or being _wet_ 💧. Only attacking and casting a spell will remove Invisibility
+* Greater Invisibility is no longer removed at all (no saves)
+* Sneaking while invisible turns the character `Hidden & Invisible` (can be done inside enemy sight cones if they can't see invisible), not being detectable by anyone that can't see invisible
+  * _Being `Hidden & Invisible` is the same as Vanilla Invisible. It allows pickpocketing, avoids starting combat when near enemies, etc_
+* See Invisibility and similar features allows characters to see the `Hidden & Invisible` characters if they're in their Line of Sight (the usual red cone for sneaking), but doesn't remove the invisibility status, allowing the usual Stealth check when inside a sight cone. It also negates the advantage/disadvantage benefits from Invisibility, so it fully counters invisibility. Leaving the sight cone of See Invisibility while still sneaking regains `Hidden & Invisible`
+* Sense Hidden Presence (the NPC seeking ability) makes a perception check against the passive stealth of every sneaking character in a radius (no LoS required, since it theoretically uses hearing). Upon succeeding, it removes the sneaking (but never the invisibility). It can be used by players and was readjusted to cost 1 action (emulating RAW Active Perception roll)
+* Enemies gain one free sneak _attempt_ when they become invisible, rolling their stealth against the passive perception of every enemy of theirs in a radius (same radius as Sense Hidden Presence). If they beat ALL passive perceptions, they become `Hidden & Invisible`
+* While invisible, enemies can now attempt to sneak for 1 action, becoming `Hidden & Invisible` without need for a stealth check
+
+### 🔧 Customization
 
 <details>
-  <summary>List of Spells that can't be used against unseen targets</summary>
-    <p>
+  <summary>Default list of Spells that require sight</summary>
+  <p>
+
+  Based on [this list](https://homebrewery.naturalcrit.com/share/Hk7zwD4Gxr)
 
     - Vanilla spells
       - Projectile_AcidSplash
@@ -106,7 +118,7 @@ Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/about-m
       - Target_Banishment
       - Target_Blight
       - Target_Blindness
-      - Projectile_ChainLightning
+      - Projectile_ChainLightning (can bounce to invisible targets)
       - Target_CharmPerson
       - Projectile_ChromaticOrb
       - Target_Command_Container
@@ -119,22 +131,17 @@ Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/about-m
       - Target_EnlargeReduce
       - Target_Enthrall
       - Target_Eyebite
-      - Target_Eyebite_Asleep_Free
-      - Target_Eyebite_Panicked_Free
-      - Target_Eyebite_Sickened_Free
       - Target_FleshToStone
       - Target_Harm
       - Target_Haste
       - Target_Heal
       - Target_HealingWord
-      - Target_HeatMetal
-      - Target_HellishRebuke
+      - Target_HeatMetal (reapply damage can be used against invisible targets)
+      - Shout_HellishRebuke
       - Target_Hex
-      - Target_Hex_Reapply
       - Target_HoldMonster
       - Target_HoldPerson
       - Target_HuntersMark
-      - Target_HuntersMark_Reapply
       - Target_Knock
       - Projectile_MagicMissile
       - Shout_HealingWord_Mass
@@ -149,7 +156,7 @@ Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/about-m
       - Target_Seeming
       - Target_HideousLaughter
       - Throw_Telekinesis
-      - "Target_ViciousMockery"
+      - Target_ViciousMockery
 
     - 5e Spells
       - Target_Catnap
@@ -173,14 +180,27 @@ Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/about-m
   </p>
 </details>
 
-* Normal Invisibility is no longer removed by being damaged, interacting with items or being _wet_ 💧. Only attacking and casting a spell will remove Invisibility
-* Greater Invisibility is no longer removed at all (no saves)
-* Sneaking while invisible turns the character `Hidden & Invisible` (can be done inside enemy sight cones if they can't see invisible), not being detectable by anyone that can't see invisible
-  * _Being `Hidden & Invisible` is the same as Vanilla Invisible. It allows pickpocketing, avoids starting combat when near enemies, etc_
-* See Invisibility and similar features allows characters to see the `Hidden & Invisible` characters if they're in their Line of Sight (the usual red cone for sneaking), but doesn't remove the invisibility status, allowing the usual Stealth check when inside a sight cone. It also negates the advantage/disadvantage benefits from Invisibility, so it fully counters invisibility. Leaving the sight cone of See Invisibility while still sneaking regains `Hidden & Invisible`
-* Sense Hidden Presence (the NPC seeking ability) makes a perception check against the passive stealth of every sneaking character in a radius (no LoS required, since it theoretically uses hearing). Upon succeeding, it removes the sneaking (but never the invisibility). It can be used by players and was readjusted to cost 1 action (emulating RAW Active Perception roll)
-* Enemies gain one free sneak _attempt_ when they become invisible, rolling their stealth against the passive perception of every enemy of theirs in a radius (same radius as Sense Hidden Presence). If they beat ALL passive perceptions, they become `Hidden & Invisible`
-* While invisible, enemies can now attempt to sneak for 1 action, becoming `Hidden & Invisible` without need for a stealth check
+* You can add other spells that require sight by including their stat name to `invisibility/Spells_Add.json`. If you wish to have a spell not require sight, add its stat name to `invisibility/Spells_Remove.json`
+  * _Instructions to create the file is present on the [Installation Guide](https://github.com/ZerdBG3/RAW/blob/main/Installing.md#optional-configurations)_
+  * _Adding a spell to `Spells_Add.json` or `Spells_Remove.json` will automatically affect all spells that inherit from it, like upcast, container spells, etc_
+  * _For interrupts, use the spell entry which has the `InterruptPrototype`, not the interrupt entry (Eg.: `Shout_HellishRebuke` instead of `Target_HellishRebuke` or `Interrupt_HellishRebuke`)_
+* In both files, you must structure it like a json array, as demonstrated in the example below
+
+<details>
+  <summary>Example of Spells_Add.json</summary>
+  <p>
+
+  * Pay close attention to the lack of `,` at the last line
+
+    ```json
+    [
+      "Target_MyCustomSpellThatRequiresSight",
+      "Projectile_SomethingThatRequiresSight"
+    ]
+    ```
+
+  </p>
+</details>
 
 ## Invisibility AoO ⚙️ `invisibility_aoo`
 ⚠️ ${\color{red}{\text{Disabled by default}}}$

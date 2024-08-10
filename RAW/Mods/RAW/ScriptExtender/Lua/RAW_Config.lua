@@ -208,6 +208,24 @@ function RAW_LoadModOptions(shouldPrint)
     RAW_PrintIfDebug("====================================================================================================\n", shouldPrint)
 end
 
+function RAW_LoadCustomizableOptionValue(fileName, default, isValid)
+    local filePath = filesPath .. fileName
+    RAW_PrintIfDebug(CentralizedString("Searching for User file " .. filePath), RAW_PrintTable_ModOptions)
+    local ok, optionsFile = pcall(Ext.IO.LoadFile, filePath)
+    if not ok or not optionsFile then
+        RAW_PrintIfDebug(CentralizedString("User " .. filePath .. " not found. Will create one!"), RAW_PrintTable_ModOptions, RAW_PrintTypeWarning)
+        Ext.IO.SaveFile(filePath, tostring(default))
+        return nil
+    end
+
+    if not isValid(optionsFile) then
+        RAW_PrintIfDebug(CentralizedString("Invalid " .. filePath .. " file. Did not load info!"), RAW_PrintTable_ModOptions, RAW_PrintTypeError)
+        return nil
+    end
+
+    return optionsFile
+end
+
 function RAW_LoadCustomizableOptionList(fileName)
     local filePath = filesPath .. fileName
     RAW_PrintIfDebug(CentralizedString("Searching for User file " .. filePath), RAW_PrintTable_ModOptions)
