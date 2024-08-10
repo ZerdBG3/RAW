@@ -1,28 +1,68 @@
-local ENUM_RAW_SpellsAgainstInvisibleTargets
+local ENUM_RAW_SpellsAgainstInvisibleTargets, ENUM_RAW_SpellsAgainstInvisibleTargetsIgnore
+local RAW_UserSpellsAdded, RAW_UserSpellsRemoved
 
-local function RAW_IsSpellBlockedByInvisibility(spell)
-    if ENUM_RAW_SpellsAgainstInvisibleTargets[spell.Name] then
-        return true
+local userSpellsAddedFileName = "Invisibility_Spells_Add.json"
+local userSpellsRemovedFileName = "Invisibility_Spells_Remove.json"
+
+local invisibleCondition = "RAW_SpellAgainstInvisibleTarget"
+local spellConditionVars = "(context.Target, context.Source)"
+local interruptConditionVars = "(context.Source, context.Observer)"
+
+local function RAW_IsSpellBlockedByInvisibility(spell, tree)
+    if ENUM_RAW_SpellsAgainstInvisibleTargetsIgnore[spell.Name] then
+        return nil
     end
+    if ENUM_RAW_SpellsAgainstInvisibleTargets[spell.Name] then
+        return spell
+    end
+
+    RAW_Set_Add(tree, spell.Name)
 
     if spell.RootSpellID ~= nil and spell.RootSpellID ~= "" then
         local rootSpell = Ext.Stats.Get(spell.RootSpellID)
-        if rootSpell ~= nil and rootSpell.Name ~= spell.Name then
-            return RAW_IsSpellBlockedByInvisibility(rootSpell)
+        if rootSpell ~= nil and rootSpell.Name ~= spell.Name and not tree[rootSpell.Name] then
+            return RAW_IsSpellBlockedByInvisibility(rootSpell, tree)
         end
     end
 
     if spell.SpellContainerID ~= nil and spell.SpellContainerID ~= "" then
         local spellContainer = Ext.Stats.Get(spell.SpellContainerID)
-        if spellContainer ~= nil and spellContainer.Name ~= spell.Name then
-            if not string.find(spellContainer.ContainerSpells, spell.Name) then
-                return false
-            end
-            return RAW_IsSpellBlockedByInvisibility(spellContainer)
+        if spellContainer ~= nil and spellContainer.Name ~= spell.Name and not tree[spellContainer.Name] then
+            return RAW_IsSpellBlockedByInvisibility(spellContainer, tree)
         end
     end
 
-    return false
+    local parent = RAW_GetOriginalParent(spell)
+    if parent ~= "" and parent ~= spell.Name then
+        local parentSpell = Ext.Stats.Get(parent)
+        if parentSpell ~= nil and not tree[parentSpell.Name] then
+            return RAW_IsSpellBlockedByInvisibility(parentSpell, tree)
+        end
+    end
+
+    return nil
+end
+
+local function RAW_AddInvisibilityConditionToInterrupt(name)
+    local interrupt = Ext.Stats.Get(name)
+    if interrupt == nil then
+        return
+    end
+
+    RAW_PrintIfDebug("\nAdding Conditions to " .. interrupt.Name, RAW_PrintTable_Invisible)
+    if string.find(interrupt.Conditions, invisibleCondition) then
+        RAW_PrintIfDebug("\tInterrupt already has " .. invisibleCondition .. " condition", RAW_PrintTable_Invisible, RAW_PrintTypeWarning)
+        return
+    end
+
+    local conditionsPrefix = ""
+    if interrupt.Conditions ~= nil and interrupt.Conditions ~= "" then
+        conditionsPrefix = "(" .. interrupt.Conditions .. ") and "
+    end
+
+    interrupt.Conditions = conditionsPrefix ..
+        "(" .. invisibleCondition .. interruptConditionVars .. ")"
+    RAW_PrintIfDebug("\tConditions: " .. interrupt.Conditions, RAW_PrintTable_Invisible)
 end
 
 local function RAW_AddInvisibilityConditionToSpell(name)
@@ -31,20 +71,45 @@ local function RAW_AddInvisibilityConditionToSpell(name)
         return
     end
 
-    if not RAW_IsSpellBlockedByInvisibility(spell) then
+    local rootSpell = RAW_IsSpellBlockedByInvisibility(spell, {})
+    if rootSpell == nil then
         return
     end
 
-    RAW_PrintIfDebug("\nAdding TargetConditions to " .. spell.Name, RAW_PrintTable_Invisible)
-
-    local targetConditionsPrefix = ""
-    if spell.TargetConditions ~= nil and spell.TargetConditions ~= "" then
-        targetConditionsPrefix = "(" .. spell.TargetConditions .. ") and "
+    -- Trap spells that inherit usual spells shall not have invisibility condition
+    if RAW_HasValueInList(spell.SpellFlags, "IsTrap") then
+        return
     end
 
-    spell.TargetConditions = targetConditionsPrefix ..
-        "(RAW_SpellAgainstInvisibleTarget())"
-    RAW_PrintIfDebug("\tTargetConditions: " .. spell.TargetConditions, RAW_PrintTable_Invisible)
+    -- Spells that are an interrupt shouldn't get the conditions on the spell itself, instead
+    --   the condition should be added directly to the interrupt
+    if spell.InterruptPrototype ~= nil and spell.InterruptPrototype ~= "" then
+        RAW_AddInvisibilityConditionToInterrupt(spell.InterruptPrototype)
+        return
+    -- If the spell doesn't have an interrupt but its root does, it should skip applying the condition
+    elseif rootSpell.InterruptPrototype ~= nil and rootSpell.InterruptPrototype ~= "" then
+        return
+    end
+
+    local targetConditionData = "TargetConditions"
+    if spell.SpellType == "Throw" then
+        targetConditionData = "ThrowableTargetConditions"
+    end
+
+    RAW_PrintIfDebug("\nAdding " .. targetConditionData .. " to " .. spell.Name, RAW_PrintTable_Invisible)
+    if string.find(spell[targetConditionData], invisibleCondition) then
+        RAW_PrintIfDebug("\tSpell already has " .. invisibleCondition .. " condition", RAW_PrintTable_Invisible, RAW_PrintTypeWarning)
+        return
+    end
+
+    local targetConditionsPrefix = ""
+    if spell[targetConditionData] ~= nil and spell[targetConditionData] ~= "" then
+        targetConditionsPrefix = "(" .. spell[targetConditionData] .. ") and "
+    end
+
+    spell[targetConditionData] = targetConditionsPrefix ..
+        "(" .. invisibleCondition .. spellConditionVars .. ")"
+    RAW_PrintIfDebug("\t" .. targetConditionData .. ": " .. spell[targetConditionData], RAW_PrintTable_Invisible)
 end
 
 ---------------------------------------- STATS FUNCTION ----------------------------------------
@@ -62,6 +127,16 @@ function RAW_InvisibilityStats()
 
     RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_Invisible)
     RAW_PrintIfDebug(CentralizedString("Starting the Spells against Invisible characters setup"), RAW_PrintTable_Invisible)
+
+    RAW_UserSpellsAdded = RAW_LoadCustomizableOptionList(userSpellsAddedFileName)
+    if RAW_UserSpellsAdded ~= nil then
+        RAW_Set_Union(ENUM_RAW_SpellsAgainstInvisibleTargets, RAW_UserSpellsAdded)
+    end
+
+    RAW_UserSpellsRemoved = RAW_LoadCustomizableOptionList(userSpellsRemovedFileName)
+    if RAW_UserSpellsRemoved ~= nil then
+        RAW_Set_Union(ENUM_RAW_SpellsAgainstInvisibleTargetsIgnore, RAW_UserSpellsRemoved)
+    end
 
     for _, name in pairs(Ext.Stats.GetStats("SpellData")) do
         RAW_AddInvisibilityConditionToSpell(name)
@@ -88,7 +163,7 @@ ENUM_RAW_SpellsAgainstInvisibleTargets = RAW_Set {
     "Projectile_ChromaticOrb",
     "Target_Command_Container",
     "Target_CompelledDuel",
-    "Target_Counterspell", -- Check if it works
+    "Target_Counterspell",
     "Target_CrownOfMadness",
     "Projectile_Disintegrate",
     "Target_DominateBeast",
@@ -96,22 +171,17 @@ ENUM_RAW_SpellsAgainstInvisibleTargets = RAW_Set {
     "Target_EnlargeReduce",
     "Target_Enthrall",
     "Target_Eyebite",
-    "Target_Eyebite_Asleep_Free",
-    "Target_Eyebite_Panicked_Free",
-    "Target_Eyebite_Sickened_Free",
     "Target_FleshToStone",
     "Target_Harm",
     "Target_Haste",
     "Target_Heal",
     "Target_HealingWord",
     "Target_HeatMetal",
-    "Target_HellishRebuke", -- Check if it works
+    "Shout_HellishRebuke",
     "Target_Hex",
-    "Target_Hex_Reapply",
     "Target_HoldMonster",
     "Target_HoldPerson",
     "Target_HuntersMark",
-    "Target_HuntersMark_Reapply",
     "Target_Knock",
     "Projectile_MagicMissile",
     "Shout_HealingWord_Mass",
@@ -149,4 +219,14 @@ ENUM_RAW_SpellsAgainstInvisibleTargets = RAW_Set {
     "Target_LightningLure",
     "Target_MindSliver",
     "Target_TashasMindWhip",
+}
+
+ENUM_RAW_SpellsAgainstInvisibleTargetsIgnore = RAW_Set {
+    "Projectile_ChainLightning_Explosion", -- Chain Lightning can bounce to invisible enemies
+    "Target_HeatMetal_Reapply", -- Heat Metal follow up damage doesn't require sight
+    "Target_HAV_DevilishOX_AlternateForm_DireWolf",
+    "Target_EPI_PartyTime_GaleGod",
+    "Target_HAV_TakingIsobel_TakeMol",
+    "Target_Polymorph_Shapechanger",
+    "Target_WYR_SentientAmulet_MonkHeal",
 }

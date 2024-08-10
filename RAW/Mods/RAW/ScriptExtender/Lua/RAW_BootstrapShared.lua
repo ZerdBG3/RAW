@@ -33,6 +33,8 @@ local function RAW_StatsLoaded()
     RAW_PrintIfDebug(CentralizedString("[RAW:BootstrapShared.lua] StatsLoaded Start"), RAW_PrintTable_ModOptions)
     RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_ModOptions)
 
+    RAW_LoadVanillaStatFileParents()
+
     RAW_Attunement()
     RAW_Barbarian_Berserker()
     -- RAW_CantripsScaling()

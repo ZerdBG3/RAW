@@ -143,7 +143,6 @@ local function RAW_RegisterInvisibilityControlEvent()
             end
         end
     )
-
 end
 
 function RAW_InvisibilityServer()
