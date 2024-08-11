@@ -81,6 +81,7 @@ _Depends on: [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Feature
 ## Instant Death ⚙️ `instantDeath`
 Thanks [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?gameId=3474) for the implementation
 * Players only: Taking damage that exceeds the current hit points by the character's hit point maximum kills them outright, without death saving throws
+  * _There is a bug in vanilla that outright kills polymorphed characters if the damage is bigger than the transformation's and the original character's current HP combined. This is not the mod's fault_
 
 ## Intangible Summons ⚙️ `intangibleSummons`
 ❗️ I highly recommend using [dr. kekyll's Summon Initiative Fixer mod](https://www.nexusmods.com/baldursgate3/mods/8692?tab=description) to make sure Flaming Sphere and Spiritual Weapon always share their turn with the caster
