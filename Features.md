@@ -90,9 +90,9 @@ Thanks [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?gameId=3474
 * Spiritual Weapon is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to (except on the turn it is cast). Also removed all special attacks
 
 ## Invisibility ⚙️ `invisibility`
-_Depended by: [`invisibility_aoo`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#invisibility-aoo-%EF%B8%8F-invisibilityaoo)_
+_Depended by: [`invisibility_aoo`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#invisibility-aoo-%EF%B8%8F-invisibility_aoo)_
 
-Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/about-me?gameId=3474) for his initial implementation on [(See) Invisibility Rework](https://www.nexusmods.com/baldursgate3/mods/3902) was the base for this option
+Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?gameId=3474) for his initial implementation on [(See) Invisibility Rework](https://www.nexusmods.com/baldursgate3/mods/3902) was the base for this option
 * Invisibility alone no longers makes the character completely undetectable, only providing Advantage to attack rolls against enemies that can't see invisible and Disadvantage when being attacked by enemies that can't see invisible
 * Spells that require the caster to see the target also can't be used against an invisible creature, unless the caster has See invisibility or similar
 * Normal Invisibility is no longer removed by being damaged, interacting with items or being _wet_ 💧. Only attacking and casting a spell will remove Invisibility
