@@ -4,9 +4,12 @@
 // ------------------- Instant Death -------------------
 // ------------------------------------------------------
 
+// Ignores the instant death rule if the target is polymorphed and it isn't a disguise
+// There is a bug in vanilla that outright kills polymorphed characters if the damage is bigger than the transformation's
+//   and the original character's current HP combined. This is not the mod's fault
 new entry "RAW_InstantDeath"
 type "PassiveData"
 data "Properties" "IsHidden"
 data "StatsFunctorContext" "OnDamaged"
 data "Conditions" "TotalDamageDoneGreaterThan((context.AttackDescription.InitialHPPercentage * context.Target.MaxHP / 100) + context.Target.MaxHP)"
-data "StatsFunctors" "IF(not HasStatus('DEATH_WARD')):Kill()"
+data "StatsFunctors" "IF(not (HasStatus('DEATH_WARD') or (HasStatus('SG_Polymorph')) and not HasStatus('SG_Disguise'))):Kill()"

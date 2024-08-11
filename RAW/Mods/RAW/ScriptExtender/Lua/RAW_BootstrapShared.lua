@@ -18,6 +18,7 @@ Ext.Require(RAW_StatsLoadedPath .. "RAW_EquipAction.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_ExtraAttack.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_Feats.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_InstantDeath.lua")
+Ext.Require(RAW_StatsLoadedPath .. "RAW_Invisibility.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_Rogue.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_Rogue_Thief.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_SkillCheck_CritFail.lua")
@@ -32,6 +33,8 @@ local function RAW_StatsLoaded()
     RAW_PrintIfDebug(CentralizedString("[RAW:BootstrapShared.lua] StatsLoaded Start"), RAW_PrintTable_ModOptions)
     RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_ModOptions)
 
+    RAW_LoadVanillaStatFileParents()
+
     RAW_Attunement()
     RAW_Barbarian_Berserker()
     -- RAW_CantripsScaling()
@@ -42,6 +45,7 @@ local function RAW_StatsLoaded()
     RAW_ExtraAttack()
     RAW_Feats()
     RAW_InstantDeath()
+    RAW_InvisibilityStats()
     RAW_Rogue()
     RAW_Rogue_Thief()
     RAW_SkillCheck_CritFail()
@@ -61,6 +65,7 @@ Ext.Events.StatsLoaded:Subscribe(RAW_StatsLoaded)
 -- Osiris Files
 local RAW_OsirisFilesPath = "Osiris/"
 
+Ext.Require(RAW_OsirisFilesPath .. "RAW_Invisibility.lua")
 Ext.Require(RAW_OsirisFilesPath .. "RAW_WeaponSets.lua")
 
 if Ext.IsServer() then
@@ -68,6 +73,7 @@ if Ext.IsServer() then
     RAW_PrintIfDebug(CentralizedString("[RAW:BootstrapShared.lua] Osiris Registration Start"), RAW_PrintTable_ModOptions)
     RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_ModOptions)
 
+    RAW_InvisibilityServer()
     RAW_WeaponSets()
 
     RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_ModOptions)

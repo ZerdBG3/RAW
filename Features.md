@@ -81,12 +81,133 @@ _Depends on: [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Feature
 ## Instant Death ⚙️ `instantDeath`
 Thanks [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?gameId=3474) for the implementation
 * Players only: Taking damage that exceeds the current hit points by the character's hit point maximum kills them outright, without death saving throws
+  * _There is a bug in vanilla that outright kills polymorphed characters if the damage is bigger than the transformation's and the original character's current HP combined. This is not the mod's fault_
 
 ## Intangible Summons ⚙️ `intangibleSummons`
 ❗️ I highly recommend using [dr. kekyll's Summon Initiative Fixer mod](https://www.nexusmods.com/baldursgate3/mods/8692?tab=description) to make sure Flaming Sphere and Spiritual Weapon always share their turn with the caster
 * Flaming Sphere is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to
 * Guardian of Faith is indestructible (except by its own damage), ignored by enemies and has no hitbox. It only attacks enemies that enter its range on their turn, or start their turn in its range (similar to the spells changed by [`spells_onApplyAndOnTurn`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#spells---on-apply-and-on-turn-%EF%B8%8F-spells_onapplyandonturn)). No longer retaliates when attacks are made in range or during its turn in combat
 * Spiritual Weapon is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to (except on the turn it is cast). Also removed all special attacks
+
+## Invisibility ⚙️ `invisibility`
+_Depended by: [`invisibility_aoo`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#invisibility-aoo-%EF%B8%8F-invisibilityaoo)_
+
+Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/about-me?gameId=3474) for his initial implementation on [(See) Invisibility Rework](https://www.nexusmods.com/baldursgate3/mods/3902) was the base for this option
+* Invisibility alone no longers makes the character completely undetectable, only providing Advantage to attack rolls against enemies that can't see invisible and Disadvantage when being attacked by enemies that can't see invisible
+* Spells that require the caster to see the target also can't be used against an invisible creature, unless the caster has See invisibility or similar
+* Normal Invisibility is no longer removed by being damaged, interacting with items or being _wet_ 💧. Only attacking and casting a spell will remove Invisibility
+* Greater Invisibility is no longer removed at all (no saves)
+* Sneaking while invisible turns the character `Hidden & Invisible` (can be done inside enemy sight cones if they can't see invisible), not being detectable by anyone that can't see invisible
+  * _Being `Hidden & Invisible` is the same as Vanilla Invisible. It allows pickpocketing, avoids starting combat when near enemies, etc_
+* See Invisibility and similar features allows characters to see the `Hidden & Invisible` characters if they're in their Line of Sight (the usual red cone for sneaking), but doesn't remove the invisibility status, allowing the usual Stealth check when inside a sight cone. It also negates the advantage/disadvantage benefits from Invisibility, so it fully counters invisibility. Leaving the sight cone of See Invisibility while still sneaking regains `Hidden & Invisible`
+* Sense Hidden Presence (the NPC seeking ability) makes a perception check against the passive stealth of every sneaking character in a radius (no LoS required, since it theoretically uses hearing). Upon succeeding, it removes the sneaking (but never the invisibility). It can be used by players and was readjusted to cost 1 action (emulating RAW Active Perception roll)
+* Enemies gain one free sneak _attempt_ when they become invisible, rolling their stealth against the passive perception of every enemy of theirs in a radius (same radius as Sense Hidden Presence). If they beat ALL passive perceptions, they become `Hidden & Invisible`
+* While invisible, enemies can now attempt to sneak for 1 action, becoming `Hidden & Invisible` without need for a stealth check
+
+### 🔧 Customization
+
+<details>
+  <summary>Default list of Spells that require sight</summary>
+  <p>
+
+  Based on [this list](https://homebrewery.naturalcrit.com/share/Hk7zwD4Gxr)
+
+    - Vanilla spells
+      - Projectile_AcidSplash
+      - Target_AnimalFriendship
+      - Target_Bane
+      - Target_Banishment
+      - Target_Blight
+      - Target_Blindness
+      - Projectile_ChainLightning (can bounce to invisible targets)
+      - Target_CharmPerson
+      - Projectile_ChromaticOrb
+      - Target_Command_Container
+      - Target_CompelledDuel
+      - Target_Counterspell
+      - Target_CrownOfMadness
+      - Projectile_Disintegrate
+      - Target_DominateBeast
+      - Target_DominatePerson
+      - Target_EnlargeReduce
+      - Target_Enthrall
+      - Target_Eyebite
+      - Target_FleshToStone
+      - Target_Harm
+      - Target_Haste
+      - Target_Heal
+      - Target_HealingWord
+      - Target_HeatMetal (reapply damage can be used against invisible targets)
+      - Shout_HellishRebuke
+      - Target_Hex
+      - Target_HoldMonster
+      - Target_HoldPerson
+      - Target_HuntersMark
+      - Target_Knock
+      - Projectile_MagicMissile
+      - Shout_HealingWord_Mass
+      - Target_IrresistibleDance
+      - Target_PhantasmalForce
+      - Target_PhantasmalKiller
+      - Projectile_PoisonSpray
+      - Target_Polymorph
+      - Target_PowerWordKill
+      - Shout_PrayerOfHealing
+      - Target_SacredFlame
+      - Target_Seeming
+      - Target_HideousLaughter
+      - Throw_Telekinesis
+      - Target_ViciousMockery
+
+    - 5e Spells
+      - Target_Catnap
+      - Target_CauseFear
+      - Target_CharmMonster
+      - Target_Frostbite
+      - Target_Infestation
+      - Target_IntellectFortress
+      - Target_LifeTransference
+      - Target_LightningLure
+      - Target_MaximiliansEarthenGrasp
+      - Target_MindSliver
+      - Target_MindSpike
+      - Projectile_NegativeEnergyFlood
+      - Target_PowerWordStun
+      - Target_SteelWindStrike
+      - Target_TashasMindWhip
+      - Target_TollTheDead
+      - Shout_WordOfRadiance
+
+  </p>
+</details>
+
+* You can add other spells that require sight by including their stat name to `invisibility/Spells_Add.json`. If you wish to have a spell not require sight, add its stat name to `invisibility/Spells_Remove.json`
+  * _Instructions to create the file is present on the [Installation Guide](https://github.com/ZerdBG3/RAW/blob/main/Installing.md#optional-configurations)_
+  * _Adding a spell to `Spells_Add.json` or `Spells_Remove.json` will automatically affect all spells that inherit from it, like upcast, container spells, etc_
+  * _For interrupts, use the spell entry which has the `InterruptPrototype`, not the interrupt entry (Eg.: `Shout_HellishRebuke` instead of `Target_HellishRebuke` or `Interrupt_HellishRebuke`)_
+* In both files, you must structure it like a json array, as demonstrated in the example below
+
+<details>
+  <summary>Example of Spells_Add.json</summary>
+  <p>
+
+  * Pay close attention to the lack of `,` at the last line
+
+    ```json
+    [
+      "Target_MyCustomSpellThatRequiresSight",
+      "Projectile_SomethingThatRequiresSight"
+    ]
+    ```
+
+  </p>
+</details>
+
+## Invisibility AoO ⚙️ `invisibility_aoo`
+⚠️ ${\color{red}{\text{Disabled by default}}}$
+
+_Depends on: [`invisibility`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#invisibility-%EF%B8%8F-invisibility)_
+* Attacks of Opportunity can't be performed on invisible characters, even if they're not sneaking (not RAW)
 
 ## Prone ⚙️ `prone`
 * Removes the disadvantage on Strength and Dexterity Saving Throws when Prone, and adds the Disadvantage to Ranged Attack Rolls
