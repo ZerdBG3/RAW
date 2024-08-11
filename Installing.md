@@ -12,9 +12,10 @@
   * If you wish to manually set it up, download the `modsettings.lsx` file on the root of this project (or access it [here](https://github.com/ZerdBG3/RAW/blob/main/modsettings.lsx)) and place it on the Public Player Profile (the complete path should look something like `\Users\{USER_NAME}\AppData\Local\Larian Studios\Baldur's Gate 3\PlayerProfiles\Public`). You should replace the file that already exists there
 
 # Optional Configurations
-* To turn on/off the mod features or customize them, access the `ModOptions.json` file at the folder `\Users\{USER_NAME}\AppData\Local\Larian Studios\Baldur's Gate 3\Script Extender`. If the folder/file doesn't exist, open the game once with the mod active and it will create the file
+* To turn on/off the mod features or customize them, access the `ModOptions.json` file at the folder `\Users\{USER_NAME}\AppData\Local\Larian Studios\Baldur's Gate 3\Script Extender\RAW\`. If the folder/file doesn't exist, open the game once with the mod active and it will create the file
 * You only need to find and tweak the configuration file if you want to alter the default behavior. Therefore, there is no need to do anything beside installing the mod if you don't want to change any of the mod's default behavior
-* Simply change the `enabled` from `true` to `false` on whichever feature you want to turn off and `false` to `true` for those you want to turn on. For customizable features, keep `enabled` as `true` and change the `value` for a valid one specified by the option's description
+* Simply change the `enabled` from `true` to `false` on whichever feature you want to turn off and `false` to `true` for those you want to turn on. For features which allow a `value`, keep `enabled` as `true` and change the `value` for a valid one specified by the option's description
+* For customizable features 🔧, keep `enabled` as `true` and modify their configuration files at `\Users\{USER_NAME}\AppData\Local\Larian Studios\Baldur's Gate 3\Script Extender\RAW\{option}`. Opening the game once with the option enabled will create the folder and configuration files for each customizable option
 * ⚠️ All dependencies of enabled features will be automatically turned on to avoid inconsistencies or bugs in your game (if you want to disable a feature, you must also disable every feature on the `Depended by` column to actually disable it) ⚠️
 
 | Option | Depends on | Depended by | Default | Description | 
@@ -35,6 +36,8 @@
 | [`initiative`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#initiative-%EF%B8%8F-initiative) | - | - | $${\color{lime}{\text{enabled}}}$$ | Changes Initiative Dice Roll from 1d4 to 1d20. |
 | [`instantDeath`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#instant-death-%EF%B8%8F-instantDeath) | - | - | $${\color{lime}{\text{enabled}}}$$ | Kills players outright if damage taken exceeds current hit points by hit point maximum. |
 | [`intangibleSummons`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#intangible-summons-%EF%B8%8F-intangiblesummons) | - | - | $${\color{lime}{\text{enabled}}}$$ | Changes to Flaming Sphere, Guardian of Faith and Spiritual Weapon to make them invulnerable and ignored by the AI. |
+| [`invisibility`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#invisibility-%EF%B8%8F-invisibility) 🔧 | - | `invisibility_aoo` | $${\color{lime}{\text{enabled}}}$$ | Changes to invisibility rules and sneaking while invisible. |
+| [`invisibility_aoo`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#invisibility-aoo-%EF%B8%8F-invisibilityaoo) | `invisibility` | - | $${\color{red}{\text{disabled}}}$$ | Removes AoO against invisible enemies. |
 | [`prone`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#prone-%EF%B8%8F-prone) | - | - | $${\color{lime}{\text{enabled}}}$$ | Changes the advantage and disadvantage conditions while Prone. |
 | [`rogue`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogue-%EF%B8%8F-rogue) | `throw` | `rogue_thief` | $${\color{lime}{\text{enabled}}}$$ | Changes to Cunning Action and Sneak Attack. |
 | [`rogue_thief`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogue-thief-%EF%B8%8F-rogue_thief) | `rogue`,`stabilize` | - | $${\color{lime}{\text{enabled}}}$$ | Changes to Fast Hands and Second-Story Work. |

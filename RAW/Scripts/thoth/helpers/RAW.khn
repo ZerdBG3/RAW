@@ -126,3 +126,16 @@ function RAW_ConcentrationBlocker()
     result = ~HasStatus('RAW_CONCENTRATION_BLOCKER')
     return ConditionResult(result.Result, {ConditionError("RAW_ConcentrationBlocker_False")})
 end
+
+function RAW_CanSeeInvisible(entity)
+    entity = entity or context.Source
+    return Tagged('BLINDSIGHT', entity)
+        |  HasStatus('TRUESIGHT', entity) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 36.5)
+        | (HasStatus('SEE_INVISIBILITY', entity) | HasStatus('MAG_SEE_INVISIBILITY_HIDDEN_IGNORE_RESTING', entity)) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 18)
+        | (HasPassive('FightingStyle_BlindFighting', entity)) & ~DistanceToGreaterThan(context.SourcePosition, context.TargetPosition, 3)
+end
+
+function RAW_SpellAgainstInvisibleTarget(target, observer)
+    local result = ~HasStatus('SG_Invisible', target) | RAW_CanSeeInvisible(observer)
+    return ConditionResult(result.Result, {ConditionError("RAW_SpellAgainstInbisibleTarget_False")})
+end
