@@ -44,6 +44,13 @@ data "AreaRadius" "11"
 data "TooltipStatusApply" "ApplyStatus(SEE_INVISIBILITY_SEEK,100,1)"
 data "UseCosts" "ActionPoint:1"
 
+// Gives players the Seek spell to find hidden enemies
+// Passive given by Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_Invisibility.lua
+new entry "RAW_Invisibility_UnlockSeekSpell"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "Boosts" "UnlockSpell(Shout_SeeInvisibility_Seek)"
+
 // Increased radius to base hearing range. Still keeps the middle ground SEE_INVISIBILITY_SEEN status
 // Can be used to seek any sneaking character, not only invisible ones
 new entry "SEE_INVISIBILITY_SEEK"

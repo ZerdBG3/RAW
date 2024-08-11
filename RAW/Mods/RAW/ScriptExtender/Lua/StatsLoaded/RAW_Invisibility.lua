@@ -8,6 +8,8 @@ local invisibleCondition = "RAW_SpellAgainstInvisibleTarget"
 local spellConditionVars = "(context.Target, context.Source)"
 local interruptConditionVars = "(context.Source, context.Observer)"
 
+local ENUM_RAW_SeekInvisibilitySpellUnlocker = "RAW_Invisibility_UnlockSeekSpell"
+
 local function RAW_IsSpellBlockedByInvisibility(spell, tree)
     if ENUM_RAW_SpellsAgainstInvisibleTargetsIgnore[spell.Name] then
         return nil
@@ -112,6 +114,18 @@ local function RAW_AddInvisibilityConditionToSpell(name)
     RAW_PrintIfDebug("\t" .. targetConditionData .. ": " .. spell[targetConditionData], RAW_PrintTable_Invisible)
 end
 
+local function RAW_AddCharacterSeekSpellPassive(name)
+    local char = Ext.Stats.Get(name)
+    if not RAW_CharIsHero(char) then
+        return
+    end
+
+    RAW_PrintIfDebug("\nCharacter: " .. name, RAW_PrintTable_Invisible)
+    RAW_PrintIfDebug("\tAdding passive: " .. ENUM_RAW_SeekInvisibilitySpellUnlocker, RAW_PrintTable_Invisible)
+    char.Passives = ENUM_RAW_SeekInvisibilitySpellUnlocker .. ";" .. char.Passives
+    RAW_PrintIfDebug("\tPassives: " .. char.Passives, RAW_PrintTable_Invisible)
+end
+
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_InvisibilityStats()
@@ -142,6 +156,10 @@ function RAW_InvisibilityStats()
         RAW_AddInvisibilityConditionToSpell(name)
     end
 
+    for _, name in pairs(Ext.Stats.GetStats("Character")) do
+        RAW_AddCharacterSeekSpellPassive(name)
+    end
+
     RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Spells against Invisible characters setup"), RAW_PrintTable_Invisible)
     RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Invisible)
 end
@@ -149,7 +167,7 @@ end
 ---------------------------------------- MODELS ----------------------------------------
 
 -- Source: https://homebrewery.naturalcrit.com/share/Hk7zwD4Gxr
--- Didn't include those that requires seeing a point in space or in the ground
+-- Didn't include those that require seeing a point in space or on the ground
 ENUM_RAW_SpellsAgainstInvisibleTargets = RAW_Set {
     -- Vanilla spells
     "Projectile_AcidSplash",
