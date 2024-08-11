@@ -103,6 +103,7 @@ Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?ga
 * Sense Hidden Presence (the NPC seeking ability) makes a perception check against the passive stealth of every sneaking character in a radius (no LoS required, since it theoretically uses hearing). Upon succeeding, it removes the sneaking (but never the invisibility). It can be used by players and was readjusted to cost 1 action (emulating RAW Active Perception roll)
 * Enemies gain one free sneak _attempt_ when they become invisible, rolling their stealth against the passive perception of every enemy of theirs in a radius (same radius as Sense Hidden Presence). If they beat ALL passive perceptions, they become `Hidden & Invisible`
 * While invisible, enemies can now attempt to sneak for 1 action, becoming `Hidden & Invisible` without need for a stealth check
+* _Some enemies don't have a proper transparent status effect to indicate they're invisible, like players do. So sometimes it might be difficult to realize enemies are invisible to your characters_
 
 ### 🔧 Customization
 
