@@ -1,5 +1,10 @@
 local maxAttunementStatus, maxAttunementStatusArtificer, ENUM_RAW_AttunementList
 
+local userItemsAddedFileName = "attunement/Items_Add.json"
+local userItemsRemovedFileName = "attunement/Items_Remove.json"
+
+local RAW_UserItemsAdded, RAW_UserItemsRemoved
+
 local function RAW_AddAttunement(item)
     local useConditionsPrefix = ""
     if item.UseConditions ~= nil and item.UseConditions ~= "" then
@@ -22,7 +27,7 @@ local function RAW_AddAttunement(item)
     -- TO DO: reactivate the item-specific passive when Ext.Stats.Create works again
     -- Creates a specific passive to each item so they show up separately on the Character Sheet
     -- local passiveName = "RAW_Attunement_" .. item.Name
-    -- local newPassive = Ext.Stats.Create(passiveName, "PassiveData", "RAW_Attunement")
+    -- Ext.Stats.Create(passiveName, "PassiveData", "RAW_Attunement")
 
     -- Uses a separate passive for each slot so, in most cases, the passives show separately on the Character Sheet
     local passiveName = "RAW_Attunement_" .. string.gsub(item.Slot, " ", "_")
@@ -55,10 +60,22 @@ function RAW_Attunement()
     maxAttunementStatus = "RAW_ATTUNEMENT_COUNT_" .. tostring(maxAttunement)
     maxAttunementStatusArtificer = "RAW_ATTUNEMENT_COUNT_" .. tostring(maxAttunement+1)
 
-    for _, name in pairs(ENUM_RAW_AttunementList) do
+    RAW_UserItemsAdded = RAW_LoadCustomizableOptionList(userItemsAddedFileName)
+    if RAW_UserItemsAdded ~= nil then
+        RAW_Set_Union(ENUM_RAW_AttunementList, RAW_UserItemsAdded)
+    end
+
+    RAW_UserItemsRemoved = RAW_LoadCustomizableOptionList(userItemsRemovedFileName)
+    if RAW_UserItemsRemoved ~= nil then
+        RAW_Set_Complement(ENUM_RAW_AttunementList, RAW_UserItemsRemoved)
+    end
+
+    for name in pairs(ENUM_RAW_AttunementList) do
         local item = Ext.Stats.Get(name)
-        RAW_PrintIfDebug("\nAdding attunement to " .. name, RAW_PrintTable_Attunement)
-        RAW_AddAttunement(item)
+        if item ~= nil then
+            RAW_PrintIfDebug("\nAdding attunement to " .. name, RAW_PrintTable_Attunement)
+            RAW_AddAttunement(item)
+        end
     end
 
     RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Attunement rules application"), RAW_PrintTable_Attunement)
@@ -68,7 +85,7 @@ end
 ---------------------------------------- MODELS ----------------------------------------
 
 -- Source: https://docs.google.com/spreadsheets/d/1yCJ9ITC180dqykK713iHMEsrvVOHkgOmLF882-yr_hQ/edit#gid=0&fvid=1734738953
-ENUM_RAW_AttunementList = {
+ENUM_RAW_AttunementList = RAW_Set {
     "ACT1_HAG_HagMask",
     "ARM_BootsOfSpeed",
     "ARM_CircletOfBlasting",

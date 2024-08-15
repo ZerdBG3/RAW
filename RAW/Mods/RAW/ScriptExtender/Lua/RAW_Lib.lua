@@ -18,10 +18,24 @@ function RAW_Set_Add(set, elem)
     end
 end
 
+-- Removes an element from a Set
+function RAW_Set_Remove(set, elem)
+    if set[elem] then
+        set[elem] = nil
+    end
+end
+
 -- Merges two Sets
 function RAW_Set_Union(set, set2)
     for elem in pairs(set2) do
         RAW_Set_Add(set, elem)
+    end
+end
+
+-- Removes all elements of set2 from set
+function RAW_Set_Complement(set, set2)
+    for elem in pairs(set2) do
+        RAW_Set_Remove(set, elem)
     end
 end
 

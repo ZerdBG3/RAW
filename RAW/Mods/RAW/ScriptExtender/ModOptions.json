@@ -352,23 +352,6 @@
             ]
         }
     },
-    "invisibility_aoo": {
-        "displayName": "Invisibility AoO",
-        "description": "Removes AoO against invisible enemies.",
-        "enabled": false,
-        "value": null,
-        "dependencies": [],
-        "conflicts": [],
-        "files": {
-            "enabled": [],
-            "disabled": [
-                {
-                    "from": "Public/RAW/Stats/Generated/Data/Invisibility_AoO.txt",
-                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
-                }
-            ]
-        }
-    },
     "prone": {
         "displayName": "Prone",
         "description": "Changes the advantage and disadvantage conditions while Prone.",

@@ -1,8 +1,9 @@
 local technicalRemovalTimerName = "RAW_Timer_CheckTechnicalInvisibilityRemoval"
 local technicalRemovalTimerDuration = 500
 
-local sneakAttemptTimerName = "RAW_Timer_SneakAttempt"
-local sneakAttemptTimerDuration = 100
+local invisibilitySneakingAttemptIterator = "RAW_InvisibilitySneakingAttemptIterator_"
+local invisibilitySneakingAttemptIteratorCompleted = "RAW_Completed_InvisibilitySneakingAttemptIterator_"
+local RAW_Invisibility_Sneaking_Attempt = {}
 
 local function RAW_RegisterInvisibilityControlEvent()
     -- ----------------------------------------------------------------------------
@@ -98,49 +99,82 @@ local function RAW_RegisterInvisibilityControlEvent()
     -- --------------------- Free Sneaking Invisibility Attempt -----------------------
     -- --------------------------------------------------------------------------------
 
-    -- Non-players that become invisible receive the RAW_INVISIBILITY_SNEAKING_ATTEMPT status
-    -- This will prompt one stealth check against the passive perception of each enemy around
-    -- Won't trigger the sneaking attempt if the character is being seen by SEE_INVISIBILITY or is already SNEAKING
-    -- A timer is launched to check if there was a stealth failure or not
+    -- When non-players become invisible, an iterator is launched for all nearby characters
+    -- Every enemy in the 11m radius (same as default hearing radius) has their perception compared
+    -- The enemy with the highest passive perception receives the RAW_INVISIBILITY_SNEAKING_ATTEMPT_CONTEST status
+    -- This status forces an active stealth check vs passive perception, granting sneaking if succeeding
+    -- If there is no enemy around, the invisible character instantly succeeds their sneaking
     Ext.Osiris.RegisterListener("StatusApplied", 4, "after",
         function(char, status, causee, storyActionID)
             if not RAW_Bool(Osi.IsStatusFromGroup(status, "SG_Invisible")) or
                 not RAW_Bool(Osi.IsCharacter(char)) or
-                RAW_Bool(Osi.IsPlayer(char)) or
+                RAW_Bool(Osi.IsPartyMember(char, 0)) or
                 RAW_Bool(Osi.HasActiveStatus(char, "SEE_INVISIBILITY_REVEAL")) or
                 RAW_Bool(Osi.HasActiveStatus(char, "SNEAKING")) then
 
                 return
             end
 
-            RAW_PrintIfDebug("Applying free RAW_INVISIBILITY_SNEAKING_ATTEMPT to " .. char, RAW_PrintTable_Invisible)
-            Osi.ApplyStatus(char, "RAW_INVISIBILITY_SNEAKING_ATTEMPT", 0)
-            Osi.RealtimeObjectTimerLaunch(char, sneakAttemptTimerName, sneakAttemptTimerDuration)
+            RAW_Invisibility_Sneaking_Attempt[char] = {}
+            RAW_PrintIfDebug("Providing free sneaking attempt to " .. char, RAW_PrintTable_Invisible)
+            -- The iterators always include the source of the iterator on their event names, because this is not fetchable otherwise
+            Osi.IterateCharactersAround(
+                char,
+                11,
+                invisibilitySneakingAttemptIterator .. char,
+                invisibilitySneakingAttemptIteratorCompleted .. char
+            )
         end
     )
 
-    -- When the timer above finishes, check if the character doesn't have RAW_INVISIBILITY_SNEAKING_ATTEMPT_CONTEST_FAILED
-    Ext.Osiris.RegisterListener("ObjectTimerFinished", 2, "after",
-        function(char, timer)
-            if timer ~= sneakAttemptTimerName then
+    Ext.Osiris.RegisterListener("EntityEvent", 2, "after",
+        function(char, event)
+            local source = string.match(event, "^" .. invisibilitySneakingAttemptIterator .. "(.+)")
+            if source == nil or
+                source == char or
+                not RAW_Bool(Osi.IsEnemy(source, char)) or
+                not RAW_Bool(Osi.IsCharacter(char)) then
+
                 return
             end
 
-            RAW_PrintIfDebug("ObjectTimerFinished " .. timer .. " for entity " .. char, RAW_PrintTable_Invisible)
+            RAW_PrintIfDebug("\tPerceptive enemy in range: " .. char, RAW_PrintTable_Invisible)
+            table.insert(RAW_Invisibility_Sneaking_Attempt[source], char)
+        end
+    )
 
-            if RAW_Bool(Osi.HasActiveStatus(char, "RAW_INVISIBILITY_SNEAKING_ATTEMPT_CONTEST_FAILED")) then
-                RAW_PrintIfDebug("\tFailed stealth check " .. char, RAW_PrintTable_Invisible)
-                Osi.RemoveStatus(char, "RAW_INVISIBILITY_SNEAKING_ATTEMPT_CONTEST_FAILED")
+    -- Unintuitively, the entity on the finished event is not the source that launched the iterator, but instead
+    --   NULL_00000000-0000-0000-0000-000000000000 as documented here:
+    --   https://docs.larian.game/Osiris/API/CharacterLaunchIteratorAroundCharacter
+    Ext.Osiris.RegisterListener("EntityEvent", 2, "after",
+        function(entity, event)
+            local source = string.match(event, "^" .. invisibilitySneakingAttemptIteratorCompleted .. "(.+)")
+            if source == nil or
+                not RAW_Bool(Osi.IsCharacter(source)) then
+
                 return
             end
 
-            if not RAW_Bool(Osi.HasActiveStatus(char, "RAW_INVISIBILITY_SNEAKING_TECHNICAL")) and
-                not RAW_Bool(Osi.HasActiveStatus(char, "SEE_INVISIBILITY_REVEAL")) and 
-                RAW_Bool(Osi.HasActiveStatusWithGroup(char, "SG_Invisible")) then
-
-                RAW_PrintIfDebug("\tSucceeded stealth check " .. char, RAW_PrintTable_Invisible)
-                Osi.ApplyStatus(char, "RAW_INVISIBILITY_SNEAKING_TECHNICAL", -1)
+            local bestChar = nil
+            local maxPerception = 0
+            for _, char in pairs(RAW_Invisibility_Sneaking_Attempt[source]) do
+                local perception = Osi.CalculatePassiveSkill(char, "Perception")
+                if perception > maxPerception then
+                    bestChar = char
+                    maxPerception = perception
+                end
             end
+
+            RAW_Invisibility_Sneaking_Attempt[source] = nil
+
+            if bestChar == nil or maxPerception <= 0 then
+                RAW_PrintIfDebug("\tNo enemy in range. Successful sneaking!", RAW_PrintTable_Invisible)
+                Osi.ApplyStatus(source, "RAW_INVISIBILITY_SNEAKING_TECHNICAL", -1)
+                return
+            end
+
+            RAW_PrintIfDebug("\tMaximum perception: " .. tostring(maxPerception) .. " by " .. bestChar, RAW_PrintTable_Invisible)
+            Osi.ApplyStatus(bestChar, "RAW_INVISIBILITY_SNEAKING_ATTEMPT_CONTEST", 0, 1, source)
         end
     )
 end
