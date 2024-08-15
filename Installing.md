@@ -20,7 +20,7 @@
 
 | Option | Depends on | Depended by | Default | Description | 
 |---|---|---|---|---|
-| [`attunement`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#attunement-%EF%B8%8F-attunement) | - | - | $${\color{lime}{\text{enabled}}}$$<br>**`value:3`** | Sets a limit to the amount of magic items a character can have attuned at once (choose a value between 1 and 10). |
+| [`attunement`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#attunement-%EF%B8%8F-attunement) 🔧 | - | - | $${\color{lime}{\text{enabled}}}$$<br>**`value:3`** | Sets a limit to the amount of magic items a character can have attuned at once (choose a value between 1 and 10). |
 | [`barbarian`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#barbarian-%EF%B8%8F-barbarian) | - | - | $${\color{lime}{\text{enabled}}}$$ | Changes to Reckless Attack. |
 | [`barbarian_berserker`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#barbarian-berserker-%EF%B8%8F-barbarian_berserker) | - | - | $${\color{lime}{\text{enabled}}}$$ | Removes Throw as a bonus action from Frenzy. |
 | [`barbarian_wildMagic`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#barbarian-wild-magic-%EF%B8%8F-barbarian_wildmagic) | - | - | $${\color{lime}{\text{enabled}}}$$ | Allows Wild Magic results to be used on the first turn and adjusts Shadowy Tendrils targeting. |

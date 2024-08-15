@@ -14,6 +14,28 @@ _Developed in partnership with [Eric](https://www.nexusmods.com/baldursgate3/mod
   - After reaching your maximum amount of attuned items, you can no longer equip items that require attunement
   - To end an attunement, simply unequip an item that requires it
 
+### 🔧 Customization
+
+* You can add items that require attunement by including their stat name to `attunement/Items_Add.json`. If you wish to have an item that usually requires attunement not require attunement instead, you can add its stat name to `attunement/Items_Remove.json`
+  * _Instructions to create the file is present on the [Installation Guide](https://github.com/ZerdBG3/RAW/blob/main/Installing.md#optional-configurations)_
+* In both files, you must structure it like a json array, as demonstrated in the example below
+
+<details>
+  <summary>Example of Items_Remove.json</summary>
+  <p>
+
+  * Pay close attention to the lack of `,` at the last line
+
+    ```json
+    [
+      "UNI_ARM_OfDefense_Gloves",
+      "ARM_TalismanOfJergal"
+    ]
+    ```
+
+  </p>
+</details>
+
 ## Barbarian ⚙️ `barbarian`
 * Level 2: Reckless Attack
   - Both the Interrupt and the Spell can only be used on the first attack of the turn
@@ -90,7 +112,7 @@ Thanks [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?gameId=3474
 * Spiritual Weapon is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to (except on the turn it is cast). Also removed all special attacks
 
 ## Invisibility ⚙️ `invisibility`
-Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?gameId=3474) for his initial implementation on [(See) Invisibility Rework](https://www.nexusmods.com/baldursgate3/mods/3902) was the base for this option
+Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?gameId=3474) for his initial implementation on [(See) Invisibility Rework](https://www.nexusmods.com/baldursgate3/mods/3902) was the base for this option. However, the mod is now redundant and **incompatible** with this option!
 * Invisibility alone no longers makes the character completely undetectable, only providing Advantage to attack rolls against enemies that can't see invisible and Disadvantage when being attacked by enemies that can't see invisible
 * Spells that require the caster to see the target also can't be used against an invisible creature, unless the caster has See invisibility or similar
 * Attacks of Opportunity are also not possible against targets that can't be seen

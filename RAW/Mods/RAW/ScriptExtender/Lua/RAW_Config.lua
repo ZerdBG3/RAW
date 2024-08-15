@@ -228,22 +228,37 @@ end
 
 function RAW_LoadCustomizableOptionList(fileName)
     local filePath = filesPath .. fileName
-    RAW_PrintIfDebug(CentralizedString("Searching for User file " .. filePath), RAW_PrintTable_ModOptions)
+    RAW_PrintIfDebug("Searching for User file " .. filePath, RAW_PrintTable_ModOptions)
     local ok, optionsFile = pcall(Ext.IO.LoadFile, filePath)
     if not ok or not optionsFile then
-        RAW_PrintIfDebug(CentralizedString("User " .. filePath .. " not found. Will create one!"), RAW_PrintTable_ModOptions, RAW_PrintTypeWarning)
+        RAW_PrintIfDebug("\tUser " .. filePath .. " not found. Will create one!", RAW_PrintTable_ModOptions, RAW_PrintTypeWarning)
         Ext.IO.SaveFile(filePath, "[]")
         return nil
     end
 
     local ok, options = pcall(Ext.Json.Parse, optionsFile)
 	if not ok then
-        RAW_PrintIfDebug(CentralizedString("Invalid " .. filePath .. " file. Did not load info!"), RAW_PrintTable_ModOptions, RAW_PrintTypeError)
+        RAW_PrintIfDebug("\tInvalid " .. filePath .. " file. Did not load info!", RAW_PrintTable_ModOptions, RAW_PrintTypeError)
 		return nil
 	end
 
-    RAW_PrintIfDebug(RAW_ColoredText(CentralizedString("User " .. filePath .. " loaded successfully!"), RAW_ColorTextCode_Green), RAW_PrintTable_ModOptions)
-    return RAW_Set(options)
+    local setOptions = RAW_Set(options)
+    local invalidStat = false
+    for stat in pairs(setOptions) do
+        local object = Ext.Stats.Get(stat)
+        if object == nil then
+            invalidStat = true
+            RAW_PrintIfDebug("\tInvalid stat entry: " .. stat .. " - Ignoring it!", RAW_PrintTable_ModOptions, RAW_PrintTypeError)
+        end
+    end
+
+    if invalidStat then
+        RAW_PrintIfDebug("\tUser " .. filePath .. " partially loaded!", RAW_PrintTable_ModOptions, RAW_PrintTypeWarning)
+    else
+        RAW_PrintIfDebug(RAW_ColoredText("\tUser " .. filePath .. " loaded successfully!", RAW_ColorTextCode_Green), RAW_PrintTable_ModOptions)
+    end
+
+    return setOptions
 end
 
 function IsModOptionEnabled(modOption)
