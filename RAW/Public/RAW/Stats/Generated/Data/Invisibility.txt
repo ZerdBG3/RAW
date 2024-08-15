@@ -10,6 +10,7 @@ using "Shout_SeeInvisibility"
 data "AreaRadius" "18"
 
 // Skips SEE_INVISIBILITY_SEEN/Perception check and just applies SEE_INVISIBILITY_REVEAL. Also increased radius to hero sight range
+// Only considers the sight cone for enemies, players can reveal all around them to avoid micro-ing their facing direction
 new entry "SEE_INVISIBILITY"
 type "StatusData"
 data "StatusType" "BOOST"
@@ -17,7 +18,7 @@ using "SEE_INVISIBILITY"
 data "Description" "haaf9589cgdf46g45edga985g59c7380bb6c7;1"
 data "DescriptionParams" "Distance(18)"
 data "AuraRadius" "18"
-data "AuraStatuses" "TARGET:IF(not HasAnyStatus({'SG_Unconscious','SG_Incapacitated','SG_Blinded'},{},{},context.Source) and not Ally() and IsInSightPyramid(context.Source,context.TargetPosition) and HasStatus('SG_Invisible')):ApplyStatus(SEE_INVISIBILITY_REVEAL)"
+data "AuraStatuses" "TARGET:IF(not HasAnyStatus({'SG_Unconscious','SG_Incapacitated','SG_Blinded'},{},{},context.Source) and not Ally() and (Player(context.Source) or IsInSightPyramid(context.Source,context.TargetPosition)) and HasStatus('SG_Invisible')):ApplyStatus(SEE_INVISIBILITY_REVEAL)"
 data "AuraFlags" "CanAffectInvisibleItems;AIIgnoreOnSelf;ShouldCheckLOS"
 
 // Removes RAW_INVISIBILITY_SNEAKING_TECHNICAL, which contains the portion that actually makes the target invisible to AI gameplay-wise
@@ -107,32 +108,17 @@ data "StatusPropertyFlags" "DisableOverhead"
 data "StatusEffect" "84be28b3-6fdf-4b62-86e2-1f3b333aab81"
 
 // Status given by Mods\RAW\ScriptExtender\Lua\Osiris\RAW_Invisibility.lua when AI becomes invisible
-// This will prompt one stealth check against the passive perception of each enemy around
+// This status is only given to the character with highest passive perception
+// This status forces an active stealth check vs passive perception, granting sneaking if succeeding
 // Succeeding this applies RAW_INVISIBILITY_SNEAKING_TECHNICAL and SNEAKING
-// 11m is the base Hearing radius used for Characters
-new entry "RAW_INVISIBILITY_SNEAKING_ATTEMPT"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StackId" "RAW_INVISIBILITY_SNEAKING_ATTEMPT"
-data "AuraRadius" "11"
-data "AuraStatuses" "TARGET:IF(not HasAnyStatus({'SG_Unconscious','SG_Incapacitated','SG_Blinded'},{},{},context.Source) and Enemy()):ApplyStatus(RAW_INVISIBILITY_SNEAKING_ATTEMPT_CONTEST)"
-data "AuraFlags" "AIIgnoreOnSelf;IgnoreItems"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
-
 new entry "RAW_INVISIBILITY_SNEAKING_ATTEMPT_CONTEST"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StackId" "RAW_INVISIBILITY_SNEAKING_ATTEMPT_CONTEST"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 data "OnApplyRoll" "(SkillCheck(Skill.Stealth, context.Target.GetPassiveSkill(Skill.Perception)))"
-data "OnApplyFail" "ApplyStatus(SWAP,RAW_INVISIBILITY_SNEAKING_ATTEMPT_CONTEST_FAILED,100,1)"
+data "OnApplySuccess" "ApplyStatus(SWAP,RAW_INVISIBILITY_SNEAKING_TECHNICAL,100,-1)"
 data "HitAnimationType" "None"
-
-new entry "RAW_INVISIBILITY_SNEAKING_ATTEMPT_CONTEST_FAILED"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StackId" "RAW_INVISIBILITY_SNEAKING_ATTEMPT_RESULT"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 
 // -------------------------------------------------------------------
 // --------------------- Invisibility Statuses -----------------------
