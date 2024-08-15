@@ -90,18 +90,18 @@ Thanks [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?gameId=3474
 * Spiritual Weapon is indestructible and ignored by enemies. It can only act if the caster uses their bonus action to command it to (except on the turn it is cast). Also removed all special attacks
 
 ## Invisibility ⚙️ `invisibility`
-_Depended by: [`invisibility_aoo`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#invisibility-aoo-%EF%B8%8F-invisibility_aoo)_
-
 Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?gameId=3474) for his initial implementation on [(See) Invisibility Rework](https://www.nexusmods.com/baldursgate3/mods/3902) was the base for this option
 * Invisibility alone no longers makes the character completely undetectable, only providing Advantage to attack rolls against enemies that can't see invisible and Disadvantage when being attacked by enemies that can't see invisible
 * Spells that require the caster to see the target also can't be used against an invisible creature, unless the caster has See invisibility or similar
+* Attacks of Opportunity are also not possible against targets that can't be seen
 * Normal Invisibility is no longer removed by being damaged, interacting with items or being _wet_ 💧. Only attacking and casting a spell will remove Invisibility
 * Greater Invisibility is no longer removed at all (no saves)
 * Sneaking while invisible turns the character `Hidden & Invisible` (can be done inside enemy sight cones if they can't see invisible), not being detectable by anyone that can't see invisible
   * _Being `Hidden & Invisible` is the same as Vanilla Invisible. It allows pickpocketing, avoids starting combat when near enemies, etc_
 * See Invisibility and similar features allows characters to see the `Hidden & Invisible` characters if they're in their Line of Sight (the usual red cone for sneaking), but doesn't remove the invisibility status, allowing the usual Stealth check when inside a sight cone. It also negates the advantage/disadvantage benefits from Invisibility, so it fully counters invisibility. Leaving the sight cone of See Invisibility while still sneaking regains `Hidden & Invisible`
+  * _Players aren't restricted by their sight cone, revealing enemies all around them, to avoid the necessity of micro managing your character's LoS_
 * Sense Hidden Presence (the NPC seeking ability) makes a perception check against the passive stealth of every sneaking character in a radius (no LoS required, since it theoretically uses hearing). Upon succeeding, it removes the sneaking (but never the invisibility). It can be used by players and was readjusted to cost 1 action (emulating RAW Active Perception roll)
-* Enemies gain one free sneak _attempt_ when they become invisible, rolling their stealth against the passive perception of every enemy of theirs in a radius (same radius as Sense Hidden Presence). If they beat ALL passive perceptions, they become `Hidden & Invisible`
+* Enemies gain one free sneak _attempt_ when they become invisible, rolling their stealth against the highest passive perception of their enemies in a radius (same radius as Sense Hidden Presence). If they succeed the stealth check, they become `Hidden & Invisible`
 * While invisible, enemies can now attempt to sneak for 1 action, becoming `Hidden & Invisible` without need for a stealth check
 * _Some enemies don't have a proper transparent status effect to indicate they're invisible, like players do. So sometimes it might be difficult to realize enemies are invisible to your characters_
 
@@ -203,12 +203,6 @@ Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?ga
 
   </p>
 </details>
-
-## Invisibility AoO ⚙️ `invisibility_aoo`
-⚠️ ${\color{red}{\text{Disabled by default}}}$
-
-_Depends on: [`invisibility`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#invisibility-%EF%B8%8F-invisibility)_
-* Attacks of Opportunity can't be performed on invisible characters, even if they're not sneaking (not RAW)
 
 ## Prone ⚙️ `prone`
 * Removes the disadvantage on Strength and Dexterity Saving Throws when Prone, and adds the Disadvantage to Ranged Attack Rolls
