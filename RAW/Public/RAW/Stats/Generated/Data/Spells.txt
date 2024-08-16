@@ -113,9 +113,9 @@ data "RemoveConditions" "SpellId('Target_CallLightning_LightningBolt') or SpellI
 data "RemoveEvents" "OnSpellCast"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 
-// --------------------------------------------------------
-// -------------------- Cone of Cold ----------------------
-// --------------------------------------------------------
+// ------------------------------------------------------
+// -------------------- Cone of Cold --------------------
+// ------------------------------------------------------
 
 new entry "Zone_ConeOfCold"
 type "SpellData"
@@ -123,9 +123,9 @@ data "SpellType" "Zone"
 using "Zone_ConeOfCold"
 data "Range" "18"
 
-// -----------------------------------------------
-// ------------- Feign Death Dismiss -------------
-// -----------------------------------------------
+// -------------------------------------------------------------
+// -------------------- Feign Death Dismiss --------------------
+// -------------------------------------------------------------
 
 new entry "Target_FeignDeath"
 type "SpellData"
@@ -214,9 +214,9 @@ data "StatusType" "BOOST"
 using "RAW_FEIGN_DEATH_DISMISS"
 data "StackPriority" "9"
 
-// -----------------------------------------------
-// -------------------- Fireball -----------------
-// -----------------------------------------------
+// --------------------------------------------------
+// -------------------- Fireball --------------------
+// --------------------------------------------------
 
 // Changed area and explode radius
 new entry "Projectile_Fireball"
@@ -226,9 +226,9 @@ using "Projectile_Fireball"
 data "AreaRadius" "6"
 data "ExplodeRadius" "6"
 
-// -----------------------------------------------
-// --------------- Hail of Thorns ----------------
-// -----------------------------------------------
+// --------------------------------------------------------
+// -------------------- Hail of Thorns --------------------
+// --------------------------------------------------------
 
 // Changed spell to become a Shout that applies the Hail of Thorns effect through a status as a CreateExplosion functor
 
@@ -449,9 +449,9 @@ using "HuntersMark"
 data "Boosts" ""
 data "StatsFunctors" "ApplyStatus(PASSIVE_HUNTERS_MARK,100,0);IF(IsAttackType(AttackType.MeleeWeaponAttack)):DealDamage(1d6, MainMeleeWeaponDamageType);IF(IsAttackType(AttackType.RangedWeaponAttack)):DealDamage(1d6, MainRangedWeaponDamageType);IF(IsAttackType(AttackType.MeleeOffHandWeaponAttack)):DealDamage(1d6, OffhandMeleeWeaponDamageType);IF(IsAttackType(AttackType.RangedOffHandWeaponAttack)):DealDamage(1d6, OffhandRangedWeaponDamageType);"
 
-// -------------------------------------------------------
-// -------------------- Hypnotic Pattern -----------------
-// -------------------------------------------------------
+// ----------------------------------------------------------
+// -------------------- Hypnotic Pattern --------------------
+// ----------------------------------------------------------
 
 new entry "Target_HypnoticPattern"
 type "SpellData"
@@ -460,9 +460,9 @@ using "Target_HypnoticPattern"
 data "SpellSuccess" "ApplyStatus(HYPNOTIC_PATTERN,100,10)"
 data "TooltipStatusApply" "ApplyStatus(HYPNOTIC_PATTERN,100,10)"
 
-// -----------------------------------------------
-// ------------------ Ice Knife ------------------
-// -----------------------------------------------
+// ---------------------------------------------------
+// -------------------- Ice Knife --------------------
+// ---------------------------------------------------
 
 // Removed the ice surface creation
 new entry "Projectile_IceKnife"

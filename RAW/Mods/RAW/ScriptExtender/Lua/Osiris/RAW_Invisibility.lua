@@ -9,9 +9,9 @@ local invisibilitySneakingAttemptIteratorCompleted = "RAW_Completed_Invisibility
 local RAW_Invisibility_Sneaking_Attempt = {}
 
 local function RAW_RegisterInvisibilityControlEvent()
-    -- ----------------------------------------------------------------------------
-    -- --------------------- Technical Invisibility Control -----------------------
-    -- ----------------------------------------------------------------------------
+    -- ------------------------------------------------------------------------
+    -- -------------------- Technical Invisibility Control --------------------
+    -- ------------------------------------------------------------------------
 
     -- Sneaking while invisible gives the invisible character the RAW_INVISIBILITY_SNEAKING_TECHNICAL status
     --   unless they're being seen by SEE_INVISIBILITY
@@ -98,9 +98,9 @@ local function RAW_RegisterInvisibilityControlEvent()
         end
     )
 
-    -- --------------------------------------------------------------------------------
-    -- --------------------- Free Sneaking Invisibility Attempt -----------------------
-    -- --------------------------------------------------------------------------------
+    -- ----------------------------------------------------------------------------
+    -- -------------------- Free Sneaking Invisibility Attempt --------------------
+    -- ----------------------------------------------------------------------------
 
     -- When non-players become invisible, an iterator is launched for all nearby characters
     -- Every enemy in the 11m radius (same as default hearing radius) has their perception compared

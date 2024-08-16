@@ -88,9 +88,9 @@ data "StackId" "RAW_FOUND_SNEAKING"
 data "OnApplyFunctors" "RemoveStatus(SNEAKING)"
 data "StatusEffect" "d8452a11-7c66-45fb-8ccb-64e2fa56ada5"
 
-// --------------------------------------------------------------------
-// --------------------- Technical Invisibility -----------------------
-// --------------------------------------------------------------------
+// ----------------------------------------------------------------
+// -------------------- Technical Invisibility --------------------
+// ----------------------------------------------------------------
 
 // The actual gameplay invisibility benefit, only being given while invisible and sneaking simultaneously
 // The applial/removal control is done by Mods\RAW\ScriptExtender\Lua\Osiris\RAW_Invisibility.lua
@@ -120,9 +120,9 @@ data "OnApplyRoll" "(SkillCheck(Skill.Stealth, context.Target.GetPassiveSkill(Sk
 data "OnApplySuccess" "ApplyStatus(SWAP,RAW_INVISIBILITY_SNEAKING_TECHNICAL,100,-1)"
 data "HitAnimationType" "None"
 
-// -------------------------------------------------------------------
-// --------------------- Invisibility Statuses -----------------------
-// -------------------------------------------------------------------
+// ---------------------------------------------------------------
+// -------------------- Invisibility Statuses --------------------
+// ---------------------------------------------------------------
 
 // All INVISIBLE statuses where changed to BOOST because of context issues that didn't allow
 //   the advantage/disadvantage property to work properly
@@ -281,9 +281,9 @@ type "StatusData"
 using "LOW_POLTERGEIST_INVISIBLE"
 data "StatusType" "BOOST"
 
-// -------------------------------------------------
-// --------------------- Wet -----------------------
-// -------------------------------------------------
+// ---------------------------------------------
+// -------------------- Wet --------------------
+// ---------------------------------------------
 
 // Another status that should not remove invisibility
 new entry "WET"
@@ -291,9 +291,9 @@ type "StatusData"
 using "WET"
 data "OnApplyFunctors" "ApplyEquipmentStatus(MainHand,DIPPED_WATER,100,0);ApplyEquipmentStatus(OffHand,DIPPED_WATER,100,0);RemoveStatus(SLEEPING);RemoveStatus(SLEEP);RemoveStatus(SG_Sleeping);"
 
-// ------------------------------------------------------
-// --------------------- Sneaking -----------------------
-// ------------------------------------------------------
+// --------------------------------------------------
+// -------------------- Sneaking --------------------
+// --------------------------------------------------
 
 // Allows to hide while flanked if invisible and not seen
 // Changes to incentivize the AI to sneak while invisible
@@ -305,9 +305,9 @@ data "AIFlags" ""
 data "SpellProperties" "AI_IGNORE:ApplyStatus(SNEAKING,100,-1);AI_ONLY:IF(not HasStatus('SNEAKING') and not HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(AI_HELPER_BUFF_MASSIVE,100,1);"
 data "RequirementConditions" "not HasStatus('FLANKED') or (HasStatus('SG_Invisible') and not HasStatus('SEE_INVISIBILITY_REVEAL'))"
 
-// --------------------------------------------------------------
-// --------------------- Reaction Attacks -----------------------
-// --------------------------------------------------------------
+// ----------------------------------------------------------
+// -------------------- Reaction Attacks --------------------
+// ----------------------------------------------------------
 
 // Added RAW_CanSeeInvisible() defined at Scripts\thoth\helpers\RAW.khn to weapon reactions
 // Invisible characters still ignore AoO even when not stealthed
@@ -326,9 +326,9 @@ type "InterruptData"
 using "Interrupt_WarCaster"
 data "Conditions" "not HasSpellCastBlocked(context.Observer) and IsAbleToReact(context.Observer) and Self(context.Observer, context.Source) and not Self(context.Observer, context.Target) and Enemy() and not WieldingWeapon('Ammunition', false, false, context.Source) and not HasStatus('SG_Incapacitated', context.Source) and not HasStatus('SG_Unconscious', context.Source) and not (not Player(context.Source) and Tagged('AI_IGNORED_TARGET')  and not HasStatus('GNOLL_SUDDENRUSH')) and not HasStatus('SHOCKWAVE') and not (HasStatus('MOBILE_NO_AOO', context.Source) and HasStatus('MOBILE_NO_AOO_SOURCE', context.Target)) and not HasStatus('FLAMING_SPHERE_AURA') and not HasStatus('SNEAKING',context.Target) and (not HasStatus('SG_Invisible',context.Target) or RAW_CanSeeInvisible()) and not HasStatus('SG_Ignore_AOO',context.Target) and not AnyEntityIsItem()"
 
-// ----------------------------------------------------------
-// --------------------- Descriptions -----------------------
-// ----------------------------------------------------------
+// ------------------------------------------------------
+// -------------------- Descriptions --------------------
+// ------------------------------------------------------
 
 new entry "Target_Invisibility"
 type "SpellData"

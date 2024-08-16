@@ -666,12 +666,7 @@
         "conflicts": [],
         "files": {
             "enabled": [],
-            "disabled": [
-                {
-                    "from": "Public/RAW/Stats/Generated/Data/WeaponSets.txt",
-                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
-                }
-            ]
+            "disabled": []
         }
     },
     "weaponSpells": {

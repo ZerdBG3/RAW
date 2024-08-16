@@ -1,5 +1,6 @@
 // Gives players the default attack spells that aren't removed when the weapons are unequipped
 
+// Passive given by Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_WeaponSets.lua
 new entry "RAW_WeaponSets_UnlockSpells"
 type "PassiveData"
 data "Properties" "IsHidden"
@@ -35,5 +36,11 @@ new entry "RAW_Target_UnarmedAttack"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_UnarmedAttack"
-data "RequirementConditions" "not WieldingWeapon('Melee', false, false, context.Source) and not WieldingWeapon('Ammunition', false, false, context.Source)"
-data "RequirementEvents" "OnEquip"
+data "PrepareSound" "Vocal_Component_Monk_Damage"
+data "CastSound" "Spell_Cast_Monk_UnarmedStrike_L1to3"
+data "TargetSound" "Spell_Impact_Monk_UnarmedStrike_L1to3"
+data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;0579f797-dd8e-408d-b18d-01650f6041e2,,;69345989-e868-432e-9d8c-84f4bcf77494,,;5925204d-590c-4d7c-ac62-a51ba44d4589,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "DualWieldingSpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;0579f797-dd8e-408d-b18d-01650f6041e2,,;69345989-e868-432e-9d8c-84f4bcf77494,,;5925204d-590c-4d7c-ac62-a51ba44d4589,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "CastEffect" "9d8f170e-35d7-4cdb-b1f9-5493cf771b19"
+data "SpellFlags" "IsMelee;IsHarmful;DisableBlood"
+data "Sheathing" "DontChange"

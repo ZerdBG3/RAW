@@ -1,0 +1,84 @@
+// ------------------------------------------------------
+// -------------------- Martial Arts --------------------
+// ------------------------------------------------------
+
+new entry "MartialArts_BonusUnarmedStrike"
+type "PassiveData"
+using "MartialArts_BonusUnarmedStrike"
+data "Conditions" "IsMeleeAttack() and IsMonkWeaponAttack() and not (SpellId('RAW_Target_UnarmedAttack') and HasUseCosts('BonusActionPoint', true)) and not SpellId('Target_FlurryOfBlows') and (not Combat(context.Source) or HasStatus('RAW_CURRENT_TURN', context.Source))"
+data "StatsFunctors" "ApplyStatus(SELF,MARTIAL_ARTS_BONUS_UNARMED_STRIKE,100,1)"
+
+new entry "MARTIAL_ARTS_BONUS_UNARMED_STRIKE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MARTIAL_ARTS_BONUS_UNARMED_STRIKE"
+data "TickType" "EndTurn"
+data "Boosts" "UnlockSpellVariant(SpellId('RAW_Target_UnarmedAttack'),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint),ModifyIconGlow(),ModifyVisuals(Action_Monk_FreeUnarmedStrike),ModifyTooltipDescription()),UnlockSpellVariant(SpellId('Target_FlurryOfBlows'),ModifyIconGlow())"
+data "RemoveEvents" "OnSpellCast"
+data "RemoveConditions" "SpellId('RAW_Target_UnarmedAttack')"
+
+// ---------------------------------------------------------
+// -------------------- Flurry of Blows --------------------
+// ---------------------------------------------------------
+
+new entry "Target_FlurryOfBlows"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_FlurryOfBlows"
+data "SpellProperties" "IF(HasStatus('MARTIAL_ARTS_BONUS_UNARMED_STRIKE',context.Source)):ApplyStatus(SELF,RAW_FLURRY_OF_BLOWS,100,1)"
+data "SpellRoll" "Attack(AttackType.MeleeUnarmedAttack)"
+data "SpellSuccess" "DealDamage(UnarmedDamage, Bludgeoning)"
+data "Description" "hf128eaa8g9fb1g4a91g92eegf734365be5dc;1"
+data "DescriptionParams" "1"
+data "TooltipDamageList" "DealDamage(MartialArtsUnarmedDamage, Bludgeoning)"
+data "UseCosts" "BonusActionPoint:1;KiPoint:1"
+data "SpellAnimation" "3acc079d-c27c-4568-9205-61150621c271,,;55562ea5-4c1c-4682-a824-d65a4e647ae8,,;b62ae1c7-0846-41ce-8377-780c90cf1ff5,,;a6456c59-0ad3-4311-a5d8-02bce73ac18a,,;b3299f52-cd3a-47a3-8432-2f97777c04c4,,;,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "RequirementConditions" "HasStatus('MARTIAL_ARTS_BONUS_UNARMED_STRIKE') or HasStatus('RAW_FLURRY_OF_BLOWS') or not Combat()"
+data "RequirementEvents" "OnStatusApplied;OnStatusRemoved;OnTurn;OnCombatEnded"
+
+new entry "RAW_FLURRY_OF_BLOWS"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "h8314a48ag5f5dg464agb684g792054ad643d;2"
+data "Description" "h168680a7g6785g4643g97e9gd531b76e057f;1"
+data "Icon" "Action_Monk_FlurryOfBlows"
+data "StackId" "RAW_FLURRY_OF_BLOWS"
+data "TickType" "EndTurn"
+data "Boosts" "UnlockSpellVariant(SpellId('Target_FlurryOfBlows'),ModifyUseCosts(Replace,BonusActionPoint,0,0,BonusActionPoint),ModifyUseCosts(Replace,KiPoint,0,0,KiPoint),ModifyIconGlow(),ModifyTooltipDescription())"
+data "OnApplyFunctors" "RemoveStatus(MARTIAL_ARTS_BONUS_UNARMED_STRIKE)"
+data "RemoveEvents" "OnSpellCast"
+data "RemoveConditions" "SpellId('Target_FlurryOfBlows')"
+
+// ----------------------------------------------------------
+// -------------------- Step of the Wind --------------------
+// ----------------------------------------------------------
+
+new entry "Shout_Dash_StepOfTheWind"
+type "SpellData"
+using "Shout_Dash_StepOfTheWind"
+data "Description" "h1e13b430g269bg4a2fg85f8g5e1a716c1c3e;1"
+data "DescriptionParams" "1"
+
+new entry "Shout_Disengage_StepOfTheWind"
+type "SpellData"
+using "Shout_Disengage_StepOfTheWind"
+data "Description" "h29de43bbg50ecg4919ga617g51ae1dd458d2;1"
+data "DescriptionParams" "1"
+
+// Remove jump cost in case the user isn't using the defaultActions option
+new entry "STEP_OF_THE_WIND"
+type "StatusData"
+data "StatusType" "BOOST"
+using "STEP_OF_THE_WIND"
+data "Description" "h17a22ad1g17dbg4d8bgb96eg7eea34b956fb;1"
+data "Boosts" "JumpMaxDistanceMultiplier(2);UnlockSpellVariant(SpellId('Projectile_Jump'),ModifyUseCosts(Replace,BonusActionPoint,0,0,BonusActionPoint))"
+
+// ---------------------------------------------------------
+// -------------------- Patient Defense --------------------
+// ---------------------------------------------------------
+
+new entry "Shout_PatientDefense"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_PatientDefense"
+data "Description" "h4cd88f4fg9d12g4734gbe27g2f91933f51ec;1"

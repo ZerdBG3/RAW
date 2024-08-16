@@ -1,8 +1,8 @@
 // Passive given by Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_InstantDeath.lua
 
-// ------------------------------------------------------
-// ------------------- Instant Death -------------------
-// ------------------------------------------------------
+// -------------------------------------------------------
+// -------------------- Instant Death --------------------
+// -------------------------------------------------------
 
 // Ignores the instant death rule if the target is polymorphed and it isn't a disguise
 // There is a bug in vanilla that outright kills polymorphed characters if the damage is bigger than the transformation's
