@@ -10,6 +10,7 @@ add spell "Target_Help"
 add spell "Shout_Disengage"
 add spell "RAW_Shout_Dodge"
 add spell "Target_Distract"
+add spell "RAW_Target_UnarmedAttack"
 
 new spellset "CommonSummonActions"
 add spell "Shout_Dash_NPC"

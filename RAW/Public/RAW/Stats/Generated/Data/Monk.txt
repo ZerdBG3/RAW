@@ -2,11 +2,13 @@
 // -------------------- Martial Arts --------------------
 // ------------------------------------------------------
 
+// Also unlocks the unarmed attack for NPC monks
 new entry "MartialArts_BonusUnarmedStrike"
 type "PassiveData"
 using "MartialArts_BonusUnarmedStrike"
 data "Conditions" "IsMeleeAttack() and IsMonkWeaponAttack() and not (SpellId('RAW_Target_UnarmedAttack') and HasUseCosts('BonusActionPoint', true)) and not SpellId('Target_FlurryOfBlows') and (not Combat(context.Source) or HasStatus('RAW_CURRENT_TURN', context.Source))"
 data "StatsFunctors" "ApplyStatus(SELF,MARTIAL_ARTS_BONUS_UNARMED_STRIKE,100,1)"
+data "Boosts" "UnlockSpell('RAW_Target_UnarmedAttack')"
 
 new entry "MARTIAL_ARTS_BONUS_UNARMED_STRIKE"
 type "StatusData"
@@ -33,7 +35,7 @@ data "DescriptionParams" "1"
 data "TooltipDamageList" "DealDamage(MartialArtsUnarmedDamage, Bludgeoning)"
 data "UseCosts" "BonusActionPoint:1;KiPoint:1"
 data "SpellAnimation" "3acc079d-c27c-4568-9205-61150621c271,,;55562ea5-4c1c-4682-a824-d65a4e647ae8,,;b62ae1c7-0846-41ce-8377-780c90cf1ff5,,;a6456c59-0ad3-4311-a5d8-02bce73ac18a,,;b3299f52-cd3a-47a3-8432-2f97777c04c4,,;,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
-data "RequirementConditions" "HasStatus('MARTIAL_ARTS_BONUS_UNARMED_STRIKE') or HasStatus('RAW_FLURRY_OF_BLOWS') or not Combat()"
+data "RequirementConditions" "HasStatus('MARTIAL_ARTS_BONUS_UNARMED_STRIKE') or HasStatus('RAW_FLURRY_OF_BLOWS')"
 data "RequirementEvents" "OnStatusApplied;OnStatusRemoved;OnTurn;OnCombatEnded"
 
 new entry "RAW_FLURRY_OF_BLOWS"
