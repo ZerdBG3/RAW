@@ -64,8 +64,9 @@ Thanks [Kilay](https://www.nexusmods.com/users/26711484) and [ogugght](https://w
 * Removes Bonus Action Cost from Jump and the Movement Cost is the same as the distance travelled
 * Gives a Walk passive to players that allows them to toggle between walking and running for cinematic and roleplay purposes (as requested by fmarzullo)
 
-#### Due to an issue with disabling this option, the following change is always present, even if the option is disabled. You can simply not use those actions if you don't want them (AI won't have them)
+#### Due to an issue with disabling this option, the following changes are always present, even if the option is disabled. You can simply not use those actions if you don't want them (AI won't have them)
 * Introduces Distract and Dodge as actions to player characters and summons
+* Unarmed Attack is always available, even when wielding weapons
 
 ## Downed ⚙️ `downed`
 * Healing a downed character allows them to play their turn normally
@@ -225,6 +226,12 @@ Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?ga
 
   </p>
 </details>
+
+## Monk ⚙️ `monk`
+* Changes Martial Arts Bonus Unarmed Strike to modify the base Unarmed Strike that is always available to players (_see [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#default-actions-%EF%B8%8F-defaultactions)_)
+* Flurry of Blows is only available after attacking with your action and both attacks are separate, not needing to be against the same target
+* Step of the Wind (both Dash and Disengage) doubles your jumping distance for the turn
+* Specifies that Patient Defense has the same removal conditions as Dodge
 
 ## Prone ⚙️ `prone`
 * Removes the disadvantage on Strength and Dexterity Saving Throws when Prone, and adds the Disadvantage to Ranged Attack Rolls

@@ -369,6 +369,23 @@
             ]
         }
     },
+    "monk": {
+        "displayName": "Monk",
+        "description": "Changes to most monk base features.",
+        "enabled": true,
+        "value": null,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Monk.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
     "prone": {
         "displayName": "Prone",
         "description": "Changes the advantage and disadvantage conditions while Prone.",
@@ -666,7 +683,12 @@
         "conflicts": [],
         "files": {
             "enabled": [],
-            "disabled": []
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/WeaponSets.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
         }
     },
     "weaponSpells": {
