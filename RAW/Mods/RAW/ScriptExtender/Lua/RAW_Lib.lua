@@ -174,6 +174,10 @@ function RAW_RemoveRepeatedSemicolon(s)
     return string.gsub(s, "^;", "")
 end
 
+function RAW_EscapeRegex(s)
+    return string.gsub(s, "%W", "%%%1")
+end
+
 function RAW_HasValueInList(list, value)
     for _, v in pairs(list) do
         if v == value then
@@ -206,6 +210,9 @@ function RAW_ApplyStaticData(defTable, printDebug)
                     elseif replacement.Type == "overwrite" then
                         RAW_PrintIfDebug("\tOverwriting " .. attribute .. " - " .. replacement.Value, printDebug)
                         newValue = replacement.Value
+                    elseif replacement.Type == "remove" then
+                        RAW_PrintIfDebug("\tRemoving from " .. attribute .. " - " .. replacement.Value, printDebug)
+                        newValue = string.gsub(resource[attribute], RAW_EscapeRegex(replacement.Value) .. ";?", "")
                     end
                     resource[attribute] = newValue
                 elseif type(resource[attribute]) == "userdata"  then
