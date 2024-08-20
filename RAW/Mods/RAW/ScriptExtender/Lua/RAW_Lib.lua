@@ -86,14 +86,15 @@ RAW_PrintTable_Feats = 8
 RAW_PrintTable_FreeWeaponEquip = 9
 RAW_PrintTable_InstantDeath = 10
 RAW_PrintTable_Invisible = 11
-RAW_PrintTable_Rogue = 12
-RAW_PrintTable_Rogue_Thief = 13
-RAW_PrintTable_SkillCheck_CritFail = 14
-RAW_PrintTable_Spells_BonusAction = 15
-RAW_PrintTable_Spells_Duration = 16
-RAW_PrintTable_TwoWeaponFighting = 17
-RAW_PrintTable_WeaponSets = 18
-RAW_PrintTable_WeaponSpells = 19
+RAW_PrintTable_Monk = 12
+RAW_PrintTable_Rogue = 13
+RAW_PrintTable_Rogue_Thief = 14
+RAW_PrintTable_SkillCheck_CritFail = 15
+RAW_PrintTable_Spells_BonusAction = 16
+RAW_PrintTable_Spells_Duration = 17
+RAW_PrintTable_TwoWeaponFighting = 18
+RAW_PrintTable_WeaponSets = 19
+RAW_PrintTable_WeaponSpells = 20
 
 local ENUM_RAW_PrintTable = RAW_Set {
     RAW_PrintTable_ModOptions,
@@ -108,6 +109,7 @@ local ENUM_RAW_PrintTable = RAW_Set {
     -- RAW_PrintTable_FreeWeaponEquip,
     -- RAW_PrintTable_InstantDeath,
     -- RAW_PrintTable_Invisible,
+    -- RAW_PrintTable_Monk,
     -- RAW_PrintTable_Rogue,
     -- RAW_PrintTable_Rogue_Thief,
     -- RAW_PrintTable_SkillCheck_CritFail,
@@ -217,6 +219,10 @@ function RAW_RemoveRepeatedSemicolon(s)
     return string.gsub(s, "^;", "")
 end
 
+function RAW_EscapeRegex(s)
+    return string.gsub(s, "%W", "%%%1")
+end
+
 function RAW_HasValueInList(list, value)
     for _, v in pairs(list) do
         if v == value then
@@ -249,6 +255,9 @@ function RAW_ApplyStaticData(defTable, printDebug)
                     elseif replacement.Type == "overwrite" then
                         RAW_PrintIfDebug("\tOverwriting " .. attribute .. " - " .. replacement.Value, printDebug)
                         newValue = replacement.Value
+                    elseif replacement.Type == "remove" then
+                        RAW_PrintIfDebug("\tRemoving from " .. attribute .. " - " .. replacement.Value, printDebug)
+                        newValue = string.gsub(resource[attribute], RAW_EscapeRegex(replacement.Value) .. ";?", "")
                     end
                     resource[attribute] = newValue
                 elseif type(resource[attribute]) == "userdata"  then

@@ -228,10 +228,12 @@ Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?ga
 </details>
 
 ## Monk ⚙️ `monk`
-* Changes Martial Arts Bonus Unarmed Strike to modify the base Unarmed Strike that is always available to players (_see [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#default-actions-%EF%B8%8F-defaultactions)_)
-* Flurry of Blows is only available after attacking with your action and both attacks are separate, not needing to be against the same target
-* Step of the Wind (both Dash and Disengage) doubles your jumping distance for the turn
-* Specifies that Patient Defense has the same removal conditions as Dodge
+* Level 1: Martial Arts Bonus Unarmed Strike changed from a temporary spell to instead modify the base Unarmed Strike that is always available to players (_see [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#default-actions-%EF%B8%8F-defaultactions)_)
+* Level 1: Removes Ki Points and Flurry of Blows
+* Level 2: Gives Ki Points and Flurry of Blows on the correct level (total amount of Ki Points reduced by 1 to the correct value)
+* Level 2: Flurry of Blows is only available after attacking with your action and both attacks are separate, not needing to be against the same target
+* Level 2: Step of the Wind (both Dash and Disengage) doubles your jumping distance for the turn
+* Level 2: Specifies that Patient Defense has the same removal conditions as Dodge
 
 ## Prone ⚙️ `prone`
 * Removes the disadvantage on Strength and Dexterity Saving Throws when Prone, and adds the Disadvantage to Ranged Attack Rolls
