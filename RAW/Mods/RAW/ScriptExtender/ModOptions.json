@@ -464,8 +464,8 @@
         }
     },
     "skillCheck_critFail": {
-        "displayName": "Skill Checks Critical Fail",
-        "description": "Disables the possibility of a critical fail on skill checks by setting a minimum of 2 on rolls.",
+        "displayName": "Disable Critical Fail on Checks",
+        "description": "Disables the possibility of a critical fail on ability or skill checks and saving throws.",
         "enabled": true,
         "value": null,
         "log": false,

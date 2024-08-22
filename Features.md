@@ -17,7 +17,7 @@ _Developed in partnership with [Eric](https://www.nexusmods.com/baldursgate3/mod
 ### 🔧 Customization
 
 * You can add items that require attunement by including their stat name to `attunement/Items_Add.json`. If you wish to have an item that usually requires attunement not require attunement instead, you can add its stat name to `attunement/Items_Remove.json`
-  * _Instructions to create the file is present on the [Installation Guide](https://github.com/ZerdBG3/RAW/blob/main/Installing.md#optional-configurations)_
+  - _Instructions to create the file is present on the [Installation Guide](https://github.com/ZerdBG3/RAW/blob/main/Installing.md#optional-configurations)_
 * In both files, you must structure it like a json array, as demonstrated in the example below
 
 <details>
@@ -68,6 +68,13 @@ Thanks [Kilay](https://www.nexusmods.com/users/26711484) and [ogugght](https://w
 * Introduces Distract and Dodge as actions to player characters and summons
 * Unarmed Attack is always available, even when wielding weapons
 
+## Disable Critical Fail on Checks ⚙️ `skillCheck_critFail`
+* Disables critical fails on skill checks and raw ability checks (like raw strength or dexterity checks) and saving throws by setting the minimum roll as 2. This means you can't roll a 1 anymore, so no more crit fails on dialogues or lockpicking.
+  - _Unfortunately, due to a technical limitation, Concentration Saving Throws are not covered by this change and might still critically fail_
+* The downside is, of course, the specific cases where a 2 is enough to pass a check but a 1 wouldn't be. So `+3` on a `DC 5` or `+8` on a `DC 10`. On those cases, you have a 5% chance of being unfairly benefited from the mod. However, given the biggest frustration tends to be on `+15` on `DC 10`, I think it's a fair tradeoff.
+* Through testing, I've confirmed that the minimum roll is enforced after the roll, so this doesn't increase your probability of getting higher rolls. You still have a 5% chance of getting any value on dice rolls, but 1's will become 2.
+* This also means that there's no interaction with `Reroll` features, like Halfling's Lucky. Mechanically speaking, the roll is made first, checks for a reroll possibility, returns the raw value of the dice, then it's set to the minimum specificed by the passive. So Halflings will still reroll their 1's in skill/ability checks, but if they roll a 1 again, it'll be increased to a 2.
+
 ## Downed ⚙️ `downed`
 * Healing a downed character allows them to play their turn normally
 
@@ -104,7 +111,7 @@ _Depends on: [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Feature
 ## Instant Death ⚙️ `instantDeath`
 Thanks [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?gameId=3474) for the implementation
 * Players only: Taking damage that exceeds the current hit points by the character's hit point maximum kills them outright, without death saving throws
-  * _There is a bug in vanilla that outright kills polymorphed characters if the damage is bigger than the transformation's and the original character's current HP combined. This is not the mod's fault_
+  - _There is a bug in vanilla that outright kills polymorphed characters if the damage is bigger than the transformation's and the original character's current HP combined. This is not the mod's fault_
 
 ## Intangible Summons ⚙️ `intangibleSummons`
 ❗️ I highly recommend using [dr. kekyll's Summon Initiative Fixer mod](https://www.nexusmods.com/baldursgate3/mods/8692?tab=description) to make sure Flaming Sphere and Spiritual Weapon always share their turn with the caster
@@ -120,9 +127,9 @@ Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?ga
 * Normal Invisibility is no longer removed by being damaged, interacting with items or being _wet_ 💧. Only attacking and casting a spell will remove Invisibility
 * Greater Invisibility is no longer removed at all (no saves)
 * Sneaking while invisible turns the character `Hidden & Invisible` (can be done inside enemy sight cones if they can't see invisible), not being detectable by anyone that can't see invisible
-  * _Being `Hidden & Invisible` is the same as Vanilla Invisible. It allows pickpocketing, avoids starting combat when near enemies, etc_
+  - _Being `Hidden & Invisible` is the same as Vanilla Invisible. It allows pickpocketing, avoids starting combat when near enemies, etc_
 * See Invisibility and similar features allows characters to see the `Hidden & Invisible` characters if they're in their Line of Sight (the usual red cone for sneaking), but doesn't remove the invisibility status, allowing the usual Stealth check when inside a sight cone. It also negates the advantage/disadvantage benefits from Invisibility, so it fully counters invisibility. Leaving the sight cone of See Invisibility while still sneaking regains `Hidden & Invisible`
-  * _Players aren't restricted by their sight cone, revealing enemies all around them, to avoid the necessity of micro managing your character's LoS_
+  - _Players aren't restricted by their sight cone, revealing enemies all around them, to avoid the necessity of micro managing your character's LoS_
 * Sense Hidden Presence (the NPC seeking ability) makes a perception check against the passive stealth of every sneaking character in a radius (no LoS required, since it theoretically uses hearing). Upon succeeding, it removes the sneaking (but never the invisibility). It can be used by players and was readjusted to cost 1 action (emulating RAW Active Perception roll)
 * Enemies gain one free sneak _attempt_ when they become invisible, rolling their stealth against the highest passive perception of their enemies in a radius (same radius as Sense Hidden Presence). If they succeed the stealth check, they become `Hidden & Invisible`
 * While invisible, enemies can now attempt to sneak for 1 action, becoming `Hidden & Invisible` without need for a stealth check
@@ -206,9 +213,9 @@ Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?ga
 </details>
 
 * You can add other spells that require sight by including their stat name to `invisibility/Spells_Add.json`. If you wish to have a spell not require sight, add its stat name to `invisibility/Spells_Remove.json`
-  * _Instructions to create the file is present on the [Installation Guide](https://github.com/ZerdBG3/RAW/blob/main/Installing.md#optional-configurations)_
-  * _Adding a spell to `Spells_Add.json` or `Spells_Remove.json` will automatically affect all spells that inherit from it, like upcast, container spells, etc_
-  * _For interrupts, use the spell entry which has the `InterruptPrototype`, not the interrupt entry (Eg.: `Shout_HellishRebuke` instead of `Target_HellishRebuke` or `Interrupt_HellishRebuke`)_
+  - _Instructions to create the file is present on the [Installation Guide](https://github.com/ZerdBG3/RAW/blob/main/Installing.md#optional-configurations)_
+  - _Adding a spell to `Spells_Add.json` or `Spells_Remove.json` will automatically affect all spells that inherit from it, like upcast, container spells, etc_
+  - _For interrupts, use the spell entry which has the `InterruptPrototype`, not the interrupt entry (Eg.: `Shout_HellishRebuke` instead of `Target_HellishRebuke` or `Interrupt_HellishRebuke`)_
 * In both files, you must structure it like a json array, as demonstrated in the example below
 
 <details>
@@ -259,12 +266,6 @@ _Depends on: [`rogue`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogu
 * Some abilities are only available while short resting:
   - Druid's Natural Recovery (Circle of the Land)
   - Wizard's Arcane Recovery
-
-## Skill Checks Critical Fail ⚙️ `skillCheck_critFail`
-* Disables critical fails on skill checks and raw ability checks (like raw strength or dexterity checks - not Saving Throws) by setting the minimum roll as 2. This means you can't roll a 1 anymore, so no more crit fails on dialogues or lockpicking.
-* The downside is, of course, the specific cases where a 2 is enough to pass a check but a 1 wouldn't be. So `+3` on a `DC 5` or `+8` on a `DC 10`. On those cases, you have a 5% chance of being unfairly benefited from the mod. However, given the biggest frustration tends to be on `+15` on `DC 10`, I think it's a fair tradeoff.
-* Through testing, I've confirmed that the minimum roll is enforced after the roll, so this doesn't increase your probability of getting higher rolls. You still have a 5% chance of getting any value on dice rolls, but 1's will become 2.
-* This also means that there's no interaction with `Reroll` features, like Halfling's Lucky. Mechanically speaking, the roll is made first, checks for a reroll possibility, returns the raw value of the dice, then it's set to the minimum specificed by the passive. So Halflings will still reroll their 1's in skill/ability checks, but if they roll a 1 again, it'll be increased to a 2.
 
 ## Spells ⚙️ `spells`
 ❗️ I highly recommend using [jjdoorframe's True Darkness](https://www.nexusmods.com/baldursgate3/mods/13542) to make Darkness RAW
