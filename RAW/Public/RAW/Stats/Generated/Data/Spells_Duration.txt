@@ -29,24 +29,19 @@ data "SpellType" "Target"
 using "Target_Darkness"
 data "SpellProperties" "GROUND:CreateSurface(5,100,DarknessCloud,true);GROUND:ApplyStatus(SELF,RAW_CONCENTRATION_HELPER,100,100)"
 
+// TO-DO: check TooltipUpcastDescription on root spell and upcast versions
+// Also need to add to the list of status removed on short rest, but not the upcast version
 new entry "Target_DominateBeast_5"
 type "SpellData"
 data "SpellType" "Target"
-using "Target_DominateBeast"
+using "Target_DominateBeast_5"
 data "SpellSuccess" "ApplyStatus(DOMINATE_BEAST,100,100)"
-data "TooltipUpcastDescription" "6ff1780a-855a-414c-a8bf-811251537206"
-data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:5"
-data "RootSpellID" "Target_DominateBeast"
-data "PowerLevel" "5"
 
 new entry "Target_DominatePerson_6"
 type "SpellData"
 data "SpellType" "Target"
-using "Target_DominatePerson"
+using "Target_DominatePerson_6"
 data "SpellSuccess" "ApplyStatus(DOMINATE_PERSON,100,100);"
-data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:6"
-data "RootSpellID" "Target_DominatePerson"
-data "PowerLevel" "6"
 
 new entry "Shout_ExpeditiousRetreat"
 type "SpellData"
@@ -158,6 +153,10 @@ using "Target_Barkskin"
 data "SpellProperties" "ApplyStatus(BARKSKIN,100,600)"
 data "TooltipStatusApply" "ApplyStatus(BARKSKIN,100,600)"
 
+// Conjure Elemental is modified at Spells.txt due to other changes beside duration
+
+// Conjure Woodland Beings is modified at Spells.txt due to other changes beside duration
+
 new entry "Target_Daylight"
 type "SpellData"
 data "SpellType" "Target"
@@ -175,12 +174,8 @@ data "TooltipStatusApply" "ApplyStatus(DAYLIGHT,100,600)"
 new entry "Target_DominateBeast_6"
 type "SpellData"
 data "SpellType" "Target"
-using "Target_DominateBeast"
+using "Target_DominateBeast_6"
 data "SpellSuccess" "ApplyStatus(DOMINATE_BEAST,100,600)"
-data "TooltipUpcastDescription" "6ff1780a-855a-414c-a8bf-811251537206"
-data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:6"
-data "RootSpellID" "Target_DominateBeast"
-data "PowerLevel" "6"
 
 new entry "Target_EnhanceAbility_BearsEndurance"
 type "SpellData"
@@ -344,6 +339,8 @@ data "SpellType" "Target"
 using "Target_MagicWeapon_6"
 data "SpellProperties" "IF(Item()):ApplyStatus(MAGIC_WEAPON_6,100,600);IF(not Item()):ApplyEquipmentStatus(MainHand,MAGIC_WEAPON_6,100,600);GROUND:ApplyStatus(SELF,RAW_CONCENTRATION_HELPER,100,600)"
 
+// Minor Conjure Elemental is modified at Spells.txt due to other changes beside duration
+
 new entry "Shout_PassWithoutTrace"
 type "SpellData"
 data "SpellType" "Shout"
@@ -393,6 +390,7 @@ using "Target_ProtectionFromPoison"
 data "SpellProperties" "RemoveStatus(SG_Poisoned); ApplyStatus(PROTECTION_FROM_POISON, 100, 600)"
 data "TooltipStatusApply" "ApplyStatus(PROTECTION_FROM_POISON, 100, 600)"
 
+// TO-DO: Remove upcast version from the list of statuses removed on short rest
 new entry "Target_Stoneskin"
 type "SpellData"
 data "SpellType" "Target"

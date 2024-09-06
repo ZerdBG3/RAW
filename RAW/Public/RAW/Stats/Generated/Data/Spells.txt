@@ -1,6 +1,6 @@
-// --------------------------------------------------------
-// ------------------------- Aid --------------------------
-// --------------------------------------------------------
+// ---------------------------------------------
+// -------------------- Aid --------------------
+// ---------------------------------------------
 
 // Changed SpellType to Target and added AmountOfTargets so it specifically limits it to 3 creatures
 new entry "Shout_Aid"
@@ -13,7 +13,7 @@ data "TargetRadius" "9"
 data "TargetConditions" "Ally()"
 data "Icon" "Spell_Abjuration_Aid"
 data "DisplayName" "h7004f952g06a0g4400g855eg74f3029baed1;1"
-data "Description" "h80f1b00fgf25eg4966g989fg1d9baf7a4069;9"
+data "Description" "hf6fb778bg3642g448cg8017g5b4f55b07989;1"
 data "DescriptionParams" "RegainHitPoints(5)"
 data "TooltipDamageList" "RegainHitPoints(5)"
 data "TooltipStatusApply" "ApplyStatus(AID,100,-1)"
@@ -34,18 +34,20 @@ data "CastEffect" "b50decc3-5f93-4467-8d3a-aa8b01fc915e"
 data "TargetEffect" "a908e49b-b59f-4a20-b487-e25ae198d926"
 data "AmountOfTargets" "3"
 
-new entry "Shout_Aid_3"
-type "SpellData"
-data "SpellType" "Target"
-using "Shout_Aid"
-data "SpellProperties" "ApplyStatus(AID_3,100,-1)"
-data "Description" "h431cc9ebgd65cg4e45g95fdgc860ea48125c;1"
-data "DescriptionParams" "RegainHitPoints(10)"
-data "TooltipDamageList" "RegainHitPoints(10)"
-data "TooltipStatusApply" "ApplyStatus(AID_3,100,-1)"
-data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:3"
-data "RootSpellID" "Shout_Aid"
-data "PowerLevel" "3"
+// TO-DO: Test if not overwriting upcasts will work fine
+// If not, test if just self-inheriting changing the SpellType works
+// new entry "Shout_Aid_3"
+// type "SpellData"
+// data "SpellType" "Target"
+// using "Shout_Aid"
+// data "SpellProperties" "ApplyStatus(AID_3,100,-1)"
+// data "Description" "h431cc9ebgd65cg4e45g95fdgc860ea48125c;1"
+// data "DescriptionParams" "RegainHitPoints(10)"
+// data "TooltipDamageList" "RegainHitPoints(10)"
+// data "TooltipStatusApply" "ApplyStatus(AID_3,100,-1)"
+// data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:3"
+// data "RootSpellID" "Shout_Aid"
+// data "PowerLevel" "3"
 
 new entry "Shout_Aid_4"
 type "SpellData"
@@ -83,9 +85,9 @@ data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:6"
 data "RootSpellID" "Shout_Aid"
 data "PowerLevel" "6"
 
-// -----------------------------------------------
-// -------------- Aura of Vitality ---------------
-// -----------------------------------------------
+// ----------------------------------------------------------
+// -------------------- Aura of Vitality --------------------
+// ----------------------------------------------------------
 
 // Changed to Concentration spell
 
@@ -231,6 +233,8 @@ data "SpellType" "Target"
 using "Target_ConjureElemental_Container"
 data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsLinkedSpellContainer;IsConcentration"
 
+// TO-DO: Test if concentration is working properly
+// If it is, move the duration change to Spells_Duration.txt
 new entry "Target_ConjureElemental_Elemental_Air"
 type "SpellData"
 data "SpellType" "Target"
@@ -243,55 +247,51 @@ type "SpellData"
 data "SpellType" "Target"
 using "Target_ConjureElemental_Elemental_Earth"
 data "SpellProperties" "GROUND:Summon(2ad47124-e41a-460e-b97a-f8e9efd32ed8, 600,Projectile_AiHelper_Summon_Strong,,'ConjureElemetnalStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
-data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsConcentration"
 
 new entry "Target_ConjureElemental_Elemental_Fire"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_ConjureElemental_Elemental_Fire"
 data "SpellProperties" "GROUND:Summon(88a6c664-877c-4d6e-81ad-dd377df2634e, 600,Projectile_AiHelper_Summon_Strong,,'ConjureElemetnalStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
-data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsConcentration"
 
 new entry "Target_ConjureElemental_Elemental_Water"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_ConjureElemental_Elemental_Water"
 data "SpellProperties" "GROUND:Summon(f21e144a-3237-4faa-a99c-a15e1937bc2c, 600,Projectile_AiHelper_Summon_Strong,,'ConjureElemetnalStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
-data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsConcentration"
 
 new entry "Target_ConjureElemental_Myrmidon_Air"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_ConjureElemental_Myrmidon_Air"
 data "SpellProperties" "GROUND:Summon(15928ca3-b38b-4303-9c1c-9945e5e719a1, 600,Projectile_AiHelper_Summon_Strong,,'ConjureElemetnalStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
-data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsConcentration"
 
 new entry "Target_ConjureElemental_Myrmidon_Earth"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_ConjureElemental_Myrmidon_Earth"
 data "SpellProperties" "GROUND:Summon(b5bd29ba-8105-4123-920f-a2c64a4e1dfc, 600,Projectile_AiHelper_Summon_Strong,,'ConjureElemetnalStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
-data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsConcentration"
 
 new entry "Target_ConjureElemental_Myrmidon_Fire"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_ConjureElemental_Myrmidon_Fire"
 data "SpellProperties" "GROUND:Summon(7794f082-5483-42d2-9d5c-ee6a99de8703, 600,Projectile_AiHelper_Summon_Strong,,'ConjureElemetnalStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
-data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsConcentration"
 
 new entry "Target_ConjureElemental_Myrmidon_Water"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_ConjureElemental_Myrmidon_Water"
 data "SpellProperties" "GROUND:Summon(b79527a1-a83d-4b23-82d5-a02b01638469, 600,Projectile_AiHelper_Summon_Strong,,'ConjureElemetnalStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
-data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsConcentration"
 
 // -----------------------------------------------------------------
 // -------------------- Conjure Woodland Beings --------------------
 // -----------------------------------------------------------------
 
 // Making it concentration and changing duration to 600 turns
+
+// TO-DO: Test if concentration is working properly
+// If it is, move the duration change to Spells_Duration.txt
 new entry "Target_ConjureWoodlandBeings"
 type "SpellData"
 data "SpellType" "Target"
@@ -406,70 +406,71 @@ data "ExplodeRadius" "6"
 // -------------------- Gust of Wind --------------------
 // ------------------------------------------------------
 
-// Changed to Concentration spell that lasts 10 turns and becomes usable each turn as a bonus action. Also removed Off Balance status and replaced with a RAWer effect
+// Changed to Concentration spell that lasts 10 turns and becomes usable each turn as a bonus action
+// Also removed Off Balance status and replaced with a RAWer effect
 new entry "Zone_GustOfWind"
 type "SpellData"
 data "SpellType" "Zone"
 using "Zone_GustOfWind"
-data "ConcentrationSpellID" "Zone_GustOfWind_BonusAction"
-data "SpellProperties" "GROUND:SurfaceClearLayer(Cloud); RemoveStatus(BURNING);ApplyStatus(SELF,GUST_OF_WIND_AURA,100,10);IF(Character()):ApplyStatus(GUST_OF_WIND,100,1)"
+data "ConcentrationSpellID" "RAW_Zone_GustOfWind_BonusAction"
+data "SpellProperties" "GROUND:SurfaceClearLayer(Cloud); RemoveStatus(BURNING);ApplyStatus(SELF,RAW_GUST_OF_WIND_AURA,100,10);IF(Character()):ApplyStatus(RAW_GUST_OF_WIND,100,1)"
 data "SpellSuccess" "IF(Character()):Force(5)"
-data "Description" "h07d4002dg6964g4331gb98fgf4664cb1b5ce;1"
+data "Description" "h1a2c5b8bg7ba6g4c81g9a2dga347133f8198;1"
 data "Range" "18"
 data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;AddFallDamageOnLand;IsConcentration"
 
-new entry "Zone_GustOfWind_BonusAction"
+new entry "RAW_Zone_GustOfWind_BonusAction"
 type "SpellData"
 data "SpellType" "Zone"
 using "Zone_GustOfWind"
-data "SpellProperties" "GROUND:SurfaceClearLayer(Cloud); RemoveStatus(BURNING);IF(Character()):ApplyStatus(GUST_OF_WIND,100,1)"
+data "SpellProperties" "GROUND:SurfaceClearLayer(Cloud); RemoveStatus(BURNING);IF(Character()):ApplyStatus(RAW_GUST_OF_WIND,100,1)"
 data "UseCosts" "BonusActionPoint:1"
 data "SpellFlags" "Wildshape;AddFallDamageOnLand;Temporary"
 
-new entry "GUST_OF_WIND_AURA"
+new entry "RAW_GUST_OF_WIND_AURA"
 type "StatusData"
 data "StatusType" "BOOST"
 data "AuraRadius" "18"
-data "AuraStatuses" "IF(FacingMe() and HasStatus('GUST_OF_WIND')):ApplyStatus(GUST_OF_WIND_MOVEMENT)"
-data "Boosts" "UnlockSpell(Zone_GustOfWind_BonusAction)"
-data "TickFunctors" "IF(not HasStatus('GUST_OF_WIND_BONUS')):ApplyStatus(GUST_OF_WIND_BONUS,100,9)"
+data "AuraStatuses" "IF(FacingMe() and HasStatus('RAW_GUST_OF_WIND')):ApplyStatus(RAW_GUST_OF_WIND_MOVEMENT)"
+data "Boosts" "UnlockSpell(RAW_Zone_GustOfWind_BonusAction)"
+data "TickFunctors" "IF(not HasStatus('RAW_GUST_OF_WIND_BONUS')):ApplyStatus(RAW_GUST_OF_WIND_BONUS,100,9)"
 data "TickType" "StartTurn"
-data "OnRemoveFunctors" "RemoveStatus(GUST_OF_WIND_BONUS);ApplyStatus(GUST_OF_WIND_END,100,1)"
-data "StackId" "GUST_OF_WIND_AURA"
+data "OnRemoveFunctors" "RemoveStatus(RAW_GUST_OF_WIND_BONUS);ApplyStatus(RAW_GUST_OF_WIND_END,100,1)"
+data "StackId" "RAW_GUST_OF_WIND_AURA"
 data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
 
-new entry "GUST_OF_WIND"
+new entry "RAW_GUST_OF_WIND"
 type "StatusData"
 data "StatusType" "BOOST"
-data "DisplayName" "h364985b1g956fg4689ga3aaga271d1e44c09;1"
-data "Description" "hf964b264gdc59g4e18g8563gd4f7d1f317cd;1"
+data "DisplayName" "hafb83597g58afg4080g8927gc173a1f113f5;1"
+data "Description" "h93646105g9131g4a5ega154g478970cd0d04;1"
 data "Icon" "statIcons_OffBalanced"
 data "StillAnimationType" "Weakened"
 data "StillAnimationPriority" "Weakened"
 data "Icon" "Spell_Evocation_GustOfWind"
-data "StackId" "GUST_OF_WIND"
-data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSourceStatusApplied) and HasStatus('GUST_OF_WIND_END',context.Source)) or IsStatusEvent(StatusEvent.OnSourceDeath)"
+data "StackId" "RAW_GUST_OF_WIND"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSourceStatusApplied) and HasStatus('RAW_GUST_OF_WIND_END',context.Source)) or IsStatusEvent(StatusEvent.OnSourceDeath)"
 data "RemoveEvents" "OnSourceStatusApplied;OnSourceDeath"
 
-new entry "GUST_OF_WIND_BONUS"
+new entry "RAW_GUST_OF_WIND_BONUS"
 type "StatusData"
 data "StatusType" "BOOST"
-data "Boosts" "UnlockSpell(Zone_GustOfWind_BonusAction)"
+data "Boosts" "UnlockSpell(RAW_Zone_GustOfWind_BonusAction)"
 data "StackId" "GUST_OF_WIND_BONUS"
 data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
 
-new entry "GUST_OF_WIND_MOVEMENT"
+new entry "RAW_GUST_OF_WIND_MOVEMENT"
 type "StatusData"
 data "StatusType" "BOOST"
 data "Boosts" "ActionResourceConsumeMultiplier(Movement,2,0); MovementSpeedLimit(Walk)"
-data "StackId" "GUST_OF_WIND_MOVEMENT"
+data "StackId" "RAW_GUST_OF_WIND_MOVEMENT"
 data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
 
-new entry "GUST_OF_WIND_END"
+new entry "RAW_GUST_OF_WIND_END"
 type "StatusData"
 data "StatusType" "BOOST"
 data "TickType" "EndTurn"
-data "StackId" "GUST_OF_WIND_END"
+data "StackId" "RAW_GUST_OF_WIND_END"
 data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
 
 // --------------------------------------------------------
@@ -717,9 +718,9 @@ data "SpellType" "Projectile"
 using "Projectile_IceKnife"
 data "SpellProperties" ""
 
-// --------------------------------------------------------
-// ----------------- Mass Healing Word --------------------
-// --------------------------------------------------------
+// -----------------------------------------------------------
+// -------------------- Mass Healing Word --------------------
+// -----------------------------------------------------------
 
 // Changed SpellType to Target and added AmountOfTargets so it specifically limits it to 6 creatures
 new entry "Shout_HealingWord_Mass"
@@ -732,7 +733,7 @@ data "TargetRadius" "18"
 data "TargetConditions" "Ally() and not Dead() and not Tagged('UNDEAD') and not Tagged('CONSTRUCT')"
 data "Icon" "Spell_Evocation_MassHealingWord"
 data "DisplayName" "hd9ac7d48g618fg4f1fgb558g291b65671ea1;1"
-data "Description" "h25e917a1g4d42g4837gab6fg424fca019500;4"
+data "Description" "hed2f953bgaa1bg4e8bg82b1g1807bbfdb2b8;1"
 data "DescriptionParams" "RegainHitPoints(1d4+SpellCastingAbilityModifier)"
 data "TooltipDamageList" "RegainHitPoints(1d4+SpellCastingAbilityModifier)"
 data "TooltipPermanentWarnings" "662e013d-e5cb-4669-9a4b-771636b24aa2"
@@ -751,18 +752,20 @@ data "CastEffect" "47f3994a-396b-40ac-a063-aa9ed71dc523"
 data "TargetEffect" "3c7b783e-d2ee-4125-9f94-0d48d44fe3e8"
 data "AmountOfTargets" "6"
 
-new entry "Shout_HealingWord_Mass_4"
-type "SpellData"
-data "SpellType" "Target"
-using "Shout_HealingWord_Mass"
-data "SpellProperties" "RegainHitPoints(2d4+SpellCastingAbilityModifier)"
-data "DescriptionParams" "RegainHitPoints(2d4+SpellCastingAbilityModifier)"
-data "TooltipDamageList" "RegainHitPoints(2d4+SpellCastingAbilityModifier)"
-data "TooltipUpcastDescription" "ef4fc937-9b23-4fcc-a67f-7706f86cfa44"
-data "TooltipUpcastDescriptionParams" "RegainHitPoints(1d4)"
-data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:4"
-data "RootSpellID" "Shout_HealingWord_Mass"
-data "PowerLevel" "4"
+// TO-DO: Test if not overwriting upcasts will work fine
+// If not, test if just self-inheriting changing the SpellType works
+// new entry "Shout_HealingWord_Mass_4"
+// type "SpellData"
+// data "SpellType" "Target"
+// using "Shout_HealingWord_Mass"
+// data "SpellProperties" "RegainHitPoints(2d4+SpellCastingAbilityModifier)"
+// data "DescriptionParams" "RegainHitPoints(2d4+SpellCastingAbilityModifier)"
+// data "TooltipDamageList" "RegainHitPoints(2d4+SpellCastingAbilityModifier)"
+// data "TooltipUpcastDescription" "ef4fc937-9b23-4fcc-a67f-7706f86cfa44"
+// data "TooltipUpcastDescriptionParams" "RegainHitPoints(1d4)"
+// data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:4"
+// data "RootSpellID" "Shout_HealingWord_Mass"
+// data "PowerLevel" "4"
 
 new entry "Shout_HealingWord_Mass_5"
 type "SpellData"
@@ -790,9 +793,9 @@ data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:6"
 data "RootSpellID" "Shout_HealingWord_Mass"
 data "PowerLevel" "6"
 
-// -----------------------------------------------
-// ----------- Minor Conjure Elemental -----------
-// -----------------------------------------------
+// -----------------------------------------------------------------
+// -------------------- Minor Conjure Elemental --------------------
+// -----------------------------------------------------------------
 
 // Making them concentration and changing duration to 600 turns
 new entry "Target_ConjureElementals_Minor_Container"
@@ -801,6 +804,8 @@ data "SpellType" "Target"
 using "Target_ConjureElementals_Minor_Container"
 data "SpellFlags" "IsSpell;HasVerbalComponent;HasSomaticComponent;IsLinkedSpellContainer;CannotTargetCharacter;CannotTargetItems;IsConcentration"
 
+// TO-DO: Test if concentration is working properly
+// If it is, move the duration change to Spells_Duration.txt
 new entry "Target_ConjureElementals_Minor_Azer"
 type "SpellData"
 data "SpellType" "Target"
@@ -813,18 +818,16 @@ type "SpellData"
 data "SpellType" "Target"
 using "Target_ConjureElementals_Minor_IceMephit"
 data "SpellProperties" "GROUND:Summon(9bfb58f1-52d2-45d4-8485-0eb224f1a87f, 600,Projectile_AiHelper_Summon_Weak,,'ConjureMinorElemetnalStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK);GROUND:Summon(9bfb58f1-52d2-45d4-8485-0eb224f1a87f, 600,,,'ConjureElemetnalTwoStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
-data "SpellFlags" "IsSpell;HasVerbalComponent;HasSomaticComponent;CannotTargetItems;CannotTargetCharacter;IsConcentration"
 
 new entry "Target_ConjureElementals_Minor_MudMephit"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_ConjureElementals_Minor_MudMephit"
 data "SpellProperties" "GROUND:Summon(74e37928-4361-4d5b-a304-0ba82f5e398a, 600,Projectile_AiHelper_Summon_Weak,,'ConjureMinorElemetnalStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK);GROUND:Summon(74e37928-4361-4d5b-a304-0ba82f5e398a, 600,,,'ConjureElemetnalTwoStack',UNSUMMON_ABLE,SHADOWCURSE_SUMMON_CHECK)"
-data "SpellFlags" "IsSpell;HasVerbalComponent;HasSomaticComponent;CannotTargetItems;CannotTargetCharacter;IsConcentration"
 
-// -------------------------------------------------------
-// ------------------- Prayer of Healing -----------------
-// -------------------------------------------------------
+// -----------------------------------------------------------
+// -------------------- Prayer of Healing --------------------
+// -----------------------------------------------------------
 
 // Changed SpellType to Target and added AmountOfTargets so it specifically limits it to 6 creatures
 new entry "Shout_PrayerOfHealing"
@@ -833,11 +836,11 @@ data "SpellType" "Target"
 data "Level" "2"
 data "SpellSchool" "Evocation"
 data "SpellProperties" "RegainHitPoints(2d8+SpellCastingAbilityModifier)"
-data "AreaRadius" "9"
+data "TargetRadius" "9"
 data "TargetConditions" "Ally() and not Dead() and not Tagged('UNDEAD') and not Tagged('CONSTRUCT')"
 data "Icon" "Spell_Evocation_PrayerOfHealing"
 data "DisplayName" "hf94be341gafa8g455dgaa74g66168a9721a4;1"
-data "Description" "h382f3dc6ga6a4g4afdgab57ga58653f736f9;8"
+data "Description" "h3b5beb2dg2137g4c8bg9964g0f3d5cb1d9e4;1"
 data "TooltipDamageList" "RegainHitPoints(2d8+SpellCastingAbilityModifier)"
 data "TooltipUpcastDescription" "ef4fc937-9b23-4fcc-a67f-7706f86cfa44"
 data "TooltipUpcastDescriptionParams" "RegainHitPoints(1d8)"
@@ -859,16 +862,18 @@ data "CastEffect" "df9ffd5a-deb8-4a27-8e37-e7f688579fd4"
 data "TargetEffect" "3c7b783e-d2ee-4125-9f94-0d48d44fe3e8"
 data "AmountOfTargets" "6"
 
-new entry "Shout_PrayerOfHealing_3"
-type "SpellData"
-data "SpellType" "Target"
-using "Shout_PrayerOfHealing"
-data "SpellProperties" "RegainHitPoints(3d8+SpellCastingAbilityModifier)"
-data "DescriptionParams" "RegainHitPoints(3d8+SpellCastingAbilityModifier)"
-data "TooltipDamageList" "RegainHitPoints(3d8+SpellCastingAbilityModifier)"
-data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:3"
-data "RootSpellID" "Shout_PrayerOfHealing"
-data "PowerLevel" "3"
+// TO-DO: Test if not overwriting upcasts will work fine
+// If not, test if just self-inheriting changing the SpellType works
+// new entry "Shout_PrayerOfHealing_3"
+// type "SpellData"
+// data "SpellType" "Target"
+// using "Shout_PrayerOfHealing"
+// data "SpellProperties" "RegainHitPoints(3d8+SpellCastingAbilityModifier)"
+// data "DescriptionParams" "RegainHitPoints(3d8+SpellCastingAbilityModifier)"
+// data "TooltipDamageList" "RegainHitPoints(3d8+SpellCastingAbilityModifier)"
+// data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:3"
+// data "RootSpellID" "Shout_PrayerOfHealing"
+// data "PowerLevel" "3"
 
 new entry "Shout_PrayerOfHealing_4"
 type "SpellData"
@@ -1054,14 +1059,3 @@ data "OnApplyRoll" "not SavingThrow(Ability.Constitution, CalculateSpellDC(conte
 data "OnApplySuccess" "UseActionResource(ActionPoint,1,0); UseActionResource(EyeStalkActionPoint,1,0)"
 data "StatusGroups" "SG_Poisoned"
 data "StatusEffect" "ceeda0ca-0739-4588-a449-d024389f0c2a"
-
-// -----------------------------------------------------------
-// -------------------- Sunbeam: Recreate --------------------
-// -----------------------------------------------------------
-
-// Removed the IsSpell and component spell flags and added the Wildshape flag so it can be used in wildshape and isn't subjected to the Bonus Action Spell rule, similar to other concentration spells that grant special actions
-new entry "Zone_Sunbeam_Recreate"
-type "SpellData"
-data "SpellType" "Zone"
-using "Zone_Sunbeam_Recreate"
-data "SpellFlags" "IsHarmful;Temporary;Wildshape"
