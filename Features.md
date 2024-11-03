@@ -258,6 +258,7 @@ _Depends on: [`rogue`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogu
 * This also means that there's no interaction with `Reroll` features, like Halfling's Lucky. Mechanically speaking, the roll is made first, checks for a reroll possibility, returns the raw value of the dice, then it's set to the minimum specificed by the passive. So Halflings will still reroll their 1's in skill/ability checks, but if they roll a 1 again, it'll be increased to a 2.
 
 ## Spells ⚙️ `spells`
+❗️ I highly recommend using [jjdoorframe's True Darkness](https://www.nexusmods.com/baldursgate3/mods/13542) to make Darkness RAW
 * Call Lightning creates a storm area, inside which the caster can target a smaller area to deal damage each turn (recast is usable while wildshaped, even with the [`spells_wildshape`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#spells---wildshape-%EF%B8%8F-spells_wildshape) option disabled)
 * Cone of Cold range increased to 18 meters
 * Feign Death provides a Dismiss spell to the caster (duration changed as well, even with the [`spells_duration`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#spells---duration-%EF%B8%8F-spells_duration) option disabled)
