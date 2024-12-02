@@ -126,8 +126,8 @@
 	<content contentuid="hf9fcc402g8592g454cga793g52f04804a411" version="1">Не может двигаться или предпринимать действия, бонусные действия или реакции. &lt;br&gt;&lt;br&gt;Атаки против лежащего существа имеют &lt;LSTag Tooltip="Advantage"&gt;преимущество&lt;/LSTag&gt;, если они сделаны в пределах [1] от существа, в противном случае они имеют &lt;LSTag Tooltip="Disadvantage"&gt;помеху&lt;/LSTag&gt;. &lt;br&gt;&lt;br&gt;Лежащее существо должно потратить половину своей &lt;LSTag Tooltip="MovementSpeed"&gt;скорости движения&lt;/LSTag&gt;, чтобы встать.</content><!-- Prone -->
 
 	<!-- Target Display Name -->
-	<content contentuid="h5877647dg40fbg4c09gb1c5g16af8009e38b" version="1">Толкнуть (отпихнуть)</content><!-- Shove Push -->
-	<content contentuid="hb461d04cg1cfbg4ba1g83a2g5bd1421d1a20" version="1">Толкнуть (сбить)</content><!-- Shove Prone -->
+	<content contentuid="h5877647dg40fbg4c09gb1c5g16af8009e38b" version="1">Отпихнуть (толкнуть)</content><!-- Shove Push -->
+	<content contentuid="hb461d04cg1cfbg4ba1g83a2g5bd1421d1a20" version="1">Отпихнуть (сбить)</content><!-- Shove Prone -->
 	<content contentuid="hacff287aga587g493bg8074ga79a9969f0c7" version="1">Отвлечь</content><!-- Distract -->
 	<content contentuid="h868da50cg1553g4d69gb8d6g491c06156b08" version="1">Отвлечь (хитрое действие)</content><!-- Distract Cunning Action -->
 	<content contentuid="h9dae9cf6gd51dg4176g9654g137136bdc8c1" version="1">Помощь (хитрое действие)</content><!-- Help Cunning Action -->
@@ -135,10 +135,10 @@
 	<content contentuid="hea829cd9ge8f4g42ecg9d63g702ed2764a96" version="1">Притвориться мертвым: отменить</content><!-- Feign Death: Dismiss -->
 
 		<!-- Target Description -->
-	<content contentuid="h39b0e6f4g2f5cg4038g8944g625faa062c38" version="1">Толкните цель, чтобы отпихнуть её на [1].</content><!-- Shove -->
-	<content contentuid="h29df2d23ga713g4cf9gaacdg7cf61bb3b2ee" version="1">Толкните цель. Вы можете попытаться отпихнуть её или сбить с ног.</content><!-- Shove Player -->
-	<content contentuid="h8cd12a69g8980g4a55g8737g3f6183de78c1" version="1">Толкните цель, чтобы сбить её с ног.</content><!-- Shove Prone -->
-	<content contentuid="hd49325f3gea4dg4b6fg8880gf6cc96f50a39" version="1">Толкните цель своим щитом. Вы можете попытаться отпихнуть её или сбить с ног.</content><!-- Shove Shield Master -->
+	<content contentuid="h39b0e6f4g2f5cg4038g8944g625faa062c38" version="1">Отпихните цель, чтобы толкнуть её на [1].</content><!-- Shove -->
+	<content contentuid="h29df2d23ga713g4cf9gaacdg7cf61bb3b2ee" version="1">Отпихните цель. Вы можете попытаться толкнуть её или сбить с ног.</content><!-- Shove Player -->
+	<content contentuid="h8cd12a69g8980g4a55g8737g3f6183de78c1" version="1">Отпихните цель, чтобы сбить её с ног.</content><!-- Shove Prone -->
+	<content contentuid="hd49325f3gea4dg4b6fg8880gf6cc96f50a39" version="1">Отпихните цель своим щитом. Вы можете попытаться толкнуть её или сбить с ног.</content><!-- Shove Shield Master -->
 	<content contentuid="h8a5eb4d5g32beg46b6g9c83g8b4832766545" version="1">Сделайте финт, отвлеките цель или каким-либо другим способом помогите своему союзнику, чтобы его следующий &lt;LSTag Tooltip="AttackRoll"&gt;бросок атаки&lt;/LSTag&gt; до вашего следующего хода имел &lt;LSTag Tooltip="Advantage"&gt;преимущество&lt;/LSTag&gt;.</content><!-- Distract -->
 	<content contentuid="h32d73faeg184cg419bg8fb6gdd67958d7817" version="1">Сделайте проверку &lt;LSTag Tooltip="Medicine"&gt;медицины&lt;/LSTag&gt; с сложностью 10, чтобы стабилизировать персонажа &lt;LSTag Tooltip="Downed"&gt;при смерти&lt;/LSTag&gt;.</content><!-- Help -->
 	<content contentuid="hc01e959cg7d3dg4542gac9fg68099deb9746" version="1">Используйте своё бонусное действие, чтобы приказать вашему призванному существу действовать.</content><!-- Summon Command -->
