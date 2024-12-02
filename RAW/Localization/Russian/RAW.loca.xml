@@ -13,12 +13,12 @@
 	<content contentuid="h15a2faa5gf385g456dg8aa8gbf5a1029919f" version="1">Ходьба</content>
 	<content contentuid="h7448849bged25g488ag810dg15d3da1916a2" version="1">Дальняя дистанция</content>
 	<content contentuid="h61fa56b6g2b42g4d9cg965eg0654c2c6f233" version="1">Работа на втором этаже</content>
-	<content contentuid="h4af7068bg689dg4db5g87fdg614624fc8585" version="1">Мастер щита (Толчок)</content>
+	<content contentuid="h4af7068bg689dg4db5g87fdg614624fc8585" version="1">Мастер щита: толчок</content>
 	<content contentuid="h0159dcd5g7df6g42fag8c0eg6b714977e84a" version="1">Безрассудная атака</content>
 	<content contentuid="h347bdf44gbb6dg4e83g83feg9f48169b16f0" version="1">Ресурсы заблокированы</content>
 	<content contentuid="h1d26d698g3c6dg4212gad8dga725fb76bda2" version="1">Призыв Нематериального</content>
 	<content contentuid="h81c15d09gdee7g4cd4ga39eg6ec6273a8398" version="1">Пролет</content>
-	<content contentuid="h2c5ddf7eg8dbcg4b9fga803g537c44e0ff16" version="1">Мастер арбалета: Перезарядка</content>
+	<content contentuid="h2c5ddf7eg8dbcg4b9fga803g537c44e0ff16" version="1">Мастер арбалета: перезарядка</content>
 	<content contentuid="h07cedaa6g2c7bg4906ga832g28ebde232fa4" version="1">Настройка</content>
 	<content contentuid="h4d215fa7g6d15g4acbg8139g56cb67212a5c" version="1">Резервная концентрация</content>
 	<content contentuid="h460e389eg9748g4598g95cdgf796e95397c6" version="1">Вы начинаете идти вместо того, чтобы бегать.</content>
@@ -33,9 +33,9 @@
 	<content contentuid="h52822a0agd71bg4caega40dgc7017940b99b" version="1">Вы можете использовать бой двумя оружиями, даже если оружия, которыми вы владеете, не являются легкими, и вы можете свободно снарядить два оружия в свой ход вместо одного. Вы не можете использовать два &lt;LSTag Tooltip="Heavy"&gt;тяжелых&lt;/LSTag&gt; оружия одновременно.</content>
 	<content contentuid="h7af02440ga775g44ddga0e4g04987028c1e7" version="1">Предотвращает произнесение заклинаний, требующих &lt;LSTag Tooltip="Concentration"&gt;концентрации&lt;/LSTag&gt;, пока вы сосредоточены на другом заклинании.</content>
 	<content contentuid="hc0a989cag7bfdg4f36g9642gf0a332244deb" version="1">Ходьба не уменьшит максимальное расстояние, пройденное за ход, это чисто косметический эффект.</content>
-	<content contentuid="h4c76db83gcc4eg438ag9d00ge9b156dd1bbe" version="1">Прыжок (Вор)</content>
-	<content contentuid="h64247e79gece7g4d43g9a17g38dd2fbb94fd" version="1">Прыжок (Кот)</content>
-	<content contentuid="he7373ea1ge596g4f74gbbd1g5763f2e77273" version="1">Создать пламя: Бросок (Свободно)</content>
+	<content contentuid="h4c76db83gcc4eg438ag9d00ge9b156dd1bbe" version="1">Прыжок (вор)</content>
+	<content contentuid="h64247e79gece7g4d43g9a17g38dd2fbb94fd" version="1">Прыжок (кот)</content>
+	<content contentuid="he7373ea1ge596g4f74gbbd1g5763f2e77273" version="1">Создать пламя: бросок (свободно)</content>
 	<content contentuid="hc25fd2e1g6a3cg4c99g8690gcf48eabe53a1" version="1">Прыгай вверх, вниз и вбок. Твоя &lt;LSTag Tooltip="Dexterity"&gt;Ловкость&lt;/LSTag&gt; влияет на то, как далеко ты можешь прыгнуть.</content>
 	<content contentuid="he87f6103ga16bg459dg889agb0871d51ef92" version="1">Брось сферу, которая наносит [1] и, возможно, создает поверхность, если целью выбрана земля. В качестве альтернативы выбери другой тип урона.</content>
 	<content contentuid="h0ba8b53eg3e84g48f1g9f02gcfc823b861cd" version="1">Брось едкую энергию, которая наносит урон цели. Создает &lt;LSTag Type="Status" Tooltip="ACID"&gt;кислотную&lt;/LSTag&gt; поверхность, если целью выбрана земля.</content>
@@ -47,7 +47,7 @@
 	<content contentuid="haf813ecag5ad0g464cg8749g68d9ebd9b71d" version="1">Завершить короткий отдых</content>
 	<content contentuid="h6c541127gda12g4b7cgbfdbg37c49ac85aba" version="1">Уклоняться</content>
 	<content contentuid="h5d311bfdg3b88g4a78gb8fcgbb8645c6a5f7" version="1">Хитрое действие</content>
-	<content contentuid="h0611af1fg455ag4511ga7e5g9768ccd017d8" version="1">Хитрое действие: Скрыться</content>
+	<content contentuid="h0611af1fg455ag4511ga7e5g9768ccd017d8" version="1">Хитрое действие: скрыться</content>
 	<content contentuid="h1aff6b78gc632g459cgbb15g9c17e56b611a" version="1">Закончить &lt;LSTag Tooltip="ShortRest"&gt;короткий отдых&lt;/LSTag&gt; для вас и ваших членов партии вокруг вас.</content>
 	<content contentuid="h43261ff4gfee1g42f4g9bb3gc6120976fe3d" version="1">До начала вашего следующего хода любые &lt;LSTag Tooltip="AttackRoll"&gt;атаки&lt;/LSTag&gt;, сделанные против вас, имеют &lt;LSTag Tooltip="Disadvantage"&gt;помеху&lt;/LSTag&gt;, и вы делаете спасброски Ловкости &lt;LSTag Tooltip="SavingThrow"&gt;с преимуществом&lt;/LSTag&gt;. Вы теряете это преимущество, если вы либо обездвижены, либо парализованы.</content>
 	<content contentuid="he7d837b8g404fg4dbdg85c2g9d69c019d63d" version="1">Вы можете использовать ваше бонусное действие, чтобы сделать рывок, совершить отход или скрыться.</content>
@@ -94,13 +94,13 @@
 	<content contentuid="h8fadec97gcad8g4b7eg9528g8c80dde94805" version="1">Имеет &lt;LSTag Tooltip="Advantage"&gt;преимущество&lt;/LSTag&gt; при &lt;LSTag Tooltip="AttackRoll"&gt;бросках атаки&lt;/LSTag&gt;, враги атакующие существо которые не могут видеть невидимое имеют &lt;LSTag Tooltip="Disadvantage"&gt;помеху&lt;/LSTag&gt; на броски атаки. &lt;br&gt;&lt;Br&gt;Атака или наложение заклинаний, которые не являются &lt;LSTag Type="Spell" Tooltip="Target_MistyEscape_ShadarKai_GloomWeaver"&gt;скользящими тенями&lt;/LSTag&gt;, заканчивает это состояние.</content>
 	<content contentuid="hd63af1fag49c2g4ba2g9e42gc1b5bf4c48d6" version="1">Затронутое существо невидимо. Оно имеет &lt;LSTag Tooltip="Advantage"&gt;преимущество&lt;/LSTag&gt; при &lt;LSTag Tooltip="AttackRoll"&gt;бросках атаки&lt;/LSTag&gt;;/LSTag&gt;, враги атакующие существо которые не могут видеть невидимое имеют &lt;LSTag Tooltip="Disadvantage"&gt;помеху&lt;/LSTag&gt; на броски атаки. Оно имеет бонус +[1] к проверкам &lt;LSTag Tooltip="AbilityCheck"&gt;скрытности&lt;/LSTag&gt;. &lt;br&gt;&lt;br&gt;Невидимость заканчивается раньше, если невидимое существо движется, атакует или накладывает другое заклинание.</content>
 	<content contentuid="hf9fcc402g8592g454cga793g52f04804a411" version="1">Не может двигаться или предпринимать действия, бонусные действия или реакции. &lt;br&gt;&lt;br&gt;Атаки против лежащего существа имеют &lt;LSTag Tooltip="Advantage"&gt;преимущество&lt;/LSTag&gt;, если они сделаны в пределах [1] от существа, в противном случае они имеют &lt;LSTag Tooltip="Disadvantage"&gt;помеху&lt;/LSTag&gt;. &lt;br&gt;&lt;br&gt;Лежащее существо должно потратить половину своей &lt;LSTag Tooltip="MovementSpeed"&gt;скорости движения&lt;/LSTag&gt;, чтобы встать.</content>
-	<content contentuid="h5877647dg40fbg4c09gb1c5g16af8009e38b" version="1">Толкнуть (Отпихнуть)</content>
-	<content contentuid="hb461d04cg1cfbg4ba1g83a2g5bd1421d1a20" version="1">Толкнуть (Сбить)</content>
+	<content contentuid="h5877647dg40fbg4c09gb1c5g16af8009e38b" version="1">Толкнуть (отпихнуть)</content>
+	<content contentuid="hb461d04cg1cfbg4ba1g83a2g5bd1421d1a20" version="1">Толкнуть (сбить)</content>
 	<content contentuid="hacff287aga587g493bg8074ga79a9969f0c7" version="1">Отвлечь</content>
-	<content contentuid="h868da50cg1553g4d69gb8d6g491c06156b08" version="1">Отвлечь (Хитрое действие)</content>
-	<content contentuid="h9dae9cf6gd51dg4176g9654g137136bdc8c1" version="1">Помощь (Хитрое действие)</content>
+	<content contentuid="h868da50cg1553g4d69gb8d6g491c06156b08" version="1">Отвлечь (хитрое действие)</content>
+	<content contentuid="h9dae9cf6gd51dg4176g9654g137136bdc8c1" version="1">Помощь (хитрое действие)</content>
 	<content contentuid="h7d6311c9g4e07g40c9ga6b9g65ab8583ca90" version="1">Команда призванному существу</content>
-	<content contentuid="hea829cd9ge8f4g42ecg9d63g702ed2764a96" version="1">Притвориться мертвым: Отменить</content>
+	<content contentuid="hea829cd9ge8f4g42ecg9d63g702ed2764a96" version="1">Притвориться мертвым: отменить</content>
 	<content contentuid="h39b0e6f4g2f5cg4038g8944g625faa062c38" version="1">Толкните цель, чтобы отпихнуть её на [1].</content>
 	<content contentuid="h29df2d23ga713g4cf9gaacdg7cf61bb3b2ee" version="1">Толкните цель. Вы можете попытаться отпихнуть её или сбить с ног.</content>
 	<content contentuid="h8cd12a69g8980g4a55g8737g3f6183de78c1" version="1">Толкните цель, чтобы сбить её с ног.</content>
@@ -116,11 +116,11 @@
 	<content contentuid="hed88db7bgfbe4g4ab0g9252g068a8bcc48c0" version="1">Толкание зависит от вашей &lt;LSTag Tooltip="Athletics"&gt;атлетики&lt;/LSTag&gt;, и от более высокого значения атлетики или &lt;LSTag Tooltip="Acrobatics"&gt;акробатики&lt;/LSTag&gt; цели.</content>
 	<content contentuid="h53da955bgfbadg4d77gb962g11eec4070db8" version="1">Убирает эффекты горения, связывания, опутывания, паутины, сбивания с ног и сна.</content>
 	<content contentuid="h7931a54eg73b9g425bg9243g2331db1f3a32" version="1">Невидимость прерывается, когда вы атакуете или накладываете другое заклинание.</content>
-	<content contentuid="h42ce0a1eg03e9g492dg9457g553a25b8a68c" version="1">Бросок (Предмет)</content>
-	<content contentuid="hb3284f80g9ea7g4eefg92bbg6c0d18aa322b" version="1">Бросок (Хитрое действие)</content>
-	<content contentuid="h6ecf3783gaec3g4933g9d97ga93f5eb2ffd1" version="1">Бросок оружия (Основная рука)</content>
-	<content contentuid="hcb77aa27g6e23g401egb640g6251e9584b0c" version="1">Бросок оружия (Второстепенная рука)</content>
-	<content contentuid="hdd4cc2e3ge909g47f7gb352g27b5d5aa5d80" version="1">Бросок оружия (Переход)</content>
+	<content contentuid="h42ce0a1eg03e9g492dg9457g553a25b8a68c" version="1">Бросок (предмет)</content>
+	<content contentuid="hb3284f80g9ea7g4eefg92bbg6c0d18aa322b" version="1">Бросок (хитрое действие)</content>
+	<content contentuid="h6ecf3783gaec3g4933g9d97ga93f5eb2ffd1" version="1">Бросок оружия (основная рука)</content>
+	<content contentuid="hcb77aa27g6e23g401egb640g6251e9584b0c" version="1">Бросок оружия (второстепенная рука)</content>
+	<content contentuid="hdd4cc2e3ge909g47f7gb352g27b5d5aa5d80" version="1">Бросок оружия (смена)</content>
 	<content contentuid="h7c08af75gd6d2g4535g8e96g88ddffc3f0ce" version="1">Бросьте предмет с пола или из вашего инвентаря.</content>
 	<content contentuid="h49ed29fcg4ac2g459egbc2cg0c6264341656" version="1">Бросьте предмет с пола или из вашего инвентаря, не нанося урон цели.&lt;br&gt;&lt;br&gt;Бросаемые предметы, такие как гранаты, все равно активируют свои эффекты.</content>
 	<content contentuid="h73c67cf6g5850g4e17gbbc6gabb0186cfd4d" version="1">Поднимите предмет и используйте его для атаки ближнего боя.</content>

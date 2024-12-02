@@ -19,12 +19,12 @@
     <content contentuid="h15a2faa5gf385g456dg8aa8gbf5a1029919f" version="1">Ходьба</content><!-- Walk -->
     <content contentuid="h7448849bged25g488ag810dg15d3da1916a2" version="1">Дальняя дистанция</content><!-- Weapon Throw -->
     <content contentuid="h61fa56b6g2b42g4d9cg965eg0654c2c6f233" version="1">Работа на втором этаже</content><!-- Second-Story Work -->
-    <content contentuid="h4af7068bg689dg4db5g87fdg614624fc8585" version="1">Мастер щита (Толчок)</content><!-- Shield Master (Shove) -->
+    <content contentuid="h4af7068bg689dg4db5g87fdg614624fc8585" version="1">Мастер щита: толчок</content><!-- Shield Master (Shove) -->
     <content contentuid="h0159dcd5g7df6g42fag8c0eg6b714977e84a" version="1">Безрассудная атака</content><!-- Reckless Attack -->
     <content contentuid="h347bdf44gbb6dg4e83g83feg9f48169b16f0" version="1">Ресурсы заблокированы</content><!-- Summon Resource Blocked -->
     <content contentuid="h1d26d698g3c6dg4212gad8dga725fb76bda2" version="1">Призыв Нематериального</content><!-- Summon Indestructible -->
     <content contentuid="h81c15d09gdee7g4cd4ga39eg6ec6273a8398" version="1">Пролет</content><!-- Flyby -->
-    <content contentuid="h2c5ddf7eg8dbcg4b9fga803g537c44e0ff16" version="1">Мастер арбалета: Перезарядка</content><!-- Crossbow Expert: Wounding -->
+    <content contentuid="h2c5ddf7eg8dbcg4b9fga803g537c44e0ff16" version="1">Мастер арбалета: перезарядка</content><!-- Crossbow Expert: Wounding -->
     <content contentuid="h07cedaa6g2c7bg4906ga832g28ebde232fa4" version="1">Настройка</content><!-- Attunement -->
     <content contentuid="h4d215fa7g6d15g4acbg8139g56cb67212a5c" version="1">Резервная концентрация</content><!-- Concentration Block -->
 
@@ -45,9 +45,9 @@
 	<content contentuid="hc0a989cag7bfdg4f36g9642gf0a332244deb" version="1">Ходьба не уменьшит максимальное расстояние, пройденное за ход, это чисто косметический эффект.</content><!-- Walk -->
 
 	<!-- Projectile Display Name -->
-	<content contentuid="h4c76db83gcc4eg438ag9d00ge9b156dd1bbe" version="1">Прыжок (Вор)</content><!-- Jump Thief -->
-	<content contentuid="h64247e79gece7g4d43g9a17g38dd2fbb94fd" version="1">Прыжок (Кот)</content><!-- Jump Cat -->
-	<content contentuid="he7373ea1ge596g4f74gbbd1g5763f2e77273" version="1">Создать пламя: Бросок (Свободно)</content><!-- Produce Flame Hurl Free -->
+	<content contentuid="h4c76db83gcc4eg438ag9d00ge9b156dd1bbe" version="1">Прыжок (вор)</content><!-- Jump Thief -->
+	<content contentuid="h64247e79gece7g4d43g9a17g38dd2fbb94fd" version="1">Прыжок (кот)</content><!-- Jump Cat -->
+	<content contentuid="he7373ea1ge596g4f74gbbd1g5763f2e77273" version="1">Создать пламя: бросок (свободно)</content><!-- Produce Flame Hurl Free -->
 
 	<!-- Projectile Description -->
 	<content contentuid="hc25fd2e1g6a3cg4c99g8690gcf48eabe53a1" version="1">Прыгай вверх, вниз и вбок. Твоя &lt;LSTag Tooltip="Dexterity"&gt;Ловкость&lt;/LSTag&gt; влияет на то, как далеко ты можешь прыгнуть.</content><!-- Jump Thief -->
@@ -63,7 +63,7 @@
 	<content contentuid="haf813ecag5ad0g464cg8749g68d9ebd9b71d" version="1">Завершить короткий отдых</content><!-- End Short Rest -->
 	<content contentuid="h6c541127gda12g4b7cgbfdbg37c49ac85aba" version="1">Уклоняться</content><!-- Dodge -->
 	<content contentuid="h5d311bfdg3b88g4a78gb8fcgbb8645c6a5f7" version="1">Хитрое действие</content><!-- Cunning Action -->
-	<content contentuid="h0611af1fg455ag4511ga7e5g9768ccd017d8" version="1">Хитрое действие: Скрыться</content><!-- Hide Cunning Action -->
+	<content contentuid="h0611af1fg455ag4511ga7e5g9768ccd017d8" version="1">Хитрое действие: скрыться</content><!-- Hide Cunning Action -->
 
 	<!-- Shout Description -->
 	<content contentuid="h1aff6b78gc632g459cgbb15g9c17e56b611a" version="1">Закончить &lt;LSTag Tooltip="ShortRest"&gt;короткий отдых&lt;/LSTag&gt; для вас и ваших членов партии вокруг вас.</content><!-- Short Rest -->
@@ -126,13 +126,13 @@
 	<content contentuid="hf9fcc402g8592g454cga793g52f04804a411" version="1">Не может двигаться или предпринимать действия, бонусные действия или реакции. &lt;br&gt;&lt;br&gt;Атаки против лежащего существа имеют &lt;LSTag Tooltip="Advantage"&gt;преимущество&lt;/LSTag&gt;, если они сделаны в пределах [1] от существа, в противном случае они имеют &lt;LSTag Tooltip="Disadvantage"&gt;помеху&lt;/LSTag&gt;. &lt;br&gt;&lt;br&gt;Лежащее существо должно потратить половину своей &lt;LSTag Tooltip="MovementSpeed"&gt;скорости движения&lt;/LSTag&gt;, чтобы встать.</content><!-- Prone -->
 
 	<!-- Target Display Name -->
-	<content contentuid="h5877647dg40fbg4c09gb1c5g16af8009e38b" version="1">Толкнуть (Отпихнуть)</content><!-- Shove Push -->
-	<content contentuid="hb461d04cg1cfbg4ba1g83a2g5bd1421d1a20" version="1">Толкнуть (Сбить)</content><!-- Shove Prone -->
+	<content contentuid="h5877647dg40fbg4c09gb1c5g16af8009e38b" version="1">Толкнуть (отпихнуть)</content><!-- Shove Push -->
+	<content contentuid="hb461d04cg1cfbg4ba1g83a2g5bd1421d1a20" version="1">Толкнуть (сбить)</content><!-- Shove Prone -->
 	<content contentuid="hacff287aga587g493bg8074ga79a9969f0c7" version="1">Отвлечь</content><!-- Distract -->
-	<content contentuid="h868da50cg1553g4d69gb8d6g491c06156b08" version="1">Отвлечь (Хитрое действие)</content><!-- Distract Cunning Action -->
-	<content contentuid="h9dae9cf6gd51dg4176g9654g137136bdc8c1" version="1">Помощь (Хитрое действие)</content><!-- Help Cunning Action -->
+	<content contentuid="h868da50cg1553g4d69gb8d6g491c06156b08" version="1">Отвлечь (хитрое действие)</content><!-- Distract Cunning Action -->
+	<content contentuid="h9dae9cf6gd51dg4176g9654g137136bdc8c1" version="1">Помощь (хитрое действие)</content><!-- Help Cunning Action -->
 	<content contentuid="h7d6311c9g4e07g40c9ga6b9g65ab8583ca90" version="1">Команда призванному существу</content><!-- Summon Command -->
-	<content contentuid="hea829cd9ge8f4g42ecg9d63g702ed2764a96" version="1">Притвориться мертвым: Отменить</content><!-- Feign Death: Dismiss -->
+	<content contentuid="hea829cd9ge8f4g42ecg9d63g702ed2764a96" version="1">Притвориться мертвым: отменить</content><!-- Feign Death: Dismiss -->
 
 		<!-- Target Description -->
 	<content contentuid="h39b0e6f4g2f5cg4038g8944g625faa062c38" version="1">Толкните цель, чтобы отпихнуть её на [1].</content><!-- Shove -->
@@ -154,11 +154,11 @@
 	<content contentuid="h7931a54eg73b9g425bg9243g2331db1f3a32" version="1">Невидимость прерывается, когда вы атакуете или накладываете другое заклинание.</content><!-- Invisibility -->
 
 	<!-- Throw Display Name -->
-	<content contentuid="h42ce0a1eg03e9g492dg9457g553a25b8a68c" version="1">Бросок (Предмет)</content><!-- Throw -->
-	<content contentuid="hb3284f80g9ea7g4eefg92bbg6c0d18aa322b" version="1">Бросок (Хитрое действие)</content><!-- Throw Cunning Action -->
-	<content contentuid="h6ecf3783gaec3g4933g9d97ga93f5eb2ffd1" version="1">Бросок оружия (Основная рука)</content><!-- Throw Weapon -->
-	<content contentuid="hcb77aa27g6e23g401egb640g6251e9584b0c" version="1">Бросок оружия (Второстепенная рука)</content><!-- Throw Weapon Off Hand -->
-	<content contentuid="hdd4cc2e3ge909g47f7gb352g27b5d5aa5d80" version="1">Бросок оружия (Переход)</content><!-- Throw Weapon Transition -->
+	<content contentuid="h42ce0a1eg03e9g492dg9457g553a25b8a68c" version="1">Бросок (предмет)</content><!-- Throw -->
+	<content contentuid="hb3284f80g9ea7g4eefg92bbg6c0d18aa322b" version="1">Бросок (хитрое действие)</content><!-- Throw Cunning Action -->
+	<content contentuid="h6ecf3783gaec3g4933g9d97ga93f5eb2ffd1" version="1">Бросок оружия (основная рука)</content><!-- Throw Weapon -->
+	<content contentuid="hcb77aa27g6e23g401egb640g6251e9584b0c" version="1">Бросок оружия (второстепенная рука)</content><!-- Throw Weapon Off Hand -->
+	<content contentuid="hdd4cc2e3ge909g47f7gb352g27b5d5aa5d80" version="1">Бросок оружия (смена)</content><!-- Throw Weapon Transition -->
 
     <!-- Throw Description -->
     <content contentuid="h7c08af75gd6d2g4535g8e96g88ddffc3f0ce" version="1">Бросьте предмет с пола или из вашего инвентаря.</content><!-- Throw -->
