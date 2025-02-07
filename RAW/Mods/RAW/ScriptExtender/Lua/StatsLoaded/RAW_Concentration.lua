@@ -1,3 +1,6 @@
+local modOption = "concentration_failsafe"
+local debugLog = IsModOptionLogging(modOption)
+
 local ENUM_RAW_Concentration_RequirementEvents, RAW_ConcentrationBlocker_Passive
 
 local function RAW_AddConcentrationRequirement(name)
@@ -6,7 +9,7 @@ local function RAW_AddConcentrationRequirement(name)
         return
     end
 
-    RAW_PrintIfDebug("\nAdding requirement to " ..spell.Name, RAW_PrintTable_Concentration)
+    RAW_PrintIfDebug("\nAdding requirement to " ..spell.Name, debugLog)
 
     local requirementConditionsPrefix = ""
     if spell.RequirementConditions ~= nil and spell.RequirementConditions ~= "" then
@@ -15,7 +18,7 @@ local function RAW_AddConcentrationRequirement(name)
 
     spell.RequirementConditions = requirementConditionsPrefix ..
         "(RAW_ConcentrationBlocker())"
-    RAW_PrintIfDebug("\tRequirementConditions: " .. spell.RequirementConditions, RAW_PrintTable_Concentration)
+    RAW_PrintIfDebug("\tRequirementConditions: " .. spell.RequirementConditions, debugLog)
 
     local requirementEvents = spell.RequirementEvents
     for _, event in pairs (ENUM_RAW_Concentration_RequirementEvents) do
@@ -24,8 +27,8 @@ local function RAW_AddConcentrationRequirement(name)
         end
     end
     spell.RequirementEvents = requirementEvents
-    RAW_PrintIfDebug("\tRequirementEvents: ", RAW_PrintTable_Concentration)
-    RAW_PrintIfDebug(spell.RequirementEvents, RAW_PrintTable_Concentration)
+    RAW_PrintIfDebug("\tRequirementEvents: ", debugLog)
+    RAW_PrintIfDebug(spell.RequirementEvents, debugLog)
 end
 
 local function RAW_AddConcentrationPassive(name)
@@ -34,31 +37,31 @@ local function RAW_AddConcentrationPassive(name)
         return
     end
 
-    RAW_PrintIfDebug("\nCharacter: " .. char.Name, RAW_PrintTable_Concentration)
+    RAW_PrintIfDebug("\nCharacter: " .. char.Name, debugLog)
     if string.find(char.Passives, RAW_ConcentrationBlocker_Passive) then
-        RAW_PrintIfDebug("\tSkipping - already has passive: " .. RAW_ConcentrationBlocker_Passive, RAW_PrintTable_Concentration)
+        RAW_PrintIfDebug("\tSkipping - already has passive: " .. RAW_ConcentrationBlocker_Passive, debugLog)
     else
-        RAW_PrintIfDebug("\tAdding passive: " .. RAW_ConcentrationBlocker_Passive, RAW_PrintTable_Concentration)
+        RAW_PrintIfDebug("\tAdding passive: " .. RAW_ConcentrationBlocker_Passive, debugLog)
         char.Passives = RAW_ConcentrationBlocker_Passive .. ";" .. char.Passives
     end
-    RAW_PrintIfDebug("\tPassives: " .. char.Passives, RAW_PrintTable_Concentration)
+    RAW_PrintIfDebug("\tPassives: " .. char.Passives, debugLog)
 end
 
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_Concentration()
-    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_Concentration)
-    RAW_PrintIfDebug(CentralizedString("Option: concentration_failsafe"), RAW_PrintTable_Concentration)
+    RAW_PrintIfDebug("\n====================================================================================================", debugLog)
+    RAW_PrintIfDebug(CentralizedString("Option: " .. modOption), debugLog)
 
-    if not IsModOptionEnabled("concentration_failsafe") then
-        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_Concentration)
-        RAW_PrintIfDebug(CentralizedString("Skipping the Concentration Helper"), RAW_PrintTable_Concentration)
-        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Concentration)
+    if not IsModOptionEnabled(modOption) then
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), debugLog)
+        RAW_PrintIfDebug(CentralizedString("Skipping the Concentration Helper"), debugLog)
+        RAW_PrintIfDebug("====================================================================================================\n", debugLog)
         return
     end
 
-    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_Concentration)
-    RAW_PrintIfDebug(CentralizedString("Starting the Concentration Helper"), RAW_PrintTable_Concentration)
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), debugLog)
+    RAW_PrintIfDebug(CentralizedString("Starting the Concentration Helper"), debugLog)
 
     for _, name in pairs(Ext.Stats.GetStats("SpellData")) do
         RAW_AddConcentrationRequirement(name)
@@ -68,8 +71,8 @@ function RAW_Concentration()
         RAW_AddConcentrationPassive(name)
     end
 
-    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Concentration Helper"), RAW_PrintTable_Concentration)
-    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Concentration)
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Concentration Helper"), debugLog)
+    RAW_PrintIfDebug("====================================================================================================\n", debugLog)
 end
 
 ---------------------------------------- MODELS ----------------------------------------

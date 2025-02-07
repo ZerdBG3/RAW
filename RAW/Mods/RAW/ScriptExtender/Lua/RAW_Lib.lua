@@ -73,57 +73,14 @@ function RAW_ColoredText(text, colorCode)
     return "\27[" .. colorCode .. "m" .. text .. "\27[0m"
 end
 
--- Print only if the value is set (not commented) on the table
-RAW_PrintTable_ModOptions = 0
-RAW_PrintTable_Attunement = 1
-RAW_PrintTable_Barbarian_Berserker = 2
-RAW_PrintTable_CantripsScaling = 3
-RAW_PrintTable_CharacterPassives = 4
-RAW_PrintTable_Concentration = 5
-RAW_PrintTable_DefaultActions = 6
-RAW_PrintTable_ExtraAttack = 7
-RAW_PrintTable_Feats = 8
-RAW_PrintTable_FreeWeaponEquip = 9
-RAW_PrintTable_InstantDeath = 10
-RAW_PrintTable_Invisible = 11
-RAW_PrintTable_Rogue = 12
-RAW_PrintTable_Rogue_Thief = 13
-RAW_PrintTable_SkillCheck_CritFail = 14
-RAW_PrintTable_Spells_BonusAction = 15
-RAW_PrintTable_Spells_Duration = 16
-RAW_PrintTable_TwoWeaponFighting = 17
-RAW_PrintTable_WeaponSets = 18
-RAW_PrintTable_WeaponSpells = 19
-
-local ENUM_RAW_PrintTable = RAW_Set {
-    RAW_PrintTable_ModOptions,
-    -- RAW_PrintTable_Attunement,
-    -- RAW_PrintTable_Barbarian_Berserker,
-    -- RAW_PrintTable_CantripsScaling,
-    -- RAW_PrintTable_CharacterPassives,
-    -- RAW_PrintTable_Concentration,
-    -- RAW_PrintTable_DefaultActions,
-    -- RAW_PrintTable_ExtraAttack,
-    -- RAW_PrintTable_Feats,
-    -- RAW_PrintTable_FreeWeaponEquip,
-    -- RAW_PrintTable_InstantDeath,
-    -- RAW_PrintTable_Invisible,
-    -- RAW_PrintTable_Rogue,
-    -- RAW_PrintTable_Rogue_Thief,
-    -- RAW_PrintTable_SkillCheck_CritFail,
-    -- RAW_PrintTable_Spells_BonusAction,
-    -- RAW_PrintTable_Spells_Duration,
-    -- RAW_PrintTable_TwoWeaponFighting,
-    -- RAW_PrintTable_WeaponSets,
-    -- RAW_PrintTable_WeaponSpells,
-}
+RAW_ShouldPrint_ModOptions = true
 
 RAW_PrintTypeInfo = "info"
 RAW_PrintTypeWarning = "warning"
 RAW_PrintTypeError = "error"
 
 function RAW_PrintIfDebug(text, debug, level)
-    if (type(debug) == "boolean" and debug) or ENUM_RAW_PrintTable[debug] then
+    if (type(debug) == "boolean" and debug) then
         if type(text) == "string" then
             if level == RAW_PrintTypeError then
                 Ext.Utils.PrintError(text)
@@ -161,7 +118,7 @@ local RAW_VanillaStatParents = {}
 local function RAW_ParseVanillaStatFileParents(path)
     local ok, file = pcall(Ext.IO.LoadFile, path, "data")
     if not ok or not file then
-        RAW_PrintIfDebug("Couldn't find file " .. path, RAW_PrintTable_ModOptions, RAW_PrintTypeError)
+        RAW_PrintIfDebug("Couldn't find file " .. path, RAW_ShouldPrint_ModOptions, RAW_PrintTypeError)
         return
     end
 
@@ -177,7 +134,7 @@ local function RAW_ParseVanillaStatFileParents(path)
                 if entry ~= nil and using ~= "" and RAW_VanillaStatParents[entry] == "" then
                     RAW_VanillaStatParents[entry] = using
                 else
-                    RAW_PrintIfDebug("Invalid stat file configuration at " .. path, RAW_PrintTable_ModOptions, RAW_PrintTypeError)
+                    RAW_PrintIfDebug("Invalid stat file configuration at " .. path, RAW_ShouldPrint_ModOptions, RAW_PrintTypeError)
                 end
             end
         end

@@ -1,3 +1,6 @@
+local modOption = "invisibility"
+local debugLog = IsModOptionLogging(modOption)
+
 local technicalRemovalTimerName = "RAW_Timer_CheckTechnicalInvisibilityRemoval"
 local technicalRemovalTimerDuration = 500
 
@@ -23,7 +26,7 @@ local function RAW_RegisterInvisibilityControlEvent()
                 return
             end
 
-            RAW_PrintIfDebug("Sneaking successful: applying RAW_INVISIBILITY_SNEAKING_TECHNICAL to " .. char, RAW_PrintTable_Invisible)
+            RAW_PrintIfDebug("Sneaking successful: applying RAW_INVISIBILITY_SNEAKING_TECHNICAL to " .. char, debugLog)
             Osi.ApplyStatus(char, "RAW_INVISIBILITY_SNEAKING_TECHNICAL", -1)
         end
     )
@@ -39,7 +42,7 @@ local function RAW_RegisterInvisibilityControlEvent()
                 return
             end
 
-            RAW_PrintIfDebug("No longer revealed: applying RAW_INVISIBILITY_SNEAKING_TECHNICAL to " .. char, RAW_PrintTable_Invisible)
+            RAW_PrintIfDebug("No longer revealed: applying RAW_INVISIBILITY_SNEAKING_TECHNICAL to " .. char, debugLog)
             Osi.ApplyStatus(char, "RAW_INVISIBILITY_SNEAKING_TECHNICAL", -1)
         end
     )
@@ -55,7 +58,7 @@ local function RAW_RegisterInvisibilityControlEvent()
                 return
             end
 
-            RAW_PrintIfDebug("Applying SNEAKING back to " .. char, RAW_PrintTable_Invisible)
+            RAW_PrintIfDebug("Applying SNEAKING back to " .. char, debugLog)
             Osi.ApplyStatus(char, "SNEAKING", -1)
         end
     )
@@ -71,8 +74,8 @@ local function RAW_RegisterInvisibilityControlEvent()
                 return
             end
 
-            RAW_PrintIfDebug("StatusRemoved " .. status .. " from " .. char, RAW_PrintTable_Invisible)
-            RAW_PrintIfDebug("\tLaunching timer for " .. char, RAW_PrintTable_Invisible)
+            RAW_PrintIfDebug("StatusRemoved " .. status .. " from " .. char, debugLog)
+            RAW_PrintIfDebug("\tLaunching timer for " .. char, debugLog)
 
             Osi.RealtimeObjectTimerLaunch(char, technicalRemovalTimerName, technicalRemovalTimerDuration)
         end
@@ -86,10 +89,10 @@ local function RAW_RegisterInvisibilityControlEvent()
                 return
             end
 
-            RAW_PrintIfDebug("ObjectTimerFinished " .. timer .. " for entity " .. char, RAW_PrintTable_Invisible)
+            RAW_PrintIfDebug("ObjectTimerFinished " .. timer .. " for entity " .. char, debugLog)
 
             if not RAW_Bool(Osi.HasActiveStatus(char, "SNEAKING")) or not RAW_Bool(Osi.HasActiveStatusWithGroup(char, "SG_Invisible")) then
-                RAW_PrintIfDebug("\tRemoving  RAW_INVISIBILITY_SNEAKING_TECHNICAL from " .. char, RAW_PrintTable_Invisible)
+                RAW_PrintIfDebug("\tRemoving  RAW_INVISIBILITY_SNEAKING_TECHNICAL from " .. char, debugLog)
                 Osi.RemoveStatus(char, "RAW_INVISIBILITY_SNEAKING_TECHNICAL")
             end
         end
@@ -116,7 +119,7 @@ local function RAW_RegisterInvisibilityControlEvent()
             end
 
             RAW_Invisibility_Sneaking_Attempt[char] = {}
-            RAW_PrintIfDebug("Providing free sneaking attempt to " .. char, RAW_PrintTable_Invisible)
+            RAW_PrintIfDebug("Providing free sneaking attempt to " .. char, debugLog)
             -- The iterators always include the source of the iterator on their event names, because this is not fetchable otherwise
             Osi.IterateCharactersAround(
                 char,
@@ -138,7 +141,7 @@ local function RAW_RegisterInvisibilityControlEvent()
                 return
             end
 
-            RAW_PrintIfDebug("\tPerceptive enemy in range: " .. char, RAW_PrintTable_Invisible)
+            RAW_PrintIfDebug("\tPerceptive enemy in range: " .. char, debugLog)
             table.insert(RAW_Invisibility_Sneaking_Attempt[source], char)
         end
     )
@@ -168,31 +171,31 @@ local function RAW_RegisterInvisibilityControlEvent()
             RAW_Invisibility_Sneaking_Attempt[source] = nil
 
             if bestChar == nil or maxPerception <= 0 then
-                RAW_PrintIfDebug("\tNo enemy in range. Successful sneaking!", RAW_PrintTable_Invisible)
+                RAW_PrintIfDebug("\tNo enemy in range. Successful sneaking!", debugLog)
                 Osi.ApplyStatus(source, "RAW_INVISIBILITY_SNEAKING_TECHNICAL", -1)
                 return
             end
 
-            RAW_PrintIfDebug("\tMaximum perception: " .. tostring(maxPerception) .. " by " .. bestChar, RAW_PrintTable_Invisible)
+            RAW_PrintIfDebug("\tMaximum perception: " .. tostring(maxPerception) .. " by " .. bestChar, debugLog)
             Osi.ApplyStatus(bestChar, "RAW_INVISIBILITY_SNEAKING_ATTEMPT_CONTEST", 0, 1, source)
         end
     )
 end
 
 function RAW_InvisibilityServer()
-    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_Invisible)
-    RAW_PrintIfDebug(CentralizedString("Option: invisibility"), RAW_PrintTable_Invisible)
+    RAW_PrintIfDebug("\n====================================================================================================", debugLog)
+    RAW_PrintIfDebug(CentralizedString("Option: " .. modOption), debugLog)
 
-    if not IsModOptionEnabled("invisibility") then
-        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_Invisible)
-        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Invisible)
+    if not IsModOptionEnabled(modOption) then
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), debugLog)
+        RAW_PrintIfDebug("====================================================================================================\n", debugLog)
         return
     end
 
-    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_Invisible)
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), debugLog)
 
     RAW_RegisterInvisibilityControlEvent()
 
-    RAW_PrintIfDebug("\n" .. CentralizedString("Finished registering the Invisibility listeners"), RAW_PrintTable_Invisible)
-    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Invisible)
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished registering the Invisibility listeners"), debugLog)
+    RAW_PrintIfDebug("====================================================================================================\n", debugLog)
 end

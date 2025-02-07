@@ -1,25 +1,28 @@
+local modOption = "feats"
+local debugLog = IsModOptionLogging(modOption)
+
 local ENUM_RAW_Feats
 
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_Feats()
-    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_Feats)
-    RAW_PrintIfDebug(CentralizedString("Option: feats"), RAW_PrintTable_Feats)
+    RAW_PrintIfDebug("\n====================================================================================================", debugLog)
+    RAW_PrintIfDebug(CentralizedString("Option: " .. modOption), debugLog)
 
-    if not IsModOptionEnabled("feats") then
-        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_Feats)
-        RAW_PrintIfDebug(CentralizedString("Skipping the Feats changes"), RAW_PrintTable_Feats)
-        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Feats)
+    if not IsModOptionEnabled(modOption) then
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), debugLog)
+        RAW_PrintIfDebug(CentralizedString("Skipping the Feats changes"), debugLog)
+        RAW_PrintIfDebug("====================================================================================================\n", debugLog)
         return
     end
 
-    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_Feats)
-    RAW_PrintIfDebug(CentralizedString("Starting the Feats changes"), RAW_PrintTable_Feats)
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), debugLog)
+    RAW_PrintIfDebug(CentralizedString("Starting the Feats changes"), debugLog)
 
-    RAW_ApplyStaticData(ENUM_RAW_Feats, RAW_PrintTable_Feats)
+    RAW_ApplyStaticData(ENUM_RAW_Feats, debugLog)
 
-    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Feats changes"), RAW_PrintTable_Feats)
-    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Feats)
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Feats changes"), debugLog)
+    RAW_PrintIfDebug("====================================================================================================\n", debugLog)
 end
 
 ---------------------------------------- MODELS ----------------------------------------

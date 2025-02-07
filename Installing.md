@@ -64,6 +64,7 @@
 * To turn on/off the mod features or customize them, access the `ModOptions.json` file at the folder `\Users\{USER_NAME}\AppData\Local\Larian Studios\Baldur's Gate 3\Script Extender\RAW\`. If the folder/file doesn't exist, open the game once with the mod active and it will create the file
 * Simply change the `enabled` from `true` to `false` on whichever feature you want to turn off and `false` to `true` for those you want to turn on. For features which allow a `value`, keep `enabled` as `true` and change the `value` for a valid one specified by the option's description
 * For customizable features 🔧, keep `enabled` as `true` and modify their configuration files at `\Users\{USER_NAME}\AppData\Local\Larian Studios\Baldur's Gate 3\Script Extender\RAW\{option}`. Opening the game once with the option enabled will create the folder and configuration files for each customizable option
+* If you want to see logs of what's happening on any specific feature, change the value of its `log` to `true`
 
 > [!CAUTION]
 > All dependencies of enabled features will be automatically turned on to avoid inconsistencies or bugs in your game (if you want to disable a feature, you must also disable every feature on the `Depended by` column to actually disable it)

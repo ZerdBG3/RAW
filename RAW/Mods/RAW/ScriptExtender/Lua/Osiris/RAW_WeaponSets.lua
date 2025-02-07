@@ -1,3 +1,6 @@
+local modOption = "weaponSets"
+local debugLog = IsModOptionLogging(modOption)
+
 local function RAW_RegisterWeaponSetEvent()
     Ext.Osiris.RegisterListener("Equipped", 2, "after",
         function(item, char)
@@ -37,19 +40,19 @@ local function RAW_RegisterWeaponSetEvent()
 end
 
 function RAW_WeaponSets()
-    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_WeaponSets)
-    RAW_PrintIfDebug(CentralizedString("Option: weaponSets"), RAW_PrintTable_WeaponSets)
+    RAW_PrintIfDebug("\n====================================================================================================", debugLog)
+    RAW_PrintIfDebug(CentralizedString("Option: " .. modOption), debugLog)
 
-    if not IsModOptionEnabled("weaponSets") then
-        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_WeaponSets)
-        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_WeaponSets)
+    if not IsModOptionEnabled(modOption) then
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), debugLog)
+        RAW_PrintIfDebug("====================================================================================================\n", debugLog)
         return
     end
 
-    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_WeaponSets)
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), debugLog)
 
     RAW_RegisterWeaponSetEvent()
 
-    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Weapon Set Restrictions"), RAW_PrintTable_WeaponSets)
-    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_WeaponSets)
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Weapon Set Restrictions"), debugLog)
+    RAW_PrintIfDebug("====================================================================================================\n", debugLog)
 end

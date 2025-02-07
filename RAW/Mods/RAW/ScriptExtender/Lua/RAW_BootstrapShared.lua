@@ -29,9 +29,9 @@ Ext.Require(RAW_StatsLoadedPath .. "RAW_WeaponSets.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_WeaponSpells.lua")
 
 local function RAW_StatsLoaded()
-    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_ModOptions)
-    RAW_PrintIfDebug(CentralizedString("[RAW:BootstrapShared.lua] StatsLoaded Start"), RAW_PrintTable_ModOptions)
-    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_ModOptions)
+    RAW_PrintIfDebug("\n====================================================================================================", RAW_ShouldPrint_ModOptions)
+    RAW_PrintIfDebug(CentralizedString("[RAW:BootstrapShared.lua] StatsLoaded Start"), RAW_ShouldPrint_ModOptions)
+    RAW_PrintIfDebug("====================================================================================================\n", RAW_ShouldPrint_ModOptions)
 
     RAW_LoadVanillaStatFileParents()
 
@@ -55,9 +55,9 @@ local function RAW_StatsLoaded()
     RAW_WeaponSets_Passive()
     RAW_WeaponSpells()
 
-    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_ModOptions)
-    RAW_PrintIfDebug(CentralizedString("[RAW:BootstrapShared.lua] StatsLoaded Ended"), RAW_PrintTable_ModOptions)
-    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_ModOptions)
+    RAW_PrintIfDebug("\n====================================================================================================", RAW_ShouldPrint_ModOptions)
+    RAW_PrintIfDebug(CentralizedString("[RAW:BootstrapShared.lua] StatsLoaded Ended"), RAW_ShouldPrint_ModOptions)
+    RAW_PrintIfDebug("====================================================================================================\n", RAW_ShouldPrint_ModOptions)
 end
 
 Ext.Events.StatsLoaded:Subscribe(RAW_StatsLoaded)
@@ -69,16 +69,16 @@ Ext.Require(RAW_OsirisFilesPath .. "RAW_Invisibility.lua")
 Ext.Require(RAW_OsirisFilesPath .. "RAW_WeaponSets.lua")
 
 if Ext.IsServer() then
-    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_ModOptions)
-    RAW_PrintIfDebug(CentralizedString("[RAW:BootstrapShared.lua] Osiris Registration Start"), RAW_PrintTable_ModOptions)
-    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_ModOptions)
+    RAW_PrintIfDebug("\n====================================================================================================", RAW_ShouldPrint_ModOptions)
+    RAW_PrintIfDebug(CentralizedString("[RAW:BootstrapShared.lua] Osiris Registration Start"), RAW_ShouldPrint_ModOptions)
+    RAW_PrintIfDebug("====================================================================================================\n", RAW_ShouldPrint_ModOptions)
 
     RAW_InvisibilityServer()
     RAW_WeaponSets()
 
-    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_ModOptions)
-    RAW_PrintIfDebug(CentralizedString("[RAW:BootstrapShared.lua] Osiris Registration Ended"), RAW_PrintTable_ModOptions)
-    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_ModOptions)
+    RAW_PrintIfDebug("\n====================================================================================================", RAW_ShouldPrint_ModOptions)
+    RAW_PrintIfDebug(CentralizedString("[RAW:BootstrapShared.lua] Osiris Registration Ended"), RAW_ShouldPrint_ModOptions)
+    RAW_PrintIfDebug("====================================================================================================\n", RAW_ShouldPrint_ModOptions)
 end
 
 -- To-do: Activate this when the changes to RAW_Config.lua ShowError is made

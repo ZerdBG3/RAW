@@ -7,7 +7,7 @@ RAW_LoadModOptions(true) -- To-do: remove the "true" parameter when the changes 
 
 local function overrideFiles(list)
     for _, override in pairs(list) do
-        RAW_PrintIfDebug("Overriding path from: " .. override.from .. " to: " .. override.to, RAW_PrintTable_ModOptions)
+        RAW_PrintIfDebug("Overriding path from: " .. override.from .. " to: " .. override.to, RAW_ShouldPrint_ModOptions)
         Ext.IO.AddPathOverride(override.from, override.to)
     end
 end

@@ -1,25 +1,28 @@
+local modOption = "barbarian_berserker"
+local debugLog = IsModOptionLogging(modOption)
+
 local ENUM_RAW_BarbarianBerserkerResources
 
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_Barbarian_Berserker()
-    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_Barbarian_Berserker)
-    RAW_PrintIfDebug(CentralizedString("Option: barbarian_berserker"), RAW_PrintTable_Barbarian_Berserker)
+    RAW_PrintIfDebug("\n====================================================================================================", debugLog)
+    RAW_PrintIfDebug(CentralizedString("Option: " .. modOption), debugLog)
 
-    if not IsModOptionEnabled("barbarian_berserker") then
-        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_Barbarian_Berserker)
-        RAW_PrintIfDebug(CentralizedString("Skipping the Barbarian (Berserker) Changes"), RAW_PrintTable_Barbarian_Berserker)
-        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Barbarian_Berserker)
+    if not IsModOptionEnabled(modOption) then
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), debugLog)
+        RAW_PrintIfDebug(CentralizedString("Skipping the Barbarian (Berserker) Changes"), debugLog)
+        RAW_PrintIfDebug("====================================================================================================\n", debugLog)
         return
     end
 
-    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_Barbarian_Berserker)
-    RAW_PrintIfDebug(CentralizedString("Starting the Barbarian (Berserker) Changes"), RAW_PrintTable_Barbarian_Berserker)
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), debugLog)
+    RAW_PrintIfDebug(CentralizedString("Starting the Barbarian (Berserker) Changes"), debugLog)
 
-    RAW_ApplyStaticData(ENUM_RAW_BarbarianBerserkerResources, RAW_PrintTable_Barbarian_Berserker)
+    RAW_ApplyStaticData(ENUM_RAW_BarbarianBerserkerResources, debugLog)
 
-    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Barbarian (Berserker) Changes"), RAW_PrintTable_Barbarian_Berserker)
-    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Barbarian_Berserker)
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Barbarian (Berserker) Changes"), debugLog)
+    RAW_PrintIfDebug("====================================================================================================\n", debugLog)
 end
 
 ---------------------------------------- MODELS ----------------------------------------

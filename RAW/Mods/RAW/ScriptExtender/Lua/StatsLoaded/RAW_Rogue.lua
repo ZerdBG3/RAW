@@ -1,25 +1,28 @@
+local modOption = "rogue"
+local debugLog = IsModOptionLogging(modOption)
+
 local ENUM_RAW_RogueResources
 
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_Rogue()
-    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_Rogue)
-    RAW_PrintIfDebug(CentralizedString("Option: rogue"), RAW_PrintTable_Rogue)
+    RAW_PrintIfDebug("\n====================================================================================================", debugLog)
+    RAW_PrintIfDebug(CentralizedString("Option: " .. modOption), debugLog)
 
-    if not IsModOptionEnabled("rogue") then
-        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_Rogue)
-        RAW_PrintIfDebug(CentralizedString("Skipping the Rogue Changes"), RAW_PrintTable_Rogue)
-        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Rogue)
+    if not IsModOptionEnabled(modOption) then
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), debugLog)
+        RAW_PrintIfDebug(CentralizedString("Skipping the Rogue Changes"), debugLog)
+        RAW_PrintIfDebug("====================================================================================================\n", debugLog)
         return
     end
 
-    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_Rogue)
-    RAW_PrintIfDebug(CentralizedString("Starting the Rogue Changes"), RAW_PrintTable_Rogue)
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), debugLog)
+    RAW_PrintIfDebug(CentralizedString("Starting the Rogue Changes"), debugLog)
 
-    RAW_ApplyStaticData(ENUM_RAW_RogueResources, RAW_PrintTable_Rogue)
+    RAW_ApplyStaticData(ENUM_RAW_RogueResources, debugLog)
 
-    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Rogue Changes"), RAW_PrintTable_Rogue)
-    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Rogue)
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Rogue Changes"), debugLog)
+    RAW_PrintIfDebug("====================================================================================================\n", debugLog)
 end
 
 ---------------------------------------- MODELS ----------------------------------------

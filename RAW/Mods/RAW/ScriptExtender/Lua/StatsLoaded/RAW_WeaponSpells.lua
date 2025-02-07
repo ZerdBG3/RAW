@@ -1,3 +1,6 @@
+local modOption = "weaponSpells"
+local debugLog = IsModOptionLogging(modOption)
+
 local ENUM_RAW_WeaponSpells_Spells, ENUM_RAW_WeaponSpells_Passives
 
 local function RAW_RemoveBoostsOnEquipMainHand(weapon)
@@ -9,7 +12,7 @@ local function RAW_RemoveBoostsOnEquipMainHand(weapon)
             local pattern = "UnlockSpell%(" .. spell .. "%)"
             local new, count = string.gsub(newBoosts, pattern, "")
             if count > 0 then
-                RAW_PrintIfDebug("\t- BoostsOnEquipMainHand Removed " .. spell, RAW_PrintTable_WeaponSpells)
+                RAW_PrintIfDebug("\t- BoostsOnEquipMainHand Removed " .. spell, debugLog)
                 hadReplacement = true
                 newBoosts = new
             end
@@ -29,7 +32,7 @@ local function RAW_RemoveMainHandPassives(weapon)
         for _, passive in pairs(ENUM_RAW_WeaponSpells_Passives) do
             local new, count = string.gsub(newPassives, passive, "")
             if count > 0 then
-                RAW_PrintIfDebug("\t- PassivesMainHand Removed " .. passive, RAW_PrintTable_WeaponSpells)
+                RAW_PrintIfDebug("\t- PassivesMainHand Removed " .. passive, debugLog)
                 hadReplacement = true
                 newPassives = new
             end
@@ -49,7 +52,7 @@ local function RAW_RemovePassivesOnEquip(weapon)
         for _, passive in pairs(ENUM_RAW_WeaponSpells_Passives) do
             local new, count = string.gsub(newPassives, passive, "")
             if count > 0 then
-                RAW_PrintIfDebug("\t- PassivesOnEquip Removed " .. passive, RAW_PrintTable_WeaponSpells)
+                RAW_PrintIfDebug("\t- PassivesOnEquip Removed " .. passive, debugLog)
                 hadReplacement = true
                 newPassives = new
             end
@@ -64,30 +67,30 @@ end
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_WeaponSpells()
-    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_WeaponSpells)
-    RAW_PrintIfDebug(CentralizedString("Option: weaponSpells"), RAW_PrintTable_WeaponSpells)
+    RAW_PrintIfDebug("\n====================================================================================================", debugLog)
+    RAW_PrintIfDebug(CentralizedString("Option: " .. modOption), debugLog)
 
-    if not IsModOptionEnabled("weaponSpells") then
-        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_WeaponSpells)
-        RAW_PrintIfDebug(CentralizedString("Skipping the removal of Weapon Spells"), RAW_PrintTable_WeaponSpells)
-        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_WeaponSpells)
+    if not IsModOptionEnabled(modOption) then
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), debugLog)
+        RAW_PrintIfDebug(CentralizedString("Skipping the removal of Weapon Spells"), debugLog)
+        RAW_PrintIfDebug("====================================================================================================\n", debugLog)
         return
     end
 
-    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_WeaponSpells)
-    RAW_PrintIfDebug(CentralizedString("Starting the removal of Weapon Spells"), RAW_PrintTable_WeaponSpells)
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), debugLog)
+    RAW_PrintIfDebug(CentralizedString("Starting the removal of Weapon Spells"), debugLog)
 
     for _, name in pairs(Ext.Stats.GetStats("Weapon")) do
         local weapon = Ext.Stats.Get(name)
-        RAW_PrintIfDebug("\nWeapon: " .. name, RAW_PrintTable_WeaponSpells)
+        RAW_PrintIfDebug("\nWeapon: " .. name, debugLog)
 
         RAW_RemoveBoostsOnEquipMainHand(weapon)
         RAW_RemoveMainHandPassives(weapon)
         RAW_RemovePassivesOnEquip(weapon)
     end
 
-    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the removal of Weapon Spells"), RAW_PrintTable_WeaponSpells)
-    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_WeaponSpells)
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the removal of Weapon Spells"), debugLog)
+    RAW_PrintIfDebug("====================================================================================================\n", debugLog)
 end
 
 ---------------------------------------- MODELS ----------------------------------------

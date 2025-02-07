@@ -1,3 +1,6 @@
+local modOption = "attunement"
+local debugLog = IsModOptionLogging(modOption)
+
 local maxAttunementStatus, maxAttunementStatusArtificer, ENUM_RAW_AttunementList
 
 local userItemsAddedFileName = "attunement/Items_Add.json"
@@ -19,10 +22,10 @@ local function RAW_AddAttunement(item)
 
     item.UseConditions = useConditionsPrefix .. combatRestriction ..
             "RAW_AttunementMaximumRestriction(context.Source, '" .. maxAttunementStatus .. "','" .. maxAttunementStatusArtificer .. "')"
-    RAW_PrintIfDebug("\tUseConditions: " .. item.UseConditions, RAW_PrintTable_Attunement)
+    RAW_PrintIfDebug("\tUseConditions: " .. item.UseConditions, debugLog)
 
     item.StatusOnEquip = RAW_RemoveRepeatedSemicolon(item.StatusOnEquip .. ";RAW_ATTUNEMENT_COUNT_TECHNICAL")
-    RAW_PrintIfDebug("\tStatusOnEquip: " .. item.StatusOnEquip, RAW_PrintTable_Attunement)
+    RAW_PrintIfDebug("\tStatusOnEquip: " .. item.StatusOnEquip, debugLog)
 
     -- TO DO: reactivate the item-specific passive when Ext.Stats.Create works again
     -- Creates a specific passive to each item so they show up separately on the Character Sheet
@@ -32,29 +35,29 @@ local function RAW_AddAttunement(item)
     -- Uses a separate passive for each slot so, in most cases, the passives show separately on the Character Sheet
     local passiveName = "RAW_Attunement_" .. string.gsub(item.Slot, " ", "_")
     item.PassivesOnEquip = RAW_RemoveRepeatedSemicolon(item.PassivesOnEquip .. ";" .. passiveName)
-    RAW_PrintIfDebug("\tPassivesOnEquip: " .. item.PassivesOnEquip, RAW_PrintTable_Attunement)
+    RAW_PrintIfDebug("\tPassivesOnEquip: " .. item.PassivesOnEquip, debugLog)
 end
 
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_Attunement()
-    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_Attunement)
-    RAW_PrintIfDebug(CentralizedString("Option: attunement"), RAW_PrintTable_Attunement)
+    RAW_PrintIfDebug("\n====================================================================================================", debugLog)
+    RAW_PrintIfDebug(CentralizedString("Option: " .. modOption), debugLog)
 
-    if not IsModOptionEnabled("attunement") then
-        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_Attunement)
-        RAW_PrintIfDebug(CentralizedString("Skipping the Attunement rules application"), RAW_PrintTable_Attunement)
-        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Attunement)
+    if not IsModOptionEnabled(modOption) then
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), debugLog)
+        RAW_PrintIfDebug(CentralizedString("Skipping the Attunement rules application"), debugLog)
+        RAW_PrintIfDebug("====================================================================================================\n", debugLog)
         return
     end
 
-    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_Attunement)
-    RAW_PrintIfDebug(CentralizedString("Starting the Attunement rules application"), RAW_PrintTable_Attunement)
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), debugLog)
+    RAW_PrintIfDebug(CentralizedString("Starting the Attunement rules application"), debugLog)
 
-    local maxAttunement = ModOptions["attunement"].value
+    local maxAttunement = ModOptions[modOption].value
     if not RAW_IsIntegerBetween(maxAttunement, 1, 10) then
         RAW_PrintIfDebug("Zerd's RAW\nInvalid attunement value on config file (should be an integer between 1 and 10)\nReverting to default (3)",
-            RAW_PrintTable_ModOptions, RAW_PrintTypeError)
+            RAW_ShouldPrint_ModOptions, RAW_PrintTypeError)
         maxAttunement = 3
     end
     maxAttunementStatus = "RAW_ATTUNEMENT_COUNT_" .. tostring(maxAttunement)
@@ -73,13 +76,13 @@ function RAW_Attunement()
     for name in pairs(ENUM_RAW_AttunementList) do
         local item = Ext.Stats.Get(name)
         if item ~= nil then
-            RAW_PrintIfDebug("\nAdding attunement to " .. name, RAW_PrintTable_Attunement)
+            RAW_PrintIfDebug("\nAdding attunement to " .. name, debugLog)
             RAW_AddAttunement(item)
         end
     end
 
-    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Attunement rules application"), RAW_PrintTable_Attunement)
-    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Attunement)
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Attunement rules application"), debugLog)
+    RAW_PrintIfDebug("====================================================================================================\n", debugLog)
 end
 
 ---------------------------------------- MODELS ----------------------------------------

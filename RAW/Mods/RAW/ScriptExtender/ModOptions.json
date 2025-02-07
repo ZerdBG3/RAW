@@ -4,6 +4,7 @@
         "description": "Sets a limit to the amount of magic items a character can have attuned at once (choose a value between 1 and 10).",
         "enabled": true,
         "value": 3,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -21,6 +22,7 @@
         "description": "Changes to Reckless Attack",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -38,6 +40,7 @@
         "description": "Removes Throw as a bonus action from Frenzy.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -50,6 +53,7 @@
         "description": "Allows Wild Magic results to be used on the first turn and adjusts Shadowy Tendrils targeting.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -67,6 +71,7 @@
         "description": "Gives the player a toggleable passive that stops them from casting concentration spells while already concentrating.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -84,6 +89,7 @@
         "description": "Changes to Jump and Shove. Introduces Distract and Dodge as player actions (even when the options is disabled).",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -114,6 +120,7 @@
         "description": "Healing a downed character allows them to play their turn normally.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -131,6 +138,7 @@
         "description": "Removes Extra Attack stacking from multiple sources and allow Shove to be used as part of it.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [
             "defaultActions"
         ],
@@ -150,6 +158,7 @@
         "description": "Replaces familiar attacks with Distract and adjust their stats.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -191,6 +200,7 @@
         "description": "Changes to Shield Master.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [
             "defaultActions"
         ],
@@ -210,6 +220,7 @@
         "description": "The first weapon equipped in a turn doesn't cost an Action Point.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -227,6 +238,7 @@
         "description": "Adjust Feinting Attack Use Cost.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -244,6 +256,7 @@
         "description": "Removes the High Ground bonus to attack rolls.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -261,6 +274,7 @@
         "description": "Changes Initiative Dice Roll from 1d4 to 1d20.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -278,6 +292,7 @@
         "description": "Kills players outright if damage taken exceeds current hit points by hit point maximum.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -295,6 +310,7 @@
         "description": "Changes to Flaming Sphere, Guardian of Faith and Spiritual Weapon to make them invulnerable and ignored by the AI.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -340,6 +356,7 @@
         "description": "Changes to invisibility rules and sneaking while invisible.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -357,6 +374,7 @@
         "description": "Changes the advantage and disadvantage conditions while Prone.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -374,6 +392,7 @@
         "description": "Changes to Cunning Action and Sneak Attack.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [
             "throw"
         ],
@@ -393,6 +412,7 @@
         "description": "Changes to Fast Hands and Second-Story Work.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [
             "rogue",
             "stabilize"
@@ -413,6 +433,7 @@
         "description": "Short Rest becomes an active downtime period.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -430,6 +451,7 @@
         "description": "Disables the possibility of a critical fail on skill checks by setting a minimum of 2 on rolls.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -447,6 +469,7 @@
         "description": "Various changes to spells and statuses applied by spells.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -472,6 +495,7 @@
         "description": "Enforces the spell casted as a bonus action rule stopping casting other leveled spells on the same turn.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -489,6 +513,7 @@
         "description": "Changes duration of several spells and removes statuses that last up to 1 hour on Short Rest.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -506,6 +531,7 @@
         "description": "Changes the duration of spells that don't affect combat.",
         "enabled": false,
         "value": null,
+        "log": false,
         "dependencies": [
             "spells_duration"
         ],
@@ -525,6 +551,7 @@
         "description": "Changes the damage application timing of spells like Cloud of Daggers, Moonbeam and Spirit Guardians.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -542,6 +569,7 @@
         "description": "Removes surface interaction for spells that are not AoE.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -559,6 +587,7 @@
         "description": "Allows concentration spells to be reactivated during Wildshape.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -576,6 +605,7 @@
         "description": "Changes Help to only stabilize a character, healing once out of combat.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -593,6 +623,7 @@
         "description": "Changes to the throw action and introduction of the throwing weapon spell.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [
             "twoWeaponFighting"
         ],
@@ -612,6 +643,7 @@
         "description": "Removes automatic off-hand attacks and only allows them after attacking with a weapon while dual wielding.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -629,6 +661,7 @@
         "description": "Disable Weapon Sets. Equipping a ranged weapon unequips melee weapons and vice-versa.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
@@ -646,6 +679,7 @@
         "description": "Removes weapon spells/passives from basic weapons, such as Cleave, Overwhelm, Piercing Shot and Topple.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {}

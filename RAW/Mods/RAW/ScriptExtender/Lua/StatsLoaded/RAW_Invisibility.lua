@@ -1,3 +1,6 @@
+local modOption = "invisibility"
+local debugLog = IsModOptionLogging(modOption)
+
 local ENUM_RAW_SpellsAgainstInvisibleTargets, ENUM_RAW_SpellsAgainstInvisibleTargetsIgnore
 local RAW_UserSpellsAdded, RAW_UserSpellsRemoved
 
@@ -51,9 +54,9 @@ local function RAW_AddInvisibilityConditionToInterrupt(name)
         return
     end
 
-    RAW_PrintIfDebug("\nAdding Conditions to " .. interrupt.Name, RAW_PrintTable_Invisible)
+    RAW_PrintIfDebug("\nAdding Conditions to " .. interrupt.Name, debugLog)
     if string.find(interrupt.Conditions, invisibleCondition) then
-        RAW_PrintIfDebug("\tInterrupt already has " .. invisibleCondition .. " condition", RAW_PrintTable_Invisible, RAW_PrintTypeWarning)
+        RAW_PrintIfDebug("\tInterrupt already has " .. invisibleCondition .. " condition", debugLog, RAW_PrintTypeWarning)
         return
     end
 
@@ -64,7 +67,7 @@ local function RAW_AddInvisibilityConditionToInterrupt(name)
 
     interrupt.Conditions = conditionsPrefix ..
         "(" .. invisibleCondition .. interruptConditionVars .. ")"
-    RAW_PrintIfDebug("\tConditions: " .. interrupt.Conditions, RAW_PrintTable_Invisible)
+    RAW_PrintIfDebug("\tConditions: " .. interrupt.Conditions, debugLog)
 end
 
 local function RAW_AddInvisibilityConditionToSpell(name)
@@ -98,9 +101,9 @@ local function RAW_AddInvisibilityConditionToSpell(name)
         targetConditionData = "ThrowableTargetConditions"
     end
 
-    RAW_PrintIfDebug("\nAdding " .. targetConditionData .. " to " .. spell.Name, RAW_PrintTable_Invisible)
+    RAW_PrintIfDebug("\nAdding " .. targetConditionData .. " to " .. spell.Name, debugLog)
     if string.find(spell[targetConditionData], invisibleCondition) then
-        RAW_PrintIfDebug("\tSpell already has " .. invisibleCondition .. " condition", RAW_PrintTable_Invisible, RAW_PrintTypeWarning)
+        RAW_PrintIfDebug("\tSpell already has " .. invisibleCondition .. " condition", debugLog, RAW_PrintTypeWarning)
         return
     end
 
@@ -111,7 +114,7 @@ local function RAW_AddInvisibilityConditionToSpell(name)
 
     spell[targetConditionData] = targetConditionsPrefix ..
         "(" .. invisibleCondition .. spellConditionVars .. ")"
-    RAW_PrintIfDebug("\t" .. targetConditionData .. ": " .. spell[targetConditionData], RAW_PrintTable_Invisible)
+    RAW_PrintIfDebug("\t" .. targetConditionData .. ": " .. spell[targetConditionData], debugLog)
 end
 
 local function RAW_AddCharacterSeekSpellPassive(name)
@@ -120,27 +123,27 @@ local function RAW_AddCharacterSeekSpellPassive(name)
         return
     end
 
-    RAW_PrintIfDebug("\nCharacter: " .. name, RAW_PrintTable_Invisible)
-    RAW_PrintIfDebug("\tAdding passive: " .. ENUM_RAW_SeekInvisibilitySpellUnlocker, RAW_PrintTable_Invisible)
+    RAW_PrintIfDebug("\nCharacter: " .. name, debugLog)
+    RAW_PrintIfDebug("\tAdding passive: " .. ENUM_RAW_SeekInvisibilitySpellUnlocker, debugLog)
     char.Passives = ENUM_RAW_SeekInvisibilitySpellUnlocker .. ";" .. char.Passives
-    RAW_PrintIfDebug("\tPassives: " .. char.Passives, RAW_PrintTable_Invisible)
+    RAW_PrintIfDebug("\tPassives: " .. char.Passives, debugLog)
 end
 
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_InvisibilityStats()
-    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_Invisible)
-    RAW_PrintIfDebug(CentralizedString("Option: invisibility"), RAW_PrintTable_Invisible)
+    RAW_PrintIfDebug("\n====================================================================================================", debugLog)
+    RAW_PrintIfDebug(CentralizedString("Option: " .. modOption), debugLog)
 
-    if not IsModOptionEnabled("invisibility") then
-        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_Invisible)
-        RAW_PrintIfDebug(CentralizedString("Skipping the Spells against Invisible characters setup"), RAW_PrintTable_Invisible)
-        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Invisible)
+    if not IsModOptionEnabled(modOption) then
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), debugLog)
+        RAW_PrintIfDebug(CentralizedString("Skipping the Spells against Invisible characters setup"), debugLog)
+        RAW_PrintIfDebug("====================================================================================================\n", debugLog)
         return
     end
 
-    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_Invisible)
-    RAW_PrintIfDebug(CentralizedString("Starting the Spells against Invisible characters setup"), RAW_PrintTable_Invisible)
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), debugLog)
+    RAW_PrintIfDebug(CentralizedString("Starting the Spells against Invisible characters setup"), debugLog)
 
     RAW_UserSpellsAdded = RAW_LoadCustomizableOptionList(userSpellsAddedFileName)
     if RAW_UserSpellsAdded ~= nil then
@@ -160,8 +163,8 @@ function RAW_InvisibilityStats()
         RAW_AddCharacterSeekSpellPassive(name)
     end
 
-    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Spells against Invisible characters setup"), RAW_PrintTable_Invisible)
-    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Invisible)
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Spells against Invisible characters setup"), debugLog)
+    RAW_PrintIfDebug("====================================================================================================\n", debugLog)
 end
 
 ---------------------------------------- MODELS ----------------------------------------

@@ -126,12 +126,15 @@ function RAW_PrintConfig(shouldPrint)
     for optionName, attributes in pairs(ModOptions) do
         local text
         if IsModOptionEnabled(optionName) then
-            text = RAW_ColoredText(optionName, RAW_ColorTextCode_Blue) .. RAW_ColoredText(" enabled", RAW_ColorTextCode_Green)
+            text = RAW_ColoredText(optionName ..  ": ", RAW_ColorTextCode_Blue) .. RAW_ColoredText("enabled", RAW_ColorTextCode_Green)
             if attributes.value ~= nil then
                 text = text .. RAW_ColoredText(" value: ", RAW_ColorTextCode_Blue) .. RAW_ColoredText(attributes.value, RAW_ColorTextCode_Green)
             end
         else
-            text = RAW_ColoredText(optionName, RAW_ColorTextCode_Blue) .. RAW_ColoredText(" disabled", RAW_ColorTextCode_Red)
+            text = RAW_ColoredText(optionName .. ": ", RAW_ColorTextCode_Blue) .. RAW_ColoredText("disabled", RAW_ColorTextCode_Red)
+        end
+        if attributes.log ~= nil and attributes.log then
+            text = text .. RAW_ColoredText(" logging enabled", RAW_ColorTextCode_Magenta)
         end
         table.insert(options, text)
     end
@@ -156,6 +159,7 @@ function RAW_LoadModOptions(shouldPrint)
         local userOption = userOptions[optionName]
         local enabled = attributes.enabled
         local value = attributes.value
+        local log = attributes.log
         if userOption ~= nil  then
             if userOption.enabled ~= nil then
                 enabled = userOption.enabled
@@ -163,18 +167,24 @@ function RAW_LoadModOptions(shouldPrint)
             if userOption.value ~= nil then
                 value = userOption.value
             end
+            if userOption.log ~= nil then
+                log = userOption.log
+            end
 
             enabled  = userOption.enabled or enabled
             value = userOption.value or value
+            log = userOption.log or log
         else
             userOptions[optionName] = {}
             userOptions[optionName].enabled = enabled
+            userOptions[optionName].log = log
             if value ~= nil then
                 userOptions[optionName].value = value
             end
         end
         attributes.enabled = enabled
         attributes.value = value
+        attributes.log = log
 
         local filteredDependencies = {}
         for _, dep in pairs(attributes.dependencies) do
@@ -210,16 +220,16 @@ end
 
 function RAW_LoadCustomizableOptionValue(fileName, default, isValid)
     local filePath = filesPath .. fileName
-    RAW_PrintIfDebug(CentralizedString("Searching for User file " .. filePath), RAW_PrintTable_ModOptions)
+    RAW_PrintIfDebug(CentralizedString("Searching for User file " .. filePath), RAW_ShouldPrint_ModOptions)
     local ok, optionsFile = pcall(Ext.IO.LoadFile, filePath)
     if not ok or not optionsFile then
-        RAW_PrintIfDebug(CentralizedString("User " .. filePath .. " not found. Will create one!"), RAW_PrintTable_ModOptions, RAW_PrintTypeWarning)
+        RAW_PrintIfDebug(CentralizedString("User " .. filePath .. " not found. Will create one!"), RAW_ShouldPrint_ModOptions, RAW_PrintTypeWarning)
         Ext.IO.SaveFile(filePath, tostring(default))
         return nil
     end
 
     if not isValid(optionsFile) then
-        RAW_PrintIfDebug(CentralizedString("Invalid " .. filePath .. " file. Did not load info!"), RAW_PrintTable_ModOptions, RAW_PrintTypeError)
+        RAW_PrintIfDebug(CentralizedString("Invalid " .. filePath .. " file. Did not load info!"), RAW_ShouldPrint_ModOptions, RAW_PrintTypeError)
         return nil
     end
 
@@ -228,17 +238,17 @@ end
 
 function RAW_LoadCustomizableOptionList(fileName)
     local filePath = filesPath .. fileName
-    RAW_PrintIfDebug("Searching for User file " .. filePath, RAW_PrintTable_ModOptions)
+    RAW_PrintIfDebug("Searching for User file " .. filePath, RAW_ShouldPrint_ModOptions)
     local ok, optionsFile = pcall(Ext.IO.LoadFile, filePath)
     if not ok or not optionsFile then
-        RAW_PrintIfDebug("\tUser " .. filePath .. " not found. Will create one!", RAW_PrintTable_ModOptions, RAW_PrintTypeWarning)
+        RAW_PrintIfDebug("\tUser " .. filePath .. " not found. Will create one!", RAW_ShouldPrint_ModOptions, RAW_PrintTypeWarning)
         Ext.IO.SaveFile(filePath, "[]")
         return nil
     end
 
     local ok, options = pcall(Ext.Json.Parse, optionsFile)
 	if not ok then
-        RAW_PrintIfDebug("\tInvalid " .. filePath .. " file. Did not load info!", RAW_PrintTable_ModOptions, RAW_PrintTypeError)
+        RAW_PrintIfDebug("\tInvalid " .. filePath .. " file. Did not load info!", RAW_ShouldPrint_ModOptions, RAW_PrintTypeError)
 		return nil
 	end
 
@@ -248,14 +258,14 @@ function RAW_LoadCustomizableOptionList(fileName)
         local object = Ext.Stats.Get(stat)
         if object == nil then
             invalidStat = true
-            RAW_PrintIfDebug("\tInvalid stat entry: " .. stat .. " - Ignoring it!", RAW_PrintTable_ModOptions, RAW_PrintTypeError)
+            RAW_PrintIfDebug("\tInvalid stat entry: " .. stat .. " - Ignoring it!", RAW_ShouldPrint_ModOptions, RAW_PrintTypeError)
         end
     end
 
     if invalidStat then
-        RAW_PrintIfDebug("\tUser " .. filePath .. " partially loaded!", RAW_PrintTable_ModOptions, RAW_PrintTypeWarning)
+        RAW_PrintIfDebug("\tUser " .. filePath .. " partially loaded!", RAW_ShouldPrint_ModOptions, RAW_PrintTypeWarning)
     else
-        RAW_PrintIfDebug(RAW_ColoredText("\tUser " .. filePath .. " loaded successfully!", RAW_ColorTextCode_Green), RAW_PrintTable_ModOptions)
+        RAW_PrintIfDebug(RAW_ColoredText("\tUser " .. filePath .. " loaded successfully!", RAW_ColorTextCode_Green), RAW_ShouldPrint_ModOptions)
     end
 
     return setOptions
@@ -263,4 +273,8 @@ end
 
 function IsModOptionEnabled(modOption)
     return ModOptions[modOption] ~= nil and ModOptions[modOption].enabled
+end
+
+function IsModOptionLogging(modOption)
+    return ModOptions[modOption] ~= nil and ModOptions[modOption].log
 end
