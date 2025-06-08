@@ -9,9 +9,9 @@
 //   or if they move to the AoE during their movement. Shoving a target to the AoE will not damage them, but it will
 //   damage them at their turn start
 
-// ------------------------------------------------------
-// ------------------ Cloud of Daggers ------------------
-// ------------------------------------------------------
+// ----------------------------------------------------------
+// -------------------- Cloud of Daggers --------------------
+// ----------------------------------------------------------
 
 new entry "RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED"
 type "StatusData"
@@ -148,16 +148,16 @@ data "DescriptionParams" "DealDamage(6d4,Piercing)"
 data "TooltipDamage" "DealDamage(6d4,Piercing)"
 data "OnApplyFunctors" "DealDamage(6d4,Piercing,Magical);ApplyStatus(RAW_CLOUD_OF_DAGGERS_DAMAGE_RECEIVED,100,1)"
 
-// -------------------------------------------------------
-// ------------------ Guardian of Faith ------------------
-// -------------------------------------------------------
+// -----------------------------------------------------------
+// -------------------- Guardian of Faith --------------------
+// -----------------------------------------------------------
 
 // Guardian of Faith received a similar treatment, but being a summon and all, it was
 //   modified at Public\RAW\Stats\Generated\Data\IntangibleSummons.txt
 
-// ----------------------------------------------
-// ------------------ Moonbeam ------------------
-// ----------------------------------------------
+// --------------------------------------------------
+// -------------------- Moonbeam --------------------
+// --------------------------------------------------
 
 new entry "RAW_MOONBEAM_DAMAGE_RECEIVED"
 type "StatusData"
@@ -288,9 +288,9 @@ data "DescriptionParams" "DealDamage(6d10,Radiant)"
 data "OnApplySuccess" "DealDamage(6d10,Radiant,Magical);ApplyStatus(RAW_MOONBEAM_DAMAGE_RECEIVED,100,1)"
 data "OnApplyFail" "DealDamage(6d10/2,Radiant,Magical);ApplyStatus(RAW_MOONBEAM_DAMAGE_RECEIVED,100,1)"
 
-// ------------------------------------------------------
-// ------------------ Spirit Guardians ------------------
-// ------------------------------------------------------
+// ----------------------------------------------------------
+// -------------------- Spirit Guardians --------------------
+// ----------------------------------------------------------
 
 new entry "SPIRIT_GUARDIANS_DAMAGE_RECEIVED"
 type "StatusData"

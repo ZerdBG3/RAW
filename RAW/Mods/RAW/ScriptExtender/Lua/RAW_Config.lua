@@ -126,7 +126,7 @@ function RAW_PrintConfig(shouldPrint)
     for optionName, attributes in pairs(ModOptions) do
         local text
         if IsModOptionEnabled(optionName) then
-            text = RAW_ColoredText(optionName ..  ": ", RAW_ColorTextCode_Blue) .. RAW_ColoredText("enabled", RAW_ColorTextCode_Green)
+            text = RAW_ColoredText(optionName .. ": ", RAW_ColorTextCode_Blue) .. RAW_ColoredText("enabled", RAW_ColorTextCode_Green)
             if attributes.value ~= nil then
                 text = text .. RAW_ColoredText(" value: ", RAW_ColorTextCode_Blue) .. RAW_ColoredText(attributes.value, RAW_ColorTextCode_Green)
             end

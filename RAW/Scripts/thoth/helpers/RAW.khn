@@ -71,8 +71,7 @@ function RAW_FightingStyle_TwoWeapons_Ranged(entity)
     return WieldingWeapon('Ammunition', false, false, entity) & ~WieldingWeapon('Twohanded', false, false, entity) & WieldingWeapon('Ammunition', true, false, entity)
 end
 
-function RAW_IsAbilityCheck(entity)
-    local entity = entity or context.Source
+function RAW_IsAbilityCheck()
     local isStr = context.CheckedAbility == Ability.Strength
     local isDex = context.CheckedAbility == Ability.Dexterity
     local isCon = context.CheckedAbility == Ability.Constitution
@@ -82,8 +81,7 @@ function RAW_IsAbilityCheck(entity)
     return ConditionResult(isStr or isDex or isCon or isInt or isWis or isCha)
 end
 
-function RAW_IsSkillCheck(entity)
-    local entity = entity or context.Source
+function RAW_IsSkillCheck()
     local isAthletics = context.CheckedSkill == Skill.Athletics
     local isAcrobatics = context.CheckedSkill == Skill.Acrobatics
     local isSleightOfHand = context.CheckedSkill == Skill.SleightOfHand
@@ -105,6 +103,17 @@ function RAW_IsSkillCheck(entity)
     return ConditionResult(isAthletics or isAcrobatics or isSleightOfHand or isStealth or isArcana or isHistory or isInvestigation or
         isNature or isReligion or isAnimalHandling or isInsight or isMedicine or isPerception or isSurvival or isDeception or
         isIntimidation or isPerformance or isPersuasion)
+end
+
+function RAW_IsSavingThrow()
+    local isStr = context.HitDescription.SaveAbility == Ability.Strength
+    local isDex = context.HitDescription.SaveAbility == Ability.Dexterity
+    local isCon = context.HitDescription.SaveAbility == Ability.Constitution
+    local isInt = context.HitDescription.SaveAbility == Ability.Intelligence
+    local isWis = context.HitDescription.SaveAbility == Ability.Wisdom
+    local isCha = context.HitDescription.SaveAbility == Ability.Charisma
+
+    return ConditionResult(isStr or isDex or isCon or isInt or isWis or isCha)
 end
 
 function RAW_AttunementCombatRestriction(entity)

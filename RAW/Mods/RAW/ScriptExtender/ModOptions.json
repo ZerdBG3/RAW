@@ -369,6 +369,24 @@
             ]
         }
     },
+    "monk": {
+        "displayName": "Monk",
+        "description": "Changes to most monk base features.",
+        "enabled": true,
+        "value": null,
+        "log": false,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Monk.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
     "prone": {
         "displayName": "Prone",
         "description": "Changes the advantage and disadvantage conditions while Prone.",
@@ -447,8 +465,8 @@
         }
     },
     "skillCheck_critFail": {
-        "displayName": "Skill Checks Critical Fail",
-        "description": "Disables the possibility of a critical fail on skill checks by setting a minimum of 2 on rolls.",
+        "displayName": "Disable Critical Fail on Checks",
+        "description": "Disables the possibility of a critical fail on ability or skill checks and saving throws.",
         "enabled": true,
         "value": null,
         "log": false,

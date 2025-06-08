@@ -1,6 +1,6 @@
--- -----------------------------------------------------------
--- ------------------ Data Structures ------------------------
--- -----------------------------------------------------------
+-- ---------------------------------------------------------
+-- -------------------- Data Structures --------------------
+-- ---------------------------------------------------------
 
 -- Creates a Set from a list
 function RAW_Set(list)
@@ -52,9 +52,9 @@ function RAW_Set_Concat(set, sep)
     return str
 end
 
--- ---------------------------------------------------------
--- ------------------ Text Helpers -------------------------
--- ---------------------------------------------------------
+-- ------------------------------------------------------
+-- -------------------- Text Helpers --------------------
+-- ------------------------------------------------------
 
 function CentralizedString(text, width)
     width = width or 100
@@ -95,9 +95,9 @@ function RAW_PrintIfDebug(text, debug, level)
     end
 end
 
--- ----------------------------------------------------------------
--- ---------------- Vanilla Stats Inheritance ---------------------
--- ----------------------------------------------------------------
+-- -------------------------------------------------------------------
+-- -------------------- Vanilla Stats Inheritance --------------------
+-- -------------------------------------------------------------------
 
 -- Loads text files from Vanilla folders and registers their original "using" inheritance tree
 
@@ -165,13 +165,17 @@ function RAW_GetOriginalParent(stat)
     return ""
 end
 
--- ----------------------------------------------------------
--- -------------------- Data Helpers ------------------------
--- ----------------------------------------------------------
+-- ------------------------------------------------------
+-- -------------------- Data Helpers --------------------
+-- ------------------------------------------------------
 
 function RAW_RemoveRepeatedSemicolon(s)
     s = string.gsub(s, ";;+", ";")
     return string.gsub(s, "^;", "")
+end
+
+function RAW_EscapeRegex(s)
+    return string.gsub(s, "%W", "%%%1")
 end
 
 function RAW_HasValueInList(list, value)
@@ -188,9 +192,9 @@ function RAW_CharIsHero(char)
     return char ~= nil and string.find(char.Passives, "WeaponThrow") and string.find(char.Passives, "CombatStartAttack")
 end
 
--- ----------------------------------------------------------
--- ------------- Static Data Helpers ------------------------
--- ----------------------------------------------------------
+-- -------------------------------------------------------------
+-- -------------------- Static Data Helpers --------------------
+-- -------------------------------------------------------------
 
 function RAW_ApplyStaticData(defTable, printDebug)
     for defType, defList in pairs(defTable) do
@@ -206,6 +210,9 @@ function RAW_ApplyStaticData(defTable, printDebug)
                     elseif replacement.Type == "overwrite" then
                         RAW_PrintIfDebug("\tOverwriting " .. attribute .. " - " .. replacement.Value, printDebug)
                         newValue = replacement.Value
+                    elseif replacement.Type == "remove" then
+                        RAW_PrintIfDebug("\tRemoving from " .. attribute .. " - " .. replacement.Value, printDebug)
+                        newValue = string.gsub(resource[attribute], RAW_EscapeRegex(replacement.Value) .. ";?", "")
                     end
                     resource[attribute] = newValue
                 elseif type(resource[attribute]) == "userdata"  then
@@ -229,9 +236,9 @@ function RAW_ApplyStaticData(defTable, printDebug)
     end
 end
 
--- ----------------------------------------------------------
--- ------------------ Type Helpers --------------------------
--- ----------------------------------------------------------
+-- ------------------------------------------------------
+-- -------------------- Type Helpers --------------------
+-- ------------------------------------------------------
 
 function RAW_IsInteger(v)
     return type(v) == "number" and math.floor(v) == v
