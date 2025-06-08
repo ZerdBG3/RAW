@@ -132,7 +132,7 @@ data "HitAnimationType" "None"
 new entry "RAW_Invisible_Hide_Unlock"
 type "PassiveData"
 data "Properties" "IsHidden"
-data "Boosts" "UnlockSpell(Shout_Hide)"
+data "Boosts" "IF(not Player(context.Source)):UnlockSpell(Shout_Hide)"
 
 // Provides the advantage/disadvantage benefits if the target can't see invisible creatures
 // RAW_CanSeeInvisible() is defined at Scripts\thoth\helpers\RAW.khn
