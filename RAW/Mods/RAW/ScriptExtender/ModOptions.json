@@ -374,6 +374,7 @@
         "description": "Changes to most monk base features.",
         "enabled": true,
         "value": null,
+        "log": false,
         "dependencies": [],
         "conflicts": [],
         "files": {
