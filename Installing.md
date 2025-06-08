@@ -88,7 +88,7 @@
 | [`instantDeath`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#instant-death-%EF%B8%8F-instantDeath) | - | - | **enabled** | Kills players outright if damage taken exceeds current hit points by hit point maximum. |
 | [`intangibleSummons`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#intangible-summons-%EF%B8%8F-intangiblesummons) | - | - | **enabled** | Changes to Flaming Sphere, Guardian of Faith and Spiritual Weapon to make them invulnerable and ignored by the AI. |
 | [`invisibility`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#invisibility-%EF%B8%8F-invisibility) 🔧 | - | - | **enabled** | Changes to invisibility rules and sneaking while invisible. |
-| [`monk`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#monk-%EF%B8%8F-monk) 🔧 | - | - | **enabled** | Changes to most monk base features. |
+| [`monk`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#monk-%EF%B8%8F-monk) | - | - | **enabled** | Changes to most monk base features. |
 | [`prone`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#prone-%EF%B8%8F-prone) | - | - | **enabled** | Changes the advantage and disadvantage conditions while Prone. |
 | [`rogue`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogue-%EF%B8%8F-rogue) | `throw` | `rogue_thief` | **enabled** | Changes to Cunning Action and Sneak Attack. |
 | [`rogue_thief`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogue-thief-%EF%B8%8F-rogue_thief) | `rogue`,`stabilize` | - | **enabled** | Changes to Fast Hands and Second-Story Work. |
