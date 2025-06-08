@@ -1,0 +1,180 @@
+<contentList date="13/05/2021 17:29">
+    <!-- Action Resource Definition Name -->
+    <content contentuid="h9b9372c9g28e7g4fbcga73dgad4bfec682c1" version="1">Ускорение</content><!-- Haste Point -->
+    <content contentuid="h81bc6dd8ga190g4893g97f6g865ed02e1096" version="1">Заклинание бонусного действия</content><!-- Bonus Action Spell Point -->
+    <content contentuid="hbbebdff2g9793g4335g928bg204330014249" version="1">Нет заклинаний бонусного действия</content><!-- Not Bonus Action Spell Point -->
+    <content contentuid="hea889d6fg61e7g4b9fgbf6dg5287a8df42da" version="1">Бесплатное снаряжение оружия</content><!-- Equip Weapon Point -->
+
+    <!-- Condition Error -->
+    <content contentuid="h0afc3739g41e7g4c3fgb280g4978d95e03ae" version="1">Нельзя менять снаряжение во время боя</content><!-- Attunement while in combat -->
+    <content contentuid="h57e004ccg5136g4ec6gba3fg521d0e4c6626" version="1">Максимальное количество снаряжаемых предметов</content><!-- Attunement maximum items -->
+    <content contentuid="h1eceeeb7gcaeeg46eagb8afg4ff8386033a5" version="1">Уже концентрируется на заклинании</content><!-- Concentration blocker -->
+    <content contentuid="h0730e799gc410g42f2g9cceg0120ee90b886" version="1">Нельзя целиться в невидимых персонажей</content><!-- Spell against invisible target -->
+
+    <!-- Feat Description -->
+    <content contentuid="h15b473b7gf59dg40f4g9d6bg7015eb159089" version="1">Когда вы делаете выстрелы из арбалета в ближнем бою, &lt;LSTag Tooltip="AttackRoll"&gt;броски атаки&lt;/LSTag&gt; не имеют &lt;LSTag Tooltip="Disadvantage"&gt;помехи&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;Вы игнорируете перезарядку арбалетов для целей дополнительной атаки.</content><!-- Crossbow Expert -->
+    <content contentuid="h4671f1fag7c08g4921ga35bg07713c95c4d9" version="1">Вы можете использовать бой двумя оружиями, даже если ваши оружия не являются &lt;LSTag Tooltip="Light"&gt;легкими&lt;/LSTag&gt;, вы можете свободно снарядить два оружия в свой ход вместо одного, и вы получаете бонус +1 к &lt;LSTag Tooltip="ArmourClass"&gt;классу брони&lt;/LSTag&gt;, когда у вас оружие ближнего боя в каждой руке. Вы не можете использовать два &lt;LSTag Tooltip="Heavy"&gt;тяжелых&lt;/LSTag&gt; оружия одновременно.</content><!-- Dual Wielder -->
+
+    <!-- Passive Display Name -->
+    <content contentuid="h15a2faa5gf385g456dg8aa8gbf5a1029919f" version="1">Ходьба</content><!-- Walk -->
+    <content contentuid="h7448849bged25g488ag810dg15d3da1916a2" version="1">Дальняя дистанция</content><!-- Weapon Throw -->
+    <content contentuid="h61fa56b6g2b42g4d9cg965eg0654c2c6f233" version="1">Работа на втором этаже</content><!-- Second-Story Work -->
+    <content contentuid="h4af7068bg689dg4db5g87fdg614624fc8585" version="1">Мастер щита: толчок</content><!-- Shield Master (Shove) -->
+    <content contentuid="h0159dcd5g7df6g42fag8c0eg6b714977e84a" version="1">Безрассудная атака</content><!-- Reckless Attack -->
+    <content contentuid="h347bdf44gbb6dg4e83g83feg9f48169b16f0" version="1">Ресурсы заблокированы</content><!-- Summon Resource Blocked -->
+    <content contentuid="h1d26d698g3c6dg4212gad8dga725fb76bda2" version="1">Призыв Нематериального</content><!-- Summon Indestructible -->
+    <content contentuid="h81c15d09gdee7g4cd4ga39eg6ec6273a8398" version="1">Пролет</content><!-- Flyby -->
+    <content contentuid="h2c5ddf7eg8dbcg4b9fga803g537c44e0ff16" version="1">Мастер арбалета: перезарядка</content><!-- Crossbow Expert: Wounding -->
+    <content contentuid="h07cedaa6g2c7bg4906ga832g28ebde232fa4" version="1">Настройка</content><!-- Attunement -->
+    <content contentuid="h4d215fa7g6d15g4acbg8139g56cb67212a5c" version="1">Резервная концентрация</content><!-- Concentration Block -->
+
+    <!-- Passive Description -->
+    <content contentuid="h460e389eg9748g4598g95cdgf796e95397c6" version="1">Вы начинаете идти вместо того, чтобы бегать.</content><!-- Walk -->
+    <content contentuid="hfc0ecb86gc504g44f1g9d88g957905740457" version="1">Вы можете использовать бонусное действие, предоставляемое вашим хитроумным действием, чтобы помочь союзникам, отвлечь врагов или бросить предмет, в дополнение к рывку, отступлению или скрытности.</content><!-- Fast Hands -->
+    <content contentuid="hd6a0c096gd133g4bc9ga518g80c70fd5d907" version="1">Вы овладели искусством падения и получаете сопротивление урону от падения. Также теперь вы используете свою &lt;LSTag Tooltip="Dexterity"&gt;Ловкость&lt;/LSTag&gt; для увеличения расстояния прыжка.</content><!-- Second-Story Work -->
+    <content contentuid="h85d7c071gf5e1g454fg904eg4f6253bf83c0" version="1">Если вы выполняете атаку в свой ход, вы можете попытаться толкнуть с помощью щита, используя свое бонусное действие.</content><!-- Shield Master (Shove) -->
+    <content contentuid="hd8db6255g9df7g4a83g9a83g7ed354602d82" version="1">Отбросьте все заботы о защите, чтобы атаковать с яростной отчаянностью. Атакуя безрассудно в первую атаку вашего хода, вы получаете &lt;LSTag Tooltip="Advantage"&gt;преимущество&lt;/LSTag&gt; на &lt;LSTag Tooltip="AttackRoll"&gt;броски атаки&lt;/LSTag&gt; оружием ближнего боя с использованием Силы в этом ходу, но броски атаки против вас имеют преимущество до вашего следующего хода.</content><!-- Reckless Attack -->
+    <content contentuid="ha3c41950g6a08g4bbdg9a88g2c14f3c6e8b7" version="1">Этот призыв может действовать только если хозяин использует заклинание команды.</content><!-- Summon Resource Blocked -->
+    <content contentuid="h7162476egad83g4f42g8fccg22f6c6e40b37" version="1">Не провоцирует атаки по возможности при полете из досягаемости врага.</content><!-- Flyby -->
+    <content contentuid="h171c2107gb858g4e96ga500g0d861916042c" version="1">Вы игнорируете перезарядку арбалетов для целей дополнительной атаки.</content><!-- Crossbow Expert: Wounding -->
+    <content contentuid="h34e14ad6gb0d5g4892ga3c9gdb7dce2c7b9a" version="1">&lt;font color="#CF9FFF"&gt;&lt;i&gt;Этот предмет требует настройки на нём и учитывается в максимальном количестве настроенных предметов.&lt;/i&gt;&lt;/font&gt;</content><!-- Attunement -->
+    <content contentuid="h52822a0agd71bg4caega40dgc7017940b99b" version="1">Вы можете использовать бой двумя оружиями, даже если оружия, которыми вы владеете, не являются легкими, и вы можете свободно снарядить два оружия в свой ход вместо одного. Вы не можете использовать два &lt;LSTag Tooltip="Heavy"&gt;тяжелых&lt;/LSTag&gt; оружия одновременно.</content><!-- Dual Wielder -->
+    <content contentuid="h7af02440ga775g44ddga0e4g04987028c1e7" version="1">Предотвращает произнесение заклинаний, требующих &lt;LSTag Tooltip="Concentration"&gt;концентрации&lt;/LSTag&gt;, пока вы сосредоточены на другом заклинании.</content><!-- Concentration Block -->
+
+    <!-- Passive Extra Description -->
+	<content contentuid="hc0a989cag7bfdg4f36g9642gf0a332244deb" version="1">Ходьба не уменьшит максимальное расстояние, пройденное за ход, это чисто косметический эффект.</content><!-- Walk -->
+
+	<!-- Projectile Display Name -->
+	<content contentuid="h4c76db83gcc4eg438ag9d00ge9b156dd1bbe" version="1">Прыжок (вор)</content><!-- Jump Thief -->
+	<content contentuid="h64247e79gece7g4d43g9a17g38dd2fbb94fd" version="1">Прыжок (кот)</content><!-- Jump Cat -->
+	<content contentuid="he7373ea1ge596g4f74gbbd1g5763f2e77273" version="1">Создать пламя: бросок (свободно)</content><!-- Produce Flame Hurl Free -->
+
+	<!-- Projectile Description -->
+	<content contentuid="hc25fd2e1g6a3cg4c99g8690gcf48eabe53a1" version="1">Прыгай вверх, вниз и вбок. Твоя &lt;LSTag Tooltip="Dexterity"&gt;Ловкость&lt;/LSTag&gt; влияет на то, как далеко ты можешь прыгнуть.</content><!-- Jump Thief -->
+	<content contentuid="he87f6103ga16bg459dg889agb0871d51ef92" version="1">Брось сферу, которая наносит [1] и, возможно, создает поверхность, если целью выбрана земля. В качестве альтернативы выбери другой тип урона.</content><!-- Chromatic Orb -->
+	<content contentuid="h0ba8b53eg3e84g48f1g9f02gcfc823b861cd" version="1">Брось едкую энергию, которая наносит урон цели. Создает &lt;LSTag Type="Status" Tooltip="ACID"&gt;кислотную&lt;/LSTag&gt; поверхность, если целью выбрана земля.</content><!-- Chromatic Orb: Acid -->
+	<content contentuid="h4ed0c491gf024g401agb82agbd594521004f" version="1">Брось замораживающую энергию, которая наносит урон цели. Создает морозную поверхность, чтобы сбить существ &lt;LSTag Type="Status" Tooltip="PRONE"&gt;с ног&lt;/LSTag&gt;, если целью выбрана земля.</content><!-- Chromatic Orb: Cold -->
+	<content contentuid="hce5f50aeg4996g488ega2c7g6fff5e79d85b" version="1">Брось огненную энергию, которая наносит урон цели. Создает &lt;LSTag Type="Status" Tooltip="BURNING"&gt;горящую&lt;/LSTag&gt; поверхность, если целью выбрана земля.</content><!-- Chromatic Orb: Fire -->
+	<content contentuid="he450b731gd24ag4ee3ga2d4g8faabdf18dea" version="1">Брось заряженную электричеством энергию, которая наносит урон цели. Создает электрическую поверхность, если целью выбрана земля.</content><!-- Chromatic Orb: Lightning -->
+	<content contentuid="h023befb4g9bc2g450eg83cdg8ec3bf36237a" version="1">Брось ядовитую энергию, которая наносит урон цели. Создает пузырящуюся поверхность, чтобы &lt;LSTag Type="Status" Tooltip="POISONED"&gt;отравить&lt;/LSTag&gt; существ, если целью выбрана земля.</content><!-- Chromatic Orb: Poison -->
+	<content contentuid="h8ff59facg4ab1g4356g8753g6ab543485aa2" version="1">Брось сферу, которая наносит [1]и, возможно, создает поверхность, если целью выбрана земля.</content><!-- Chromatic Orb (Monk) -->
+
+	<!-- Shout Display Name -->
+	<content contentuid="haf813ecag5ad0g464cg8749g68d9ebd9b71d" version="1">Завершить короткий отдых</content><!-- End Short Rest -->
+	<content contentuid="h6c541127gda12g4b7cgbfdbg37c49ac85aba" version="1">Уклоняться</content><!-- Dodge -->
+	<content contentuid="h5d311bfdg3b88g4a78gb8fcgbb8645c6a5f7" version="1">Хитрое действие</content><!-- Cunning Action -->
+	<content contentuid="h0611af1fg455ag4511ga7e5g9768ccd017d8" version="1">Хитрое действие: скрыться</content><!-- Hide Cunning Action -->
+
+	<!-- Shout Description -->
+	<content contentuid="h1aff6b78gc632g459cgbb15g9c17e56b611a" version="1">Закончить &lt;LSTag Tooltip="ShortRest"&gt;короткий отдых&lt;/LSTag&gt; для вас и ваших членов партии вокруг вас.</content><!-- Short Rest -->
+	<content contentuid="h43261ff4gfee1g42f4g9bb3gc6120976fe3d" version="1">До начала вашего следующего хода любые &lt;LSTag Tooltip="AttackRoll"&gt;атаки&lt;/LSTag&gt;, сделанные против вас, имеют &lt;LSTag Tooltip="Disadvantage"&gt;помеху&lt;/LSTag&gt;, и вы делаете спасброски Ловкости &lt;LSTag Tooltip="SavingThrow"&gt;с преимуществом&lt;/LSTag&gt;. Вы теряете это преимущество, если вы либо обездвижены, либо парализованы.</content><!-- Dodge -->
+	<content contentuid="he7d837b8g404fg4dbdg85c2g9d69c019d63d" version="1">Вы можете использовать ваше бонусное действие, чтобы сделать рывок, совершить отход или скрыться.</content><!-- Cunning Action -->
+	<content contentuid="hbeba3ad3g8801g4a4fg8d77g7507fa9bb7c6" version="1">Восстановите использованные &lt;LSTag Tooltip="SpellSlot"&gt;заклинания&lt;/LSTag&gt; во время &lt;LSTag Tooltip="ShortRest"&gt;короткого отдыха&lt;/LSTag&gt;. Вы не можете восстановить заклинания выше 5 уровня.</content><!-- Arcane Recovery -->
+	<content contentuid="h75e85388g3e7dg4e70g8101g612860c4a857" version="1">Восстановите использованные &lt;LSTag Tooltip="SpellSlot"&gt;заклинания&lt;/LSTag&gt; во время &lt;LSTag Tooltip="ShortRest"&gt;короткого отдыха&lt;/LSTag&gt;. Вы не можете восстановить заклинания выше 5 уровня.</content><!-- Natural Recovery -->
+	<content contentuid="h2149d9f2gd22fg4923ga45bged71c17b76ef" version="1">Приготовьтесь сделать залп шипов в следующий раз, когда вы попадете в существо с помощью дальнего оружия, нанося [1] урон ему и существам в радиусе [2] от него.</content> <!-- Hail of Thorns -->
+	<content contentuid="h63e09296gffadg4d58g8468g8964384565d0" version="1">Станьте невидимым. Заклинание заканчивается, если вы атакуете или накладываете другое заклинание.</content><!-- Invisibility ShadarKai Gloomweaver -->
+	<content contentuid="hba927cdegcddfg4519gbddfge87709ab6d87" version="1">Сосредоточьтесь, чтобы попытаться почувствовать близлежащих &lt;LSTag Type="Status" Tooltip="SNEAKING"&gt;скрытых&lt;/LSTag&gt; врагов, и возможно обнаружить их.</content><!-- See Invisibility Seek -->
+
+	<!-- Status Boost Display Name -->
+	<content contentuid="hd7046718g6e1ag4867g9e30g6900297f0d58" version="1">Короткий отдых</content><!-- Short Rest -->
+	<content contentuid="h096216f2ge492g4bb9g9a3cgc88694a8a96b" version="1">Рассеянный</content><!-- Distracted -->
+	<content contentuid="h5df0213dg5488g435dgab52g6b9520c0b521" version="1">Стабилизированный</content><!-- Stabilized -->
+	<content contentuid="h75be88fcg63f2g4e6dg9017g35c69b889191" version="1">Под контролем</content><!-- Summon Resource Allowed -->
+	<content contentuid="h0dc08f11gb7b2g442fga75dg8e01b1989e5d" version="1">Призвать молнию</content><!-- Call Lightning -->
+	<content contentuid="h990994ddg1181g4092g91d0gc459f4cf970f" version="1">Залп шипов</content><!-- Hail of Thorns -->
+	<content contentuid="h22935d1ag4b4fg42b3gb9degfde9bd560f65" version="1">Правило заклинаний бонусного действия</content><!-- Bonus Action Spell -->
+	<content contentuid="hed8a4e8fg83feg4b36g9485g9dcdc40ff540" version="1">Заметили</content><!-- Found Sneaking -->
+    
+	<!-- Status Boost Description -->
+	<content contentuid="h2f4288c1g1e4fg4852g80e1g09db0b94bb3d" version="1">Происходит &lt;LSTag Tooltip="ShortRest"&gt;Короткий отдых&lt;/LSTag&gt;.</content><!-- Short Rest -->
+	<content contentuid="h910d365egd00ag49abg853agfeec0d6e5137" version="1">Существо сосредоточено на уклонении от атак.&lt;br&gt;&lt;Br&gt;&lt;LSTag Tooltip="AttackRoll"&gt;Атаки&lt;/LSTag&gt; против него имеют &lt;LSTag Tooltip="Disadvantage"&gt;помеху&lt;/LSTag&gt;, а так же у него&lt;LSTag Tooltip="Advantage"&gt;преимущество&lt;/LSTag&gt; на &lt;LSTag Tooltip="SavingThrow"&gt;спасброски&lt;/LSTag&gt; Ловкости.&lt;br&gt;&lt;br&gt;Вы теряете это преимущество, если вы либо обездвижены, либо недееспособны.</content><!-- Dodge -->
+	<content contentuid="h25d8863egdaf1g47e3gba46gb6bade9f3a93" version="1">Следующий &lt;LSTag Tooltip="AttackRoll"&gt;бросок атаки&lt;/LSTag&gt;, не исходящий от отвлекающего источника, делается с &lt;LSTag Tooltip="Advantage"&gt;преимуществом&lt;/LSTag&gt;.</content><!-- Distracted -->
+	<content contentuid="h0d5d7494ga6b3g4f9ag82d3g9cc482ead351" version="1">Имеет &lt;LSTag Tooltip="Advantage"&gt;преимущество&lt;/LSTag&gt; на &lt;LSTag Tooltip="AttackRoll"&gt;броски атаки&lt;/LSTag&gt; основанные на Силе во время своего хода. Враги имеют &lt;LSTag Tooltip="Advantage"&gt;преимущество&lt;/LSTag&gt; на &lt;LSTag Tooltip="AttackRoll"&gt;броски атаки&lt;/LSTag&gt; по этой цели.</content><!-- Reckless Attack -->
+	<content contentuid="h4507b659g8c44g4f43gaf5cgb83ac55eec62" version="1">Стабилизированный персонаж больше не должен бросать спасброски на смерть и восстановит [1] после выхода из боя.</content><!-- Stabilized -->
+	<content contentuid="h518c02f3gda53g498dg95e8g21599aaae760" version="1">Это призванное существо может действовать, потому что его хозяин приказал ему.</content><!-- Summon Resource Allowed -->
+	<content contentuid="he3c1c67bgae0cg4968ga86egd2b1325c01b3" version="1">Находясь внутри шторма, этот персонаж может стать целью молнии.</content><!-- Call Lightning -->
+	<content contentuid="h6f61be82gf4e8g4224gb3a5gb3ea351852da" version="1">Существо имеет бонус +2 к &lt;LSTag Tooltip="ArmourClass"&gt;классу брони&lt;/LSTag&gt;, &lt;LSTag Tooltip="Advantage"&gt;преимущество&lt;/LSTag&gt; на &lt;LSTag Tooltip="SavingThrow"&gt;спасброски&lt;/LSTag&gt; Ловкости, его &lt;LSTag Tooltip="MovementSpeed"&gt;скорость передвижения&lt;/LSTag&gt; удваивается, и оно может совершать одно дополнительное действие за ход.&lt;br&gt;&lt;br&gt;Когда условие заканчивается, существо становится &lt;LSTag Type="Status" Tooltip="HASTE_LETHARGY"&gt;заторможенным&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;Дополнительное действие может быть использовано только для атаки (только одна атака оружием), рывка, отходы или скрытности.</content><!-- Haste -->
+	<content contentuid="ha79d9187g0539g47abg83bagbc46d76b8834" version="1">Следующая атака оружием дальнего боя наносит [1] цели и существам в радиусе [2] от нее.</content><!-- Hail of Thorns -->
+	<content contentuid="hb7c0af17gcd17g422dg96f2gda8a553610d7" version="1">Вы не можете накладывать заклинание основного действия после того, как наложили заклинание бонусного действия.</content><!-- Cast Bonus Action Spell -->
+	<content contentuid="h31af9e75g2b8bg4207gb1begc463e085f561" version="1">Вы не можете накладывать заклинание бонусного действия после того, как наложения заклинание основного действия.</content><!-- Cast Not Bonus Action Spell -->
+	<content contentuid="h8df73123g2750g49d9gab60g0e8a7efef41b" version="1">Окружён облаком тошнотворного газа.</content><!-- Stinking Cloud -->
+	<content contentuid="h9bd31f65g1cb5g4009g8d55ge4cc0256ed59" version="1">Потерял действие, корчась и шатаясь.</content><!-- Stinking Cloud -->
+	<content contentuid="haaf9589cgdf46g45edga985g59c7380bb6c7" version="1">Может видеть &lt;LSTag Type="Status" Tooltip="INVISIBLE"&gt;невидимых&lt;/LSTag&gt; существ в радиусе [1]. Автоматически обнаруживает &lt;LSTag Type="Status" Tooltip="RAW_INVISIBILITY_SNEAKING_TECHNICAL"&gt;скрытых &amp; невидимых&lt;/LSTag&gt; врагов внутри конуса видимости.</content><!-- See Invisibility -->
+	<content contentuid="hf6442c35g03a9g4cc3gb4a9gc4579e6045a3" version="1">Затронутый объект не может иметь выгоду от &lt;LSTag Type="Status" Tooltip="RAW_INVISIBILITY_SNEAKING_TECHNICAL"&gt;скрытности &amp; невидимости&lt;/LSTag&gt; из-за эффекта &lt;LSTag Type="Spell" Tooltip="Shout_SeeInvisibility"&gt;Видеть невидимость&lt;/LSTag&gt;.</content><!-- See Invisibility Reveal -->
+	<content contentuid="h7b23045bgb19bg491egabc4g9cd38ed88424" version="1">Поиск &lt;LSTag Type="Status" Tooltip="SNEAKING"&gt;скрытых&lt;/LSTag&gt; врагов в радиусе [1]. Сделать &lt;LSTag Tooltip="AbilityCheck"&gt;проверка&lt;/LSTag&gt; &lt;LSTag Tooltip="Perception"&gt;Восприятия&lt;/LSTag&gt; против пассивной &lt;LSTag Tooltip="Stealth"&gt;скрытности&lt;/LSTag&gt; всех скрытых врагов, раскрывая тех, кто проиграл.</content><!-- See Invisibility Seek -->
+	<content contentuid="h74e9fb3fg63b3g4360g9a60g3452e6fc60a8" version="1">Обнаружен врагом, использующим &lt;LSTag Type="Spell" Tooltip="Shout_SeeInvisibility_Seek"&gt;Почувствовать скрытое присутствие&lt;/LSTag&gt;.</content><!-- Found Sneaking -->
+		
+	<!-- Status Downed Description -->
+	<content contentuid="h788b3d9dgb19cg43adg8d49gdb0f922e7400" version="1">Если вы достигнете 0 очков здоровья, вы упадете в бессознательное состояние и должны будете делать спасброски на смерть. При 3 успехах вы перестанете истекать кровью и станете стабильным. При 3 неудачах вы умрете.
+
+	Если вы восстановите любые очки здоровья, состояние снимается. Если союзник &lt;LSTag Type="Spell" Tooltip="Target_Help"&gt;помогает&lt;/LSTag&gt; вам и успешно проходит свою &lt;LSTag Tooltip="AbilityCheck"&gt;проверка&lt;/LSTag&gt; &lt;LSTag Tooltip="Medicine"&gt;медицины&lt;/LSTag&gt; со сложностью 10, вы становитесь стабилизированным и восстанавливаете [1] при выходе из боя.</content><!-- Downed -->
+
+	<!-- Status Invisible Display Name -->
+	<content contentuid="h21b240a8g1a5bg4d14g9a7cge5593f7bfd1a" version="1">Скрытый &amp; Невидимый</content><!-- Invisibility Sneaking Technical -->
+
+	<!-- Status Invisible Description -->
+	<content contentuid="h47b01802gf74dg4c95g94adg9cc5fc2dea5a" version="1">Существо полностью скрыто для врагов, пока не потеряет свою невидимость или статус &lt;LSTag Type="Status" Tooltip="SNEAKING"&gt;скрытности&lt;/LSTag&gt;.</content><!-- Invisibility Sneaking Technical -->
+	<content contentuid="h11f06e65g400bg4724g9e24ge9b0de4c8e3d" version="1">Имеет &lt;LSTag Tooltip="Advantage"&gt;преимущество&lt;/LSTag&gt; при &lt;LSTag Tooltip="AttackRoll"&gt;бросках атаки&lt;/LSTag&gt;, враги атакующие существо которые не могут видеть невидимое имеют &lt;LSTag Tooltip="Disadvantage"&gt;помеху&lt;/LSTag&gt; на броски атаки. &lt;br&gt;&lt;Br&gt;Невидимость заканчивается раньше, если невидимое существо атакует или накладывает другое заклинание.</content><!-- Invisible / Invisibility -->
+	<content contentuid="hd58ffa12g127cg4a27g83efg989e5fa1a4ec" version="1">Затронутое существо невидимо. Оно имеет &lt;LSTag Tooltip="Advantage"&gt;преимущество&lt;/LSTag&gt; при &lt;LSTag Tooltip="AttackRoll"&gt;бросках атаки&lt;/LSTag&gt;, враги атакующие существо которые не могут видеть невидимое имеют &lt;LSTag Tooltip="Disadvantage"&gt;помеху&lt;/LSTag&gt; на броски атаки. &lt;br&gt;&lt;Br&gt;Невидимость заканчивается раньше, если невидимое существо движется, атакует или накладывает другое заклинание.</content><!-- One With Shadows -->
+	<content contentuid="hed9a0784g6767g4099ga49cg55527e6b64f0" version="1">Имеет &lt;LSTag Tooltip="Advantage"&gt;преимущество&lt;/LSTag&gt; при &lt;LSTag Tooltip="AttackRoll"&gt;бросках атаки&lt;/LSTag&gt;, враги атакующие существо которые не могут видеть невидимое имеют &lt;LSTag Tooltip="Disadvantage"&gt;помеху&lt;/LSTag&gt; на броски атаки. &lt;br&gt;&lt;Br&gt;Атака, наложение заклинаний или вход в ярко освещенную область заканчивает это состояние.</content><!-- Cloak of Shadows (Monk) -->
+	<content contentuid="h81258024g2d63g4afag92ecgc64bb136d956" version="1">Имеет &lt;LSTag Tooltip="Advantage"&gt;преимущество&lt;/LSTag&gt; при &lt;LSTag Tooltip="AttackRoll"&gt;бросках атаки&lt;/LSTag&gt;, враги атакующие существо которые не могут видеть невидимое имеют &lt;LSTag Tooltip="Disadvantage"&gt;помеху&lt;/LSTag&gt; на броски атаки.</content><!-- Greater Invisibility -->
+	<content contentuid="h3b6dd94dg17c8g4f4egbd7dga67485beef35" version="1">Затронутое существо невидимо. Оно имеет &lt;LSTag Tooltip="Advantage"&gt;преимущество&lt;/LSTag&gt; при &lt;LSTag Tooltip="AttackRoll"&gt;бросках атаки&lt;/LSTag&gt;, враги атакующие существо которые не могут видеть невидимое имеют &lt;LSTag Tooltip="Disadvantage"&gt;помеху&lt;/LSTag&gt; на броски атаки. &lt;br&gt;&lt;Br&gt;Атака, наложение заклинаний или вход в ярко освещенную область заканчивает это состояние.</content><!-- Shadowblend -->
+	<content contentuid="h8fadec97gcad8g4b7eg9528g8c80dde94805" version="1">Имеет &lt;LSTag Tooltip="Advantage"&gt;преимущество&lt;/LSTag&gt; при &lt;LSTag Tooltip="AttackRoll"&gt;бросках атаки&lt;/LSTag&gt;, враги атакующие существо которые не могут видеть невидимое имеют &lt;LSTag Tooltip="Disadvantage"&gt;помеху&lt;/LSTag&gt; на броски атаки. &lt;br&gt;&lt;Br&gt;Атака или наложение заклинаний, которые не являются &lt;LSTag Type="Spell" Tooltip="Target_MistyEscape_ShadarKai_GloomWeaver"&gt;скользящими тенями&lt;/LSTag&gt;, заканчивает это состояние.</content><!-- Invisibility ShadarKai Gloomweaver -->
+	<content contentuid="hd63af1fag49c2g4ba2g9e42gc1b5bf4c48d6" version="1">Затронутое существо невидимо. Оно имеет &lt;LSTag Tooltip="Advantage"&gt;преимущество&lt;/LSTag&gt; при &lt;LSTag Tooltip="AttackRoll"&gt;бросках атаки&lt;/LSTag&gt;;/LSTag&gt;, враги атакующие существо которые не могут видеть невидимое имеют &lt;LSTag Tooltip="Disadvantage"&gt;помеху&lt;/LSTag&gt; на броски атаки. Оно имеет бонус +[1] к проверкам &lt;LSTag Tooltip="AbilityCheck"&gt;скрытности&lt;/LSTag&gt;. &lt;br&gt;&lt;br&gt;Невидимость заканчивается раньше, если невидимое существо движется, атакует или накладывает другое заклинание.</content><!-- Hide in Plain Sight -->
+
+	<!-- Status Knocked Downed Description -->
+	<content contentuid="hf9fcc402g8592g454cga793g52f04804a411" version="1">Не может двигаться или предпринимать действия, бонусные действия или реакции. &lt;br&gt;&lt;br&gt;Атаки против лежащего существа имеют &lt;LSTag Tooltip="Advantage"&gt;преимущество&lt;/LSTag&gt;, если они сделаны в пределах [1] от существа, в противном случае они имеют &lt;LSTag Tooltip="Disadvantage"&gt;помеху&lt;/LSTag&gt;. &lt;br&gt;&lt;br&gt;Лежащее существо должно потратить половину своей &lt;LSTag Tooltip="MovementSpeed"&gt;скорости движения&lt;/LSTag&gt;, чтобы встать.</content><!-- Prone -->
+
+	<!-- Target Display Name -->
+	<content contentuid="h5877647dg40fbg4c09gb1c5g16af8009e38b" version="1">Отпихнуть (толкнуть)</content><!-- Shove Push -->
+	<content contentuid="hb461d04cg1cfbg4ba1g83a2g5bd1421d1a20" version="1">Отпихнуть (сбить)</content><!-- Shove Prone -->
+	<content contentuid="hacff287aga587g493bg8074ga79a9969f0c7" version="1">Отвлечь</content><!-- Distract -->
+	<content contentuid="h868da50cg1553g4d69gb8d6g491c06156b08" version="1">Отвлечь (хитрое действие)</content><!-- Distract Cunning Action -->
+	<content contentuid="h9dae9cf6gd51dg4176g9654g137136bdc8c1" version="1">Помощь (хитрое действие)</content><!-- Help Cunning Action -->
+	<content contentuid="h7d6311c9g4e07g40c9ga6b9g65ab8583ca90" version="1">Команда призванному существу</content><!-- Summon Command -->
+	<content contentuid="hea829cd9ge8f4g42ecg9d63g702ed2764a96" version="1">Притвориться мертвым: отменить</content><!-- Feign Death: Dismiss -->
+
+		<!-- Target Description -->
+	<content contentuid="h39b0e6f4g2f5cg4038g8944g625faa062c38" version="1">Отпихните цель, чтобы толкнуть её на [1].</content><!-- Shove -->
+	<content contentuid="h29df2d23ga713g4cf9gaacdg7cf61bb3b2ee" version="1">Отпихните цель. Вы можете попытаться толкнуть её или сбить с ног.</content><!-- Shove Player -->
+	<content contentuid="h8cd12a69g8980g4a55g8737g3f6183de78c1" version="1">Отпихните цель, чтобы сбить её с ног.</content><!-- Shove Prone -->
+	<content contentuid="hd49325f3gea4dg4b6fg8880gf6cc96f50a39" version="1">Отпихните цель своим щитом. Вы можете попытаться толкнуть её или сбить с ног.</content><!-- Shove Shield Master -->
+	<content contentuid="h8a5eb4d5g32beg46b6g9c83g8b4832766545" version="1">Сделайте финт, отвлеките цель или каким-либо другим способом помогите своему союзнику, чтобы его следующий &lt;LSTag Tooltip="AttackRoll"&gt;бросок атаки&lt;/LSTag&gt; до вашего следующего хода имел &lt;LSTag Tooltip="Advantage"&gt;преимущество&lt;/LSTag&gt;.</content><!-- Distract -->
+	<content contentuid="h32d73faeg184cg419bg8fb6gdd67958d7817" version="1">Сделайте проверку &lt;LSTag Tooltip="Medicine"&gt;медицины&lt;/LSTag&gt; с сложностью 10, чтобы стабилизировать персонажа &lt;LSTag Tooltip="Downed"&gt;при смерти&lt;/LSTag&gt;.</content><!-- Help -->
+	<content contentuid="hc01e959cg7d3dg4542gac9fg68099deb9746" version="1">Используйте своё бонусное действие, чтобы приказать вашему призванному существу действовать.</content><!-- Summon Command -->
+	<content contentuid="h9204dac0g5de4g4199ga876g8eb69468ee8a" version="1">Погрузите существ в магический сон. Цели в области затрагиваются в порядке возрастания их текущих очков здоровья (игнорируя существ без сознания), до общего количества [1].</content><!-- Sleep -->
+	<content contentuid="h63b15a52g69efg4c70g93acge877ff55d83e" version="1">Создаёт грозовую тучу в целевой области. Затем вы можете вызвать молнию в области внутри шторма, поражая все цели. В течение следующих 10 ходов вы можете снова вызвать молнию, используя действие.</content><!-- Call Lightning -->
+	<content contentuid="hd58f9063g3911g45aag9236g2115019b3240" version="1">Отмените эффекты Зомби на существе.</content><!-- Feign Death: Dismiss -->
+	<content contentuid="h18ef7f55gdaf3g435fg9e90ga93cfb6d5eaf" version="1">Коснитесь существа, чтобы сделать его &lt;LSTag Type="Status" Tooltip="INVISIBILITY"&gt;невидимым&lt;/LSTag&gt;. У него есть &lt;LSTag Tooltip="Advantage"&gt;преимущество&lt;/LSTag&gt; при &lt;LSTag Tooltip="AttackRoll"&gt;бросках атаки&lt;/LSTag&gt;, враги атакующие существо которые не могут видеть невидимое имеют &lt;LSTag Tooltip="Disadvantage"&gt;помеху&lt;/LSTag&gt; на броски атаки.</content><!-- Invisibility -->
+	<content contentuid="hc207157bg97a8g45ebg8946g67866b4bda43" version="1">Сделайте существо &lt;LSTag Type="Status" Tooltip="GREATER_INVISIBILITY"&gt;невидимым&lt;/LSTag&gt;. У него есть &lt;LSTag Tooltip="Advantage"&gt;преимущество&lt;/LSTag&gt; при &lt;LSTag Tooltip="AttackRoll"&gt;бросках атаки&lt;/LSTag&gt;, враги атакующие существо которые не могут видеть невидимое имеют &lt;LSTag Tooltip="Disadvantage"&gt;помеху&lt;/LSTag&gt; на броски атаки.</content><!-- Greater Invisibility -->
+    
+	<!-- Target Extra Description -->
+	<content contentuid="hed88db7bgfbe4g4ab0g9252g068a8bcc48c0" version="1">Толкание зависит от вашей &lt;LSTag Tooltip="Athletics"&gt;атлетики&lt;/LSTag&gt;, и от более высокого значения атлетики или &lt;LSTag Tooltip="Acrobatics"&gt;акробатики&lt;/LSTag&gt; цели.</content><!-- Shove -->
+	<content contentuid="h53da955bgfbadg4d77gb962g11eec4070db8" version="1">Убирает эффекты горения, связывания, опутывания, паутины, сбивания с ног и сна.</content><!-- Help -->
+	<content contentuid="h7931a54eg73b9g425bg9243g2331db1f3a32" version="1">Невидимость прерывается, когда вы атакуете или накладываете другое заклинание.</content><!-- Invisibility -->
+
+	<!-- Throw Display Name -->
+	<content contentuid="h42ce0a1eg03e9g492dg9457g553a25b8a68c" version="1">Бросок (предмет)</content><!-- Throw -->
+	<content contentuid="hb3284f80g9ea7g4eefg92bbg6c0d18aa322b" version="1">Бросок (хитрое действие)</content><!-- Throw Cunning Action -->
+	<content contentuid="h6ecf3783gaec3g4933g9d97ga93f5eb2ffd1" version="1">Бросок оружия (основная рука)</content><!-- Throw Weapon -->
+	<content contentuid="hcb77aa27g6e23g401egb640g6251e9584b0c" version="1">Бросок оружия (второстепенная рука)</content><!-- Throw Weapon Off Hand -->
+	<content contentuid="hdd4cc2e3ge909g47f7gb352g27b5d5aa5d80" version="1">Бросок оружия (смена)</content><!-- Throw Weapon Transition -->
+
+    <!-- Throw Description -->
+    <content contentuid="h7c08af75gd6d2g4535g8e96g88ddffc3f0ce" version="1">Бросьте предмет с пола или из вашего инвентаря.</content><!-- Throw -->
+    <content contentuid="h49ed29fcg4ac2g459egbc2cg0c6264341656" version="1">Бросьте предмет с пола или из вашего инвентаря, не нанося урон цели.&lt;br&gt;&lt;br&gt;Бросаемые предметы, такие как гранаты, все равно активируют свои эффекты.</content><!-- Throw Cunning Action -->
+    <content contentuid="h73c67cf6g5850g4e17gbbc6gabb0186cfd4d" version="1">Поднимите предмет и используйте его для атаки ближнего боя.</content><!-- Improvised Weapon -->
+    <content contentuid="h8b86b170gd26eg460cg8562g2d4f2b911e88" version="1">&lt;LSTag Tooltip="Thrown"&gt;Бросить&lt;/LSTag&gt; оружие в вашей основной руке.</content><!-- Throw Weapon -->
+    <content contentuid="hecbf5369g4424g4914ga10bgd4b42b8cd386" version="1">&lt;LSTag Tooltip="Thrown"&gt;Бросить&lt;/LSTag&gt; оружие в вашей вспомогательной руке.</content><!-- Throw Weapon Off Hand -->
+    <content contentuid="hcbf0d347g1ea7g4a2dga7ebg71de5e4a4094" version="1">&lt;LSTag Tooltip="Thrown"&gt;Бросить&lt;/LSTag&gt; оружие, которое было в вашей вспомогательной руке до того, как вы бросили оружие основной руки.</content><!-- Throw Weapon Transition -->
+
+    <!-- Throw Extra Description -->
+    <content contentuid="hf080f971g5582g46d8g8938gdb8c8b560d42" version="1">Ваша &lt;LSTag Tooltip="Strength"&gt;Сила&lt;/LSTag&gt; влияет на то, насколько тяжелый предмет вы можете бросить. Более тяжелые предметы наносят больше урона.</content><!-- Throw -->
+    <content contentuid="h6da3fafbgfe47g420fgb449g9756dc4146fe" version="1">Ваша &lt;LSTag Tooltip="Strength"&gt;Сила&lt;/LSTag&gt; влияет на то, насколько тяжелый предмет вы можете бросить.</content><!-- Throw Cunning Action -->
+    <content contentuid="h12c219aag52b4g4a22gb0e3g160edbaffbb7" version="1">Атака на расстоянии, превышающем нормальный диапазон ([1] для метательных копий и [2] для остального оружия), накладывает &lt;LSTag Tooltip="Disadvantage"&gt;помеху&lt;/LSTag&gt; на &lt;LSTag Tooltip="AttackRoll"&gt;броски атаки&lt;/LSTag&gt;.</content><!-- Throw Weapon -->
+
+    <!-- Tooltip Extra Texts -->
+    <content contentuid="hc2a51188g0925g4599g981bg32cd90d92c01" version="1">&lt;LSTag Type="Image" Info="SoftWarning"/&gt; Невидимость заканчивается раньше, если вы атакуете или накладываете другое заклинание.</content>
+    <content contentuid="hb4b0e8ccge8a7g4844g946cg52e24f6422ea" version="1">&lt;LSTag Type="Image" Info="SoftWarning"/&gt; Невидимость заканчивается раньше, если вы движетесь, атакуете или накладываете другое заклинание.</content>
+    <content contentuid="hea1370edgac4dg4a8cg8a43g373b34184b7e" version="1">&lt;LSTag Type="Image" Info="SoftWarning"/&gt; Невидимость заканчивается раньше, если вы атакуете, накладываете другое заклинание или входите в ярко освещенную область.</content>
+</contentList>
