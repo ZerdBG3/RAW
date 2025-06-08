@@ -18,7 +18,7 @@ Zerd's Rules As Written for Baldur's Gate 3
 
 # Compatibility
 * This mod alters a lot of core mechanics, thus it might not be compatible with saves that were started without it. If possible, start a new game when using this mod
-  * _The option `[invisibility](https://github.com/ZerdBG3/RAW/blob/main/Features.md#invisibility-%EF%B8%8F-invisibility)` is known to cause bugs on existing saves. Make sure to disable it if you're planning to add this mod on an on-going save._
+  * _The option [`invisibility`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#invisibility-%EF%B8%8F-invisibility) is known to cause bugs on existing saves. Make sure to disable it if you're planning to add this mod on an on-going save._
 * There's also various modifications to classes progressions, spells, actions, etc. This means other mods that change the same entries might cause conflict. Using other mods may result in weird interactions and not intended behaviors
 
 # Recommendations

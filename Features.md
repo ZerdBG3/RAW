@@ -6,7 +6,6 @@
   - _For example, if you disable [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#default-actions-%EF%B8%8F-defaultactions) on the options file, but keep any of its `Depended by` (like [`extraAttack`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#extra-attack-%EF%B8%8F-extraattack) or [`feats`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#feats-%EF%B8%8F-feats)), the `defaultActions` option will be enabled automatically when the game starts_
 
 ## Attunement ⚙️ `attunement`
-_Developed in partnership with [Eric](https://www.nexusmods.com/baldursgate3/mods/2155). It's redundant to have both mods, since they do the same thing; they aren't compatible either._
 * Several magical items now require attunement. [Here's the list](https://docs.google.com/spreadsheets/d/1yCJ9ITC180dqykK713iHMEsrvVOHkgOmLF882-yr_hQ/edit#gid=0&fvid=1734738953)
   - To attune to an item, you simply equip it
   - Items that require attunement can only be equipped outside of combat (except for weapons)
@@ -123,7 +122,7 @@ Thanks [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?gameId=3474
 > This feature does not work on existing saves. Make sure to disable it if you're encountering any issues regarding encounters with ambushes.
 
 Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?gameId=3474) for his initial implementation on [(See) Invisibility Rework](https://www.nexusmods.com/baldursgate3/mods/3902) was the base for this option. However, the mod is now redundant and **incompatible** with this option!
-* Invisibility alone no longers makes the character completely undetectable, only providing Advantage to attack rolls against enemies that can't see invisible and Disadvantage when being attacked by enemies that can't see invisible
+* Invisibility alone no longer makes the character completely undetectable, only providing Advantage to attack rolls against enemies that can't see invisible and Disadvantage when being attacked by enemies that can't see invisible
 * Spells that require the caster to see the target also can't be used against an invisible creature, unless the caster has See invisibility or similar
 * Attacks of Opportunity are also not possible against targets that can't be seen
 * Normal Invisibility is no longer removed by being damaged, interacting with items or being _wet_ 💧. Only attacking and casting a spell will remove Invisibility
