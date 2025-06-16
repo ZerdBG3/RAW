@@ -75,6 +75,7 @@
 | [`barbarian`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#barbarian-%EF%B8%8F-barbarian) | - | - | **enabled** | Changes to Reckless Attack. |
 | [`barbarian_berserker`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#barbarian-berserker-%EF%B8%8F-barbarian_berserker) | - | - | **enabled** | Removes Throw as a bonus action from Frenzy. |
 | [`barbarian_wildMagic`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#barbarian-wild-magic-%EF%B8%8F-barbarian_wildmagic) | - | - | **enabled** | Allows Wild Magic results to be used on the first turn and adjusts Shadowy Tendrils targeting. |
+| [`cleric`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#cleric-%EF%B8%8F-cleric) | - | - | **enabled** | Fix to Turn Undead. |
 | [`concentration_failsafe`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#concentration-failsafe-%EF%B8%8F-concentration_failsafe) | - | - | **enabled** | Gives the player a toggleable passive that stops them from casting concentration spells while already concentrating. |
 | [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#default-actions-%EF%B8%8F-defaultactions) | - | `extraAttack`, `feats` | **enabled** | Changes to Jump and Shove. Introduces Distract and Dodge as player actions. |
 | [`downed`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#downed-%EF%B8%8F-downed) | - | - | **enabled** | Healing a downed character allows them to play their turn normally. |

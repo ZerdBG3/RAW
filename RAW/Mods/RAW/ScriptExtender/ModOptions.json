@@ -19,7 +19,7 @@
     },
     "barbarian": {
         "displayName": "Barbarian",
-        "description": "Changes to Reckless Attack",
+        "description": "Changes to Reckless Attack.",
         "enabled": true,
         "value": null,
         "log": false,
@@ -61,6 +61,24 @@
             "disabled": [
                 {
                     "from": "Public/RAW/Stats/Generated/Data/Barbarian_WildMagic.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
+    "cleric": {
+        "displayName": "Cleric",
+        "description": "Increased Turn Undead duration.",
+        "enabled": true,
+        "value": null,
+        "log": false,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Cleric.txt",
                     "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
                 }
             ]

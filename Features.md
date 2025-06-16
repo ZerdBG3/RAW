@@ -49,6 +49,9 @@
 * Level 3: Shadowy Tendrils random outcome only damages enemies
 * Level 3: Fixes Wild Magic: Teleport applying to everyone around the Barbarian, for some reason (vanilla bug)
 
+## Cleric ⚙️ `cleric`
+* Level 2: Turn Undead duration adjusted to 10 turns
+
 ## Concentration Failsafe ⚙️ `concentration_failsafe`
 _Quality of Life feature_
 * Provides a toggleable passive for players that prevents casting spells that require Concentration while concentrating on another spell.
