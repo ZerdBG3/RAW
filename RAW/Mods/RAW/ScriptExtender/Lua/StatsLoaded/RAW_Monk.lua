@@ -59,5 +59,12 @@ ENUM_RAW_MonkResources = {
                 ["Value"] = "FlurryOfBlowsUnlock",
             },
         },
+        -- Monk Level 5
+        ["7b354b75-537f-464e-a28d-cafa72323ab9"] = {
+            ["PassivesAdded"] = {
+                ["Type"] = "add",
+                ["Value"] = "RAW_StunningStrike_Unlock",
+            },
+        },
     },
 }

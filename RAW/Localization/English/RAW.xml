@@ -15,6 +15,12 @@
     <content contentuid="h15b473b7gf59dg40f4g9d6bg7015eb159089" version="1">When you make crossbow attacks within melee range, the &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; do not have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;You ignore the loading property of crossbows for the purposes of Extra Attack.</content><!-- Crossbow Expert -->
     <content contentuid="h4671f1fag7c08g4921ga35bg07713c95c4d9" version="1">You can use Two-Weapon Fighting even if your weapons aren't &lt;LSTag Tooltip="Light"&gt;Light&lt;/LSTag&gt;, you can equip two weapons for free on your turn instead of one, and you gain a +1 bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; while wielding a melee weapon in each hand. You cannot dual-wield &lt;LSTag Tooltip="Heavy"&gt;Heavy&lt;/LSTag&gt; weapons.</content><!-- Dual Wielder -->
 
+    <!-- Interrupt Display Name -->
+    <content contentuid="h296f1c49ga414g4229g9f23gc1a323ab4257" version="1">Stunning Strike</content><!-- Stunning Strike -->
+
+    <!-- Interrupt Description -->
+    <content contentuid="h9a6768d0gcdfbg42c4g9c9dg9a4714110916" version="1">When you hit a creature with a melee weapon attack, you can spend 1 ki point to attempt to &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stun&lt;/LSTag&gt; them.</content><!-- Stunning Strike -->
+
     <!-- Passive Display Name -->
     <content contentuid="h15a2faa5gf385g456dg8aa8gbf5a1029919f" version="1">Walk</content><!-- Walk -->
     <content contentuid="h7448849bged25g488ag810dg15d3da1916a2" version="1">Long Distance</content><!-- Weapon Throw -->

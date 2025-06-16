@@ -148,3 +148,7 @@ function RAW_SpellAgainstInvisibleTarget(target, observer)
     local result = ~HasStatus('SG_Invisible', target) | RAW_CanSeeInvisible(observer)
     return ConditionResult(result.Result, {ConditionError("RAW_SpellAgainstInbisibleTarget_False")})
 end
+
+function RAW_MonkSaveDC()
+    return 8 + context.Source.ProficiencyBonus + GetModifier(context.Source.Wisdom)
+end

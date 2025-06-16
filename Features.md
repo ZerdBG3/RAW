@@ -236,12 +236,20 @@ Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?ga
 </details>
 
 ## Monk ⚙️ `monk`
-* Level 1: Martial Arts Bonus Unarmed Strike changed from a temporary spell to instead modify the base Unarmed Strike that is always available to players (_see [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#default-actions-%EF%B8%8F-defaultactions)_)
+* Level 1: Martial Arts Bonus Unarmed Strike changed from a temporary spell to a permanent spell that is only usable after attacking with your action first
 * Level 1: Removes Ki Points and Flurry of Blows
+* Level 2: All monk save DCs now properly use Wisdom on the calculation
 * Level 2: Gives Ki Points and Flurry of Blows on the correct level (total amount of Ki Points reduced by 1 to the correct value)
 * Level 2: Flurry of Blows is only available after attacking with your action and both attacks are separate, not needing to be against the same target
 * Level 2: Step of the Wind (both Dash and Disengage) doubles your jumping distance for the turn
 * Level 2: Specifies that Patient Defense has the same removal conditions as Dodge
+* Level 5: Introduces a Interrupt for Stunning Strike. It is also possible to use it against a target that is already stunned
+
+## Monk (Way of the Four Elements) ⚙️ `monk_fourElements`
+* Level 3: Fangs of the Fire Snake
+  - Initial damage changed to be entirely fire damage: unarmed damage +1d10 + dex
+  - Animation changed to not use the weapon
+  - For the remainder of the turn, only unarmed attacks get the extra 1d4 fire damage, but they have increased range (same range as the initial ability)
 
 ## Prone ⚙️ `prone`
 * Removes the disadvantage on Strength and Dexterity Saving Throws when Prone, and adds the Disadvantage to Ranged Attack Rolls
