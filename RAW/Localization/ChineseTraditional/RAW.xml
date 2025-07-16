@@ -89,7 +89,7 @@
     <content contentuid="hed8a4e8fg83feg4b36g9485g9dcdc40ff540" version="1">被發現</content><!-- Found Sneaking -->
     
     <!-- Status Boost Description -->
-    <content contentuid="h2f4288c1g1e4fg4852g80e1g09db0b94bb3d" version="1">進行一次&lt;LSTag Tooltip="ShortRest"&gt;短休&lt;/LSTag&gt;。</content><!-- Short Rest -->
+    <content contentuid="h2f4288c1g1e4fg4852g80e1g09db0b94bb3d" version="1">正在進行&lt;LSTag Tooltip="ShortRest"&gt;短休&lt;/LSTag&gt;。</content><!-- Short Rest -->
     <content contentuid="h910d365egd00ag49abg853agfeec0d6e5137" version="1">專注於躲避攻擊。&lt;br&gt;&lt;Br&gt;對受影響實體進行&lt;LSTag Tooltip="AttackRoll"&gt;攻擊投擲&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Disadvantage"&gt;劣勢&lt;/LSTag&gt;，且該實體在敏捷&lt;LSTag Tooltip="SavingThrow"&gt;豁免檢定&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Advantage"&gt;優勢&lt;/LSTag&gt;。&lt;br&gt;&lt;br&gt;如果你陷入失能或定身，則該狀態會被移除。</content><!-- Dodge -->
     <content contentuid="h25d8863egdaf1g47e3gba46gb6bade9f3a93" version="1">下一個由非干擾來源進行&lt;LSTag Tooltip="AttackRoll"&gt;攻擊投擲&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Advantage"&gt;優勢&lt;/LSTag&gt;。</content><!-- Distracted -->
     <content contentuid="h0d5d7494ga6b3g4f9ag82d3g9cc482ead351" version="1">在其回合內，基於力量的&lt;LSTag Tooltip="AttackRoll"&gt;攻擊投擲&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Advantage"&gt;優勢&lt;/LSTag&gt;。敵人對該目標進行&lt;LSTag Tooltip="AttackRoll"&gt;攻擊投擲&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Advantage"&gt;優勢&lt;/LSTag&gt;。</content><!-- Reckless Attack -->
@@ -135,7 +135,7 @@
     <content contentuid="h868da50cg1553g4d69gb8d6g491c06156b08" version="1">干擾（靈巧動作）</content><!-- Distract Cunning Action -->
     <content contentuid="h9dae9cf6gd51dg4176g9654g137136bdc8c1" version="1">協助（靈巧動作）</content><!-- Help Cunning Action -->
     <content contentuid="h7d6311c9g4e07g40c9ga6b9g65ab8583ca90" version="1">命令召喚物</content><!-- Summon Command -->
-    <content contentuid="hea829cd9ge8f4g42ecg9d63g702ed2764a96" version="1">假死：解除</content><!-- Feign Death: Dismiss -->
+    <content contentuid="hea829cd9ge8f4g42ecg9d63g702ed2764a96" version="1">假死術：解除</content><!-- Feign Death: Dismiss -->
 
     <!-- Target Description -->
     <content contentuid="h39b0e6f4g2f5cg4038g8944g625faa062c38" version="1">推擊目標以將其擊退 [1] 距離。</content><!-- Shove -->
