@@ -1,4 +1,4 @@
-<contentList date="13/05/2021 17:29">
+<contentList date="16/07/2025 13:08">
     <!-- Action Resource Definition Name -->
     <content contentuid="h9b9372c9g28e7g4fbcga73dgad4bfec682c1" version="1">加速术</content><!-- Haste Point -->
     <content contentuid="h81bc6dd8ga190g4893g97f6g865ed02e1096" version="1">附赠动作环阶法术</content><!-- Bonus Action Spell Point -->
@@ -19,12 +19,12 @@
     <content contentuid="h15a2faa5gf385g456dg8aa8gbf5a1029919f" version="1">步行</content><!-- Walk -->
     <content contentuid="h7448849bged25g488ag810dg15d3da1916a2" version="1">长距离</content><!-- Weapon Throw -->
     <content contentuid="h61fa56b6g2b42g4d9cg965eg0654c2c6f233" version="1">梁上君子</content><!-- Second-Story Work -->
-    <content contentuid="h4af7068bg689dg4db5g87fdg614624fc8585" version="1">盾牌大师（推撞）</content><!-- Shield Master (Shove) -->
+    <content contentuid="h4af7068bg689dg4db5g87fdg614624fc8585" version="1">盾牌大师（推击）</content><!-- Shield Master (Shove) -->
     <content contentuid="h0159dcd5g7df6g42fag8c0eg6b714977e84a" version="1">鲁莽攻击</content><!-- Reckless Attack -->
     <content contentuid="h347bdf44gbb6dg4e83g83feg9f48169b16f0" version="1">资源已阻止</content><!-- Summon Resource Blocked -->
     <content contentuid="h1d26d698g3c6dg4212gad8dga725fb76bda2" version="1">无形召唤物</content><!-- Summon Indestructible -->
     <content contentuid="h81c15d09gdee7g4cd4ga39eg6ec6273a8398" version="1">飞掠</content><!-- Flyby -->
-    <content contentuid="h2c5ddf7eg8dbcg4b9fga803g537c44e0ff16" version="1">弩专精：装填</content><!-- Crossbow Expert: Wounding -->
+    <content contentuid="h2c5ddf7eg8dbcg4b9fga803g537c44e0ff16" version="1">强弩专家：装填</content><!-- Crossbow Expert: Wounding -->
     <content contentuid="h07cedaa6g2c7bg4906ga832g28ebde232fa4" version="1">调谐</content><!-- Attunement -->
     <content contentuid="h4d215fa7g6d15g4acbg8139g56cb67212a5c" version="1">专注失效保护</content><!-- Concentration Block -->
 
@@ -32,7 +32,7 @@
     <content contentuid="h460e389eg9748g4598g95cdgf796e95397c6" version="1">你开始步行而不是跑步。</content><!-- Walk -->
     <content contentuid="hfc0ecb86gc504g44f1g9d88g957905740457" version="1">除了疾走、撤离或躲藏之外，你还可以使用你的灵巧动作提供的附赠动作来协助盟友、干扰敌人或投掷物品。</content><!-- Fast Hands -->
     <content contentuid="hd6a0c096gd133g4bc9ga518g80c70fd5d907" version="1">你已经掌握了坠落的艺术，并获得对坠落伤害的抗性。此外，你现在可以使用你的&lt;LSTag Tooltip="Dexterity"&gt;敏捷&lt;/LSTag&gt;来增加你的跳跃距离。</content><!-- Second-Story Work -->
-    <content contentuid="h85d7c071gf5e1g454fg904eg4f6253bf83c0" version="1">如果你在你的回合采取了攻击动作，你可以使用附赠动作尝试使用盾牌进行推撞。</content><!-- Shield Master (Shove) -->
+    <content contentuid="h85d7c071gf5e1g454fg904eg4f6253bf83c0" version="1">如果你在你的回合采取了攻击动作，你可以使用附赠动作尝试使用盾牌进行推击。</content><!-- Shield Master (Shove) -->
     <content contentuid="hd8db6255g9df7g4a83g9a83g7ed354602d82" version="1">抛开所有对防御的顾虑，以极度的决心进行攻击。在你的回合的第一次攻击中进行鲁莽攻击会让你在使用力量的近战武器&lt;LSTag Tooltip="AttackRoll"&gt;攻击投掷&lt;/LSTag&gt;上获得&lt;LSTag Tooltip="Advantage"&gt;优势&lt;/LSTag&gt;，但对你的攻击投掷直到你的下个回合都具有优势。</content><!-- Reckless Attack -->
     <content contentuid="ha3c41950g6a08g4bbdg9a88g2c14f3c6e8b7" version="1">只有当所有者使用命令法术时，此召唤物才能行动。</content><!-- Summon Resource Blocked -->
     <content contentuid="h7162476egad83g4f42g8fccg22f6c6e40b37" version="1">当飞出敌人的攻击范围时，不会触发借机攻击。</content><!-- Flyby -->
@@ -129,8 +129,8 @@
     <content contentuid="hf9fcc402g8592g454cga793g52f04804a411" version="1">无法移动或采取动作、附赠动作或反应。&lt;br&gt;&lt;br&gt;对倒地生物进行攻击，如果在该生物 [1] 范围内进行，则具有&lt;LSTag Tooltip="Advantage"&gt;优势&lt;/LSTag&gt;，否则具有&lt;LSTag Tooltip="Disadvantage"&gt;劣势&lt;/LSTag&gt;。&lt;br&gt;&lt;br&gt;一个倒地的生物必须花费其一半的&lt;LSTag Tooltip="MovementSpeed"&gt;移动速度&lt;/LSTag&gt;才能站起来。</content><!-- Prone -->
 
     <!-- Target Display Name -->
-    <content contentuid="h5877647dg40fbg4c09gb1c5g16af8009e38b" version="1">推撞（击退）</content><!-- Shove Push -->
-    <content contentuid="hb461d04cg1cfbg4ba1g83a2g5bd1421d1a20" version="1">推撞（击倒）</content><!-- Shove Prone -->
+    <content contentuid="h5877647dg40fbg4c09gb1c5g16af8009e38b" version="1">推击（击退）</content><!-- Shove Push -->
+    <content contentuid="hb461d04cg1cfbg4ba1g83a2g5bd1421d1a20" version="1">推击（击倒）</content><!-- Shove Prone -->
     <content contentuid="hacff287aga587g493bg8074ga79a9969f0c7" version="1">干扰</content><!-- Distract -->
     <content contentuid="h868da50cg1553g4d69gb8d6g491c06156b08" version="1">干扰（灵巧动作）</content><!-- Distract Cunning Action -->
     <content contentuid="h9dae9cf6gd51dg4176g9654g137136bdc8c1" version="1">协助（灵巧动作）</content><!-- Help Cunning Action -->
@@ -138,10 +138,10 @@
     <content contentuid="hea829cd9ge8f4g42ecg9d63g702ed2764a96" version="1">假死：解除</content><!-- Feign Death: Dismiss -->
 
     <!-- Target Description -->
-    <content contentuid="h39b0e6f4g2f5cg4038g8944g625faa062c38" version="1">推撞目标以将其击退 [1] 距离。</content><!-- Shove -->
-    <content contentuid="h29df2d23ga713g4cf9gaacdg7cf61bb3b2ee" version="1">推撞目标。你可以尝试将其击退或击倒。</content><!-- Shove Player -->
-    <content contentuid="h8cd12a69g8980g4a55g8737g3f6183de78c1" version="1">推撞目标以将其击倒。</content><!-- Shove Prone -->
-    <content contentuid="hd49325f3gea4dg4b6fg8880gf6cc96f50a39" version="1">用你的盾牌推撞目标。你可以尝试将其击退或击倒。</content><!-- Shove Shield Master -->
+    <content contentuid="h39b0e6f4g2f5cg4038g8944g625faa062c38" version="1">推击目标以将其击退 [1] 距离。</content><!-- Shove -->
+    <content contentuid="h29df2d23ga713g4cf9gaacdg7cf61bb3b2ee" version="1">推击目标。你可以尝试将其击退或击倒。</content><!-- Shove Player -->
+    <content contentuid="h8cd12a69g8980g4a55g8737g3f6183de78c1" version="1">推击目标以将其击倒。</content><!-- Shove Prone -->
+    <content contentuid="hd49325f3gea4dg4b6fg8880gf6cc96f50a39" version="1">用你的盾牌推击目标。你可以尝试将其击退或击倒。</content><!-- Shove Shield Master -->
     <content contentuid="h8a5eb4d5g32beg46b6g9c83g8b4832766545" version="1">佯攻、分散目标的注意力，或以其他方式配合，使你的盟友在你的下个回合之前进行的下一次&lt;LSTag Tooltip="AttackRoll"&gt;攻击投掷&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Advantage"&gt;优势&lt;/LSTag&gt;。</content><!-- Distract -->
     <content contentuid="h32d73faeg184cg419bg8fb6gdd67958d7817" version="1">进行难度等级 10 的&lt;LSTag Tooltip="Medicine"&gt;医药&lt;/LSTag&gt;&lt;LSTag Tooltip="AbilityCheck"&gt;检定&lt;/LSTag&gt;以稳定&lt;LSTag Tooltip="Downed"&gt;昏迷&lt;/LSTag&gt;角色。</content><!-- Help -->
     <content contentuid="hc01e959cg7d3dg4542gac9fg68099deb9746" version="1">使用你的附赠动作来命令你的召唤物行动。</content><!-- Summon Command -->
@@ -154,7 +154,7 @@
     <content contentuid="h760f0714ge733g4055g8135gaa7947530d70" version="1">踢一个目标。</content><!-- Default Unarmed Attack -->
     
     <!-- Target Extra Description -->
-    <content contentuid="hed88db7bgfbe4g4ab0g9252g068a8bcc48c0" version="1">推撞取决于你的&lt;LSTag Tooltip="Athletics"&gt;运动&lt;/LSTag&gt;技能，以及目标较高的运动或&lt;LSTag Tooltip="Acrobatics"&gt;杂技&lt;/LSTag&gt;技能。</content><!-- Shove -->
+    <content contentuid="hed88db7bgfbe4g4ab0g9252g068a8bcc48c0" version="1">推击取决于你的&lt;LSTag Tooltip="Athletics"&gt;运动&lt;/LSTag&gt;技能，以及目标较高的运动或&lt;LSTag Tooltip="Acrobatics"&gt;杂技&lt;/LSTag&gt;技能。</content><!-- Shove -->
     <content contentuid="h53da955bgfbadg4d77gb962g11eec4070db8" version="1">移除燃烧、束缚、缠绕、网缚、倒地和睡眠。</content><!-- Help -->
     <content contentuid="h7931a54eg73b9g425bg9243g2331db1f3a32" version="1">当你攻击或施放另一个法术时，隐形会失效。</content><!-- Invisibility -->
 
