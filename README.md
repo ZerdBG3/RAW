@@ -35,6 +35,7 @@ Zerd's Rules As Written for Baldur's Gate 3
   - Italian ([Kilay](https://www.nexusmods.com/users/26711484))
   - Portuguese - Brazilian (Rorerik)
   - Russian ([Aks_kun](https://next.nexusmods.com/profile/Aks2aidos))
+  - Chinese & Chinese Traditional ([Xie_Long_Wu](https://next.nexusmods.com/profile/XieLongWu))
 
 # Error
 * **IMPORTANT:** When opening the launcher, you'll get several notifications telling you about how mods might break and crash your game. Ignore them
