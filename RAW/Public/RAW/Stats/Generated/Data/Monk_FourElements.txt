@@ -1,14 +1,70 @@
+// -----------------------------------------------------------------
+// -------------------- Fangs of the Fire Snake --------------------
+// -----------------------------------------------------------------
+
 new entry "Projectile_FangsOfTheFireSnake"
 type "SpellData"
 data "SpellType" "Projectile"
 using "Projectile_FangsOfTheFireSnake"
 data "SpellSuccess" "DealDamage(UnarmedDamage+1d10,Fire,Magical)"
+data "Description" "h4893fa95g57d7g4bf1g9167gabee02394e01;1"
+data "DescriptionParams" "DealDamage(1d4,Fire);Distance(6)"
+data "TooltipDamageList" "DealDamage(LevelMapValue(MartialArts)+max(StrengthModifier,DexterityModifier)+1d10,Fire)"
 data "Sheathing" "Sheathed"
 
 new entry "FANGS_OF_THE_FIRE_SNAKE"
 type "StatusData"
 data "StatusType" "BOOST"
 using "FANGS_OF_THE_FIRE_SNAKE"
-data "Description" "h742a06dcg1814g432eg945dg7ccf3f55fb26;3"
-data "DescriptionParams" "DealDamage(1d4,Fire)"
-data "Boosts" "CharacterUnarmedDamage(1d4, Fire);UnlockSpellVariant(MeleeUnarmedAttackCheck(),ModifyTargetRadius(Override,6));"
+data "Description" "hd4d5f4c0g1a6bg4040gbc96g909d8d22bce1;1"
+data "DescriptionParams" "DealDamage(1d4,Fire);Distance(6)"
+data "TickType" "EndTurn"
+data "Boosts" "UnlockSpell(RAW_Projectile_FangsOfTheFireSnake_Action);UnlockSpell(RAW_Projectile_FangsOfTheFireSnake_BonusAction);UnlockSpell(RAW_Projectile_FangsOfTheFireSnake_FlurryOfBlows);"
+
+new entry "RAW_Projectile_FangsOfTheFireSnake_Action"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Projectile_FangsOfTheFireSnake"
+data "SpellProperties" "GROUND:DealDamage(1d4,Fire)"
+data "SpellSuccess" "DealDamage(UnarmedDamage+1d4,Fire,Magical)"
+data "DisplayName" "ha4992ab3g74fbg4a52g8fadg33ff3ca8b99e;1"
+data "Description" "hb49fcb14gfa92g413dgbbf2g18f41d4546f7;1"
+data "DescriptionParams" ""
+data "TooltipDamageList" "DealDamage(LevelMapValue(MartialArts)+max(StrengthModifier,DexterityModifier)+1d4,Fire)"
+data "TooltipStatusApply" ""
+data "UseCosts" "ActionPoint:1"
+data "SpellFlags" "HasHighGroundRangeExtension;RangeIgnoreVerticalThreshold;IsHarmful;Temporary"
+
+new entry "RAW_Projectile_FangsOfTheFireSnake_BonusAction"
+type "SpellData"
+data "SpellType" "Projectile"
+using "RAW_Projectile_FangsOfTheFireSnake_Action"
+data "SpellProperties" "GROUND:DealDamage(1d4,Fire);RemoveStatus(SELF,MARTIAL_ARTS_BONUS_UNARMED_STRIKE)"
+data "Icon" "Action_Monk_FreeUnarmedStrike"
+data "DisplayName" "hb9349227gb9dfg4de8g8200g982e10052ba5;1"
+data "Description" "hdd9d1525g7510g4a1cg85fcgb104fdbf57e1;1"
+data "UseCosts" "BonusActionPoint:1"
+data "RequirementConditions" "HasStatus('MARTIAL_ARTS_BONUS_UNARMED_STRIKE')"
+data "RequirementEvents" "OnStatusApplied;OnStatusRemoved;OnTurn;OnCombatEnded"
+
+new entry "RAW_Projectile_FangsOfTheFireSnake_FlurryOfBlows"
+type "SpellData"
+data "SpellType" "Projectile"
+using "RAW_Projectile_FangsOfTheFireSnake_BonusAction"
+data "SpellProperties" "GROUND:DealDamage(1d4,Fire);IF(HasStatus('MARTIAL_ARTS_BONUS_UNARMED_STRIKE',context.Source)):ApplyStatus(SELF,RAW_FLURRY_OF_BLOWS,100,1)"
+data "Icon" "Action_Monk_FlurryOfBlows"
+data "DisplayName" "h4c190115g2d58g4148gaa5bg87e92f9e2a89;1"
+data "Description" "hccae5981g1671g457fg986dg29dd07ccefee;1"
+data "DescriptionParams" "1"
+data "UseCosts" "BonusActionPoint:1;KiPoint:1"
+data "RequirementConditions" "HasStatus('MARTIAL_ARTS_BONUS_UNARMED_STRIKE') or HasStatus('RAW_FLURRY_OF_BLOWS')"
+
+// -------------------------------------------------------------------
+// -------------------- Fist of the Four Thunders --------------------
+// -------------------------------------------------------------------
+
+new entry "Zone_Thunderwave_Monk"
+type "SpellData"
+data "SpellType" "Zone"
+using "Zone_Thunderwave_Monk"
+data "SpellProperties" "ApplyStatus(SELF,MARTIAL_ARTS_BONUS_UNARMED_STRIKE,100,1)"

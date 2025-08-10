@@ -40,10 +40,10 @@
 
 # Optional Configurations
 > [!TIP]
-> You only need to find and tweak the configuration file if you want to alter the default behavior. Therefore, there is no need to do anything beside installing the mod if you don't want to change any of the mod's default behavior
+> You only need to find and tweak the configuration file if you want to alter the default behavior. Therefore, there is no need to do anything besides installing the mod if you don't want to change any of the mod's default behavior
 
 > [!NOTE]
-> If you want to make sure your configurations are being loaded properly, turn on the Debug Console for the Script Extender using the BG3MM [`Settings` -> `Open Preferences` -> `Create Console`]
+> If you want to make sure your configurations are being loaded properly, turn on the Debug Console for the Script Extender using the BG3MM [`Settings` -> `Open Preferences` -> `Script Extender` -> `Create Console`]
 
 <details>
  <summary>Console example</summary>
@@ -75,6 +75,7 @@
 | [`barbarian`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#barbarian-%EF%B8%8F-barbarian) | - | - | **enabled** | Changes to Reckless Attack. |
 | [`barbarian_berserker`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#barbarian-berserker-%EF%B8%8F-barbarian_berserker) | - | - | **enabled** | Removes Throw as a bonus action from Frenzy. |
 | [`barbarian_wildMagic`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#barbarian-wild-magic-%EF%B8%8F-barbarian_wildmagic) | - | - | **enabled** | Allows Wild Magic results to be used on the first turn and adjusts Shadowy Tendrils targeting. |
+| [`bard`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#bard-%EF%B8%8F-bard) | `shortRest` | - | **enabled** | Changes to Song of Rest. |
 | [`cleric`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#cleric-%EF%B8%8F-cleric) | - | - | **enabled** | Fix to Turn Undead. |
 | [`concentration_failsafe`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#concentration-failsafe-%EF%B8%8F-concentration_failsafe) | - | - | **enabled** | Gives the player a toggleable passive that stops them from casting concentration spells while already concentrating. |
 | [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#default-actions-%EF%B8%8F-defaultactions) | - | `extraAttack`, `feats` | **enabled** | Changes to Jump and Shove. Introduces Distract and Dodge as player actions. |
@@ -94,7 +95,7 @@
 | [`prone`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#prone-%EF%B8%8F-prone) | - | - | **enabled** | Changes the advantage and disadvantage conditions while Prone. |
 | [`rogue`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogue-%EF%B8%8F-rogue) | `throw` | `rogue_thief` | **enabled** | Changes to Cunning Action and Sneak Attack. |
 | [`rogue_thief`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogue-thief-%EF%B8%8F-rogue_thief) | `rogue`,`stabilize` | - | **enabled** | Changes to Fast Hands and Second-Story Work. |
-| [`shortRest`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#short-rest-%EF%B8%8F-shortrest) | - | - | **enabled** | Short Rest becomes an active downtime period. |
+| [`shortRest`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#short-rest-%EF%B8%8F-shortrest) | - | `bard` | **enabled** | Short Rest becomes an active downtime period, with Hit Dice usage included. |
 | [`skillCheck_critFail`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#disable-critical-fail-on-checks-%EF%B8%8F-skillcheck_critfail) | - | - | **enabled** | Disables the possibility of a critical fail on ability or skill checks and saving throws. |
 | [`spells`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#spells-%EF%B8%8F-spells) | - | - | **enabled** | Various changes to spells and statuses applied by spells. |
 | [`spells_bonusAction`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#spells---bonus-action-rule-%EF%B8%8F-spells_bonusaction) | - | - | **enabled** | Enforces the spell casted as a bonus action rule stopping casting other leveled spells on the same turn. |

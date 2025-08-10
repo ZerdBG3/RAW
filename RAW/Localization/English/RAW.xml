@@ -19,7 +19,7 @@
     <content contentuid="h296f1c49ga414g4229g9f23gc1a323ab4257" version="1">Stunning Strike</content><!-- Stunning Strike -->
 
     <!-- Interrupt Description -->
-    <content contentuid="h9a6768d0gcdfbg42c4g9c9dg9a4714110916" version="1">When you hit a creature with a melee weapon attack, you can spend 1 ki point to attempt to &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stun&lt;/LSTag&gt; them.</content><!-- Stunning Strike -->
+    <content contentuid="h9a6768d0gcdfbg42c4g9c9dg9a4714110916" version="1">When you hit a creature with a melee weapon attack, you can spend [1] &lt;LSTag Type="ActionResource" Tooltip="KiPoint"&gt;Ki Point&lt;/LSTag&gt; to attempt to &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stun&lt;/LSTag&gt; them.</content><!-- Stunning Strike -->
 
     <!-- Passive Display Name -->
     <content contentuid="h15a2faa5gf385g456dg8aa8gbf5a1029919f" version="1">Walk</content><!-- Walk -->
@@ -46,6 +46,7 @@
     <content contentuid="h34e14ad6gb0d5g4892ga3c9gdb7dce2c7b9a" version="1">&lt;font color="#CF9FFF"&gt;&lt;i&gt;This item requires an attunement to be equipped and counts towards the maximum of attuned items.&lt;/i&gt;&lt;/font&gt;</content><!-- Attunement -->
     <content contentuid="h52822a0agd71bg4caega40dgc7017940b99b" version="1">You can use Two-Weapon Fighting even if the weapons you are wielding aren't Light and you can equip two weapons for free on your turn instead of one. You cannot dual-wield &lt;LSTag Tooltip="Heavy"&gt;Heavy&lt;/LSTag&gt; weapons.</content><!-- Dual Wielder -->
     <content contentuid="h7af02440ga775g44ddga0e4g04987028c1e7" version="1">Prevents casting spells that require &lt;LSTag Tooltip="Concentration"&gt;Concentration&lt;/LSTag&gt; while concentrating on another spell.</content><!-- Concentration Block -->
+    <content contentuid="h189fc339ge6a3g4c96gb5ecgdfbc5c1ca96a" version="1">You always regain the maximum amount of hit points possible when you roll a Hit Die to regain hit points.</content><!-- Durable -->
 
     <!-- Passive Extra Description -->
     <content contentuid="hc0a989cag7bfdg4f36g9642gf0a332244deb" version="1">Walking won't reduce the maximum travelled distance in a turn, it's purely cosmetic.</content><!-- Walk -->
@@ -54,6 +55,9 @@
     <content contentuid="h4c76db83gcc4eg438ag9d00ge9b156dd1bbe" version="1">Jump (Thief)</content><!-- Jump Thief -->
     <content contentuid="h64247e79gece7g4d43g9a17g38dd2fbb94fd" version="1">Jump (Cat)</content><!-- Jump Cat -->
     <content contentuid="he7373ea1ge596g4f74gbbd1g5763f2e77273" version="1">Produce Flame: Hurl (Free)</content><!-- Produce Flame Hurl Free -->
+    <content contentuid="ha4992ab3g74fbg4a52g8fadg33ff3ca8b99e" version="1">Unarmed Strike (Fangs of the Fire Snake)</content><!-- Fangs of the Fire Snake - Action -->
+    <content contentuid="hb9349227gb9dfg4de8g8200g982e10052ba5" version="1">Martial Arts (Fangs of the Fire Snake)</content><!-- Fangs of the Fire Snake - Bonus Action -->
+    <content contentuid="h4c190115g2d58g4148gaa5bg87e92f9e2a89" version="1">Flurry of Blows (Fangs of the Fire Snake)</content><!-- Fangs of the Fire Snake - Flurry of Blows -->
 
     <!-- Projectile Description -->
     <content contentuid="hc25fd2e1g6a3cg4c99g8690gcf48eabe53a1" version="1">Jump up, down, and across. Your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; affects how far you can jump.</content><!-- Jump Thief -->
@@ -64,15 +68,25 @@
     <content contentuid="he450b731gd24ag4ee3ga2d4g8faabdf18dea" version="1">Hurl lightning energy that damages the target. Creates an electrified surface if aiming to the ground.</content><!-- Chromatic Orb: Lightning -->
     <content contentuid="h023befb4g9bc2g450eg83cdg8ec3bf36237a" version="1">Hurl poisonous energy that damages the target. Creates a bubbling surface to &lt;LSTag Type="Status" Tooltip="POISONED"&gt;Poison&lt;/LSTag&gt; creatures if aiming to the ground.</content><!-- Chromatic Orb: Poison -->
     <content contentuid="h8ff59facg4ab1g4356g8753g6ab543485aa2" version="1">Hurl a sphere that deals [1] and possibly creates a surface if aiming to the ground.</content><!-- Chromatic Orb (Monk) -->
+    <content contentuid="h4893fa95g57d7g4bf1g9167gabee02394e01" version="1">Launch a fiery unarmed attack from a distance. For the rest of turn, you can project your unarmed strikes with fire at a [2] distance, dealing an extra [1].</content><!-- Fangs of the Fire Snake -->
+    <content contentuid="hb49fcb14gfa92g413dgbbf2g18f41d4546f7" version="1">Launch a fiery unarmed attack from a distance.</content><!-- Fangs of the Fire Snake - Action -->
+    <content contentuid="hdd9d1525g7510g4a1cg85fcgb104fdbf57e1" version="1">Swiftly launch a fiery unarmed attack from a distance as a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;.</content><!-- Fangs of the Fire Snake - Bonus Action -->
+    <content contentuid="hccae5981g1671g457fg986dg29dd07ccefee" version="1">Spend [1] ki point to launch two fiery unarmed attacks from a distance as a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;.&lt;br&gt;The attacks need not be on the same target.</content><!-- Fangs of the Fire Snake - Flurry of Blows -->
 
     <!-- Shout Display Name -->
     <content contentuid="haf813ecag5ad0g464cg8749g68d9ebd9b71d" version="1">End Short Rest</content><!-- End Short Rest -->
     <content contentuid="h6c541127gda12g4b7cgbfdbg37c49ac85aba" version="1">Dodge</content><!-- Dodge -->
     <content contentuid="h5d311bfdg3b88g4a78gb8fcgbb8645c6a5f7" version="1">Cunning Action</content><!-- Cunning Action -->
     <content contentuid="h0611af1fg455ag4511ga7e5g9768ccd017d8" version="1">Cunning Action: Hide</content><!-- Hide Cunning Action -->
+    <content contentuid="h8fbbae76g58f8g4229ga162gf14d9a074e9f" version="1">Spend Hit Die (d6)</content><!-- Spend Hit Die d6 (Short Rest) -->
+    <content contentuid="he2877639g184ag4455g8d78g4b338d509fc8" version="1">Spend Hit Die (d8)</content><!-- Spend Hit Die d8 (Short Rest) -->
+    <content contentuid="h52285ac3g0c1fg4989gafa8g78368e70970f" version="1">Spend Hit Die (d10)</content><!-- Spend Hit Die d10 (Short Rest) -->
+    <content contentuid="h6c149497g2232g4905gacb6g04203bc779e6" version="1">Spend Hit Die (d12)</content><!-- Spend Hit Die d12 (Short Rest) -->
+    <content contentuid="h866e12c0ge4a9g4985g8b9cg754005b3dd46" version="1">Stop Performance</content><!-- Stop Performance -->
 
     <!-- Shout Description -->
-    <content contentuid="h1aff6b78gc632g459cgbb15g9c17e56b611a" version="1">Ends the &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt; for you and your party members around you.</content><!-- Short Rest -->
+    <content contentuid="h984a72fbgb6d6g4aa3g8e8dgaeaf4b96a9ec" version="1">Starts a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt; for you and your party members around you.</content><!-- Short Rest -->
+    <content contentuid="h1aff6b78gc632g459cgbb15g9c17e56b611a" version="1">Ends the &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt; for you and your party members around you.</content><!-- End Short Rest -->
     <content contentuid="h43261ff4gfee1g42f4g9bb3gc6120976fe3d" version="1">Until the start of your next turn, any &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; made against you has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;, and you make Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;. You lose this benefit if you are either incapacitated or immobilized.</content><!-- Dodge -->
     <content contentuid="he7d837b8g404fg4dbdg85c2g9d69c019d63d" version="1">You can use your Bonus Action to Dash, Disengage or Hide.</content><!-- Cunning Action -->
     <content contentuid="hbeba3ad3g8801g4a4fg8d77g7507fa9bb7c6" version="1">Replenish expended &lt;LSTag Tooltip="SpellSlot"&gt;spell slots&lt;/LSTag&gt; during a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;. You cannot restore spell slots above 5th level.</content><!-- Arcane Recovery -->
@@ -83,6 +97,9 @@
     <content contentuid="h4cd88f4fg9d12g4734gbe27g2f91933f51ec" version="1">Spend [1] ki point to &lt;LSTag Type="Spell" Tooltip="RAW_Shout_Dodge"&gt;Dodge&lt;/LSTag&gt; as a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;.</content><!-- Patient Defense -->
     <content contentuid="h1e13b430g269bg4a2fg85f8g5e1a716c1c3e" version="1">Spend [1] ki point to &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt; as a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;. Also doubles your jump distance for this turn.</content><!-- Step of the Wind - Dash -->
     <content contentuid="h29de43bbg50ecg4919ga617g51ae1dd458d2" version="1">Spend [1] ki point to &lt;LSTag Type="Spell" Tooltip="Shout_Disengage"&gt;Disengage&lt;/LSTag&gt; as a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;. Also doubles your jump distance for this turn.</content><!-- Step of the Wind - Disengage -->
+    <content contentuid="hf709fee8g166eg409ag902eg1c42b9d9053f" version="1">Spend [1] Hit Die to restore [2] plus your Constitution Modifier.</content><!-- Spend Hit Die (Short Rest) -->
+    <content contentuid="h187970e4g785dg4703gad3fgf4d9aa7137b8" version="1">You can use soothing music to help revitalize your wounded allies during a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;. The first time you or any friendly creatures who can hear your performance regain hit points by spending a Hit Die, each of those creatures regains extra hit points.</content><!-- Song of Rest -->
+    <content contentuid="he24c9b2fg7b2bg4efegb687g368f15af344b" version="1">Stop performing the current song.</content><!-- Stop Performance -->
 
     <!-- Status Boost Display Name -->
     <content contentuid="hd7046718g6e1ag4867g9e30g6900297f0d58" version="1">Short Rest</content><!-- Short Rest -->
@@ -93,7 +110,28 @@
     <content contentuid="h990994ddg1181g4092g91d0gc459f4cf970f" version="1">Hail of Thorns</content><!-- Hail of Thorns -->
     <content contentuid="h22935d1ag4b4fg42b3gb9degfde9bd560f65" version="1">Bonus Action Spells Rule</content><!-- Bonus Action Spell -->
     <content contentuid="hed8a4e8fg83feg4b36g9485g9dcdc40ff540" version="1">Spotted</content><!-- Found Sneaking -->
-    
+    <content contentuid="h3e6df896g93deg4f18g85ccg62d5d1266212" version="1">Hit Dice Remaining: 0</content><!-- Hit Dice Remaining: 0 -->
+    <content contentuid="h61099abdg91feg4c65gb0cdg9a8ce4e6c85e" version="1">Hit Dice Remaining: 1</content><!-- Hit Dice Remaining: 1 -->
+    <content contentuid="h8fd1f9d9g330eg4fe1g8360gc5d6b45617f6" version="1">Hit Dice Remaining: 2</content><!-- Hit Dice Remaining: 2 -->
+    <content contentuid="h36489f5fge0b9g4f3cga978gb030ce4cb4da" version="1">Hit Dice Remaining: 3</content><!-- Hit Dice Remaining: 3 -->
+    <content contentuid="hab360f69g78fcg4c92gbfb5g38cee2628632" version="1">Hit Dice Remaining: 4</content><!-- Hit Dice Remaining: 4 -->
+    <content contentuid="hcbf668c3gf56bg4027gb06fg0fe74aa10560" version="1">Hit Dice Remaining: 5</content><!-- Hit Dice Remaining: 5 -->
+    <content contentuid="h21782c87g4486g4bd3g911bg4323608a212d" version="1">Hit Dice Remaining: 6</content><!-- Hit Dice Remaining: 6 -->
+    <content contentuid="h56279957g671bg4500g89b0g49a5f9ead35e" version="1">Hit Dice Remaining: 7</content><!-- Hit Dice Remaining: 7 -->
+    <content contentuid="he6ffe5d2g62f1g4d26g8beag8085bf8a9062" version="1">Hit Dice Remaining: 8</content><!-- Hit Dice Remaining: 8 -->
+    <content contentuid="h997b735eg8154g45c5g81d8ge6d835b040ba" version="1">Hit Dice Remaining: 9</content><!-- Hit Dice Remaining: 9 -->
+    <content contentuid="h1cbad031gbfd2g4a03g8189g5e707f3874ec" version="1">Hit Dice Remaining: 10</content><!-- Hit Dice Remaining: 10 -->
+    <content contentuid="h9642bf0dge030g43ceg8aceg2731deb06a19" version="1">Hit Dice Remaining: 11</content><!-- Hit Dice Remaining: 11 -->
+    <content contentuid="hda4efbacge00eg4e27g8694g20b00147283e" version="1">Hit Dice Remaining: 12</content><!-- Hit Dice Remaining: 12 -->
+    <content contentuid="h2e8255b4g0114g4357gbb35g0ad73c995377" version="1">Hit Dice Remaining: 13</content><!-- Hit Dice Remaining: 13 -->
+    <content contentuid="h697b97ccge16dg4757gb83cg689dbbd4ead0" version="1">Hit Dice Remaining: 14</content><!-- Hit Dice Remaining: 14 -->
+    <content contentuid="h8dc0c976g10dbg4755g97f5g4103b91dfb43" version="1">Hit Dice Remaining: 15</content><!-- Hit Dice Remaining: 15 -->
+    <content contentuid="h24a539c1gee21g4e67g84d7g709721659ee3" version="1">Hit Dice Remaining: 16</content><!-- Hit Dice Remaining: 16 -->
+    <content contentuid="hfcb50a94g61f1g43bfgaa39g07fcb3a6b53c" version="1">Hit Dice Remaining: 17</content><!-- Hit Dice Remaining: 17 -->
+    <content contentuid="h4f3609d8gb3abg45f4g81efgbe06c005895c" version="1">Hit Dice Remaining: 18</content><!-- Hit Dice Remaining: 18 -->
+    <content contentuid="h3d517b5age021g4cc3gbe89g3cc2327661d2" version="1">Hit Dice Remaining: 19</content><!-- Hit Dice Remaining: 19 -->
+    <content contentuid="hb8186981gd604g49a1g9d41g1b062d8665f6" version="1">Hit Dice Remaining: 20</content><!-- Hit Dice Remaining: 20 -->
+
     <!-- Status Boost Description -->
     <content contentuid="h2f4288c1g1e4fg4852g80e1g09db0b94bb3d" version="1">Taking a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content><!-- Short Rest -->
     <content contentuid="h910d365egd00ag49abg853agfeec0d6e5137" version="1">Focusing on avoiding attacks.&lt;br&gt;&lt;Br&gt;&lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against the affected entity have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;, and the entity has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;The status is removed if you're either incapacitated or immobilized.</content><!-- Dodge -->
@@ -114,7 +152,9 @@
     <content contentuid="h74e9fb3fg63b3g4360g9a60g3452e6fc60a8" version="1">Spotted by an enemy using &lt;LSTag Type="Spell" Tooltip="Shout_SeeInvisibility_Seek"&gt;Sense Hidden Presence&lt;/LSTag&gt;.</content><!-- Found Sneaking -->
     <content contentuid="h17a22ad1g17dbg4d8bgb96eg7eea34b956fb" version="1">Your jump distance is doubled for the turn.</content><!-- Step of the Wind -->
     <content contentuid="h168680a7g6785g4643g97e9gd531b76e057f" version="1">Can make one more unarmed attack as part of your Flurry of Blows.</content><!-- Flurry of Blows -->
-    
+    <content contentuid="hd4d5f4c0g1a6bg4040gbc96g909d8d22bce1" version="1">Affected entity's fists are flickering with flame. It can perform fire unarmed attacks from a [2] distance and dealing an additional [1].</content><!-- Fangs of the Fire Snake -->
+    <content contentuid="he2ed8aa6gc245g44ffg98efg20afbeba5bf7" version="1">You're hearing the Bard's performance. The first time you regain hit points by spending Hit Dice, you'll regain an extra [1].</content><!-- Song of Rest: Aura -->
+
     <!-- Status Downed Description -->
     <content contentuid="h788b3d9dgb19cg43adg8d49gdb0f922e7400" version="1">If you reach 0 hit points, you fall Unconscious and must make Death Saving Throws. On 3 successes, you stop bleeding out and become Stable. On 3 failures, you die.
 
@@ -190,4 +230,8 @@ If you regain any Hit Points, the condition is removed. If an ally &lt;LSTag Typ
     <content contentuid="hc2a51188g0925g4599g981bg32cd90d92c01" version="1">&lt;LSTag Type="Image" Info="SoftWarning"/&gt; Invisibility ends early if you attack or cast another spell.</content>
     <content contentuid="hb4b0e8ccge8a7g4844g946cg52e24f6422ea" version="1">&lt;LSTag Type="Image" Info="SoftWarning"/&gt; Invisibility ends early if you move, attack or cast another spell.</content>
     <content contentuid="hea1370edgac4dg4a8cg8a43g373b34184b7e" version="1">&lt;LSTag Type="Image" Info="SoftWarning"/&gt; Invisibility ends early if you attack, cast another spell or enter a brightly lit area.</content>
+
+    <!-- GUI -->
+    <content contentuid="h8ff2772fg1e8ag4927gb7b2ga85b3601cb31" version="1">Stop your party for a brief period, during which they can use Hit Dice to restore &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;. Warlocks restore their &lt;LSTag Tooltip="SpellSlot"&gt;spell slots&lt;/LSTag&gt;.</content><!-- Short Rest -->
+    <content contentuid="h6e813ec6g8ba4g4fabgaa61g1fe89999fec5" version="1">Go to camp and end the day.&lt;br&gt;&lt;br&gt;You can use &lt;LSTag Tooltip="CampSupplies"&gt;camp supplies&lt;/LSTag&gt; to regain &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;, &lt;LSTag Tooltip="SpellSlot"&gt;spell slots&lt;/LSTag&gt;, and half each character's total Hit Dice.</content><!-- Long Rest -->
 </contentList>
