@@ -218,22 +218,24 @@ function RAW_LoadModOptions(shouldPrint)
     RAW_PrintIfDebug("====================================================================================================\n", shouldPrint)
 end
 
-function RAW_LoadCustomizableOptionValue(fileName, default, isValid)
+function RAW_LoadCustomizableOptions(fileName, default)
     local filePath = filesPath .. fileName
-    RAW_PrintIfDebug(CentralizedString("Searching for User file " .. filePath), RAW_ShouldPrint_ModOptions)
+    RAW_PrintIfDebug("Searching for User file " .. filePath, RAW_ShouldPrint_ModOptions)
     local ok, optionsFile = pcall(Ext.IO.LoadFile, filePath)
     if not ok or not optionsFile then
-        RAW_PrintIfDebug(CentralizedString("User " .. filePath .. " not found. Will create one!"), RAW_ShouldPrint_ModOptions, RAW_PrintTypeWarning)
-        Ext.IO.SaveFile(filePath, tostring(default))
+        RAW_PrintIfDebug("\tUser " .. filePath .. " not found. Will create one!", RAW_ShouldPrint_ModOptions, RAW_PrintTypeWarning)
+        Ext.IO.SaveFile(filePath, default)
         return nil
     end
 
-    if not isValid(optionsFile) then
-        RAW_PrintIfDebug(CentralizedString("Invalid " .. filePath .. " file. Did not load info!"), RAW_ShouldPrint_ModOptions, RAW_PrintTypeError)
-        return nil
+    local ok, options = pcall(Ext.Json.Parse, optionsFile)
+    if not ok then
+        RAW_PrintIfDebug("\tInvalid " .. filePath .. " file. Did not load info!", RAW_ShouldPrint_ModOptions, RAW_PrintTypeError)
+		return nil
     end
 
-    return optionsFile
+    RAW_PrintIfDebug(RAW_ColoredText("\tUser " .. filePath .. " loaded successfully!", RAW_ColorTextCode_Green), RAW_ShouldPrint_ModOptions)
+    return options
 end
 
 function RAW_LoadCustomizableOptionList(fileName)

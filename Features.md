@@ -49,6 +49,14 @@
 * Level 3: Shadowy Tendrils random outcome only damages enemies
 * Level 3: Fixes Wild Magic: Teleport applying to everyone around the Barbarian, for some reason (vanilla bug)
 
+## Bard ⚙️ `bard`
+_Depends on: [`shortRest`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#short-rest-%EF%B8%8F-shortrest)_
+* Level 2: Song of Rest
+  - Is now a Passive, giving the following benefit: performing a song during a Short Rest will give yourself and each ally in range 1d6 extra healing on the first Hit Die spent. Increases to 1d8 at level 9
+
+## Cleric ⚙️ `cleric`
+* Level 2: Turn Undead duration adjusted to 10 turns
+
 ## Concentration Failsafe ⚙️ `concentration_failsafe`
 _Quality of Life feature_
 * Provides a toggleable passive for players that prevents casting spells that require Concentration while concentrating on another spell.
@@ -56,7 +64,7 @@ _Quality of Life feature_
 * Given the implementation, spells that are concentration but don't give the caster a status might result in the concentration spells being blocked even though the caster ended concentration manually (or timeout). Basically taking any action (even moving) will remove the blockage, but if nothing works, just untoggle the passive to remove the blockage.
 
 ## Default Actions ⚙️ `defaultActions`
-_Depended by: [`extraAttack`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#extra-attack-%EF%B8%8F-extraattack)_, [`feats`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#feats-%EF%B8%8F-feats)
+_Depended by: [`extraAttack`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#extra-attack-%EF%B8%8F-extraattack), [`feats`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#feats-%EF%B8%8F-feats)_
 
 Thanks [Kilay](https://www.nexusmods.com/users/26711484) and [ogugght](https://www.nexusmods.com/users/176938878) for the icons! ❤️
 * Shove is an action (from bonus action). It's a spell container with the option to push (fixed 1.5 m) or knock prone
@@ -124,6 +132,7 @@ Thanks [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?gameId=3474
 Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?gameId=3474) for his initial implementation on [(See) Invisibility Rework](https://www.nexusmods.com/baldursgate3/mods/3902) was the base for this option. However, the mod is now redundant and **incompatible** with this option!
 * Invisibility alone no longer makes the character completely undetectable, only providing Advantage to attack rolls against enemies that can't see invisible and Disadvantage when being attacked by enemies that can't see invisible
 * Spells that require the caster to see the target also can't be used against an invisible creature, unless the caster has See invisibility or similar
+  - _I highly recommend using [jjdoorframe's True Darkness](https://www.nexusmods.com/baldursgate3/mods/13542), which complements this option by doing the exact same thing when the caster is blinded_
 * Attacks of Opportunity are also not possible against targets that can't be seen
 * Normal Invisibility is no longer removed by being damaged, interacting with items or being _wet_ 💧. Only attacking and casting a spell will remove Invisibility
 * Greater Invisibility is no longer removed at all (no saves)
@@ -236,12 +245,24 @@ Major thanks to [dr. kekyll](https://next.nexusmods.com/profile/drkekyll/mods?ga
 </details>
 
 ## Monk ⚙️ `monk`
-* Level 1: Martial Arts Bonus Unarmed Strike changed from a temporary spell to instead modify the base Unarmed Strike that is always available to players (_see [`defaultActions`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#default-actions-%EF%B8%8F-defaultactions)_)
+> [!NOTE]
+> _Monk is purposely not fully RAW, as Monk is arguably one of the weakest classes in 5e14. Some of Larian's homebrew were kept in this mod, as they closely resemble changes made either in TCE or 5e24. Other changes were made as QoL or thematic features._
+
+* Level 1: Martial Arts Bonus Unarmed Strike changed from a temporary spell to a permanent spell that is only usable after attacking with your action first
 * Level 1: Removes Ki Points and Flurry of Blows
+* Level 2: All monk save DCs now properly use Wisdom on the calculation
 * Level 2: Gives Ki Points and Flurry of Blows on the correct level (total amount of Ki Points reduced by 1 to the correct value)
 * Level 2: Flurry of Blows is only available after attacking with your action and both attacks are separate, not needing to be against the same target
 * Level 2: Step of the Wind (both Dash and Disengage) doubles your jumping distance for the turn
 * Level 2: Specifies that Patient Defense has the same removal conditions as Dodge
+* Level 5: Introduces a Interrupt for Stunning Strike. Also fixes the duration of stunned to be until the end of the Monk's next turn
+
+## Monk (Way of the Four Elements) ⚙️ `monk_fourElements`
+* Level 3: Fangs of the Fire Snake
+  - Initial attack damage changed to be entirely fire damage (`Unarmed Damage + 1d10 + Dex Mod`)
+  - Provides temporary spells for the remainder of the turn, to make unarmed attacks with increased range (same range as the initial ability), dealing fire damage (`Unarmed Damage + 1d4 + Dex Mod`)
+  - Animation changed to not use equipped weapon
+* Level 3: Fist of Four Thunders now allows for bonus action unarmed strike after, like all other Elemental Disciplines
 
 ## Prone ⚙️ `prone`
 * Removes the disadvantage on Strength and Dexterity Saving Throws when Prone, and adds the Disadvantage to Ranged Attack Rolls
@@ -262,11 +283,42 @@ _Depends on: [`rogue`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogu
 * Level 3: Second-Story Work now provides a Jump with distance scaling with Dexterity
 
 ## Short Rest ⚙️ `shortRest`
-* Short Rest puts the characters in a standby mode and provides them with 1 new spell
-  - End Short Rest: Ends the Short Rest standby mode
+_Depended by: [`bard`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#bard-%EF%B8%8F-bard)_
+* Short Resting puts the characters in a standby mode, allowing them to use Hit Dice to regain Hit Points. Some temporary spells are added to all characters:
+  - Spend Hit Die spells, based on the class levels of the character
+  - End Short Rest spell to end the standby mode
+* Since the main bottleneck of resting is Hit Dice, there's no reason to limit the amount of Short Rests to 2. However, editing the amount of available Short Rests per day is not possible on an existing save. Because of that, every character receives a spell that provides the benefits of a Short Rest and have unlimited uses
 * Some abilities are only available while short resting:
   - Druid's Natural Recovery (Circle of the Land)
   - Wizard's Arcane Recovery
+* A Full Long Rest (with proper camp supplies) will restore spent Hit Dice, up to a number of dice equal to half of the character's total number of them (rounded up), prioritizing bigger Hit Dice before smaller ones
+  - _A Partial Long Rest (without all necessary camp supplies) will restore no Hit Dice_
+* Respec also restores all Hit Dice to avoid potential bugs
+* Due to technical limitations, the Durable feat was changed to restore the maximum possible value per Hit Die spent, instead of making the minimum value twice the character's Constitution Modifier
+* Performance of musics during a Short Rest will not be interrupted by spending Hit Dice 🎵
+  - _A `Stop Performance` spell was added to the Performance container, since you can't otherwise stop performing during a Short Rest_
+
+### 🔧 Customization
+
+* All 12 base classes are properly covered by the Hit Dice mechanic. Any other custom class will, by default, be assigned a d8 Hit Die
+* If you wish to add a different Hit Die to a modded class or change the Hit Die of a default one, you can do so by including them in the file `shortRest\Classes_HitDice.json`, using the Class UUID as the key and the desired Hit Die value as the value, structuring it like a json, as demonstrated in the example below
+
+<details>
+  <summary>Example of Classes_HitDice.json</summary>
+  <p>
+
+  * In the example below, Fighter (`721dfac3-92d4-41f5-b773-b7072a86232f`) was changed to get a d12 and the [Artificer](https://www.nexusmods.com/baldursgate3/mods/1779) (`03f972eb-de3c-4cdb-9050-e8e3fa0526eb`) custom class was specified as a d8 (which is redundant, since the default is a d8 anyway)
+  * Pay close attention to the lack of `,` at the last line
+
+    ```json
+    {
+      "721dfac3-92d4-41f5-b773-b7072a86232f" : "12",
+      "03f972eb-de3c-4cdb-9050-e8e3fa0526eb" : "8"
+    }
+    ```
+
+  </p>
+</details>
 
 ## Spells ⚙️ `spells`
 ❗️ I highly recommend using [jjdoorframe's True Darkness](https://www.nexusmods.com/baldursgate3/mods/13542) to make Darkness RAW
@@ -397,7 +449,7 @@ _Depended by: [`rogue`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rog
 * To use this option, I recommend also using the [`freeWeaponEquip`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#free-weapon-equip-%EF%B8%8F-freeweaponequip) option, so you can always equip one weapon per turn for free, allowing you to equip one weapon as part of your throwing action
 
 ## Two Weapon Fighting ⚙️ `twoWeaponFighting`
-_Depended by: [`rogue`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogue-%EF%B8%8F-rogue), [`rogue_thief`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogue-thief-%EF%B8%8F-rogue_thief)_, [`throw`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#throw-%EF%B8%8F-throw)
+_Depended by: [`rogue`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogue-%EF%B8%8F-rogue), [`rogue_thief`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#rogue-thief-%EF%B8%8F-rogue_thief), [`throw`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#throw-%EF%B8%8F-throw)_
 * Removes the automatic off-hand bonus attack option when Dual Wielding (This removes Dual Wielding AoO as well)
 * The Off-Hand Attack is only available after attacking with the main hand weapon while Dual Wielding (or when outside of Combat)
 

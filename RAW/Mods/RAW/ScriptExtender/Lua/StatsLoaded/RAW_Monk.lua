@@ -1,25 +1,28 @@
+local modOption = "monk"
+local debugLog = IsModOptionLogging(modOption)
+
 local ENUM_RAW_MonkResources
 
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_Monk()
-    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_Monk)
-    RAW_PrintIfDebug(CentralizedString("Option: monk"), RAW_PrintTable_Monk)
+    RAW_PrintIfDebug("\n====================================================================================================", debugLog)
+    RAW_PrintIfDebug(CentralizedString("Option: " .. modOption), debugLog)
 
-    if not IsModOptionEnabled("monk") then
-        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_Monk)
-        RAW_PrintIfDebug(CentralizedString("Skipping the Monk Changes"), RAW_PrintTable_Monk)
-        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Monk)
+    if not IsModOptionEnabled(modOption) then
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), debugLog)
+        RAW_PrintIfDebug(CentralizedString("Skipping the Monk Changes"), debugLog)
+        RAW_PrintIfDebug("====================================================================================================\n", debugLog)
         return
     end
 
-    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_Monk)
-    RAW_PrintIfDebug(CentralizedString("Starting the Monk Changes"), RAW_PrintTable_Monk)
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), debugLog)
+    RAW_PrintIfDebug(CentralizedString("Starting the Monk Changes"), debugLog)
 
-    RAW_ApplyStaticData(ENUM_RAW_MonkResources, RAW_PrintTable_Monk)
+    RAW_ApplyStaticData(ENUM_RAW_MonkResources, debugLog)
 
-    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Monk Changes"), RAW_PrintTable_Monk)
-    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Monk)
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Monk Changes"), debugLog)
+    RAW_PrintIfDebug("====================================================================================================\n", debugLog)
 end
 
 ---------------------------------------- MODELS ----------------------------------------
@@ -57,6 +60,13 @@ ENUM_RAW_MonkResources = {
             ["PassivesAdded"] = {
                 ["Type"] = "add",
                 ["Value"] = "FlurryOfBlowsUnlock",
+            },
+        },
+        -- Monk Level 5
+        ["7b354b75-537f-464e-a28d-cafa72323ab9"] = {
+            ["PassivesAdded"] = {
+                ["Type"] = "add",
+                ["Value"] = "RAW_StunningStrike_Unlock",
             },
         },
     },

@@ -21,3 +21,9 @@ for _, attributes in pairs(ModOptions) do
         overrideFiles(files.disabled)
     end
 end
+
+local RAW_LocalizationPath = "Localization/"
+
+Ext.Require(RAW_LocalizationPath .. "RAW_ShortRest.lua")
+
+RAW_ShortRestLocalization()

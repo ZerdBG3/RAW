@@ -19,7 +19,7 @@
     },
     "barbarian": {
         "displayName": "Barbarian",
-        "description": "Changes to Reckless Attack",
+        "description": "Changes to Reckless Attack.",
         "enabled": true,
         "value": null,
         "log": false,
@@ -61,6 +61,44 @@
             "disabled": [
                 {
                     "from": "Public/RAW/Stats/Generated/Data/Barbarian_WildMagic.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
+    "bard": {
+        "displayName": "Bard",
+        "description": "Changes to Song of Rest.",
+        "enabled": true,
+        "value": null,
+        "log": false,
+        "dependencies": [
+            "shortRest"
+        ],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Bard.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
+    "cleric": {
+        "displayName": "Cleric",
+        "description": "Increased Turn Undead duration.",
+        "enabled": true,
+        "value": null,
+        "log": false,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Cleric.txt",
                     "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
                 }
             ]
@@ -387,6 +425,24 @@
             ]
         }
     },
+    "monk_fourElements": {
+        "displayName": "Monk (Four Elements)",
+        "description": "Adjust specific disciplines, without necessarily making them RAW.",
+        "enabled": true,
+        "value": null,
+        "log": false,
+        "dependencies": [],
+        "conflicts": [],
+        "files": {
+            "enabled": [],
+            "disabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Monk_FourElements.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ]
+        }
+    },
     "prone": {
         "displayName": "Prone",
         "description": "Changes the advantage and disadvantage conditions while Prone.",
@@ -448,7 +504,7 @@
     },
     "shortRest": {
         "displayName": "Short Rest",
-        "description": "Short Rest becomes an active downtime period.",
+        "description": "Short Rest becomes an active downtime period, with Hit Dice usage included.",
         "enabled": true,
         "value": null,
         "log": false,

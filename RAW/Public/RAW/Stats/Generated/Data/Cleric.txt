@@ -1,0 +1,6 @@
+new entry "Shout_TurnUndead"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_TurnUndead"
+data "SpellSuccess" "ApplyStatus(TURNED, 100, 10)"
+data "TooltipStatusApply" "ApplyStatus(TURNED, 100,  10)"

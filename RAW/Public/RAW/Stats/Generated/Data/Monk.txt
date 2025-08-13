@@ -2,22 +2,34 @@
 // -------------------- Martial Arts --------------------
 // ------------------------------------------------------
 
-// Also unlocks the unarmed attack for NPC monks
 new entry "MartialArts_BonusUnarmedStrike"
 type "PassiveData"
 using "MartialArts_BonusUnarmedStrike"
-data "Conditions" "IsMeleeAttack() and IsMonkWeaponAttack() and not (SpellId('RAW_Target_UnarmedAttack') and HasUseCosts('BonusActionPoint', true)) and not SpellId('Target_FlurryOfBlows') and (not Combat(context.Source) or HasStatus('RAW_CURRENT_TURN', context.Source))"
-data "StatsFunctors" "ApplyStatus(SELF,MARTIAL_ARTS_BONUS_UNARMED_STRIKE,100,1)"
-data "Boosts" "UnlockSpell('RAW_Target_UnarmedAttack')"
+data "Conditions" "IsMeleeAttack() and IsMonkWeaponAttack() and not SpellId('Target_UnarmedStrike_Monk') and not SpellId('RAW_Projectile_FangsOfTheFireSnake_BonusAction') and not SpellId('Target_FlurryOfBlows') and not SpellId('RAW_Projectile_FangsOfTheFireSnake_FlurryOfBlows') and not HasStatus('RAW_MARTIAL_ARTS_BONUS_UNARMED_STRIKE_DEPLETED',context.Source) and (not Combat(context.Source) or HasStatus('RAW_CURRENT_TURN', context.Source))"
+data "Boosts" "UnlockSpell(Target_UnarmedStrike_Monk)"
 
 new entry "MARTIAL_ARTS_BONUS_UNARMED_STRIKE"
 type "StatusData"
 data "StatusType" "BOOST"
 using "MARTIAL_ARTS_BONUS_UNARMED_STRIKE"
+data "Boosts" "UnlockSpellVariant(SpellId('Target_UnarmedStrike_Monk'),ModifyIconGlow());UnlockSpellVariant(SpellId('RAW_Projectile_FangsOfTheFireSnake_BonusAction'),ModifyIconGlow());UnlockSpellVariant(SpellId('Target_FlurryOfBlows'),ModifyIconGlow());UnlockSpellVariant(SpellId('RAW_Projectile_FangsOfTheFireSnake_FlurryOfBlows'),ModifyIconGlow())"
 data "TickType" "EndTurn"
-data "Boosts" "UnlockSpellVariant(SpellId('RAW_Target_UnarmedAttack'),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint),ModifyIconGlow(),ModifyVisuals(Action_Monk_FreeUnarmedStrike),ModifyTooltipDescription()),UnlockSpellVariant(SpellId('Target_FlurryOfBlows'),ModifyIconGlow())"
-data "RemoveEvents" "OnSpellCast"
-data "RemoveConditions" "SpellId('RAW_Target_UnarmedAttack')"
+data "StackType" "Ignore"
+data "OnRemoveFunctors" "ApplyStatus(RAW_MARTIAL_ARTS_BONUS_UNARMED_STRIKE_DEPLETED, 100, 1)"
+
+new entry "RAW_MARTIAL_ARTS_BONUS_UNARMED_STRIKE_DEPLETED"
+type "StatusData"
+data "StatusType" "BOOST"
+data "TickType" "StartTurn"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+new entry "Target_UnarmedStrike_Monk"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_UnarmedStrike_Monk"
+data "RequirementConditions" "HasStatus('MARTIAL_ARTS_BONUS_UNARMED_STRIKE')"
+data "RequirementEvents" "OnStatusApplied;OnStatusRemoved;OnTurn;OnCombatEnded"
+data "SpellFlags" "IsMelee;IsHarmful;DisableBlood"
 
 // ---------------------------------------------------------
 // -------------------- Flurry of Blows --------------------
@@ -29,7 +41,7 @@ data "SpellType" "Target"
 using "Target_FlurryOfBlows"
 data "SpellProperties" "IF(HasStatus('MARTIAL_ARTS_BONUS_UNARMED_STRIKE',context.Source)):ApplyStatus(SELF,RAW_FLURRY_OF_BLOWS,100,1)"
 data "SpellRoll" "Attack(AttackType.MeleeUnarmedAttack)"
-data "SpellSuccess" "DealDamage(UnarmedDamage, Bludgeoning)"
+data "SpellSuccess" "DealDamage(UnarmedDamage, Bludgeoning);AI_ONLY:DealDamage(UnarmedDamage, Bludgeoning)"
 data "Description" "hf128eaa8g9fb1g4a91g92eegf734365be5dc;1"
 data "DescriptionParams" "1"
 data "TooltipDamageList" "DealDamage(MartialArtsUnarmedDamage, Bludgeoning)"
@@ -46,10 +58,10 @@ data "Description" "h168680a7g6785g4643g97e9gd531b76e057f;1"
 data "Icon" "Action_Monk_FlurryOfBlows"
 data "StackId" "RAW_FLURRY_OF_BLOWS"
 data "TickType" "EndTurn"
-data "Boosts" "UnlockSpellVariant(SpellId('Target_FlurryOfBlows'),ModifyUseCosts(Replace,BonusActionPoint,0,0,BonusActionPoint),ModifyUseCosts(Replace,KiPoint,0,0,KiPoint),ModifyIconGlow(),ModifyTooltipDescription())"
+data "Boosts" "UnlockSpellVariant(SpellId('Target_FlurryOfBlows'),ModifyUseCosts(Replace,BonusActionPoint,0,0,BonusActionPoint),ModifyUseCosts(Replace,KiPoint,0,0,KiPoint),ModifyIconGlow(),ModifyTooltipDescription());UnlockSpellVariant(SpellId('RAW_Projectile_FangsOfTheFireSnake_FlurryOfBlows'),ModifyUseCosts(Replace,BonusActionPoint,0,0,BonusActionPoint),ModifyUseCosts(Replace,KiPoint,0,0,KiPoint),ModifyIconGlow(),ModifyTooltipDescription())"
 data "OnApplyFunctors" "RemoveStatus(MARTIAL_ARTS_BONUS_UNARMED_STRIKE)"
 data "RemoveEvents" "OnSpellCast"
-data "RemoveConditions" "SpellId('Target_FlurryOfBlows')"
+data "RemoveConditions" "SpellId('Target_FlurryOfBlows') or SpellId('RAW_Projectile_FangsOfTheFireSnake_FlurryOfBlows')"
 
 // ----------------------------------------------------------
 // -------------------- Step of the Wind --------------------
@@ -84,3 +96,83 @@ type "SpellData"
 data "SpellType" "Shout"
 using "Shout_PatientDefense"
 data "Description" "h4cd88f4fg9d12g4734gbe27g2f91933f51ec;1"
+
+// ---------------------------------------------------------
+// -------------------- Stunning Strike --------------------
+// ---------------------------------------------------------
+
+new entry "RAW_StunningStrike_Unlock"
+type "PassiveData"
+data "DisplayName" "h296f1c49ga414g4229g9f23gc1a323ab4257;1"
+data "Properties" "IsHidden"
+data "Boosts" "UnlockInterrupt(RAW_Interrupt_StunningStrike);"
+
+new entry "RAW_Interrupt_StunningStrike"
+type "InterruptData"
+data "DisplayName" "h296f1c49ga414g4229g9f23gc1a323ab4257;1"
+data "Description" "h9a6768d0gcdfbg42c4g9c9dg9a4714110916;1"
+data "DescriptionParams" "1"
+data "Icon" "Action_Monk_StunningStrike"
+data "InterruptContext" "OnCastHit"
+data "InterruptContextScope" "Self"
+data "Container" "YesNoDecision"
+data "Conditions" "Self(context.Source,context.Observer) and not Self() and HasDamageEffectFlag(DamageFlags.Hit) and (IsMeleeWeaponAttack() or IsMeleeUnarmedAttack()) and not (SpellId('Target_StunningStrike') or SpellId('Target_StunningStrike_Unarmed')) and not AnyEntityIsItem();"
+data "Roll" "not SavingThrow(Ability.Constitution, SourceSpellDC(10,context.Observer,Ability.Wisdom),false,false,context.Target)"
+data "Success" "IF(not Combat(context.Source) or HasStatus('RAW_CURRENT_TURN', context.Source)):ApplyStatus(OBSERVER_TARGET,RAW_STUNNED_HELPER,100,0);IF(Combat(context.Source) and not HasStatus('RAW_CURRENT_TURN', context.Source)):ApplyStatus(OBSERVER_TARGET,RAW_STUNNED_TICKINGWITHSOURCE,100,1)"
+data "Cost" "KiPoint:1"
+data "Stack" "StunningStrike"
+data "InterruptDefaultValue" "Ask;Enabled"
+data "EnableCondition" "HasActionResource('KiPoint',1,0,false,false,context.Source) and (not HasStatus('SG_Polymorph') or Tagged('MINDFLAYER') or HasStatus('SG_Disguise'))"
+data "EnableContext" "OnActionResourcesChanged;OnStatusApplied;OnStatusRemoved"
+
+new entry "RAW_STUNNED_HELPER"
+type "StatusData"
+data "StatusType" "BOOST"
+data "OnApplyFunctors" "ApplyStatus(RAW_STUNNED_TICKINGWITHSOURCE,100,2);SetStatusDuration(RAW_STUNNED_TICKINGWITHSOURCE,2,SetMinimum)"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+
+new entry "RAW_STUNNED_TICKINGWITHSOURCE"
+type "StatusData"
+data "StatusType" "INCAPACITATED"
+using "STUNNED"
+data "StatusPropertyFlags" "InitiateCombat;OverheadOnTurn;TickingWithSource"
+
+// ------------------------------------------------------
+// -------------------- Monk Save DC --------------------
+// ------------------------------------------------------
+
+new entry "Target_INT_StunningStrike_Unarmed_OncePerTurn"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_INT_StunningStrike_Unarmed_OncePerTurn"
+data "SpellSuccess" "AI_IGNORE:IF(not SavingThrow(Ability.Constitution, RAW_MonkSaveDC())):ApplyStatus(RAW_STUNNED_HELPER,100,0);DealDamage(UnarmedDamage , Bludgeoning); AI_IGNORE:ApplyStatus(STUNNED_DEATHSHEAD_USED,100,2); AI_ONLY:IF(not SavingThrow(Ability.Constitution, RAW_MonkSaveDC())):ApplyStatus(STUNNED,100,1)"
+
+new entry "Target_OpenHandTechnique_Knock"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_OpenHandTechnique_Knock"
+data "SpellSuccess" "DealDamage(UnarmedDamage , Bludgeoning);Cast2[DealDamage(UnarmedDamage , Bludgeoning);IF(not SavingThrow(Ability.Dexterity, RAW_MonkSaveDC())):ApplyStatus(PRONE,100,1)]"
+
+new entry "Target_OpenHandTechnique_Push"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_OpenHandTechnique_Push"
+data "SpellSuccess" "DealDamage(UnarmedDamage , Bludgeoning);Cast2[DealDamage(UnarmedDamage , Bludgeoning);IF(not SavingThrow(Ability.Strength, RAW_MonkSaveDC())):Force(5)]"
+
+new entry "Target_StunningStrike"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_StunningStrike"
+data "SpellSuccess" "AI_IGNORE:IF(not SavingThrow(Ability.Constitution, RAW_MonkSaveDC())):ApplyStatus(RAW_STUNNED_HELPER,100,0); DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType); ExecuteWeaponFunctors(MainHand); AI_ONLY:IF(not SavingThrow(Ability.Constitution, RAW_MonkSaveDC())):ApplyStatus(STUNNED,100,1)"
+
+new entry "Target_StunningStrike_Unarmed"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_StunningStrike_Unarmed"
+data "SpellSuccess" "AI_IGNORE:IF(not SavingThrow(Ability.Constitution, RAW_MonkSaveDC())):ApplyStatus(RAW_STUNNED_HELPER,100,0);DealDamage(UnarmedDamage , Bludgeoning); AI_ONLY:IF(not SavingThrow(Ability.Constitution, RAW_MonkSaveDC())):ApplyStatus(STUNNED,100,1)"
+
+new entry "Target_WaterWhip"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_WaterWhip"
+data "SpellRoll" "not SavingThrow(Ability.Dexterity, RAW_MonkSaveDC())"

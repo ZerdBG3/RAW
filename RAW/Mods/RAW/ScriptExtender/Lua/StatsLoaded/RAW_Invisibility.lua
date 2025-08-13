@@ -193,6 +193,7 @@ ENUM_RAW_SpellsAgainstInvisibleTargets = RAW_Set {
     "Target_Enthrall",
     "Target_Eyebite",
     "Target_FleshToStone",
+    "Target_GraspingVine_Pull",
     "Target_Harm",
     "Target_Haste",
     "Target_Heal",
@@ -204,6 +205,7 @@ ENUM_RAW_SpellsAgainstInvisibleTargets = RAW_Set {
     "Target_HoldPerson",
     "Target_HuntersMark",
     "Target_Knock",
+    "Target_Levitate",
     "Projectile_MagicMissile",
     "Shout_HealingWord_Mass",
     "Target_IrresistibleDance",
@@ -220,10 +222,17 @@ ENUM_RAW_SpellsAgainstInvisibleTargets = RAW_Set {
     "Target_ViciousMockery",
 
     -- 5eSpells
+    -- PHB
+    "Target_DominateMonster",
+    "Target_Feeblemind",
+    "Target_FingerOfDeath",
+    "Shout_WaterWalk",
+
     -- Xanathar spells
     "Target_Catnap",
     "Target_CauseFear",
     "Target_CharmMonster",
+    "Target_EnemiesAbound",
     "Target_Frostbite",
     "Target_Infestation",
     "Target_LifeTransference",

@@ -26,7 +26,8 @@ Zerd's Rules As Written for Baldur's Gate 3
   - Arnaud's [RAW Addon](https://github.com/BG3-RAW-Mods/bg3-RAW-addon): expands on RAW changes, implementing things I didn't get to do yet
   - Celes' [5e Spells](https://www.nexusmods.com/baldursgate3/mods/125): needs no introduction. Adds a bunch of spells, all following 5e rules
   - dr. kekyll's [Summon Initiative Fixer](https://www.nexusmods.com/baldursgate3/mods/8692?tab=description): pairs well with the [`intangibleSummons`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#intangible-summons-%EF%B8%8F-intangiblesummons) option from this mod, guaranteeing the appropriate summons will play at the same turn as the caster
-  - jjdoorframe's [True Darkness](https://www.nexusmods.com/baldursgate3/mods/13542): makes the Darkness spell RAW, which is such a huge work that it justifies being a whole mod on its own
+  - jjdoorframe's [True Darkness](https://www.nexusmods.com/baldursgate3/mods/13542): not only makes the Darkness spell RAW, but also changes the Blinded condition and Heavy Obscurement as a whole, which is such a huge work that it justifies being a whole mod on its own
+    - Make sure to get the patches as well. Place the Darkness mod below RAW, and the patches below the main Darkness mod
 
 # Languages
 * In-game content is currently translated to the following languages

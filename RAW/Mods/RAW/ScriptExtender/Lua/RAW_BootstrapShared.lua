@@ -10,6 +10,7 @@ local RAW_StatsLoadedPath = "StatsLoaded/"
 
 Ext.Require(RAW_StatsLoadedPath .. "RAW_Attunement.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_Barbarian_Berserker.lua")
+Ext.Require(RAW_StatsLoadedPath .. "RAW_Bard.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_CantripsScaling.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_CharacterPassives.lua")
 Ext.Require(RAW_StatsLoadedPath .. "RAW_Concentration.lua")
@@ -38,6 +39,7 @@ local function RAW_StatsLoaded()
 
     RAW_Attunement()
     RAW_Barbarian_Berserker()
+    RAW_Bard()
     -- RAW_CantripsScaling()
     RAW_CharacterPassives()
     RAW_Concentration()
@@ -68,6 +70,7 @@ Ext.Events.StatsLoaded:Subscribe(RAW_StatsLoaded)
 local RAW_OsirisFilesPath = "Osiris/"
 
 Ext.Require(RAW_OsirisFilesPath .. "RAW_Invisibility.lua")
+Ext.Require(RAW_OsirisFilesPath .. "RAW_ShortRest.lua")
 Ext.Require(RAW_OsirisFilesPath .. "RAW_WeaponSets.lua")
 
 if Ext.IsServer() then
@@ -76,6 +79,7 @@ if Ext.IsServer() then
     RAW_PrintIfDebug("====================================================================================================\n", RAW_ShouldPrint_ModOptions)
 
     RAW_InvisibilityServer()
+    RAW_ShortRestServer()
     RAW_WeaponSets()
 
     RAW_PrintIfDebug("\n====================================================================================================", RAW_ShouldPrint_ModOptions)

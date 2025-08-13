@@ -25,7 +25,7 @@
                 <node id="ConditionErrors">
                     <attribute id="DisplayName" type="TranslatedString" handle="h0730e799gc410g42f2g9cceg0120ee90b886" version="1"/>
                     <attribute id="ErrorDescriptionType" type="uint8" value="0"/>
-                    <attribute id="Identifier" type="FixedString" value="RAW_SpellAgainstInbisibleTarget_False"/>
+                    <attribute id="Identifier" type="FixedString" value="RAW_SpellAgainstInvisibleTarget_False"/>
                     <attribute id="UUID" type="guid" value="a531e1f4-7b21-407b-991d-04415c142c0c"/>
                 </node>
             </children>
