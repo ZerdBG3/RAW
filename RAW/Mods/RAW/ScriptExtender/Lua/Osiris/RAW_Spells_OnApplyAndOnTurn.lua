@@ -35,10 +35,16 @@ local function RAW_RegisterOnApplyAndOnTurnSpellEvents()
         "SPIRIT_GUARDIANS_NECROTIC_4",
         "SPIRIT_GUARDIANS_NECROTIC_5",
         "SPIRIT_GUARDIANS_NECROTIC_6",
+        "SPIRIT_GUARDIANS_NECROTIC_7",
+        "SPIRIT_GUARDIANS_NECROTIC_8",
+        "SPIRIT_GUARDIANS_NECROTIC_9",
         "SPIRIT_GUARDIANS_RADIANT",
         "SPIRIT_GUARDIANS_RADIANT_4",
         "SPIRIT_GUARDIANS_RADIANT_5",
         "SPIRIT_GUARDIANS_RADIANT_6",
+        "SPIRIT_GUARDIANS_RADIANT_7",
+        "SPIRIT_GUARDIANS_RADIANT_8",
+        "SPIRIT_GUARDIANS_RADIANT_9",
         "LOW_CAZADORSPALACE_DEADGIRL_STATUS"
     }
 
@@ -111,4 +117,5 @@ function RAW_Spells_OnApplyAndOnTurn()
 
     RAW_PrintIfDebug("\n" .. CentralizedString("Finished registering OnTurn Spell Damage events"), RAW_PrintTable_Spells_OnApplyAndOnTurn)
     RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_Spells_OnApplyAndOnTurn)
+
 end
