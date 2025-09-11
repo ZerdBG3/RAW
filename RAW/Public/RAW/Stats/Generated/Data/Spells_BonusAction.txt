@@ -50,3 +50,12 @@ using "Metamagic_Quickened"
 data "DescriptionParams" "2"
 data "EnabledConditions" "HasActionResource('SorceryPoint', 2, 0, false, false, context.Source) and HasActionResource('RAW_BonusActionSpellPoint', 1, 0, false, false, context.Source)"
 data "Boosts" "UnlockSpellVariant(QuickenedSpellCheck(),ModifyUseCosts(Add,SorceryPoint,2,0),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint))"
+
+// Removing Level and IsSpell flag from actions that are not technically spells
+
+new entry "Projectile_StarryForm_Archer_Damage"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Projectile_StarryForm_Archer_Damage"
+data "Level" ""
+data "SpellFlags" "HasHighGroundRangeExtension;RangeIgnoreVerticalThreshold;IsHarmful;Temporary"

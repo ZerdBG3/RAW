@@ -292,7 +292,7 @@ _Depended by: [`bard`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#bard
   - Druid's Natural Recovery (Circle of the Land)
   - Wizard's Arcane Recovery
 * A Full Long Rest (with proper camp supplies) will restore spent Hit Dice, up to a number of dice equal to half of the character's total number of them (rounded up), prioritizing bigger Hit Dice before smaller ones
-  - _A Partial Long Rest (without all necessary camp supplies) will restore no Hit Dice_
+  - _A Partial Long Rest (without all necessary camp supplies) will restore nothing at all (it's useful to progress the story without needing to actually rest your party while you still feel like you don't need to)_
 * Respec also restores all Hit Dice to avoid potential bugs
 * Due to technical limitations, the Durable feat was changed to restore the maximum possible value per Hit Die spent, instead of making the minimum value twice the character's Constitution Modifier
 * Performance of musics during a Short Rest will not be interrupted by spending Hit Dice 🎵
@@ -300,20 +300,20 @@ _Depended by: [`bard`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#bard
 
 ### 🔧 Customization
 
-* All 12 base classes are properly covered by the Hit Dice mechanic. Any other custom class will, by default, be assigned a d8 Hit Die
-* If you wish to add a different Hit Die to a modded class or change the Hit Die of a default one, you can do so by including them in the file `shortRest\Classes_HitDice.json`, using the Class UUID as the key and the desired Hit Die value as the value, structuring it like a json, as demonstrated in the example below
+* Any class (including modded ones) will automatically use their `BaseHp` value as their Hit Die (the HP the class grants at level 1). If it is an unsupported value (meaning it's neither 6, 8, 10 nor 12), it'll use the default, which is a d8.
+* If you wish to change the Hit Die of a specific class, you can do so by including them in the file `shortRest\Classes_HitDice.json`, using the Class UUID as the key and the desired Hit Die value as the value, structuring it like a json, as demonstrated in the example below. The value has to be a supported one (either a 6, 8, 10 or 12) or it'll default to a d8.
 
 <details>
   <summary>Example of Classes_HitDice.json</summary>
   <p>
 
-  * In the example below, Fighter (`721dfac3-92d4-41f5-b773-b7072a86232f`) was changed to get a d12 and the [Artificer](https://www.nexusmods.com/baldursgate3/mods/1779) (`03f972eb-de3c-4cdb-9050-e8e3fa0526eb`) custom class was specified as a d8 (which is redundant, since the default is a d8 anyway)
+  * In the example below, Fighter (`721dfac3-92d4-41f5-b773-b7072a86232f`) was changed to get a d12 and Warlock  (`b4225a4b-4bbe-4d97-9e3c-4719dbd1487c`) was changed to get a d6.
   * Pay close attention to the lack of `,` at the last line
 
     ```json
     {
       "721dfac3-92d4-41f5-b773-b7072a86232f" : "12",
-      "03f972eb-de3c-4cdb-9050-e8e3fa0526eb" : "8"
+      "b4225a4b-4bbe-4d97-9e3c-4719dbd1487c" : "6"
     }
     ```
 

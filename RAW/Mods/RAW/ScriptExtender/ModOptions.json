@@ -516,6 +516,10 @@
                 {
                     "from": "Public/RAW/Stats/Generated/Data/ShortRest.txt",
                     "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                },
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/ShortRest_ExtraData.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
                 }
             ]
         }
@@ -703,10 +707,15 @@
         ],
         "conflicts": [],
         "files": {
-            "enabled": [],
+            "enabled": [
+                {
+                    "from": "Public/RAW/Stats/Generated/Data/Throw_Off.txt",
+                    "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
+                }
+            ],
             "disabled": [
                 {
-                    "from": "Public/RAW/Stats/Generated/Data/Throw.txt",
+                    "from": "Public/RAW/Stats/Generated/Data/Throw_On.txt",
                     "to": "Public/RAW/Stats/Generated/Data/Empty.txt"
                 }
             ]

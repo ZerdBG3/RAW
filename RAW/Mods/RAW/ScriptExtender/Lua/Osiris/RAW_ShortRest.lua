@@ -8,7 +8,7 @@ local RAW_HitDiceStatusBase = "RAW_HIT_DICE_"
 local RAW_HitDiceUsedHelper = "RAW_HIT_DICE_HELPER_"
 local RAW_HitDiceRemainingStatusSuffix = "_LEFT_"
 
-local ENUM_RAW_ShortRestClassesHitDice
+local ENUM_RAW_ShortRestClassesHitDice = {}
 local ENUM_RAW_HitDiceValues = {"12", "10", "8", "6"}
 local RAW_ShortRestCharacterHitDice = {}
 
@@ -39,13 +39,26 @@ local function RAW_CalculateCharacterHitDice(char, entity)
     local classes = entity.Classes["Classes"]
 
     for _, class in pairs(classes) do
-        local classLevel = class.Level
-        local hitDice = ENUM_RAW_ShortRestClassesHitDice[class.ClassUUID]
-        if hitDice ~= nil then
-            RAW_ShortRestCharacterHitDice[char][hitDice] = RAW_ShortRestCharacterHitDice[char][hitDice] + classLevel
-        else
-            RAW_ShortRestCharacterHitDice[char][RAW_DefaultHitDice] = RAW_ShortRestCharacterHitDice[char][RAW_DefaultHitDice] + classLevel
+        local classData = Ext.StaticData.Get(class.ClassUUID, "ClassDescription")
+        local hitDice = RAW_DefaultHitDice
+        local className = class.ClassUUID
+        if classData ~= nil then
+            local baseHp = tostring(classData.BaseHp)
+            className = classData.Name
+            if RAW_HasValueInList(ENUM_RAW_HitDiceValues, baseHp) then
+                hitDice = baseHp
+            else
+                RAW_PrintIfDebug("\tClass " .. className .. " has invalid BaseHp value: " .. baseHp .. ". Using default value: " .. hitDice, debugLog, RAW_PrintTypeError)
+            end
         end
+
+        local overwriteHitDice = ENUM_RAW_ShortRestClassesHitDice[class.ClassUUID]
+        if overwriteHitDice ~= nil and RAW_HasValueInList(ENUM_RAW_HitDiceValues, overwriteHitDice) then
+            RAW_PrintIfDebug("\tClass " .. className .. " has hitDice overwrite: " .. overwriteHitDice, debugLog)
+            hitDice = overwriteHitDice
+        end
+
+        RAW_ShortRestCharacterHitDice[char][hitDice] = RAW_ShortRestCharacterHitDice[char][hitDice] + class.Level
     end
     RAW_PrintIfDebug("\tCharacter " .. char .. " total hitDice:", debugLog)
     RAW_PrintIfDebug(RAW_ShortRestCharacterHitDice[char], debugLog)
@@ -202,20 +215,3 @@ function RAW_ShortRestServer()
     RAW_PrintIfDebug("\n" .. CentralizedString("Finished registering the Short Rest listeners"), debugLog)
     RAW_PrintIfDebug("====================================================================================================\n", debugLog)
 end
-
----------------------------------------- MODELS ----------------------------------------
-
-ENUM_RAW_ShortRestClassesHitDice = {
-    ["d8cadb42-0ff9-4049-afaf-e5d78d06a399"] = "12", -- Barbarian
-    ["92cd50b6-eb1b-4824-8adb-853e90c34c90"] = "8", -- Bard
-    ["114e7aee-d1d4-4371-8d90-8a2080592faf"] = "8", -- Cleric
-    ["457d0a6e-9da8-4f95-a225-18382f0e94b5"] = "8", -- Druid
-    ["721dfac3-92d4-41f5-b773-b7072a86232f"] = "10", -- Fighter
-    ["c4598bdb-fc07-40dd-a62c-90cc138bd76f"] = "8", -- Monk
-    ["ff4d9497-023c-434a-bd14-82fc367e991c"] = "10", -- Paladin
-    ["36be18ba-23db-4dff-bfa6-ae105ce43144"] = "10", -- Ranger
-    ["e8b1eab0-ef11-40a2-8a0b-cee8d062bf2a"] = "8", -- Rogue
-    ["784001e2-c96d-4153-beb6-2adbef5abc92"] = "6", -- Sorcerer
-    ["b4225a4b-4bbe-4d97-9e3c-4719dbd1487c"] = "8", -- Warlock
-    ["a865965f-501b-46e9-9eaa-7748e8c04d09"] = "6", -- Wizard
-}

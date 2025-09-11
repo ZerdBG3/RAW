@@ -280,6 +280,16 @@ new entry "LOW_POLTERGEIST_INVISIBLE"
 type "StatusData"
 using "LOW_POLTERGEIST_INVISIBLE"
 data "StatusType" "BOOST"
+data "RemoveEvents" ""
+data "RemoveConditions" ""
+
+// Vanilla passive was removing the invisibility status when See Invisibility was used, which is no longer needed
+new entry "LOW_OskarsBeloved_Poltergeists_See_Invisibility"
+type "PassiveData"
+using "LOW_OskarsBeloved_Poltergeists_See_Invisibility"
+data "StatsFunctorContext" ""
+data "Conditions" ""
+data "StatsFunctors" ""
 
 // ---------------------------------------------
 // -------------------- Wet --------------------

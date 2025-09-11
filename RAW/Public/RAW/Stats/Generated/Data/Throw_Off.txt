@@ -1,0 +1,4 @@
+new entry "RAW_Throw_Throw"
+type "SpellData"
+data "SpellType" "Throw"
+using "Throw_Throw"

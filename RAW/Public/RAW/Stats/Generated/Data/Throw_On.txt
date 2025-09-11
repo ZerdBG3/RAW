@@ -12,7 +12,7 @@ data "StatsFunctorContext" "OnAttack"
 
 // No longer deals weapon damage when throwing a weapon; there are specific spells for that
 // No longer can throw living characters
-new entry "Throw_Throw"
+new entry "RAW_Throw_Throw"
 type "SpellData"
 data "SpellType" "Throw"
 using "Throw_Throw"
