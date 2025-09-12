@@ -1,9 +1,10 @@
 // Gives players the default attack spells that aren't removed when the weapons are unequipped
 
+// Passive given by Mods\RAW\ScriptExtender\Lua\StatsLoaded\RAW_WeaponSets.lua
 new entry "RAW_WeaponSets_UnlockSpells"
 type "PassiveData"
 data "Properties" "IsHidden"
-data "Boosts" "UnlockSpell(RAW_Target_MainHandAttack);UnlockSpell(RAW_Target_OffhandAttack);UnlockSpell(RAW_Projectile_MainHandAttack);UnlockSpell(RAW_Projectile_OffhandAttack);UnlockSpell(RAW_Target_UnarmedAttack)"
+data "Boosts" "UnlockSpell(RAW_Target_MainHandAttack);UnlockSpell(RAW_Target_OffhandAttack);UnlockSpell(RAW_Projectile_MainHandAttack);UnlockSpell(RAW_Projectile_OffhandAttack)"
 
 new entry "RAW_Target_MainHandAttack"
 type "SpellData"
@@ -30,10 +31,3 @@ data "SpellType" "Projectile"
 using "Projectile_OffhandAttack"
 data "RequirementConditions" "WieldingWeapon('Ammunition', true, false, context.Source) and (HasStatus('RAW_OFFHAND_HELPER') or not Combat())"
 data "RequirementEvents" "OnEquip;OnStatusApplied;OnStatusRemoved;OnTurn;OnCombatEnded"
-
-new entry "RAW_Target_UnarmedAttack"
-type "SpellData"
-data "SpellType" "Target"
-using "Target_UnarmedAttack"
-data "RequirementConditions" "not WieldingWeapon('Melee', false, false, context.Source) and not WieldingWeapon('Ammunition', false, false, context.Source)"
-data "RequirementEvents" "OnEquip"

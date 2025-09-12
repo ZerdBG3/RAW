@@ -1,0 +1,185 @@
+<contentList date="16/07/2025 13:08">
+    <!-- Action Resource Definition Name -->
+    <content contentuid="h9b9372c9g28e7g4fbcga73dgad4bfec682c1" version="1">加速術</content><!-- Haste Point -->
+    <content contentuid="h81bc6dd8ga190g4893g97f6g865ed02e1096" version="1">附贈動作環階法術</content><!-- Bonus Action Spell Point -->
+    <content contentuid="hbbebdff2g9793g4335g928bg204330014249" version="1">非附贈動作環階法術</content><!-- Not Bonus Action Spell Point -->
+    <content contentuid="hea889d6fg61e7g4b9fgbf6dg5287a8df42da" version="1">免費武器裝備</content><!-- Equip Weapon Point -->
+
+    <!-- Condition Error -->
+    <content contentuid="h0afc3739g41e7g4c3fgb280g4978d95e03ae" version="1">戰鬥中無法調諧物品</content><!-- Attunement while in combat -->
+    <content contentuid="h57e004ccg5136g4ec6gba3fg521d0e4c6626" version="1">最大調諧物品數量量</content><!-- Attunement maximum items -->
+    <content contentuid="h1eceeeb7gcaeeg46eagb8afg4ff8386033a5" version="1">已專注於一個法術</content><!-- Concentration blocker -->
+    <content contentuid="h0730e799gc410g42f2g9cceg0120ee90b886" version="1">無法指定隱形角色爲目標</content><!-- Spell against invisible target -->
+
+    <!-- Feat Description -->
+    <content contentuid="h15b473b7gf59dg40f4g9d6bg7015eb159089" version="1">當你在近戰範圍內進行弩攻擊時，&lt;LSTag Tooltip="AttackRoll"&gt;攻擊投擲&lt;/LSTag&gt;不具有&lt;LSTag Tooltip="Disadvantage"&gt;劣勢&lt;/LSTag&gt;。&lt;br&gt;&lt;br&gt;忽略弩的裝填屬性以進行額外攻擊。</content><!-- Crossbow Expert -->
+    <content contentuid="h4671f1fag7c08g4921ga35bg07713c95c4d9" version="1">即使你的武器不是&lt;LSTag Tooltip="Light"&gt;輕型&lt;/LSTag&gt;武器，你也可以使用雙武器戰鬥，你可以在你的回合免費裝備兩件武器而不是一件；並且當每隻手都拿着一件近戰武器時，你的&lt;LSTag Tooltip="ArmourClass"&gt;護甲等級&lt;/LSTag&gt;獲得 +1 加值。你不能雙持&lt;LSTag Tooltip="Heavy"&gt;重型&lt;/LSTag&gt;武器。</content><!-- Dual Wielder -->
+
+    <!-- Passive Display Name -->
+    <content contentuid="h15a2faa5gf385g456dg8aa8gbf5a1029919f" version="1">步行</content><!-- Walk -->
+    <content contentuid="h7448849bged25g488ag810dg15d3da1916a2" version="1">長距離</content><!-- Weapon Throw -->
+    <content contentuid="h61fa56b6g2b42g4d9cg965eg0654c2c6f233" version="1">樑上君子</content><!-- Second-Story Work -->
+    <content contentuid="h4af7068bg689dg4db5g87fdg614624fc8585" version="1">盾牌大師（推擊）</content><!-- Shield Master (Shove) -->
+    <content contentuid="h0159dcd5g7df6g42fag8c0eg6b714977e84a" version="1">魯莽攻擊</content><!-- Reckless Attack -->
+    <content contentuid="h347bdf44gbb6dg4e83g83feg9f48169b16f0" version="1">資源已阻止</content><!-- Summon Resource Blocked -->
+    <content contentuid="h1d26d698g3c6dg4212gad8dga725fb76bda2" version="1">無形召喚物</content><!-- Summon Indestructible -->
+    <content contentuid="h81c15d09gdee7g4cd4ga39eg6ec6273a8398" version="1">飛掠</content><!-- Flyby -->
+    <content contentuid="h2c5ddf7eg8dbcg4b9fga803g537c44e0ff16" version="1">強弩專家：裝填</content><!-- Crossbow Expert: Wounding -->
+    <content contentuid="h07cedaa6g2c7bg4906ga832g28ebde232fa4" version="1">調諧</content><!-- Attunement -->
+    <content contentuid="h4d215fa7g6d15g4acbg8139g56cb67212a5c" version="1">專注失效保護</content><!-- Concentration Block -->
+
+    <!-- Passive Description -->
+    <content contentuid="h460e389eg9748g4598g95cdgf796e95397c6" version="1">你開始步行而不是跑步。</content><!-- Walk -->
+    <content contentuid="hfc0ecb86gc504g44f1g9d88g957905740457" version="1">除了疾走、撤離或躲藏之外，你還可以使用你的靈巧動作提供的附贈動作來協助盟友、干擾敵人或投擲物品。</content><!-- Fast Hands -->
+    <content contentuid="hd6a0c096gd133g4bc9ga518g80c70fd5d907" version="1">你已經掌握了墜落的藝術，並獲得對墜落傷害的抗性。此外，你現在可以使用你的&lt;LSTag Tooltip="Dexterity"&gt;敏捷&lt;/LSTag&gt;來增加你的跳躍距離。</content><!-- Second-Story Work -->
+    <content contentuid="h85d7c071gf5e1g454fg904eg4f6253bf83c0" version="1">如果你在你的回合採取了攻擊動作，你可以使用附贈動作嘗試使用盾牌進行推擊。</content><!-- Shield Master (Shove) -->
+    <content contentuid="hd8db6255g9df7g4a83g9a83g7ed354602d82" version="1">拋開所有對防禦的顧慮，以極度的決心進行攻擊。在你的回合的第一次攻擊中進行魯莽攻擊會讓你在使用力量的近戰武器&lt;LSTag Tooltip="AttackRoll"&gt;攻擊投擲&lt;/LSTag&gt;上獲得&lt;LSTag Tooltip="Advantage"&gt;優勢&lt;/LSTag&gt;，但對你的攻擊投擲直到你的下個回合都具有優勢。</content><!-- Reckless Attack -->
+    <content contentuid="ha3c41950g6a08g4bbdg9a88g2c14f3c6e8b7" version="1">只有當所有者使用命令法術時，此召喚物才能行動。</content><!-- Summon Resource Blocked -->
+    <content contentuid="h7162476egad83g4f42g8fccg22f6c6e40b37" version="1">當飛出敵人的攻擊範圍時，不會觸發藉機攻擊。</content><!-- Flyby -->
+    <content contentuid="h171c2107gb858g4e96ga500g0d861916042c" version="1">忽略弩的裝填屬性以進行額外攻擊。</content><!-- Crossbow Expert: Wounding -->
+    <content contentuid="h34e14ad6gb0d5g4892ga3c9gdb7dce2c7b9a" version="1">&lt;font color="#CF9FFF"&gt;&lt;i&gt;此物品需要調諧才能裝備，並計入調諧物品的最大數量。&lt;/i&gt;&lt;/font&gt;</content><!-- Attunement -->
+    <content contentuid="h52822a0agd71bg4caega40dgc7017940b99b" version="1">即使你使用的武器不是輕型武器，你也可以使用雙武器戰鬥，並且你可以在你的回合免費裝備兩件武器而不是一件。你不能雙持&lt;LSTag Tooltip="Heavy"&gt;重型&lt;/LSTag&gt;武器。</content><!-- Dual Wielder -->
+    <content contentuid="h7af02440ga775g44ddga0e4g04987028c1e7" version="1">防止在專注法術時施放另一個需要&lt;LSTag Tooltip="Concentration"&gt;專注&lt;/LSTag&gt;的法術。</content><!-- Concentration Block -->
+
+    <!-- Passive Extra Description -->
+    <content contentuid="hc0a989cag7bfdg4f36g9642gf0a332244deb" version="1">步行不會減少一回合內的最大移動距離，這純粹是裝飾性的。</content><!-- Walk -->
+
+    <!-- Projectile Display Name -->
+    <content contentuid="h4c76db83gcc4eg438ag9d00ge9b156dd1bbe" version="1">跳躍（盜賊）</content><!-- Jump Thief -->
+    <content contentuid="h64247e79gece7g4d43g9a17g38dd2fbb94fd" version="1">跳躍（貓）</content><!-- Jump Cat -->
+    <content contentuid="he7373ea1ge596g4f74gbbd1g5763f2e77273" version="1">造火術：投擲（免費）</content><!-- Produce Flame Hurl Free -->
+
+    <!-- Projectile Description -->
+    <content contentuid="hc25fd2e1g6a3cg4c99g8690gcf48eabe53a1" version="1">向上、向下和橫向跳躍。你的&lt;LSTag Tooltip="Dexterity"&gt;敏捷&lt;/LSTag&gt;會影響你的跳躍距離。</content><!-- Jump Thief -->
+    <content contentuid="he87f6103ga16bg459dg889agb0871d51ef92" version="1">投擲一個造成 [1] 點傷害的球體，如果瞄準地面，可能會創造一個表面。或者，選擇一種不同的傷害類型。</content><!-- Chromatic Orb -->
+    <content contentuid="h0ba8b53eg3e84g48f1g9f02gcfc823b861cd" version="1">投擲酸蝕能量，對目標造成傷害。如果瞄準地面，會創造一個&lt;LSTag Type="Status" Tooltip="ACID"&gt;酸性&lt;/LSTag&gt;表面。</content><!-- Chromatic Orb: Acid -->
+    <content contentuid="h4ed0c491gf024g401agb82agbd594521004f" version="1">投擲冰凍能量，對目標造成傷害。如果瞄準地面，會創造一個冰霜表面，使生物&lt;LSTag Type="Status" Tooltip="PRONE"&gt;倒地&lt;/LSTag&gt;。</content><!-- Chromatic Orb: Cold -->
+    <content contentuid="hce5f50aeg4996g488ega2c7g6fff5e79d85b" version="1">投擲火焰能量，對目標造成傷害。如果瞄準地面，會創造一個&lt;LSTag Type="Status" Tooltip="BURNING"&gt;燃燒&lt;/LSTag&gt;表面。</content><!-- Chromatic Orb: Fire -->
+    <content contentuid="he450b731gd24ag4ee3ga2d4g8faabdf18dea" version="1">投擲閃電能量，對目標造成傷害。如果瞄準地面，會創造一個電場表面。</content><!-- Chromatic Orb: Lightning -->
+    <content contentuid="h023befb4g9bc2g450eg83cdg8ec3bf36237a" version="1">投擲毒性能量，對目標造成傷害。如果瞄準地面，會創造一個冒泡表面，使生物&lt;LSTag Type="Status" Tooltip="POISONED"&gt;中毒&lt;/LSTag&gt;。</content><!-- Chromatic Orb: Poison -->
+    <content contentuid="h8ff59facg4ab1g4356g8753g6ab543485aa2" version="1">投擲一個造成[1]點傷害的球體，如果瞄準地面，可能會創造一個表面。</content><!-- Chromatic Orb (Monk) -->
+
+    <!-- Shout Display Name -->
+    <content contentuid="haf813ecag5ad0g464cg8749g68d9ebd9b71d" version="1">結束短休</content><!-- End Short Rest -->
+    <content contentuid="h6c541127gda12g4b7cgbfdbg37c49ac85aba" version="1">閃避</content><!-- Dodge -->
+    <content contentuid="h5d311bfdg3b88g4a78gb8fcgbb8645c6a5f7" version="1">靈巧動作</content><!-- Cunning Action -->
+    <content contentuid="h0611af1fg455ag4511ga7e5g9768ccd017d8" version="1">靈巧動作：躲藏</content><!-- Hide Cunning Action -->
+
+    <!-- Shout Description -->
+    <content contentuid="h1aff6b78gc632g459cgbb15g9c17e56b611a" version="1">結束你和你周圍隊友的&lt;LSTag Tooltip="ShortRest"&gt;短休&lt;/LSTag&gt;。</content><!-- Short Rest -->
+    <content contentuid="h43261ff4gfee1g42f4g9bb3gc6120976fe3d" version="1">直到你下個回合開始，對你進行任何&lt;LSTag Tooltip="AttackRoll"&gt;攻擊投擲&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Disadvantage"&gt;劣勢&lt;/LSTag&gt;，且你進行敏捷&lt;LSTag Tooltip="SavingThrow"&gt;豁免檢定&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Advantage"&gt;優勢&lt;/LSTag&gt;。如果你陷入失能或定身，你將失去此增益。</content><!-- Dodge -->
+    <content contentuid="he7d837b8g404fg4dbdg85c2g9d69c019d63d" version="1">你可以使用你的附贈動作來進行疾走、撤離或躲藏。</content><!-- Cunning Action -->
+    <content contentuid="hbeba3ad3g8801g4a4fg8d77g7507fa9bb7c6" version="1">在&lt;LSTag Tooltip="ShortRest"&gt;短休&lt;/LSTag&gt;期間恢復消耗的&lt;LSTag Tooltip="SpellSlot"&gt;法術位&lt;/LSTag&gt;。你無法恢復高於 5 環的法術位。</content><!-- Arcane Recovery -->
+    <content contentuid="h75e85388g3e7dg4e70g8101g612860c4a857" version="1">在&lt;LSTag Tooltip="ShortRest"&gt;短休&lt;/LSTag&gt;期間恢復消耗的&lt;LSTag Tooltip="SpellSlot"&gt;法術位&lt;/LSTag&gt;。你無法恢復高於 5 環的法術位。</content><!-- Natural Recovery -->
+    <content contentuid="h2149d9f2gd22fg4923ga45bged71c17b76ef" version="1">準備在你下次使用遠程武器攻擊命中一個生物時，釋放一陣荊棘，對該生物及其 [2] 範圍內的生物造成 [1] 傷害。</content> <!-- Hail of Thorns -->
+    <content contentuid="h63e09296gffadg4d58g8468g8964384565d0" version="1">變得隱形。如果你攻擊或施放另一個法術，則該法術結束。</content><!-- Invisibility ShadarKai Gloomweaver -->
+    <content contentuid="hba927cdegcddfg4519gbddfge87709ab6d87" version="1">集中注意力，試圖感知附近的&lt;LSTag Type="Status" Tooltip="SNEAKING"&gt;隱蔽&lt;/LSTag&gt;敵人，並可能發現他們。</content><!-- See Invisibility Seek -->
+    <content contentuid="h4cd88f4fg9d12g4734gbe27g2f91933f51ec" version="1">花費 [1] 氣點以一個&lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;附贈動作&lt;/LSTag&gt;進行&lt;LSTag Type="Spell" Tooltip="RAW_Shout_Dodge"&gt;閃避&lt;/LSTag&gt;。</content><!-- Patient Defense -->
+    <content contentuid="h1e13b430g269bg4a2fg85f8g5e1a716c1c3e" version="1">花費 [1] 氣點以一個&lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;附贈動作&lt;/LSTag&gt;進行&lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;疾走&lt;/LSTag&gt;。同時在本回合內使你的跳躍距離翻倍。</content><!-- Step of the Wind - Dash -->
+    <content contentuid="h29de43bbg50ecg4919ga617g51ae1dd458d2" version="1">花費 [1] 氣點以一個&lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;附贈動作&lt;/LSTag&gt;進行&lt;LSTag Type="Spell" Tooltip="Shout_Disengage"&gt;撤離&lt;/LSTag&gt;。同時在本回合內使你的跳躍距離翻倍。</content><!-- Step of the Wind - Disengage -->
+
+    <!-- Status Boost Display Name -->
+    <content contentuid="hd7046718g6e1ag4867g9e30g6900297f0d58" version="1">短休</content><!-- Short Rest -->
+    <content contentuid="h096216f2ge492g4bb9g9a3cgc88694a8a96b" version="1">被幹擾</content><!-- Distracted -->
+    <content contentuid="h5df0213dg5488g435dgab52g6b9520c0b521" version="1">已穩定</content><!-- Stabilized -->
+    <content contentuid="h75be88fcg63f2g4e6dg9017g35c69b889191" version="1">被命令</content><!-- Summon Resource Allowed -->
+    <content contentuid="h0dc08f11gb7b2g442fga75dg8e01b1989e5d" version="1">召雷術</content><!-- Call Lightning -->
+    <content contentuid="h990994ddg1181g4092g91d0gc459f4cf970f" version="1">棘雹術</content><!-- Hail of Thorns -->
+    <content contentuid="h22935d1ag4b4fg42b3gb9degfde9bd560f65" version="1">附贈動作法術規則</content><!-- Bonus Action Spell -->
+    <content contentuid="hed8a4e8fg83feg4b36g9485g9dcdc40ff540" version="1">被發現</content><!-- Found Sneaking -->
+    
+    <!-- Status Boost Description -->
+    <content contentuid="h2f4288c1g1e4fg4852g80e1g09db0b94bb3d" version="1">正在進行&lt;LSTag Tooltip="ShortRest"&gt;短休&lt;/LSTag&gt;。</content><!-- Short Rest -->
+    <content contentuid="h910d365egd00ag49abg853agfeec0d6e5137" version="1">專注於躲避攻擊。&lt;br&gt;&lt;Br&gt;對受影響實體進行&lt;LSTag Tooltip="AttackRoll"&gt;攻擊投擲&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Disadvantage"&gt;劣勢&lt;/LSTag&gt;，且該實體在敏捷&lt;LSTag Tooltip="SavingThrow"&gt;豁免檢定&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Advantage"&gt;優勢&lt;/LSTag&gt;。&lt;br&gt;&lt;br&gt;如果你陷入失能或定身，則該狀態會被移除。</content><!-- Dodge -->
+    <content contentuid="h25d8863egdaf1g47e3gba46gb6bade9f3a93" version="1">下一個由非干擾來源進行&lt;LSTag Tooltip="AttackRoll"&gt;攻擊投擲&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Advantage"&gt;優勢&lt;/LSTag&gt;。</content><!-- Distracted -->
+    <content contentuid="h0d5d7494ga6b3g4f9ag82d3g9cc482ead351" version="1">在其回合內，基於力量的&lt;LSTag Tooltip="AttackRoll"&gt;攻擊投擲&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Advantage"&gt;優勢&lt;/LSTag&gt;。敵人對該目標進行&lt;LSTag Tooltip="AttackRoll"&gt;攻擊投擲&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Advantage"&gt;優勢&lt;/LSTag&gt;。</content><!-- Reckless Attack -->
+    <content contentuid="h4507b659g8c44g4f43gaf5cgb83ac55eec62" version="1">一個已穩定的角色不再需要進行死亡豁免檢定，且在脫離戰鬥後恢復 [1] 生命值。</content><!-- Stabilized -->
+    <content contentuid="h518c02f3gda53g498dg95e8g21599aaae760" version="1">該召喚物可以行動，因爲它的主人命令了它。</content><!-- Summon Resource Allowed -->
+    <content contentuid="he3c1c67bgae0cg4968ga86egd2b1325c01b3" version="1">身處風暴中時，該角色可能成爲閃電束的目標</content><!-- Call Lightning -->
+    <content contentuid="h6f61be82gf4e8g4224gb3a5gb3ea351852da" version="1">生物的&lt;LSTag Tooltip="ArmourClass"&gt;護甲等級&lt;/LSTag&gt;獲得 +2 加值，敏捷&lt;LSTag Tooltip="SavingThrow"&gt;豁免檢定&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Advantage"&gt;優勢&lt;/LSTag&gt;，其&lt;LSTag Tooltip="MovementSpeed"&gt;移動速度&lt;/LSTag&gt;翻倍，且每回合可以採取一個額外的動作。&lt;br&gt;&lt;br&gt;當該狀態結束時，該生物會變得&lt;LSTag Type="Status" Tooltip="HASTE_LETHARGY"&gt;遲緩&lt;/LSTag&gt;。&lt;br&gt;&lt;br&gt;額外動作只能用於進行攻擊（僅限一次武器攻擊）、疾走、撤離或躲藏。</content><!-- Haste -->
+    <content contentuid="ha79d9187g0539g47abg83bagbc46d76b8834" version="1">下一次遠程武器攻擊對目標及其 [2] 範圍內的生物造成 [1] 傷害。</content><!-- Hail of Thorns -->
+    <content contentuid="hb7c0af17gcd17g422dg96f2gda8a553610d7" version="1">在你施放一個附贈動作法術後，你不能施放環階法術。</content><!-- Cast Bonus Action Spell -->
+    <content contentuid="h31af9e75g2b8bg4207gb1begc463e085f561" version="1">在你施放一個環階法術後，你不能施放環階附贈動作法術。</content><!-- Cast Not Bonus Action Spell -->
+    <content contentuid="h8df73123g2750g49d9gab60g0e8a7efef41b" version="1">被令人作嘔的毒霧所包圍。</content><!-- Stinking Cloud -->
+    <content contentuid="h9bd31f65g1cb5g4009g8d55ge4cc0256ed59" version="1">因作嘔和搖晃而失去了一個動作。</content><!-- Stinking Cloud -->
+    <content contentuid="haaf9589cgdf46g45edga985g59c7380bb6c7" version="1">可以看到 [1] 範圍內的&lt;LSTag Type="Status" Tooltip="INVISIBLE"&gt;隱形&lt;/LSTag&gt;生物。自動發現你視野錐內&lt;LSTag Type="Status" Tooltip="RAW_INVISIBILITY_SNEAKING_TECHNICAL"&gt;隱蔽 &amp; 隱形&lt;/LSTag&gt;敵人。</content><!-- See Invisibility -->
+    <content contentuid="hf6442c35g03a9g4cc3gb4a9gc4579e6045a3" version="1">由於&lt;LSTag Type="Spell" Tooltip="Shout_SeeInvisibility"&gt;識破隱形&lt;/LSTag&gt;的效果，受影響的實體無法從&lt;LSTag Type="Status" Tooltip="RAW_INVISIBILITY_SNEAKING_TECHNICAL"&gt;隱蔽 &amp; 隱形&lt;/LSTag&gt;中獲益。</content><!-- See Invisibility Reveal -->
+    <content contentuid="h7b23045bgb19bg491egabc4g9cd38ed88424" version="1">正在搜索 [1] 範圍內的&lt;LSTag Type="Status" Tooltip="SNEAKING"&gt;隱蔽&lt;/LSTag&gt;敵人。對所有隱蔽敵人的被動&lt;LSTag Tooltip="Stealth"&gt;隱匿&lt;/LSTag&gt;進行一次&lt;LSTag Tooltip="Perception"&gt;感知&lt;/LSTag&gt;&lt;LSTag Tooltip="AbilityCheck"&gt;檢定&lt;/LSTag&gt;，揭示那些檢定失敗的對象。</content><!-- See Invisibility Seek -->
+    <content contentuid="h74e9fb3fg63b3g4360g9a60g3452e6fc60a8" version="1">被使用&lt;LSTag Type="Spell" Tooltip="Shout_SeeInvisibility_Seek"&gt;感知隱匿存在&lt;/LSTag&gt;的敵人發現。</content><!-- Found Sneaking -->
+    <content contentuid="h17a22ad1g17dbg4d8bgb96eg7eea34b956fb" version="1">你的跳躍距離在本回合內翻倍。</content><!-- Step of the Wind -->
+    <content contentuid="h168680a7g6785g4643g97e9gd531b76e057f" version="1">可以作爲你的疾風連擊的一部分進行一次額外的徒手打擊。</content><!-- Flurry of Blows -->
+    
+    <!-- Status Downed Description -->
+    <content contentuid="h788b3d9dgb19cg43adg8d49gdb0f922e7400" version="1">如果你的生命值降至 0 ，你會陷入昏迷，並且必須進行死亡豁免檢定。成功 3 次，你會停止流血並變爲穩定。失敗 3 次，你會死亡。&lt;br&gt;&lt;br&gt;如果你恢復任意生命值，該狀態會被移除。如果盟友&lt;LSTag Type="Spell" Tooltip="Target_Help"&gt;協助&lt;/LSTag&gt;你，並且成功通過了難度等級 10 的&lt;LSTag Tooltip="Medicine"&gt;醫藥&lt;/LSTag&gt;&lt;LSTag Tooltip="AbilityCheck"&gt;檢定&lt;/LSTag&gt;，你將變爲穩定，並在脫離戰鬥後恢復 [1] 生命值。</content><!-- Downed -->
+
+    <!-- Status Invisible Display Name -->
+    <content contentuid="h21b240a8g1a5bg4d14g9a7cge5593f7bfd1a" version="1">隱蔽 &amp; 隱形</content><!-- Invisibility Sneaking Technical -->
+
+    <!-- Status Invisible Description -->
+    <content contentuid="h47b01802gf74dg4c95g94adg9cc5fc2dea5a" version="1">該實體完全無法被敵人察覺，直到它失去隱形或其&lt;LSTag Type="Status" Tooltip="SNEAKING"&gt;隱蔽&lt;/LSTag&gt;狀態。</content><!-- Invisibility Sneaking Technical -->
+    <content contentuid="h11f06e65g400bg4724g9e24ge9b0de4c8e3d" version="1">對&lt;LSTag Tooltip="AttackRoll"&gt;攻擊投擲&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Advantage"&gt;優勢&lt;/LSTag&gt;，並對不能識破隱形的敵人進行攻擊投擲施加&lt;LSTag Tooltip="Disadvantage"&gt;劣勢&lt;/LSTag&gt;。&lt;br&gt;&lt;Br&gt;如果隱形實體攻擊或施放另一個法術，隱形會提前結束。</content><!-- Invisible / Invisibility -->
+    <content contentuid="hd58ffa12g127cg4a27g83efg989e5fa1a4ec" version="1">受影響的實體是隱形的。它對&lt;LSTag Tooltip="AttackRoll"&gt;攻擊投擲&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Advantage"&gt;優勢&lt;/LSTag&gt;，並對不能識破隱形的敵人進行攻擊投擲施加&lt;LSTag Tooltip="Disadvantage"&gt;劣勢&lt;/LSTag&gt;。&lt;br&gt;&lt;Br&gt;如果隱形實體移動、攻擊或施放另一個法術，隱形會提前結束。</content><!-- One With Shadows -->
+    <content contentuid="hed9a0784g6767g4099ga49cg55527e6b64f0" version="1">對&lt;LSTag Tooltip="AttackRoll"&gt;攻擊投擲&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Advantage"&gt;優勢&lt;/LSTag&gt;，並對不能識破隱形的敵人進行攻擊投擲施加&lt;LSTag Tooltip="Disadvantage"&gt;劣勢&lt;/LSTag&gt;。&lt;br&gt;&lt;Br&gt;攻擊、施放法術或進入光線明亮的區域會結束此狀態。</content><!-- Cloak of Shadows (Monk) -->
+    <content contentuid="h81258024g2d63g4afag92ecgc64bb136d956" version="1">對&lt;LSTag Tooltip="AttackRoll"&gt;攻擊投擲&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Advantage"&gt;優勢&lt;/LSTag&gt;，並對不能識破隱形的敵人進行攻擊投擲施加&lt;LSTag Tooltip="Disadvantage"&gt;劣勢&lt;/LSTag&gt;。</content><!-- Greater Invisibility -->
+    <content contentuid="h3b6dd94dg17c8g4f4egbd7dga67485beef35" version="1">受影響的實體是隱形的。它對&lt;LSTag Tooltip="AttackRoll"&gt;攻擊投擲&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Advantage"&gt;優勢&lt;/LSTag&gt;，並對不能識破隱形的敵人進行攻擊投擲施加&lt;LSTag Tooltip="Disadvantage"&gt;劣勢&lt;/LSTag&gt;。&lt;br&gt;&lt;Br&gt;攻擊、施放法術或進入光線明亮的區域會結束此狀態。</content><!-- Shadowblend -->
+    <content contentuid="h8fadec97gcad8g4b7eg9528g8c80dde94805" version="1">對&lt;LSTag Tooltip="AttackRoll"&gt;攻擊投擲&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Advantage"&gt;優勢&lt;/LSTag&gt;，並對不能識破隱形的敵人進行攻擊投擲施加&lt;LSTag Tooltip="Disadvantage"&gt;劣勢&lt;/LSTag&gt;。&lt;br&gt;&lt;Br&gt;攻擊或施放非&lt;LSTag Type="Spell" Tooltip="Target_MistyEscape_ShadarKai_GloomWeaver"&gt;幽影步&lt;/LSTag&gt;的法術會結束此狀態。</content><!-- Invisibility ShadarKai Gloomweaver -->
+    <content contentuid="hd63af1fag49c2g4ba2g9e42gc1b5bf4c48d6" version="1">受影響的實體是隱形的。它對&lt;LSTag Tooltip="AttackRoll"&gt;攻擊投擲&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Advantage"&gt;優勢&lt;/LSTag&gt;，並對不能識破隱形的敵人進行攻擊投擲施加&lt;LSTag Tooltip="Disadvantage"&gt;劣勢&lt;/LSTag&gt;。它在隱匿&lt;LSTag Tooltip="AbilityCheck"&gt;檢定&lt;/LSTag&gt;具有 +[1] 加值。&lt;br&gt;&lt;br&gt;如果隱形實體移動、攻擊或施放另一個法術，隱形會提前結束。</content><!-- Hide in Plain Sight -->
+
+    <!-- Status Knocked Downed Description -->
+    <content contentuid="hf9fcc402g8592g454cga793g52f04804a411" version="1">無法移動或採取動作、附贈動作或反應。&lt;br&gt;&lt;br&gt;對倒地生物進行攻擊，如果在該生物 [1] 範圍內進行，則具有&lt;LSTag Tooltip="Advantage"&gt;優勢&lt;/LSTag&gt;，否則具有&lt;LSTag Tooltip="Disadvantage"&gt;劣勢&lt;/LSTag&gt;。&lt;br&gt;&lt;br&gt;一個倒地的生物必須花費其一半的&lt;LSTag Tooltip="MovementSpeed"&gt;移動速度&lt;/LSTag&gt;才能站起來。</content><!-- Prone -->
+
+    <!-- Target Display Name -->
+    <content contentuid="h5877647dg40fbg4c09gb1c5g16af8009e38b" version="1">推擊（擊退）</content><!-- Shove Push -->
+    <content contentuid="hb461d04cg1cfbg4ba1g83a2g5bd1421d1a20" version="1">推擊（擊倒）</content><!-- Shove Prone -->
+    <content contentuid="hacff287aga587g493bg8074ga79a9969f0c7" version="1">干擾</content><!-- Distract -->
+    <content contentuid="h868da50cg1553g4d69gb8d6g491c06156b08" version="1">干擾（靈巧動作）</content><!-- Distract Cunning Action -->
+    <content contentuid="h9dae9cf6gd51dg4176g9654g137136bdc8c1" version="1">協助（靈巧動作）</content><!-- Help Cunning Action -->
+    <content contentuid="h7d6311c9g4e07g40c9ga6b9g65ab8583ca90" version="1">命令召喚物</content><!-- Summon Command -->
+    <content contentuid="hea829cd9ge8f4g42ecg9d63g702ed2764a96" version="1">假死術：解除</content><!-- Feign Death: Dismiss -->
+
+    <!-- Target Description -->
+    <content contentuid="h39b0e6f4g2f5cg4038g8944g625faa062c38" version="1">推擊目標以將其擊退 [1] 距離。</content><!-- Shove -->
+    <content contentuid="h29df2d23ga713g4cf9gaacdg7cf61bb3b2ee" version="1">推擊目標。你可以嘗試將其擊退或擊倒。</content><!-- Shove Player -->
+    <content contentuid="h8cd12a69g8980g4a55g8737g3f6183de78c1" version="1">推擊目標以將其擊倒。</content><!-- Shove Prone -->
+    <content contentuid="hd49325f3gea4dg4b6fg8880gf6cc96f50a39" version="1">用你的盾牌推擊目標。你可以嘗試將其擊退或擊倒。</content><!-- Shove Shield Master -->
+    <content contentuid="h8a5eb4d5g32beg46b6g9c83g8b4832766545" version="1">佯攻、分散目標的注意力，或以其他方式配合，使你的盟友在你的下個回合之前進行的下一次&lt;LSTag Tooltip="AttackRoll"&gt;攻擊投擲&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Advantage"&gt;優勢&lt;/LSTag&gt;。</content><!-- Distract -->
+    <content contentuid="h32d73faeg184cg419bg8fb6gdd67958d7817" version="1">進行難度等級 10 的&lt;LSTag Tooltip="Medicine"&gt;醫藥&lt;/LSTag&gt;&lt;LSTag Tooltip="AbilityCheck"&gt;檢定&lt;/LSTag&gt;以穩定&lt;LSTag Tooltip="Downed"&gt;昏迷&lt;/LSTag&gt;角色。</content><!-- Help -->
+    <content contentuid="hc01e959cg7d3dg4542gac9fg68099deb9746" version="1">使用你的附贈動作來命令你的召喚物行動。</content><!-- Summon Command -->
+    <content contentuid="h9204dac0g5de4g4199ga876g8eb69468ee8a" version="1">使生物進入魔法沉睡。區域內的目標會按照其當前生命值的升序受到影響（忽略無意識的生物），總計最多 [1] 目標。</content><!-- Sleep -->
+    <content contentuid="h63b15a52g69efg4c70g93acge877ff55d83e" version="1">在目標區域創造一個風暴雲。然後，你可以召喚落雷擊中風暴內的區域，打擊所有目標。在接下來的 10 回合中，你可以使用一個動作再次召喚落雷。</content><!-- Call Lightning -->
+    <content contentuid="hd58f9063g3911g45aag9236g2115019b3240" version="1">解除生物身上的假死效果。</content><!-- Feign Death: Dismiss -->
+    <content contentuid="h18ef7f55gdaf3g435fg9e90ga93cfb6d5eaf" version="1">觸摸一個生物，使其&lt;LSTag Type="Status" Tooltip="INVISIBILITY"&gt;隱形&lt;/LSTag&gt;。它在&lt;LSTag Tooltip="AttackRoll"&gt;攻擊投擲&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Advantage"&gt;優勢&lt;/LSTag&gt;，並且對看不到隱形敵人的攻擊投擲施加&lt;LSTag Tooltip="Disadvantage"&gt;劣勢&lt;/LSTag&gt;。</content><!-- Invisibility -->
+    <content contentuid="hc207157bg97a8g45ebg8946g67866b4bda43" version="1">使一個生物&lt;LSTag Type="Status" Tooltip="GREATER_INVISIBILITY"&gt;高等隱形&lt;/LSTag&gt;。它在&lt;LSTag Tooltip="AttackRoll"&gt;攻擊投擲&lt;/LSTag&gt;具有&lt;LSTag Tooltip="Advantage"&gt;優勢&lt;/LSTag&gt;，並且對看不到隱形敵人的攻擊投擲施加&lt;LSTag Tooltip="Disadvantage"&gt;劣勢&lt;/LSTag&gt;。</content><!-- Greater Invisibility -->
+    <content contentuid="hf128eaa8g9fb1g4a91g92eegf734365be5dc" version="1">在採取攻擊動作後，花費 [1] 氣點以一個&lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;附贈動作&lt;/LSTag&gt;進行兩次徒手打擊。&lt;br&gt;這些攻擊不需要針對同一目標。</content><!-- Flurry of Blows -->
+    <content contentuid="h760f0714ge733g4055g8135gaa7947530d70" version="1">踢一個目標。</content><!-- Default Unarmed Attack -->
+    
+    <!-- Target Extra Description -->
+    <content contentuid="hed88db7bgfbe4g4ab0g9252g068a8bcc48c0" version="1">推擊取決於你的&lt;LSTag Tooltip="Athletics"&gt;運動&lt;/LSTag&gt;技能，以及目標較高的運動或&lt;LSTag Tooltip="Acrobatics"&gt;雜技&lt;/LSTag&gt;技能。</content><!-- Shove -->
+    <content contentuid="h53da955bgfbadg4d77gb962g11eec4070db8" version="1">移除燃燒、束縛、纏繞、網縛、倒地和睡眠。</content><!-- Help -->
+    <content contentuid="h7931a54eg73b9g425bg9243g2331db1f3a32" version="1">當你攻擊或施放另一個法術時，隱形會失效。</content><!-- Invisibility -->
+
+    <!-- Throw Display Name -->
+    <content contentuid="h42ce0a1eg03e9g492dg9457g553a25b8a68c" version="1">投擲（物品）</content><!-- Throw -->
+    <content contentuid="hb3284f80g9ea7g4eefg92bbg6c0d18aa322b" version="1">投擲（靈巧動作）</content><!-- Throw Cunning Action -->
+    <content contentuid="h6ecf3783gaec3g4933g9d97ga93f5eb2ffd1" version="1">投擲武器（主手）</content><!-- Throw Weapon -->
+    <content contentuid="hcb77aa27g6e23g401egb640g6251e9584b0c" version="1">投擲武器（副手）</content><!-- Throw Weapon Off Hand -->
+    <content contentuid="hdd4cc2e3ge909g47f7gb352g27b5d5aa5d80" version="1">投擲武器（過渡）</content><!-- Throw Weapon Transition -->
+
+    <!-- Throw Description -->
+    <content contentuid="h7c08af75gd6d2g4535g8e96g88ddffc3f0ce" version="1">從地面或你的物品欄中投擲一件物品。</content><!-- Throw -->
+    <content contentuid="h49ed29fcg4ac2g459egbc2cg0c6264341656" version="1">從地面或你的物品欄中投擲一件物品，不對目標造成傷害。&lt;br&gt;&lt;br&gt;像手榴彈這樣的可投擲物品仍然會激活其效果。</content><!-- Throw Cunning Action -->
+    <content contentuid="h73c67cf6g5850g4e17gbbc6gabb0186cfd4d" version="1">撿起一件物品並用它進行近戰攻擊。</content><!-- Improvised Weapon -->
+    <content contentuid="h8b86b170gd26eg460cg8562g2d4f2b911e88" version="1">&lt;LSTag Tooltip="Thrown"&gt;投擲&lt;/LSTag&gt;你主手中的武器。</content><!-- Throw Weapon -->
+    <content contentuid="hecbf5369g4424g4914ga10bgd4b42b8cd386" version="1">&lt;LSTag Tooltip="Thrown"&gt;投擲&lt;/LSTag&gt;你副手中的武器。</content><!-- Throw Weapon Off Hand -->
+    <content contentuid="hcbf0d347g1ea7g4a2dga7ebg71de5e4a4094" version="1">&lt;LSTag Tooltip="Thrown"&gt;投擲&lt;/LSTag&gt;你副手中的武器在你投擲主手武器之前。</content><!-- Throw Weapon Transition -->
+
+    <!-- Throw Extra Description -->
+    <content contentuid="hf080f971g5582g46d8g8938gdb8c8b560d42" version="1">你的&lt;LSTag Tooltip="Strength"&gt;力量&lt;/LSTag&gt;會影響你可以投擲的重量。較重的物品會造成更多傷害。</content><!-- Throw -->
+    <content contentuid="h6da3fafbgfe47g420fgb449g9756dc4146fe" version="1">你的&lt;LSTag Tooltip="Strength"&gt;力量&lt;/LSTag&gt;會影響你可以投擲的重量。</content><!-- Throw Cunning Action -->
+    <content contentuid="h12c219aag52b4g4a22gb0e3g160edbaffbb7" version="1">攻擊距離超過正常範圍（標槍爲 [1] ，其他武器爲 [2] ）會對&lt;LSTag Tooltip="AttackRoll"&gt;攻擊投擲&lt;/LSTag&gt;施加&lt;LSTag Tooltip="Disadvantage"&gt;劣勢&lt;/LSTag&gt;。</content><!-- Throw Weapon -->
+
+    <!-- Tooltip Extra Texts -->
+    <content contentuid="hc2a51188g0925g4599g981bg32cd90d92c01" version="1">&lt;LSTag Type="Image" Info="SoftWarning"/&gt; 如果你攻擊或施放另一個法術，隱形效果會提前結束。</content>
+    <content contentuid="hb4b0e8ccge8a7g4844g946cg52e24f6422ea" version="1">&lt;LSTag Type="Image" Info="SoftWarning"/&gt; 如果你移動、攻擊或施放另一個法術，隱形效果會提前結束。</content>
+    <content contentuid="hea1370edgac4dg4a8cg8a43g373b34184b7e" version="1">&lt;LSTag Type="Image" Info="SoftWarning"/&gt; 如果你攻擊、施放另一個法術或進入光線明亮的區域，隱形效果會提前結束。</content>
+</contentList>

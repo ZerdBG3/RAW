@@ -1,3 +1,6 @@
+local modOption = "freeWeaponEquip"
+local debugLog = IsModOptionLogging(modOption)
+
 local ENUM_RAW_EquipActionPassive, ENUM_RAW_DualWielderFeat
 
 local function RAW_AddFreeWeaponEquipPassive(name)
@@ -6,36 +9,36 @@ local function RAW_AddFreeWeaponEquipPassive(name)
         return
     end
 
-    RAW_PrintIfDebug("\nCharacter: " .. char.Name, RAW_PrintTable_FreeWeaponEquip)
-    RAW_PrintIfDebug("\tAdding passive: " .. ENUM_RAW_EquipActionPassive, RAW_PrintTable_FreeWeaponEquip)
+    RAW_PrintIfDebug("\nCharacter: " .. char.Name, debugLog)
+    RAW_PrintIfDebug("\tAdding passive: " .. ENUM_RAW_EquipActionPassive, debugLog)
     char.Passives = ENUM_RAW_EquipActionPassive .. ";" .. char.Passives
-    RAW_PrintIfDebug("\tPassives: " .. char.Passives, RAW_PrintTable_FreeWeaponEquip)
+    RAW_PrintIfDebug("\tPassives: " .. char.Passives, debugLog)
 end
 
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_EquipAction()
-    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_FreeWeaponEquip)
-    RAW_PrintIfDebug(CentralizedString("Option: freeWeaponEquip"), RAW_PrintTable_FreeWeaponEquip)
+    RAW_PrintIfDebug("\n====================================================================================================", debugLog)
+    RAW_PrintIfDebug(CentralizedString("Option: " .. modOption), debugLog)
 
-    if not IsModOptionEnabled("freeWeaponEquip") then
-        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_FreeWeaponEquip)
-        RAW_PrintIfDebug(CentralizedString("Skipping the Free Weapon Equip changes"), RAW_PrintTable_FreeWeaponEquip)
-        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_FreeWeaponEquip)
+    if not IsModOptionEnabled(modOption) then
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), debugLog)
+        RAW_PrintIfDebug(CentralizedString("Skipping the Free Weapon Equip changes"), debugLog)
+        RAW_PrintIfDebug("====================================================================================================\n", debugLog)
         return
     end
 
-    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_FreeWeaponEquip)
-    RAW_PrintIfDebug(CentralizedString("Starting the Free Weapon Equip changes"), RAW_PrintTable_FreeWeaponEquip)
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), debugLog)
+    RAW_PrintIfDebug(CentralizedString("Starting the Free Weapon Equip changes"), debugLog)
 
     for _, name in pairs(Ext.Stats.GetStats("Character")) do
         RAW_AddFreeWeaponEquipPassive(name)
     end
 
-    RAW_ApplyStaticData(ENUM_RAW_DualWielderFeat, RAW_PrintTable_FreeWeaponEquip)
+    RAW_ApplyStaticData(ENUM_RAW_DualWielderFeat, debugLog)
 
-    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Free Weapon Equip changes"), RAW_PrintTable_FreeWeaponEquip)
-    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_FreeWeaponEquip)
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Free Weapon Equip changes"), debugLog)
+    RAW_PrintIfDebug("====================================================================================================\n", debugLog)
 end
 
 ---------------------------------------- MODELS ----------------------------------------

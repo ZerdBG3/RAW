@@ -16,8 +16,6 @@ ACTIONS
     ListAdd(_RemoveList, FLY)
     ListAdd(_RemoveList, PROTECTION_FROM_EVIL_AND_GOOD)
     ListAdd(_RemoveList, SHIELD_OF_FAITH)
-    ListAdd(_RemoveList, PETPAL)
-    ListAdd(_RemoveList, SPEAK_WITH_DEAD_RECAST)
 
     ListAdd(_RemoveList, ARMOR_OF_AGATHYS)
     ListAdd(_RemoveList, ARMOR_OF_AGATHYS_2)
@@ -62,6 +60,23 @@ ACTIONS
     ListAdd(_RemoveList, WARDING_BOND_CASTER)
 
     ListAdd(_RemoveList, RAW_CONCENTRATION_HELPER)
+
+    RETURN(_RemoveList,_Result,null)
+
+
+EVENT RAW_FetchCharacterApplyStatusData_RAW_SHORT_REST_STATUS_REMOVAL_EXPANDED
+VARS
+    CHARACTER:_Character
+    LIST<STATUS>:_RemoveList
+    STATUS:_Result
+ON
+    FetchCharacterApplyStatusData(_Character, RAW_SHORT_REST_STATUS_REMOVAL_EXPANDED)
+ACTIONS
+    Set(_Result,RAW_SHORT_REST_STATUS_REMOVAL_EXPANDED)
+    
+    ListClear(_RemoveList)
+    ListAdd(_RemoveList, PETPAL)
+    ListAdd(_RemoveList, SPEAK_WITH_DEAD_RECAST)
 
     RETURN(_RemoveList,_Result,null)
 

@@ -1,4 +1,6 @@
-local userOptionsPath = "ModOptions.json"
+local filesPath = "RAW/"
+local userOptionsPath = filesPath .. "ModOptions.json"
+local oldUserOptionsPath = "ModOptions.json" -- Fallback to the old ModOptions.json path
 local userOptions = {}
 
 local currentMod = Ext.Mod.GetMod(ModuleUUID).Info
@@ -9,17 +11,37 @@ local function RAW_LoadUserOptions(shouldPrint)
     RAW_PrintIfDebug(CentralizedString("Searching for User ModOptions.json"), shouldPrint)
     local optionsFile = Ext.IO.LoadFile(userOptionsPath)
     if optionsFile == nil or optionsFile == "" then
-        RAW_PrintIfDebug(CentralizedString("User ModOptions.json not found"), shouldPrint)
-        return
+        local oldOptionsFile = Ext.IO.LoadFile(oldUserOptionsPath)
+        if oldOptionsFile == nil or oldOptionsFile == "" then
+            RAW_PrintIfDebug(CentralizedString("User ModOptions.json not found. Will create one!"), shouldPrint, RAW_PrintTypeWarning)
+            return false
+        end
+
+        RAW_PrintIfDebug(CentralizedString("Found old User ModOptions. Will create a new one at the new folder!"), shouldPrint, RAW_PrintTypeWarning)
+        local ok, options = pcall(Ext.Json.Parse, oldOptionsFile)
+        if not ok then
+            RAW_PrintIfDebug(CentralizedString("Invalid old User ModOptions file. Couldn't parse old data!"), shouldPrint, RAW_PrintTypeWarning)
+            return false
+        end
+        if options[ModuleUUID] ~= nil then
+            RAW_PrintIfDebug(CentralizedString("Found User ModOptions for: " .. ModuleUUID), shouldPrint)
+            userOptions = options[ModuleUUID]
+        else
+            RAW_PrintIfDebug(CentralizedString("Not found User ModOptions for: " .. ModuleUUID), shouldPrint)
+        end
+
+        return false
     end
 
-    local options = Ext.Json.Parse(optionsFile)
-    if options[ModuleUUID] ~= nil then
-        RAW_PrintIfDebug(CentralizedString("Found User ModOptions for: " .. ModuleUUID), shouldPrint)
-        userOptions = options[ModuleUUID]
-    else
-        RAW_PrintIfDebug(CentralizedString("Not found User ModOptions for: " .. ModuleUUID), shouldPrint)
+    local ok, options = pcall(Ext.Json.Parse, optionsFile)
+    if not ok then
+        RAW_PrintIfDebug(CentralizedString("Invalid User ModOptions file. Will use default values."), shouldPrint, RAW_PrintTypeError)
+        return true
     end
+
+    RAW_PrintIfDebug(RAW_ColoredText(CentralizedString("User ModOptions loaded successfully!"), RAW_ColorTextCode_Green), shouldPrint)
+    userOptions = options
+    return true
 end
 
 local function parseEnabledOption(optionName, attributes, enabledOptions, dependencies, conflicts)
@@ -91,7 +113,7 @@ local function RAW_ValidateModOptions(forceDependencies, shouldPrint)
     end
 
     if ok then
-        RAW_PrintIfDebug(CentralizedString("---- Mod Validation OK ----"), shouldPrint)
+        RAW_PrintIfDebug(RAW_ColoredText(CentralizedString("---- Mod Validation OK ----"), RAW_ColorTextCode_Green), shouldPrint)
     end
 end
 
@@ -99,34 +121,36 @@ function RAW_PrintConfig(shouldPrint)
     if not shouldPrint then
         return
     end
-    print("\n\27[36mOptions:")
+    print(RAW_ColoredText("Options:", RAW_ColorTextCode_Blue))
     local options = {}
     for optionName, attributes in pairs(ModOptions) do
-        local text = "\27[36m"
+        local text
         if IsModOptionEnabled(optionName) then
-            text = text .. optionName .. ":\27[32m enabled"
+            text = RAW_ColoredText(optionName .. ": ", RAW_ColorTextCode_Blue) .. RAW_ColoredText("enabled", RAW_ColorTextCode_Green)
             if attributes.value ~= nil then
-                text = text .. "\27[36m value:\27[32m " .. attributes.value
+                text = text .. RAW_ColoredText(" value: ", RAW_ColorTextCode_Blue) .. RAW_ColoredText(attributes.value, RAW_ColorTextCode_Green)
             end
         else
-            text = text .. optionName .. ":\27[31m disabled"
+            text = RAW_ColoredText(optionName .. ": ", RAW_ColorTextCode_Blue) .. RAW_ColoredText("disabled", RAW_ColorTextCode_Red)
+        end
+        if attributes.log ~= nil and attributes.log then
+            text = text .. RAW_ColoredText(" logging enabled", RAW_ColorTextCode_Magenta)
         end
         table.insert(options, text)
     end
     table.sort(options)
-    print(table.concat(options,"\n") .. "\27[0m")
+    print(table.concat(options,"\n"))
 end
 
 function RAW_LoadModOptions(shouldPrint)
     RAW_PrintIfDebug("\n====================================================================================================", shouldPrint)
     RAW_PrintIfDebug(CentralizedString("[RAW:Config.lua] Mod Options") .. "\n", shouldPrint)
 
-    RAW_LoadUserOptions(shouldPrint)
+    local hasUserOptions = RAW_LoadUserOptions(shouldPrint)
 
-    RAW_PrintIfDebug(CentralizedString("Searching for ModOptions.json at: " .. modOptionsPath), shouldPrint)
     local optionsFile = Ext.IO.LoadFile(modOptionsPath, "data")
     if optionsFile == nil or optionsFile == "" then
-        RAW_PrintIfDebug(CentralizedString("ModOptions.json not found"), shouldPrint, RAW_PrintTypeWarning)
+        RAW_PrintIfDebug(CentralizedString("Native ModOptions not found"), shouldPrint, RAW_PrintTypeError)
         return
     end
 
@@ -135,6 +159,7 @@ function RAW_LoadModOptions(shouldPrint)
         local userOption = userOptions[optionName]
         local enabled = attributes.enabled
         local value = attributes.value
+        local log = attributes.log
         if userOption ~= nil  then
             if userOption.enabled ~= nil then
                 enabled = userOption.enabled
@@ -142,12 +167,24 @@ function RAW_LoadModOptions(shouldPrint)
             if userOption.value ~= nil then
                 value = userOption.value
             end
+            if userOption.log ~= nil then
+                log = userOption.log
+            end
 
             enabled  = userOption.enabled or enabled
             value = userOption.value or value
+            log = userOption.log or log
+        else
+            userOptions[optionName] = {}
+            userOptions[optionName].enabled = enabled
+            userOptions[optionName].log = log
+            if value ~= nil then
+                userOptions[optionName].value = value
+            end
         end
         attributes.enabled = enabled
         attributes.value = value
+        attributes.log = log
 
         local filteredDependencies = {}
         for _, dep in pairs(attributes.dependencies) do
@@ -173,9 +210,73 @@ function RAW_LoadModOptions(shouldPrint)
     RAW_ValidateModOptions(true, shouldPrint)
     RAW_PrintConfig(shouldPrint)
 
+    if not hasUserOptions then
+        RAW_PrintIfDebug(CentralizedString("\nUser ModOptions.json created at %%LOCALAPPDATA%%/Larian Studios/Baldur's Gate 3/Script Extender/" .. userOptionsPath), shouldPrint, RAW_PrintTypeWarning)
+        Ext.IO.SaveFile(userOptionsPath, Ext.Json.Stringify(userOptions))
+    end
+
     RAW_PrintIfDebug("====================================================================================================\n", shouldPrint)
+end
+
+function RAW_LoadCustomizableOptions(fileName, default)
+    local filePath = filesPath .. fileName
+    RAW_PrintIfDebug("Searching for User file " .. filePath, RAW_ShouldPrint_ModOptions)
+    local ok, optionsFile = pcall(Ext.IO.LoadFile, filePath)
+    if not ok or not optionsFile then
+        RAW_PrintIfDebug("\tUser " .. filePath .. " not found. Will create one!", RAW_ShouldPrint_ModOptions, RAW_PrintTypeWarning)
+        Ext.IO.SaveFile(filePath, default)
+        return nil
+    end
+
+    local ok, options = pcall(Ext.Json.Parse, optionsFile)
+    if not ok then
+        RAW_PrintIfDebug("\tInvalid " .. filePath .. " file. Did not load info!", RAW_ShouldPrint_ModOptions, RAW_PrintTypeError)
+		return nil
+    end
+
+    RAW_PrintIfDebug(RAW_ColoredText("\tUser " .. filePath .. " loaded successfully!", RAW_ColorTextCode_Green), RAW_ShouldPrint_ModOptions)
+    return options
+end
+
+function RAW_LoadCustomizableOptionList(fileName)
+    local filePath = filesPath .. fileName
+    RAW_PrintIfDebug("Searching for User file " .. filePath, RAW_ShouldPrint_ModOptions)
+    local ok, optionsFile = pcall(Ext.IO.LoadFile, filePath)
+    if not ok or not optionsFile then
+        RAW_PrintIfDebug("\tUser " .. filePath .. " not found. Will create one!", RAW_ShouldPrint_ModOptions, RAW_PrintTypeWarning)
+        Ext.IO.SaveFile(filePath, "[]")
+        return nil
+    end
+
+    local ok, options = pcall(Ext.Json.Parse, optionsFile)
+	if not ok then
+        RAW_PrintIfDebug("\tInvalid " .. filePath .. " file. Did not load info!", RAW_ShouldPrint_ModOptions, RAW_PrintTypeError)
+		return nil
+	end
+
+    local setOptions = RAW_Set(options)
+    local invalidStat = false
+    for stat in pairs(setOptions) do
+        local object = Ext.Stats.Get(stat)
+        if object == nil then
+            invalidStat = true
+            RAW_PrintIfDebug("\tInvalid stat entry: " .. stat .. " - Ignoring it!", RAW_ShouldPrint_ModOptions, RAW_PrintTypeError)
+        end
+    end
+
+    if invalidStat then
+        RAW_PrintIfDebug("\tUser " .. filePath .. " partially loaded!", RAW_ShouldPrint_ModOptions, RAW_PrintTypeWarning)
+    else
+        RAW_PrintIfDebug(RAW_ColoredText("\tUser " .. filePath .. " loaded successfully!", RAW_ColorTextCode_Green), RAW_ShouldPrint_ModOptions)
+    end
+
+    return setOptions
 end
 
 function IsModOptionEnabled(modOption)
     return ModOptions[modOption] ~= nil and ModOptions[modOption].enabled
+end
+
+function IsModOptionLogging(modOption)
+    return ModOptions[modOption] ~= nil and ModOptions[modOption].log
 end

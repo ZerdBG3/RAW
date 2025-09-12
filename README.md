@@ -1,13 +1,6 @@
 Zerd's Rules As Written for Baldur's Gate 3
 =======
 
-# DISCLAIMER
-* Since modding BG3 is not yet officially supported by Larian Studios, you might encounter unexpected problems that it's not in their current scope to fix. **PLEASE DISABLE AUTOMATIC TELEMETRY** and don't post bug reports on their official platforms, as you're playing with an unsuported mod
-* How to disable telemetry:
-
-| ![](https://i.imgur.com/jUXpr2A.png) | ![](https://i.imgur.com/s8b4zk3.png) |
-|:---:|:---:|
-
 # Discord
 
 [![Discord Banner 4](https://discordapp.com/api/guilds/767878527634243624/widget.png?style=banner2)](https://discord.gg/FFKTbzKktj)
@@ -25,7 +18,16 @@ Zerd's Rules As Written for Baldur's Gate 3
 
 # Compatibility
 * This mod alters a lot of core mechanics, thus it might not be compatible with saves that were started without it. If possible, start a new game when using this mod
+  * _The option [`invisibility`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#invisibility-%EF%B8%8F-invisibility) is known to cause bugs on existing saves. Make sure to disable it if you're planning to add this mod on an on-going save._
 * There's also various modifications to classes progressions, spells, actions, etc. This means other mods that change the same entries might cause conflict. Using other mods may result in weird interactions and not intended behaviors
+
+# Recommendations
+* Here are some of the mods I recommend using alongside this one, which all follow a RAW philosophy
+  - Arnaud's [RAW Addon](https://github.com/BG3-RAW-Mods/bg3-RAW-addon): expands on RAW changes, implementing things I didn't get to do yet
+  - Celes' [5e Spells](https://www.nexusmods.com/baldursgate3/mods/125): needs no introduction. Adds a bunch of spells, all following 5e rules
+  - dr. kekyll's [Summon Initiative Fixer](https://www.nexusmods.com/baldursgate3/mods/8692?tab=description): pairs well with the [`intangibleSummons`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#intangible-summons-%EF%B8%8F-intangiblesummons) option from this mod, guaranteeing the appropriate summons will play at the same turn as the caster
+  - jjdoorframe's [True Darkness](https://www.nexusmods.com/baldursgate3/mods/13542): not only makes the Darkness spell RAW, but also changes the Blinded condition and Heavy Obscurement as a whole, which is such a huge work that it justifies being a whole mod on its own
+    - Make sure to get the patches as well. Place the Darkness mod below RAW, and the patches below the main Darkness mod
 
 # Languages
 * In-game content is currently translated to the following languages
@@ -33,6 +35,8 @@ Zerd's Rules As Written for Baldur's Gate 3
   - German (MichaLHN)
   - Italian ([Kilay](https://www.nexusmods.com/users/26711484))
   - Portuguese - Brazilian (Rorerik)
+  - Russian ([Aks_kun](https://next.nexusmods.com/profile/Aks2aidos))
+  - Chinese & Chinese Traditional ([Xie_Long_Wu](https://next.nexusmods.com/profile/XieLongWu))
 
 # Error
 * **IMPORTANT:** When opening the launcher, you'll get several notifications telling you about how mods might break and crash your game. Ignore them

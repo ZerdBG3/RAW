@@ -9,7 +9,7 @@ data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndi
 new entry "RAW_RemoveStatusesOnShortRest"
 type "PassiveData"
 data "Properties" "IsHidden"
-data "StatsFunctors" "ApplyStatus(SELF,RAW_SHORT_REST_STATUS_REMOVAL,100,0)"
+data "StatsFunctors" "ApplyStatus(SELF,RAW_SHORT_REST_STATUS_REMOVAL,100,0);ApplyStatus(SELF,RAW_SHORT_REST_STATUS_REMOVAL_EXPANDED,100,0)"
 data "StatsFunctorContext" "OnShortRest"
 
 // Status removed when short resting are handled by Public\RAW\Scripts\Game\RAW_Statuses.gameScript
@@ -85,19 +85,6 @@ type "SpellData"
 data "SpellType" "Target"
 using "Target_Silence"
 data "SpellProperties" "GROUND:Summon(edca6656-dc8c-410b-9f16-fcc02d5ed803, 100,Projectile_AiHelper_Silence,,,SILENCED_AURA);GROUND:ApplyStatus(SELF,RAW_CONCENTRATION_HELPER,100,100)"
-
-new entry "Shout_SpeakWithAnimals"
-type "SpellData"
-data "SpellType" "Shout"
-using "Shout_SpeakWithAnimals"
-data "SpellProperties" "ApplyStatus(PETPAL,100,100)"
-data "TooltipStatusApply" "ApplyStatus(PETPAL,100,100)"
-
-new entry "Target_SpeakWithDead"
-type "SpellData"
-data "SpellType" "Target"
-using "Target_SpeakWithDead"
-data "SpellProperties" "TARGET:ApplyStatus(SELF,SPEAK_WITH_DEAD_RECAST,100,100);TARGET:ApplyStatus(SPEAK_WITH_DEAD,100,0)"
 
 // ------------------------------------------------------------
 // -------------------- 600 turns (1 hour) --------------------

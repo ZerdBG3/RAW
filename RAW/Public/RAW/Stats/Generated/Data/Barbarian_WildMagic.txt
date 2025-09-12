@@ -21,3 +21,12 @@ type "SpellData"
 data "SpellType" "Shout"
 using "Shout_WildMagicBarbarian_ShadowyTendrils"
 data "TargetConditions" "Character() and (Self() or Enemy())"
+
+// Fix Vanilla boo-boo
+new entry "Shout_WildMagicBarbarian_Teleport_Activate"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_WildMagicBarbarian_Teleport_Activate"
+data "Cooldown" ""
+data "AreaRadius" ""
+data "UseCosts" ""

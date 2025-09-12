@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<version major="4" minor="0" revision="9" build="320" lslib_meta="v1,bswap_guids" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+				<node id="GameObjects">
+					<attribute id="MapKey" type="FixedString" value="a2c50b8a-18dd-4e9d-9548-e18478bf297a" />
+					<attribute id="Name" type="LSString" value="SurfaceStinkingCloud" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="Type" type="FixedString" value="surface" />
+					<attribute id="ParentTemplateId" type="FixedString" value="" />
+					<attribute id="Flag" type="int32" value="0" />
+					<attribute id="GroupID" type="uint32" value="0" />
+					<attribute id="VisualTemplate" type="FixedString" value="" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="" />
+					<attribute id="PhysicsOpenTemplate" type="FixedString" value="" />
+					<attribute id="HasGameplayValue" type="bool" value="False" />
+					<attribute id="CameraOffset" type="fvec3" value="0 0 0" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h5c9bcccagd4beg4e8cg86e1g2182f8a16667" version="4" />
+					<attribute id="Description" type="TranslatedString" handle="ha65bdbbdge8f4g407fg86e1g78094f48a5b5" version="4" />
+					<attribute id="Icon" type="FixedString" value="Surface_Stinking" />
+					<attribute id="DecalMaterial" type="FixedString" value="99bbc5f7-647e-2c42-c057-b5ffd201bd58" />
+					<attribute id="MaterialType" type="uint8" value="21" />
+					<attribute id="SurfaceCategory" type="uint8" value="12" />
+					<attribute id="AiPathColor" type="fvec3" value="1 1 0" />
+					<attribute id="Summon" type="FixedString" value="bd8d5043-5cf7-427c-8dfc-829b7c6065d2" />
+					<attribute id="RollConditions" type="LSString" value="" />
+					<attribute id="ObscuredStateOverride" type="uint8" value="3" />
+					<attribute id="OnEnterDistanceOverride" type="float" value="" />
+					<children>
+						<node id="InstanceVisual">
+							<children>
+								<node id="InstanceVisual">
+									<attribute id="Visual" type="FixedString" value="4c4b7652-7929-e2b5-9e4b-c573db60612f" />
+									<attribute id="Height" type="fvec2" value="-0.2 0.1" />
+									<attribute id="Rotation" type="ivec2" value="0 0" />
+									<attribute id="Scale" type="fvec2" value="1 1.5" />
+									<attribute id="GridSize" type="float" value="2" />
+									<attribute id="SpawnCell" type="int32" value="75" />
+									<attribute id="RandomPlacement" type="float" value="10" />
+									<attribute id="SurfaceNeeded" type="float" value="0" />
+									<attribute id="SurfaceRadiusMax" type="float" value="0" />
+								</node>
+							</children>
+						</node>
+						<node id="IntroFX" />
+						<node id="FX" />
+						<node id="StatusData">
+							<children>
+								<node id="StatusData">
+									<attribute id="StatusId" type="FixedString" value="STINKING_CLOUD" />
+									<attribute id="Chance" type="float" value="1" />
+									<attribute id="Duration" type="float" value="-1" />
+									<attribute id="Remove" type="bool" value="False" />
+									<attribute id="KeepAlive" type="bool" value="False" />
+									<attribute id="DontTickWhileOnSurface" type="bool" value="False" />
+									<attribute id="ApplyToCharacters" type="bool" value="True" />
+									<attribute id="ApplyToItems" type="bool" value="False" />
+									<attribute id="VanishOnApply" type="bool" value="False" />
+									<attribute id="Force" type="bool" value="False" />
+									<attribute id="AffectedByRoll" type="bool" value="False" />
+									<attribute id="OnlyOncePerTurn" type="bool" value="False" />
+									<attribute id="ApplyTypes" type="uint8" value="7" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

@@ -1,25 +1,28 @@
+local modOption = "cantrips_scaling"
+local debugLog = IsModOptionLogging(modOption)
+
 local ENUM_RAW_CantripsScaling
 
 ---------------------------------------- STATS FUNCTION ----------------------------------------
 
 function RAW_CantripsScaling()
-    RAW_PrintIfDebug("\n====================================================================================================", RAW_PrintTable_CantripsScaling)
-    RAW_PrintIfDebug(CentralizedString("Option: cantrips_scaling"), RAW_PrintTable_CantripsScaling)
+    RAW_PrintIfDebug("\n====================================================================================================", debugLog)
+    RAW_PrintIfDebug(CentralizedString("Option: " .. modOption), debugLog)
 
-    if not IsModOptionEnabled("cantrips_scaling") then
-        RAW_PrintIfDebug(CentralizedString("Disabled!"), RAW_PrintTable_CantripsScaling)
-        RAW_PrintIfDebug(CentralizedString("Skipping the Cantrips Scaling changes"), RAW_PrintTable_CantripsScaling)
-        RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_CantripsScaling)
+    if not IsModOptionEnabled(modOption) then
+        RAW_PrintIfDebug(CentralizedString("Disabled!"), debugLog)
+        RAW_PrintIfDebug(CentralizedString("Skipping the Cantrips Scaling changes"), debugLog)
+        RAW_PrintIfDebug("====================================================================================================\n", debugLog)
         return
     end
 
-    RAW_PrintIfDebug(CentralizedString("Enabled!"), RAW_PrintTable_CantripsScaling)
-    RAW_PrintIfDebug(CentralizedString("Starting the Cantrips Scaling changes"), RAW_PrintTable_CantripsScaling)
+    RAW_PrintIfDebug(CentralizedString("Enabled!"), debugLog)
+    RAW_PrintIfDebug(CentralizedString("Starting the Cantrips Scaling changes"), debugLog)
 
-    RAW_ApplyStaticData(ENUM_RAW_CantripsScaling, RAW_PrintTable_CantripsScaling)
+    RAW_ApplyStaticData(ENUM_RAW_CantripsScaling, debugLog)
 
-    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Cantrips Scaling changes"), RAW_PrintTable_CantripsScaling)
-    RAW_PrintIfDebug("====================================================================================================\n", RAW_PrintTable_CantripsScaling)
+    RAW_PrintIfDebug("\n" .. CentralizedString("Finished the Cantrips Scaling changes"), debugLog)
+    RAW_PrintIfDebug("====================================================================================================\n", debugLog)
 end
 
 ---------------------------------------- MODELS ----------------------------------------
