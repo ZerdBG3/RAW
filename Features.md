@@ -322,15 +322,21 @@ _Depended by: [`bard`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#bard
 
 ## Spells ⚙️ `spells`
 ❗️ I highly recommend using [jjdoorframe's True Darkness](https://www.nexusmods.com/baldursgate3/mods/13542) to make Darkness RAW
+* Aid is a targeted spell, with a maximum of 3 targets
+* Aura of Vitality is a concentration spell
 * Call Lightning creates a storm area, inside which the caster can target a smaller area to deal damage each turn (recast is usable while wildshaped, even with the [`spells_wildshape`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#spells---wildshape-%EF%B8%8F-spells_wildshape) option disabled)
 * Cone of Cold range increased to 18 meters
+* Conjure Elemental, Conjure Minor Elemental and Conjure Woodland Beings require concentration
 * Feign Death provides a Dismiss spell to the caster (duration changed as well, even with the [`spells_duration`](https://github.com/ZerdBG3/RAW/blob/main/Features.md#spells---duration-%EF%B8%8F-spells_duration) option disabled)
 * Fireball radius increased from 4 to 6 meters
+* Gust of Wind is a concentration spell so it can be used again on subsequent turns as a bonus action. Also removed the `Off Balance` status and implemented something closer to RAW (thanks Celes for the implementation and dr. kekyll for the idea)
 * Hail of Thorns converted to a concentration self-buff spell that applies the effect on the next ranged attack
 * Haste extra action can only be used for attacking (one attack only - no Extra Attack), Dash, Disengage or Hide
 * Hunter's Mark counts as a separate damage entry and can critically strike
 * Hypnotic Pattern duration increased to 10 turns
 * Ice Knife no longer interacts with surfaces
+* Mass Healing Word is a targeted spell, with a maximum of 6 targets
+* Prayer of Healing is a targeted spell, with a maximum of 6 targets
 * Produce Flame is a spell container, with instant attacking as an option (normal temporary spells after summoning the flame are still there as well)
 * Sleep lasts for 10 turns instead of 2 and it's a circular area, which the targets are selected based on HP on increasing order
 * Stinking Cloud no longer blocks action usage, instead consuming one single action from characters inside it on their turn start upon failing the Saving Throw
@@ -351,6 +357,8 @@ _Depended by: [`spells_durationExpanded`](https://github.com/ZerdBG3/RAW/blob/ma
 
       - 10 minutes (100 turns)
         - Darkness
+        - Dominate Beast (Upcast to Level 5)
+        - Dominate Person (Upcast to Level 6)
         - Expeditious Retreat
         - Fly
         - Flame Blade
@@ -361,7 +369,11 @@ _Depended by: [`spells_durationExpanded`](https://github.com/ZerdBG3/RAW/blob/ma
       - 1 hour (600 turns)
         - Armor of Agathys
         - Barkskin
+        - Conjure Elemental
+        - Conjure Minor Elementals
+        - Conjure Woodland Beings
         - Daylight
+        - Dominate Beast (Upcast to Level 6)
         - Enhance Ability
         - False Life
         - Feign Death (done in the spells option)
@@ -373,6 +385,7 @@ _Depended by: [`spells_durationExpanded`](https://github.com/ZerdBG3/RAW/blob/ma
         - Pass without Trace
         - Protection from Energy
         - Protection from Poison
+        - Stoneskin
         - Warding Bond
 
       - Infinite, but still ends with Short Rest

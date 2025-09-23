@@ -1,3 +1,30 @@
+// ---------------------------------------------
+// -------------------- Aid --------------------
+// ---------------------------------------------
+
+// Changed SpellType to Target and added AmountOfTargets so it specifically limits it to 3 creatures
+new entry "Shout_Aid"
+type "SpellData"
+using "Shout_Aid"
+data "SpellType" "Target"
+data "AreaRadius" ""
+data "TargetRadius" "9"
+data "Description" "hf6fb778bg3642g448cg8017g5b4f55b07989;1"
+data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IgnorePreviouslyPickedEntities"
+data "AmountOfTargets" "3"
+
+// ----------------------------------------------------------
+// -------------------- Aura of Vitality --------------------
+// ----------------------------------------------------------
+
+// Changed to Concentration spell
+
+new entry "Shout_AuraOfVitality"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_AuraOfVitality"
+data "SpellFlags" "IsSpell;HasVerbalComponent;IsConcentration"
+
 // --------------------------------------------------------
 // -------------------- Call Lightning --------------------
 // --------------------------------------------------------
@@ -123,6 +150,34 @@ data "SpellType" "Zone"
 using "Zone_ConeOfCold"
 data "Range" "18"
 
+// -----------------------------------------------
+// -------------- Conjure Elemental --------------
+// -----------------------------------------------
+
+// Making them concentration. The duration change is done in Spells_Duration.txt
+new entry "Target_ConjureElemental_Container"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ConjureElemental_Container"
+data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsLinkedSpellContainer;IsConcentration"
+
+new entry "Target_ConjureElemental_Elemental_Air"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ConjureElemental_Elemental_Air"
+data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsConcentration"
+
+// -----------------------------------------------
+// ---------- Conjure Woodland Beings ------------
+// -----------------------------------------------
+
+// Making it concentration. The duration change is done in Spells_Duration.txts
+new entry "Target_ConjureWoodlandBeings"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ConjureWoodlandBeings"
+data "SpellFlags" "IsSpell;HasVerbalComponent;HasSomaticComponent;CannotTargetItems;CannotTargetCharacter;IsConcentration"
+
 // -------------------------------------------------------------
 // -------------------- Feign Death Dismiss --------------------
 // -------------------------------------------------------------
@@ -225,6 +280,77 @@ data "SpellType" "Projectile"
 using "Projectile_Fireball"
 data "AreaRadius" "6"
 data "ExplodeRadius" "6"
+
+// -----------------------------------------------
+// ---------------- Gust of Wind -----------------
+// -----------------------------------------------
+
+// Changed to Concentration spell that lasts 10 turns and becomes usable each turn as a bonus action
+// Also removed Off Balance status and replaced with a RAWer effect
+new entry "Zone_GustOfWind"
+type "SpellData"
+data "SpellType" "Zone"
+using "Zone_GustOfWind"
+data "ConcentrationSpellID" "RAW_Zone_GustOfWind_BonusAction"
+data "SpellProperties" "GROUND:SurfaceClearLayer(Cloud); RemoveStatus(BURNING);ApplyStatus(SELF,RAW_GUST_OF_WIND_AURA,100,10);IF(Character()):ApplyStatus(RAW_GUST_OF_WIND,100,1)"
+data "SpellSuccess" "IF(Character()):Force(5)"
+data "Description" "h1a2c5b8bg7ba6g4c81g9a2dga347133f8198;1"
+data "Range" "18"
+data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;AddFallDamageOnLand;IsConcentration"
+
+new entry "RAW_Zone_GustOfWind_BonusAction"
+type "SpellData"
+data "SpellType" "Zone"
+using "Zone_GustOfWind"
+data "SpellProperties" "GROUND:SurfaceClearLayer(Cloud); RemoveStatus(BURNING);IF(Character()):ApplyStatus(RAW_GUST_OF_WIND,100,1)"
+data "UseCosts" "BonusActionPoint:1"
+data "SpellFlags" "Wildshape;AddFallDamageOnLand;Temporary"
+
+new entry "RAW_GUST_OF_WIND_AURA"
+type "StatusData"
+data "StatusType" "BOOST"
+data "AuraRadius" "18"
+data "AuraStatuses" "IF(FacingMe() and HasStatus('RAW_GUST_OF_WIND')):ApplyStatus(RAW_GUST_OF_WIND_MOVEMENT)"
+data "Boosts" "UnlockSpell(RAW_Zone_GustOfWind_BonusAction)"
+data "TickFunctors" "IF(not HasStatus('RAW_GUST_OF_WIND_BONUS')):ApplyStatus(RAW_GUST_OF_WIND_BONUS,100,9)"
+data "TickType" "StartTurn"
+data "OnRemoveFunctors" "RemoveStatus(RAW_GUST_OF_WIND_BONUS);ApplyStatus(RAW_GUST_OF_WIND_END,100,1)"
+data "StackId" "RAW_GUST_OF_WIND_AURA"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
+
+new entry "RAW_GUST_OF_WIND"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "hafb83597g58afg4080g8927gc173a1f113f5;1"
+data "Description" "h93646105g9131g4a5ega154g478970cd0d04;1"
+data "Icon" "statIcons_OffBalanced"
+data "StillAnimationType" "Weakened"
+data "StillAnimationPriority" "Weakened"
+data "Icon" "Spell_Evocation_GustOfWind"
+data "StackId" "RAW_GUST_OF_WIND"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSourceStatusApplied) and HasStatus('RAW_GUST_OF_WIND_END',context.Source)) or IsStatusEvent(StatusEvent.OnSourceDeath)"
+data "RemoveEvents" "OnSourceStatusApplied;OnSourceDeath"
+
+new entry "RAW_GUST_OF_WIND_BONUS"
+type "StatusData"
+data "StatusType" "BOOST"
+data "Boosts" "UnlockSpell(RAW_Zone_GustOfWind_BonusAction)"
+data "StackId" "GUST_OF_WIND_BONUS"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
+
+new entry "RAW_GUST_OF_WIND_MOVEMENT"
+type "StatusData"
+data "StatusType" "BOOST"
+data "Boosts" "ActionResourceConsumeMultiplier(Movement,2,0); MovementSpeedLimit(Walk)"
+data "StackId" "RAW_GUST_OF_WIND_MOVEMENT"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
+
+new entry "RAW_GUST_OF_WIND_END"
+type "StatusData"
+data "StatusType" "BOOST"
+data "TickType" "EndTurn"
+data "StackId" "RAW_GUST_OF_WIND_END"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
 
 // --------------------------------------------------------
 // -------------------- Hail of Thorns --------------------
@@ -470,6 +596,54 @@ type "SpellData"
 data "SpellType" "Projectile"
 using "Projectile_IceKnife"
 data "SpellProperties" ""
+
+// -----------------------------------------------------------
+// -------------------- Mass Healing Word --------------------
+// -----------------------------------------------------------
+
+// Changed SpellType to Target and added AmountOfTargets so it specifically limits it to 6 creatures
+new entry "Shout_HealingWord_Mass"
+type "SpellData"
+using "Shout_HealingWord_Mass"
+data "SpellType" "Target"
+data "TargetConditions" "Character() and not Dead() and not Tagged('UNDEAD') and not Tagged('CONSTRUCT')"
+data "AreaRadius" ""
+data "TargetRadius" "18"
+data "Description" "hed2f953bgaa1bg4e8bg82b1g1807bbfdb2b8;1"
+data "SpellFlags" "HasVerbalComponent;IsSpell;IgnorePreviouslyPickedEntities"
+data "AmountOfTargets" "6"
+
+// -----------------------------------------------------------------
+// -------------------- Minor Conjure Elemental --------------------
+// -----------------------------------------------------------------
+
+// Making them concentration. The duration change is done in Spells_Duration.txt
+new entry "Target_ConjureElementals_Minor_Container"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ConjureElementals_Minor_Container"
+data "SpellFlags" "IsSpell;HasVerbalComponent;HasSomaticComponent;IsLinkedSpellContainer;CannotTargetCharacter;CannotTargetItems;IsConcentration"
+
+new entry "Target_ConjureElementals_Minor_Azer"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ConjureElementals_Minor_Azer"
+data "SpellFlags" "IsSpell;HasVerbalComponent;HasSomaticComponent;CannotTargetItems;CannotTargetCharacter;IsConcentration"
+
+// -----------------------------------------------------------
+// -------------------- Prayer of Healing --------------------
+// -----------------------------------------------------------
+
+// Changed SpellType to Target and added AmountOfTargets so it specifically limits it to 6 creatures
+new entry "Shout_PrayerOfHealing"
+type "SpellData"
+using "Shout_PrayerOfHealing"
+data "SpellType" "Target"
+data "AreaRadius" ""
+data "TargetRadius" "9"
+data "Description" "h3b5beb2dg2137g4c8bg9964g0f3d5cb1d9e4;1"
+data "SpellFlags" "HasVerbalComponent;IsSpell;IgnorePreviouslyPickedEntities"
+data "AmountOfTargets" "6"
 
 // -------------------------------------------------------
 // -------------------- Produce Flame --------------------

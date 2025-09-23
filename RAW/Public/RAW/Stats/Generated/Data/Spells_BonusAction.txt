@@ -59,3 +59,5 @@ data "SpellType" "Projectile"
 using "Projectile_StarryForm_Archer_Damage"
 data "Level" ""
 data "SpellFlags" "HasHighGroundRangeExtension;RangeIgnoreVerticalThreshold;IsHarmful;Temporary"
+
+// Sunbeam Recreate is fixed on Spells_Wildshaped
